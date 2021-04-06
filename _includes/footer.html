@@ -11,6 +11,7 @@
 		
 		<nav id="footer--links">
 			
+			{% if site.menu-footer != false %}
 			<ul>
 				{% if site.data.footer-menu %}
 					{% for item in site.data.footer-menu %}
@@ -27,6 +28,7 @@
 					<li><a href="//wishlist.johnpe.art" class="footer--nav-link" title="See my wishlist">Wishlist</a></li>
 				{% endif %}
 			</ul>
+			{% endif %}	
 			
 		</nav>
 	

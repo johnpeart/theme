@@ -1,3 +1,7 @@
+header#site-header {
+	@include toggleDarkMode(background, $header-background, $header-background-dark);
+}
+	
 nav#header--links a {
 	font-weight: 		$header-link-font-weight;
 	text-decoration: 	$header-link-text-decoration;
