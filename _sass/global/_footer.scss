@@ -1,6 +1,21 @@
+footer#site-footer {
+	@include toggleDarkMode(background, $footer-background, $footer-background-dark);
+	@include toggleSizes(padding-top, 60px, 90px, 90px, 120px, 120px);
+	@include toggleSizes(padding-bottom, 45px, 45px, 60px, 60px, 60px);
+}
+
 aside#footer--wordmark {
 	@include toggleSizes(float, none, left, left, left, left);
 	@include toggleSizes(width, 100%, 50%, 50%, 50%, 50%);
+	
+	p.footer--wordmark {
+		font-weight: 	bold;
+		padding-bottom: 6px;
+	}
+	a.footer--site-link {
+		
+	}
+	
 }
 
 nav#footer--links {
@@ -33,11 +48,37 @@ nav#footer--links {
 	}	
 	
 	li {
+		display: inline-block;
+		position: relative;
+		
+		width: 50%;
+		float: left;
+		
+		border: none !important;
 		
 		@include toggleSizes(font-size, $font-size--footer--p--xs, $font-size--footer--p--sm, $font-size--footer--p--md, $font-size--footer--p--lg, $font-size--footer--p--xl);
 		@include toggleSizes(line-height, $line-height--footer--p--xs, $line-height--footer--p--sm, $line-height--footer--p--md, $line-height--footer--p--lg, $line-height--footer--p--xl);
 		@include toggleSizes(padding, $padding--footer--p--xs, $padding--footer--p--sm, $padding--footer--p--md, $padding--footer--p--lg, $padding--footer--p--xl);
+		@include toggleSizes(text-align, left, right, right, right, right);
+		
+		&:last-child {
+			@include toggleSizes(float, left, right, right, right, right);
+		}
 		
 	}
+	
+	ul {
+		padding: 0;
+		margin: 0;
+		
+		list-style: none;
+		
+		@include toggleSizes(float, left, right, right, right, right);
+		@include clearfix;
+	}
 
+}
+
+footer#site-footer {
+	@include clearfix;
 }
