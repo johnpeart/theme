@@ -1,0 +1,172 @@
+//	SASS VARIABLES				
+//	All variables should go in this file				
+
+// --------------------------------------//
+// --------------------------------------//
+// --------------------------------------//
+
+// BREAKPOINTS AND CONTAINER SIZING
+//
+
+// Breakpoints
+$xs: 	 							0;
+$sm: 	 							600px;
+$md: 	 							766px;
+$lg: 	 							1000px;
+$xl: 	 							1200px;
+
+// Container sizes
+$container-xs: 	 					300px;
+$container-sm: 	 					560px;
+$container-md: 	 					600px;
+$container-lg: 	 					800px;
+$container-xl: 	 					900px;
+$container-padding: 	 			15px;
+
+// --------------------------------------//
+// --------------------------------------//
+// --------------------------------------//
+
+
+// COLOURS
+
+// PALETTE
+// All colours used should be referenced here
+$absolute-black:					#000000;
+$white:   	 						#fafafa !default;
+$gray-100:	 						#f8f9fa !default;
+$gray-200:	 						#e9ecef !default;
+$gray-300:	 						#dee2e6 !default;
+$gray-400:	 						#ced4da !default;
+$gray-500: 	 						#adb5bd !default;
+$gray-600: 	 						#868e96 !default;
+$gray-700: 	 						#495057 !default;
+$gray-800: 	 						#343a40 !default;
+$gray-900: 	 						#212529 !default;
+$black:    	 						#1d1d1d !default;
+$absolute-white:					#FFFFFF;
+
+$blue:    	 						#007aff !default;
+$desaturated-blue: 					#3b5998 !default;
+$purple:  	 						#c643fc !default;
+$magenta:   	 					#e6007e !default;
+$red:     	 						#B10E1E !default;
+$orange:  	 						#ff5e3a !default;
+$yellow:  	 						#ffed00 !default;
+$bad-ideas-yellow:                  #FFD700 !default;
+$green:   	 						#0bd318 !default;
+$cyan:    	 						#009fe3 !default;
+
+// This is the 'prominent' colour used across the theme
+$brand:								$cyan;
+
+// SKIP LINK COLOURS
+// See 'helpers/_screenreaders.scss'
+// Light mode
+$skiplink-background:				$brand;
+$skiplink-color:					$white;
+// Dark mode
+$skiplink-background-dark:			$brand;
+$skiplink-color-dark:				$black;
+
+// HTML AND BODY COLOURS
+// Light mode
+$html-background:					$white;
+$body-background:					$white;
+$header-background:					$white;
+$footer-background:					$white;
+$html-color:						$black;
+$body-color:						$black;
+$header-color:						$black;
+$footer-color:						$black;
+// Dark mode
+$html-background-dark:				$black;
+$body-background-dark:				$black;
+$header-background-dark:			$black;
+$footer-background-dark:			$black;
+$html-color-dark:					$white;
+$body-color-dark:					$white;
+$header-color-dark:					$white;
+$footer-color-dark:					$white;
+
+// LINK COLOURS AND DECORATION
+// See 'global/_typography'
+$link-font-weight:					normal;
+$link-outline:						none;
+$link-text-decoration:				underline;
+$link-text-decoration-hover:		none;
+$link-text-decoration-active:		underline;
+$link-text-decoration-focus:		none;
+// Light mode
+$link-color:						$black;
+$link-color--hover:					$brand;
+$link-color--focus:					$white;
+$link-background--focus:			$brand;
+$link-outline--focus:				2px $brand solid;
+// Dark mode
+$link-color-dark:					$white;
+$link-color--hover-dark:			$brand;
+$link-color--focus-dark:			$white;
+$link-background--focus-dark:		$brand;
+$link-outline--focus-dark:			2px $brand solid;
+
+// HEADER LINK COLOURS AND DECORATION
+$header-link-font-weight:				normal;
+$header-link-outline:					none;
+$header-link-text-decoration:			none;
+$header-link-text-decoration-hover:		underline;
+$header-link-text-decoration-active:	none;
+$header-link-text-decoration-focus:		none;
+// Light mode
+$header-link-color:						$gray-500;
+$header-link-color--hover:				$brand;
+$header-link-color--focus:				$white;
+$header-link-background--focus:			$brand;
+$header-link-outline--focus:			2px $brand solid;
+// Dark mode
+$header-link-color-dark:				$gray-600;
+$header-link-color--hover-dark:			$brand;
+$header-link-color--focus-dark:			$white;
+$header-link-background--focus-dark:	$brand;
+$header-link-outline--focus-dark: 		2px $brand solid;
+
+// FOOTER LINK COLOURS AND DECORATION
+$footer-link-font-weight:				normal;
+$footer-link-outline:					none;
+$footer-link-text-decoration:			none;
+$footer-link-text-decoration-hover:		underline;
+$footer-link-text-decoration-active:	none;
+$footer-link-text-decoration-focus:		none;
+// Light mode
+$footer-link-color:						$gray-500;
+$footer-link-color--hover:				$brand;
+$footer-link-color--focus:				$white;
+$footer-link-background--focus:			$brand;
+$footer-link-outline--focus:			2px $brand solid;
+// Dark mode
+$footer-link-color-dark:				$gray-600;
+$footer-link-color--hover-dark:			$brand;
+$footer-link-color--focus-dark:			$white;
+$footer-link-background--focus-dark:	$brand;
+$footer-link-outline--focus-dark:		2px $brand solid;
+
+// BLOCK QUOTE STYLES
+// Light mode
+$blockquote-background:				$gray-200;
+// Dark mode
+$blockquote-background-dark:		$gray-700;
+
+// CODE STYLING
+// Light mode
+$code-color:						$black;
+$code-color--blockquote:			$black;
+$code-backround:					$gray-200;
+// Dark mode
+$code-color-dark:					$white;
+$code-color--blockquote-dark:		$white;
+$code-backround-dark:				$gray-700;
+
+// --------------------------------------//
+// --------------------------------------//
+// --------------------------------------//
+

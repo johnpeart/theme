@@ -1,0 +1,8 @@
+html {
+	@include toggleDarkMode(background, $html-background, $html-background-dark);
+	@include toggleDarkMode(color, $html-color, $html-color-dark);
+}
+body {
+	@include toggleDarkMode(background, $body-background, $body-background-dark);
+	@include toggleDarkMode(color, $body-color, $body-color-dark);
+}

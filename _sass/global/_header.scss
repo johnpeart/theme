@@ -1,0 +1,23 @@
+nav#header--links a {
+	font-weight: 		$header-link-font-weight;
+	text-decoration: 	$header-link-text-decoration;
+	
+	&:link {
+		@include toggleDarkMode(color, $header-link-color, $header-link-color-dark);
+	}
+	&:visited {
+		@include toggleDarkMode(color, $header-link-color, $header-link-color-dark);
+	}
+	&:hover {
+		@include toggleDarkMode(color, $header-link-color--hover, $header-link-color--hover-dark);
+		text-decoration: 	$header-link-text-decoration-hover;
+	}
+	&:focus {
+		@include toggleDarkMode(color, $header-link-color--focus, $header-link-color--focus-dark);
+		@include toggleDarkMode(background, $header-link-background--focus, $header-link-background--focus-dark);
+		@include toggleDarkMode(outline, $header-link-outline--focus, $header-link-outline--focus-dark);
+	}
+	&:active {
+		text-decoration: 	$header-link-text-decoration-active;
+	}
+}	

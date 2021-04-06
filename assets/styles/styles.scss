@@ -5,41 +5,49 @@
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "_reset",
-        
-		"_variables",
-		"_override",
-        "_fonts",
-        		        
-        "mixins/_animations",
-        "mixins/_backgrounds",
-        "mixins/_breakpoints",
+    "_reset",
+    
+	"variables/_default",
+	"variables/_override",
+    "global/_fonts",
+    		        
+    "helpers/_breakpoints",
+    "helpers/_clearfix",
+    "helpers/_sticky",
+	"helpers/_darkmode",
+    "helpers/_screenreaders",
+	
+	"global/_containers",
+	"global/_typography",
+			
+	"global/_main",
+	"global/_header",
+	"global/_footer",
+	
+	"global/_images",
+	"global/_forms",
+	"global/_notfound",
 
-        "helpers/_clearfix",
-        "helpers/_sticky",
-        "helpers/_screenreaders",
-				
-		"_global",
-		"_header",
-		"_footer",
-		"_containers",
-		"_typography",
-		"_images",
-		"_form-elements",
+	"blog/_home",
+	"blog/_loop",
+	"blog/_post",
+	"blog/_page",
 
-		"_home",
-		"_four_oh_four",
-		"_page",
-		"_loop",
-		"_post",
-
-		"_about",
-		"_podcast",
-		"_goals",
-		"_wishlist",
-		"_manuals",
-		"_photos",
-		
-		"_themes"
-
+	"about/_home",
+	
+	"projects/_home",
+	
+	"podcast/_home",
+	
+	"goals/_home",
+	
+	"wishlist/_home",
+	
+	"manuals/_home",
+	"manuals/_post",
+	
+	"photos/_home",
+	"photos/_post",
+	
+	"global/_themes"
 ;

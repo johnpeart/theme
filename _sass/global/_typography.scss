@@ -1,0 +1,23 @@
+a {
+	font-weight: 		$link-font-weight;
+	text-decoration: 	$link-text-decoration;
+	
+	&:link {
+		@include toggleDarkMode(color, $link-color, $link-color-dark);
+	}
+	&:visited {
+		@include toggleDarkMode(color, $link-color, $link-color-dark);
+	}
+	&:hover {
+		@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
+		text-decoration: 	$link-text-decoration-hover;	
+	}
+	&:focus {
+		@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
+		@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
+		@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+	}
+	&:active {
+		text-decoration: 	$link-text-decoration-active;
+	}
+}
