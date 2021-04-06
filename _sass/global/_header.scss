@@ -153,6 +153,7 @@ ul#header-menu-items {
 	width: 100%;
 	
 	@include toggleDarkMode(background, $header-background, $header-background-dark);
+	padding-left: 0;
 
 	transition: all 0.25s;
 	@include toggleSizes(overflow-y, scroll, hidden, hidden, hidden, hidden);
