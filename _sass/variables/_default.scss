@@ -181,6 +181,14 @@ $code-backround-dark:				$gray-700;
 // --------------------------------------//
 // --------------------------------------//
 
+// HEADER SIZING
+$header-min-height: 		70px;
+$header-min-height--small: 	56px;
+
+// --------------------------------------//
+// --------------------------------------//
+// --------------------------------------//
+
 // TEXT SIZES
 
 // PARAGRAPH TEXT
@@ -203,6 +211,27 @@ $padding--p--sm:		0 0 $font-size--p--sm 0;
 $padding--p--md:		0 0 $font-size--p--md 0;
 $padding--p--lg:		0 0 $font-size--p--lg 0;
 $padding--p--xl:		0 0 $font-size--p--xl 0;
+
+// HEADER WORDMARK TEXT
+// Applies to text inside the Footer
+// Size
+$font-size--header-wordmark--xs:	30px;
+$font-size--header-wordmark--sm:	30px;
+$font-size--header-wordmark--md:	30px;
+$font-size--header-wordmark--lg:	34px;
+$font-size--header-wordmark--xl:	36px;
+// Line height
+$line-height--header-wordmark--xs:	1;
+$line-height--header-wordmark--sm:	1;
+$line-height--header-wordmark--md:	1;
+$line-height--header-wordmark--lg:	1;
+$line-height--header-wordmark--xl:	1;
+// Padding (bottom spacing)
+$padding--header-wordmark--xs:		(($header-min-height--small - $font-size--header-wordmark--xs) * 0.5) 0;
+$padding--header-wordmark--sm:		(($header-min-height - $font-size--header-wordmark--sm) * 0.5) 0;
+$padding--header-wordmark--md:		(($header-min-height - $font-size--header-wordmark--md) * 0.5) 0;
+$padding--header-wordmark--lg:		(($header-min-height - $font-size--header-wordmark--lg) * 0.5) 0;
+$padding--header-wordmark--xl:		(($header-min-height - $font-size--header-wordmark--xl) * 0.5) 0;
 
 // FOOTER TEXT
 // Applies to text inside the Footer

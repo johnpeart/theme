@@ -18,3 +18,10 @@
 		#{$attribute}: 	$setXL;
 	}
 }
+
+@mixin xs {
+	@media 	only screen 
+			and (max-width: $sm - 1px) {
+				@content;
+			}
+}
