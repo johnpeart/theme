@@ -113,6 +113,10 @@ body[id$='post'] {
 			@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
 		}
 
+		a.reversefootnote {
+			text-decoration: none;
+			font-family: $font-family !important;
+		}
 		
 	}
 	

@@ -1,6 +1,7 @@
 a {
 	font-weight: 		$link-font-weight;
 	text-decoration: 	$link-text-decoration;
+	cursor: pointer;
 	
 	&:link {
 		@include toggleDarkMode(color, $link-color, $link-color-dark);
@@ -24,7 +25,8 @@ a {
 
 p,
 dt,
-dd {
+dd,
+li {
 	
 	@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
 	@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
@@ -42,6 +44,123 @@ dd {
 		font-size: 		120%;
 	}
 	
+}
+
+li {
+	padding-bottom: 0;
+	&:last-child {
+		@include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+	}
+}
+
+ul {
+	
+	list-style: none;
+	padding-top: 0;
+	@include toggleSizes(padding-left, ($font-size--p--xs * 1.5), ($font-size--p--sm * 1.5), 0, 0, 0);
+	@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+	
+}
+ol {
+	
+	list-style: decimal;
+	padding-top: 0;
+	@include toggleSizes(padding-left, ($font-size--p--xs * 2), ($font-size--p--sm * 2), 0, 0, 0);
+	@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+	
+}
+
+dt {
+	padding-bottom: 0;
+}
+
+p, li, td  {
+	
+	> kbd,
+	> code {
+	
+		font-size: 		inherit;
+		font-weight: 	normal;
+		
+		@include toggleDarkMode(color, $code-color, $code-color-dark);
+		@include toggleDarkMode(background, $code-background, $code-background-dark);
+		
+		border-radius: 	5px;
+		padding:		0 3px;
+		
+	}
+	
+}
+
+sup {
+	font-feature-settings:		$sup-font-feature-settings;
+	text-decoration: none;
+	margin-left: 2px;
+	
+	a {
+		text-decoration: none;
+		
+		&:hover {
+			text-decoration: $link-text-decoration-hover;
+		}
+		&:focus {
+			text-decoration: $link-text-decoration-focus;
+		}
+	}
+}
+
+blockquote {
+	@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
+	padding: 20px;
+	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+	
+	p {		
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+	
+	code, kbd {
+		font-family: $font-family;
+		@include toggleDarkMode(color, $code-color--blockquote, $code-color--blockquote-dark);	
+	}
+	
+	ul {
+		padding-left: $font-size--p--xs * 1.5;
+	}
+	ol {
+		
+		padding-left: $font-size--p--xs * 2.5;
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+	
+	p ~ ol, 
+	p ~ ul {
+		margin-top: -1 * $font-size--p--xs;
+		padding-bottom: 0.5 * $font-size--p--xs;
+	}
+	
+}
+	
+strong, b,dt {
+	font-weight: 	bold;
+}
+
+em, i {
+	font-style: 	italic;
+}
+
+u {
+	text-decoration: underline;
+}
+
+center {
+	text-align: center;
 }
 
 h1 {
@@ -108,4 +227,78 @@ h5 {
 	@include toggleSizes(font-size, $font-size--h5--xs, $font-size--h5--sm, $font-size--h5--md, $font-size--h5--lg, $font-size--h5--xl);
 	@include toggleSizes(line-height, $line-height--h5--xs, $line-height--h5--sm, $line-height--h5--md, $line-height--h5--lg, $line-height--h5--xl);
 	@include toggleSizes(padding, $padding--h5--xs, $padding--h5--sm, $padding--h5--md, $padding--h5--lg, $padding--h5--xl);
+}
+
+h2 + h3 {
+	padding-top: 0 !important;
+}
+h3 + h4 {
+	margin: 0;
+	padding-top: 0 !important;
+}
+
+pre {
+	display: block;
+	position: relative;
+	
+	overflow-x: scroll;
+	
+	@include toggleDarkMode(color, $code-color, $code-color-dark);
+	@include toggleDarkMode(background, $code-background, $code-background-dark);
+	
+	font-family: $font-family;
+	
+	padding: $font-size--p--xs;
+	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+	
+	code {
+		@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+		@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
+	}
+	
+	background: 	none;
+	
+}
+
+table {
+	width: 		100%;
+	border-collapse: collapse;
+	
+	@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+	@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
+	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+	
+	tr {
+		@include toggleDarkMode(border-bottom, 1px solid $gray-200, 1px solid $gray-800);
+
+		&:last-child {
+			border-bottom: none !important;
+		}
+	}
+	
+	th, td {
+		padding: 5px 10px;
+		vertical-align: top;
+		
+		@include toggleDarkMode(border-left, 1px solid $gray-200, 1px solid $gray-800);
+		
+		&:first-child {
+			border-left: none;
+		}
+	}
+	
+	thead, 
+	tfoot {
+		@extend strong;
+		text-align: left;
+	}
+	
+	thead {
+		@include toggleDarkMode(border-bottom, 2px solid $black, 2px solid $white);
+	}
+	
+	tfoot {
+		@include toggleDarkMode(border-top, 2px solid $black, 2px solid $white);
+	}
+	
 }
