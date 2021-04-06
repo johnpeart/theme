@@ -181,3 +181,65 @@ $code-backround-dark:				$gray-700;
 // --------------------------------------//
 // --------------------------------------//
 
+// TEXT SIZES
+
+// PARAGRAPH TEXT
+// Applies to 'p' and equivalent text
+// Size
+$font-size--p--xs:		22px;
+$font-size--p--sm:		22px;
+$font-size--p--md:		22px;
+$font-size--p--lg:		26px;
+$font-size--p--xl:		30px;
+// Line height
+$line-height--p--xs:	1.25;
+$line-height--p--sm:	1.25;
+$line-height--p--md:	1.25;
+$line-height--p--lg:	1.25;
+$line-height--p--xl:	1.2;
+// Padding (bottom spacing)
+$padding--p--xs:		0 0 $font-size--p--xs 0;
+$padding--p--sm:		0 0 $font-size--p--sm 0;
+$padding--p--md:		0 0 $font-size--p--md 0;
+$padding--p--lg:		0 0 $font-size--p--lg 0;
+$padding--p--xl:		0 0 $font-size--p--xl 0;
+
+// FOOTER TEXT
+// Applies to text inside the Footer
+// Size
+$font-size--footer--p--xs:		18px;
+$font-size--footer--p--sm:		18px;
+$font-size--footer--p--md:		18px;
+$font-size--footer--p--lg:		20px;
+$font-size--footer--p--xl:		24px;
+// Line height
+$line-height--footer--p--xs:	1.25;
+$line-height--footer--p--sm:	1.25;
+$line-height--footer--p--md:	1.25;
+$line-height--footer--p--lg:	1.25;
+$line-height--footer--p--xl:	1.2;
+// Padding (bottom spacing)
+$padding--footer--p--xs:		0 0 ($font-size--footer--p--xs * 0.5) 0;
+$padding--footer--p--sm:		0 0 ($font-size--footer--p--sm * 0.5) 0;
+$padding--footer--p--md:		0 0 ($font-size--footer--p--md * 0.5) 0;
+$padding--footer--p--lg:		0 0 ($font-size--footer--p--lg * 0.5) 0;
+$padding--footer--p--xl:		0 0 ($font-size--footer--p--xl * 0.5) 0;
+
+// --------------------------------------//
+// --------------------------------------//
+// --------------------------------------//
+
+// FORM ELEMENTS
+
+$touch-target-size:                 44px;
+
+$input-size:                       	40px;
+$border-width-form-element:         3px;
+$border-focus-width:                1px;
+$input-border-color:                $black;
+$input-error-color:                 $red;
+$input-focus-color:                 $brand;
+$input-padding:                     5px;
+
+$radios-size:                       40px;
+$radios-label-padding-left-right:   20px;
