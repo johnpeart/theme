@@ -1,0 +1,8 @@
+{
+  "editor.default_syntax" : "scss",
+  "workspace.color" : 7,
+  "workspace.name" : "Theme",
+  "workspace.preview_root" : ".",
+  "workspace.preview_type" : "custom",
+  "workspace.preview_url" : "localhost:4000\/"
+}

@@ -1,0 +1,95 @@
+---
+layout: blog/page
+---
+
+{% for entry in site.data.about %}
+
+<section>
+	
+	<header>	
+		<h2 class="about-header about-{{ entry.section | slugify }}">{{ entry.section | smartify }}</h2>
+	</header>
+			
+	{% for entry in entry.organisations %}
+	
+		{% if entry.hidden != true %}
+		
+		<article>
+		<h3 class="about-organisation"><a href="{{ entry.url }}" title="Visit {{ entry.organisation | smartify }}’s website (Opens in new window)" target="_blank" rel="noopener noreferrer">{{ entry.organisation | smartify }}</a></h3>
+		
+		{% if entry.start %}
+			{% if entry.end == "present" %}
+			<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
+			{% else %}
+			<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
+			{% endif %}
+		{% endif %}
+		
+		{% for entry in entry.jobs %}
+			
+			{% if entry.hidden != true %}
+			
+			<article class="about-job-entry">
+				{% if entry.notes %}
+				{% assign entrytitle = entry.title | slugify %}
+				<button id="about-button--{{ entrytitle }}" aria-controls="about-details--{{ entrytitle }}" aria-expanded="false" class="about-job-entry--header expand-button">
+					<header>
+						<h4 class="about-job-title">
+							{% for entry in entry.notes %}<span class="about-job-title--label">{% endfor %}
+							{{ entry.title | smartify }}
+							{% for entry in entry.notes %}</span>{% endfor %}
+						</h4>
+						{% if entry.end == "present" %}
+						<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
+						{% else %}
+						<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
+						{% endif %}
+					</header>
+				</button>
+				{% else %}
+				<header class="about-job-entry--header">
+					<h4 class="about-job-title">
+						{% for entry in entry.notes %}<span class="about-job-title--label">{% endfor %}
+						{{ entry.title | smartify }}
+						{% for entry in entry.notes %}</span>{% endfor %}
+					</h4>
+					{% if entry.end == "present" %}
+					<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
+					{% else %}
+					<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
+					{% endif %}
+				</header>
+				{% endif %}
+				
+				{% for entry in entry.notes %}
+				<section id="about-details--{{ entrytitle }}" aria-labelledby="about-button--{{ entry-title }}" class="about-details">
+				{{ entry.description | markdownify }}
+	
+				{% if entry.projects %}
+				<ul class="about-job-projects">
+					<h5 class="about-job-projects">Major projects and publications</h5>
+				{% for entry in entry.projects %}
+					{% if entry.url %}
+					<li><a href="{{ entry.url }}" title="Read more about {{ entry.project }} (Opens in new window)" target="_blank" rel="noopener noreferrer">{{ entry.project | smartify }}</a></li>
+					{% else %}
+					<li>{{ entry.project | smartify }}</li>
+					{% endif %}
+				{% endfor %}
+				</ul>
+				{% endif %}
+				</section>
+				{% endfor %}
+			</article>
+				
+			{% endif %}
+		
+		{% endfor %}
+		</article>
+		
+		{% endif %}
+		
+	{% endfor %}
+	
+</section>
+
+{% endfor %}

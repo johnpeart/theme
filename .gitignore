@@ -1,0 +1,12 @@
+*.sass-cache
+_config.yml
+index.md
+Gemfile.lock
+*_site
+*.DS_Store
+*_posts
+/about
+/projects
+/writing
+404.html
+/_data/about*

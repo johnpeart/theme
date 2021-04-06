@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<main id="content" class="container">
+						
+	<article id="post-content">
+		
+		<header class="post-title">
+
+			<h1 class="post-title">{{ page.title | smartify }}</h1>			
+
+		</header>
+
+		<section class="post-body">
+			
+			{{ content }}
+				
+		</section>
+		
+		
+		<footer class="post-meta">
+							
+			<aside class="post-meta">
+				
+				<dl class="meta-data">
+					
+					<dt class="post-date">Published:</dt><dd>{{ page.date | date: '%-d %B %Y' }}</dd>
+			
+					{% if page.categories %}
+					<dt class="post-categories">Categories:</dt>
+					<dd>{% for categories in page.categories %}{{ categories }}{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
+					{% endif %}
+				
+				</dl>
+				
+			</aside>
+		
+		</footer>
+		
+	</article>
+	
+</main>
+
+{% include footer.html %}

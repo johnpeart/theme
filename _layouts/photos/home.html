@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<main id="content" class="container">
+				
+	<section id="page-content">
+
+		<h1 class="page-title">{{ site.title | smartify }}</h1>
+
+		{{ content }}
+		
+		{% for post in paginator.posts %}
+		<article class="photostream grid-item">
+			<a href="{{ post.url }}" title="View {{ post.title }}" class="grid-link"
+				style="background: url('{{ site.url | append: site.baseurl | append: '/assets/images/photos/' | append: post.image }}')">
+				<p class="grid-caption">{{ post.title }}</p>
+			</a>
+		</article>
+		{% endfor %}
+								
+	</section>
+	
+	{% if paginator.total_pages > 1 %}
+	<nav class="pagination" role="navigation">
+		{% if paginator.previous_page %}
+		<p class="page--next-prev--prev">
+			<a class="page--next-prev--label" href="{{ paginator.previous_page_path | relative_url }}" title="Go to previous page">← Newer posts</a>
+		</p>
+		{% else %}
+		<p class="page--next-prev--prev-blank">
+		</p>  
+		{% endif %}
+	
+	
+		{% if paginator.next_page %}
+		<p class="page--next-prev--next">
+			<a class="page--next-prev--label" href="{{ paginator.next_page_path | relative_url }}" title="Go to next page">Older posts →</a>
+		</p>  
+		{% else %}
+		<p class="page--next-prev--prev-blank">
+		</p>  
+		{% endif %}
+	</nav>
+	{% endif %}
+	
+</main>
+
+{% include footer.html %}

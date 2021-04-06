@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<main id="content" class="container">
+				
+	<section id="page-content">
+
+		<h1 class="page-title">{{ page.title | smartify }}</h1>
+
+		<article>
+			
+			<img src="{{ site.url | append: site.baseurl | append: '/assets/images/photos/' | append: page.image }}" class="photo">
+			
+			<section class="photo-description">
+			{{ content }}
+			</section>
+			
+			<dl>
+				<span class="dl-item">
+				<dt>Date taken:</dt>
+				<dd>{{ page.date | date: "%d %B %Y" }}</dd>
+				</span>
+				
+				{% for EXIF in page.EXIF %}
+					
+					<span class="dl-item">
+					{% if EXIF.camera != "" %}
+					<dt>Camera:</dt>
+					<dd>{{ EXIF.camera }}</dd>
+					{% endif %}
+					</span>
+					
+					<span class="dl-item">
+					{% if EXIF.apeture != "" %}
+					<dt>Apeture:</dt>
+					<dd>{{ EXIF.apeture | prepend: "ƒ/"}}</dd>
+					{% endif %}
+					</span>
+					
+					<span class="dl-item">
+					{% if EXIF.shutter != "" %}
+					<dt>Shutter speed:</dt>
+					{% if EXIF.shutter < 1 %}
+					<dd>{{ 1 | divided_by: EXIF.shutter | round: 0  | prepend: '1/' }}</dd>
+					{% else %}
+					<dd>{{ EXIF.shutter | round: 0 | append: '”' }}</dd>
+					{% endif %}
+					{% endif %}
+					</span>
+					
+					<span class="dl-item">
+					{% if EXIF.focallength != "" %}
+					<dt>Focal length:</dt>
+					<dd>{{ EXIF.focallength | append: "mm" }}</dd>
+					{% endif %}
+					</span>
+					
+					<span class="dl-item">
+					{% if EXIF.iso != "" %}
+					<dt>ISO:</dt>
+					<dd>{{ EXIF.iso }}</dd>
+					{% endif %}
+					</span>
+					
+				{% endfor %}
+			
+			</dl>
+		
+		</article>
+							
+	</section>
+	
+</main>
+
+{% include footer.html %}

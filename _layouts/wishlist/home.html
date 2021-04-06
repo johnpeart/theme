@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<main id="content" class="container">
+				
+	<section id="page-content">
+
+		<h1 class="site-heading">Wishlist</h1>
+		
+		<aside class="intro-text">
+			
+			{{ content }}
+			
+		</aside>
+
+		{% assign wishlists = site.data.wishlist | sort: 'list' %}
+		{% for wishlist in wishlists %}
+		
+		<section>
+			
+			<h2>{{ wishlist.list | smartify }}</h2>
+			{% if wishlist.description %}
+			<p>{{ wishlist.description | smartify }}</p>
+			{% endif %}
+			
+			<ul>
+			{% assign wishlistitems = wishlist.items | sort: 'price' %}
+			{% for item in wishlistitems %}
+				
+				{% if item.purchased == false %}
+				<li class="wishlist-item">
+					<div class="item-info">
+						<span class="item-name">{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</span>
+						{% if item.extra-details %}
+						<span class="item-extradetails">{{ item.extra-details | smartify }}</span>
+						{% endif %}
+					</div>
+					<aside class="item-metadata">
+						{% if item.gift-idea == true %}
+						<span class="item-giftidea">Gift idea</span>
+						{% endif %}
+						{% if item.price == 0.00 %}
+						<span class="item-price">Varies</span>
+						{% else %}
+						<span class="item-price">{{ item.price | round | prepend: "£" }}</span>
+						{% endif %}
+					</aside>
+				</li>
+				{% elsif item.purchased == true %}
+				<li class="wishlist-item item-purchased hidden">
+					<div class="item-info">
+						<span class="item-name">{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</span>
+						{% if item.extra-details %}
+						<span class="item-extradetails">{{ item.extra-details | smartify }}</span>
+						{% endif %}
+					</div>
+					<aside class="item-metadata">
+						<span class="item-purchased">Purchased</span>
+						{% if item.price == 0.00 %}
+						<span class="item-price">Varies</span>
+						{% else %}
+						<span class="item-price">{{ item.price | round | prepend: "£" }}</span>
+						{% endif %}
+					</aside>
+				</li>
+				{% endif %}
+				
+			{% endfor %}
+			</ul>
+			
+		</section>
+		
+		
+		{% endfor %}
+		
+		<fieldset id="toggle-purchased">
+			<legend>Toggle purchased items</legend>
+			
+			<div class="radio-input">
+				<input type="radio" onChange="togglePurchased();" name="toggle-purchased" id="show-purchased" value="show">
+				<label for="show-purchased">Show</label>
+			</div>
+			
+			<div class="radio-input">
+				<input type="radio" onChange="togglePurchased();" name="toggle-purchased" id="hide-purchased" value="hide" checked>
+				<label for="hide-purchased">Hide</label>
+			</div>
+			
+		</fieldset>
+							
+	</section>
+	
+</main>
+
+{% include footer.html %}

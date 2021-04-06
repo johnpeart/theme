@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="0 0 42 38" width="42" height="38">
+  <defs>
+    <clipPath id="inner_stroke_clip_path">
+      <path d="M -35527137e-22 0 L 42 0 L 42 7 L -35527137e-22 7 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_2">
+      <path d="M -35527137e-22 15.5 L 42 15.5 L 42 22.5 L -35527137e-22 22.5 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_3">
+      <path d="M 0 31 L 42 31 L 42 38 L 0 38 Z"/>
+    </clipPath>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.12.1 
+    <dc:date>2020-01-05 14:28:07 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" fill="none" stroke-dasharray="none" stroke-opacity="1" fill-opacity="1" stroke="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Group_2">
+        <title>nav</title>
+        <g id="Group_3">
+          <title>nav: Layer 1</title>
+          <g id="Group_8">
+            <title>Graphic_8</title>
+            <g id="Graphic_9">
+              <rect x="-35527137e-22" y="0" width="42" height="7" fill="black"/>
+              <rect x="-35527137e-22" y="0" width="42" height="7" stroke="black" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1" clip-path="url(#inner_stroke_clip_path)"/>
+            </g>
+          </g>
+          <g id="Group_6">
+            <title>Graphic_9</title>
+            <g id="Graphic_7">
+              <rect x="-35527137e-22" y="15.5" width="42" height="7" fill="black"/>
+              <rect x="-35527137e-22" y="15.5" width="42" height="7" stroke="black" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1" clip-path="url(#inner_stroke_clip_path_2)"/>
+            </g>
+          </g>
+          <g id="Group_4">
+            <title>Graphic_10</title>
+            <g id="Graphic_5">
+              <rect x="0" y="31" width="42" height="7" fill="black"/>
+              <rect x="0" y="31" width="42" height="7" stroke="black" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1" clip-path="url(#inner_stroke_clip_path_3)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

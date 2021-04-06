@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<main id="content" class="container">
+                
+    <section id="page-content">
+
+        <h1 class="site-heading">Manuals</h1>
+        
+        <aside class="intro-text">
+            
+            {{ content }}
+            
+        </aside>
+
+        <section>
+            <ul class="manuals-loop">
+            
+                {% for guide in site.guides %}
+                <li class="guide">
+                    <div class="guide-info">
+                        <span class="guide-name"><a href="{{ site.url | append: site.baseurl | append: guide.url }}">{{ guide.title | smartify }}</a></span>
+                        <span class="guide-excerpt">{{ guide.excerpt | smartify }}</span>
+                    </div>
+                    <aside class="guide-metadata">
+                        <span class="guide-builddate">{{ guide.date | date: "%b %Y" }}</span>
+                    </aside>
+                </li>
+                {% endfor %}
+                
+            </ul>
+        </section>
+                 
+    </section>
+    
+</main>
+
+{% include footer.html %}

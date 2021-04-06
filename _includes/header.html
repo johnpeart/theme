@@ -1,0 +1,58 @@
+<header id="site-header">
+	
+	<nav role="navigation" class="container">
+		<div class="header-align-left">
+			<p class="header-wordmark"><a href="//johnpe.art/">John Peart</a></p>
+		</div>
+		
+		{% if site.header != false %}
+	
+		<button id="header-menu-toggle" onclick="toggleMenu()">
+				
+				<svg id="header-menu-toggle-image" class="" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="0 0 42 38" width="42" height="38">
+				  <defs/>
+			          <g id="bar1">
+			            <title>Bar</title>
+			            <g id="Graphic_9">
+			              <rect x="-35527137e-22" y="0" width="42" height="7" fill="black"/>
+			            </g>
+			          </g>
+			          <g id="bar2">
+			            <title>Bar</title>
+			            <g id="Graphic_7">
+			              <rect x="-35527137e-22" y="15.5" width="42" height="7" fill="black"/>
+			            </g>
+			          </g>
+			          <g id="bar2">
+			            <title>Bar</title>
+			            <g id="Graphic_5">
+			              <rect x="0" y="31" width="42" height="7" fill="black"/>
+			            </g>
+			          </g>
+				</svg>
+
+				<span class="sr-only">Menu</span>
+		</button>
+		
+		<div id="header-menu-links" class="header-align-right">
+			<ul class="header-menu">
+				{% if site.data.header-menu %}
+					{% for menuitem in site.data.header-menu %}
+					<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
+					{% endfor %}
+				{% else %}
+					<li class="header-link"><a href="//johnpe.art/writing">Writing</a></li>
+					
+					<li class="header-link"><a href="//photos.johnpe.art">Photos</a></li>
+					
+					<li class="header-link"><a href="//projects.johnpe.art">Projects</a></li>
+										
+					<li class="header-link"><a href="//johnpe.art/about">About me</a></li>
+				{% endif %}
+			</ul>
+		</div>
+		
+		{% endif %}
+	</nav>
+	
+</header>
