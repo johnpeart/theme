@@ -1,0 +1,152 @@
+body[id$='post'] {
+
+	section.post-body > p:first-of-type {
+	
+	}
+	
+	section.post-body ul > li::before {
+		
+	}
+	
+	#markdown-toc {
+		
+		&:before {
+			@extend		h2;
+			display: 	block;
+			padding: 	0 20px 20px;
+			content:	"Contents";
+		}
+		
+		@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
+		padding:	20px;
+		
+		> li {
+			> a {
+				font-weight: bold;
+			}
+			
+			&::before {
+				display: none !important;
+			}
+		}
+		
+	}
+	
+	ul#markdown-toc {
+		
+		> li > ul {
+				
+			padding-left: 0;
+			margin: 0;
+			
+			li {
+				@include toggleSizes(padding-left, 0, 0, 15px, 15px, 15px);
+				margin: 0;
+				
+				&::before {
+					
+					position: relative;
+					@include toggleSizes(display, none, none, inline-block, inline-block, inline-block);
+					@include toggleSizes(left, 0, 0, -15px, -15px, -15px);
+	
+				}
+			}
+			
+		}
+		
+	}
+	
+	ol#markdown-toc {
+		
+		list-style-type: none;
+		
+		> li > ol {
+			padding-left: 50px;
+			margin: 0;
+		}
+		
+		li:last-child > ol {
+			padding-bottom: 11px;
+		}
+		
+	}
+	
+	div.twitter-tweet {
+
+		margin-left: auto;
+		margin-right: auto;
+
+		-webkit-font-feature-settings: 	normal !important;
+		   -moz-font-feature-settings: 	normal !important;
+			   -o-font-feature-settings: 	normal !important;
+				font-feature-settings:	normal !important;
+
+		@include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+	}
+	
+	div.footnotes {
+		
+		&:before {
+			display: block;
+			
+			@include toggleSizes(font-size, $font-size--h3--xs, $font-size--h3--sm, $font-size--h3--md, $font-size--h3--lg, $font-size--h3--xl);
+			@include toggleSizes(line-height, $line-height--h3--xs, $line-height--h3--sm, $line-height--h3--md, $line-height--h3--lg, $line-height--h3--xl);
+			@include toggleSizes(padding, $padding--h3--xs, $padding--h3--sm, $padding--h3--md, $padding--h3--lg, $padding--h3--xl);
+			
+			font-weight:			$font-weight--h3;
+			font-style: 			$font-style-h3; 
+			text-align: 			$text-align--h3;		
+			text-decoration: 	$text-decoration--h3;
+			text-transform: 		$text-transform--h3;
+			
+			content: "Footnotes";
+			
+		}
+		
+		@include toggleSizes(padding-top, 45px, 60px, 60px, 90px, 120px)
+		@include toggleSizes(max-width, 400px, 500px, 450px, 600px, 600px);
+
+		ul, ol {
+			@include toggleSizes(padding-left, ($font-size--p--xs * 1.6), ($font-size--p--sm * 1.6), 0, 0, 0);
+		}
+		p, li {		
+			@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
+		}
+
+		
+	}
+	
+	footer.post-meta {
+		@include toggleSizes(padding-top, 45px, 60px, 60px, 90px, 120px);
+		@include toggleSizes(max-width, 400px, 500px, 450px, 600px, 600px);
+		
+		p, dl, dt, dd {
+			@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
+			@include toggleSizes(padding-bottom, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
+		}
+		dl {
+			@include clearfix;
+		}		
+		dt, dd {
+			display: 	inline-block;
+		}
+		dt {
+			@include toggleSizes(width, 40%, 25%, 25%, 25%, 25%);
+			float: 			left;
+			font-weight: 	bold;	
+		}
+		dd {
+			text-transform: capitalize;
+			@include toggleSizes(width, 60%, 75%, 75%, 75%, 75%);
+		}
+	}
+	
+	
+	
+	iframe {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+}
