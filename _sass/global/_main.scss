@@ -27,3 +27,14 @@ body {
 	@include toggleDarkMode(background, $body-background, $body-background-dark);
 	@include toggleDarkMode(color, $body-color, $body-color-dark);
 }
+
+main {
+	@include toggleSizes(
+		min-height, 
+		80vh, 
+		80vh, 
+		80vh, 
+		80vh, 
+		80vh
+	);
+}
