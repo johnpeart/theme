@@ -179,6 +179,29 @@ ul#header-menu-items {
 		@include toggleSizes(line-height, $line-height--header-menu--xs, $line-height--header-menu--sm, $line-height--header-menu--md, $line-height--header-menu--lg, $line-height--header-menu--xl);	
 		@include toggleSizes(padding, $padding--header-menu--xs, $padding--header-menu--sm, $padding--header-menu--md, $padding--header-menu--lg, $padding--header-menu--xl);
 	}
+	
+	a {
+		&:link {
+			@include toggleDarkMode(color, $cyan, $cyan);
+			text-decoration: none;
+		}
+		&:visited {
+			@include toggleDarkMode(color, $cyan, $cyan);
+			text-decoration: none;
+		}
+		&:hover {
+			@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
+			text-decoration: 	underline;	
+		}
+		&:focus {
+			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
+			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
+			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+		}
+		&:active {
+			text-decoration: 	$link-text-decoration-active;
+		}
+	}
 }
 
 header#site-header {
