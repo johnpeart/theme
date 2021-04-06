@@ -48,9 +48,6 @@ li {
 
 li {
 	padding-bottom: 0;
-	&:last-child {
-		@include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
-	}
 }
 
 ul {

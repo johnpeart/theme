@@ -1,11 +1,15 @@
 body[id$='post'] {
 
 	section.post-body > p:first-of-type {
-	
+		font-weight: bold;
+		@include toggleSizes(font-size, ($font-size--p--xs * 1.1), ($font-size--p--sm * 1.25), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.25));
 	}
 	
 	section.post-body ul > li::before {
-		
+		position: absolute;
+		content: "\2014";
+
+		@include toggleSizes(left, $font-size--p--xs, -($font-size--p--sm / 2), -($font-size--p--md / 2), -($font-size--p--lg / 2), -($font-size--p--xl / 2));
 	}
 	
 	#markdown-toc {
@@ -109,10 +113,12 @@ body[id$='post'] {
 		ul, ol {
 			@include toggleSizes(padding-left, ($font-size--p--xs * 1.6), ($font-size--p--sm * 1.6), 0, 0, 0);
 		}
-		p, li {		
+		li, p {		
 			@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
 		}
-
+		p {	
+			@include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+		}
 		a.reversefootnote {
 			text-decoration: none;
 			font-family: $font-family !important;

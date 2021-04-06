@@ -1,4 +1,6 @@
 header#site-header {
+	display: block;
+	position: relative;
 	@include toggleDarkMode(background, $header-background, $header-background-dark);
 }
 	

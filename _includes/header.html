@@ -20,7 +20,7 @@
 				</svg>
 				<span class="sr-only">Menu</span>
 		</button>
-		<ul id="header-menu-items" class="closed">
+		<ul id="header-menu-items" class="closed" aria-expanded="false">
 			{% if site.data.header-menu %}
 				{% for menuitem in site.data.header-menu %}
 				<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
