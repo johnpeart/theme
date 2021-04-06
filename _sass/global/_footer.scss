@@ -1,7 +1,7 @@
 footer#site-footer {
 	@include toggleDarkMode(background, $footer-background, $footer-background-dark);
-	@include toggleSizes(padding-top, 60px, 90px, 90px, 120px, 120px);
-	@include toggleSizes(padding-bottom, 45px, 45px, 60px, 60px, 60px);
+	@include toggleSizes(padding-top, $footer--padding-top--xs, $footer--padding-top--sm, $footer--padding-top--md, $footer--padding-top--lg, $footer--padding-top--xl);
+	@include toggleSizes(padding-bottom, $footer--padding-bottom--xs, $footer--padding-bottom--sm, $footer--padding-bottom--md, $footer--padding-bottom--lg, $footer--padding-bottom--xl);
 }
 
 aside#footer--wordmark {

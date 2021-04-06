@@ -31,10 +31,10 @@ body {
 main {
 	@include toggleSizes(
 		min-height, 
-		80vh, 
-		80vh, 
-		80vh, 
-		80vh, 
-		80vh
+		calc(100vh - #{$header-min-height--small} - #{$footer--padding-top--xs}), 
+		calc(100vh - #{$header-min-height} - #{$footer--padding-top--sm}),
+		calc(100vh - #{$header-min-height} - #{$footer--padding-top--md}),
+		calc(100vh - #{$header-min-height} - #{$footer--padding-top--lg}), 
+		calc(100vh - #{$header-min-height} - #{$footer--padding-top--xl})
 	);
 }

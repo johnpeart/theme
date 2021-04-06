@@ -114,12 +114,14 @@ $link-color--hover:					$brand;
 $link-color--focus:					$white;
 $link-background--focus:			$brand;
 $link-outline--focus:				2px $brand solid;
+$link-border--focus:				10px $white solid;
 // Dark mode
 $link-color-dark:					$white;
 $link-color--hover-dark:			$brand;
 $link-color--focus-dark:			$white;
 $link-background--focus-dark:		$brand;
 $link-outline--focus-dark:			2px $brand solid;
+$link-border--focus-dark:			10px $black solid;
 
 // HEADER LINK COLOURS AND DECORATION
 $header-link-font-weight:				normal;
@@ -185,6 +187,20 @@ $code-backround-dark:				$gray-700;
 $header-min-height: 		70px;
 $header-min-height--small: 	56px;
 
+// FOOTER PADDING
+// Top
+$footer--padding-top--xs:	60px;
+$footer--padding-top--sm:	90px;
+$footer--padding-top--md:	90px;
+$footer--padding-top--lg:	120px;
+$footer--padding-top--xl:	120px;
+// Bottom
+$footer--padding-bottom--xs:	45px;
+$footer--padding-bottom--sm:	45px;
+$footer--padding-bottom--md:	60px;
+$footer--padding-bottom--lg:	60px;
+$footer--padding-bottom--xl:	60px;
+
 // --------------------------------------//
 // --------------------------------------//
 // --------------------------------------//
@@ -213,7 +229,7 @@ $padding--p--lg:		0 0 $font-size--p--lg 0;
 $padding--p--xl:		0 0 $font-size--p--xl 0;
 
 // HEADER WORDMARK TEXT
-// Applies to text inside the Footer
+// Applies to the Wordmark only (smaller for the normal links)
 // Size
 $font-size--header-wordmark--xs:	30px;
 $font-size--header-wordmark--sm:	30px;
@@ -232,6 +248,27 @@ $padding--header-wordmark--sm:		(($header-min-height - $font-size--header-wordma
 $padding--header-wordmark--md:		(($header-min-height - $font-size--header-wordmark--md) * 0.5) 0;
 $padding--header-wordmark--lg:		(($header-min-height - $font-size--header-wordmark--lg) * 0.5) 0;
 $padding--header-wordmark--xl:		(($header-min-height - $font-size--header-wordmark--xl) * 0.5) 0;
+
+// HEADER NAV TEXT
+// Applies to text inside the Header nav items
+// Size
+$font-size--header-menu--xs:	26px;
+$font-size--header-menu--sm:	22px;
+$font-size--header-menu--md:	22px;
+$font-size--header-menu--lg:	26px;
+$font-size--header-menu--xl:	30px;
+// Line height
+$line-height--header-menu--xs:	1;
+$line-height--header-menu--sm:	1;
+$line-height--header-menu--md:	1;
+$line-height--header-menu--lg:	1;
+$line-height--header-menu--xl:	1;
+// Padding (bottom spacing)
+$padding--header-menu--xs:		(($header-min-height--small - $font-size--header-menu--xs) * 0.5) 0;
+$padding--header-menu--sm:		0 0 (($header-min-height - $font-size--header-menu--sm) * 0.5) 0;
+$padding--header-menu--md:		0 0 (($header-min-height - $font-size--header-menu--md) * 0.5) 0;
+$padding--header-menu--lg:		0 0 (($header-min-height - $font-size--header-menu--lg) * 0.5) 0;
+$padding--header-menu--xl:		0 0 (($header-min-height - $font-size--header-menu--xl) * 0.5) 0;
 
 // FOOTER TEXT
 // Applies to text inside the Footer
@@ -273,8 +310,8 @@ $line-height--display--xl:	1;
 $padding--display--xs:		($font-size--display--xs * 1.25) 0 ($font-size--display--xs * 0.1) 0;
 $padding--display--sm:		($font-size--display--sm * 1.25) 0 ($font-size--display--sm * 0.1) 0;
 $padding--display--md:		($font-size--display--md * 1.25) 0 ($font-size--display--md * 0.1) 0;
-$padding--display--lg:		($font-size--display--lg * 1.25) 0 ($font-size--display--lg * 0.1) 0;
-$padding--display--xl:		($font-size--display--xl * 1.25) 0 ($font-size--display--xl * 0.1) 0;
+$padding--display--lg:		($font-size--display--lg * 1.5) 0 ($font-size--display--lg * 0.1) 0;
+$padding--display--xl:		($font-size--display--xl * 1.5) 0 ($font-size--display--xl * 0.1) 0;
 
 // HEADING 1 TEXT
 // Applies to 'h1' and equivalent text

@@ -1,7 +1,9 @@
 function toggleMenu() {
-  var menu = document.getElementById("header-menu-links");
+  var menu = document.getElementById("header-menu-toggle");
   menu.classList.toggle("open");
+  menu.classList.toggle("closed");
   
-  var menu = document.getElementById("header-menu-toggle-image");
+  var menu = document.getElementById("header-menu-items");
   menu.classList.toggle("open");
+  menu.classList.toggle("closed");
 }
