@@ -27,6 +27,17 @@ $container-padding: 	 			15px;
 // --------------------------------------//
 // --------------------------------------//
 
+// FONTS
+
+// Font face
+$font-family: 						"JP", ui-monospace, 'SFMono-Regular', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", Roboto, "Segoe UI", Arial, sans-serif !default;
+// Feature settings
+$font-feature-settings:				"ss02", "tnum", "liga", "zero", "kern";
+$sup-font-feature-settings:			"ss02", "tnum", "liga", "zero", "kern", "frac";
+
+// --------------------------------------//
+// --------------------------------------//
+// --------------------------------------//
 
 // COLOURS
 
