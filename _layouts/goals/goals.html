@@ -15,83 +15,74 @@ layout: default
 
 	{% if page.year %}
 	{% assign goalsdata = "goals-" | append: page.year %}
+	{% assign goalstitle = page.year %}
 	{% else %}
 	{% assign goalsdata = "goals-" | append: currentyear %}
+	{% assign goalstitle = currentyear %}
 	{% endif %}
 
 	<section id="page-content">
 
-		<h1 id="site-heading">{{ site.title }}</h1>
+		<h1 id="page-title">{{ goalstitle | prepend: "Goals for " }}</h1>
+
+		<ul id="goals-list">
 		
-		{% if page.year %}
-		{% if currentyear != page.year %}
+		{% for goals in site.data[goalsdata] %}
+								
+			<li>
+						
+				<h2>{{ goals.goal }}</h2>
+				<p class="lead">{{ goals.description }}</p>
 
-			<blockquote>
-				<p>These were my goals for {{ page.year }}.</p>
-			</blockquote>
-
-		{% endif %}
-		{% endif %}
-
-			<ul id="goals-list">
+				{% if goals.progress >= goals.max and goals.stretch  %}
+					<progress class="stretch-top" max="{{ goals.max }}" value="{{ goals.progress }}">
+						<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of an initial goal of <strong>{{ goals.max | remove: ".0" }}</strong></p>
+					</progress>
+					<progress class="stretch-bottom" max="{{ goals.stretch }}" value="{{ goals.progress | minus: goals.max | at_least: 0 }}">
+						<p><strong>{{ goals.progress | minus: goals.max | remove: ".0" | at_least: 0 }}</strong> out of a stretch goal of <strong>{{ goals.stretch | remove: ".0" }}</strong></p>
+					</progress>
+				{% else %}
+					<progress class="standard" max="{{ goals.max }}" value="{{ goals.progress }}">
+						<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of <strong>{{ goals.max | remove: ".0" }}</strong></p>
+					</progress>
+				{% endif %}
+						
+				{% if goals.comment != "" %}<p>{{ goals.comment }}</p>{% endif %}
 			
-				{% for goals in site.data[goalsdata] %}
-										
-					<li>
-								
-						<h2>{{ goals.goal }}</h2>
-						<p class="lead">{{ goals.description }}</p>
-
-						{% if goals.progress >= goals.max and goals.stretch  %}
-							<progress class="stretch-top" max="{{ goals.max }}" value="{{ goals.progress }}">
-								<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of an initial goal of <strong>{{ goals.max | remove: ".0" }}</strong></p>
-							</progress>
-							<progress class="stretch-bottom" max="{{ goals.stretch }}" value="{{ goals.progress | minus: goals.max | at_least: 0 }}">
-								<p><strong>{{ goals.progress | minus: goals.max | remove: ".0" | at_least: 0 }}</strong> out of a stretch goal of <strong>{{ goals.stretch | remove: ".0" }}</strong></p>
-							</progress>
-						{% else %}
-							<progress class="standard" max="{{ goals.max }}" value="{{ goals.progress }}">
-								<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of <strong>{{ goals.max | remove: ".0" }}</strong></p>
-							</progress>
-						{% endif %}
-								
-						{% if goals.comment != "" %}<p>{{ goals.comment }}</p>{% endif %}
+			</li>
 					
-					</li>
+			{% assign goalvalue = goals.progress | divided_by: goals.max | times: 100 %}
+			{% capture totalgoalmax %}{{ totalgoalmax | plus: goals.max | floor }}{% endcapture %}
+			{% capture totalgoalprogress %}{{ totalgoalprogress | plus: goals.progress }}{% endcapture %}
+			{% if goalvalue >= 80 %}
+				{% capture totalgoalpercentage %}{{ totalgoalpercentage | plus: 100 | floor }}{% endcapture %}
+			{% else %}
+				{% capture totalgoalpercentage %}{{ totalgoalpercentage | plus: goalvalue | floor }}{% endcapture %}
+			{% endif %}
+			{% capture goalno %}{{ goalno | plus: 1 }}{% endcapture %}
+		
+		{% endfor %}	
 							
-					{% assign goalvalue = goals.progress | divided_by: goals.max | times: 100 %}
-					{% capture totalgoalmax %}{{ totalgoalmax | plus: goals.max | floor }}{% endcapture %}
-					{% capture totalgoalprogress %}{{ totalgoalprogress | plus: goals.progress }}{% endcapture %}
-					{% if goalvalue >= 80 %}
-						{% capture totalgoalpercentage %}{{ totalgoalpercentage | plus: 100 | floor }}{% endcapture %}
-					{% else %}
-						{% capture totalgoalpercentage %}{{ totalgoalpercentage | plus: goalvalue | floor }}{% endcapture %}
-					{% endif %}
-					{% capture goalno %}{{ goalno | plus: 1 }}{% endcapture %}
-				
-				{% endfor %}	
-								
 
+			
+			<li class="totaliser">
+				<h2>Overall progress</h2>
+				<p class="lead">Goal completion</p>
+				<progress class="standard" max="100" value="{{ totalgoalpercentage | divided_by: goalno }}">
+					<p><strong>{{ totalgoalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</strong></p>
+				</progress>
+				<p>{{ totalgoalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</p>
 				
-				<li class="totaliser">
-					<h2>Overall progress</h2>
-					<p class="lead">Goal completion</p>
-					<progress class="standard" max="100" value="{{ totalgoalpercentage | divided_by: goalno }}">
-						<p><strong>{{ totalgoalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</strong></p>
-					</progress>
-					<p>{{ totalgoalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</p>
-					
-					{% if goalsdata contains currentyear %}
-					<p class="lead">Year to date</p>
-					<progress class="standard" max="365" value="{{ dayoftheyear }}">
-						<p>Day <strong>{{ dayoftheyear }}</strong> out of <strong>365</strong></p>
-					</progress>
-					<p>Progress against my goals was last updated on the {{ "now" | date: "%-d %B" }}.</p>
-					{% endif %}
-				</li>
-							
-			</ul>
-
+				{% if goalsdata contains currentyear %}
+				<p class="lead">Year to date</p>
+				<progress class="standard" max="365" value="{{ dayoftheyear }}">
+					<p>Day <strong>{{ dayoftheyear }}</strong> out of <strong>365</strong></p>
+				</progress>
+				<p>Progress against my goals was last updated on the {{ "now" | date: "%-d %B" }}.</p>
+				{% endif %}
+			</li>
+						
+		</ul>
 							
 	</section>
 	
