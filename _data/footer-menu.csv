@@ -1,8 +1,8 @@
-link,label,column
-//www.johnpe.art/about,About me
-//www.johnpe.art/writing,Writing
-//photos.johnpe.art,Photos
-//podcast.johnpe.art,Podcasts
-//goals.johnpe.art,Goals
-//www.johnpe.art/projects,Projects
-//manuals.johnpe.art,Manuals
+link,label
+/about,About me
+/writing,Writing
+/photos,Photos
+/podcast,Podcasts
+/goals,Goals
+/projects,Projects
+/manuals,Manuals

@@ -191,9 +191,9 @@ ul#header-menu-items {
 
 	li.header-link {
 		display: inline-block;
-		@include toggleSizes(width, 100%, auto, auto, auto, auto);
-		@include toggleSizes(margin-right, 0, 20px, 20px, 20px, 20px);
-		@include toggleSizes(min-height, $header-min-height--small, $header-min-height, $header-min-height, $header-min-height, $header-min-height);
+		@include toggleSizes(width, 100%, 100%, auto, auto, auto);
+		@include toggleSizes(margin-right, 0, 0, 20px, 20px, 20px);
+		@include toggleSizes(min-height, $header-min-height--small, $header-min-height--small, 0, 0, 0);
 		@include toggleSizes(font-size, $font-size--header-menu--xs, $font-size--header-menu--sm, $font-size--header-menu--md, $font-size--header-menu--lg, $font-size--header-menu--xl);
 		@include toggleSizes(line-height, $line-height--header-menu--xs, $line-height--header-menu--sm, $line-height--header-menu--md, $line-height--header-menu--lg, $line-height--header-menu--xl);	
 		@include toggleSizes(padding, $padding--header-menu--xs, $padding--header-menu--sm, $padding--header-menu--md, $padding--header-menu--lg, $padding--header-menu--xl);
