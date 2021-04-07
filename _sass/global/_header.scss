@@ -36,7 +36,6 @@ p#header--wordmark {
 	float: left;
 	padding: 0;
 	
-	@include toggleDarkMode(background, $header-background, $header-background-dark);
 	@include toggleSizes(width, calc(100% - #{$header-min-height--small}), calc(100% - #{$header-min-height}), calc(100% - #{$header-min-height}), calc(100% - #{$header-min-height}), calc(100% - #{$header-min-height}));
 	@include toggleSizes(min-height, $header-min-height--small, $header-min-height, $header-min-height, $header-min-height, $header-min-height);
 	@include toggleSizes(font-size, $font-size--header-wordmark--xs, $font-size--header-wordmark--sm, $font-size--header-wordmark--md, $font-size--header-wordmark--lg, $font-size--header-wordmark--xl);

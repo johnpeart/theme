@@ -8,13 +8,28 @@ layout: default
 				
 	<section id="page-content">
 
-		<h1 class="site-heading">Wishlist</h1>
+		<h1 class="page-title">Wishlist</h1>
 		
 		<aside class="intro-text">
 			
 			{{ content }}
 			
 		</aside>
+		
+		<fieldset id="toggle-purchased">
+			<legend>Toggle purchased items</legend>
+			
+			<div class="radio-input">
+				<input type="radio" name="toggle-purchased" id="show-purchased" value="show">
+				<label for="show-purchased">Show</label>
+			</div>
+			
+			<div class="radio-input">
+				<input type="radio" name="toggle-purchased" id="hide-purchased" value="hide" checked>
+				<label for="hide-purchased">Hide</label>
+			</div>
+			
+		</fieldset>
 
 		{% assign wishlists = site.data.wishlist | sort: 'list' %}
 		{% for wishlist in wishlists %}
@@ -33,9 +48,9 @@ layout: default
 				{% if item.purchased == false %}
 				<li class="wishlist-item">
 					<div class="item-info">
-						<span class="item-name">{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</span>
+						<p class="item-name">{% if item.link %}<a href="{{ item.link }}" class="item-link" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</p>
 						{% if item.extra-details %}
-						<span class="item-extradetails">{{ item.extra-details | smartify }}</span>
+						<p class="item-extradetails">{{ item.extra-details | smartify }}</p>
 						{% endif %}
 					</div>
 					<aside class="item-metadata">
@@ -52,9 +67,9 @@ layout: default
 				{% elsif item.purchased == true %}
 				<li class="wishlist-item item-purchased hidden">
 					<div class="item-info">
-						<span class="item-name">{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</span>
+						<p class="item-name">{% if item.link %}<a href="{{ item.link }}" class="item-link" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</p>
 						{% if item.extra-details %}
-						<span class="item-extradetails">{{ item.extra-details | smartify }}</span>
+						<p class="item-extradetails">{{ item.extra-details | smartify }}</p>
 						{% endif %}
 					</div>
 					<aside class="item-metadata">
@@ -75,21 +90,6 @@ layout: default
 		
 		
 		{% endfor %}
-		
-		<fieldset id="toggle-purchased">
-			<legend>Toggle purchased items</legend>
-			
-			<div class="radio-input">
-				<input type="radio" onChange="togglePurchased();" name="toggle-purchased" id="show-purchased" value="show">
-				<label for="show-purchased">Show</label>
-			</div>
-			
-			<div class="radio-input">
-				<input type="radio" onChange="togglePurchased();" name="toggle-purchased" id="hide-purchased" value="hide" checked>
-				<label for="hide-purchased">Hide</label>
-			</div>
-			
-		</fieldset>
 							
 	</section>
 	

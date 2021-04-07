@@ -1,0 +1,184 @@
+// Wishlist styles
+
+body#wishlist-home {
+		
+	section#page-content > section {
+		@include toggleSizes(padding-bottom, 0, 0, ($font-size--p--md * 1.5), ($font-size--p--lg * 1.5), ($font-size--p--xl * 1.5));
+		
+		@include clearfix;
+	}
+	
+	h1.page-title {
+		@include toggleSizes(font-size, ($font-size--h1--xs * 1.25), $font-size--h1--sm, $font-size--h1--md, ($font-size--h1--lg * 1.75), ($font-size--h1--xl * 1.5));
+		@include toggleSizes(padding-bottom, 15px, 30px, 45px, 45px, 45px);
+	}
+	
+	aside.intro-text {
+		
+		span.item-giftidea {
+			position: relative;
+			
+			color: $white;
+			background: $cyan;
+			
+			border: 1px solid $cyan;
+			border-radius: 6px;
+			
+			padding: 0px 7px;
+			text-transform: uppercase;
+			font-variant: small-caps !important;
+			font-size: 70%;
+			top: -5px;
+			vertical-align: middle;
+		}
+		
+	}
+	
+	ul {		
+		padding: 			0;
+		margin: 			0;
+		
+		list-style: 		none !important;
+		
+		li.wishlist-item {
+			
+			display: block;
+			&.hidden {
+				display: none;
+			}
+			
+			list-style: 	none;
+			padding: 		20px 0;
+						
+			box-sizing: 	border-box;
+			
+			@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
+			
+			div.item-info {
+				
+				display: block;
+				@include toggleSizes(float, none, left, left, left, left);
+				@include toggleSizes(clear, both, none, none, none, none);
+				@include toggleSizes(width, 100%, 70%, 70%, 70%, 70%);
+				
+			}
+			aside.item-metadata {
+				
+				display: block;
+				@include toggleSizes(float, none, right, right, right, right);
+				@include toggleSizes(clear, both, none, none, none, none);
+				@include toggleSizes(width, 100%, 30%, 30%, 30%, 30%);
+				@include toggleSizes(padding, 10px 0 0 0, 0, 0, 0, 0);
+				
+
+			}
+			
+			p.item-name,
+			p.item-extradetails {
+				display: block;
+				width: 100%;
+				padding-bottom: 0;
+			}
+			a.item-link {
+				&:link {
+					@include toggleDarkMode(color, $cyan, $cyan);
+					text-decoration: none;
+				}
+				&:visited {
+					@include toggleDarkMode(color, $cyan, $cyan);
+					text-decoration: none;
+				}
+				&:hover {
+					@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
+					text-decoration: 	underline;	
+				}
+				&:focus {
+					@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
+					@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
+					@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+				}
+				&:active {
+					text-decoration: 	$link-text-decoration-active;
+				}
+			}
+			p.item-name,
+			a.item-link {
+				font-weight: bold;
+			}
+			span.item-price {
+				margin-left: 20px;
+				float: right;
+			}
+			span.item-giftidea {
+				background: $brand;
+				border: 1px solid $brand;
+			}
+			span.item-purchased {
+				background: $green;
+				border: 1px solid $green;
+			}
+			span.item-giftidea,
+			span.item-purchased {
+				position: relative;
+				float: left;
+				color: $white;
+				border-radius: 6px;
+				padding: 7px;
+				text-transform: uppercase;
+				font-variant: small-caps !important;
+				@include toggleSizes(font-size, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5))
+				vertical-align: middle;
+			}
+			
+			@include clearfix;
+		}
+	}
+	
+	fieldset#toggle-purchased {
+		
+		@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
+		
+		padding: 15px 10px 10px;
+		
+		@include sm-up {
+			text-align: right;
+			padding: 20px;
+		}
+		
+		legend {
+			@extend p;
+			display: inline-block;
+			text-align: left;
+			float: left;
+			
+			font-weight: bold;
+			@include sm-up {
+				padding-bottom: 0;
+				margin-bottom: 0;
+			}
+		}
+		
+		div.radio-input {
+			
+			margin-bottom: 10px;
+			
+			@include sm-up {
+				display: inline-block;
+				margin-bottom: 0;
+			}
+			
+			label {
+				font-weight: normal;
+				vertical-align: middle;
+				
+				@include xs {
+					line-height: $input-size;
+				}
+			}
+		}
+		
+		@include clearfix;
+		
+	}
+	
+}
