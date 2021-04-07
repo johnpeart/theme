@@ -21,6 +21,51 @@ body#projects-home {
 		}
 	}
 	
+	article.project-entry {
+		@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
+		@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
+	}
+				
+	h3.project-name {
+		
+		font-weight: 		$font-weight--h3;
+		font-style: 		normal;
+		text-align: 		left;
+		text-decoration: 	$text-decoration--h3;
+		text-transform: 	$text-transform--h3;
+		padding: 			0;
+		
+		@include toggleSizes(font-size, $font-size--h3--xs, $font-size--h3--sm, $font-size--h3--md, $font-size--h3--lg, $font-size--h3--xl);
+		@include toggleSizes(line-height, $line-height--h3--xs, $line-height--h3--sm, $line-height--h3--md, $line-height--h3--lg, $line-height--h3--xl);
+		
+	}
+	
+	a.project-url {
+		&:link {
+			@include toggleDarkMode(color, $cyan, $cyan);
+			text-decoration: none;
+		}
+		&:visited {
+			@include toggleDarkMode(color, $cyan, $cyan);
+			text-decoration: none;
+		}
+		&:hover {
+			@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
+			text-decoration: 	underline;	
+		}
+		&:focus {
+			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
+			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
+			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+		}
+		&:active {
+			text-decoration: 	$link-text-decoration-active;
+		}
+	}
+	
+	p.project-notes {
+		padding: 0;
+	}
 	
 	
 }

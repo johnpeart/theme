@@ -12,9 +12,9 @@ layout: blog/page
 
 	{% for project in entry.projects %}
 	{% if project.hidden != true %}
-	<article>
-		<p class="projects-title"><a href="{{ project.url }}" title="Visit {{ project.name }}">{{ project.name | smartify }}</a></p>
-		<p class="projects-notes">{{ project.notes | smartify }}</p>
+	<article class="project-entry">
+		<h3 class="project-name"><a href="{{ project.url }}" class="project-url">{{ project.name | smartify }}</a></h3>
+		<p class="project-notes">{{ project.notes }}</p>
 	</article>
 	{% endif %}
 	{% endfor %}
