@@ -6,9 +6,10 @@ Gemfile.lock
 *_site
 *.DS_Store
 *_posts
+*_guides
 /about
 /projects
 /writing
+/manuals
 404.html
-/_data/about*
-_data/projects.csv
+*_data
