@@ -48,6 +48,25 @@ p#header--wordmark {
 	}
 	a.wordmark {
 		font-weight: 	bold;
+		
+		&:link {
+			@include toggleDarkMode(color, $black, $white);
+		}
+		&:visited {
+			@include toggleDarkMode(color, $gray-500, $gray-600);
+		}
+		&:hover {
+			@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
+			text-decoration: 	$link-text-decoration-hover;	
+		}
+		&:focus {
+			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
+			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
+			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+		}
+		&:active {
+			text-decoration: 	$link-text-decoration-active;
+		}
 	}
 	a.site-title {
 		font-weight: 	normal;
@@ -114,14 +133,14 @@ button#header-menu-toggle {
 			@include toggleDarkMode(fill, $black, $white);
 			transform-origin: center;
 			transform: rotate(45deg);
-			transition: 0.25s all;
+			transition: 0.1s all;
 		}
 	}
 	
 	&:hover {
 		svg#header-menu-toggle-image path#menuicon {
 			@include toggleDarkMode(fill, $link-color--hover, $link-color--hover-dark);
-			transition: 0.25s all;
+			transition: 0.1s all;
 		}
 	}
 	&:focus {
@@ -138,6 +157,8 @@ button#header-menu-toggle {
 		@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
 		svg#header-menu-toggle-image path#menuicon {
 			@include toggleDarkMode(fill, $link-color--focus, $link-color--focus-dark);
+			transform-origin: center;
+			transform: rotate(22.5deg);
 			transition: 0.1s all;
 		}
 	}
@@ -150,20 +171,15 @@ ul#header-menu-items {
 	clear: both;
 	z-index: 1000;
 	
-	width: 100%;
-	
 	@include toggleDarkMode(background, $header-background, $header-background-dark);
 	padding-left: 0;
-
-	transition: all 0.25s;
-	@include toggleSizes(overflow-y, scroll, hidden, hidden, hidden, hidden);
 	
 	&.closed {
-		height: 0px;
-		opacity: 0;
+		@include sr-only;
 	}
 	&.open {
-		@include toggleSizes(height, calc(100vh - #{$header-min-height--small}), $header-min-height, $header-min-height, $header-min-height, $header-min-height);
+		height: auto;
+		width: 100%;
 		opacity: 1;
 	}
 	// Hide the scroll bars
