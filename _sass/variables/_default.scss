@@ -123,6 +123,29 @@ $link-background--focus-dark:		$brand;
 $link-outline--focus-dark:			2px $brand solid;
 $link-border--focus-dark:			10px $black solid;
 
+// button COLOURS AND DECORATION
+// See 'global/_typography'
+$button-font-weight:					inherit;
+$button-outline:						none;
+$button-text-decoration:				underline;
+$button-text-decoration-hover:		none;
+$button-text-decoration-active:		underline;
+$button-text-decoration-focus:		none;
+// Light mode
+$button-color:						$black;
+$button-color--hover:				$brand;
+$button-color--focus:				$white;
+$button-background--focus:			$brand;
+$button-outline--focus:				3px $brand solid;
+$button-border--focus:				1px $brand solid;
+// Dark mode
+$button-color-dark:					$white;
+$button-color--hover-dark:			$brand;
+$button-color--focus-dark:			$white;
+$button-background--focus-dark:		$brand;
+$button-outline--focus-dark:		3px $brand solid;
+$button-border--focus-dark:			1px $brand solid;
+
 // HEADER LINK COLOURS AND DECORATION
 $header-link-font-weight:				normal;
 $header-link-outline:					none;
