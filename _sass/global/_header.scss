@@ -31,10 +31,12 @@ nav#header--site-nav a {
 p#header--wordmark {
 	position: relative;
 	display: block;
+	z-index: 10000;
 	
 	float: left;
 	padding: 0;
 	
+	@include toggleDarkMode(background, $header-background, $header-background-dark);
 	@include toggleSizes(width, calc(100% - #{$header-min-height--small}), calc(100% - #{$header-min-height}), calc(100% - #{$header-min-height}), calc(100% - #{$header-min-height}), calc(100% - #{$header-min-height}));
 	@include toggleSizes(min-height, $header-min-height--small, $header-min-height, $header-min-height, $header-min-height, $header-min-height);
 	@include toggleSizes(font-size, $font-size--header-wordmark--xs, $font-size--header-wordmark--sm, $font-size--header-wordmark--md, $font-size--header-wordmark--lg, $font-size--header-wordmark--xl);
@@ -61,7 +63,6 @@ p#header--wordmark {
 			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
 			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
 			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
-			text-decoration-color: $white;
 		}
 		&:active {
 			text-decoration: 	$link-text-decoration-active;
@@ -78,14 +79,13 @@ p#header--wordmark {
 			@include toggleDarkMode(color, $gray-600, $gray-500);
 		}
 		&:hover {
-			@include toggleDarkMode(color, $gray-600, $gray-500);
+			@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
 			text-decoration: 	$link-text-decoration-hover;	
 		}
 		&:focus {
 			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
 			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
 			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
-			text-decoration-color: $white;
 		}
 		&:active {
 			text-decoration: 	$link-text-decoration-active;
@@ -93,8 +93,6 @@ p#header--wordmark {
 	}
 	
 	span.wordmark-hidden {
-
-		border: none;
 		@include xs {
 			@include sr-only;	
 		}
@@ -105,6 +103,7 @@ p#header--wordmark {
 button#header-menu-toggle {
 	display: block;
 	position: relative;
+	z-index: 10000;
 	
 	height: unset;
 	width: unset;
@@ -170,6 +169,7 @@ ul#header-menu-items {
 	position: relative;
 	float: none;
 	clear: both;
+	z-index: 1000;
 	
 	@include toggleDarkMode(background, $header-background, $header-background-dark);
 	padding-left: 0;
