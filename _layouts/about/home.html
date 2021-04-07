@@ -35,9 +35,7 @@ layout: blog/page
 				<button id="about-button--{{ entrytitle }}" aria-controls="about-details--{{ entrytitle }}" aria-expanded="false" class="about-job-entry--header expand-button">
 					<header>
 						<h4 class="about-job-title">
-							{% for entry in entry.notes %}<span class="about-job-title--label">{% endfor %}
-							{{ entry.title | smartify }}
-							{% for entry in entry.notes %}</span>{% endfor %}
+							<span class="about-job-title--label">{{ entry.title | smartify }}</span>
 						</h4>
 						{% if entry.end == "present" %}
 						<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
@@ -49,9 +47,7 @@ layout: blog/page
 				{% else %}
 				<header class="about-job-entry--header">
 					<h4 class="about-job-title">
-						{% for entry in entry.notes %}<span class="about-job-title--label">{% endfor %}
-						{{ entry.title | smartify }}
-						{% for entry in entry.notes %}</span>{% endfor %}
+						<span class="about-job-title--label">{{ entry.title | smartify }}</span>
 					</h4>
 					{% if entry.end == "present" %}
 					<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
