@@ -7,11 +7,13 @@ Gemfile.lock
 *.DS_Store
 *_posts
 *_guides
+*_goals
 /about
 /projects
 /writing
 /manuals
 /podcast
+/goals
 404.html
 *_data
 /assets/images/guides
