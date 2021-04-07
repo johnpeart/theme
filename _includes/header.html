@@ -2,12 +2,12 @@
 	<nav id="header--site-nav" role="navigation" class="container">
 		{% if site.title != "John Peart" %}
 		<p id="header--wordmark">
-			<a class="wordmark" href="//johnpe.art/" title="Go to the home page">J<span class="wordmark-hidden">ohn </span>P<span class="wordmark-hidden">eart</span></a>
+			<a class="wordmark" href="//www.johnpe.art/" title="Go to the home page">J<span class="wordmark-hidden">ohn </span>P<span class="wordmark-hidden">eart</span></a>
 			<a class="site-title" href="{{ site.url | append: site.baseurl }}" title="Go to the main {{site.title}} page">{{ site.title }}</a>
 		</p>
 		{% else %}
 		<p id="header--wordmark">
-			<a class="wordmark" href="//johnpe.art/" title="Go to the home page">John Peart</a>
+			<a class="wordmark" href="//www.johnpe.art/" title="Go to the home page">John Peart</a>
 		</p>
 		{% endif %}
 		
@@ -26,13 +26,13 @@
 				<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
 				{% endfor %}
 			{% else %}
-				<li class="header-link"><a href="//johnpe.art/writing">Writing</a></li>
+				<li class="header-link"><a href="//www.johnpe.art/writing">Writing</a></li>
 				
 				<li class="header-link"><a href="//photos.johnpe.art">Photos</a></li>
 				
 				<li class="header-link"><a href="//projects.johnpe.art">Projects</a></li>
 									
-				<li class="header-link"><a href="//johnpe.art/about">About me</a></li>
+				<li class="header-link"><a href="//www.johnpe.art/about">About me</a></li>
 			{% endif %}
 		</ul>
 		{% endif %}
