@@ -32,7 +32,7 @@ body#blog-loop {
 	
 	ul.loop {
 		padding-left: 0;
-		
+		padding-bottom: 0;
 		@include toggleSizes(float, none, left, left, left, left);
 		@include toggleSizes(width, 100%, 80%, 75%, 75%, 75%);
 		@include toggleSizes(padding-top, 0, $font-size--h2--sm, $font-size--h2--md, $font-size--h2--lg, $font-size--h2--xl);
