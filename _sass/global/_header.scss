@@ -53,7 +53,7 @@ p#header--wordmark {
 			@include toggleDarkMode(color, $black, $white);
 		}
 		&:visited {
-			@include toggleDarkMode(color, $gray-500, $gray-600);
+			@include toggleDarkMode(color, $black, $white);
 		}
 		&:hover {
 			@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
@@ -76,7 +76,7 @@ p#header--wordmark {
 			@include toggleDarkMode(color, $gray-600, $gray-500);
 		}
 		&:visited {
-			@include toggleDarkMode(color, $gray-500, $gray-600);
+			@include toggleDarkMode(color, $gray-600, $gray-500);
 		}
 		&:hover {
 			@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);

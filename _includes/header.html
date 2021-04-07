@@ -1,13 +1,16 @@
+{% assign domain = "//www.johnpe.art" %}
+{% assign subdomain = site.url | append: site.baseurl %}
+
 <header id="site-header">
 	<nav id="header--site-nav" role="navigation" class="container">
-		{% if site.title != "John Peart" %}
+		{% if site.menu-subdomain == true %}
 		<p id="header--wordmark">
-			<a class="wordmark" href="//www.johnpe.art/" title="Go to the home page">J<span class="wordmark-hidden">ohn </span>P<span class="wordmark-hidden">eart</span></a>
-			<a class="site-title" href="{{ site.url | append: site.baseurl }}" title="Go to the main {{site.title}} page">{{ site.title }}</a>
+			<a class="wordmark" href="{{ domain }}" title="Go to the home page">J<span class="wordmark-hidden">ohn </span>P<span class="wordmark-hidden">eart</span></a>
+			<a class="site-title" href="{{ subdomain }}" title="Go to the main {{site.title}} page">{{ site.title }}</a>
 		</p>
 		{% else %}
 		<p id="header--wordmark">
-			<a class="wordmark" href="//www.johnpe.art/" title="Go to the home page">John Peart</a>
+			<a class="wordmark" href="{{ domain }}" title="Go to the home page">John Peart</a>
 		</p>
 		{% endif %}
 		
