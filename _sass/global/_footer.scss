@@ -10,10 +10,13 @@ aside#footer--wordmark {
 	
 	p.footer--wordmark {
 		font-weight: 	bold;
-		padding-bottom: 6px;
+		padding-bottom: 0;
+		@include toggleSizes(font-size, $font-size--p--xs * 0.9, $font-size--p--sm * 0.9, $font-size--p--md * 0.9, $font-size--p--lg * 0.9, $font-size--p--xl * 0.9);
+		@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
 	}
 	a.footer--site-link {
-		
+		@include toggleSizes(font-size, $font-size--p--xs * 0.9, $font-size--p--sm * 0.9, $font-size--p--md * 0.9, $font-size--p--lg * 0.9, $font-size--p--xl * 0.9);
+		@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);		
 	}
 	
 }
