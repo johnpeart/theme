@@ -1,0 +1,83 @@
+- section: "Blogs"
+  hidden: false
+  projects:
+    - name: "Photos"
+      url: "//www.johnpe.art/photos"
+      notes: "My personal photo blog"
+      hidden: false
+    - name: "Manuals"
+      url: "//www.johnpe.art/manuals"
+      notes: "Instructions and code for my physical computing projects"
+      hidden: false
+    - name: "Beans Means Coffee"
+      url: "//coffee.johnpe.art"
+      notes: "A blog all about good coffee beans and shops"
+      hidden: true
+    - name: "Wishlist"
+      url: "//www.johnpe.art/wishlist"
+      notes: "A list of gift ideas and things I'd love to have"
+      hidden: false
+    - name: "You Have To Hear This"
+      url: "//youhavetohear.github.io"
+      notes: "A music recommendation blog, designed by me with words from Adam Robson"
+      hidden: false
+  
+- section: "Podcasts"
+  hidden: false
+  projects:
+  - name: "Directory"
+    url: "//www.johnpe.art/podcast"
+    notes: "A landing page for all my podcasts"
+    hidden: false
+  - name: "Department of Bad Ideas"
+    url: "//badideas.podcast.johnpe.art"
+    notes: "A podcast about policy, disconnected from reality"
+    hidden: false
+  - name: "Civil Service PrideON podcast"
+    url: "//www.civilservice.lgbt/podcast"
+    notes: "The official pride podcast for the Civil Service LGBT+ Network"
+    hidden: false
+
+- section: "Data"
+  hidden: false
+  projects:
+  - name: "Goals"
+    url: "//www.johnpe.art/goals"
+    notes: "A dashboard to track progress against my personal goals"
+    hidden: false
+  - name: "LGBT MP"
+    url: "//mps.whoare.lgbt"
+    notes: "A dataset of all Members of Parliament who define as lesbian, gay, bisexual or transgender"
+    hidden: false
+    
+- section: "Apps"
+  hidden: false
+  projects:
+  - name: "Image Maker"
+    url: "//www.johnpe.art/image-maker"
+    notes: "A web app for creating images for social media"
+    hidden: false
+  - name: "Printrello"
+    url: "//printrello.github.io"
+    notes: "A web app for turning Trello boards into printable dashboards"
+    hidden: false
+    
+- section: "Bots"
+  hidden: false
+  projects:
+  - name: "@DeptOfAdmin"
+    url: "//twitter.com/deptofadmin/"
+    notes: "A Twitterbot for the fictional Department of Administrative Affairs"
+    hidden: false
+  - name: "@DeptOfMemes"
+    url: "//twitter.com/deptofmemes/"
+    notes: "A Twitterbot that tweets out memes in the style of political branding"
+    hidden: false
+
+- section: "Snippets"
+  hidden: true
+  projects:
+  - name: "Outline Card Stack"
+    url: "//johnpe.art/outline-card-stack/"
+    notes: "A CSS experiment, mimicking the card stacks from The Outline"
+    hidden: false

@@ -2,144 +2,23 @@
 layout: blog/page
 ---
 
+{% for entry in site.data.projects %}
+{% if entry.hidden != true %}
 <section>
-		
-	<h2 class="loop-header">Blogs</h2>
 	
-	<ul class="projects">
-		
-		{% for project in site.data.projects %}
-		
-		{% if project.category == "Blog" %}
-		
-		<li>
-			<p class="projects-title"><a href="{{ project.url }}" title="Visit {{ project.name }}">{{ project.name | smartify }}</a></p>
-			<p class="projects-notes">{{ project.notes | smartify }}</p>
-		</li>
-		
-		{% endif %}
-		
-		{% endfor %}
-	
-	</ul>
+	<header>	
+		<h2 class="projects-header projects-{{ entry.section | slugify }}">{{ entry.section | smartify }}</h2>
+	</header>
+
+	{% for project in entry.projects %}
+	{% if project.hidden != true %}
+	<article>
+		<p class="projects-title"><a href="{{ project.url }}" title="Visit {{ project.name }}">{{ project.name | smartify }}</a></p>
+		<p class="projects-notes">{{ project.notes | smartify }}</p>
+	</article>
+	{% endif %}
+	{% endfor %}
 	
 </section>
-
-<section>
-		
-	<h2 class="loop-header">Podcasts</h2>
-	
-	<ul class="projects">
-		
-		{% for project in site.data.projects %}
-		
-		{% if project.category == "Podcast" %}
-		
-		<li>
-			<p class="projects-title"><a href="{{ project.url }}" title="Visit {{ project.name }}">{{ project.name | smartify }}</a></p>
-			<p class="projects-notes">{{ project.notes | smartify }}</p>
-		</li>
-		
-		{% endif %}
-		
-		{% endfor %}
-	
-	</ul>
-	
-</section>
-		
-<section>
-		
-	<h2 class="loop-header">Apps</h2>
-	
-	<ul class="projects">
-		
-		{% for project in site.data.projects %}
-		
-		{% if project.category == "App" %}
-		
-		<li>
-			<p class="projects-title"><a href="{{ project.url }}" title="Visit {{ project.name }}">{{ project.name | smartify }}</a></p>
-			<p class="projects-notes">{{ project.notes | smartify }}</p>
-		</li>
-		
-		{% endif %}
-		
-		{% endfor %}
-	
-	</ul>
-	
-</section>
-	
-<section>
-		
-	<h2 class="loop-header">Bots</h2>
-	
-	<ul class="projects">
-		
-		{% for project in site.data.projects %}
-		
-		{% if project.category == "Bot" %}
-		
-		<li>
-			<p class="projects-title"><a href="{{ project.url }}" title="Visit {{ project.name }}">{{ project.name | smartify }}</a></p>
-			<p class="projects-notes">{{ project.notes | smartify }}</p>
-		</li>
-		
-		{% endif %}
-		
-		{% endfor %}
-	
-	</ul>
-	
-</section>
-	
-<section>
-		
-	<h2 class="loop-header">Snippets</h2>
-	
-	<ul class="projects">
-		
-		{% for project in site.data.projects %}
-		
-		{% if project.category == "Snippet" %}
-		
-		<li>
-			<p class="projects-title"><a href="{{ project.url }}" title="Visit {{ project.name }}">{{ project.name | smartify }}</a></p>
-			<p class="projects-notes">{{ project.notes | smartify }}</p>
-		</li>
-		
-		{% endif %}
-		
-		{% endfor %}
-	
-	</ul>
-	
-</section>
-
-<section>
-		
-	<h2 class="loop-header">Data</h2>
-	
-	<ul class="projects">
-		
-		{% for project in site.data.projects %}
-		
-		{% if project.category == "Data" %}
-		
-		<li>
-			<p class="projects-title"><a href="{{ project.url }}" title="Visit {{ project.name }}">{{ project.name | smartify }}</a></p>
-			<p class="projects-notes">{{ project.notes | smartify }}</p>
-		</li>
-		
-		{% endif %}
-		
-		{% endfor %}
-	
-	</ul>
-	
-</section>
-
-
-
-
+{% endif %}
+{% endfor %}
