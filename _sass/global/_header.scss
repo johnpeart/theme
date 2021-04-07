@@ -209,7 +209,7 @@ ul#header-menu-items {
 			text-decoration: none;
 		}
 		&:hover {
-			@include toggleDarkMode(color, $cyan, $cyan);
+			@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
 			text-decoration: 	underline;	
 		}
 		&:focus {
