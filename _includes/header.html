@@ -12,7 +12,7 @@
 		{% endif %}
 		
 		{% if site.menu-header != false %}
-		<button id="header-menu-toggle" onclick="toggleMenu()" class="closed" accesskey="m">
+		<button id="header-menu-toggle" class="closed" accesskey="m" aria-controls="header-menu-items" aria-expanded="false">
 				<svg id="header-menu-toggle-image" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
 					<defs/>
 					<title>Menu icon</title>
@@ -20,7 +20,7 @@
 				</svg>
 				<span class="sr-only">Menu</span>
 		</button>
-		<ul id="header-menu-items" class="closed" aria-expanded="false">
+		<ul id="header-menu-items" class="closed" aria-labelledby="header-menu-toggle">
 			{% if site.data.header-menu %}
 				{% for menuitem in site.data.header-menu %}
 				<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
