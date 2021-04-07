@@ -105,19 +105,20 @@ $footer-color-dark:					$white;
 $link-font-weight:					inherit;
 $link-outline:						none;
 $link-text-decoration:				underline;
-$link-text-decoration-hover:		none;
+$link-text-decoration-hover:		underline;
+$link-text-decoration-color:		$brand;
 $link-text-decoration-active:		underline;
 $link-text-decoration-focus:		none;
 // Light mode
 $link-color:						$black;
-$link-color--hover:					$brand;
+$link-color--hover:					$black;
 $link-color--focus:					$white;
 $link-background--focus:			$brand;
 $link-outline--focus:				2px $brand solid;
 $link-border--focus:				10px $white solid;
 // Dark mode
 $link-color-dark:					$white;
-$link-color--hover-dark:			$brand;
+$link-color--hover-dark:			$white;
 $link-color--focus-dark:			$white;
 $link-background--focus-dark:		$brand;
 $link-outline--focus-dark:			2px $brand solid;

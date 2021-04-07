@@ -11,7 +11,8 @@ a {
 	}
 	&:hover {
 		@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
-		text-decoration: 	$link-text-decoration-hover;	
+		text-decoration: 	$link-text-decoration-hover;
+		text-decoration-color: $link-text-decoration-color;
 	}
 	&:focus {
 		@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
@@ -20,6 +21,14 @@ a {
 	}
 	&:active {
 		text-decoration: 	$link-text-decoration-active;
+	}
+	
+	&.footnote {
+		&:hover {
+			@include toggleDarkMode(color, $cyan, $cyan);
+			text-decoration: 	$link-text-decoration-hover;
+			text-decoration-color: $link-text-decoration-color;
+		}
 	}
 }
 
