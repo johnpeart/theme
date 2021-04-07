@@ -25,10 +25,10 @@ layout: blog/page
 	{% endif %}
 	
 		<li>
-		
+			<article>
 			<p class="loop-item-date"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B" }}</time></p>
 			<p class="loop-item-title"><a href="{{ site.url | append: site.baseurl | append: post.url }}" title="Read {{ post.title }}">{{ post.title | smartify }}</a></p>
-		
+			</article>
 		</li>	
 	
 	{% if forloop.last %}
