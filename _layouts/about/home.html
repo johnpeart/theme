@@ -62,7 +62,7 @@ layout: blog/page
 				{% endif %}
 				
 				{% for entry in entry.notes %}
-				<section id="about-details--{{ entrytitle }}" aria-labelledby="about-button--{{ entry-title }}" class="about-details">
+				<section id="about-details--{{ entrytitle }}" aria-labelledby="about-button--{{ entrytitle }}" class="about-details">
 				{{ entry.description | markdownify }}
 	
 				{% if entry.projects %}
