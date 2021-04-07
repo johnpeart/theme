@@ -75,6 +75,7 @@ body#about-home {
 		padding: 0;
 		margin: 0;
 		cursor: pointer;
+		box-sizing: border-box;
 		
 		display: block;
 		position: relative;
@@ -83,23 +84,8 @@ body#about-home {
 	
 		@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
 	
-		@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700); 	
+		@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
 		
-		&:hover {
-			svg#header-menu-toggle-image path#menuicon {
-				@include toggleDarkMode(fill, $link-color--hover, $link-color--hover-dark);
-				transition: 0.25s all;
-			}
-		}
-		&:focus {
-			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
-			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
-		}
-		&:active {
-			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
-			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
-		}
-	
 		h4.about-job-title {
 			
 			span.about-job-title--label {
@@ -120,14 +106,8 @@ body#about-home {
 				text-align: right;
 				@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
 				@include toggleSizes(line-height, $line-height--h4--xs, $line-height--h4--sm, $line-height--h4--md, $line-height--h4--lg, $line-height--h4--xl);
-				
-				@include toggleDarkMode(color, $body-color, $body-color-dark);
 			}
 			
-		}
-	
-		&.active h4.about-job-title:after {
-			content: "–"
 		}
 		
 		p.about-time {
@@ -135,6 +115,27 @@ body#about-home {
 			position: relative;
 			width: 100%;
 			clear: both;
+		}
+	
+		&.active h4.about-job-title:after {
+			content: "–"
+		}
+		
+		&:hover {
+			@include toggleDarkMode(color, $accordian-color--hover, $accordian-color--hover-dark);
+		}
+		&:focus {
+			@include toggleDarkMode(color, $accordian-color--focus, $accordian-color--focus-dark);
+			@include toggleDarkMode(background, $accordian-background--focus, $accordian-background--focus-dark);
+			@include toggleDarkMode(outline, $accordian-outline--focus, $accordian-outline--focus-dark);
+			@include toggleDarkMode(border, $accordian-border--focus, $accordian-border--focus-dark);
+			outline-offset: 3px;
+		}
+		&:active {
+			@include toggleDarkMode(color, $accordian-color--focus, $accordian-color--focus-dark);
+			@include toggleDarkMode(background, $accordian-background--focus, $accordian-background--focus-dark);
+			@include toggleDarkMode(outline, $accordian-outline--focus, $accordian-outline--focus-dark);
+			border-top: 1px solid $brand;
 		}
 		
 		@include clearfix;
