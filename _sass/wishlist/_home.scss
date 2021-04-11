@@ -34,6 +34,18 @@ body#wishlist-home {
 		
 	}
 	
+	h2 {
+		
+		text-align: 		left;
+		
+		@include toggleSizes(font-size, ($font-size--h2--xs * 1.25), ($font-size--h2--sm *1.25), ($font-size--h2--md * 1.5), ($font-size--h2--lg * 1.5), ($font-size--h2--xl * 1.5));
+		
+		&.about-career {
+			padding-top: 0;
+		}
+		
+	}
+	
 	ul {		
 		padding: 			0;
 		margin: 			0;
