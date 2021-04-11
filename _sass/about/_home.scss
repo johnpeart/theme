@@ -39,13 +39,14 @@ body#about-home {
 				
 	h4.about-job-title {
 		
+		display: inline-block;
+		
 		text-align: left;
 		padding: 0;
 		font-style: normal;
 		
 		@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
 		@include toggleSizes(line-height, $line-height--h4--xs, $line-height--h4--sm, $line-height--h4--md, $line-height--h4--lg, $line-height--h4--xl);
-		
 		
 	}
 	
@@ -63,53 +64,43 @@ body#about-home {
 		
 	}
 	
-	button.about-job-entry--header {
+	summary.about-job-entry {
 		
-		// reset
-		border: 0;
-		border-radius: 0;
-		background: none;
-		color: inherit;
-		font-family: inherit;
-		font-size: inherit;
-		line-height: inherit;
-		text-decoration: none;
-		padding: 0;
-		margin: 0;
-		cursor: pointer;
-		box-sizing: border-box;
+		/* Hide the marker completely. */
+		list-style-image: '+';
+		&::-webkit-details-marker {
+			display: none;
+		}
+		
+		&:before {
+			display: block;
+			position: relative;
+			top: 0;
+			right: 0;
+			left: auto;
+			content: '+';
+			width: 30px;
+			float: right;
+			
+			text-align: right;
+			font-weight: bold;
+			@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
+			line-height: 1;
+		}
 		
 		display: block;
 		position: relative;
 		width: 100%;
 		text-align: left;
+		box-sizing: content-box;
 	
 		@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
 	
 		@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
 		
 		h4.about-job-title {
-			
-			span.about-job-title--label {
-				max-width: calc(100% - 30px);
-				float: left;
-			}
-			
-			&:after {
-				display: block;
-				position: relative;
-				top: 0;
-				right: 0;
-				left: auto;
-				content: '+';
-				width: 30px;
-				float: right;
-				
-				text-align: right;
-				@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
-				@include toggleSizes(line-height, $line-height--h4--xs, $line-height--h4--sm, $line-height--h4--md, $line-height--h4--lg, $line-height--h4--xl);
-			}
-			
+			max-width: calc(100% - 30px);
+			float: left;
 		}
 		
 		p.about-time {
@@ -118,10 +109,6 @@ body#about-home {
 			width: 100%;
 			clear: both;
 		}
-	
-		&.active h4.about-job-title:after {
-			content: "–"
-		}
 		
 		&:hover {
 			@include toggleDarkMode(color, $accordian-color--hover, $accordian-color--hover-dark);
@@ -129,28 +116,44 @@ body#about-home {
 		&:focus {
 			@include toggleDarkMode(color, $accordian-color--focus, $accordian-color--focus-dark);
 			@include toggleDarkMode(background, $accordian-background--focus, $accordian-background--focus-dark);
+			@include toggleDarkMode(border-top, $accordian-border--active, $accordian-border--active-dark);
 			@include toggleDarkMode(outline, $accordian-outline--focus, $accordian-outline--focus-dark);
-			@include toggleDarkMode(border, $accordian-border--focus, $accordian-border--focus-dark);
 			outline-offset: 3px;
 		}
 		&:active {
-			@include toggleDarkMode(color, $accordian-color--focus, $accordian-color--focus-dark);
-			@include toggleDarkMode(background, $accordian-background--focus, $accordian-background--focus-dark);
-			@include toggleDarkMode(outline, $accordian-outline--focus, $accordian-outline--focus-dark);
-			border-top: 1px solid $brand;
+			@include toggleDarkMode(color, $accordian-color--active, $accordian-color--active-dark);
+			@include toggleDarkMode(background, $accordian-background--active, $accordian-background--active-dark);
+			@include toggleDarkMode(border-top, $accordian-border--active, $accordian-border--active-dark);
+			@include toggleDarkMode(outline, $accordian-outline--active, $accordian-outline--active-dark);
+			outline-offset: 0px;
 		}
 		
 		@include clearfix;
 	}
 	
-	header.about-job-entry--header {
+	
+	
+	details.about-job-entry {
+		display: block;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		
+		&[open] summary::-webkit-details-marker {
+			display: none;
+		}
+		
+		&[open] summary:before {
+			content: '–';
+		}
+	}
+	
+	div.about-job-entry {
 		@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
 		@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
 	}
 	
 	section.about-details {
-		
-		display: none;
 		
 		padding-top: 20px;
 		padding-bottom: 20px;

@@ -134,17 +134,25 @@ $accordian-text-decoration-focus:		none;
 // Light mode
 $accordian-color:						$black;
 $accordian-color--hover:				$brand;
-$accordian-color--focus:				$white;
-$accordian-background--focus:			$brand;
+$accordian-color--focus:				$black;
+$accordian-background--focus:			unset;
 $accordian-outline--focus:				3px $brand solid;
-$accordian-border--focus:				1px $brand solid;
+$accordian-border--focus:				none;
+$accordian-color--active:				$white;
+$accordian-background--active:			$brand;
+$accordian-outline--active:				3px $brand solid;
+$accordian-border--active:				none;
 // Dark mode
 $accordian-color-dark:					$white;
 $accordian-color--hover-dark:			$brand;
 $accordian-color--focus-dark:			$white;
-$accordian-background--focus-dark:		$brand;
-$accordian-outline--focus-dark:		3px $brand solid;
-$accordian-border--focus-dark:			1px $brand solid;
+$accordian-background--focus-dark:		unset;
+$accordian-outline--focus-dark:			3px $brand solid;
+$accordian-border--focus-dark:			none;
+$accordian-color--active-dark:			$white;
+$accordian-background--active-dark:		$brand;
+$accordian-outline--active-dark:		3px $brand solid;
+$accordian-border--active-dark:			none;
 
 // HEADER LINK COLOURS AND DECORATION
 $header-link-font-weight:				normal;
