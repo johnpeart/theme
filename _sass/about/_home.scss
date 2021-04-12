@@ -67,7 +67,7 @@ body#about-home {
 	summary.about-job-entry {
 		
 		/* Hide the marker completely. */
-		list-style-image: '+';
+		list-style-image: none;
 		&::-webkit-details-marker {
 			display: none;
 		}
