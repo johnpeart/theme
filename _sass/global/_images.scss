@@ -19,7 +19,7 @@ figure.image {
 	@include toggleDarkMode(color, $body-color, $body-color-dark);
 	@include toggleDarkMode(outline, 20px solid $gray-200, 20px solid $gray-700);
 	
-	@include toggleSizes(margin, $font-size--p--xs 0 ($font-size--p--xs * 2) 0, $font-size--p--sm 0 ($font-size--p--sm * 2) 0, $font-size--p--md 0 ($font-size--p--md * 2) 0, $font-size--p--lg 0 ($font-size--p--lg * 2) 0, $font-size--p--xl 0 ($font-size--p--xl * 2) 0,)
+	@include toggleSizes(margin, $font-size--p--xs 0 ($font-size--p--xs * 2) 0, $font-size--p--sm 0 ($font-size--p--sm * 2) 0, $font-size--p--md 0 ($font-size--p--md * 2) 0, $font-size--p--lg 0 ($font-size--p--lg * 2) 0, $font-size--p--xl 0 ($font-size--p--xl * 2) 0);
 	
 	img {
 		width: 100%;
