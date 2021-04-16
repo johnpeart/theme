@@ -297,3 +297,56 @@ table {
 	}
 	
 }
+
+details {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	
+	&[open] summary::-webkit-details-marker,
+	&[open] summary::marker {
+		display: none;
+	}
+	
+	&[open] summary:before {
+		content: '–';
+	}
+}
+
+summary {
+	
+	/* Hide the marker completely. */
+	list-style-image: none;
+	&::marker,
+	&::-webkit-details-marker {
+		display: none;
+	}
+	
+	&:before {
+		display: block;
+		position: relative;
+		top: 0;
+		right: 0;
+		left: auto;
+		content: '+';
+		width: 30px;
+		float: right;
+		
+		text-align: right;
+		font-weight: bold;
+		@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
+		line-height: 1;
+	}
+	
+	display: block;
+	position: relative;
+	width: 100%;
+	text-align: left;
+	box-sizing: content-box;
+
+	@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
+
+	@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
+	
+}
