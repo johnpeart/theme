@@ -68,6 +68,7 @@ body#about-home {
 		
 		/* Hide the marker completely. */
 		list-style-image: none;
+		&::marker,
 		&::-webkit-details-marker {
 			display: none;
 		}
@@ -139,7 +140,8 @@ body#about-home {
 		margin: 0;
 		padding: 0;
 		
-		&[open] summary::-webkit-details-marker {
+		&[open] summary::-webkit-details-marker,
+		&[open] summary::&::marker {
 			display: none;
 		}
 		
