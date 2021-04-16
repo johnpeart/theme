@@ -141,7 +141,7 @@ body#about-home {
 		padding: 0;
 		
 		&[open] summary::-webkit-details-marker,
-		&[open] summary::&::marker {
+		&[open] summary:marker {
 			display: none;
 		}
 		
