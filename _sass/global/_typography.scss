@@ -344,7 +344,7 @@ summary {
 	text-align: left;
 	box-sizing: border-box;
 
-	@include toggleSizes(padding, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
+	@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
 
 	@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
 	
