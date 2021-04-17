@@ -341,12 +341,47 @@ summary {
 	
 	display: block;
 	position: relative;
-	width: 100%;
 	text-align: left;
 	box-sizing: content-box;
 
-	@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
+	@include toggleSizes(padding, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
 
 	@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
+	
+	
+	
+	h1, h2, h3, h4, h5, h6 {
+		max-width: calc(100% - 30px);
+		float: left;
+		display: inline-block;
+		
+		text-align: left;
+		padding: 0;
+		font-style: normal;
+		cursor: pointer;
+		
+		@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
+		@include toggleSizes(line-height, $line-height--h4--xs, $line-height--h4--sm, $line-height--h4--md, $line-height--h4--lg, $line-height--h4--xl);
+	}
+	
+	&:hover {
+		@include toggleDarkMode(color, $accordian-color--hover, $accordian-color--hover-dark);
+	}
+	&:focus {
+		@include toggleDarkMode(color, $accordian-color--focus, $accordian-color--focus-dark);
+		@include toggleDarkMode(background, $accordian-background--focus, $accordian-background--focus-dark);
+		@include toggleDarkMode(border-top, $accordian-border--active, $accordian-border--active-dark);
+		@include toggleDarkMode(outline, $accordian-outline--focus, $accordian-outline--focus-dark);
+		outline-offset: 3px;
+	}
+	&:active {
+		@include toggleDarkMode(color, $accordian-color--active, $accordian-color--active-dark);
+		@include toggleDarkMode(background, $accordian-background--active, $accordian-background--active-dark);
+		@include toggleDarkMode(border-top, $accordian-border--active, $accordian-border--active-dark);
+		@include toggleDarkMode(outline, $accordian-outline--active, $accordian-outline--active-dark);
+		outline-offset: 0px;
+	}
+	
+	@include clearfix;
 	
 }
