@@ -35,11 +35,6 @@ body[id$='post'] {
 		}
 	}
 	
-	details.table-of-contents #markdown-toc {
-		background: none;
-		padding: $container-padding;
-	}
-	
 	
 	ul#markdown-toc {
 		
@@ -78,6 +73,11 @@ body[id$='post'] {
 			padding-bottom: 11px;
 		}
 		
+	}
+	
+	details.table-of-contents #markdown-toc {
+		background: none;
+		padding: $container-padding 0;
 	}
 	
 	div.twitter-tweet {
