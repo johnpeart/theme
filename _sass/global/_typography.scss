@@ -342,7 +342,7 @@ summary {
 	display: block;
 	position: relative;
 	text-align: left;
-	box-sizing: content-box;
+	box-sizing: border-box;
 
 	@include toggleSizes(padding, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
 

@@ -14,13 +14,6 @@ body[id$='post'] {
 	
 	#markdown-toc {
 		
-		&:before {
-			@extend		h2;
-			display: 	block;
-			padding: 	0 20px 20px;
-			content:	"Contents";
-		}
-		
 		@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
 		padding:	20px;
 		
@@ -35,6 +28,18 @@ body[id$='post'] {
 		}
 		
 	}
+	
+	details.table-of-contents {	
+		&[open] {
+			@include toggleDarkMode(border-bottom, 1px solid $gray-400, 1px solid $gray-700);
+		}
+	}
+	
+	details.table-of-contents #markdown-toc {
+		background: none;
+		padding: $container-padding;
+	}
+	
 	
 	ul#markdown-toc {
 		

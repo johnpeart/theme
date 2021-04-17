@@ -141,7 +141,7 @@ $accordian-border--focus:				none;
 $accordian-color--active:				$white;
 $accordian-background--active:			$brand;
 $accordian-outline--active:				3px $brand solid;
-$accordian-border--active:				none;
+$accordian-border--active:				1px transparent solid;
 // Dark mode
 $accordian-color-dark:					$white;
 $accordian-color--hover-dark:			$brand;
@@ -152,7 +152,7 @@ $accordian-border--focus-dark:			none;
 $accordian-color--active-dark:			$white;
 $accordian-background--active-dark:		$brand;
 $accordian-outline--active-dark:		3px $brand solid;
-$accordian-border--active-dark:			none;
+$accordian-border--active-dark:			1px transparent solid;
 
 // HEADER LINK COLOURS AND DECORATION
 $header-link-font-weight:				normal;
