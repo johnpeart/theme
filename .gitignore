@@ -8,6 +8,8 @@ Gemfile.lock
 *_posts
 *_guides
 *_goals
+*_photos
+/photos
 /about
 /projects
 /writing
@@ -18,3 +20,4 @@ Gemfile.lock
 *_data
 /assets/images/guides
 /assets/images/posts
+/assets/images/photos

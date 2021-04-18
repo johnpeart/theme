@@ -1,0 +1,85 @@
+body#photos-photo {
+
+	img.photo {
+		display: 	block;
+		position: 	relative;
+		margin: 	0 auto;
+		padding: 	0 0 20px;
+		max-width: 			100%;
+		max-height: 		100vh;
+	}
+	
+	dl {
+		
+		@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
+		
+		padding: 			20px;
+		padding-bottom: 	0px;
+		
+		margin-top: 		0;
+				
+		
+		p,dd {		
+			&:first-child {
+				padding-top: 0;
+			}
+			&:last-of-type {
+				padding-bottom: 0;
+			}
+		}
+		
+		span.dl-item {
+			
+			display: block;
+			position: relative;
+			
+			padding-bottom: 20px !important;
+			
+			@include toggleSizes(max-width, 100%, 100%, 50%, 50%, 50%);
+			@include toggleSizes(width, 100%, 100%, 50%, 50%, 50%);
+			@include toggleSizes(float, none, none, left, left, left);
+
+		}
+
+		@include clearfix;		
+	}
+	
+	div.footnotes {
+		
+		&:before {
+			display: block;
+			
+			@include toggleSizes(font-size, $font-size--h3--xs, $font-size--h3--sm, $font-size--h3--md, $font-size--h3--lg, $font-size--h3--xl);
+			@include toggleSizes(line-height, $line-height--h3--xs, $line-height--h3--sm, $line-height--h3--md, $line-height--h3--lg, $line-height--h3--xl);
+			@include toggleSizes(padding, $padding--h3--xs, $padding--h3--sm, $padding--h3--md, $padding--h3--lg, $padding--h3--xl);
+			
+			font-weight:			$font-weight--h3;
+			font-style: 			$font-style-h3; 
+			text-align: 			$text-align--h3;		
+			text-decoration: 	$text-decoration--h3;
+			text-transform: 		$text-transform--h3;
+			
+			content: "Footnotes";
+			
+		}
+		
+		@include toggleSizes(padding-top, 45px, 60px, 60px, 90px, 120px)
+		@include toggleSizes(max-width, 400px, 500px, 450px, 600px, 600px);
+
+		ul, ol {
+			@include toggleSizes(padding-left, ($font-size--p--xs * 1.6), ($font-size--p--sm * 1.6), 0, 0, 0);
+		}
+		li, p {		
+			@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
+		}
+		p {	
+			@include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+		}
+		a.reversefootnote {
+			text-decoration: none;
+			font-family: $font-family !important;
+		}
+		
+	}
+	
+}
