@@ -313,12 +313,17 @@ details {
 		content: '–';
 	}
 	
+	
+	&[open] {
+		@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+	}
+	
 	p {
 		@include toggleSizes(padding, 0 0 ($font-size--p--xs * 0.5) 0, 0 0 ($font-size--p--sm * 0.5) 0, 0 0 ($font-size--p--md * 0.5) 0, 0 0 ($font-size--p--lg * 0.5) 0, 0 0 ($font-size--p--xl * 0.5) 0);
-		
-		&:last-child {
-			@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
-		}
+	}
+	
+	*:last-child {
+		padding-bottom: 0;
 	}
 }
 
