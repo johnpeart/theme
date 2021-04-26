@@ -102,6 +102,7 @@ label {
 }
 
 input[type="text"],
+input[type="email"],
 textarea {
 	@extend p;
 	box-sizing: border-box;
@@ -121,9 +122,17 @@ textarea {
 	-webkit-appearance: none;
 	appearance: none;
 
+
+	&:hover {
+		outline: $border-width-form-element solid $input-focus-color;
+		outline-offset: 0px;
+		@include toggleDarkMode(background, $gray-200, $gray-800);
+		@include toggleDarkMode(border-width, inherit, $border-width-form-element);
+		@include toggleDarkMode(border, $border-width-form-element solid $input-border-color, $border-width-form-element solid $absolute-black);
+	}
 	&:focus {
 		outline: $border-width-form-element solid $input-focus-color;
-		outline-offset: 0;
+		outline-offset: 3px;
 
 		@include toggleDarkMode(background, inherit, $gray-900);
 		@include toggleDarkMode(box-shadow, inset 0 0 0 $border-focus-width, inset 0 0 0 $border-focus-width $absolute-black);
@@ -132,12 +141,6 @@ textarea {
 
 	&:invalid {
 		border: $border-width-form-element solid $input-error-color;
-	}
-
-	&:hover {
-		box-shadow: 0 0 0 3px $cyan;
-		@include toggleDarkMode(background, $gray-200, $gray-800);
-		@include toggleDarkMode(border-width, inherit, 3px);
 	}
 
 }
