@@ -4,6 +4,53 @@ body[id^="email"] {
 		@include clearfix;
 	}
 	
+	div#email-fields {
+		
+		display: grid;
+		
+		grid-template-areas: "fields fields" "style output" "update update";
+		grid-template-columns: 1fr 1fr;
+		grid-gap: $container-padding * 2;
+		
+	}
+	
+	
+	fieldset#radios--style {
+		grid-area: style;
+	}
+	
+	fieldset#inputs--fields {
+		grid-area: fields;
+		
+		display: grid; 
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		grid-gap: $container-padding * 2;
+	}
+	
+	fieldset#radios--output {
+		grid-area: output;
+	}
+	
+	fieldset#button--update-and-copy {
+		grid-area: update;
+		
+		display: grid; 
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas: "title title" "update copy";
+		grid-gap: $container-padding * 2;
+		
+		button {
+			margin-bottom: 10px;
+		}
+	}
+	
+	div#email-preview {
+		max-width: 600px;
+	}
+	
+	
 	table {
 		width: unset;
 		border-collapse: unset;

@@ -60,19 +60,19 @@ layout: email/main
 
 	<div class="text-input">
 		<label for="input-fields--email">Email address</label>
-		<span class="label-hint">Just the email address, without any mailto:</span>    
+		<span class="label-hint">Without any mailto:</span>    
 		<input onfocusout="" id="input-fields--email" name="input-fields--email" type="email" placeholder="hello@example.com">
 	</div>
 
 	<div class="text-input">
 		<label for="input-fields--website">Website</label>
-		<span class="label-hint">Enter the website address without the preceding https://</span>    
+		<span class="label-hint">Without the https://</span>    
 		<input onfocusout="" id="input-fields--website" name="input-fields--website" type="text" placeholder="www.example.com">
 	</div>
 
 	<div class="text-input">
 		<label for="input-fields--twitter">Twitter</label>
-		<span class="label-hint">Enter your username without the @ symbol</span>    
+		<span class="label-hint">Username without the @ symbol</span>    
 		<input onfocusout="" id="input-fields--twitter" name="input-fields--twitter" type="text" placeholder="username">
 	</div>
 
@@ -104,17 +104,8 @@ layout: email/main
 	
 	<legend>Generate signature</legend>
 	
-	<label for="update-preview">
-		Update preview
-	</label>
-	<p class="label-hint">Use this button to update the signature preview.</p>
 	<button onClick="createSignature()" id="update-preview">Update preview</button>
 	
-	<label for="copy-signature">
-		Copy signature
-	</label>
-	<p class="label-hint">Use this button to copy the signature to your clipboard.</p>
-	<p class="label-hint">If the output doesn't format as you'd expect when you paste it into your email client, try using a different output format</p>
 	<button onClick="copySignature()" id="copy-signature">Copy signature</button>
 	
 </fieldset>
