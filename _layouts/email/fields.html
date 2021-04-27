@@ -1,0 +1,120 @@
+---
+layout: email/main
+---
+
+<fieldset id="radios--style">
+
+	<legend>Style</legend>
+
+	<div class="radio-input">
+		<input type="radio" onchange="" name="radio-style" id="radio-style--personal" value="personal" checked>
+		<label for="radio-style--personal">
+			Personal
+		</label>
+		<span class="label-hint">For personal accounts</span>
+	</div>
+
+	<div class="radio-input">
+		<input type="radio" onchange="" name="radio-style" id="radio-style--work" value="work">
+		<label for="radio-style--work">
+			Work
+		</label>
+		<span class="label-hint">For work accounts</span>
+	</div>
+	
+</fieldset>
+
+<fieldset id="inputs--fields">
+
+	<legend>Signature fields</legend>
+
+	<div class="text-input">
+		<label for="input-fields--name">Name</label>
+		<span class="label-hint">Your name</span>    
+		<input onfocusout="" id="input-fields--name" name="input-fields--name" type="text" placeholder="John Doe">
+	</div>
+
+	<div class="text-input">
+		<label for="input-fields--title">Title</label>
+		<span class="label-hint">Your job title or role</span>    
+		<input onfocusout="" id="input-fields--title" name="input-fields--title" type="text" placeholder="Manager">
+	</div>
+
+	<div class="text-input">
+		<label for="input-fields--team">Team</label>
+		<span class="label-hint">Your work team</span>    
+		<input onfocusout="" id="input-fields--team" name="input-fields--team" type="text" placeholder="Example Team">
+	</div>
+
+	<div class="text-input">
+		<label for="input-fields--address">Physical address</label>
+		<span class="label-hint">The entire address in a single line.</span>    
+		<input onfocusout="" id="input-fields--address" name="input-fields--address" type="text" placeholder="123 Example Road, Example Town, EX1 1AA">
+	</div>
+
+	<div class="text-input">
+		<label for="input-fields--phone-number">Phone number</label>
+		<span class="label-hint">Any number will work</span>    
+		<input onfocusout="" id="input-fields--phone-number" name="input-fields--phone-number" type="text" placeholder="07000123456">
+	</div>
+
+	<div class="text-input">
+		<label for="input-fields--email">Email address</label>
+		<span class="label-hint">Just the email address, without any mailto:</span>    
+		<input onfocusout="" id="input-fields--email" name="input-fields--email" type="email" placeholder="hello@example.com">
+	</div>
+
+	<div class="text-input">
+		<label for="input-fields--website">Website</label>
+		<span class="label-hint">Enter the website address without the preceding https://</span>    
+		<input onfocusout="" id="input-fields--website" name="input-fields--website" type="text" placeholder="www.example.com">
+	</div>
+
+	<div class="text-input">
+		<label for="input-fields--twitter">Twitter</label>
+		<span class="label-hint">Enter your username without the @ symbol</span>    
+		<input onfocusout="" id="input-fields--twitter" name="input-fields--twitter" type="text" placeholder="username">
+	</div>
+
+</fieldset>
+
+<fieldset id="radios--output">
+
+	<legend>Output</legend>
+
+	<div class="radio-input">
+		<input type="radio" onchange="" name="radio-output" id="radio-output--parsed" value="parsed" checked>
+		<label for="radio-output--parsed">
+			Parsed signature block
+		</label>
+		<span class="label-hint">For most apps</span>
+	</div>
+
+	<div class="radio-input">
+		<input type="radio" onchange="" name="radio-output" id="radio-output--html" value="html">
+		<label for="radio-output--html">
+			Plain HTML
+		</label>
+		<span class="label-hint">For use when parsed signatures do not work as expected</span>
+	</div>
+	
+</fieldset>
+
+<fieldset id="button--update-and-copy">
+	
+	<legend>Generate signature</legend>
+	
+	<label for="update-preview">
+		Update preview
+	</label>
+	<p class="label-hint">Use this button to update the signature preview.</p>
+	<button onClick="createSignature()" id="update-preview">Update preview</button>
+	
+	<label for="copy-signature">
+		Copy signature
+	</label>
+	<p class="label-hint">Use this button to copy the signature to your clipboard.</p>
+	<p class="label-hint">If the output doesn't format as you'd expect when you paste it into your email client, try using a different output format</p>
+	<button onClick="copySignature()" id="copy-signature">Copy signature</button>
+	
+</fieldset>

@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<main id="content" class="container">
+				
+	<section id="page-content">
+
+		<h1 class="page-title">{{ site.title | smartify }}</h1>
+
+		<div id="email-fields">
+		{{ content }}
+		</div>
+		
+		<div id="email-preview">
+
+			<div id="signature-block">
+			
+			</div>
+			
+			<textarea id="html-output"></textarea>
+			
+		</div>
+							
+	</section>
+	
+</main>
+
+<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/email.js' }}"></script>
+
+{% include footer.html %}

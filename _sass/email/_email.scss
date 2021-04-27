@@ -1,0 +1,42 @@
+body[id^="email"] {
+	
+	section#page-content {
+		@include clearfix;
+	}
+	
+	table {
+		width: unset;
+		border-collapse: unset;
+		font-size: unset;
+		line-height: unset;
+		margin: unset;
+		padding: unset;
+		
+		tr {
+			border: unset;
+		}
+		
+		th, td {
+			padding: unset;
+			vertical-align: unset;
+			border: unset;
+		}
+		
+		thead, 
+		tfoot {
+			font-weight: unset;
+		}
+		
+		thead {
+			border: unset;
+		}
+		
+		tfoot {
+			border: unset;
+		}
+	}
+	
+	
+	
+}
+
