@@ -13,6 +13,6 @@
 {% if page.layout == 'photos/photo' %}
 <meta name="twitter:image" 			content="{{ site.url | append: site.post-images-path | append: '/' | append: page.image }}">
 {% else %}
-<meta name="twitter:image" 			content="{% if page.image %}{{ site.url | append: site.baseurl | append: site.social-images-path | append: page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">
+<meta name="twitter:image" 			content="{% if page.image %}{{ page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">
 {% endif %}
 <meta name="twitter:image:alt" 		content="{% if page.image-alt %}{{ page.image-alt | strip_html }}{% else %}{{ page.title }}{% endif %}">
