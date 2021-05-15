@@ -1,6 +1,7 @@
 {
   "editor.default_syntax" : "scss",
-  "workspace.color" : 7,
+  "workspace.art_style" : 0,
+  "workspace.color" : 6,
   "workspace.name" : "Theme",
   "workspace.preview_root" : ".",
   "workspace.preview_type" : "custom",
