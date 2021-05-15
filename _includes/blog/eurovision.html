@@ -25,7 +25,8 @@
 </fieldset>
 
 <div id="esc-entries" data-show="all">
-{% for entry in page.entries %}
+{% assign entries = page.entries | sort: "country" %}
+{% for entry in entries %}
 <details class="esc-entry" data-semifinal="{{ entry.semifinal }}" data-final="{{ entry.final }}">
 <summary>
 <h3>
