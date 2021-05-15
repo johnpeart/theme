@@ -2,7 +2,7 @@ a {
 	font-weight: 		$link-font-weight;
 	text-decoration: 	$link-text-decoration;
 	cursor: pointer;
-	
+
 	&:link {
 		@include toggleDarkMode(color, $link-color, $link-color-dark);
 	}
@@ -11,7 +11,7 @@ a {
 	}
 	&:hover {
 		@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
-		text-decoration: 	$link-text-decoration-hover;	
+		text-decoration: 	$link-text-decoration-hover;
 	}
 	&:focus {
 		@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
@@ -27,15 +27,15 @@ p,
 dt,
 dd,
 li {
-	
+
 	@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
 	@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
 	@include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
-	
+
 	font-weight:		normal;
-	
+
 	&.lead {
-		padding-bottom: 	0;			
+		padding-bottom: 	0;
 		font-weight:		bold;
 	}
 
@@ -43,7 +43,7 @@ li {
 		font-variant: 	small-caps !important;
 		font-size: 		120%;
 	}
-	
+
 }
 
 li {
@@ -51,20 +51,20 @@ li {
 }
 
 ul {
-	
+
 	list-style: none;
 	padding-top: 0;
 	@include toggleSizes(padding-left, ($font-size--p--xs * 1.5), ($font-size--p--sm * 1.5), 0, 0, 0);
 	@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
-	
+
 }
 ol {
-	
+
 	list-style: decimal;
 	padding-top: 0;
 	@include toggleSizes(padding-left, ($font-size--p--xs * 2), ($font-size--p--sm * 2), 0, 0, 0);
 	@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
-	
+
 }
 
 dt {
@@ -72,31 +72,31 @@ dt {
 }
 
 p, li, td  {
-	
+
 	> kbd,
 	> code {
-	
+
 		font-size: 		inherit;
 		font-weight: 	normal;
-		
+
 		@include toggleDarkMode(color, $code-color, $code-color-dark);
 		@include toggleDarkMode(background, $code-background, $code-background-dark);
-		
+
 		border-radius: 	5px;
 		padding:		0 3px;
-		
+
 	}
-	
+
 }
 
 sup {
 	font-feature-settings:		$sup-font-feature-settings;
 	text-decoration: none;
 	margin-left: 2px;
-	
+
 	a {
 		text-decoration: none;
-		
+
 		&:hover {
 			text-decoration: $link-text-decoration-hover;
 		}
@@ -110,8 +110,8 @@ blockquote {
 	@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
 	padding: 20px;
 	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
-	
-	p {		
+
+	p {
 		&:first-child {
 			padding-top: 0;
 		}
@@ -119,31 +119,31 @@ blockquote {
 			padding-bottom: 0;
 		}
 	}
-	
+
 	code, kbd {
 		font-family: $font-family;
-		@include toggleDarkMode(color, $code-color--blockquote, $code-color--blockquote-dark);	
+		@include toggleDarkMode(color, $code-color--blockquote, $code-color--blockquote-dark);
 	}
-	
+
 	ul {
 		padding-left: $font-size--p--xs * 1.5;
 	}
 	ol {
-		
+
 		padding-left: $font-size--p--xs * 2.5;
 		&:last-child {
 			padding-bottom: 0;
 		}
 	}
-	
-	p ~ ol, 
+
+	p ~ ol,
 	p ~ ul {
 		margin-top: -1 * $font-size--p--xs;
 		padding-bottom: 0.5 * $font-size--p--xs;
 	}
-	
+
 }
-	
+
 strong, b,dt {
 	font-weight: 	bold;
 }
@@ -166,11 +166,11 @@ h1 {
 	text-align: 		$text-align--h1;
 	text-decoration: 	$text-decoration--h1;
 	text-transform: 	$text-transform--h1;
-	
+
 	@include toggleSizes(font-size, $font-size--h1--xs, $font-size--h1--sm, $font-size--h1--md, $font-size--h1--lg, $font-size--h1--xl);
 	@include toggleSizes(line-height, $line-height--h1--xs, $line-height--h1--sm, $line-height--h1--md, $line-height--h1--lg, $line-height--h1--xl);
 	@include toggleSizes(padding, $padding--h1--xs, $padding--h1--sm, $padding--h1--md, $padding--h1--lg, $padding--h1--xl);
-	
+
 	&.display {
 		@include toggleSizes(font-size, $font-size--display--xs, $font-size--display--sm, $font-size--display--md, $font-size--display--lg, $font-size--display--xl);
 		@include toggleSizes(line-height, $line-height--display--xs, $line-height--display--sm, $line-height--display--md, $line-height--display--lg, $line-height--display--xl);
@@ -184,7 +184,7 @@ h2 {
 	text-align: 		$text-align--h2;
 	text-decoration: 	$text-decoration--h2;
 	text-transform: 	$text-transform--h2;
-	
+
 	@include toggleSizes(font-size, $font-size--h2--xs, $font-size--h2--sm, $font-size--h2--md, $font-size--h2--lg, $font-size--h2--xl);
 	@include toggleSizes(line-height, $line-height--h2--xs, $line-height--h2--sm, $line-height--h2--md, $line-height--h2--lg, $line-height--h2--xl);
 	@include toggleSizes(padding, $padding--h2--xs, $padding--h2--sm, $padding--h2--md, $padding--h2--lg, $padding--h2--xl);
@@ -196,7 +196,7 @@ h3 {
 	text-align: 		$text-align--h3;
 	text-decoration: 	$text-decoration--h3;
 	text-transform: 	$text-transform--h3;
-	
+
 	@include toggleSizes(font-size, $font-size--h3--xs, $font-size--h3--sm, $font-size--h3--md, $font-size--h3--lg, $font-size--h3--xl);
 	@include toggleSizes(line-height, $line-height--h3--xs, $line-height--h3--sm, $line-height--h3--md, $line-height--h3--lg, $line-height--h3--xl);
 	@include toggleSizes(padding, $padding--h3--xs, $padding--h3--sm, $padding--h3--md, $padding--h3--lg, $padding--h3--xl);
@@ -208,7 +208,7 @@ h4 {
 	text-align: 		$text-align--h4;
 	text-decoration: 	$text-decoration--h4;
 	text-transform: 	$text-transform--h4;
-	
+
 	@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
 	@include toggleSizes(line-height, $line-height--h4--xs, $line-height--h4--sm, $line-height--h4--md, $line-height--h4--lg, $line-height--h4--xl);
 	@include toggleSizes(padding, $padding--h4--xs, $padding--h4--sm, $padding--h4--md, $padding--h4--lg, $padding--h4--xl);
@@ -220,7 +220,7 @@ h5 {
 	text-align: 		$text-align--h5;
 	text-decoration: 	$text-decoration--h5;
 	text-transform: 	$text-transform--h5;
-	
+
 	@include toggleSizes(font-size, $font-size--h5--xs, $font-size--h5--sm, $font-size--h5--md, $font-size--h5--lg, $font-size--h5--xl);
 	@include toggleSizes(line-height, $line-height--h5--xs, $line-height--h5--sm, $line-height--h5--md, $line-height--h5--lg, $line-height--h5--xl);
 	@include toggleSizes(padding, $padding--h5--xs, $padding--h5--sm, $padding--h5--md, $padding--h5--lg, $padding--h5--xl);
@@ -237,32 +237,32 @@ h3 + h4 {
 pre {
 	display: block;
 	position: relative;
-	
+
 	overflow-x: scroll;
-	
+
 	@include toggleDarkMode(color, $code-color, $code-color-dark);
 	@include toggleDarkMode(background, $code-background, $code-background-dark);
-	
+
 	font-family: $font-family;
-	
+
 	padding: $font-size--p--xs;
 	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
-	
+
 	code {
 		@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
 		@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
 	}
-	
+
 }
 
 table {
 	width: 		100%;
 	border-collapse: collapse;
-	
+
 	@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
 	@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
 	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
-	
+
 	tr {
 		@include toggleDarkMode(border-bottom, 1px solid $gray-200, 1px solid $gray-800);
 
@@ -270,32 +270,32 @@ table {
 			border-bottom: none !important;
 		}
 	}
-	
+
 	th, td {
 		padding: 5px 10px;
 		vertical-align: top;
-		
+
 		@include toggleDarkMode(border-left, 1px solid $gray-200, 1px solid $gray-800);
-		
+
 		&:first-child {
 			border-left: none;
 		}
 	}
-	
-	thead, 
+
+	thead,
 	tfoot {
 		@extend strong;
 		text-align: left;
 	}
-	
+
 	thead {
 		@include toggleDarkMode(border-bottom, 2px solid $black, 2px solid $white);
 	}
-	
+
 	tfoot {
 		@include toggleDarkMode(border-top, 2px solid $black, 2px solid $white);
 	}
-	
+
 }
 
 details {
@@ -303,39 +303,39 @@ details {
 	position: relative;
 	margin: 0;
 	padding: 0;
-	
+
 	&[open] summary::-webkit-details-marker,
 	&[open] summary::marker {
 		display: none;
 	}
-	
+
 	&[open] summary:before {
 		content: '–';
 	}
-	
-	
+
+
 	&[open] {
 		@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
 	}
-	
+
 	p {
 		@include toggleSizes(padding, 0 0 ($font-size--p--xs * 0.5) 0, 0 0 ($font-size--p--sm * 0.5) 0, 0 0 ($font-size--p--md * 0.5) 0, 0 0 ($font-size--p--lg * 0.5) 0, 0 0 ($font-size--p--xl * 0.5) 0);
 	}
-	
+
 	*:last-child {
 		padding-bottom: 0;
 	}
 }
 
 summary {
-	
+
 	/* Hide the marker completely. */
 	list-style-image: none;
 	&::marker,
 	&::-webkit-details-marker {
 		display: none;
 	}
-	
+
 	&:before {
 		display: block;
 		position: relative;
@@ -345,13 +345,13 @@ summary {
 		content: '+';
 		width: 30px;
 		float: right;
-		
+
 		text-align: right;
 		font-weight: bold;
 		@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
 		line-height: 1;
 	}
-	
+
 	display: block;
 	position: relative;
 	text-align: left;
@@ -360,23 +360,23 @@ summary {
 	@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
 
 	@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
-	
-	
-	
+
+
+
 	h1, h2, h3, h4, h5, h6 {
 		max-width: calc(100% - 30px);
 		float: left;
 		display: inline-block;
-		
+
 		text-align: left;
 		padding: 0;
 		font-style: normal;
 		cursor: pointer;
-		
+
 		@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
 		@include toggleSizes(line-height, $line-height--h4--xs, $line-height--h4--sm, $line-height--h4--md, $line-height--h4--lg, $line-height--h4--xl);
 	}
-	
+
 	&:hover {
 		@include toggleDarkMode(color, $accordian-color--hover, $accordian-color--hover-dark);
 	}
@@ -394,7 +394,7 @@ summary {
 		@include toggleDarkMode(outline, $accordian-outline--active, $accordian-outline--active-dark);
 		outline-offset: 0px;
 	}
-	
+
 	@include clearfix;
-	
+
 }

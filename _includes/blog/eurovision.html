@@ -1,0 +1,41 @@
+<fieldset id="toggle-esc-entries">
+
+    <legend>Toggle entries</legend>
+
+    <div class="radio-input">
+      <input type="radio" name="toggle-esc-entries" id="esc-all" value="all" checked>
+      <label for="esc-all">All entries</label>
+    </div>
+
+    <div class="radio-input">
+      <input type="radio" name="toggle-esc-entries" id="esc-sf1" value="sf1">
+      <label for="esc-sf1">Semi-final one</label>
+    </div>
+
+    <div class="radio-input">
+      <input type="radio" name="toggle-esc-entries" id="esc-sf2" value="sf2">
+      <label for="esc-sf2">Semi-final two</label>
+    </div>
+
+    <div class="radio-input">
+      <input type="radio" name="toggle-esc-entries" id="esc-final" value="final">
+      <label for="esc-final">Grand final</label>
+    </div>
+
+</fieldset>
+
+<div id="esc-entries" data-show="all">
+{% for entry in page.entries %}
+<details class="esc-entry" data-semifinal="{{ entry.semifinal }}" data-final="{{ entry.final }}">
+<summary>
+<h3>
+    <span class="entry">
+        <span class="country">{{ entry.country | smartify }}</span>
+        <span class="song-artist">{{ entry.song | smartify }} by {{ entry.artist | smartify }}</span>
+    </span>
+</h3>
+</summary>
+{{ entry.commentary | markdownify }}
+</details>
+{% endfor %}
+</div>

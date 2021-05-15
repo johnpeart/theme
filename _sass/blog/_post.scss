@@ -4,29 +4,29 @@ body[id$='post'] {
 		font-weight: bold;
 		@include toggleSizes(font-size, ($font-size--p--xs * 1.1), ($font-size--p--sm * 1.25), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.25));
 	}
-	
+
 	section.post-body ul > li::before {
 		position: absolute;
 		content: "\2014";
 
 		@include toggleSizes(left, $font-size--p--xs, -($font-size--p--sm / 2), -($font-size--p--md / 2), -($font-size--p--lg / 2), -($font-size--p--xl / 2));
 	}
-	
+
 	#markdown-toc {
-		
+
 		@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
 		padding:	20px;
-		
+
 		> li {
 			> a {
 				font-weight: bold;
 			}
-			
+
 			&::before {
 				display: none !important;
 			}
 		}
-		
+
 		a {
 			&:link {
 				@include toggleDarkMode(color, $link-color, $link-color-dark);
@@ -37,7 +37,7 @@ body[id$='post'] {
 			}
 			&:hover {
 				@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
-				text-decoration: 	$link-text-decoration-hover;	
+				text-decoration: 	$link-text-decoration-hover;
 			}
 			&:focus {
 				@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
@@ -48,60 +48,140 @@ body[id$='post'] {
 				text-decoration: 	$link-text-decoration-active;
 			}
 		}
-		
+
 	}
-	
+
 	ul#markdown-toc {
-		
+
 		> li > ul {
-				
+
 			padding-left: 0;
 			margin: 0;
-			
+
 			li {
 				@include toggleSizes(padding-left, 0, 0, 15px, 15px, 15px);
 				margin: 0;
-				
+
 				&::before {
-					
+
 					position: relative;
 					@include toggleSizes(display, none, none, inline-block, inline-block, inline-block);
 					@include toggleSizes(left, 0, 0, -15px, -15px, -15px);
-	
+
 				}
 			}
-			
+
 		}
-		
+
 	}
-	
+
 	ol#markdown-toc {
-		
+
 		list-style-type: none;
-		
+
 		> li > ol {
 			padding-left: 50px;
 			margin: 0;
 		}
-		
+
 		li:last-child > ol {
 			padding-bottom: 11px;
 		}
-		
+
 	}
-	
-	
-	details.table-of-contents {	
+
+
+	details.table-of-contents {
 		&[open] {
 			@include toggleDarkMode(border-bottom, 1px solid $gray-400, 1px solid $gray-700);
 		}
 	}
-	
+
 	details.table-of-contents #markdown-toc {
 		background: none;
 		padding: $container-padding 0;
 	}
-	
+
+	fieldset#toggle-esc-entries {
+
+		@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
+
+		padding: 15px 10px 10px;
+		margin-bottom: 20px;
+
+		@include sm-up {
+			padding: 20px;
+		}
+
+		legend {
+			@include sr-only;
+		}
+
+		div.radio-input {
+
+			display: inline-block;
+			width: 100%;
+
+			margin-bottom: 10px;
+
+			@include sm-up {
+				float: left;
+				clear: none;
+				width: 50%;
+
+				&:nth-of-type(3),
+				&:nth-of-type(4) {
+					margin-bottom: 0px;
+				}
+			}
+
+
+			label {
+				font-weight: normal;
+				vertical-align: middle;
+				line-height: $input-size;
+			}
+
+		}
+
+		@include clearfix;
+
+	}
+
+	div#esc-entries {
+
+		&[data-show="all"] {
+			details.esc-entry {
+				display: block;
+			}
+		}
+		&[data-show="sf1"] {
+			details.esc-entry {
+				display: none;
+			}
+			details.esc-entry[data-semifinal="1"] {
+				display: block;
+			}
+		}
+		&[data-show="sf2"] {
+			details.esc-entry {
+				display: none;
+			}
+			details.esc-entry[data-semifinal="2"] {
+				display: block;
+			}
+		}
+		&[data-show="final"] {
+			details.esc-entry[data-final="true"] {
+				display: block;
+			}
+			details.esc-entry[data-final="false"] {
+				display: none;
+			}
+		}
+
+	}
+
 	div.twitter-tweet {
 
 		margin-left: auto;
@@ -114,76 +194,74 @@ body[id$='post'] {
 
 		@include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
 	}
-	
+
 	div.footnotes {
-		
+
 		&:before {
 			display: block;
-			
+
 			@include toggleSizes(font-size, $font-size--h3--xs, $font-size--h3--sm, $font-size--h3--md, $font-size--h3--lg, $font-size--h3--xl);
 			@include toggleSizes(line-height, $line-height--h3--xs, $line-height--h3--sm, $line-height--h3--md, $line-height--h3--lg, $line-height--h3--xl);
 			@include toggleSizes(padding, $padding--h3--xs, $padding--h3--sm, $padding--h3--md, $padding--h3--lg, $padding--h3--xl);
-			
+
 			font-weight:			$font-weight--h3;
-			font-style: 			$font-style-h3; 
-			text-align: 			$text-align--h3;		
+			font-style: 			$font-style-h3;
+			text-align: 			$text-align--h3;
 			text-decoration: 	$text-decoration--h3;
 			text-transform: 		$text-transform--h3;
-			
+
 			content: "Footnotes";
-			
+
 		}
-		
+
 		@include toggleSizes(padding-top, 45px, 60px, 60px, 90px, 120px)
 		@include toggleSizes(max-width, 400px, 500px, 450px, 600px, 600px);
 
 		ul, ol {
 			@include toggleSizes(padding-left, ($font-size--p--xs * 1.6), ($font-size--p--sm * 1.6), 0, 0, 0);
 		}
-		li, p {		
+		li, p {
 			@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
 		}
-		p {	
+		p {
 			@include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
 		}
 		a.reversefootnote {
 			text-decoration: none;
 			font-family: $font-family !important;
 		}
-		
+
 	}
-	
+
 	footer.post-meta {
 		@include toggleSizes(padding-top, 45px, 60px, 60px, 90px, 120px);
 		@include toggleSizes(max-width, 400px, 500px, 450px, 600px, 600px);
-		
+
 		p, dl, dt, dd {
 			@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
 			@include toggleSizes(padding-bottom, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
 		}
 		dl {
 			@include clearfix;
-		}		
+		}
 		dt, dd {
 			display: 	inline-block;
 		}
 		dt {
 			@include toggleSizes(width, 40%, 25%, 25%, 25%, 25%);
 			float: 			left;
-			font-weight: 	bold;	
+			font-weight: 	bold;
 		}
 		dd {
 			text-transform: capitalize;
 			@include toggleSizes(width, 60%, 75%, 75%, 75%, 75%);
 		}
 	}
-	
-	
-	
+
 	iframe {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
 	}
-	
+
 }
