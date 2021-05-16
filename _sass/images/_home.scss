@@ -1,0 +1,93 @@
+body#images-home {
+
+	details[open] {
+		padding-bottom: $container-padding * 2;
+	}
+	details[open] > summary {
+		margin-bottom: $container-padding * 0.5;
+	}
+	summary::before {
+		float: left;
+	}
+
+	a.file-button,
+	button.file-button {
+
+		display: inline-block;
+		@include toggleSizes(height, $font-size--h4--xs * 1.25, $font-size--h4--sm * 1.25, $font-size--h4--md * 1.25, $font-size--h4--lg * 1.25, $font-size--h4--xl * 1.25);
+		@include toggleSizes(width, $font-size--h4--xs * 1.25, $font-size--h4--sm * 1.25, $font-size--h4--md * 1.25, $font-size--h4--lg * 1.25, $font-size--h4--xl * 1.25);
+		min-width: unset;
+		min-height: unset;
+
+		@include toggleSizes(line-height, $font-size--h4--xs * 1.25, $font-size--h4--sm * 1.25, $font-size--h4--md * 1.25, $font-size--h4--lg * 1.25, $font-size--h4--xl * 1.25);
+
+		@include toggleSizes(font-size, $font-size--h4--xs - 6px, $font-size--h4--sm - 6px, $font-size--h4--md - 6px, $font-size--h4--lg - 6px, $font-size--h4--xl - 6px);
+		text-decoration: none;
+		vertical-align: middle;
+		@include toggleDarkMode(background, $gray-200, $gray-800);
+		@include toggleDarkMode(color, $black, $white);
+		text-align: center;
+
+		border: 1px solid transparent;
+		border-radius: 10px;
+
+		&:link {
+			@include toggleDarkMode(background, $gray-200, $gray-800);
+			@include toggleDarkMode(color, $black, $white);
+		}
+		&:visited {
+			@include toggleDarkMode(background, $gray-200, $gray-800);
+			@include toggleDarkMode(color, $black, $white);
+		}
+		&:hover {
+			@include toggleDarkMode(background, $brand, $brand);
+			@include toggleDarkMode(color, $black, $white);
+		}
+		&:focus {
+			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
+			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
+			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+			border-radius: 0px;
+		}
+		&:active {
+			text-decoration: 	none;
+		}
+
+		margin-inline-start: ($container-padding / 3);
+
+	}
+
+	div.file-info {
+		display: block;
+		float: left;
+
+		span.filename,
+		span.filedate {
+			display: block;
+		}
+		span.filename {
+			font-weight: bold;
+		}
+		span.filedate {
+			color: $gray-500;
+			font-weight: normal;
+		}
+	}
+
+	div.file-buttons {
+		display: block;
+		float: right;
+	}
+	ul.files {
+		padding: 0;
+	}
+
+	li {
+		padding: ($container-padding) 0;
+		@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
+
+		@include clearfix;
+
+	}
+
+}

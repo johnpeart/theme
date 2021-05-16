@@ -304,15 +304,16 @@ details {
 	margin: 0;
 	padding: 0;
 
-	&[open] summary::-webkit-details-marker,
-	&[open] summary::marker {
+	&[open] > summary::-webkit-details-marker,
+	&[open] > summary::marker {
 		display: none;
+		list-style-image: none;
+		content: '';
 	}
 
-	&[open] summary:before {
+	&[open] > summary:before {
 		content: '–';
 	}
-
 
 	&[open] {
 		@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
@@ -325,6 +326,12 @@ details {
 	*:last-child {
 		padding-bottom: 0;
 	}
+
+	> div.container {
+		width: calc(100% - (#{$container-padding} * 2));
+		margin: 0 0 0 ($container-padding * 2);
+		padding: 0;
+	}
 }
 
 summary {
@@ -333,7 +340,11 @@ summary {
 	list-style-image: none;
 	&::marker,
 	&::-webkit-details-marker {
-		display: none;
+	  display: none;
+	  list-style-image: none;
+	  content: '';
+	  width: 0;
+	  height: 0;
 	}
 
 	&:before {
@@ -343,13 +354,13 @@ summary {
 		right: 0;
 		left: auto;
 		content: '+';
-		width: 30px;
+		width: $container-padding * 2;
 		float: right;
 
-		text-align: right;
+		text-align: left;
 		font-weight: bold;
-		@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
 		line-height: 1;
+		@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
 	}
 
 	display: block;

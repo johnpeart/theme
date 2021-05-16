@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<main id="content" class="container">
+
+	<section id="page-content">
+
+		<h1 class="page-title">Image Store</h1>
+
+		<aside class="intro-text">
+
+			{{ content }}
+
+		</aside>
+
+		{% assign images = site.static_files | where: "image", true %}
+		{% for doc in images %}
+
+			{% assign file = doc.basename | prepend: '/' | append: doc.extname %}
+			{% assign currentfolder = doc.path | remove: '/assets/images/' | remove: file %}
+			{% assign nofolder = doc.path | remove: '/assets/images/' | remove: doc.basename | remove: doc.extname %}
+			{% assign foldername = doc.path | remove: '/assets/images/' | remove: file %}
+			{% assign filename = doc.basename | remove: doc.extname | remove: "+" | replace: "-", " " | replace: "lgbti", "LGBTI" | replace: "lgbt", "LGBT" %}
+
+			{% if currentfolder != folder %}
+
+			{% unless forloop.first %}
+			</details>
+			{% endunless %}
+
+			<details class="folder">
+				{% if nofolder == "" %}
+				<summary class="foldername">
+					<h3>🗂 Unfiled</h3>
+				</summary>
+				{% else %}
+				<summary class="foldername">
+					<h3>🗂  {{ foldername }}</h3>
+
+					<div class="file-buttons">
+						<a class="file-button" href="{{ 'https://github.com/johnpeart/images/tree/master' | append: doc.path | remove: file }}" title="Open the “{{ foldername }}” folder on Github" target="_blank"> 🔎<span class="sr-only">Open this folder</span></a>
+						<a class="file-button" href="{{ 'https://github.com/johnpeart/images/upload/master' | append: doc.path | remove: file }}" title="Open GitHub and upload to the “{{ foldername }}” folder" target="_blank">📥<span class="sr-only">Upload to this folder</span></a>
+						<button class="file-button" onclick="copyURL('{{ "https://github.com/johnpeart/images/tree/master" | append: doc.path | remove: file }}');" title="Copy “{{ foldername }}” URL to clipboard" target="_blank">📋<span class="sr-only">Copy folder URL</span></button>
+					</div>
+				</summary>
+				{% endif %}
+
+				<div class="container">
+
+
+				<ul class="files">
+			{% assign folder = currentfolder %}
+			{% endif %}
+
+				<li class="file">
+					<div class="file-info">
+						<span class="filename">{{ filename | truncate: 30 }}</span>
+						<span class="filedate">{{ doc.modified_time | date:'%Y-%m-%d  %H:%M' }}</span>
+					</div>
+
+					<div class="file-buttons">
+						<a class="file-button" href="{{ site.url | append: site.baseurl | append: doc.path }}" title="Open “{{ filename }}” on Github" target="_blank">🔎<span class="sr-only">View file</span></a>
+
+						<button class="file-button" onclick="copyURL('{{ site.url | append: site.baseurl | append: doc.path }}');" title="Copy “{{ filename }}” URL to clipboard" target="_blank">📋<span class="sr-only">Copy file URL</span></button>
+					</div>
+				</li>
+
+			{% if forloop.last %}
+				</ul>
+				</div>
+			</details>
+			{% endif %}
+
+		{% endfor %}
+
+	</section>
+
+</master>
+
+{% include footer.html %}

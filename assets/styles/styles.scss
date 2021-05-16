@@ -6,30 +6,32 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
     "_reset",
-    
+
 	"variables/_default",
 	"variables/_override",
     "global/_fonts",
-    		        
+
     "helpers/_breakpoints",
     "helpers/_clearfix",
     "helpers/_sticky",
 	"helpers/_animations",
 	"helpers/_darkmode",
     "helpers/_screenreaders",
-	
+
 	"global/_containers",
 	"global/_typography",
 	"global/_code",
 	"global/_forms",
-			
+
 	"global/_main",
 	"global/_header",
 	"global/_footer",
-	
+
 	"global/_images",
 	"global/_forms",
 	"global/_notfound",
+
+	"images/_home",
 
 	"blog/_home",
 	"blog/_loop",
@@ -37,21 +39,21 @@
 	"blog/_page",
 
 	"about/_home",
-	
+
 	"projects/_home",
-	
+
 	"podcast/_home",
-	
+
 	"goals/_goals",
-	
+
 	"wishlist/_home",
-	
+
 	"manuals/_home",
-	
+
 	"photos/_home",
 	"photos/_post",
-	
+
 	"email/_email",
-	
+
 	"global/_themes"
 ;
