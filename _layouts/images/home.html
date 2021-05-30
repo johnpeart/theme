@@ -21,7 +21,7 @@ layout: default
 
 		<details class="collection">
 
-			<summary><h2>Blog post images</h2></summary>
+			<summary><h2>✍🏻 Blog post images</h2></summary>
 
 			{% assign images = site.static_files | where: "image", true | where: "image-collection", "posts" | reverse %}
 			{% for image in images %}
@@ -109,7 +109,7 @@ layout: default
 
 		<details class="collection">
 
-			<summary><h2>Guides images</h2></summary>
+			<summary><h2>🛠 Guides images</h2></summary>
 
 			{% assign images = site.static_files | where: "image", true | where: "image-collection", "guides" | reverse %}
 			{% for image in images %}
