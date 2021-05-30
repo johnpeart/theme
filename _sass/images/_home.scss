@@ -6,42 +6,31 @@ body#images-home {
 	details[open] > summary {
 		margin-bottom: $container-padding * 0.5;
 	}
-	summary::before {
-		float: left;
-	}
 
-	a.file-button,
-	button.file-button {
+	a.file-button {
 
 		display: inline-block;
-		@include toggleSizes(height, $font-size--h4--xs * 1.25, $font-size--h4--sm * 1.25, $font-size--h4--md * 1.25, $font-size--h4--lg * 1.25, $font-size--h4--xl * 1.25);
-		@include toggleSizes(width, $font-size--h4--xs * 1.25, $font-size--h4--sm * 1.25, $font-size--h4--md * 1.25, $font-size--h4--lg * 1.25, $font-size--h4--xl * 1.25);
-		min-width: unset;
-		min-height: unset;
 
-		@include toggleSizes(line-height, $font-size--h4--xs * 1.25, $font-size--h4--sm * 1.25, $font-size--h4--md * 1.25, $font-size--h4--lg * 1.25, $font-size--h4--xl * 1.25);
+		border-radius: 7.5px;
 
-		@include toggleSizes(font-size, $font-size--h4--xs - 6px, $font-size--h4--sm - 6px, $font-size--h4--md - 6px, $font-size--h4--lg - 6px, $font-size--h4--xl - 6px);
-		text-decoration: none;
-		vertical-align: middle;
-		@include toggleDarkMode(background, $gray-200, $gray-800);
-		@include toggleDarkMode(color, $black, $white);
-		text-align: center;
+		@include toggleSizes(font-size, ($font-size--p--xs * 0.7), ($font-size--p--sm * 0.7), ($font-size--p--md * 0.7), ($font-size--p--lg * 0.7), ($font-size--p--xl * 0.7));
+		@include toggleSizes(line-height, ($line-height--p--xs * 0.7), ($line-height--p--sm * 0.7), ($line-height--p--md * 0.7), ($line-height--p--lg * 0.7), ($line-height--p--xl * 0.7));
 
-		border: 1px solid transparent;
-		border-radius: 10px;
-
-		&:link {
-			@include toggleDarkMode(background, $gray-200, $gray-800);
-			@include toggleDarkMode(color, $black, $white);
-		}
+		&:link,
 		&:visited {
-			@include toggleDarkMode(background, $gray-200, $gray-800);
-			@include toggleDarkMode(color, $black, $white);
+
+			padding: $container-padding;
+
+			@include toggleDarkMode(background, $gray-600, $gray-400);
+			@include toggleDarkMode(color, $white, $black);
+
+			text-decoration: none;
 		}
 		&:hover {
+
 			@include toggleDarkMode(background, $brand, $brand);
-			@include toggleDarkMode(color, $black, $white);
+			@include toggleDarkMode(color, $white, $white);
+
 		}
 		&:focus {
 			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
@@ -50,16 +39,20 @@ body#images-home {
 			border-radius: 0px;
 		}
 		&:active {
-			text-decoration: 	none;
-		}
 
-		margin-inline-start: ($container-padding / 3);
+		}
 
 	}
 
-	div.file-info {
+	summary.foldername > h3 {
+		max-width: 90%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	summary.file-info {
 		display: block;
-		float: left;
 
 		span.filename,
 		span.filedate {
@@ -74,20 +67,43 @@ body#images-home {
 		}
 	}
 
+	details.file {
+
+		@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+		@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
+
+		@include toggleDarkMode(background, $gray-200, $gray-800);
+
+		padding: ($container-padding / 2);
+		margin-bottom: $container-padding;
+		border-radius: 15px;
+
+		> summary {
+			border: none;
+			border-radius: 7.5px;
+			padding: ($container-padding / 2);
+
+			&::before {
+				text-align: right;
+			}
+
+			&:focus,
+			&:active {
+				outline: none;
+				box-shadow: 0 0 0 2pt $brand;
+			}
+		}
+	}
+
 	div.file-buttons {
+		position: relative;
 		display: block;
-		float: right;
-	}
-	ul.files {
-		padding: 0;
+		width: 100%;
 	}
 
-	li.file {
-		padding: ($container-padding) 0;
-		@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
-
-		@include clearfix;
-
+	div.folder-info {
+		margin-bottom: $container-padding;
 	}
+
 
 }

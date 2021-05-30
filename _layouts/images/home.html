@@ -14,70 +14,179 @@ layout: default
 
 			{{ content }}
 
+
+
 		</aside>
 
-		{% assign images = site.static_files | where: "image", true %}
-		{% for doc in images %}
 
-			{% assign file = doc.basename | prepend: '/' | append: doc.extname %}
-			{% assign currentfolder = doc.path | remove: '/assets/images/' | remove: file %}
-			{% assign nofolder = doc.path | remove: '/assets/images/' | remove: doc.basename | remove: doc.extname %}
-			{% assign foldername = doc.path | remove: '/assets/images/' | remove: file %}
-			{% assign filename = doc.basename | remove: doc.extname | remove: "+" | replace: "-", " " | replace: "lgbti", "LGBTI" | replace: "lgbt", "LGBT" %}
+		<details class="collection">
 
-			{% if currentfolder != folder %}
+			<summary><h2>Blog post images</h2></summary>
 
-			{% unless forloop.first %}
-			</details>
-			{% endunless %}
+			{% assign images = site.static_files | where: "image", true | where: "image-collection", "posts" | reverse %}
+			{% for image in images %}
 
-			<details class="folder">
-				{% if nofolder == "" %}
-				<summary class="foldername">
-					<h3>🗂 Unfiled</h3>
-				</summary>
-				{% else %}
-				<summary class="foldername">
-					<h3>🗂  {{ foldername }}</h3>
+				{% assign label = image.label %}
+				{% assign image-collection = image.image-collection %}
 
-					<div class="file-buttons">
-						<a class="file-button" href="{{ 'https://github.com/johnpeart/images/tree/master' | append: doc.path | remove: file }}" title="Open the “{{ foldername }}” folder on Github" target="_blank"> 🔎<span class="sr-only">Open this folder</span></a>
-						<a class="file-button" href="{{ 'https://github.com/johnpeart/images/upload/master' | append: doc.path | remove: file }}" title="Open GitHub and upload to the “{{ foldername }}” folder" target="_blank">📥<span class="sr-only">Upload to this folder</span></a>
-						<button class="file-button" onclick="copyURL('{{ "https://github.com/johnpeart/images/tree/master" | append: doc.path | remove: file }}');" title="Copy “{{ foldername }}” URL to clipboard" target="_blank">📋<span class="sr-only">Copy folder URL</span></button>
+				{% assign file-basename = image.basename %}
+				{% assign file = image.name | prepend: '/' %}
+				{% assign file-date = image.modified_time %}
+				{% assign filename = image.basename | remove: image.extname | remove: "+" | replace: "-", " " | replace: "lgbti", "LGBTI" | replace: "lgbt", "LGBT" %}
+
+				{% assign folder-base = image-collection | prepend: "/assets/images/" %}
+				{% assign folder-name = image.path | remove: folder-base | remove: file %}
+				{% assign current-folder = image.path | remove: folder-base | remove: file %}
+				{% assign no-folder = image.path | remove: folder-base | remove: image.basename | remove: image.extname %}
+
+				{% assign year = folder-name | slice: 1, 4 %}
+				{% assign month = folder-name | slice: 6, 2 %}
+				{% assign day = folder-name | slice: 9, 2 %}
+				{% assign folder-date = '/' | append: year | append: '/' | append: month | append: '/' | append: day | append: '/' %}
+
+				{% assign folder-name--no-date = folder-name | remove: folder-date %}
+
+				{% if current-folder != folder %}
+
+				{% unless forloop.first %}
+				</details>
+				{% endunless %}
+
+				<details class="folder">
+					{% if no-folder == "" %}
+					<summary class="foldername">
+						<h3>🗂 Unfiled</h3>
+					</summary>
+					{% else %}
+					<summary class="foldername">
+						<h3>🗂 {{ folder-name--no-date }}</h3>
+					</summary>
+
+					<div class="folder-info container">
+
+						<div class="file-buttons">
+							<a class="file-button" href="{{ 'https://github.com/johnpeart/images/tree/master' | append: image.path | remove: file }}" title="Open the “{{ folder-name }}” folder on Github" target="_blank">Open this folder</a>
+							<a class="file-button" href="{{ 'https://github.com/johnpeart/images/upload/master' | append: image.path | remove: file }}" title="Open GitHub and upload to the “{{ folder-name }}” folder" target="_blank">Upload to this folder</a>
+						</div>
+
 					</div>
-				</summary>
+
+					{% endif %}
+
+					<div class="container">
+
+
+				{% assign folder = current-folder %}
 				{% endif %}
 
-				<div class="container">
+					<details class="file">
+						<summary class="file-info">
+							<span class="filename">🌅 {{ filename }}</span>
+							<span class="filedate">{{ image.modified_time | date:'%Y-%m-%d  %H:%M' }}</span>
+						</summary>
+
+						<div class="file-buttons">
+							<a class="file-button" href="{{ site.url | append: site.baseurl | append: image.path }}" title="Open “{{ filename }}” on Github" target="_blank">🔎 View file</a>
+
+							<a class="file-button" onclick="copyURL('{{ site.url | append: site.baseurl | append: image.path }}');" title="Copy “{{ filename }}” URL to clipboard" href="javascript:void(0); target="_blank">📋 Copy file URL</a>
+						</div>
+					</details>
+
+				{% if forloop.last %}
+					</div>
+				</details>
+				{% endif %}
+
+			{% endfor %}
+
+		</details>
 
 
-				<ul class="files">
-			{% assign folder = currentfolder %}
-			{% endif %}
 
-				<li class="file">
-					<div class="file-info">
-						<span class="filename">{{ filename | truncate: 30 }}</span>
-						<span class="filedate">{{ doc.modified_time | date:'%Y-%m-%d  %H:%M' }}</span>
+
+
+
+
+		<details class="collection">
+
+			<summary><h2>Guides images</h2></summary>
+
+			{% assign images = site.static_files | where: "image", true | where: "image-collection", "guides" | reverse %}
+			{% for image in images %}
+
+				{% assign label = image.label %}
+				{% assign image-collection = image.image-collection %}
+
+				{% assign file-basename = image.basename %}
+				{% assign file = image.name | prepend: '/' %}
+				{% assign file-date = image.modified_time %}
+				{% assign filename = image.basename | remove: image.extname | remove: "+" | replace: "-", " " | replace: "lgbti", "LGBTI" | replace: "lgbt", "LGBT" %}
+
+				{% assign folder-base = image-collection | prepend: "/assets/images/" %}
+				{% assign folder-name = image.path | remove: folder-base | remove: file %}
+				{% assign current-folder = image.path | remove: folder-base | remove: file %}
+				{% assign no-folder = image.path | remove: folder-base | remove: image.basename | remove: image.extname %}
+
+				{% assign folder-name--no-date = folder-name | remove: '/' %}
+
+				{% if current-folder != folder %}
+
+				{% unless forloop.first %}
+				</details>
+				{% endunless %}
+
+				<details class="folder">
+					{% if no-folder == "" %}
+					<summary class="foldername">
+						<h3>🗂 Unfiled</h3>
+					</summary>
+					{% else %}
+					<summary class="foldername">
+						<h3>🗂 {{ folder-name--no-date }}</h3>
+					</summary>
+
+					<div class="folder-info container">
+
+						<div class="file-buttons">
+							<a class="file-button" href="{{ 'https://github.com/johnpeart/images/tree/master' | append: image.path | remove: file }}" title="Open the “{{ folder-name }}” folder on Github" target="_blank">Open this folder</a>
+							<a class="file-button" href="{{ 'https://github.com/johnpeart/images/upload/master' | append: image.path | remove: file }}" title="Open GitHub and upload to the “{{ folder-name }}” folder" target="_blank">Upload to this folder</a>
+						</div>
+
 					</div>
 
-					<div class="file-buttons">
-						<a class="file-button" href="{{ site.url | append: site.baseurl | append: doc.path }}" title="Open “{{ filename }}” on Github" target="_blank">🔎<span class="sr-only">View file</span></a>
+					{% endif %}
 
-						<button class="file-button" onclick="copyURL('{{ site.url | append: site.baseurl | append: doc.path }}');" title="Copy “{{ filename }}” URL to clipboard" target="_blank">📋<span class="sr-only">Copy file URL</span></button>
+					<div class="container">
+
+
+				{% assign folder = current-folder %}
+				{% endif %}
+
+					<details class="file">
+						<summary class="file-info">
+							<span class="filename">🌅 {{ filename }}</span>
+							<span class="filedate">{{ image.modified_time | date:'%Y-%m-%d  %H:%M' }}</span>
+						</summary>
+
+						<div class="file-buttons">
+							<a class="file-button" href="{{ site.url | append: site.baseurl | append: image.path }}" title="Open “{{ filename }}” on Github" target="_blank">View file</a>
+
+							<a class="file-button" onclick="copyURL('{{ site.url | append: site.baseurl | append: image.path }}');" title="Copy “{{ filename }}” URL to clipboard" href="javascript:void(0); target="_blank">Copy file URL</a>
+						</div>
+					</details>
+
+				{% if forloop.last %}
 					</div>
-				</li>
+				</details>
+				{% endif %}
 
-			{% if forloop.last %}
-				</ul>
-				</div>
-			</details>
-			{% endif %}
+			{% endfor %}
 
-		{% endfor %}
+		</details>
+
 
 	</section>
 
-</master>
+</main>
 
 {% include footer.html %}
