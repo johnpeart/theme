@@ -1,5 +1,5 @@
 <figure class="image">
-	<img src="{{ include.url | prepend: site.image-path | prepend: site.baseurl | prepend: site.url }}" alt="{{ include.alt }}">
+	<img src="{{ include.url }}" alt="{{ include.alt }}">
 	<figcaption>
 		{% if include.figure %}<strong>Figure {{ include.figure }}:</strong>{% endif %}
 		{{ include.caption | append: '.' }}
