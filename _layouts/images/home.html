@@ -38,7 +38,7 @@ layout: default
 				{% assign folder-base = image-collection | prepend: "/assets/images/" %}
 				{% assign folder-name = image.path | remove: folder-base | remove: file %}
 				{% assign current-folder = image.path | remove: folder-base | remove: file %}
-				{% assign no-folder = image.path | remove: folder-base | remove: image.basename | remove: image.extname %}
+				{% assign no-folder = image.path | remove: folder-base | remove: file-basename | remove: image.extname %}
 
 				{% assign folder-name--no-date = folder-name | remove: '/' %}
 
@@ -49,13 +49,13 @@ layout: default
 				{% endunless %}
 
 				<details class="folder">
-					{% if no-folder == "" %}
+					{% if no-folder == "" OR no-folder == "/" %}
 					<summary class="foldername">
 						<h3>🗂 Unfiled</h3>
 					</summary>
 					{% else %}
 					<summary class="foldername">
-						<h3>🗂 {{ folder-name--no-date }}</h3>
+						<h3>🗂 {{ folder-name }}</h3>
 					</summary>
 
 					<div class="folder-info container">
