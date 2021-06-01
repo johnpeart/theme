@@ -17,9 +17,9 @@ layout: default
 
 
 		</aside>
-		
-		
-		
+
+
+
 		<details class="collection">
 
 			<summary><h2>🔗 Social graph images</h2></summary>
@@ -38,7 +38,7 @@ layout: default
 				{% assign folder-base = image-collection | prepend: "/assets/images/" %}
 				{% assign folder-name = image.path | remove: folder-base | remove: file %}
 				{% assign current-folder = image.path | remove: folder-base | remove: file %}
-				{% assign no-folder = image.path | remove: folder-base | remove: file-basename | remove: image.extname %}
+				{% assign no-folder = image.path | remove: folder-base | remove: "/" | remove: file-basename | remove: image.extname %}
 
 				{% assign folder-name--no-date = folder-name | remove: '/' %}
 
@@ -49,9 +49,9 @@ layout: default
 				{% endunless %}
 
 				<details class="folder">
-					{% if no-folder == "" OR no-folder == "/" %}
+					{% if no-folder == "" %}
 					<summary class="foldername">
-						<h3>🗂 Unfiled</h3>
+						<h3>🗂 Unfiled </h3>
 					</summary>
 					{% else %}
 					<summary class="foldername">
@@ -96,13 +96,13 @@ layout: default
 			{% endfor %}
 
 		</details>
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
 
 
 		<details class="collection">
