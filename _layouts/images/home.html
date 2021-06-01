@@ -38,7 +38,7 @@ layout: default
 				{% assign folder-base = image-collection | prepend: "/assets/images/" %}
 				{% assign folder-name = image.path | remove: folder-base | remove: file %}
 				{% assign current-folder = image.path | remove: folder-base | remove: file %}
-				{% assign no-folder = image.path | remove: folder-base | remove: file %}
+				{% assign no-folder = image.path | remove: folder-base | remove: file | remove: "/" %}
 
 				{% assign folder-name--no-date = folder-name | remove: '/' %}
 
