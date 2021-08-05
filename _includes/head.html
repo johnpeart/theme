@@ -42,10 +42,13 @@
 
 	<!-- Favicons -->
 	<!-- Place favicon.ico in the root directory - no tag necessary -->
-	<meta name="theme-color" content="{{ site.theme-colour }}">
 	<link rel="icon" href="{{ site.url | append: site.baseurl | append: site.favicon-svg }}">
 	<link rel="mask-icon" href="{{ site.url | append: site.baseurl | append: site.favicon-pinned-svg }}" color="{{ site.theme-colour }}">
 	<link rel="apple-touch-icon" href="{{ site.url | append: site.baseurl | append: site.favicon-large-png }}">
+
+	<!-- Safari toolbar colors -->
+	<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content="#1d1d1d" media="(prefers-color-scheme: dark)">
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="{{ site.url | append: site.baseurl | append: site.asset-path | append: site.css-path | append: '/styles.css' }}">
