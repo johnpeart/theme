@@ -10,7 +10,7 @@ layout: default
 	{% assign totalgoalprogress = 0 %}
 	{% assign goalno = 0 %}
 	{% assign totalgoalpercentage = 0 %}
-	{% assign dayoftheyear = "now" | date: "%j" %}
+	{% assign dayoftheyear = "now" | date: "%j" | plus: 0 %}
 	{% assign currentyear = "now" | date: "%Y" | plus: 0 %}
 
 	{% if page.year %}
@@ -80,7 +80,7 @@ layout: default
 				<progress class="standard" max="365" value="{{ dayoftheyear }}">
 					<p>Day <strong>{{ dayoftheyear }}</strong> out of <strong>365</strong></p>
 				</progress>
-				<p>Progress against my goals was last updated on the {{ "now" | date: "%-d %B" }}.</p>
+				<p>{{ dayoftheyear | times: 100 | divided_by: 366 | at_least: 0 | append: '%' }}  of the year complete.</p>
 				{% endif %}
 			</li>
 						
