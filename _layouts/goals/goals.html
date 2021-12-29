@@ -80,7 +80,7 @@ layout: default
 				<progress class="standard" max="365" value="{{ dayoftheyear }}">
 					<p>Day <strong>{{ dayoftheyear }}</strong> out of <strong>365</strong></p>
 				</progress>
-				<p>{{ dayoftheyear | times: 100 | divided_by: 366 | at_least: 0 | append: '%' }}  of the year complete.</p>
+				<p>{{ dayoftheyear | times: 100 | divided_by: 366 | at_least: 0 | append: '%' }}  of the year complete</p>
 				{% endif %}
 			</li>
 						
