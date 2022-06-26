@@ -1,5 +1,8 @@
 body[id$='post'] {
 
+	figure.featured-image {
+		margin-bottom: $container-padding * 3;
+	}
 	section.post-body > p:first-of-type {
 		font-weight: bold;
 		@include toggleSizes(font-size, ($font-size--p--xs * 1.1), ($font-size--p--sm * 1.25), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.25));
