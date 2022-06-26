@@ -1,8 +1,10 @@
 {% assign domain = "//www.johnpe.art" %}
 {% assign subdomain = site.url | append: site.baseurl %}
 
-<header id="site-header">
-	<nav id="header--site-nav" role="navigation" class="container">
+<header class="site-header container">
+
+	<nav aria-label="Menu">
+		
 		{% if site.menu-subdomain == true %}
 		<p id="header--wordmark">
 			<a class="wordmark" href="{{ domain }}" title="Go to the home page">J<span class="wordmark-hidden">ohn </span>P<span class="wordmark-hidden">eart</span></a>
@@ -10,20 +12,20 @@
 		</p>
 		{% else %}
 		<p id="header--wordmark">
-			<a class="wordmark" href="{{ domain }}" title="Go to the home page">John Peart</a>
+			<a href="{{ domain }}" class="header--wordmark-link">John Peart</a>
 		</p>
 		{% endif %}
 		
 		{% if site.menu-header != false %}
-		<button id="header-menu-toggle" class="closed" accesskey="m" aria-controls="header-menu-items" aria-expanded="false">
-				<svg id="header-menu-toggle-image" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
-					<defs/>
-					<title>Menu icon</title>
-					<path id="menuicon" d="M 8 0 L 8 8 L 0 8 L 0 12 L 8 12 L 8 20 L 12 20 L 12 12 L 20 12 L 20 8 L 12 8 L 12 0 Z" fill="#1d1d1d"/>
-				</svg>
-				<span class="sr-only">Menu</span>
+		<button id="header-menu-toggle" type="button" class="menu-button closed" aria-controls="navigation" aria-label="Show or hide menu" aria-expanded="false" accesskey="m">
+			<svg id="header-menu-toggle-image" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+				<defs></defs>
+				<title>Menu icon</title>
+				<path id="menuicon" d="M 8 0 L 8 8 L 0 8 L 0 12 L 8 12 L 8 20 L 12 20 L 12 12 L 20 12 L 20 8 L 12 8 L 12 0 Z" fill="#adb5bd"></path>
+			</svg>
+			<span class="sr-only">Menu</span>
 		</button>
-		<ul id="header-menu-items" class="closed" aria-labelledby="header-menu-toggle">
+		<ul id="header-menu-items" class="nav closed">
 			{% if site.data.header-menu %}
 				{% for menuitem in site.data.header-menu %}
 				<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
@@ -41,4 +43,5 @@
 		{% endif %}
 		
 	</nav>
+	
 </header>
