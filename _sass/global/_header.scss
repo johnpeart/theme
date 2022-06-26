@@ -33,11 +33,8 @@ p#header--wordmark {
 	display: block;
 	z-index: 10000;
 	
-	float: left;
 	padding: 0;
 	
-	@include toggleSizes(width, calc(100% - #{$header-min-height--small}), calc(100% - #{$header-min-height}), calc(100% - #{$header-min-height}), calc(100% - #{$header-min-height}), calc(100% - #{$header-min-height}));
-	@include toggleSizes(min-height, $header-min-height--small, $header-min-height, $header-min-height, $header-min-height, $header-min-height);
 	@include toggleSizes(font-size, $font-size--header-wordmark--xs, $font-size--header-wordmark--sm, $font-size--header-wordmark--md, $font-size--header-wordmark--lg, $font-size--header-wordmark--xl);
 	@include toggleSizes(line-height, $line-height--header-wordmark--xs, $line-height--header-wordmark--sm, $line-height--header-wordmark--md, $line-height--header-wordmark--lg, $line-height--header-wordmark--xl);
 	@include toggleSizes(padding, $padding--header-wordmark--xs, $padding--header-wordmark--sm, $padding--header-wordmark--md, $padding--header-wordmark--lg, $padding--header-wordmark--xl);
@@ -45,11 +42,12 @@ p#header--wordmark {
 	a {
 		display: inline-block;
 	}
-	a.wordmark {
+	a.header--wordmark-link {
 		font-weight: 	bold;
 		
 		&:link {
 			@include toggleDarkMode(color, $black, $white);
+			text-decoration: none;
 		}
 		&:visited {
 			@include toggleDarkMode(color, $black, $white);
@@ -99,32 +97,95 @@ p#header--wordmark {
 	
 }
 
-button#header-menu-toggle {
-	display: block;
-	position: relative;
-	z-index: 10000;
+header.site-header {
 	
-	height: unset;
-	width: unset;
-	@include toggleSizes(min-height, $header-min-height--small, $header-min-height, $header-min-height, $header-min-height, $header-min-height);
-	@include toggleSizes(min-width, $header-min-height--small, $header-min-height, $header-min-height, $header-min-height, $header-min-height);
+	ul.nav {
+		display: block;
+		position: relative;
+		float: none;
+		clear: both;
+		z-index: 1000;
+		
+		padding-left: 0;
+		
+		&.closed {
+			@include sr-only;
+		}
+		&.open {
+			height: auto;
+			width: 100%;
+			opacity: 1;
+		}
+		// Hide the scroll bars
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
+		
+		li {
+			display: inline-block;
+			@include toggleSizes(width, 100%, 100%, auto, auto, auto);
+			@include toggleSizes(margin-right, 0, 0, 20px, 20px, 20px);
+			@include toggleSizes(min-height, $header-min-height--small, $header-min-height--small, 0, 0, 0);
+			@include toggleSizes(font-size, $font-size--header-menu--xs, $font-size--header-menu--sm, $font-size--header-menu--md, $font-size--header-menu--lg, $font-size--header-menu--xl);
+			@include toggleSizes(line-height, $line-height--header-menu--xs, $line-height--header-menu--sm, $line-height--header-menu--md, $line-height--header-menu--lg, $line-height--header-menu--xl);	
+			@include toggleSizes(padding, $padding--header-menu--xs, $padding--header-menu--sm, $padding--header-menu--md, $padding--header-menu--lg, $padding--header-menu--xl);
+		}
+		
+		a {
+			&:link {
+				@include toggleDarkMode(color, $cyan, $cyan);
+				text-decoration: none;
+			}
+			&:visited {
+				@include toggleDarkMode(color, $cyan, $cyan);
+				text-decoration: none;
+			}
+			&:hover {
+				@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
+				text-decoration: 	underline;	
+			}
+			&:focus {
+				@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
+				@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
+				@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+			}
+			&:active {
+				text-decoration: 	$link-text-decoration-active;
+			}
+		}
+	}	
+} 
 
-	border: 		none;
-	background: 	none;
+button.menu-button {
+	z-index: 99999999;
 	
-	padding: 0;
-	margin: 0 -15px 0 0;
-	float: right;
+	display: block;
+	position: absolute;
+	min-width: unset;
 	
-	svg#header-menu-toggle-image {
+	@include toggleSizes(width, 20px, 20px, 25px, 25px, 25px);
+	@include toggleSizes(height, 20px, 20px, 25px, 25px, 25px);
+	
+	padding: 5px;
+	top: 18px;
+	right: 18px;
+	box-sizing: content-box;
+	
+	@include toggleDarkMode(background, $body-background, $body-background-dark);
+	border: 0;
+	
+	svg {
 		@include toggleSizes(width, 20px, 20px, 25px, 25px, 25px);
 		@include toggleSizes(height, 20px, 20px, 25px, 25px, 25px);
-		path#menuicon {
-			@include toggleDarkMode(fill, $gray-500, $gray-600);
-			transform-origin: center;
-			transform: rotate(0deg);
-			transition: 0.25s all;
-		}
+	}
+	
+	svg path#menuicon {
+		@include toggleDarkMode(fill, $gray-500, $gray-600);
+		transform-origin: center;
+		transform: rotate(0deg);
+		transition: 0.25s all;
 	}
 	
 	&.open {
@@ -142,6 +203,7 @@ button#header-menu-toggle {
 			transition: 0.1s all;
 		}
 	}
+	
 	&:focus {
 		@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
 		@include toggleDarkMode(border, $link-border--focus, $link-border--focus-dark);
@@ -159,65 +221,6 @@ button#header-menu-toggle {
 			transform-origin: center;
 			transform: rotate(22.5deg);
 			transition: 0.1s all;
-		}
-	}
-	
-}
-ul#header-menu-items {
-	display: block;
-	position: relative;
-	float: none;
-	clear: both;
-	z-index: 1000;
-	
-	@include toggleDarkMode(background, $header-background, $header-background-dark);
-	padding-left: 0;
-	
-	&.closed {
-		@include sr-only;
-	}
-	&.open {
-		height: auto;
-		width: 100%;
-		opacity: 1;
-	}
-	// Hide the scroll bars
-	&::-webkit-scrollbar {
-		display: none;
-	}
-	-ms-overflow-style: none;  /* IE and Edge */
-	scrollbar-width: none;  /* Firefox */
-
-	li.header-link {
-		display: inline-block;
-		@include toggleSizes(width, 100%, 100%, auto, auto, auto);
-		@include toggleSizes(margin-right, 0, 0, 20px, 20px, 20px);
-		@include toggleSizes(min-height, $header-min-height--small, $header-min-height--small, 0, 0, 0);
-		@include toggleSizes(font-size, $font-size--header-menu--xs, $font-size--header-menu--sm, $font-size--header-menu--md, $font-size--header-menu--lg, $font-size--header-menu--xl);
-		@include toggleSizes(line-height, $line-height--header-menu--xs, $line-height--header-menu--sm, $line-height--header-menu--md, $line-height--header-menu--lg, $line-height--header-menu--xl);	
-		@include toggleSizes(padding, $padding--header-menu--xs, $padding--header-menu--sm, $padding--header-menu--md, $padding--header-menu--lg, $padding--header-menu--xl);
-	}
-	
-	a {
-		&:link {
-			@include toggleDarkMode(color, $cyan, $cyan);
-			text-decoration: none;
-		}
-		&:visited {
-			@include toggleDarkMode(color, $cyan, $cyan);
-			text-decoration: none;
-		}
-		&:hover {
-			@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
-			text-decoration: 	underline;	
-		}
-		&:focus {
-			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
-			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
-			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
-		}
-		&:active {
-			text-decoration: 	$link-text-decoration-active;
 		}
 	}
 }
