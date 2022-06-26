@@ -15,6 +15,7 @@ layout: default
 			{% if page.image %}
 			<figure class="featured-image">
 				<img src="{{ page.image }}" alt="{{ page.alt-text }}">
+				{% if page.alt-text %}
 				<figcaption>{{ page.alt-text }}</figcaption>
 			</figure>
 			{% endif %}
