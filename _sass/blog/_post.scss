@@ -7,7 +7,20 @@ body[id$='post'] {
 		font-weight: bold;
 		@include toggleSizes(font-size, ($font-size--p--xs * 1.1), ($font-size--p--sm * 1.25), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.25));
 	}
-
+	
+	header.post-title {
+		h1.post-title {
+			padding-top: 0;
+		}
+	}
+	
+	aside.post-published-date p {
+		font-weight: bold;
+		@include toggleDarkMode(color, $gray-600, $gray-400);
+		@include toggleSizes(font-size, ($font-size--p--xs * 1.2), ($font-size--p--sm * 1.25), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.4));
+		@include toggleSizes(padding, $padding--post-date--xs, $padding--post-date--sm, $padding--post-date--md, $padding--post-date--lg, $padding--post-date--xl);
+	}
+	
 	section.post-body ul > li::before {
 		position: absolute;
 		content: "\2014";

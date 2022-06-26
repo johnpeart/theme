@@ -9,17 +9,12 @@ layout: default
 	<article id="post-content">
 		
 		<header class="post-title">
-
-			<h1 class="post-title">{{ page.title | smartify }}</h1>
 			
-			{% if page.image %}
-			<figure class="featured-image">
-				<img src="{{ page.image }}" alt="{{ page.alt-text }}">
-				{% if page.alt-text %}
-				<figcaption>{{ page.alt-text }}</figcaption>
-				{% endif %}
-			</figure>
-			{% endif %}
+			<aside class="post-published-date">
+				<p><time datetime="{{page.date | date: '%Y-%m-%d'}}">{{ page.date | date: "%d %B %Y" }}
+</time></p>
+			</aside>
+			<h1 class="post-title">{{ page.title | smartify }}</h1>
 
 		</header>
 

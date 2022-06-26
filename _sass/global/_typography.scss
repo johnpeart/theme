@@ -23,6 +23,14 @@ a {
 	}
 }
 
+hr {
+	border: unset;
+	border-top: 3px solid;
+	@include toggleDarkMode(border-color, $gray-300, $gray-600);
+	margin: ($container-padding * 2) 0 ($container-padding * 4) 0;
+	padding: 0;
+}
+
 p,
 dt,
 dd,
