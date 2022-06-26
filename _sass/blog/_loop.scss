@@ -27,7 +27,6 @@ body#blog-loop {
 		@include toggleSizes(font-size, ($font-size--h2--xs * 1.25), ($font-size--h2--sm *1.25), ($font-size--h2--md * 1.5), ($font-size--h2--lg * 1.5), ($font-size--h2--xl * 1.5));
 		
 		line-height: 0.8;
-		
 	}
 	
 	ul.loop {
