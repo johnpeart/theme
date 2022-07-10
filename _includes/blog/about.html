@@ -1,0 +1,62 @@
+{% for organisation in organisations %}
+<article>
+	
+	<header>
+	
+		<h3 class="about-organisation">{{ organisation.name | smartify }}</h3>
+		
+	</header>
+
+	{% assign jobs = organisation.items | sort: "date" | reverse %}
+	{% for job in jobs %}
+	
+		{% assign content = job.content | strip_newlines %}
+		{% if content == "" %}
+		
+		<div class="about-job-entry">
+			<h4 class="about-job-title">{{ job.role | smartify }}</h4>
+			{% if entry.end == "present" %}
+			<p class="about-time">{{ job.dates.start | date: '%B %Y' }} to {{ job.dates.end }}</p>
+			{% else %}
+			<p class="about-time">{{ job.dates.start | date: '%B %Y' }} to {{ job.dates.end | date: '%B %Y' }}</p>
+			{% endif %}
+		</div>
+		
+		{% else %}
+		
+		<details class="about-job-entry">
+		
+			<summary class="about-job-entry">
+				<h4 class="about-job-title">{{ job.role | smartify }}</h4>
+				{% if entry.end == "present" %}
+				<p class="about-time">{{ job.dates.start | date: '%B %Y' }} to {{ job.dates.end }}</p>
+				{% else %}
+				<p class="about-time">{{ job.dates.start | date: '%B %Y' }} to {{ job.dates.end | date: '%B %Y' }}</p>
+				{% endif %}
+			</summary>
+			
+			<section class="about-details">
+			{{ job.content }}
+			
+				{% if job.projects %}
+				<ul class="about-job-projects">
+					<h5 class="about-job-projects">Major projects and publications</h5>
+					{% for project in job.projects %}
+						{% if project.url %}
+						<li><a href="{{ project.url }}" title="Read more about {{ project.project }} (Opens in new window)" target="_blank" rel="noopener noreferrer">{{ project.project | smartify }}</a></li>
+						{% else %}
+						<li>{{ project.project | smartify }}</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+				{% endif %}
+			</section>
+						
+		</details>
+		
+		{% endif %}
+	
+	{% endfor %}
+	
+</article>
+{% endfor %}

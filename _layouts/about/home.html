@@ -2,99 +2,47 @@
 layout: blog/page
 ---
 
-{% for entry in site.data.about %}
+{{ content }}
 
+
+{% assign organisations = site.about | sort: "date" | where: "type", "career" | group_by: "organisation" | reverse %}
+{% if organisations != empty %}
 <section>
 	
 	<header>	
-		<h2 class="about-header about-{{ entry.section | slugify }}">{{ entry.section | smartify }}</h2>
+		<h2 class="about-header about-career">Career</h2>
 	</header>
-			
-	{% for entry in entry.organisations %}
-	
-		{% if entry.hidden != true %}
-		
-		<article>
-			
-			<header>
-			
-				<h3 class="about-organisation"><a href="{{ entry.url }}" title="Visit {{ entry.organisation | smartify }}’s website (Opens in new window)" target="_blank" rel="noopener noreferrer">{{ entry.organisation | smartify }}</a></h3>
-				
-			</header>
-		
-			{% if entry.start %}
-			<aside>
-				{% if entry.end == "present" %}
-				<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
-				{% else %}
-				<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
-				{% endif %}
-			</aside>
-			{% endif %}
-		
-		{% for entry in entry.jobs %}
-			
-			{% if entry.hidden != true %}
-				
-				{% if entry.notes %}
-				{% assign entrytitle = entry.title | slugify %}
-				
-					<details class="about-job-entry">
-						
-						<summary class="about-job-entry">
-							<h4 class="about-job-title">{{ entry.title | smartify }}</h4>
-							{% if entry.end == "present" %}
-							<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
-							{% else %}
-							<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
-							{% endif %}
-						</summary>
-						
-						{% for entry in entry.notes %}
-						<section class="about-details">
-						{{ entry.description | markdownify }}
-			
-							{% if entry.projects %}
-							<ul class="about-job-projects">
-								<h5 class="about-job-projects">Major projects and publications</h5>
-								{% for entry in entry.projects %}
-									{% if entry.url %}
-									<li><a href="{{ entry.url }}" title="Read more about {{ entry.project }} (Opens in new window)" target="_blank" rel="noopener noreferrer">{{ entry.project | smartify }}</a></li>
-									{% else %}
-									<li>{{ entry.project | smartify }}</li>
-									{% endif %}
-								{% endfor %}
-							</ul>
-							{% endif %}
-						</section>
-						{% endfor %}
-						
-					</details>
-				
-				{% else %}
-				
-					<div class="about-job-entry">
-						
-						<h4 class="about-job-title">{{ entry.title | smartify }}</h4>
-						{% if entry.end == "present" %}
-						<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
-						{% else %}
-						<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
-						{% endif %}
-						
-					</div>
-				
-				{% endif %}
-				
-			{% endif %}
-		
-		{% endfor %}
-		</article>
-		
-		{% endif %}
-		
-	{% endfor %}
+
+
+	{% include blog/about.html %}
 	
 </section>
+{% endif %}
 
-{% endfor %}
+{% assign organisations = site.about | sort: "date" | where: "type", "volunteering" | group_by: "organisation" | reverse %}
+{% if organisations != empty %}
+<section>
+	
+	<header>	
+		<h2 class="about-header about-education">Volunteering</h2>
+	</header>
+
+
+	{% include blog/about.html %}
+	
+</section>
+{% endif %}
+
+{% assign organisations = site.about | sort: "date" | where: "type", "education" | group_by: "organisation" | reverse %}
+{% if organisations != empty %}
+<section>
+	
+	<header>	
+		<h2 class="about-header about-education">Education</h2>
+	</header>
+
+
+	{% include blog/about.html %}
+	
+</section>
+{% endif %}

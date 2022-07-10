@@ -116,7 +116,7 @@ body#about-home {
 		
 		li {
 			
-			@include toggleSizes(padding-left, ($font-size--p--xs * 1.5), ($font-size--p--sm * 1.5), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.25));
+			@include toggleSizes(padding-left, ($font-size--p--xs * 1.25), ($font-size--p--sm * 1.25), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.25));
 			padding-bottom: 0;
 		
 			&::before {
@@ -124,7 +124,7 @@ body#about-home {
 				position: absolute;
 				content: "\2014";
 		
-				@include toggleSizes(left, $font-size--p--xs, ($font-size--p--sm / 2), ($font-size--p--md / 2), ($font-size--p--lg / 2), ($font-size--p--xl / 2));
+				left: 0px;
 			}
 			
 		}
