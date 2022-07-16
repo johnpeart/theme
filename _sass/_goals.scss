@@ -73,7 +73,7 @@ body#goals {
 			height: 	20px;
 	
 			&::-webkit-progress-bar {
-				@include toggleDarkMode(background, $gray-200, $gray-700)
+				@include toggleDarkMode(background, $gray-200, $gray-700);
 				border: 			none;
 				border-radius: 		2px;
 			}
@@ -92,7 +92,7 @@ body#goals {
 			margin-bottom: 0;
 	
 			&::-webkit-progress-bar {
-				@include toggleDarkMode(background, $gray-200, $gray-700)
+				@include toggleDarkMode(background, $gray-200, $gray-700);
 				border: 			none;			
 				border-top-left-radius: 2px; 
 				border-top-right-radius: 2px;			
@@ -192,7 +192,7 @@ body#goal {
 					height: 	20px;
 
 					&::-webkit-progress-bar {
-						@include toggleDarkMode(background, $gray-200, $gray-700)
+						@include toggleDarkMode(background, $gray-200, $gray-700);
 						border: 			none;
 						border-radius: 		2px;
 					}
@@ -211,7 +211,7 @@ body#goal {
 					margin-bottom: 0;
 
 					&::-webkit-progress-bar {
-						@include toggleDarkMode(background, $gray-200, $gray-700)
+						@include toggleDarkMode(background, $gray-200, $gray-700);
 						border: 			none;			
 						border-top-left-radius: 2px; 
 						border-top-right-radius: 2px;			
