@@ -18,14 +18,14 @@
 					<li><a href="{{ item.link }}" class="footer--nav-link" title="Visit the {{ item.label }} page">{{ item.label }}</a></li>
 					{% endfor %}
 				{% else %}
-					<li><a href="//www.johnpe.art/about" class="footer--nav-link" title="Visit the About me page">About me</a></li>
-					<li><a href="//www.johnpe.art/writing" class="footer--nav-link" title="Visit the Writing page">Writing</a></li>
-					<li><a href="//www.johnpe.art/photos" class="footer--nav-link" title="Visit the Photos pages">Photos</a></li>
-					<li><a href="//www.johnpe.art/podcast" class="footer--nav-link" title="Visit the Podcasts page">Podcasts</a></li>
-					<li><a href="//www.johnpe.art/goals" class="footer--nav-link" title="Visit the Goals pages">Goals</a></li>
-					<li><a href="//www.johnpe.art/projects" class="footer--nav-link" title="Visit the Projects page">Projects</a></li>
-					<li><a href="//www.johnpe.art/manuals" class="footer--nav-link" title="Visit the manuals Manuals for my projects">Manuals</a></li>
-					<li><a href="//www.johnpe.art/wishlist" class="footer--nav-link" title="See my wishlist">Wishlist</a></li>
+					<li><a href="{{ domain }}/about" class="footer--nav-link" title="Visit the About me page">About me</a></li>
+					<li><a href="{{ domain }}/writing" class="footer--nav-link" title="Visit the Writing page">Writing</a></li>
+					<li><a href="{{ domain }}/photos" class="footer--nav-link" title="Visit the Photos pages">Photos</a></li>
+					<li><a href="{{ domain }}/podcast" class="footer--nav-link" title="Visit the Podcasts page">Podcasts</a></li>
+					<li><a href="{{ domain }}/goals" class="footer--nav-link" title="Visit the Goals pages">Goals</a></li>
+					<li><a href="{{ domain }}/projects" class="footer--nav-link" title="Visit the Projects page">Projects</a></li>
+					<li><a href="{{ domain }}/manuals" class="footer--nav-link" title="Visit the manuals Manuals for my projects">Manuals</a></li>
+					<li><a href="{{ domain }}/wishlist" class="footer--nav-link" title="See my wishlist">Wishlist</a></li>
 				{% endif %}
 			</ul>
 			{% endif %}	

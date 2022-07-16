@@ -1,0 +1,97 @@
+---
+layout: default
+---
+	
+{% include header.html %}
+		
+<main id="content" class="container">
+
+	{% assign totalgoalmax = 0 %}
+	{% assign totalgoalprogress = 0 %}
+	{% assign goalno = 0 %}
+	{% assign totalgoalpercentage = 0 %}
+	{% assign dayoftheyear = "now" | date: "%j" | plus: 0 %}
+	{% assign currentyear = "now" | date: "%Y" | plus: 0 %}
+
+	{% if page.year %}
+	{% assign goalstitle = page.year %}
+	{% else %}
+	{% assign goalstitle = currentyear %}
+	{% endif %}
+
+	<section id="page-content">
+
+		<header class="goals-title">
+			<h1 class="page-title">{{ goalstitle }}</h1>
+		</header>
+    
+	    {{ content }}
+
+		<ul id="goals-list">
+			
+		{% for goal in page.goals %}
+			
+			{% assign goalno = goalno | plus: 1 %}
+								
+			<li>
+						
+				<h2 class="goal-title">{{ goal.title }}</h2>
+				<p class="goal-description lead">{{ goal.description }}</p>
+
+				{% if goal.progress >= goal.max and goal.stretch  %}
+					<progress class="goal-progress stretch-top" max="{{ goal.max }}" value="{{ goal.progress }}">
+						<p><strong>{{ goal.progress | remove: ".0" }}</strong> out of an initial goal of <strong>{{ goal.max | remove: ".0" }}</strong></p>
+					</progress>
+					<progress class="goal-progress stretch-bottom" max="{{ goal.stretch }}" value="{{ goal.progress | minus: goal.max | at_least: 0 }}">
+						<p><strong>{{ goal.progress | minus: goal.max | remove: ".0" | at_least: 0 }}</strong> out of a stretch goal of <strong>{{ goal.stretch | remove: ".0" }}</strong></p>
+					</progress>
+				{% else %}
+					<progress class="goal-progress standard" max="{{ goal.max }}" value="{{ goal.progress }}">
+						<p><strong>{{ goal.progress | remove: ".0" }}</strong> out of <strong>{{ goal.max | remove: ".0" }}</strong></p>
+					</progress>
+				{% endif %}
+						
+				{% if goal.comment != "" %}<p>{{ goal.comment }}</p>{% endif %}
+			
+			</li>
+					
+			{% assign goalvalue = goal.progress | divided_by: goal.max | times: 100 %}
+			{% assign totalgoalmax = totalgoalmax | plus: goal.max | floor %}
+			{% assign totalgoalprogress = totalgoalprogress | plus: goal.progress %}
+			{% if goalvalue >= 80 %}
+				{% assign totalgoalpercentage = totalgoalpercentage | plus: 100 | floor %}
+			{% else %}
+				{% assign totalgoalpercentage = totalgoalpercentage | plus: goalvalue | floor %}
+			{% endif %}
+		
+		{% endfor %}	
+			
+			{% assign goalno = goalno | times: 1.0 | at_least: 1 %}
+			{% assign totalgoalpercentage = totalgoalpercentage | times: 1.0 | at_least: 0 %}
+			{% assign averagegoalpercentage = totalgoalpercentage | divided_by: goalno | at_least: 0 | round %}
+			<li class="totaliser">
+				<h2 class="goal-title">Overall progress</h2>
+				<p class="goal-description lead">Goal completion</p>
+				<progress class="goal-progress standard" max="100" value="{{ averagegoalpercentage }}">
+					<p><strong>{{ averagegoalpercentage }}% of goals completed (each goal given equal weighting)</strong></p>
+				</progress>
+				<p>{{ averagegoalpercentage }}% of goals completed (each goal given equal weighting)</p>
+				
+				{% if goalsdata contains currentyear %}
+				<p class="goal-description lead">Year to date</p>
+				<progress class="goal-progress standard" max="365" value="{{ dayoftheyear }}">
+					<p>Day <strong>{{ dayoftheyear }}</strong> out of <strong>365</strong></p>
+				</progress>
+				<p>{{ dayoftheyear | times: 100 | divided_by: 366 | at_least: 0 | append: '%' }}  of the year complete</p>
+				{% endif %}
+			</li>
+			
+			
+						
+		</ul>
+							
+	</section>
+	
+</main>
+
+{% include footer.html %}

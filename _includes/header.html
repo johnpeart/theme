@@ -1,22 +1,19 @@
-{% assign domain = "//www.johnpe.art" %}
+{% if jekyll.environment == "development" %}
+	{% assign domain = "//localhost:4000" %}
+{% else %}
+	{% assign domain = "//www.johnpe.art" %}
+{% endif %}
 {% assign subdomain = site.url | append: site.baseurl %}
 
 <header class="site-header container">
 
 	<nav aria-label="Menu">
 		
-		{% if site.menu-subdomain == true %}
-		<p id="header--wordmark">
-			<a class="wordmark" href="{{ domain }}" title="Go to the home page">J<span class="wordmark-hidden">ohn </span>P<span class="wordmark-hidden">eart</span></a>
-			<a class="site-title" href="{{ subdomain }}" title="Go to the main {{site.title}} page">{{ site.title }}</a>
-		</p>
-		{% else %}
 		<p id="header--wordmark">
 			<a href="{{ domain }}" class="header--wordmark-link">John Peart</a>
 		</p>
-		{% endif %}
 		
-		{% if site.menu-header != false %}
+		{% unless site.menu-header == false %}
 		<button id="header-menu-toggle" type="button" class="menu-button closed" aria-controls="navigation" aria-label="Show or hide menu" aria-expanded="false" accesskey="m">
 			<svg id="header-menu-toggle-image" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
 				<defs></defs>
@@ -31,16 +28,16 @@
 				<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
 				{% endfor %}
 			{% else %}
-				<li class="header-link"><a href="//www.johnpe.art/writing">Writing</a></li>
+				<li class="header-link"><a href="{{ domain }}/writing">Writing</a></li>
 				
-				<li class="header-link"><a href="//www.johnpe.art/photos">Photos</a></li>
+				<li class="header-link"><a href="{{ domain }}/photos">Photos</a></li>
 				
-				<li class="header-link"><a href="//www.johnpe.art/projects">Projects</a></li>
+				<li class="header-link"><a href="{{ domain }}/projects">Projects</a></li>
 									
-				<li class="header-link"><a href="//www.johnpe.art/about">About me</a></li>
+				<li class="header-link"><a href="{{ domain }}/about">About me</a></li>
 			{% endif %}
 		</ul>
-		{% endif %}
+		{% endunless %}
 		
 	</nav>
 	

@@ -1,0 +1,46 @@
+---
+layout: default
+---
+			
+{% include header.html %}
+
+<main id="content">
+
+	<section id="podcasts">
+
+		<div class="container">
+	
+			<h1 class="page-title">
+				Podcasts 
+			</h1>
+
+		</div>
+
+	</section>
+
+	{% for pod in site.podcasts %}
+	
+	<section id="pride-on">
+			
+		<div class="container">
+	
+			<div class="pod-description">
+	
+				<img class="featured" src="{{ site.url | append: site.baseurl | append: pod.image }}" alt="{{ pod.title }} artwork">
+	
+				{{ pod.content | markdownify }}
+	
+				<p class="link"><a href="{{ pod.link }}" title="Visit the {{ pod.title }} website">Find out more</a></p>
+	
+			</div>
+	
+	
+		</div>
+	
+	</section>
+	
+	{% endfor %}
+
+</main>
+
+{% include footer.html %}

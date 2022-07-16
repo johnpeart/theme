@@ -1,4 +1,4 @@
-body#about-home {
+body#about {
 	
 	section#page-content > section {
 		@include toggleSizes(padding-bottom, 0, 0, ($font-size--p--md * 1.5), ($font-size--p--lg * 1.5), ($font-size--p--xl * 1.5));
@@ -98,8 +98,8 @@ body#about-home {
 	
 	section.about-details {
 		
-		padding-top: 20px;
-		padding-bottom: 20px;
+		@include toggleSizes(padding-top, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
+		@include toggleSizes(padding-bottom, ($font-size--p--xs * 2), ($font-size--p--sm * 2), ($font-size--p--md * 2), ($font-size--p--lg * 2), ($font-size--p--xl * 2));
 		
 		p:last-of-type {
 			padding-bottom: 0;
@@ -110,7 +110,7 @@ body#about-home {
 		
 		padding-left: 0;
 		padding-top: 0;
-		@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+		padding-bottom: 0;
 		
 		list-style: none;
 		

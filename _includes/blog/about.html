@@ -36,7 +36,7 @@
 			</summary>
 			
 			<section class="about-details">
-			{{ job.content }}
+				{{ job.content | markdownify }}
 			
 				{% if job.projects %}
 				<ul class="about-job-projects">

@@ -1,5 +1,5 @@
 ---
-layout: blog/page
+layout: page
 ---
        
 <aside class="intro-text">
@@ -9,7 +9,7 @@ layout: blog/page
 </aside>
 
 <section>    
-    {% for project in site.guides %}
+    {% for project in site.manuals %}
     <article class="project">
         <h2 class="project-name"><a href="{{ site.url | append: site.baseurl | append: project.url }}" class="project-url">{{ project.title | smartify }}</a></h2>
         <p class="project-excerpt">{{ project.excerpt | smartify }}</p>

@@ -1,4 +1,4 @@
-body#blog-loop {
+body#loop {
 	
 	section#page-content > section {
 		@include toggleSizes(padding-bottom, 0, 0, ($font-size--p--md * 1.5), ($font-size--p--lg * 1.5), ($font-size--p--xl * 1.5));
