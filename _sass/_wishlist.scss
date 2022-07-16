@@ -138,7 +138,7 @@ body#wishlist {
 				padding: 7px;
 				text-transform: uppercase;
 				font-variant: small-caps !important;
-				@include toggleSizes(font-size, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5))
+				@include toggleSizes(font-size, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
 				vertical-align: middle;
 			}
 
