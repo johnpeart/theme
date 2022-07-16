@@ -63,7 +63,7 @@ body#photos-photo {
 			
 		}
 		
-		@include toggleSizes(padding-top, 45px, 60px, 60px, 90px, 120px)
+		@include toggleSizes(padding-top, 45px, 60px, 60px, 90px, 120px);
 		@include toggleSizes(max-width, 400px, 500px, 450px, 600px, 600px);
 
 		ul, ol {
