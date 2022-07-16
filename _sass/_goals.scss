@@ -256,7 +256,7 @@ body#goal {
 			}
 			&.totaliser {
 				
-				@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark)
+				@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
 				
 				padding: 		20px;
 				margin-top: 	60px;
