@@ -116,7 +116,7 @@ body#goals {
 			margin-top: 0;
 	
 			&::-webkit-progress-bar {
-				@include toggleDarkMode(background, $cyan, $cyan)
+				@include toggleDarkMode(background, $cyan, $cyan);
 				border: 			none;			
 				border-top-left-radius: 0; 
 				border-top-right-radius: 0; 	
@@ -235,7 +235,7 @@ body#goal {
 					margin-top: 0;
 
 					&::-webkit-progress-bar {
-						@include toggleDarkMode(background, $cyan, $cyan)
+						@include toggleDarkMode(background, $cyan, $cyan);
 						border: 			none;			
 						border-top-left-radius: 0; 
 						border-top-right-radius: 0; 	
