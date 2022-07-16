@@ -4,7 +4,7 @@ layout: page
 
 {{ content }}
 
-{% assign types = site.about | group_by: "type" | sort: "type.name" | reverse %}
+{% assign types = site.about | group_by: "type" | reverse %}
 
 {% for type in types %}
 <section>
@@ -24,8 +24,8 @@ layout: page
 		</header>
 		{% assign jobs = org.items | sort: "date" | reverse %}
 		{% for job in jobs %}
+		
 			{% assign content = job.content | strip_newlines %}
-			
 			{% if content == "" %}
 			
 			<div class="about-job-entry">
