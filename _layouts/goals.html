@@ -33,7 +33,7 @@ layout: default
 			{% endfor %}
 		
 			<article class="goal-collection">
-				<h2 class="goal-year"><a class="goal-url" href="{{ domain }}/{{ goal.url }}" title="See goals for the year {{ goal.title }}">{{ goal.title }}</a></h2>
+				<h2 class="goal-year"><a class="goal-url" href="{{ goal.url }}" title="See goals for the year {{ goal.title }}">{{ goal.title }}</a></h2>
 				
 				
 				{% assign goalno = goalno | times: 1.0 | at_least: 1 %}
