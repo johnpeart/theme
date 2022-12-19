@@ -53,8 +53,10 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="{{ site.url | append: site.baseurl | append: site.asset-path | append: site.css-path | append: '/styles.css' }}">
 
+	<!-- CSS -->
+
 	<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/scripts.js' }}" async></script>
-	{% if page.theme == "eurovision" %}
+	{% if page.categories contains "eurovision" %}
 	<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/blog/eurovision.js' }}" async></script>
 	{% endif %}
 	{% if page.layout == "images/home" %}
