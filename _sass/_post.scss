@@ -280,7 +280,7 @@ body[id$='post'] {
 		margin-right: auto;
 	}
 	
-	figure.app-store--app {
+	figure.app-store--app-sheet {
 		
 		display: block;
 		box-sizing: border-box;
@@ -292,7 +292,6 @@ body[id$='post'] {
 		
 		@include toggleSizes(padding, 15px, 15px, 20px, 20px, 20px);
 		margin-top: 20px;
-		margin-bottom: 0;
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 600px;
@@ -386,4 +385,7 @@ body[id$='post'] {
 		
 		@include clearfix();
 	}
+	
+	
+	
 }
