@@ -341,7 +341,7 @@ body[id$='post'] {
 		
 		
 		span.app-store--app--iap-label {
-			@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+			@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
 			@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
 			color: $gray-600;
 			text-transform: uppercase;
@@ -362,6 +362,8 @@ body[id$='post'] {
 			padding: 0;
 			text-transform: uppercase;
 			color: $gray-600;
+			@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
+
 		}
 		
 		dt.app-store--app--developer, 
