@@ -428,6 +428,12 @@ body[id$='post'] {
 		
 		dd, dt {
 			padding: 0;
+			
+			&.small-caps {
+				text-transform: uppercase;
+				color: $gray-600;
+				@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
+			}
 		}
 		
 		img.apps-list--app--icon {

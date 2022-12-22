@@ -42,7 +42,11 @@
       <dd class="apps-list--app--name">{{ include.name }}</dd>
     
       <dt class="apps-list--app--price">Price</dt>
-      <dd class="apps-list--app--price">{{ include.price | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
+      {% if include.price contains "included" %}
+      <dd class="app-sheet--app--price small-caps">{{ include.price }}</dd>
+      {% else %}
+      <dd class="app-sheet--app--price">{{ include.price | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
+      {% endif %}
 
   </dl>
 </figure>
