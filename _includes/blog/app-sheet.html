@@ -1,33 +1,33 @@
-<figure class="app-store--app-sheet">
-  <dl class="app-store--app--info">
+<figure class="app-sheet">
+  <dl class="app-sheet--app--info">
     
-    <header class="app-store--app--header">
-      <img class="app-store--app--icon" src="{{ site.url | append: site.baseurl | append: '/assets/images/posts' | append: page.url | append: include.image }}" alt="{{ include.alt }}">
+    <header class="app-sheet--app--header">
+      <img class="app-sheet--app--icon" src="{{ site.url | append: site.baseurl | append: '/assets/images/posts' | append: page.url | append: include.image }}" alt="{{ include.alt }}">
       
       <div class="text">
-        <dt class="app-store--app--name">App name</dt>
-        <dd class="app-store--app--name">{{ include.name }}</dd>
+        <dt class="app-sheet--app--name">App name</dt>
+        <dd class="app-sheet--app--name">{{ include.name }}</dd>
         
-        <dt class="app-store--app--description">In-app purchase description</dt>
-        <dd class="app-store--app--description">{{ include.description }}</dd>
+        <dt class="app-sheet--app--description">In-app purchase description</dt>
+        <dd class="app-sheet--app--description">{{ include.description }}</dd>
         
         {% if include.payment == "iap" %}
-        <span class="app-store--app--iap-label">In-app purchase</span>
+        <span class="app-sheet--app--iap-label">In-app purchase</span>
         {% elsif include.payment == "one-time" %}
-        <span class="app-store--app--iap-label">One-time purchase</span>
+        <span class="app-sheet--app--iap-label">One-time purchase</span>
         {% endif %}
       </div>
     
     </header>
     
-    <div class="app-store--block app-store--app--developer">
-      <dt class="app-store--app--developer">Developer</dt>
-      <dd class="app-store--app--developer">{{ include.developer }}</dd>
+    <div class="app-sheet--block app-sheet--app--developer">
+      <dt class="app-sheet--app--developer">Developer</dt>
+      <dd class="app-sheet--app--developer">{{ include.developer }}</dd>
     </div>
     
-    <div class="app-store--block app-store--app--price">
-      <dt class="app-store--app--price">Price</dt>
-      <dd class="app-store--app--price">{{ include.price | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
+    <div class="app-sheet--block app-sheet--app--price">
+      <dt class="app-sheet--app--price">Price</dt>
+      <dd class="app-sheet--app--price">{{ include.price | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
     </div>
   </dl>
 </figure>

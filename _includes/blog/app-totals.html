@@ -1,0 +1,6 @@
+<figure class="app-totals">
+  <dl class="app-totals">
+      <dt class="app-totals--app--price">{{ include.label }}</dt>
+      <dd class="app-totals--app--price">{{ include.total | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
+  </dl>
+</figure>

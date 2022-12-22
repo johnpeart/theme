@@ -280,7 +280,7 @@ body[id$='post'] {
 		margin-right: auto;
 	}
 	
-	figure.app-store--app-sheet {
+	figure.app-sheet {
 		
 		display: block;
 		box-sizing: border-box;
@@ -296,11 +296,7 @@ body[id$='post'] {
 		margin-right: auto;
 		max-width: 600px;
 		
-		-webkit-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, .2);
-		-moz-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, .2);
-		box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, .2);
-		
-		header.app-store--app--header {
+		header.app-sheet--app--header {
 			display: grid;
 			grid-template-columns: auto 1fr;
 			grid-template-rows: auto;
@@ -309,8 +305,8 @@ body[id$='post'] {
 			grid-area: header;
 		}
 		
-		div.app-store--app--developer,
-		div.app-store--app--price {
+		div.app-sheet--app--developer,
+		div.app-sheet--app--price {
 			display: grid;
 			grid-template-columns: auto 1fr;
 			grid-template-rows: auto;
@@ -319,7 +315,7 @@ body[id$='post'] {
 			border-top: 2px solid $gray-400;
 		}
 		
-		img.app-store--app--icon {
+		img.app-sheet--app--icon {
 			@include toggleSizes(max-width, 57px, 57px, 104px, 104px, 104px);
 			@include toggleSizes(border-radius, 10px, 10px, 20px, 20px, 20px);
 			margin-right: 20px;
@@ -333,20 +329,20 @@ body[id$='post'] {
 			box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .2);
 		}
 		
-		dt.app-store--app--name,
-		dt.app-store--app--description {
+		dt.app-sheet--app--name,
+		dt.app-sheet--app--description {
 			@include sr-only();
 		}
 		
 		
-		span.app-store--app--iap-label {
+		span.app-sheet--app--iap-label {
 			@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
 			@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
 			color: $gray-600;
 			text-transform: uppercase;
 		}
 		
-		dd.app-store--app--name {
+		dd.app-sheet--app--name {
 			font-weight: 		$font-weight--h2;
 			font-style: 		$font-style-h2;
 			text-decoration: 	$text-decoration--h2;
@@ -357,7 +353,7 @@ body[id$='post'] {
 			padding: 0 0 5px 0;
 		}
 		
-		dd.app-store--app--description {
+		dd.app-sheet--app--description {
 			padding: 0;
 			text-transform: uppercase;
 			color: $gray-600;
@@ -365,19 +361,19 @@ body[id$='post'] {
 
 		}
 		
-		dt.app-store--app--developer, 
-		dt.app-store--app--price {
+		dt.app-sheet--app--developer, 
+		dt.app-sheet--app--price {
 			line-height: 1;
 			padding: 10px 0 15px 0;
 		}
-		dd.app-store--app--developer,
-		dd.app-store--app--price {
+		dd.app-sheet--app--developer,
+		dd.app-sheet--app--price {
 			line-height: 1;
 			padding: 10px 0 15px 0;
 			text-align: right;
 		}
 		
-		div.app-store--block:last-child {
+		div.app-sheet--block:last-child {
 			dd, dt {
 				padding-bottom: 5px;
 			}
@@ -386,6 +382,95 @@ body[id$='post'] {
 		@include clearfix();
 	}
 	
-	
+	figure.apps-list {
+		
+		display: block;
+		box-sizing: border-box;
+		
+		background: $gray-200;
+		color: $body-color;
+		
+		padding: 15px;
+		margin: 0;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 700px;
+		
+		&:hover {
+			background: $gray-300;
+		}
+		
+		dl.apps-list--app--info {
+			display: grid;
+			
+			grid-template-rows: auto auto;
+			grid-template-columns: auto 1fr;
+			grid-template-areas: 'icon name' 'icon price';
+			align-items: center;
+			
+			@include md-up() {
+				grid-template-rows: 1fr;
+				grid-template-columns: auto 1fr auto;
+				grid-template-areas: 'icon name price';
+			}
+			column-gap: 20px;
+		}
+		
+		dt.apps-list--app--name, 
+		dt.apps-list--app--price {
+			@include sr-only();
+		}
+		
+		dd, dt {
+			padding: 0;
+		}
+		
+		img.apps-list--app--icon {
+			grid-area: icon;
+			max-height: 57px;
+			max-width: 57px;
+			border-radius: 10px;
+			margin: 0;
+		}
+		
+	}
+
+	figure.app-totals {
+		
+		display: block;
+		box-sizing: border-box;
+		
+		background: $gray-200;
+		color: $body-color;
+		
+		padding: 15px;
+		margin: 0;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 700px;
+		
+		border-top: 2px solid $gray-400;
+		
+		dl.app-totals {
+			display: grid;
+			
+			grid-template-rows: auto auto;
+			grid-template-columns: 1fr;
+			grid-template-areas: 'label' 'price';
+			align-items: center;
+			
+			@include md-up() {
+				grid-template-rows: 1fr;
+				grid-template-columns: 1fr auto;
+				grid-template-areas: 'label price';
+			}
+			column-gap: 20px;
+		}
+		
+		dd, dt {
+			padding: 0;
+		}
+		
+	}
 	
 }
