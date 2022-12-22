@@ -323,10 +323,15 @@ body[id$='post'] {
 			
 			grid-area: icon;
 			
+			-webkit-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+			-moz-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+			box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
 			
-			-webkit-box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .2);
-			-moz-box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .2);
-			box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .2);
+			@include md-up {
+				-webkit-box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.1);
+				-moz-box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.1);
+				box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.1);
+			}
 		}
 		
 		dt.app-sheet--app--name,
@@ -431,6 +436,10 @@ body[id$='post'] {
 			max-width: 57px;
 			border-radius: 10px;
 			margin: 0;
+			
+			-webkit-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+			-moz-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+			box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
 		}
 		
 	}

@@ -13,10 +13,8 @@
         <dt class="app-sheet--app--description">In-app purchase description</dt>
         <dd class="app-sheet--app--description">{{ include.description }}</dd>
         
-        {% if include.payment == "iap" %}
-        <span class="app-sheet--app--iap-label">In-app purchase</span>
-        {% elsif include.payment == "one-time" %}
-        <span class="app-sheet--app--iap-label">One-time purchase</span>
+        {% if include.payment %}
+        <span class="app-sheet--app--iap-label">{{ include.payment }}</span>
         {% endif %}
       </div>
     
