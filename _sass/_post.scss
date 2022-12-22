@@ -291,9 +291,17 @@ body[id$='post'] {
 		@include toggleSizes(border-radius, 20px, 20px, 30px, 30px, 30px);
 		
 		@include toggleSizes(padding, 15px, 15px, 20px, 20px, 20px);
-		margin-top: 20px;
 		margin-left: auto;
 		margin-right: auto;
+		@include toggleSizes(
+			margin-bottom, 
+			$font-size--p--xs,
+			$font-size--p--sm,
+			$font-size--p--md,
+			$font-size--p--lg,
+			$font-size--p--xl
+		);	
+		
 		max-width: 600px;
 		
 		header.app-sheet--app--header {
@@ -465,6 +473,23 @@ body[id$='post'] {
 		max-width: 700px;
 		
 		border-top: 2px solid $gray-400;
+		
+		&.app-totals--total {
+			@include toggleSizes(
+				margin-bottom, 
+				$font-size--p--xs,
+				$font-size--p--sm,
+				$font-size--p--md,
+				$font-size--p--lg,
+				$font-size--p--xl
+			);
+		}
+		
+		&.app-totals--sub-total {			
+			&:hover {
+				background: $gray-300;
+			}
+		}
 		
 		dl.app-totals {
 			display: grid;

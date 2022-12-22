@@ -53,9 +53,18 @@
 
 {% elsif include.type == "total" %}
 
-<figure class="app-totals">
+<figure class="app-totals app-totals--total">
   <dl class="app-totals">
-      <dt class="app-totals--app--price">{{ include.label }}</dt>
+      <dt class="app-totals--app--price">Total</dt>
+      <dd class="app-totals--app--price">{{ include.total | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
+  </dl>
+</figure>
+
+{% elsif include.type == "subtotal" %}
+
+<figure class="app-totals app-totals--sub-total">
+  <dl class="app-totals">
+      <dt class="app-totals--app--price">Sub-total</dt>
       <dd class="app-totals--app--price">{{ include.total | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
   </dl>
 </figure>
