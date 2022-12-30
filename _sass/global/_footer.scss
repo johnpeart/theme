@@ -85,3 +85,76 @@ nav#footer--links {
 footer#site-footer {
 	@include clearfix;
 }
+
+.footer--icons {
+	
+	display: block;
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	
+	* {
+		line-height: 30px !important;
+		text-decoration: none;
+	}
+	
+	span.footer--icons--separator {
+		display: inline-block;
+		height: 30px;
+		width: 2px;
+		margin: 0 10px 0 5px;
+		border-right: 2px solid $gray-300;
+		content: "";
+	}
+	
+	a {
+		
+		display: inline-block;
+		position: relative;
+		
+		margin: 0;
+		margin-right: 10px;
+		padding: 0;
+		
+		svg.footer--icons--social {
+			display: block;
+			position: relative;
+			
+			height: 30px;
+			width: 30px;
+			margin: 0;
+			padding: 0;
+						
+			path {
+				@include toggleDarkMode(fill, $body-color, $body-color-dark);
+			}
+		}
+		
+		
+		&:link svg path {
+			@include toggleDarkMode(fill, $gray-400, $gray-400);
+		}
+		&:visited svg path {
+			@include toggleDarkMode(fill, $gray-400, $gray-400);
+		}
+		&:hover svg path {
+			@include toggleDarkMode(fill, $link-color--hover, $link-color--hover-dark);
+			text-decoration: none;
+		}
+		&:focus {
+			background: transparent;
+			border: none;
+			outline: none;
+		}
+		&:focus svg path {
+			@include toggleDarkMode(fill, $link-color--hover, $link-color--hover-dark);
+			outline: none;
+		}
+		&:active svg path {
+			text-decoration: 	none;
+		}
+		
+	}
+}
