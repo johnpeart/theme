@@ -95,6 +95,10 @@ footer#site-footer {
 	padding: 0;
 	margin: 0;
 	
+	@include md-down() {
+		margin: 0 0 45px;	
+	}	
+	
 	* {
 		line-height: 30px !important;
 		text-decoration: none;
