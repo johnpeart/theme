@@ -20,6 +20,28 @@ body[id$='post'] {
 		@include toggleSizes(font-size, ($font-size--p--xs * 1.2), ($font-size--p--sm * 1.25), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.4));
 		@include toggleSizes(padding, $padding--post-date--xs, $padding--post-date--sm, $padding--post-date--md, $padding--post-date--lg, $padding--post-date--xl);
 	}
+	aside.post-published-date p a.post-published-date  {
+		font-weight: bold;
+		&:link {
+			@include toggleDarkMode(color, $gray-600, $gray-400);
+			text-decoration: none;
+		}
+		&:visited {
+			@include toggleDarkMode(color, $gray-600, $gray-400);
+		}
+		&:hover {
+			@include toggleDarkMode(color, $gray-600, $gray-400);
+			text-decoration: 	$link-text-decoration-hover;
+		}
+		&:focus {
+			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
+			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
+			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+		}
+		&:active {
+			text-decoration: 	$link-text-decoration-active;
+		}
+	}
 	
 	section.post-body ul > li::before {
 		position: absolute;

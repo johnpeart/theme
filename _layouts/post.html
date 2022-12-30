@@ -6,19 +6,18 @@ layout: default
 
 <main id="content" class="container">
 						
-	<article id="post-content">
+	<article id="post-content" class="h-entry">
 		
 		<header class="post-title">
 			
 			<aside class="post-published-date">
-				<p><time datetime="{{page.date | date: '%Y-%m-%d'}}">{{ page.date | date: "%-d %B %Y" }}
-</time></p>
+				<p><a href="{{ page.url }}" class="post-published-date u-url"><time datetime="{{page.date | date: '%Y-%m-%d'}}" class="dt-published">{{ page.date | date: "%-d %B %Y" }}</time></a></p>
 			</aside>
-			<h1 class="post-title">{{ page.title | smartify }}</h1>
+			<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
 
 		</header>
 
-		<section class="post-body">
+		<section class="post-body e-content">
 			
 			{{ content }}
 				
@@ -35,7 +34,7 @@ layout: default
 			
 					{% if page.categories %}
 					<dt class="post-categories">Categories:</dt>
-					<dd>{% for categories in page.categories %}{{ categories }}{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
+					<dd>{% for categories in page.categories %}<span class="p-category">{{ categories }}</span>{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
 					{% endif %}
 				
 				</dl>
