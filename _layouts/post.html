@@ -31,9 +31,9 @@ layout: default
 				{% include me/memoji.html %}
 				
 				<div class="author-details">
-					<p class="p-name author--wordmark"><a href="{{ site.url }}" rel="author" class="p-author "><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a></p>
+					<p class="p-name author--wordmark"><a href="{{ site.url }}" rel="author" class="p-author h-card"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a></p>
 	
-					<p><a href="//www.johnpe.art/" class="u-url footer--site-link">{{ site.url | remove: "https://" | remove: "http://" }}</a></p>
+					<p><a href="//www.johnpe.art/" rel="me" class="u-url footer--site-link">{{ site.url | remove: "https://" | remove: "http://" }}</a></p>
 					
 					<div class="author--icons">
 						{% include social-icons/mastodon.html %}
