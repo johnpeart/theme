@@ -294,6 +294,13 @@ body[id$='post'] {
 			text-transform: capitalize;
 			@include toggleSizes(width, 60%, 75%, 75%, 75%, 75%);
 		}
+		
+		a.p-author {
+			&:link, 
+			&:visited {
+				text-decoration: none;
+			}
+		}
 	}
 
 	iframe {
