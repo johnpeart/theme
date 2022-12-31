@@ -272,35 +272,204 @@ body[id$='post'] {
 	}
 
 	footer.post-meta {
-		@include toggleSizes(padding-top, 45px, 60px, 60px, 90px, 120px);
-		@include toggleSizes(max-width, 400px, 500px, 450px, 600px, 600px);
+		display: grid;
+		
+		
+		@include md-down() {
+			grid-template-rows: auto auto;
+			grid-template-areas: "meta" "author";
+			grid-gap: 30px;
+		}
+		
+		@include md-up() {
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: "author meta";
+			grid-gap: 40px;
+		}
+						
+		@include toggleSizes(margin-top, 45px, 60px, 60px, 90px, 120px);
+		
+		div.post-author-card {
+			display: grid;
+			grid-area: author;
+			@include toggleSizes(padding, 15px, 15px, 15px, 15px, 15px);
+			
+			// border-top: 3px solid; 
+			@include toggleDarkMode(background, $gray-200, $gray-800);
+			@include toggleSizes(border-radius, 15px, 15px, 20px, 20px, 20px);
+			
+			@include sm-down() {
+				grid-template-rows: auto auto;
+				grid-template-columns: 1fr;
+				
+				align-items: center;
+				justify-items: center;
+				text-align: center;
+			}
+			@include md-up() {
+				grid-template-rows: 1fr;
+				grid-template-columns: 140px auto;
+				grid-gap: 30px;
+				
+				div.author-details {
+					align-content: center;
+					display: grid;
+				}
+			}
+		}
 
 		p, dl, dt, dd {
 			@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
-			@include toggleSizes(padding-bottom, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
-		}
-		dl {
-			@include clearfix;
-		}
-		dt, dd {
-			display: 	inline-block;
-		}
-		dt {
-			@include toggleSizes(width, 40%, 25%, 25%, 25%, 25%);
-			float: 			left;
-			font-weight: 	bold;
-		}
-		dd {
-			text-transform: capitalize;
-			@include toggleSizes(width, 60%, 75%, 75%, 75%, 75%);
 		}
 		
-		a.p-author {
+		p.author--wordmark {
+			position: relative;
+			display: block;
+			font-weight: 	bold;
+			padding-bottom: 0;
+			@include toggleDarkMode(color, $body-color, $body-background-dark);
+			@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+			@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
+		}
+		
+		a.p-author {			
 			&:link, 
 			&:visited {
 				text-decoration: none;
 			}
 		}
+		
+		a.memoji {
+			display: inline-block;
+			position: relative;
+		}
+		
+		img.footer--memoji {
+			display: block;
+			position: relative;
+			
+			box-sizing: border-box;
+			
+			margin: 0;
+			padding: 0;
+			
+			width: 57px;
+			height: 57px;
+			border: 3px solid;
+			@include toggleDarkMode(border-color, $gray-100, $gray-900);
+
+			@include md-up {
+				width: 140px;
+				height: 140px;
+				border: 5px solid;
+				@include toggleDarkMode(border-color, $gray-100, $gray-900);
+
+			}
+			
+			@include toggleDarkMode(background, $gray-100, $gray-900);
+
+			-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+			filter: grayscale(100%);
+			
+			@include toggleSizes(border-radius, 5px, 5px, 13px, 13px, 13px);
+		}
+		
+		.author--icons {
+			
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			padding: 0;
+			margin: 0;
+						
+			* {
+				line-height: 30px !important;
+				text-decoration: none;
+			}
+			
+			span.footer--icons--separator {
+				display: inline-block;
+				height: 30px;
+				width: 2px;
+				margin: 0 10px 0 5px;
+				border-right: 2px solid $gray-500;
+				content: "";
+			}
+			
+			a {
+				
+				display: inline-block;
+				position: relative;
+				
+				margin: 0;
+				margin-right: 10px;
+				padding: 0;
+				
+				svg.footer--icons--social {
+					display: block;
+					position: relative;
+					
+					height: 30px;
+					width: 30px;
+					margin: 0;
+					padding: 0;
+								
+					path {
+						@include toggleDarkMode(fill, $body-color, $body-color-dark);
+					}
+				}
+				
+				
+				&:link svg path {
+					@include toggleDarkMode(fill, $gray-600, $gray-400);
+				}
+				&:visited svg path {
+					@include toggleDarkMode(fill, $gray-600, $gray-400);
+				}
+				&:hover svg path {
+					@include toggleDarkMode(fill, $link-color--hover, $link-color--hover-dark);
+					text-decoration: none;
+				}
+				&:focus svg {
+					background: transparent;
+					border: none;
+					outline: none;
+				}
+				&:focus svg path {
+					fill: white;
+					outline: none;
+				}
+				&:active svg path {
+					text-decoration: 	none;
+				}
+				
+			}
+		}
+		
+		dl.meta-data {
+			grid-area: meta;
+			@include clearfix;
+			@include toggleSizes(padding-top, 15px, 15px, 15px, 15px, 15px);
+			border-top: 3px solid; 
+			@include toggleDarkMode(border-color, $gray-300, $gray-600)
+		}
+		dt, dd {
+			display: 	block;
+			@include toggleDarkMode(color, $gray-600, $gray-300);
+		}
+		dt {
+			font-weight: 	bold;
+		}
+		dd {
+			text-transform: capitalize;
+			@include toggleSizes(padding-bottom, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
+			
+			&:last-of-type {
+				padding-bottom: 0;
+			}
+		}
+		
 	}
 
 	iframe {
@@ -314,8 +483,8 @@ body[id$='post'] {
 		display: block;
 		box-sizing: border-box;
 		
-		@include toggleDarkMode(background, $gray-200, $gray-200);
-		color: $body-color;
+		@include toggleDarkMode(background, $gray-200, $gray-800);
+		@include toggleDarkMode(color, $body-color, $body-color-dark);
 		
 		@include toggleSizes(border-radius, 20px, 20px, 30px, 30px, 30px);
 		
@@ -429,9 +598,9 @@ body[id$='post'] {
 		display: block;
 		box-sizing: border-box;
 		
-		background: $gray-200;
-		color: $body-color;
-		
+		@include toggleDarkMode(background, $gray-200, $gray-800);
+		@include toggleDarkMode(color, $body-color, $body-color-dark);
+
 		padding: 15px;
 		margin: 0;
 		margin-left: auto;
@@ -439,7 +608,7 @@ body[id$='post'] {
 		max-width: 700px;
 		
 		&:hover {
-			background: $gray-300;
+			@include toggleDarkMode(background, $gray-300, $gray-700);
 		}
 		
 		dl.apps-list--app--info {
@@ -492,8 +661,8 @@ body[id$='post'] {
 		display: block;
 		box-sizing: border-box;
 		
-		background: $gray-200;
-		color: $body-color;
+		@include toggleDarkMode(background, $gray-200, $gray-800);
+		@include toggleDarkMode(color, $body-color, $body-color-dark);
 		
 		padding: 15px;
 		margin: 0;
@@ -516,7 +685,7 @@ body[id$='post'] {
 		
 		&.app-totals--sub-total {			
 			&:hover {
-				background: $gray-300;
+				@include toggleDarkMode(background, $gray-300, $gray-700);
 			}
 		}
 		

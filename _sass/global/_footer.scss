@@ -93,7 +93,7 @@ footer#site-footer {
 	@include clearfix;
 }
 
-img.footer--memoji {
+footer#site-footer img.footer--memoji {
 	
 	display: block;
 	position: relative;
@@ -174,13 +174,13 @@ img.footer--memoji {
 			@include toggleDarkMode(fill, $link-color--hover, $link-color--hover-dark);
 			text-decoration: none;
 		}
-		&:focus {
+		&:focus svg {
 			background: transparent;
 			border: none;
 			outline: none;
 		}
 		&:focus svg path {
-			@include toggleDarkMode(fill, $link-color--hover, $link-color--hover-dark);
+			fill: white;
 			outline: none;
 		}
 		&:active svg path {

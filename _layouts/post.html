@@ -25,23 +25,37 @@ layout: default
 		
 		
 		<footer class="post-meta">
-							
-			<aside class="post-meta">
-				
-				<dl class="meta-data">
-					
-					<dt class="post-date">Author:</dt><dd><a href="{{ site.url }}" rel="author" class="p-author h-card">John Peart</a></dd>
-					<dt class="post-date">Published:</dt><dd>{{ page.date | date: '%-d %B %Y' }}</dd>
 			
-					{% if page.categories %}
-					<dt class="post-categories">Categories:</dt>
-					<dd>{% for categories in page.categories %}<span class="p-category">{{ categories }}</span>{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
-					{% endif %}
+			<div class="post-author-card h-card">
+											
+				{% include me/memoji.html %}
 				
-				</dl>
+				<div class="author-details">
+					<p class="p-name author--wordmark"><a href="{{ site.url }}" rel="author" class="p-author "><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a></p>
+	
+					<p><a href="//www.johnpe.art/" class="u-url footer--site-link">{{ site.url | remove: "https://" | remove: "http://" }}</a></p>
+					
+					<div class="author--icons">
+						{% include social-icons/mastodon.html %}
+						{% include social-icons/linkedin.html %}
+						{% include social-icons/github.html %}
+						<span class="footer--icons--separator"></span>
+						{% include social-icons/buymeacoffee.html %}
+					</div>
+				</div>
 				
-			</aside>
-		
+			</div>
+			
+			<dl class="meta-data">
+				<dt class="post-date">Published</dt>
+				<dd>{{ page.date | date: '%-d %B %Y' }}</dd>
+			
+				{% if page.categories %}
+				<dt class="post-categories">Categories</dt>
+				<dd>{% for categories in page.categories %}<span class="p-category">{{ categories }}</span>{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
+				{% endif %}
+			</dl>
+						
 		</footer>
 		
 	</article>
