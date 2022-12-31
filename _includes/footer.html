@@ -3,8 +3,8 @@
 	<div class="container footer">
 
 		<aside class="h-card" id="footer--wordmark">
-			<p class="p-name p-author footer--wordmark" rel="author"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></p>
-			<p><a href="//www.johnpe.art/" class="u-url footer--site-link">johnpe.art</a></p>
+			<p class="p-name footer--wordmark"><a href="{{ site.url }}" rel="author"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></p>
+			<p><a href="//www.johnpe.art/" class="u-url footer--site-link">{{ site.url | remove: "https://" | remove: "http://" }}</a></p>
 			<div class="footer--icons">
 				{% include me/memoji.html %}
 				<span class="footer--icons--separator"></span>

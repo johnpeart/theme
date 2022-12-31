@@ -14,6 +14,13 @@ aside#footer--wordmark {
 		@include toggleSizes(font-size, $font-size--p--xs * 0.9, $font-size--p--sm * 0.9, $font-size--p--md * 0.9, $font-size--p--lg * 0.9, $font-size--p--xl * 0.9);
 		@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
 	}
+	
+	p.footer--wordmark a {
+		&:link, 
+		&:visited {
+			text-decoration: none;
+		}
+	}
 	a.footer--site-link {
 		@include toggleSizes(font-size, $font-size--p--xs * 0.9, $font-size--p--sm * 0.9, $font-size--p--md * 0.9, $font-size--p--lg * 0.9, $font-size--p--xl * 0.9);
 		@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);		
