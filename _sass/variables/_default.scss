@@ -381,11 +381,11 @@ $text-transform--h1:	none;
 // POST DATE
 // Applies to p element before 'h1' and equivalent text in post headers
 // Padding (bottom spacing)
-$padding--post-date--xs:		($font-size--h1--xs * 2) 0 ($font-size--p--xs / 2) 0;
-$padding--post-date--sm:		($font-size--h1--sm * 2) 0 ($font-size--p--sm / 2) 0;
-$padding--post-date--md:		($font-size--h1--md * 2) 0 ($font-size--p--md / 2) 0;
-$padding--post-date--lg:		($font-size--h1--lg * 2) 0 ($font-size--p--lg / 2) 0;
-$padding--post-date--xl:		($font-size--h1--xl * 2) 0 ($font-size--p--xl / 2) 0;
+$padding--post-date--xs:		($font-size--h1--xs * 2) 0 ($font-size--p--xs * 0.5) 0;
+$padding--post-date--sm:		($font-size--h1--sm * 2) 0 ($font-size--p--sm * 0.5) 0;
+$padding--post-date--md:		($font-size--h1--md * 2) 0 ($font-size--p--md * 0.5) 0;
+$padding--post-date--lg:		($font-size--h1--lg * 2) 0 ($font-size--p--lg * 0.5) 0;
+$padding--post-date--xl:		($font-size--h1--xl * 2) 0 ($font-size--p--xl * 0.5) 0;
 
 // HEADING 2 TEXT
 // Applies to 'h2' and equivalent text
@@ -418,11 +418,11 @@ $text-transform--h2:	none;
 // Applies to 'h2' and equivalent text that is in a loop
 // Size
 // Padding (bottom spacing)
-$padding--h2--loop--xs:		($font-size--h2--xs * 2) 0 ($font-size--h2--xs / 2) 0;
-$padding--h2--loop--sm:		($font-size--h2--sm * 2) 0 ($font-size--h2--sm / 2) 0;
-$padding--h2--loop--md:		($font-size--h2--md * 2) 0 ($font-size--h2--md / 2) 0;
-$padding--h2--loop--lg:		($font-size--h2--lg * 2) 0 ($font-size--h2--lg / 2) 0;
-$padding--h2--loop--xl:		($font-size--h2--xl * 2) 0 ($font-size--h2--xl / 2) 0;
+$padding--h2--loop--xs:		($font-size--h2--xs * 2) 0 ($font-size--h2--xs * 0.5) 0;
+$padding--h2--loop--sm:		($font-size--h2--sm * 2) 0 ($font-size--h2--sm * 0.5) 0;
+$padding--h2--loop--md:		($font-size--h2--md * 2) 0 ($font-size--h2--md * 0.5) 0;
+$padding--h2--loop--lg:		($font-size--h2--lg * 2) 0 ($font-size--h2--lg * 0.5) 0;
+$padding--h2--loop--xl:		($font-size--h2--xl * 2) 0 ($font-size--h2--xl * 0.5) 0;
 
 // HEADING 3 TEXT
 // Applies to 'h3' and equivalent text

@@ -74,14 +74,14 @@ body#images-home {
 
 		@include toggleDarkMode(background, $gray-200, $gray-800);
 
-		padding: ($container-padding / 2);
+		padding: ($container-padding * 0.5);
 		margin-bottom: $container-padding;
 		border-radius: 15px;
 
 		> summary {
 			border: none;
 			border-radius: 7.5px;
-			padding: ($container-padding / 2);
+			padding: ($container-padding * 0.5);
 
 			&::before {
 				text-align: right;

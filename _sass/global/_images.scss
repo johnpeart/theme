@@ -24,7 +24,7 @@ figure {
 		max-width: 500px;
 		@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
 		@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
-		padding-top: $container-padding / 2;
+		padding-top: $container-padding * 0.5;
 		padding-bottom: 0;
 			
 		@include toggleDarkMode(color, $gray-600, $gray-400);

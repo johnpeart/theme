@@ -47,7 +47,7 @@ body[id$='post'] {
 		position: absolute;
 		content: "\2014";
 
-		@include toggleSizes(left, $font-size--p--xs, -($font-size--p--sm / 2), -($font-size--p--md / 2), -($font-size--p--lg / 2), -($font-size--p--xl / 2));
+		@include toggleSizes(left, $font-size--p--xs, -($font-size--p--sm * 0.5), -($font-size--p--md * 0.5), -($font-size--p--lg * 0.5), -($font-size--p--xl * 0.5));
 	}
 
 	#markdown-toc {
