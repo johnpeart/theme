@@ -127,7 +127,6 @@ textarea {
 	&:hover {
 		outline: $border-width-form-element solid $input-focus-color;
 		outline-offset: 0px;
-		@include toggleDarkMode(background, $gray-200, $gray-800);
 		@include toggleDarkMode(border-width, inherit, $border-width-form-element);
 		@include toggleDarkMode(border, $border-width-form-element solid $input-border-color, $border-width-form-element solid $absolute-black);
 	}
