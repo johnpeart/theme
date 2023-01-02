@@ -1,15 +1,15 @@
-# frozen_string_literal: true
+# Gemfile
 
-source "https://rubygems.org"
-gemspec
+source 'https://rubygems.org'
 
-gem 'jekyll', '~> 4.0'
+gem 'jekyll', '~> 4.3'
 
 group :jekyll_plugins do
-  gem 'jekyll-remote-theme'
-  gem 'jekyll-paginate'
-  gem 'jekyll-sitemap'
-  gem 'jekyll-feed'
-  gem 'jekyll-redirect-from'
+  gem "jekyll-remote-theme"
+  gem "jekyll-sitemap"
+  gem "jekyll-feed"
+  gem "jekyll-redirect-from"
+  gem "jekyll-sass-converter", "~> 2.0"
+  gem 'jekyll-webmention_io'
 end
 gem "webrick", "~> 1.7"
