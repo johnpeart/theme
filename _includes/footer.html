@@ -7,7 +7,7 @@
 			<p class="p-name footer--wordmark"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></p>
 			<p><a href="//www.johnpe.art/" class="u-url footer--site-link">{{ site.url | remove: "https://" | remove: "http://" }}</a></p>
 			<div class="footer--icons">
-				{% include me/memoji.html %}
+				{% include fediverse/memoji.html %}
 				<span class="footer--icons--separator"></span>
 				{% include social-icons/mastodon.html %}
 				{% include social-icons/linkedin.html %}
@@ -19,7 +19,7 @@
 		{% else %}
 		<aside id="footer--wordmark">
 			<p class="p-name footer--wordmark"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></p>
-			<p><a href="//www.johnpe.art/" class="u-url footer--site-link">{{ site.url | remove: "https://" | remove: "http://" }}</a></p>
+			<p><a href="//www.johnpe.art/" class="u-url footer--site-link">www.johnpe.art</a></p>
 		</aside>
 		{% endunless %}
 		
