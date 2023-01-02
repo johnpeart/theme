@@ -1,4 +1,4 @@
-body#photos-home {
+body#photos {
 
 	section#page-content {
 		@include clearfix;
@@ -184,7 +184,7 @@ body#photos-home {
 
 }
 
-body#photos-photo {
+body#photo {
 
   img.photo {
     display: 	block;
