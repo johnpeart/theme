@@ -1,28 +1,28 @@
 body#photos-home {
-	
+
 	section#page-content {
 		@include clearfix;
 	}
-	
+
 	h1.page-title {
 		@include toggleSizes(font-size, ($font-size--h1--xs * 1.25), $font-size--h1--sm, $font-size--h1--md, ($font-size--h1--lg * 1.75), ($font-size--h1--xl * 1.5));
 		@include toggleSizes(padding-bottom, 15px, 30px, 45px, 45px, 45px);
 	}
-	
+
 	article.grid-item {
 		display: block;
 		position: relative;
 		list-style: none;
 		padding: 0;
 		float: left;
-						
+
 		line-height: 1;
-		
+
 		@include toggleSizes(margin, 0 0 10px 0, 0 0 10px 0, 0 0 20px 0, 0 0 20px 0, 0 0 20px 0);
 		@include toggleSizes(max-width, 100%, 100%, 50%, 50%, 50%);
 		@include toggleSizes(width, 100%, 100%, calc(50% - 10px), calc(50% - 10px), calc(50% - 10px));
 		@include toggleSizes(height, 200px, 200px, 300px, 300px, 300px);
-		
+
 		@include md-up {
 			&:nth-of-type(odd) {
 				margin-left: 0;
@@ -33,98 +33,98 @@ body#photos-home {
 				margin-right: 0;
 			}
 		}
-		
+
 	}
-	
+
 	p.grid-caption {
-		
+
 		display: block;
 		opacity: 0;
-		
+
 		width: 100%;
-		
-		padding: 10px 15px;			
+
+		padding: 10px 15px;
 		background: $brand;
 		color: $black;
-		
-		white-space: nowrap; 
+
+		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		
+
 	}
-	
+
 	a.grid-link {
-		
+
 		display: flex;
 		justify-content: flex-start;
 		align-items: flex-end;
-		
+
 		background: $yellow;
 		background-position: center !important;
 		background-size: cover !important;
-		
+
 		width: 100%;
 		height: 100%;
-		
+
 		text-decoration: none;
-		
+
 		&:hover {
-			outline: 3px solid $cyan;				
+			outline: 3px solid $cyan;
 		}
 		&:focus {
 			outline: 3px solid $cyan;
 		}
-		&:focus, 
-		&:hover {	
+		&:focus,
+		&:hover {
 			p.grid-caption {
 				opacity: 1;
 			}
 		}
-		
+
 	}
-	
+
 	nav.pagination {
-	
+
 		position: relative;
 		display:        flex;
-	
+
 		width:          100%;
-	
+
 		@include sm-down {
 			flex-direction: column;
 		}
-	
+
 		margin-top: 30px;
-	
+
 		@include clearfix;
-	
+
 		p[class^="page--next-prev--"] {
-	
+
 			@extend h4;
 			font-style: normal;
-	
+
 			position: relative;
 			flex: 1;
-			
+
 			padding: 0;
-	
+
 			text-align: center;
-	
+
 			@include sm-down {
 				margin: 15px 0 0 0;
-	
+
 				&:last-child {
 					margin-bottom: 15px;
 				}
 			}
-	
+
 			@include md-up {
-	
+
 				margin: 30px 0;
-	
+
 				width: 50%;
 				max-width: 50%;
-			
+
 				&:first-child {
 					margin-right: 15px;
 				}
@@ -135,52 +135,137 @@ body#photos-home {
 					margin-left: 0;
 					margin-right: 0;
 				}
-	
+
 			}
-	
+
 			a {
 				display: inline-block;
-	
+
 				&:hover {
-					
+
 				}
-	
+
 			}
-	
+
 			&:hover {
 				outline:    none;
 			}
-	
+
 			@include clearfix;
 		}
-	
+
 		p.page--next-prev--prev {
 			@include md-up {
 				float:      left;
 				text-align: left;
 			}
 		}
-	
+
 		p.page--next-prev--next {
 			@include md-up {
 				float:      right;
 				text-align: right;
 			}
 		}
-	
+
 		p.page--next-prev--prev-blank {
 			background: none;
-	
+
 			&:hover {
 				background: none;
 			}
-	
+
 			@include sm-down {
 				display: none;
 			}
 		}
-	
+
 	}
-	
+
 }
 
+body#photos-photo {
+
+  img.photo {
+    display: 	block;
+    position: 	relative;
+    margin: 	0 auto;
+    padding: 	0 0 20px;
+    max-width: 			100%;
+    max-height: 		100vh;
+  }
+
+  dl {
+
+    @include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
+
+    padding: 			20px;
+    padding-bottom: 	0px;
+
+    margin-top: 		0;
+
+
+    p,dd {
+      &:first-child {
+        padding-top: 0;
+      }
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+    }
+
+    span.dl-item {
+
+      display: block;
+      position: relative;
+
+      padding-bottom: 20px !important;
+
+      @include toggleSizes(max-width, 100%, 100%, 50%, 50%, 50%);
+      @include toggleSizes(width, 100%, 100%, 50%, 50%, 50%);
+      @include toggleSizes(float, none, none, left, left, left);
+
+    }
+
+    @include clearfix;
+  }
+
+  div.footnotes {
+
+    &:before {
+      display: block;
+
+      @include toggleSizes(font-size, $font-size--h3--xs, $font-size--h3--sm, $font-size--h3--md, $font-size--h3--lg, $font-size--h3--xl);
+      @include toggleSizes(line-height, $line-height--h3--xs, $line-height--h3--sm, $line-height--h3--md, $line-height--h3--lg, $line-height--h3--xl);
+      @include toggleSizes(padding, $padding--h3--xs, $padding--h3--sm, $padding--h3--md, $padding--h3--lg, $padding--h3--xl);
+
+      font-weight:			$font-weight--h3;
+      font-style: 			$font-style-h3;
+      text-align: 			$text-align--h3;
+      text-decoration: 	$text-decoration--h3;
+      text-transform: 		$text-transform--h3;
+
+      content: "Footnotes";
+
+    }
+
+    @include toggleSizes(padding-top, 45px, 60px, 60px, 90px, 120px);
+    @include toggleSizes(max-width, 400px, 500px, 450px, 600px, 600px);
+
+    ul, ol {
+      @include toggleSizes(padding-left, ($font-size--p--xs * 1.6), ($font-size--p--sm * 1.6), 0, 0, 0);
+    }
+    li, p {
+      @include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
+    }
+    p {
+      @include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+    }
+    a.reversefootnote {
+      text-decoration: none;
+      font-family: $font-family !important;
+    }
+
+  }
+
+}

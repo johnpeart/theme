@@ -1,38 +1,30 @@
----
-# Only the main Sass file needs front matter (the dashes are enough)
----
-@charset "utf-8";
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
 	"_reset",
-	
+
 	"variables/_default",
 	"variables/_override",
 	"global/_fonts",
-	
+
 	"helpers/_breakpoints",
 	"helpers/_clearfix",
 	"helpers/_sticky",
-	"helpers/_animations",
 	"helpers/_darkmode",
 	"helpers/_screenreaders",
-	
+
 	"global/_containers",
 	"global/_typography",
 	"global/_code",
 	"global/_forms",
-	
+
 	"global/_main",
 	"global/_header",
 	"global/_footer",
-	
+
 	"global/_images",
 	"global/_forms",
 	"global/_notfound",
-	
-	"images/_home",
-	
+
 	"_home",
 	"_loop",
 	"_post",
@@ -43,11 +35,8 @@
 	"_goals",
 	"_wishlist",
 	"_manuals",
-	
-	"photos/_home",
-	"photos/_post",
-	
-	"email/_email",
-	
-	"global/_themes"
+	"_photos",
+
+	"_themes",
+  "_webmentions"
 ;
