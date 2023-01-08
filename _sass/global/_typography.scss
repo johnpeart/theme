@@ -37,9 +37,30 @@ dt,
 dd,
 li {
 
-	@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
-	@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
-	@include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+	@include toggleSizes(
+		font-size,
+		$font-size--p--xs,
+		$font-size--p--sm,
+		$font-size--p--md,
+		$font-size--p--lg,
+		$font-size--p--xl
+	);
+	@include toggleSizes(
+		line-height,
+		$line-height--p--xs,
+		$line-height--p--sm,
+		$line-height--p--md,
+		$line-height--p--lg,
+		$line-height--p--xl
+	);
+	@include toggleSizes(
+		padding,
+		$padding--p--xs,
+		$padding--p--sm,
+		$padding--p--md,
+		$padding--p--lg,
+		$padding--p--xl
+	);
 
 	font-weight:		normal;
 
@@ -63,16 +84,44 @@ ul {
 
 	list-style: none;
 	padding-top: 0;
-	@include toggleSizes(padding-left, ($font-size--p--xs * 1.5), ($font-size--p--sm * 1.5), 0, 0, 0);
-	@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+	@include toggleSizes(
+		padding-left,
+		($font-size--p--xs * 1.5),
+		($font-size--p--sm * 1.5),
+		0,
+		0,
+		0
+	);
+	@include toggleSizes(
+		padding-bottom,
+		$font-size--p--xs,
+		$font-size--p--sm,
+		$font-size--p--md,
+		$font-size--p--lg,
+		$font-size--p--xl
+	);
 
 }
 ol {
 
 	list-style: decimal;
 	padding-top: 0;
-	@include toggleSizes(padding-left, ($font-size--p--xs * 2), ($font-size--p--sm * 2), 0, 0, 0);
-	@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+	@include toggleSizes(
+		padding-left,
+		($font-size--p--xs * 2),
+		($font-size--p--sm * 2),
+		0,
+		0,
+		0
+	);
+	@include toggleSizes(
+	padding-bottom,
+		$font-size--p--xs,
+		$font-size--p--sm,
+		$font-size--p--md,
+		$font-size--p--lg,
+		$font-size--p--xl
+	);
 
 }
 
@@ -118,7 +167,14 @@ sup {
 blockquote {
 	@include toggleColor(background, "default-element-background");
 	padding: 20px;
-	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+	@include toggleSizes(
+		margin,
+		$padding--p--xs,
+		$padding--p--sm,
+		$padding--p--md,
+		$padding--p--lg,
+		$padding--p--xl
+	);
 
 	p {
 		&:first-child {
@@ -176,14 +232,56 @@ h1 {
 	text-decoration: 	$text-decoration--h1;
 	text-transform: 	$text-transform--h1;
 
-	@include toggleSizes(font-size, $font-size--h1--xs, $font-size--h1--sm, $font-size--h1--md, $font-size--h1--lg, $font-size--h1--xl);
-	@include toggleSizes(line-height, $line-height--h1--xs, $line-height--h1--sm, $line-height--h1--md, $line-height--h1--lg, $line-height--h1--xl);
-	@include toggleSizes(padding, $padding--h1--xs, $padding--h1--sm, $padding--h1--md, $padding--h1--lg, $padding--h1--xl);
+	@include toggleSizes(
+		font-size,
+		$font-size--h1--xs,
+		$font-size--h1--sm,
+		$font-size--h1--md,
+		$font-size--h1--lg,
+		$font-size--h1--xl
+	);
+	@include toggleSizes(
+		line-height,
+		$line-height--h1--xs,
+		$line-height--h1--sm,
+		$line-height--h1--md,
+		$line-height--h1--lg,
+		$line-height--h1--xl
+	);
+	@include toggleSizes(
+		padding,
+		$padding--h1--xs,
+		$padding--h1--sm,
+		$padding--h1--md,
+		$padding--h1--lg,
+		$padding--h1--xl
+	);
 
 	&.display {
-		@include toggleSizes(font-size, $font-size--display--xs, $font-size--display--sm, $font-size--display--md, $font-size--display--lg, $font-size--display--xl);
-		@include toggleSizes(line-height, $line-height--display--xs, $line-height--display--sm, $line-height--display--md, $line-height--display--lg, $line-height--display--xl);
-		@include toggleSizes(padding, $padding--display--xs, $padding--display--sm, $padding--display--md, $padding--display--lg, $padding--display--xl);
+		@include toggleSizes(
+			font-size,
+			$font-size--display--xs,
+			$font-size--display--sm,
+			$font-size--display--md,
+			$font-size--display--lg,
+			$font-size--display--xl
+		);
+		@include toggleSizes(
+			line-height,
+			$line-height--display--xs,
+			$line-height--display--sm,
+			$line-height--display--md,
+			$line-height--display--lg,
+			$line-height--display--xl
+		);
+		@include toggleSizes(
+			padding,
+			$padding--display--xs,
+			$padding--display--sm,
+			$padding--display--md,
+			$padding--display--lg,
+			$padding--display--xl
+		);
 	}
 }
 
@@ -194,9 +292,30 @@ h2 {
 	text-decoration: 	$text-decoration--h2;
 	text-transform: 	$text-transform--h2;
 
-	@include toggleSizes(font-size, $font-size--h2--xs, $font-size--h2--sm, $font-size--h2--md, $font-size--h2--lg, $font-size--h2--xl);
-	@include toggleSizes(line-height, $line-height--h2--xs, $line-height--h2--sm, $line-height--h2--md, $line-height--h2--lg, $line-height--h2--xl);
-	@include toggleSizes(padding, $padding--h2--xs, $padding--h2--sm, $padding--h2--md, $padding--h2--lg, $padding--h2--xl);
+	@include toggleSizes(
+		font-size,
+		$font-size--h2--xs,
+		$font-size--h2--sm,
+		$font-size--h2--md,
+		$font-size--h2--lg,
+		$font-size--h2--xl
+	);
+	@include toggleSizes(
+		line-height,
+		$line-height--h2--xs,
+		$line-height--h2--sm,
+		$line-height--h2--md,
+		$line-height--h2--lg,
+		$line-height--h2--xl
+	);
+	@include toggleSizes(
+		padding,
+		$padding--h2--xs,
+		$padding--h2--sm,
+		$padding--h2--md,
+		$padding--h2--lg,
+		$padding--h2--xl
+	);
 }
 
 h3 {
@@ -206,9 +325,30 @@ h3 {
 	text-decoration: 	$text-decoration--h3;
 	text-transform: 	$text-transform--h3;
 
-	@include toggleSizes(font-size, $font-size--h3--xs, $font-size--h3--sm, $font-size--h3--md, $font-size--h3--lg, $font-size--h3--xl);
-	@include toggleSizes(line-height, $line-height--h3--xs, $line-height--h3--sm, $line-height--h3--md, $line-height--h3--lg, $line-height--h3--xl);
-	@include toggleSizes(padding, $padding--h3--xs, $padding--h3--sm, $padding--h3--md, $padding--h3--lg, $padding--h3--xl);
+	@include toggleSizes(
+		font-size,
+		$font-size--h3--xs,
+		$font-size--h3--sm,
+		$font-size--h3--md,
+		$font-size--h3--lg,
+		$font-size--h3--xl
+	);
+	@include toggleSizes(
+		line-height,
+		$line-height--h3--xs,
+		$line-height--h3--sm,
+		$line-height--h3--md,
+		$line-height--h3--lg,
+		$line-height--h3--xl
+	);
+	@include toggleSizes(
+		padding,
+		$padding--h3--xs,
+		$padding--h3--sm,
+		$padding--h3--md,
+		$padding--h3--lg,
+		$padding--h3--xl
+	);
 }
 
 h4 {
@@ -218,9 +358,30 @@ h4 {
 	text-decoration: 	$text-decoration--h4;
 	text-transform: 	$text-transform--h4;
 
-	@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
-	@include toggleSizes(line-height, $line-height--h4--xs, $line-height--h4--sm, $line-height--h4--md, $line-height--h4--lg, $line-height--h4--xl);
-	@include toggleSizes(padding, $padding--h4--xs, $padding--h4--sm, $padding--h4--md, $padding--h4--lg, $padding--h4--xl);
+	@include toggleSizes(
+		font-size,
+		$font-size--h4--xs,
+		$font-size--h4--sm,
+		$font-size--h4--md,
+		$font-size--h4--lg,
+		$font-size--h4--xl
+	);
+	@include toggleSizes(
+		line-height,
+		$line-height--h4--xs,
+		$line-height--h4--sm,
+		$line-height--h4--md,
+		$line-height--h4--lg,
+		$line-height--h4--xl
+	);
+	@include toggleSizes(
+		padding,
+		$padding--h4--xs,
+		$padding--h4--sm,
+		$padding--h4--md,
+		$padding--h4--lg,
+		$padding--h4--xl
+	);
 }
 
 h5 {
@@ -230,9 +391,30 @@ h5 {
 	text-decoration: 	$text-decoration--h5;
 	text-transform: 	$text-transform--h5;
 
-	@include toggleSizes(font-size, $font-size--h5--xs, $font-size--h5--sm, $font-size--h5--md, $font-size--h5--lg, $font-size--h5--xl);
-	@include toggleSizes(line-height, $line-height--h5--xs, $line-height--h5--sm, $line-height--h5--md, $line-height--h5--lg, $line-height--h5--xl);
-	@include toggleSizes(padding, $padding--h5--xs, $padding--h5--sm, $padding--h5--md, $padding--h5--lg, $padding--h5--xl);
+	@include toggleSizes(
+		font-size,
+		$font-size--h5--xs,
+		$font-size--h5--sm,
+		$font-size--h5--md,
+		$font-size--h5--lg,
+		$font-size--h5--xl
+	);
+	@include toggleSizes(
+		line-height,
+		$line-height--h5--xs,
+		$line-height--h5--sm,
+		$line-height--h5--md,
+		$line-height--h5--lg,
+		$line-height--h5--xl
+	);
+	@include toggleSizes(
+		padding,
+		$padding--h5--xs,
+		$padding--h5--sm,
+		$padding--h5--md,
+		$padding--h5--lg,
+		$padding--h5--xl
+	);
 }
 
 h2 + h3 {
@@ -255,11 +437,32 @@ pre {
 	font-family: $font-family;
 
 	padding: $font-size--p--xs;
-	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+	@include toggleSizes(
+		margin,
+		$padding--p--xs,
+		$padding--p--sm,
+		$padding--p--md,
+		$padding--p--lg,
+		$padding--p--xl
+	);
 
 	code {
-		@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
-		@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
+		@include toggleSizes(
+			font-size,
+			$font-size--p--xs,
+			$font-size--p--sm,
+			$font-size--p--md,
+			$font-size--p--lg,
+			$font-size--p--xl
+		);
+		@include toggleSizes(
+			line-height,
+			$line-height--p--xs,
+			$line-height--p--sm,
+			$line-height--p--md,
+			$line-height--p--lg,
+			$line-height--p--xl
+		);
 	}
 
 }
@@ -268,9 +471,30 @@ table {
 	width: 		100%;
 	border-collapse: collapse;
 
-	@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
-	@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
-	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+	@include toggleSizes(
+		font-size,
+		$font-size--p--xs,
+		$font-size--p--sm,
+		$font-size--p--md,
+		$font-size--p--lg,
+		$font-size--p--xl
+	);
+	@include toggleSizes(
+		line-height,
+		$line-height--p--xs,
+		$line-height--p--sm,
+		$line-height--p--md,
+		$line-height--p--lg,
+		$line-height--p--xl
+	);
+	@include toggleSizes(
+		margin,
+		$padding--p--xs,
+		$padding--p--sm,
+		$padding--p--md,
+		$padding--p--lg,
+		$padding--p--xl
+	);
 
 	tr {
 		border-bottom: 1px solid;
@@ -329,11 +553,25 @@ details {
 	}
 
 	&[open] {
-		@include toggleSizes(padding-bottom, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
+		@include toggleSizes(
+			padding-bottom,
+			$font-size--p--xs,
+			$font-size--p--sm,
+			$font-size--p--md,
+			$font-size--p--lg,
+			$font-size--p--xl
+		);
 	}
 
 	p {
-		@include toggleSizes(padding, 0 0 ($font-size--p--xs * 0.5) 0, 0 0 ($font-size--p--sm * 0.5) 0, 0 0 ($font-size--p--md * 0.5) 0, 0 0 ($font-size--p--lg * 0.5) 0, 0 0 ($font-size--p--xl * 0.5) 0);
+		@include toggleSizes(
+			padding,
+			0 0 ($font-size--p--xs * 0.5) 0,
+			0 0 ($font-size--p--sm * 0.5) 0,
+			0 0 ($font-size--p--md * 0.5) 0,
+			0 0 ($font-size--p--lg * 0.5) 0,
+			0 0 ($font-size--p--xl * 0.5) 0
+		);
 	}
 
 	*:last-child {
@@ -373,7 +611,14 @@ summary {
 		text-align: left;
 		font-weight: bold;
 		line-height: 1;
-		@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
+		@include toggleSizes(
+			font-size,
+			$font-size--h4--xs,
+			$font-size--h4--sm,
+			$font-size--h4--md,
+			$font-size--h4--lg,
+			$font-size--h4--xl
+		);
 	}
 
 	display: block;
@@ -383,7 +628,14 @@ summary {
 
 	cursor: pointer;
 
-	@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
+	@include toggleSizes(
+		padding,
+		($font-size--p--xs * 0.5) 0,
+		($font-size--p--sm * 0.5) 0,
+		($font-size--p--md * 0.5) 0,
+		($font-size--p--lg * 0.5) 0,
+		($font-size--p--xl * 0.5) 0
+	);
 
 	border-top: 1px solid;
 	@include toggleColor(border-color, "border-color");
@@ -399,8 +651,22 @@ summary {
 		font-style: normal;
 		cursor: pointer;
 
-		@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
-		@include toggleSizes(line-height, $line-height--h4--xs, $line-height--h4--sm, $line-height--h4--md, $line-height--h4--lg, $line-height--h4--xl);
+		@include toggleSizes(
+			font-size,
+			$font-size--h4--xs,
+			$font-size--h4--sm,
+			$font-size--h4--md,
+			$font-size--h4--lg,
+			$font-size--h4--xl
+		);
+		@include toggleSizes(
+			line-height,
+			$line-height--h4--xs,
+			$line-height--h4--sm,
+			$line-height--h4--md,
+			$line-height--h4--lg,
+			$line-height--h4--xl
+		);
 	}
 
 	&:hover {

@@ -13,7 +13,14 @@ body#podcasts {
 
 	
 	h1.page-title {
-		@include toggleSizes(font-size, ($font-size--h1--xs * 1.25), $font-size--h1--sm, $font-size--h1--md, ($font-size--h1--lg * 1.75), ($font-size--h1--xl * 1.5));
+		@include toggleSizes(
+			font-size,
+			($font-size--h1--xs * 1.25),
+			$font-size--h1--sm,
+			$font-size--h1--md,
+			($font-size--h1--lg * 1.75),
+			($font-size--h1--xl * 1.5)
+		);
 	}
 	
 	img.featured {
@@ -23,9 +30,30 @@ body#podcasts {
 		max-width: unset;
 		width: 100%;
 	
-		@include toggleSizes(max-width, 200px, 200px, 300px, 300px, 300px);
-		@include toggleSizes(margin-top, 0, 0, 100px, 100px, 100px);
-		@include toggleSizes(margin-bottom, 30px, 30px, 30px, 30px, 30px);
+		@include toggleSizes(
+			max-width,
+			200px,
+			200px,
+			300px,
+			300px,
+			300px
+		);
+		@include toggleSizes(
+			margin-top,
+			0,
+			0,
+			100px,
+			100px,
+			100px
+		);
+		@include toggleSizes(
+			margin-bottom,
+			30px,
+			30px,
+			30px,
+			30px,
+			30px
+		);
 		margin-right: 0 !important;
 		margin-left: 0 !important;
 	}
@@ -65,8 +93,22 @@ body#podcasts {
 		img {
 			width: 100%;
 			max-width: 300px;			
-			@include toggleSizes(margin-top, 0, 0, 100px, 100px, 100px);
-			@include toggleSizes(margin-bottom, 30px, 30px, 30px, 30px, 30px);
+			@include toggleSizes(
+				margin-top,
+				0,
+				0,
+				100px,
+				100px,
+				100px
+			);
+			@include toggleSizes(
+				margin-bottom,
+				30px,
+				30px,
+				30px,
+				30px,
+				30px
+			);
 		}
 
 		p.link {

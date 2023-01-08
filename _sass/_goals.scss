@@ -2,18 +2,46 @@
 body#goals {
 	
 	section#page-content > section {
-		@include toggleSizes(padding-bottom, 0, 0, ($font-size--p--md * 1.5), ($font-size--p--lg * 1.5), ($font-size--p--xl * 1.5));
+		@include toggleSizes(
+			padding-bottom,
+			0,
+			0,
+			($font-size--p--md * 1.5),
+			($font-size--p--lg * 1.5),
+			($font-size--p--xl * 1.5)
+		);
 		
 		@include clearfix;
 	}
 	
 	h1.page-title {
-		@include toggleSizes(font-size, ($font-size--h1--xs * 1.25), $font-size--h1--sm, $font-size--h1--md, ($font-size--h1--lg * 1.75), ($font-size--h1--xl * 1.5));
-		@include toggleSizes(padding-bottom, 15px, 30px, 45px, 45px, 45px);
+		@include toggleSizes(
+			font-size,
+			($font-size--h1--xs * 1.25),
+			$font-size--h1--sm,
+			$font-size--h1--md,
+			($font-size--h1--lg * 1.75),
+			($font-size--h1--xl * 1.5)
+		);
+		@include toggleSizes(
+			padding-bottom,
+			15px,
+			30px,
+			45px,
+			45px,
+			45px
+		);
 	}
 	
 	article.goal-collection {
-		@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
+		@include toggleSizes(
+			padding,
+			($font-size--p--xs * 0.5) 0,
+			($font-size--p--sm * 0.5) 0,
+			($font-size--p--md * 0.5) 0,
+			($font-size--p--lg * 0.5) 0,
+			($font-size--p--xl * 0.5) 0
+		);
 		border-top: 1px solid;
 		@include toggleColor(border-color, "border-color");
 	}
@@ -27,8 +55,22 @@ body#goals {
 		text-transform: 	$text-transform--h3;
 		padding: 			0;
 		
-		@include toggleSizes(font-size, $font-size--h2--xs, $font-size--h2--sm, $font-size--h2--md, $font-size--h2--lg, $font-size--h2--xl);
-		@include toggleSizes(line-height, $line-height--h2--xs, $line-height--h2--sm, $line-height--h2--md, $line-height--h2--lg, $line-height--h2--xl);
+		@include toggleSizes(
+			font-size,
+			$font-size--h2--xs,
+			$font-size--h2--sm,
+			$font-size--h2--md,
+			$font-size--h2--lg,
+			$font-size--h2--xl
+		);
+		@include toggleSizes(
+			line-height,
+			$line-height--h2--xs,
+			$line-height--h2--sm,
+			$line-height--h2--md,
+			$line-height--h2--lg,
+			$line-height--h2--xl
+		);
 		
 	}
 	
@@ -143,23 +185,51 @@ body#goals {
 body#goal {
 	
 	section#page-content > section {
-		@include toggleSizes(padding-bottom, 0, 0, ($font-size--p--md * 1.5), ($font-size--p--lg * 1.5), ($font-size--p--xl * 1.5));
+		@include toggleSizes(
+			padding-bottom,
+			0,
+			0,
+			($font-size--p--md * 1.5),
+			($font-size--p--lg * 1.5),
+			($font-size--p--xl * 1.5)
+		);
 		
 		@include clearfix;
 	}
 	
 	header.goals-title {
 		h1.page-title {
-			@include toggleSizes(font-size, ($font-size--h1--xs * 1.25), $font-size--h1--sm, $font-size--h1--md, ($font-size--h1--lg * 1.75), ($font-size--h1--xl * 1.5));
+			@include toggleSizes(
+				font-size,
+				($font-size--h1--xs * 1.25),
+				$font-size--h1--sm,
+				$font-size--h1--md,
+				($font-size--h1--lg * 1.75),
+				($font-size--h1--xl * 1.5)
+			);
 			line-height: 1;
-			@include toggleSizes(padding-bottom, 15px, 30px, 45px, 45px, 45px);
+			@include toggleSizes(
+				padding-bottom,
+				15px,
+				30px,
+				45px,
+				45px,
+				45px
+			);
 		}
 	}
 	
 	h2.goal-title {
 		text-align: left;
 		
-		@include toggleSizes(padding-bottom, ($font-size--h2--xs * 0.25), ($font-size--h2--sm * 0.25), ($font-size--h2--md * 0.25), ($font-size--h2--lg * 0.25), ($font-size--h2--xl * 0.25));
+		@include toggleSizes(
+			padding-bottom,
+			($font-size--h2--xs * 0.25),
+			($font-size--h2--sm * 0.25),
+			($font-size--h2--md * 0.25),
+			($font-size--h2--lg * 0.25),
+			($font-size--h2--xl * 0.25)
+		);
 	}
 	
 	ul#goals-list {

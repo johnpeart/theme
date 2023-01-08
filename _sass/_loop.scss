@@ -1,30 +1,93 @@
 body#loop {
 	
 	section#page-content > section {
-		@include toggleSizes(padding-bottom, 0, 0, ($font-size--p--md * 1.5), ($font-size--p--lg * 1.5), ($font-size--p--xl * 1.5));
+		@include toggleSizes(
+			padding-bottom,
+			0,
+			0,
+			($font-size--p--md * 1.5),
+			($font-size--p--lg * 1.5),
+			($font-size--p--xl * 1.5)
+		);
 		
 		@include clearfix;
 	}
 	
 	h1.page-title {
-		@include toggleSizes(font-size, ($font-size--h1--xs * 1.25), $font-size--h1--sm, $font-size--h1--md, ($font-size--h1--lg * 1.75), ($font-size--h1--xl * 1.5));
-		@include toggleSizes(padding-bottom, 15px, 30px, 45px, 45px, 45px);
+		@include toggleSizes(
+			font-size,
+			($font-size--h1--xs * 1.25),
+			$font-size--h1--sm,
+			$font-size--h1--md,
+			($font-size--h1--lg * 1.75),
+			($font-size--h1--xl * 1.5)
+		);
+		@include toggleSizes(
+			padding-bottom,
+			15px,
+			30px,
+			45px,
+			45px,
+			45px
+		);
 	}
 	
 	h2.loop-header {
 		text-align: left;
 		
-		@include toggleSizes(position, relative, -webkit-sticky, -webkit-sticky, -webkit-sticky, -webkit-sticky);
-		@include toggleSizes(position, relative, sticky, sticky, sticky, sticky);
+		@include toggleSizes(
+			position,
+			relative,
+			-webkit-sticky,
+			-webkit-sticky,
+			-webkit-sticky,
+			-webkit-sticky
+		);
+		@include toggleSizes(
+			position,
+			relative,
+			sticky,
+			sticky,
+			sticky,
+			sticky
+		);
 		
-		@include toggleSizes(width, 100%, 20%, 25%, 25%, 25%);
+		@include toggleSizes(
+			width,
+			100%,
+			20%,
+			25%,
+			25%,
+			25%
+		);
 		
 		top: 0;
-		@include toggleSizes(padding-top, $font-size--h2--xs, $font-size--h2--sm, $font-size--h2--md, $font-size--h2--lg, $font-size--h2--xl);
+		@include toggleSizes(
+			padding-top,
+			$font-size--h2--xs,
+			$font-size--h2--sm,
+			$font-size--h2--md,
+			$font-size--h2--lg,
+			$font-size--h2--xl
+		);
 		
-		@include toggleSizes(float, none, left, left, left, left);
+		@include toggleSizes(
+			float,
+			none,
+			left,
+			left,
+			left,
+			left
+		);
 		
-		@include toggleSizes(font-size, ($font-size--h2--xs * 1.25), ($font-size--h2--sm *1.25), ($font-size--h2--md * 1.5), ($font-size--h2--lg * 1.5), ($font-size--h2--xl * 1.5));
+		@include toggleSizes(
+			font-size,
+			($font-size--h2--xs * 1.25),
+			($font-size--h2--sm *1.25),
+			($font-size--h2--md * 1.5),
+			($font-size--h2--lg * 1.5),
+			($font-size--h2--xl * 1.5)
+		);
 		
 		line-height: 0.8;
 	}
@@ -32,9 +95,30 @@ body#loop {
 	ul.loop {
 		padding-left: 0;
 		padding-bottom: 0;
-		@include toggleSizes(float, none, left, left, left, left);
-		@include toggleSizes(width, 100%, 80%, 75%, 75%, 75%);
-		@include toggleSizes(padding-top, 0, $font-size--h2--sm, $font-size--h2--md, $font-size--h2--lg, $font-size--h2--xl);
+		@include toggleSizes(
+			float,
+			none,
+			left,
+			left,
+			left,
+			left
+		);
+		@include toggleSizes(
+			width,
+			100%,
+			80%,
+			75%,
+			75%,
+			75%
+		);
+		@include toggleSizes(
+			padding-top,
+			0,
+			$font-size--h2--sm,
+			$font-size--h2--md,
+			$font-size--h2--lg,
+			$font-size--h2--xl
+		);
 
 		li:before {
 			position: 		absolute;
@@ -52,7 +136,14 @@ body#loop {
 		}
 		
 		p.loop-item-title {
-			@include toggleSizes(font-size, ($font-size--p--xs * 1.2), ($font-size--p--sm * 1.2), ($font-size--p--md * 1.2), ($font-size--p--lg * 1.2), ($font-size--p--xl * 1.2));
+			@include toggleSizes(
+			font-size,
+			($font-size--p--xs * 1.2),
+			($font-size--p--sm * 1.2),
+			($font-size--p--md * 1.2),
+			($font-size--p--lg * 1.2),
+			($font-size--p--xl * 1.2)
+		);
 			
 			a {
 				&:link {

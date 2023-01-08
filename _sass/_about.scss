@@ -1,21 +1,49 @@
 body#about {
 	
 	section#page-content > section {
-		@include toggleSizes(padding-bottom, 0, 0, ($font-size--p--md * 1.5), ($font-size--p--lg * 1.5), ($font-size--p--xl * 1.5));
+		@include toggleSizes(
+			padding-bottom,
+			0,
+			0,
+			($font-size--p--md * 1.5),
+			($font-size--p--lg * 1.5),
+			($font-size--p--xl * 1.5)
+		);
 		
 		@include clearfix;
 	}
 				
 	h1.page-title {
-		@include toggleSizes(font-size, ($font-size--h1--xs * 1.25), $font-size--h1--sm, $font-size--h1--md, ($font-size--h1--lg * 1.75), ($font-size--h1--xl * 1.5));
-		@include toggleSizes(padding-bottom, 15px, 30px, 45px, 45px, 45px);
+		@include toggleSizes(
+			font-size,
+			($font-size--h1--xs * 1.25),
+			$font-size--h1--sm,
+			$font-size--h1--md,
+			($font-size--h1--lg * 1.75),
+			($font-size--h1--xl * 1.5)
+		);
+		@include toggleSizes(
+			padding-bottom,
+			15px,
+			30px,
+			45px,
+			45px,
+			45px
+		);
 	}
 				
 	h2.about-header {
 		
 		text-align: 		left;
 		
-		@include toggleSizes(font-size, ($font-size--h2--xs * 1.25), ($font-size--h2--sm *1.25), ($font-size--h2--md * 1.5), ($font-size--h2--lg * 1.5), ($font-size--h2--xl * 1.5));
+		@include toggleSizes(
+			font-size,
+			($font-size--h2--xs * 1.25),
+			($font-size--h2--sm *1.25),
+			($font-size--h2--md * 1.5),
+			($font-size--h2--lg * 1.5),
+			($font-size--h2--xl * 1.5)
+		);
 		
 		&.about-career {
 			padding-top: 0;
@@ -25,7 +53,14 @@ body#about {
 				
 	h3.about-organisation {
 		
-		@include toggleSizes(font-size, ($font-size--h3--xs * 1.15), ($font-size--h3--sm * 1.25), ($font-size--h3--md * 1.2), ($font-size--h3--lg * 1.25), ($font-size--h3--xl * 1.3));
+		@include toggleSizes(
+			font-size,
+			($font-size--h3--xs * 1.15),
+			($font-size--h3--sm * 1.25),
+			($font-size--h3--md * 1.2),
+			($font-size--h3--lg * 1.25),
+			($font-size--h3--xl * 1.3)
+		);
 		
 		a {
 			text-decoration: none;
@@ -45,8 +80,22 @@ body#about {
 		padding: 0;
 		font-style: normal;
 		
-		@include toggleSizes(font-size, $font-size--h4--xs, $font-size--h4--sm, $font-size--h4--md, $font-size--h4--lg, $font-size--h4--xl);
-		@include toggleSizes(line-height, $line-height--h4--xs, $line-height--h4--sm, $line-height--h4--md, $line-height--h4--lg, $line-height--h4--xl);
+		@include toggleSizes(
+			font-size,
+			$font-size--h4--xs,
+			$font-size--h4--sm,
+			$font-size--h4--md,
+			$font-size--h4--lg,
+			$font-size--h4--xl
+		);
+		@include toggleSizes(
+			line-height,
+			$line-height--h4--xs,
+			$line-height--h4--sm,
+			$line-height--h4--md,
+			$line-height--h4--lg,
+			$line-height--h4--xl
+		);
 		
 	}
 	
@@ -58,15 +107,43 @@ body#about {
 		
 		text-align: 		left;
 		
-		@include toggleSizes(font-size, $font-size--h5--xs, $font-size--h5--sm, $font-size--h5--md, $font-size--h5--lg, $font-size--h5--xl);
-		@include toggleSizes(line-height, $line-height--h5--xs, $line-height--h5--sm, $line-height--h5--md, $line-height--h5--lg, $line-height--h5--xl);
-		@include toggleSizes(padding, $padding--h5--xs, $padding--h5--sm, $padding--h5--md, $padding--h5--lg, $padding--h5--xl);
+		@include toggleSizes(
+			font-size,
+			$font-size--h5--xs,
+			$font-size--h5--sm,
+			$font-size--h5--md,
+			$font-size--h5--lg,
+			$font-size--h5--xl
+		);
+		@include toggleSizes(
+			line-height,
+			$line-height--h5--xs,
+			$line-height--h5--sm,
+			$line-height--h5--md,
+			$line-height--h5--lg,
+			$line-height--h5--xl
+		);
+		@include toggleSizes(
+			padding,
+			$padding--h5--xs,
+			$padding--h5--sm,
+			$padding--h5--md,
+			$padding--h5--lg,
+			$padding--h5--xl
+		);
 		
 	}
 	
 	summary.about-job-entry {
 		
-		@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
+		@include toggleSizes(
+			padding,
+			($font-size--p--xs * 0.5) 0,
+			($font-size--p--sm * 0.5) 0,
+			($font-size--p--md * 0.5) 0,
+			($font-size--p--lg * 0.5) 0,
+			($font-size--p--xl * 0.5) 0
+		);
 	
 		h4.about-job-title {
 			max-width: calc(100% - 30px);
@@ -92,15 +169,36 @@ body#about {
 	}
 	
 	div.about-job-entry {
-		@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
+		@include toggleSizes(
+			padding,
+			($font-size--p--xs * 0.5) 0,
+			($font-size--p--sm * 0.5) 0,
+			($font-size--p--md * 0.5) 0,
+			($font-size--p--lg * 0.5) 0,
+			($font-size--p--xl * 0.5) 0
+		);
 		border-top: 1px solid;
 		@include toggleColor(border-color, "border-color");
 	}
 	
 	section.about-details {
 		
-		@include toggleSizes(padding-top, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
-		@include toggleSizes(padding-bottom, ($font-size--p--xs * 2), ($font-size--p--sm * 2), ($font-size--p--md * 2), ($font-size--p--lg * 2), ($font-size--p--xl * 2));
+		@include toggleSizes(
+			padding-top,
+			($font-size--p--xs * 0.5),
+			($font-size--p--sm * 0.5),
+			($font-size--p--md * 0.5),
+			($font-size--p--lg * 0.5),
+			($font-size--p--xl * 0.5)
+		);
+		@include toggleSizes(
+			padding-bottom,
+			($font-size--p--xs * 2),
+			($font-size--p--sm * 2),
+			($font-size--p--md * 2),
+			($font-size--p--lg * 2),
+			($font-size--p--xl * 2)
+		);
 		
 		p:last-of-type {
 			padding-bottom: 0;
@@ -117,7 +215,14 @@ body#about {
 		
 		li {
 			
-			@include toggleSizes(padding-left, ($font-size--p--xs * 1.25), ($font-size--p--sm * 1.25), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.25));
+			@include toggleSizes(
+				padding-left,
+				($font-size--p--xs * 1.25),
+				($font-size--p--sm * 1.25),
+				($font-size--p--md * 1.25),
+				($font-size--p--lg * 1.25),
+				($font-size--p--xl * 1.25)
+			);
 			padding-bottom: 0;
 		
 			&::before {

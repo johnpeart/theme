@@ -14,16 +14,58 @@ figure {
 	);
 	margin-top: 0;
 	
-	@include toggleSizes(width, 100%, 100%, (container("md") - 66px), (container("lg") - 50px), (container("xl") - 100px));
-	@include toggleSizes(max-width, 100%, 100%, unset, unset, unset);
-	@include toggleSizes(margin-left, 0, 0, -65px, -90px, -115px);
-	@include toggleSizes(margin-right, 0, 0, -65px, -90px, -115px);
+	@include toggleSizes(
+		width,
+		100%,
+		100%,
+		(container("md") - 66px),
+		(container("lg") - 50px),
+		(container("xl") - 100px)
+	);
+	@include toggleSizes(
+		max-width,
+		100%,
+		100%,
+		unset,
+		unset,
+		unset
+	);
+	@include toggleSizes(
+	margin-left,
+		0,
+		0,
+		-65px,
+		-90px,
+		-115px
+	);
+	@include toggleSizes(
+	margin-right,
+		0,
+		0,
+		-65px,
+		-90px,
+		-115px
+	);
 	
 	figcaption {
 		margin-top: $container-padding;
 		max-width: 500px;
-		@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
-		@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
+		@include toggleSizes(
+	font-size,
+		($font-size--p--xs * 0.8),
+		($font-size--p--sm * 0.8),
+		($font-size--p--md * 0.8),
+		($font-size--p--lg * 0.8),
+		($font-size--p--xl * 0.8)
+	);
+		@include toggleSizes(
+	line-height,
+		$line-height--p--xs,
+		$line-height--p--sm,
+		$line-height--p--md,
+		$line-height--p--lg,
+		$line-height--p--xl
+	);
 		padding-top: $container-padding * 0.5;
 		padding-bottom: 0;
 			
@@ -74,7 +116,14 @@ figure {
 		height: auto;
 		
 		margin: 0;
-		@include toggleSizes(margin-bottom, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
+		@include toggleSizes(
+			margin-bottom,
+			($font-size--p--xs * 0.5),
+			($font-size--p--sm * 0.5),
+			($font-size--p--md * 0.5),
+			($font-size--p--lg * 0.5),
+			($font-size--p--xl * 0.5)
+		);
 	
 	}
 	
@@ -85,10 +134,38 @@ img {
 	position: relative;
 	box-sizing: 	content-box;
 	
-	@include toggleSizes(width, 100%, 100%, (container("md") - 66px), (container("lg") - 50px), (container("xl") - 100px));
-	@include toggleSizes(max-width, 100%, 100%, unset, unset, unset);
-	@include toggleSizes(margin-left, 0, 0, -65px, -90px, -115px);
-	@include toggleSizes(margin-right, 0, 0, -65px, -90px, -115px);
+	@include toggleSizes(
+		width,
+		100%,
+		100%,
+		(container("md") - 66px),
+		(container("lg") - 50px),
+		(container("xl") - 100px)
+	);
+	@include toggleSizes(
+		max-width,
+		100%,
+		100%,
+		unset,
+		unset,
+		unset
+	);
+	@include toggleSizes(
+		margin-left,
+		0,
+		0,
+		-65px,
+		-90px,
+		-115px
+	);
+	@include toggleSizes(
+		margin-right,
+		0,
+		0,
+		-65px,
+		-90px,
+		-115px
+	);
 			
 	height: auto;
 }

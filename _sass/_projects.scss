@@ -1,20 +1,48 @@
 body#projects {
 	
 	section#page-content > section {
-		@include toggleSizes(padding-bottom, 0, 0, ($font-size--p--md * 1.5), ($font-size--p--lg * 1.5), ($font-size--p--xl * 1.5));
+		@include toggleSizes(
+			padding-bottom,
+			0,
+			0,
+			($font-size--p--md * 1.5),
+			($font-size--p--lg * 1.5),
+			($font-size--p--xl * 1.5)
+		);
 		
 		@include clearfix;
 	}
 	
 	h1.page-title {
-		@include toggleSizes(font-size, ($font-size--h1--xs * 1.25), $font-size--h1--sm, $font-size--h1--md, ($font-size--h1--lg * 1.75), ($font-size--h1--xl * 1.5));
-		@include toggleSizes(padding-bottom, 15px, 30px, 45px, 45px, 45px);
+		@include toggleSizes(
+			font-size,
+			($font-size--h1--xs * 1.25),
+			$font-size--h1--sm,
+			$font-size--h1--md,
+			($font-size--h1--lg * 1.75),
+			($font-size--h1--xl * 1.5)
+		);
+		@include toggleSizes(
+			padding-bottom,
+			15px,
+			30px,
+			45px,
+			45px,
+			45px
+		);
 	}
 				
 	h2.projects-header {
 		text-align: 		left;
 		
-		@include toggleSizes(font-size, ($font-size--h2--xs * 1.25), ($font-size--h2--sm *1.25), ($font-size--h2--md * 1.5), ($font-size--h2--lg * 1.5), ($font-size--h2--xl * 1.5));
+		@include toggleSizes(
+			font-size,
+			($font-size--h2--xs * 1.25),
+			($font-size--h2--sm *1.25),
+			($font-size--h2--md * 1.5),
+			($font-size--h2--lg * 1.5),
+			($font-size--h2--xl * 1.5)
+		);
 		
 		&.projects-blogs {
 			padding-top: 0;
@@ -22,7 +50,14 @@ body#projects {
 	}
 	
 	article.project-entry {
-		@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
+		@include toggleSizes(
+			padding,
+			($font-size--p--xs * 0.5) 0,
+			($font-size--p--sm * 0.5) 0,
+			($font-size--p--md * 0.5) 0,
+			($font-size--p--lg * 0.5) 0,
+			($font-size--p--xl * 0.5) 0
+		);
 		border-top: 1px solid;
 		@include toggleColor(border-color, "border-color");
 	}
@@ -36,8 +71,22 @@ body#projects {
 		text-transform: 	$text-transform--h3;
 		padding: 			0;
 		
-		@include toggleSizes(font-size, $font-size--h3--xs, $font-size--h3--sm, $font-size--h3--md, $font-size--h3--lg, $font-size--h3--xl);
-		@include toggleSizes(line-height, $line-height--h3--xs, $line-height--h3--sm, $line-height--h3--md, $line-height--h3--lg, $line-height--h3--xl);
+		@include toggleSizes(
+			font-size,
+			$font-size--h3--xs,
+			$font-size--h3--sm,
+			$font-size--h3--md,
+			$font-size--h3--lg,
+			$font-size--h3--xl
+		);
+		@include toggleSizes(
+			line-height,
+			$line-height--h3--xs,
+			$line-height--h3--sm,
+			$line-height--h3--md,
+			$line-height--h3--lg,
+			$line-height--h3--xl
+		);
 		
 	}
 	

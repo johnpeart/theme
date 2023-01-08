@@ -4,14 +4,14 @@
 // See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
 
 @mixin sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 // Use in conjunction with .sr-only to only display content when it's focused.
@@ -19,42 +19,63 @@
 // Credit: HTML5 Boilerplate
 
 @mixin sr-only-focusable {
-  &:active,
-  &:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    clip: auto;
-    white-space: normal;
-  }
+    &:active,
+    &:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
 }
 
 .sr-only {
-  @include sr-only;
+    @include sr-only;
 }
 
 .sr-only-focusable {
-  @include sr-only-focusable;
+    @include sr-only-focusable;
 }
 
 .skip-link {
-  @include sr-only;
-  @include sr-only-focusable;
-  
-  z-index: 999999;
-  display: block;
-  width: 100%;
-  
-  @include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
-  @include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
-  @include toggleSizes(padding, 10px 0, 10px 0, 10px 0, 10px 0, 10px 0);
-  
-  text-align: 			left;
-  
-  &:focus,
-  &:hover {
-    @include toggleColor(color, "skiplink-color");
-    @include toggleColor(background, "skiplink-background");
-  }
+    @include sr-only;
+    @include sr-only-focusable;
+    
+    z-index: 999999;
+    display: block;
+    width: 100%;
+    
+    @include toggleSizes(
+        font-size,
+        $font-size--p--xs,
+        $font-size--p--sm,
+        $font-size--p--md,
+        $font-size--p--lg,
+        $font-size--p--xl
+    );
+    @include toggleSizes(
+        line-height,
+        $line-height--p--xs,
+        $line-height--p--sm,
+        $line-height--p--md,
+        $line-height--p--lg,
+        $line-height--p--xl
+    );
+    @include toggleSizes(
+        padding,
+        10px 0,
+        10px 0,
+        10px 0,
+        10px 0,
+        10px 0
+    );
+    
+    text-align: 			left;
+    
+    &:focus,
+    &:hover {
+        @include toggleColor(color, "skiplink-color");
+        @include toggleColor(background, "skiplink-background");
+    }
 }

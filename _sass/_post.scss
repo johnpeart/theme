@@ -5,7 +5,14 @@ body[id$='post'] {
 	}
 	section.post-body > p:first-of-type {
 		font-weight: bold;
-		@include toggleSizes(font-size, ($font-size--p--xs * 1.1), ($font-size--p--sm * 1.25), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.25));
+		@include toggleSizes(
+			font-size,
+			($font-size--p--xs * 1.1),
+			($font-size--p--sm * 1.25),
+			($font-size--p--md * 1.25),
+			($font-size--p--lg * 1.25),
+			($font-size--p--xl * 1.25)
+		);
 	}
 	
 	header.post-title {
@@ -17,8 +24,22 @@ body[id$='post'] {
 	aside.post-published-date p {
 		font-weight: bold;
 		@include toggleColor(color, "secondary-text--color");
-		@include toggleSizes(font-size, ($font-size--p--xs * 1.2), ($font-size--p--sm * 1.25), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.4));
-		@include toggleSizes(padding, $padding--post-date--xs, $padding--post-date--sm, $padding--post-date--md, $padding--post-date--lg, $padding--post-date--xl);
+		@include toggleSizes(
+			font-size,
+			($font-size--p--xs * 1.2),
+			($font-size--p--sm * 1.25),
+			($font-size--p--md * 1.25),
+			($font-size--p--lg * 1.25),
+			($font-size--p--xl * 1.4)
+		);
+		@include toggleSizes(
+			padding,
+			$padding--post-date--xs,
+			$padding--post-date--sm,
+			$padding--post-date--md,
+			$padding--post-date--lg,
+			$padding--post-date--xl
+		);
 	}
 	aside.post-published-date p a.post-published-date  {
 		font-weight: bold;
@@ -48,7 +69,14 @@ body[id$='post'] {
 		position: absolute;
 		content: "\2014";
 
-		@include toggleSizes(left, $font-size--p--xs, -($font-size--p--sm * 0.5), -($font-size--p--md * 0.5), -($font-size--p--lg * 0.5), -($font-size--p--xl * 0.5));
+		@include toggleSizes(
+			left,
+			$font-size--p--xs,
+			-($font-size--p--sm * 0.5),
+			-($font-size--p--md * 0.5),
+			-($font-size--p--lg * 0.5),
+			-($font-size--p--xl * 0.5)
+		);
 	}
 
 	#markdown-toc {
@@ -99,14 +127,35 @@ body[id$='post'] {
 			margin: 0;
 
 			li {
-				@include toggleSizes(padding-left, 0, 0, 15px, 15px, 15px);
+				@include toggleSizes(
+					padding-left,
+					0,
+					0,
+					15px,
+					15px,
+					15px
+				);
 				margin: 0;
 
 				&::before {
 
 					position: relative;
-					@include toggleSizes(display, none, none, inline-block, inline-block, inline-block);
-					@include toggleSizes(left, 0, 0, -15px, -15px, -15px);
+					@include toggleSizes(
+						display,
+						none,
+						none,
+						inline-block,
+						inline-block,
+						inline-block
+					);
+					@include toggleSizes(
+						left,
+						0,
+						0,
+						-15px,
+						-15px,
+						-15px
+					);
 
 				}
 			}
@@ -233,7 +282,14 @@ body[id$='post'] {
 			   -o-font-feature-settings: 	normal !important;
 				font-feature-settings:	normal !important;
 
-		@include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+		@include toggleSizes(
+			padding,
+			$padding--p--xs,
+			$padding--p--sm,
+			$padding--p--md,
+			$padding--p--lg,
+			$padding--p--xl
+		);
 	}
 
 	div.footnotes {
@@ -241,9 +297,30 @@ body[id$='post'] {
 		&:before {
 			display: block;
 
-			@include toggleSizes(font-size, $font-size--h3--xs, $font-size--h3--sm, $font-size--h3--md, $font-size--h3--lg, $font-size--h3--xl);
-			@include toggleSizes(line-height, $line-height--h3--xs, $line-height--h3--sm, $line-height--h3--md, $line-height--h3--lg, $line-height--h3--xl);
-			@include toggleSizes(padding, $padding--h3--xs, $padding--h3--sm, $padding--h3--md, $padding--h3--lg, $padding--h3--xl);
+			@include toggleSizes(
+				font-size,
+				$font-size--h3--xs,
+				$font-size--h3--sm,
+				$font-size--h3--md,
+				$font-size--h3--lg,
+				$font-size--h3--xl
+			);
+			@include toggleSizes(
+				line-height,
+				$line-height--h3--xs,
+				$line-height--h3--sm,
+				$line-height--h3--md,
+				$line-height--h3--lg,
+				$line-height--h3--xl
+			);
+			@include toggleSizes(
+				padding,
+				$padding--h3--xs,
+				$padding--h3--sm,
+				$padding--h3--md,
+				$padding--h3--lg,
+				$padding--h3--xl
+			);
 
 			font-weight:			$font-weight--h3;
 			font-style: 			$font-style-h3;
@@ -255,17 +332,52 @@ body[id$='post'] {
 
 		}
 
-		@include toggleSizes(padding-top, 45px, 60px, 60px, 90px, 120px);
-		@include toggleSizes(max-width, 400px, 500px, 450px, 600px, 600px);
+		@include toggleSizes(
+			padding-top,
+			45px,
+			60px,
+			60px,
+			90px,
+			120px
+		);
+		@include toggleSizes(
+			max-width,
+			400px,
+			500px,
+			450px,
+			600px,
+			600px
+		);
 
 		ul, ol {
-			@include toggleSizes(padding-left, ($font-size--p--xs * 1.6), ($font-size--p--sm * 1.6), 0, 0, 0);
+			@include toggleSizes(
+				padding-left,
+				($font-size--p--xs * 1.6),
+				($font-size--p--sm * 1.6),
+				0,
+				0,
+				0
+			);
 		}
 		li, p {
-			@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
+			@include toggleSizes(
+				font-size,
+				($font-size--p--xs * 0.8),
+				($font-size--p--sm * 0.8),
+				($font-size--p--md * 0.8),
+				($font-size--p--lg * 0.8),
+				($font-size--p--xl * 0.8)
+			);
 		}
 		p {
-			@include toggleSizes(padding, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
+			@include toggleSizes(
+				padding,
+				$padding--p--xs,
+				$padding--p--sm,
+				$padding--p--md,
+				$padding--p--lg,
+				$padding--p--xl
+			);
 		}
 		a.reversefootnote {
 			text-decoration: none;
@@ -290,16 +402,37 @@ body[id$='post'] {
 			grid-gap: 40px;
 		}
 						
-		@include toggleSizes(margin-top, 45px, 60px, 60px, 90px, 120px);
+		@include toggleSizes(
+			margin-top,
+			45px,
+			60px,
+			60px,
+			90px,
+			120px
+		);
 		
 		div.post-author-card {
 			display: grid;
 			grid-area: author;
-			@include toggleSizes(padding, 15px, 15px, 15px, 15px, 15px);
+			@include toggleSizes(
+				padding,
+				15px,
+				15px,
+				15px,
+				15px,
+				15px
+			);
 			
 			// border-top: 3px solid; 
 			@include toggleColor(background, "default-element-background")
-			@include toggleSizes(border-radius, 15px, 15px, 20px, 20px, 20px);
+			@include toggleSizes(
+				border-radius,
+				15px,
+				15px,
+				20px,
+				20px,
+				20px
+			);
 			
 			@include sm-down() {
 				grid-template-rows: auto auto;
@@ -322,7 +455,14 @@ body[id$='post'] {
 		}
 
 		p, dl, dt, dd {
-			@include toggleSizes(font-size, ($font-size--p--xs * 0.8), ($font-size--p--sm * 0.8), ($font-size--p--md * 0.8), ($font-size--p--lg * 0.8), ($font-size--p--xl * 0.8));
+			@include toggleSizes(
+				font-size,
+				($font-size--p--xs * 0.8),
+				($font-size--p--sm * 0.8),
+				($font-size--p--md * 0.8),
+				($font-size--p--lg * 0.8),
+				($font-size--p--xl * 0.8)
+			);
 		}
 		
 		p.author--wordmark {
@@ -331,8 +471,22 @@ body[id$='post'] {
 			font-weight: 	bold;
 			padding-bottom: 0;
 			@include toggleColor(color, "color");
-			@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
-			@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
+			@include toggleSizes(
+				font-size,
+				$font-size--p--xs,
+				$font-size--p--sm,
+				$font-size--p--md,
+				$font-size--p--lg,
+				$font-size--p--xl
+			);
+			@include toggleSizes(
+				line-height,
+				$line-height--p--xs,
+				$line-height--p--sm,
+				$line-height--p--md,
+				$line-height--p--lg,
+				$line-height--p--xl
+			);
 		}
 		
 		a.p-author {			
@@ -374,7 +528,14 @@ body[id$='post'] {
 			-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 			filter: grayscale(100%);
 			
-			@include toggleSizes(border-radius, 5px, 5px, 13px, 13px, 13px);
+			@include toggleSizes(
+				border-radius,
+				5px,
+				5px,
+				13px,
+				13px,
+				13px
+			);
 		}
 		
 		.author--icons {
@@ -460,7 +621,14 @@ body[id$='post'] {
 		dl.meta-data {
 			grid-area: meta;
 			@include clearfix;
-			@include toggleSizes(padding-top, 15px, 15px, 15px, 15px, 15px);
+			@include toggleSizes(
+				padding-top,
+				15px,
+				15px,
+				15px,
+				15px,
+				15px
+			);
 			border-top: 3px solid; 
 			@include toggleColor(border-color, "secondary-text--color");
 		}
@@ -473,7 +641,14 @@ body[id$='post'] {
 		}
 		dd {
 			text-transform: capitalize;
-			@include toggleSizes(padding-bottom, ($font-size--p--xs * 0.5), ($font-size--p--sm * 0.5), ($font-size--p--md * 0.5), ($font-size--p--lg * 0.5), ($font-size--p--xl * 0.5));
+			@include toggleSizes(
+				padding-bottom,
+				($font-size--p--xs * 0.5),
+				($font-size--p--sm * 0.5),
+				($font-size--p--md * 0.5),
+				($font-size--p--lg * 0.5),
+				($font-size--p--xl * 0.5)
+			);
 			
 			&:last-of-type {
 				padding-bottom: 0;
@@ -496,9 +671,23 @@ body[id$='post'] {
 		@include toggleColor(background, "default-element-background");
 		@include toggleColor(color, "color");
 		
-		@include toggleSizes(border-radius, 20px, 20px, 30px, 30px, 30px);
+		@include toggleSizes(
+			border-radius,
+			20px,
+			20px,
+			30px,
+			30px,
+			30px
+		);
 		
-		@include toggleSizes(padding, 15px, 15px, 20px, 20px, 20px);
+		@include toggleSizes(
+			padding,
+			15px,
+			15px,
+			20px,
+			20px,
+			20px
+		);
 		margin-left: auto;
 		margin-right: auto;
 		@include toggleSizes(
@@ -533,8 +722,22 @@ body[id$='post'] {
 		}
 		
 		img.app-sheet--app--icon {
-			@include toggleSizes(max-width, 57px, 57px, 104px, 104px, 104px);
-			@include toggleSizes(border-radius, 10px, 10px, 20px, 20px, 20px);
+			@include toggleSizes(
+				max-width,
+				57px,
+				57px,
+				104px,
+				104px,
+				104px
+			);
+			@include toggleSizes(
+				border-radius,
+				10px,
+				10px,
+				20px,
+				20px,
+				20px
+			);
 			margin-right: 20px;
 			margin-bottom: 20px;
 			
@@ -558,8 +761,22 @@ body[id$='post'] {
 		
 		
 		span.app-sheet--app--iap-label {
-			@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
-			@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
+			@include toggleSizes(
+				font-size,
+				$font-size--tiny-p--xs,
+				$font-size--tiny-p--sm,
+				$font-size--tiny-p--md,
+				$font-size--tiny-p--lg,
+				$font-size--tiny-p--xl
+			);
+			@include toggleSizes(
+				line-height,
+				$line-height--p--xs,
+				$line-height--p--sm,
+				$line-height--p--md,
+				$line-height--p--lg,
+				$line-height--p--xl
+			);
 			@include toggleColor(color, "secondary-text--color");
 			text-transform: uppercase;
 		}
@@ -570,7 +787,14 @@ body[id$='post'] {
 			text-decoration: 	$text-decoration--h2;
 			text-transform: 	$text-transform--h2;
 			
-			@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--h2--md, $font-size--h2--lg, $font-size--h2--xl);
+			@include toggleSizes(
+				font-size,
+				$font-size--p--xs,
+				$font-size--p--sm,
+				$font-size--h2--md,
+				$font-size--h2--lg,
+				$font-size--h2--xl
+			);
 			line-height: 1;
 			padding: 0 0 5px 0;
 		}
@@ -579,7 +803,14 @@ body[id$='post'] {
 			padding: 0;
 			text-transform: uppercase;
 			@include toggleColor(color, "secondary-text--color");
-			@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
+			@include toggleSizes(
+				font-size,
+				$font-size--tiny-p--xs,
+				$font-size--tiny-p--sm,
+				$font-size--tiny-p--md,
+				$font-size--tiny-p--lg,
+				$font-size--tiny-p--xl
+			);
 
 		}
 		
@@ -649,7 +880,14 @@ body[id$='post'] {
 			&.small-caps {
 				text-transform: uppercase;
 				@includeColor(color, "secondary-text--color");
-				@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
+				@include toggleSizes(
+					font-size,
+					$font-size--tiny-p--xs,
+					$font-size--tiny-p--sm,
+					$font-size--tiny-p--md,
+					$font-size--tiny-p--lg,
+					$font-size--tiny-p--xl
+				);
 			}
 		}
 		

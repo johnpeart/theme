@@ -5,7 +5,14 @@ body#home {
 		max-width: 	750px;
 
 		h1.display {
-			@include toggleSizes(margin-left, -3px, -6px, -8px, -10px, -10px);
+			@include toggleSizes(
+				margin-left,
+				-3px,
+				-6px,
+				-8px,
+				-10px,
+				-10px
+			);
 		}
 
 	}
