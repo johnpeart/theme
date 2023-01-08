@@ -112,8 +112,8 @@ $colors: (
 	
 	
 	/// borders
-	"border-color":							#CED4DA,
-	"dark--border-color":					#495057,
+	"border-color":								#CED4DA,
+	"dark--border-color":						#495057,
 			
 			
 	/// buttons		
@@ -167,15 +167,9 @@ $colors: (
 	
 	// Backgrounds
 	"default-element-background":				#E9ECEF,
-	"dark--default-element-background":			#495057,
-			
-			
-	/// tables		
-	"table-border-color":						#E9ECEF,
-	"table-head-foot-border-color":				#1D1D1D,
-			
-	"dark--table-border-color":					#343A40,
-	"dark--table-head-foot-border-color":		#FAFAFA,
+	"default-element-background--hover":		#DEE2E6,
+	"dark--default-element-background":			#343A40,
+	"dark--default-element-background--hover":	#495057,
 	
 	
 	/// progress element
@@ -192,21 +186,6 @@ $colors: (
 	/// post.scss
 	"secondary-text--color":					#868E96,
 	"dark--secondary-text--color":				#CED4DA,
-	
-	"table-of-contents--border-color":			#CED4DA,
-	"dark--table-of-contents--border-color":	#495057,
-	
-	"app-sheet--secondary-text--color":			#868E96,
-	"app-sheet--background":					#E9ECEF,
-	"app-sheet--background--hover":				#DEE2E6,
-	"app-sheet--border-color":					#CED4DA,
-	"dark--app-sheet--secondary-text--color":	#868E96,
-	"dark--app-sheet--background":				#343A40,
-	"dark--app-sheet--background--hover":		#495057,
-	"dark--app-sheet--border-color":			#CED4DA,
-	
-	"author-card--background":					#E9ECEF,
-	"dark--author-card--background":			#343A40,
 	
 	// chiplet
 	"chiplet-background--default":				#009FE3,
@@ -227,32 +206,6 @@ $colors: (
 	"dark--code-background":						#495057,
 	
 );
-
-// LINK COLOURS AND DECORATION
-// See 'global/_typography'
-$link-font-weight:					inherit;
-$link-outline:						none;
-$link-text-decoration:				underline;
-$link-text-decoration-hover:		underline;
-$link-text-decoration-active:		underline;
-$link-text-decoration-focus:		none;
-
-
-// HEADER LINK COLOURS AND DECORATION
-$header-link-font-weight:				normal;
-$header-link-outline:					none;
-$header-link-text-decoration:			none;
-$header-link-text-decoration-hover:		underline;
-$header-link-text-decoration-active:	none;
-$header-link-text-decoration-focus:		none;
-
-// FOOTER LINK COLOURS AND DECORATION
-$footer-link-font-weight:				normal;
-$footer-link-outline:					none;
-$footer-link-text-decoration:			none;
-$footer-link-text-decoration-hover:		underline;
-$footer-link-text-decoration-active:	none;
-$footer-link-text-decoration-focus:		none;
 
 // --------------------------------------//
 // --------------------------------------//

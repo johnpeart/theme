@@ -1,6 +1,6 @@
 a {
 	font-weight: 		inherit;
-	text-decoration: 	$link-text-decoration;
+	text-decoration: 	underline;
 	cursor: pointer;
 
 	&:link {
@@ -11,7 +11,7 @@ a {
 	}
 	&:hover {
 		@include toggleColor(color, "link-color--hover");
-		text-decoration: 	$link-text-decoration-hover;
+		text-decoration: 	underline;
 	}
 	&:focus {
 		@include toggleColor(color, "link-color--focus");
@@ -20,7 +20,7 @@ a {
 		@include toggleColor(outline-color, "outline-color");
 	}
 	&:active {
-		text-decoration: 	$link-text-decoration-active;
+		text-decoration: 	underline;
 	}
 }
 
@@ -107,10 +107,10 @@ sup {
 		text-decoration: none;
 
 		&:hover {
-			text-decoration: $link-text-decoration-hover;
+			text-decoration: underline;
 		}
 		&:focus {
-			text-decoration: $link-text-decoration-focus;
+			text-decoration: none;
 		}
 	}
 }
@@ -273,8 +273,8 @@ table {
 	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
 
 	tr {
-		border-left: 1px solid;
-		@include toggleColor(border-color, "table-border-color");
+		border-bottom: 1px solid;
+		@include toggleColor(border-color, "border-color");
 
 		&:last-child {
 			border-bottom: none !important;
@@ -286,8 +286,8 @@ table {
 		vertical-align: top;
 		
 		border-left: 1px solid;
-		@include toggleColor(border-color, "table-border-color");
-
+		@include toggleColor(border-color, "border-color");
+		
 		&:first-child {
 			border-left: none;
 		}
@@ -301,12 +301,12 @@ table {
 
 	thead {
 		border-bottom: 2px solid;
-		@include toggleColor(border-color, "table-head-foot-border-color");
+		@include toggleColor(border-color, "color");
 	}
 
 	tfoot {
 		border-bottom: 2px solid;
-		@include toggleColor(border-color, "table-head-foot-border-color");
+		@include toggleColor(border-color, "color");
 	}
 
 }

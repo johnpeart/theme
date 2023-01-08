@@ -31,7 +31,7 @@ body[id$='post'] {
 		}
 		&:hover {
 			@include toggleColor(color, "secondary-text--color");
-			text-decoration: 	$link-text-decoration-hover;
+			text-decoration: 	underline;
 		}
 		&:focus {
 			@include toggleColor(color, "link-color--focus");
@@ -40,7 +40,7 @@ body[id$='post'] {
 			@include toggleColor(outline-color, "outline-color");
 		}
 		&:active {
-			text-decoration: 	$link-text-decoration-active;
+			text-decoration: 	underline;
 		}
 	}
 	
@@ -76,7 +76,7 @@ body[id$='post'] {
 			}
 			&:hover {
 				@include toggleColor(color, "link-color--hover");
-				text-decoration: 	$link-text-decoration-hover;
+				text-decoration: 	underline;
 			}
 			&:focus {
 				@include toggleColor(color, "link-color--focus");
@@ -85,7 +85,7 @@ body[id$='post'] {
 				@include toggleColor(outline-color, "outline-color");
 			}
 			&:active {
-				text-decoration: 	$link-text-decoration-active;
+				text-decoration: 	underline;
 			}
 		}
 
@@ -134,7 +134,7 @@ body[id$='post'] {
 	details.table-of-contents {
 		&[open] {
 			border-bottom: 1px solid;
-			@include toggleColor(border-bottom, "table-of-contents--border-color");
+			@include toggleColor(border-color, "border-color");
 		}
 	}
 
@@ -298,7 +298,7 @@ body[id$='post'] {
 			@include toggleSizes(padding, 15px, 15px, 15px, 15px, 15px);
 			
 			// border-top: 3px solid; 
-			@include toggleColor(background, "author-card--background")
+			@include toggleColor(background, "default-element-background")
 			@include toggleSizes(border-radius, 15px, 15px, 20px, 20px, 20px);
 			
 			@include sm-down() {
@@ -493,7 +493,7 @@ body[id$='post'] {
 		display: block;
 		box-sizing: border-box;
 		
-		@include toggleColor(background, "app-sheet--background");
+		@include toggleColor(background, "default-element-background");
 		@include toggleColor(color, "color");
 		
 		@include toggleSizes(border-radius, 20px, 20px, 30px, 30px, 30px);
@@ -529,7 +529,7 @@ body[id$='post'] {
 			grid-template-areas: 'dd dt';
 						
 			border-top: 2px solid;
-			@include toggleColor(border-color, "app-sheet--border-color");
+			@include toggleColor(border-color, "border-color");
 		}
 		
 		img.app-sheet--app--icon {
@@ -560,7 +560,7 @@ body[id$='post'] {
 		span.app-sheet--app--iap-label {
 			@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
 			@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
-			@include toggleColor(color, "app-sheet--secondary-text--color");
+			@include toggleColor(color, "secondary-text--color");
 			text-transform: uppercase;
 		}
 		
@@ -578,7 +578,7 @@ body[id$='post'] {
 		dd.app-sheet--app--description {
 			padding: 0;
 			text-transform: uppercase;
-			@includeColor(color, "app-sheet--secondary-text--color");
+			@include toggleColor(color, "secondary-text--color");
 			@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
 
 		}
@@ -609,7 +609,7 @@ body[id$='post'] {
 		display: block;
 		box-sizing: border-box;
 		
-		@include toggleColor(background, "app-sheet--background");
+		@include toggleColor(background, "default-element-background");
 		@include toggleColor(color, "color");
 
 		padding: 15px;
@@ -619,7 +619,7 @@ body[id$='post'] {
 		max-width: 700px;
 		
 		&:hover {
-			@include toggleColor(background, "app-sheet--background--hover");
+			@include toggleColor(background, "default-element-background--hover");
 		}
 		
 		dl.apps-list--app--info {
@@ -648,7 +648,7 @@ body[id$='post'] {
 			
 			&.small-caps {
 				text-transform: uppercase;
-				@includeColor(color, "app-sheet--secondary-text--color");
+				@includeColor(color, "secondary-text--color");
 				@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
 			}
 		}
@@ -672,7 +672,7 @@ body[id$='post'] {
 		display: block;
 		box-sizing: border-box;
 		
-		@include toggleColor(background, "app-sheet--background");
+		@include toggleColor(background, "default-element-background");
 		@include toggleColor(color, "color");
 		
 		padding: 15px;
@@ -682,7 +682,7 @@ body[id$='post'] {
 		max-width: 700px;
 		
 		border-top: 2px solid;
-		@include toggleColor(border-color, "app-sheet--border-color");
+		@include toggleColor(border-color, "border-color");
 		
 		&.app-totals--total {
 			@include toggleSizes(
@@ -697,7 +697,7 @@ body[id$='post'] {
 		
 		&.app-totals--sub-total {			
 			&:hover {
-				@include toggleColor(background, "app-sheet--background--hover");
+				@include toggleColor(background, "default-element-background--hover");
 			}
 		}
 		

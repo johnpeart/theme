@@ -52,7 +52,7 @@ body#manuals {
 			@include toggleColor(outline-color, "outline-color");
 		}
 		&:active {
-			text-decoration: 	$link-text-decoration-active;
+			text-decoration: 	underline;
 		}
 	}
 	

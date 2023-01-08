@@ -5,8 +5,8 @@ header#site-header {
 }
 	
 nav#header--site-nav a {
-	font-weight: 		$header-link-font-weight;
-	text-decoration: 	$header-link-text-decoration;
+	font-weight: 		normal;
+	text-decoration: 	none;
 	
 	&:link {
 		@include toggleColor(color, "color");
@@ -16,7 +16,7 @@ nav#header--site-nav a {
 	}
 	&:hover {
 		@include toggleColor(color, "link-color--hover");
-		text-decoration: 	$header-link-text-decoration-hover;
+		text-decoration: 	underline;
 	}
 	&:focus {
 		@include toggleColor(color, "link-color--focus");
@@ -25,7 +25,7 @@ nav#header--site-nav a {
 		@include toggleColor(outline-color, "outline-color");
 	}
 	&:active {
-		text-decoration: 	$header-link-text-decoration-active;
+		text-decoration: 	none;
 	}
 }	
 
@@ -55,7 +55,7 @@ p#header--wordmark {
 		}
 		&:hover {
 			@include toggleColor(color, "link-color--hover");
-			text-decoration: 	$link-text-decoration-hover;	
+			text-decoration: 	underline;	
 		}
 		&:focus {
 			@include toggleColor(color, "link-color--focus");
@@ -64,7 +64,7 @@ p#header--wordmark {
 			@include toggleColor(outline-color, "outline-color");
 		}
 		&:active {
-			text-decoration: 	$link-text-decoration-active;
+			text-decoration: 	underline;
 		}
 	}
 	
@@ -132,7 +132,7 @@ header.site-header {
 @include toggleColor(outline-color, "outline-color");
 			}
 			&:active {
-				text-decoration: 	$link-text-decoration-active;
+				text-decoration: 	underline;
 			}
 		}
 	}	
