@@ -39,22 +39,7 @@ aside#footer--wordmark {
 	p.footer--wordmark {
 		font-weight: 	bold;
 		padding-bottom: 0;
-		@include toggleSizes(
-			font-size,
-			$font-size--p--xs * 0.9,
-			$font-size--p--sm * 0.9,
-			$font-size--p--md * 0.9,
-			$font-size--p--lg * 0.9,
-			$font-size--p--xl * 0.9
-		);
-		@include toggleSizes(
-			line-height,
-			$line-height--p--xs,
-			$line-height--p--sm,
-			$line-height--p--md,
-			$line-height--p--lg,
-			$line-height--p--xl
-		);
+		@include font($footer-wordmark);
 	}
 	
 	p.footer--wordmark a {
@@ -64,22 +49,7 @@ aside#footer--wordmark {
 		}
 	}
 	a.footer--site-link {
-		@include toggleSizes(
-			font-size,
-			$font-size--p--xs * 0.9,
-			$font-size--p--sm * 0.9,
-			$font-size--p--md * 0.9,
-			$font-size--p--lg * 0.9,
-			$font-size--p--xl * 0.9
-		);
-		@include toggleSizes(
-			line-height,
-			$line-height--p--xs,
-			$line-height--p--sm,
-			$line-height--p--md,
-			$line-height--p--lg,
-			$line-height--p--xl
-		);		
+		@include font($footer-wordmark);	
 	}
 	
 }
@@ -137,38 +107,7 @@ nav#footer--links {
 		
 		border: none !important;
 		
-		@include toggleSizes(
-			font-size,
-			$font-size--footer--p--xs,
-			$font-size--footer--p--sm,
-			$font-size--footer--p--md,
-			$font-size--footer--p--lg,
-			$font-size--footer--p--xl
-		);
-		@include toggleSizes(
-			line-height,
-			$line-height--footer--p--xs,
-			$line-height--footer--p--sm,
-			$line-height--footer--p--md,
-			$line-height--footer--p--lg,
-			$line-height--footer--p--xl
-		);
-		@include toggleSizes(
-			padding,
-			$padding--footer--p--xs,
-			$padding--footer--p--sm,
-			$padding--footer--p--md,
-			$padding--footer--p--lg,
-			$padding--footer--p--xl
-		);
-		@include toggleSizes(
-			text-align,
-			left,
-			right,
-			right,
-			right,
-			right
-		);
+		@include font($footer-body);
 		
 		&:last-child {
 			@include toggleSizes(

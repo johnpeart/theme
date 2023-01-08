@@ -318,19 +318,59 @@ $body: (
 	
 );
 
+$body--small: (
+	
+	"font-size": (
+		"xs": 18px,
+		"sm": 18px,
+		"md": 18px,
+		"lg": 22px,
+		"xl": 26px
+	),
+	"line-height": (
+		"xs": 1.25,
+		"sm": 1.25,
+		"md": 1.25,
+		"lg": 1.25,
+		"xl": 1.2
+	),
+	"padding": (
+		"xs": 0,
+		"sm": 0,
+		"md": 0,
+		"lg": 0,
+		"xl": 0
+	),
+	"font-weight": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	),
+	"font-style": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	),
+	"text-transform": (
+		"xs": uppercase,
+		"sm": uppercase,
+		"md": uppercase,
+		"lg": uppercase,
+		"xl": uppercase
+	)
+	
+);
+
 // Size
 $font-size--p--xs:		22px;
 $font-size--p--sm:		22px;
 $font-size--p--md:		22px;
 $font-size--p--lg:		26px;
 $font-size--p--xl:		30px;
-// TINY PARAGRAPH TEXT
-// Size
-$font-size--tiny-p--xs:		18px;
-$font-size--tiny-p--sm:		18px;
-$font-size--tiny-p--md:		18px;
-$font-size--tiny-p--lg:		22px;
-$font-size--tiny-p--xl:		26px;
 // Line height
 $line-height--p--xs:	1.25;
 $line-height--p--sm:	1.25;
@@ -346,124 +386,226 @@ $padding--p--xl:		0 0 $font-size--p--xl 0;
 
 // HEADER WORDMARK TEXT
 // Applies to the Wordmark only (smaller for the normal links)
-// Size
-$font-size--header-wordmark--xs:	30px;
-$font-size--header-wordmark--sm:	30px;
-$font-size--header-wordmark--md:	30px;
-$font-size--header-wordmark--lg:	34px;
-$font-size--header-wordmark--xl:	36px;
-// Line height
-$line-height--header-wordmark--xs:	1;
-$line-height--header-wordmark--sm:	1;
-$line-height--header-wordmark--md:	1;
-$line-height--header-wordmark--lg:	1;
-$line-height--header-wordmark--xl:	1;
-// Padding (bottom spacing)
-$padding--header-wordmark--xs:		(($header-min-height--small - $font-size--header-wordmark--xs) * 0.5) 0;
-$padding--header-wordmark--sm:		(($header-min-height - $font-size--header-wordmark--sm) * 0.5) 0;
-$padding--header-wordmark--md:		(($header-min-height - $font-size--header-wordmark--md) * 0.5) 0;
-$padding--header-wordmark--lg:		(($header-min-height - $font-size--header-wordmark--lg) * 0.5) 0;
-$padding--header-wordmark--xl:		(($header-min-height - $font-size--header-wordmark--xl) * 0.5) 0;
 
-// HEADER NAV TEXT
-// Applies to text inside the Header nav items
-// Size
-$font-size--header-menu--xs:	26px;
-$font-size--header-menu--sm:	22px;
-$font-size--header-menu--md:	22px;
-$font-size--header-menu--lg:	26px;
-$font-size--header-menu--xl:	30px;
-// Line height
-$line-height--header-menu--xs:	1;
-$line-height--header-menu--sm:	1;
-$line-height--header-menu--md:	1;
-$line-height--header-menu--lg:	1;
-$line-height--header-menu--xl:	1;
-// Padding (bottom spacing)
-$padding--header-menu--xs:		(($header-min-height--small - $font-size--header-menu--xs) * 0.5) 0;
-$padding--header-menu--sm:		0 0 (($header-min-height - $font-size--header-menu--sm) * 0.5) 0;
-$padding--header-menu--md:		0 0 (($header-min-height - $font-size--header-menu--md) * 0.5) 0;
-$padding--header-menu--lg:		0 0 (($header-min-height - $font-size--header-menu--lg) * 0.5) 0;
-$padding--header-menu--xl:		0 0 (($header-min-height - $font-size--header-menu--xl) * 0.5) 0;
+$wordmark: (
+	
+	"font-size": (
+		"xs": 30px,
+		"sm": 30px,
+		"md": 30px,
+		"lg": 34px,
+		"xl": 36px
+	),
+	"line-height": (
+		"xs": 1,
+		"sm": 1,
+		"md": 1,
+		"lg": 1,
+		"xl": 1
+	),
+	"padding": (
+		"xs": (($header-min-height--small - 30px) * 0.5) 0,
+		"sm": (($header-min-height - 30px) * 0.5) 0,
+		"md": (($header-min-height - 30px) * 0.5) 0,
+		"lg": (($header-min-height - 34px) * 0.5) 0,
+		"xl": (($header-min-height - 36px) * 0.5) 0
+	)
+	
+);
 
-// FOOTER TEXT
-// Applies to text inside the Footer
-// Size
-$font-size--footer--p--xs:		18px;
-$font-size--footer--p--sm:		18px;
-$font-size--footer--p--md:		18px;
-$font-size--footer--p--lg:		20px;
-$font-size--footer--p--xl:		22px;
-// Line height
-$line-height--footer--p--xs:	1.25;
-$line-height--footer--p--sm:	1.25;
-$line-height--footer--p--md:	1.25;
-$line-height--footer--p--lg:	1.4;
-$line-height--footer--p--xl:	1.4;
-// Padding (bottom spacing)
-$padding--footer--p--xs:		0 0 ($font-size--footer--p--xs * 0.5) 0;
-$padding--footer--p--sm:		0 0 ($font-size--footer--p--sm * 0.5) 0;
-$padding--footer--p--md:		0 0 ($font-size--footer--p--md * 0.5) 0;
-$padding--footer--p--lg:		0 0 ($font-size--footer--p--lg * 0.25) 0;
-$padding--footer--p--xl:		0 0 ($font-size--footer--p--xl * 0.25) 0;
+$header-nav: (
+	
+	"font-size": (
+		"xs": 26px,
+		"sm": 22px,
+		"md": 22px,
+		"lg": 26px,
+		"xl": 30px
+	),
+	"line-height": (
+		"xs": 1,
+		"sm": 1,
+		"md": 1,
+		"lg": 1,
+		"xl": 1
+	),
+	"padding": (
+		"xs": (($header-min-height--small - 26px) * 0.5) 0,
+		"sm": 0 0 (($header-min-height - 22px) * 0.5) 0,
+		"md": 0 0 (($header-min-height - 22px) * 0.5) 0,
+		"lg": 0 0 (($header-min-height - 26px) * 0.5) 0,
+		"xl": 0 0 (($header-min-height - 30px) * 0.5) 0
+	),
+	"min-height": (
+		"xs": $header-min-height--small,
+		"sm": $header-min-height--small,
+		"md": 0,
+		"lg": 0,
+		"xl": 0
+	),
+	"margin-right": (
+		"xs": 0,
+		"sm": 0,
+		"md": 20px,
+		"lg": 20px,
+		"xl": 20px
+	),
+	"width": (
+		"xs": 100%,
+		"sm": 100%,
+		"md": auto,
+		"lg": auto,
+		"xl": auto
+	)
+	
+);
+
+$footer-body: (
+	
+	"font-size": (
+		"xs": 18px,
+		"sm": 18px,
+		"md": 18px,
+		"lg": 20px,
+		"xl": 22px
+	),
+	"line-height": (
+		"xs": 1.25,
+		"sm": 1.25,
+		"md": 1.25,
+		"lg": 1.4,
+		"xl": 1.4
+	),
+	"padding": (
+		"xs": 0 0 9px 0,
+		"sm": 0 0 9px 0,
+		"md": 0 0 9px 0,
+		"lg": 0 0 5px 0,
+		"xl": 0 0 6px 0
+	),
+	"text-align": (
+		"xs": left,
+		"sm": right,
+		"md": right,
+		"lg": right,
+		"xl": right
+	)
+	
+);
+
+$footer-wordmark: (
+	
+	"font-size": (
+		"xs": 27px,
+		"sm": 27px,
+		"md": 27px,
+		"lg": 30px,
+		"xl": 32px
+	),
+	"line-height": (
+		"xs": 1,
+		"sm": 1,
+		"md": 1,
+		"lg": 1,
+		"xl": 1
+	),
+	"padding": (
+		"xs": 0,
+		"sm": 0,
+		"md": 0,
+		"lg": 0,
+		"xl": 0
+	)
+	
+);
+
 
 
 // DISPLAY TEXT
 // Applies to 'h1' size on home and 404 pages
-// Size
-$font-size--display--xs:		66px;
-$font-size--display--sm:		90px;
-$font-size--display--md:		120px;
-$font-size--display--lg:		144px;
-$font-size--display--xl:		164px;
-// Line height
-$line-height--display--xs:	1;
-$line-height--display--sm:	1;
-$line-height--display--md:	1;
-$line-height--display--lg:	1;
-$line-height--display--xl:	1;
-// Padding (bottom spacing)
-$padding--display--xs:		($font-size--display--xs * 1.25) 0 ($font-size--display--xs * 0.1) 0;
-$padding--display--sm:		($font-size--display--sm * 1.25) 0 ($font-size--display--sm * 0.1) 0;
-$padding--display--md:		($font-size--display--md * 1.25) 0 ($font-size--display--md * 0.1) 0;
-$padding--display--lg:		($font-size--display--lg * 1.5) 0 ($font-size--display--lg * 0.1) 0;
-$padding--display--xl:		($font-size--display--xl * 1.5) 0 ($font-size--display--xl * 0.1) 0;
+
+$h1-display: (
+	"font-size": (
+		"xs": 66px,
+		"sm": 90px,
+		"md": 120px,
+		"lg": 144px,
+		"xl": 164px
+	),
+	"line-height": (
+		"xs": 1,
+		"sm": 1,
+		"md": 1,
+		"lg": 1,
+		"xl": 1
+	),
+	"padding": (
+		"xs": 90px 0 15px 0,
+		"sm": 105px 0 15px 0,
+		"md": 150px 0 15px 0,
+		"lg": 225px 0 15px 0,
+		"xl": 240px 0 15px 0
+	)
+);
 
 // HEADING 1 TEXT
 // Applies to 'h1' and equivalent text
-// Size
-$font-size--h1--xs:		44px;
-$font-size--h1--sm:		60px;
-$font-size--h1--md:		60px;
-$font-size--h1--lg:		72px;
-$font-size--h1--xl:		82px;
-// Line height
-$line-height--h1--xs:	1.1;
-$line-height--h1--sm:	1.1;
-$line-height--h1--md:	1.1;
-$line-height--h1--lg:	1.1;
-$line-height--h1--xl:	1.1;
-// Padding (bottom spacing)
-$padding--h1--xs:		($font-size--h1--xs * 2) 0 $font-size--h1--xs 0;
-$padding--h1--sm:		($font-size--h1--sm * 2) 0 $font-size--h1--sm 0;
-$padding--h1--md:		($font-size--h1--md * 2) 0 $font-size--h1--md 0;
-$padding--h1--lg:		($font-size--h1--lg * 2) 0 $font-size--h1--lg 0;
-$padding--h1--xl:		($font-size--h1--xl * 2) 0 $font-size--h1--xl 0;
-// Other styles
-$font-weight--h1:		bold;
-$font-style-h1:			normal;
-$text-align--h1:		left;
-$text-decoration--h1:	none;
-$text-transform--h1:	none;
+$h1: (
+	"font-size": (
+		"xs": 45px,
+		"sm": 60px,
+		"md": 60px,
+		"lg": 75px,
+		"xl": 75px
+	),
+	"line-height": (
+		"xs": 1,
+		"sm": 1,
+		"md": 1,
+		"lg": 1,
+		"xl": 1
+	),
+	"padding": (
+		"xs": 90px  0 45px,
+		"sm": 120px 0 60px,
+		"md": 120px 0 60px,
+		"lg": 150px 0 75px,
+		"xl": 150px 0 75px,
+	)
+);
+
+$h1-page-title: (
+	"font-size": (
+		"xs": 60px,
+		"sm": 60px,
+		"md": 60px,
+		"lg": 120px,
+		"xl": 120px
+	),
+	"line-height": (
+		"xs": 1,
+		"sm": 1,
+		"md": 1,
+		"lg": 1,
+		"xl": 1
+	),
+	"padding": (
+		"xs": 90px  0 15px,
+		"sm": 120px 0 30px,
+		"md": 120px 0 45px,
+		"lg": 150px 0 45px,
+		"xl": 150px 0 45px,
+	)
+);
 
 // POST DATE
 // Applies to p element before 'h1' and equivalent text in post headers
 // Padding (bottom spacing)
-$padding--post-date--xs:		($font-size--h1--xs * 2) 0 ($font-size--p--xs * 0.5) 0;
-$padding--post-date--sm:		($font-size--h1--sm * 2) 0 ($font-size--p--sm * 0.5) 0;
-$padding--post-date--md:		($font-size--h1--md * 2) 0 ($font-size--p--md * 0.5) 0;
-$padding--post-date--lg:		($font-size--h1--lg * 2) 0 ($font-size--p--lg * 0.5) 0;
-$padding--post-date--xl:		($font-size--h1--xl * 2) 0 ($font-size--p--xl * 0.5) 0;
+$padding--post-date--xs:		90px  0 15px 0;
+$padding--post-date--sm:		120px 0 30px 0;
+$padding--post-date--md:		120px 0 30px 0;
+$padding--post-date--lg:		150px 0 45px 0;
+$padding--post-date--xl:		150px 0 45px 0;
 
 // HEADING 2 TEXT
 // Applies to 'h2' and equivalent text

@@ -1,60 +1,17 @@
 h1 {
-	font-weight: 		$font-weight--h1;
-	font-style: 		$font-style-h1;
-	text-align: 		$text-align--h1;
-	text-decoration: 	$text-decoration--h1;
-	text-transform: 	$text-transform--h1;
+	font-weight: 		bold;
+	font-style: 		normal;
+	text-align: 		left;
+	text-decoration: 	none;
+	text-transform: 	none;
 
-	@include toggleSizes(
-		font-size,
-		$font-size--h1--xs,
-		$font-size--h1--sm,
-		$font-size--h1--md,
-		$font-size--h1--lg,
-		$font-size--h1--xl
-	);
-	@include toggleSizes(
-		line-height,
-		$line-height--h1--xs,
-		$line-height--h1--sm,
-		$line-height--h1--md,
-		$line-height--h1--lg,
-		$line-height--h1--xl
-	);
-	@include toggleSizes(
-		padding,
-		$padding--h1--xs,
-		$padding--h1--sm,
-		$padding--h1--md,
-		$padding--h1--lg,
-		$padding--h1--xl
-	);
-
+	@include font($h1);
 	&.display {
-		@include toggleSizes(
-			font-size,
-			$font-size--display--xs,
-			$font-size--display--sm,
-			$font-size--display--md,
-			$font-size--display--lg,
-			$font-size--display--xl
-		);
-		@include toggleSizes(
-			line-height,
-			$line-height--display--xs,
-			$line-height--display--sm,
-			$line-height--display--md,
-			$line-height--display--lg,
-			$line-height--display--xl
-		);
-		@include toggleSizes(
-			padding,
-			$padding--display--xs,
-			$padding--display--sm,
-			$padding--display--md,
-			$padding--display--lg,
-			$padding--display--xl
-		);
+		@include font($h1-display);
+	}
+	
+	&.page-title {
+		@include font($h1-page-title);
 	}
 }
 
@@ -65,30 +22,7 @@ h2 {
 	text-decoration: 	$text-decoration--h2;
 	text-transform: 	$text-transform--h2;
 
-	@include toggleSizes(
-		font-size,
-		$font-size--h2--xs,
-		$font-size--h2--sm,
-		$font-size--h2--md,
-		$font-size--h2--lg,
-		$font-size--h2--xl
-	);
-	@include toggleSizes(
-		line-height,
-		$line-height--h2--xs,
-		$line-height--h2--sm,
-		$line-height--h2--md,
-		$line-height--h2--lg,
-		$line-height--h2--xl
-	);
-	@include toggleSizes(
-		padding,
-		$padding--h2--xs,
-		$padding--h2--sm,
-		$padding--h2--md,
-		$padding--h2--lg,
-		$padding--h2--xl
-	);
+	@include font($h1)
 }
 
 h3 {

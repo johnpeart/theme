@@ -13,25 +13,6 @@ body#about {
 		@include clearfix;
 	}
 				
-	h1.page-title {
-		@include toggleSizes(
-			font-size,
-			($font-size--h1--xs * 1.25),
-			$font-size--h1--sm,
-			$font-size--h1--md,
-			($font-size--h1--lg * 1.75),
-			($font-size--h1--xl * 1.5)
-		);
-		@include toggleSizes(
-			padding-bottom,
-			15px,
-			30px,
-			45px,
-			45px,
-			45px
-		);
-	}
-				
 	h2.about-header {
 		
 		text-align: 		left;

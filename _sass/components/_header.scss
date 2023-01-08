@@ -36,30 +36,7 @@ p#header--wordmark {
 	
 	padding: 0;
 	
-	@include toggleSizes(
-		font-size,
-		$font-size--header-wordmark--xs,
-		$font-size--header-wordmark--sm,
-		$font-size--header-wordmark--md,
-		$font-size--header-wordmark--lg,
-		$font-size--header-wordmark--xl
-	);
-	@include toggleSizes(
-		line-height,
-		$line-height--header-wordmark--xs,
-		$line-height--header-wordmark--sm,
-		$line-height--header-wordmark--md,
-		$line-height--header-wordmark--lg,
-		$line-height--header-wordmark--xl
-	);
-	@include toggleSizes(
-		padding,
-		$padding--header-wordmark--xs,
-		$padding--header-wordmark--sm,
-		$padding--header-wordmark--md,
-		$padding--header-wordmark--lg,
-		$padding--header-wordmark--xl
-	);
+	@include font($wordmark)
 
 	a {
 		display: inline-block;
@@ -125,54 +102,7 @@ header.site-header {
 		
 		li {
 			display: inline-block;
-			@include toggleSizes(
-				width,
-				100%,
-				100%,
-				auto,
-				auto,
-				auto
-			);
-			@include toggleSizes(
-				margin-right,
-				0,
-				0,
-				20px,
-				20px,
-				20px
-			);
-			@include toggleSizes(
-				min-height,
-				$header-min-height--small,
-				$header-min-height--small,
-				0,
-				0,
-				0
-			);
-			@include toggleSizes(
-				font-size,
-				$font-size--header-menu--xs,
-				$font-size--header-menu--sm,
-				$font-size--header-menu--md,
-				$font-size--header-menu--lg,
-				$font-size--header-menu--xl
-			);
-			@include toggleSizes(
-				line-height,
-				$line-height--header-menu--xs,
-				$line-height--header-menu--sm,
-				$line-height--header-menu--md,
-				$line-height--header-menu--lg,
-				$line-height--header-menu--xl
-			);	
-			@include toggleSizes(
-				padding,
-				$padding--header-menu--xs,
-				$padding--header-menu--sm,
-				$padding--header-menu--md,
-				$padding--header-menu--lg,
-				$padding--header-menu--xl
-			);
+			@include font($header-nav);
 		}
 		
 		a {
