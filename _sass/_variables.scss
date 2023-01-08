@@ -598,14 +598,33 @@ $h1-page-title: (
 	)
 );
 
+
 // POST DATE
 // Applies to p element before 'h1' and equivalent text in post headers
 // Padding (bottom spacing)
-$padding--post-date--xs:		90px  0 15px 0;
-$padding--post-date--sm:		120px 0 30px 0;
-$padding--post-date--md:		120px 0 30px 0;
-$padding--post-date--lg:		150px 0 45px 0;
-$padding--post-date--xl:		150px 0 45px 0;
+$h1-post-date: (
+	"font-size": (
+		"xs": 26px,
+		"sm": 28px,
+		"md": 28px,
+		"lg": 23px,
+		"xl": 42px
+	),
+	"line-height": (
+		"xs": 1,
+		"sm": 1,
+		"md": 1,
+		"lg": 1,
+		"xl": 1
+	),
+	"padding": (
+		"xs": 90px  0 15px 0,
+		"sm": 120px 0 30px 0,
+		"md": 120px 0 30px 0,
+		"lg": 150px 0 45px 0,
+		"xl": 150px 0 45px 0,
+	)
+);
 
 // HEADING 2 TEXT
 // Applies to 'h2' and equivalent text

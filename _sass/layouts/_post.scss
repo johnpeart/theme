@@ -24,22 +24,7 @@ body[id$='post'] {
 	aside.post-published-date p {
 		font-weight: bold;
 		@include toggleColor(color, "secondary-text--color");
-		@include toggleSizes(
-			font-size,
-			($font-size--p--xs * 1.2),
-			($font-size--p--sm * 1.25),
-			($font-size--p--md * 1.25),
-			($font-size--p--lg * 1.25),
-			($font-size--p--xl * 1.4)
-		);
-		@include toggleSizes(
-			padding,
-			$padding--post-date--xs,
-			$padding--post-date--sm,
-			$padding--post-date--md,
-			$padding--post-date--lg,
-			$padding--post-date--xl
-		);
+		@include font($h1-post-date);
 	}
 	aside.post-published-date p a.post-published-date  {
 		font-weight: bold;
