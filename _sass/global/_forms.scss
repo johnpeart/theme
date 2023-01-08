@@ -25,25 +25,27 @@ a.button {
 	font-weight: bold;
 	vertical-align: middle;
 	line-height: 40px;
-	background: $cyan;
-	color: $white;
-	border: 1px solid $cyan;
+	@include toggleColor(background, "button-background");
+	@include toggleColor(background, "button-color");
+	border: 1px solid;
+	@include toggleColor(border-color, "button-border-color");
 	padding: 5px;
 	text-align: center;
 	margin-bottom: 10px;
 	text-decoration: none;
 	
 	&:hover {
-		background: $black;
+		@include toggleColor(background, "button-background--hover");
 		cursor: pointer;
-		@include toggleDarkMode(color, $white, $brand);
+		@include toggleColor(color, "button-color--hover");
 	}
 
 	&:focus {
-		background: $black;
-		outline: 2px solid $cyan;
+		@include toggleColor(background, "button-background--focus");
+		outline: 2px solid;
+		@include toggleColor(outline-color, "button-outline-color--focus")
 		cursor: pointer;
-		@include toggleDarkMode(color, $white, $brand);
+		@include toggleColor(color, "button-color--focus");
 	}
 
 	&:last-child,
@@ -93,10 +95,7 @@ label {
 
 .label-hint {
 	@extend p;
-	color:  $gray-600;
-	@include dark-mode {
-		color: $gray-300;
-	}
+	@include toggleColor(color, "input-label-hint-color");
 	padding-bottom: 0;
 	display: block;
 }
@@ -115,9 +114,11 @@ textarea {
 
 	border-radius: 0;
 
-	@include toggleDarkMode(background, $absolute-white, $absolute-black);
-	@include toggleDarkMode(color, $black, $white);
-	@include toggleDarkMode(border, $border-width-form-element solid $input-border-color, $border-width-form-element solid $absolute-black);
+	@include toggleColor(background, "input-background");
+	@include toggleColor(color, "input-color");
+	
+	border: $border-width-form-element solid;
+	@include toggleColor(border-color, "input-border-color");
 	
 	// Disable inner shadow and remove rounded corners
 	-webkit-appearance: none;
@@ -127,16 +128,20 @@ textarea {
 	&:hover {
 		outline: $border-width-form-element solid $input-focus-color;
 		outline-offset: 0px;
-		@include toggleDarkMode(border-width, inherit, $border-width-form-element);
-		@include toggleDarkMode(border, $border-width-form-element solid $input-border-color, $border-width-form-element solid $absolute-black);
+		border: $border-width-form-element solid;
+		@include toggleColor(border-color, "input-border-color");
 	}
 	&:focus {
 		outline: $border-width-form-element solid $input-focus-color;
 		outline-offset: 3px;
 
-		@include toggleDarkMode(background, inherit, $gray-900);
-		@include toggleDarkMode(box-shadow, inset 0 0 0 $border-focus-width, inset 0 0 0 $border-focus-width $absolute-black);
-		@include toggleDarkMode(border, $border-width-form-element solid $input-border-color, $border-width-form-element solid $absolute-black);
+		@include toggleColor(background, "input-background--focus");
+		box-shadow: inset 0 0 0 $border-focus-width;
+		@include darkMode() {
+			box-shadow: inset 0 0 0 $border-focus-width map-get($colors, "absolute-black");
+		}
+		border: $border-width-form-element solid;
+		@include toggleColor(border-color, "input-border-color");
 	}
 
 	&:invalid {
@@ -186,8 +191,8 @@ input[type="radio"] {
 
 			width: $radios-size;
 			height: $radios-size;
-
-			@include toggleDarkMode(border, 2px solid $black, 3px solid $white);
+			border: 2px solid;
+			@include toggleColor(border-color, "radio-button-border-color");
 			border-radius: 50%;
 			background: transparent;
 		}
@@ -202,23 +207,24 @@ input[type="radio"] {
 			width: 0;
 			height: 0;
 
-			@include toggleDarkMode(border, 10px solid $brand, 10px solid $cyan);
+			border: 10px solid;
+			@include toggleColor(border-color, "radio-button-center-color")
 			border-radius: 50%;
 			opacity: 0;
-			background: $black;
+			background: map-get($colors, "black");
 		}
 	
 	}
 
 	&:focus + label::before {
 		border-width: 4px;
-		box-shadow: 0 0 0 3px $cyan;
+		box-shadow: 0 0 0 3px map-get($colors, "radio-shadow");
 	}
 
 	&:hover + label::before {
-		box-shadow: 0 0 0 3px $cyan;
-		@include toggleDarkMode(background, $gray-200, $gray-700);
-		@include toggleDarkMode(border-width, 2px, 3px);
+		box-shadow: 0 0 0 3px map-get($colors, "radio-shadow");
+		@include toggleColor(background, "radio-background")
+		border-width: 2px;
 	}
 
 	&:checked + label::after {

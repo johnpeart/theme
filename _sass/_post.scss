@@ -16,27 +16,28 @@ body[id$='post'] {
 	
 	aside.post-published-date p {
 		font-weight: bold;
-		@include toggleDarkMode(color, $gray-600, $gray-400);
+		@include toggleColor(color, "secondary-text--color");
 		@include toggleSizes(font-size, ($font-size--p--xs * 1.2), ($font-size--p--sm * 1.25), ($font-size--p--md * 1.25), ($font-size--p--lg * 1.25), ($font-size--p--xl * 1.4));
 		@include toggleSizes(padding, $padding--post-date--xs, $padding--post-date--sm, $padding--post-date--md, $padding--post-date--lg, $padding--post-date--xl);
 	}
 	aside.post-published-date p a.post-published-date  {
 		font-weight: bold;
 		&:link {
-			@include toggleDarkMode(color, $gray-600, $gray-400);
+			@include toggleColor(color, "secondary-text--color");
 			text-decoration: none;
 		}
 		&:visited {
-			@include toggleDarkMode(color, $gray-600, $gray-400);
+			@include toggleColor(color, "secondary-text--color");
 		}
 		&:hover {
-			@include toggleDarkMode(color, $gray-600, $gray-400);
+			@include toggleColor(color, "secondary-text--color");
 			text-decoration: 	$link-text-decoration-hover;
 		}
 		&:focus {
-			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
-			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
-			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+			@include toggleColor(color, "link-color--focus");
+			@include toggleColor(background, "link-background--focus");
+			outline: 2px solid;
+			@include toggleColor(outline-color, "outline-color");
 		}
 		&:active {
 			text-decoration: 	$link-text-decoration-active;
@@ -52,7 +53,7 @@ body[id$='post'] {
 
 	#markdown-toc {
 
-		@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
+		@include toggleColor(background, "default-element-background");
 		padding:	20px;
 
 		> li {
@@ -67,20 +68,21 @@ body[id$='post'] {
 
 		a {
 			&:link {
-				@include toggleDarkMode(color, $link-color, $link-color-dark);
+				@include toggleColor(color, "link-color");
 				text-decoration: none;
 			}
 			&:visited {
-				@include toggleDarkMode(color, $link-color, $link-color-dark);
+				@include toggleColor(color, "link-color");
 			}
 			&:hover {
-				@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
+				@include toggleColor(color, "link-color--hover");
 				text-decoration: 	$link-text-decoration-hover;
 			}
 			&:focus {
-				@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
-				@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
-				@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+				@include toggleColor(color, "link-color--focus");
+				@include toggleColor(background, "link-background--focus");
+				outline: 2px solid;
+				@include toggleColor(outline-color, "outline-color");
 			}
 			&:active {
 				text-decoration: 	$link-text-decoration-active;
@@ -131,7 +133,8 @@ body[id$='post'] {
 
 	details.table-of-contents {
 		&[open] {
-			@include toggleDarkMode(border-bottom, 1px solid $gray-400, 1px solid $gray-700);
+			border-bottom: 1px solid;
+			@include toggleColor(border-bottom, "table-of-contents--border-color");
 		}
 	}
 
@@ -142,7 +145,7 @@ body[id$='post'] {
 
 	fieldset#toggle-esc-entries {
 
-		@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
+		@include toggleColor(background, "default-element-background");
 
 		padding: 15px 10px 10px;
 		margin-bottom: 20px;
@@ -295,7 +298,7 @@ body[id$='post'] {
 			@include toggleSizes(padding, 15px, 15px, 15px, 15px, 15px);
 			
 			// border-top: 3px solid; 
-			@include toggleDarkMode(background, $gray-200, $gray-800);
+			@include toggleColor(background, "author-card--background")
 			@include toggleSizes(border-radius, 15px, 15px, 20px, 20px, 20px);
 			
 			@include sm-down() {
@@ -327,7 +330,7 @@ body[id$='post'] {
 			display: block;
 			font-weight: 	bold;
 			padding-bottom: 0;
-			@include toggleDarkMode(color, $body-color, $body-background-dark);
+			@include toggleColor(color, "color");
 			@include toggleSizes(font-size, $font-size--p--xs, $font-size--p--sm, $font-size--p--md, $font-size--p--lg, $font-size--p--xl);
 			@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
 		}
@@ -355,18 +358,18 @@ body[id$='post'] {
 			
 			width: 57px;
 			height: 57px;
-			border: 3px solid;
-			@include toggleDarkMode(border-color, $gray-100, $gray-900);
 
 			@include md-up {
 				width: 140px;
 				height: 140px;
-				border: 5px solid;
-				@include toggleDarkMode(border-color, $gray-100, $gray-900);
 
 			}
 			
-			@include toggleDarkMode(background, $gray-100, $gray-900);
+			background: map-get($colors, "gray-100");
+			
+			@include darkMode() {
+				background:	map-get($colors, "gray-900");
+			}
 
 			-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 			filter: grayscale(100%);
@@ -393,7 +396,8 @@ body[id$='post'] {
 				height: 30px;
 				width: 2px;
 				margin: 0 10px 0 5px;
-				border-right: 2px solid $gray-500;
+				border-right: 2px solid;
+				@include toggleColor(border-color, "border-color");
 				content: "";
 			}
 			
@@ -416,19 +420,25 @@ body[id$='post'] {
 					padding: 0;
 								
 					path {
-						@include toggleDarkMode(fill, $body-color, $body-color-dark);
+						@include toggleColor(fill, "color");
 					}
 				}
 				
 				
 				&:link svg path {
-					@include toggleDarkMode(fill, $gray-600, $gray-400);
+					fill: map-get($colors, "gray-600");
+					@include darkMode() {
+						fill: map-get($colors, "gray-400");	
+					} 
 				}
 				&:visited svg path {
-					@include toggleDarkMode(fill, $gray-600, $gray-400);
+					fill: map-get($colors, "gray-600");
+					@include darkMode() {
+						fill: map-get($colors, "gray-400");	
+					} 
 				}
 				&:hover svg path {
-					@include toggleDarkMode(fill, $link-color--hover, $link-color--hover-dark);
+					@include toggleColor(fill, "link-color--hover");
 					text-decoration: none;
 				}
 				&:focus svg {
@@ -452,11 +462,11 @@ body[id$='post'] {
 			@include clearfix;
 			@include toggleSizes(padding-top, 15px, 15px, 15px, 15px, 15px);
 			border-top: 3px solid; 
-			@include toggleDarkMode(border-color, $gray-300, $gray-600)
+			@include toggleColor(border-color, "secondary-text--color");
 		}
 		dt, dd {
 			display: 	block;
-			@include toggleDarkMode(color, $gray-600, $gray-300);
+			@include toggleColor(border-color, "secondary-text--color");
 		}
 		dt {
 			font-weight: 	bold;
@@ -483,8 +493,8 @@ body[id$='post'] {
 		display: block;
 		box-sizing: border-box;
 		
-		@include toggleDarkMode(background, $gray-200, $gray-800);
-		@include toggleDarkMode(color, $body-color, $body-color-dark);
+		@include toggleColor(background, "app-sheet--background");
+		@include toggleColor(color, "color");
 		
 		@include toggleSizes(border-radius, 20px, 20px, 30px, 30px, 30px);
 		
@@ -518,7 +528,8 @@ body[id$='post'] {
 			grid-template-rows: auto;
 			grid-template-areas: 'dd dt';
 						
-			border-top: 2px solid $gray-400;
+			border-top: 2px solid;
+			@include toggleColor(border-color, "app-sheet--border-color");
 		}
 		
 		img.app-sheet--app--icon {
@@ -549,7 +560,7 @@ body[id$='post'] {
 		span.app-sheet--app--iap-label {
 			@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
 			@include toggleSizes(line-height, $line-height--p--xs, $line-height--p--sm, $line-height--p--md, $line-height--p--lg, $line-height--p--xl);
-			color: $gray-600;
+			@include toggleColor(color, "app-sheet--secondary-text--color");
 			text-transform: uppercase;
 		}
 		
@@ -567,7 +578,7 @@ body[id$='post'] {
 		dd.app-sheet--app--description {
 			padding: 0;
 			text-transform: uppercase;
-			color: $gray-600;
+			@includeColor(color, "app-sheet--secondary-text--color");
 			@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
 
 		}
@@ -598,8 +609,8 @@ body[id$='post'] {
 		display: block;
 		box-sizing: border-box;
 		
-		@include toggleDarkMode(background, $gray-200, $gray-800);
-		@include toggleDarkMode(color, $body-color, $body-color-dark);
+		@include toggleColor(background, "app-sheet--background");
+		@include toggleColor(color, "color");
 
 		padding: 15px;
 		margin: 0;
@@ -608,7 +619,7 @@ body[id$='post'] {
 		max-width: 700px;
 		
 		&:hover {
-			@include toggleDarkMode(background, $gray-300, $gray-700);
+			@include toggleColor(background, "app-sheet--background--hover");
 		}
 		
 		dl.apps-list--app--info {
@@ -637,7 +648,7 @@ body[id$='post'] {
 			
 			&.small-caps {
 				text-transform: uppercase;
-				color: $gray-600;
+				@includeColor(color, "app-sheet--secondary-text--color");
 				@include toggleSizes(font-size, $font-size--tiny-p--xs, $font-size--tiny-p--sm, $font-size--tiny-p--md, $font-size--tiny-p--lg, $font-size--tiny-p--xl);
 			}
 		}
@@ -661,8 +672,8 @@ body[id$='post'] {
 		display: block;
 		box-sizing: border-box;
 		
-		@include toggleDarkMode(background, $gray-200, $gray-800);
-		@include toggleDarkMode(color, $body-color, $body-color-dark);
+		@include toggleColor(background, "app-sheet--background");
+		@include toggleColor(color, "color");
 		
 		padding: 15px;
 		margin: 0;
@@ -670,7 +681,8 @@ body[id$='post'] {
 		margin-right: auto;
 		max-width: 700px;
 		
-		border-top: 2px solid $gray-400;
+		border-top: 2px solid;
+		@include toggleColor(border-color, "app-sheet--border-color");
 		
 		&.app-totals--total {
 			@include toggleSizes(
@@ -685,7 +697,7 @@ body[id$='post'] {
 		
 		&.app-totals--sub-total {			
 			&:hover {
-				@include toggleDarkMode(background, $gray-300, $gray-700);
+				@include toggleColor(background, "app-sheet--background--hover");
 			}
 		}
 		

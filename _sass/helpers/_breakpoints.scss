@@ -1,76 +1,112 @@
+@function breakpoint($size) {
+	
+	$size: quote($size);
+	
+	@if not map-has-key($breakpoint, $size) {
+		@error "Unknown breakpoint size – `#{$size}`";
+	}
+	
+	@return map-get($breakpoint, $size);
+}
+
+@function container($size) {
+	
+	$size: quote($size);
+	
+	@if not map-has-key($container, $size) {
+		@error "Unknown container size – `#{$size}`";
+	}
+	
+	@return map-get($container, $size);
+}
+
 @mixin toggleSizes($attribute, $setXS, $setSM, $setMD, $setLG, $setXL) {
 	// Use 'xs' as the default (optimising for mobile phone screens)
 	#{$attribute}: 	$setXS;
 	// Set 'sm' screen sizes
-	@media 	only screen and (min-width: $sm) and (max-width: $md - 1px) {
+	@media 	only screen and (min-width: breakpoint("sm")) and (max-width: breakpoint("md") - 1px) {
 		#{$attribute}: 	$setSM;
 	}
 	// Set 'md' screen sizes
-	@media 	only screen and (min-width: $md) and (max-width: $lg - 1px) {
+	@media 	only screen and (min-width: breakpoint("md")) and (max-width: breakpoint("lg") - 1px) {
 		#{$attribute}: 	$setMD;
 	}
 	// Set 'lg' screen sizes
-	@media 	only screen and (min-width: $lg) and (max-width: $xl - 1px) {
+	@media 	only screen and (min-width: breakpoint("lg")) and (max-width: breakpoint("xl") - 1px) {
 		#{$attribute}: 	$setLG;
 	}
 	// Set 'xl' screen sizes
-	@media 	only screen and (min-width: $xl) {
+	@media 	only screen and (min-width: breakpoint("xl")) {
 		#{$attribute}: 	$setXL;
 	}
 }
 
-// BREAKPOINT ONLY 
+// BREAKPOINT ONLY
 
 @mixin xs {
-	@media 	only screen 
-			and (max-width: $sm - 1px) {
+	@media 	only screen
+			and (max-width: breakpoint("sm") - 1px) {
 				@content;
 			}
 }
 
 @mixin sm {
-	@media 	only screen 
-			and (min-width: $sm)
-			and (max-width: $md - 1px) {
+	@media 	only screen
+			and (min-width: breakpoint("sm"))
+			and (max-width: breakpoint("md") - 1px) {
 				@content;
 			}
 }
 
 @mixin md {
-	@media 	only screen 
-			and (min-width: $md)
-			and (max-width: $lg - 1px) {
+	@media 	only screen
+			and (min-width: breakpoint("md"))
+			and (max-width: breakpoint("lg") - 1px) {
 				@content;
 			}
 }
 
 @mixin lg {
-	@media 	only screen 
-			and (min-width: $lg)
-			and (max-width: $xl - 1px) {
+	@media 	only screen
+			and (min-width: breakpoint("lg"))
+			and (max-width: breakpoint("xl") - 1px) {
 				@content;
 			}
 }
 
 @mixin xl {
-	@media 	only screen 
-			and (min-width: $xl) {
+	@media 	only screen
+			and (min-width: breakpoint("xl")) {
 				@content;
 			}
+}
+
+// Devices
+
+@mixin phone {
+	@include sm-down {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@include md-up {
+		@content;
+	}
 }
 
 // AND DOWN
 
 @mixin sm-down {
-	@media 	only screen 
-			and (max-width: $md - 1) {
+	@media 	only screen
+			and (max-width: breakpoint("md") - 1) {
 				@content;
 			}
 }
 
 @mixin md-down {
-	@media 	only screen 
-			and (max-width: $lg - 1) {
+	@media 	only screen
+			and (max-width: breakpoint("lg") - 1) {
 				@content;
 			}
 }
@@ -78,29 +114,29 @@
 // AND UP
 
 @mixin sm-up {
-	@media 	only screen 
-			and (min-width: $sm) {
+	@media 	only screen
+			and (min-width: breakpoint("sm")) {
 				@content;
 			}
 }
 
 @mixin md-up {
-	@media 	only screen 
-			and (min-width: $md) {
+	@media 	only screen
+			and (min-width: breakpoint("md")) {
 				@content;
 			}
 }
 
 @mixin lg-up {
-	@media 	only screen 
-			and (min-width: $lg) {
+	@media 	only screen
+			and (min-width: breakpoint("lg")) {
 				@content;
 			}
 }
 
 @mixin xl-up {
-	@media 	only screen 
-			and (min-width: $xl) {
+	@media 	only screen
+			and (min-width: breakpoint("xl")) {
 				@content;
 			}
 }

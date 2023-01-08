@@ -16,8 +16,6 @@ body#podcasts {
 		@include toggleSizes(font-size, ($font-size--h1--xs * 1.25), $font-size--h1--sm, $font-size--h1--md, ($font-size--h1--lg * 1.75), ($font-size--h1--xl * 1.5));
 	}
 	
-
-	
 	img.featured {
 		margin: 0;
 		padding: 0;
@@ -34,7 +32,7 @@ body#podcasts {
 
 	section#pride-on { 
 
-		@include toggleDarkMode(color, $white, $white);
+		color: map-get($colors, "white");
 
 		padding-top: 0;
 		padding-bottom: 100px;
@@ -43,7 +41,7 @@ body#podcasts {
 			padding-top: 15px;
 			padding-bottom: 15px;
 			
-			background: $magenta;
+			background:  map-get($colors, "magenta");
 			background-image: url('/assets/images/podcasts/pride-on-arrows.svg');
 			background-size: cover;
 			background-position: center;
@@ -79,27 +77,27 @@ body#podcasts {
 				display: inline-block;
 				
 				&:link {
-					color: $white;
+					color: map-get($colors, "white");
 					text-decoration: none;
-					border: 2px solid $white;
+					border: 2px solid map-get($colors, "white");
 					padding: 10px 25px;
 				}
 				&:visited {
-					color: $black;
+					color: map-get($colors, "black");
 					text-decoration: none;					
 				}
 				&:hover {
-					color: $magenta;
-					outline: 2px solid $white;
+					color: map-get($colors, "magenta");
+					outline: 2px solid map-get($colors, "white");
 					outline-offset: 2px !important;
-					background: $white;
+					background: map-get($colors, "white");
 				}
 				&:focus {
-					outline: 2px solid $white;
+					outline: 2px solid map-get($colors, "white");
 					outline-offset: 0px;
-					border: 2px solid $magenta;
-					color: $magenta;
-					background: $white;
+					border: 2px solid map-get($colors, "magenta");
+					color: map-get($colors, "magenta");
+					background: map-get($colors, "white");
 				}
 				&:active {
 					outline-offset: 4px !important;					

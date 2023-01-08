@@ -23,7 +23,8 @@ body#projects {
 	
 	article.project-entry {
 		@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
-		@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
+		border-top: 1px solid;
+		@include toggleColor(border-color, "border-color");
 	}
 				
 	h3.project-name {
@@ -42,21 +43,22 @@ body#projects {
 	
 	a.project-url {
 		&:link {
-			@include toggleDarkMode(color, $cyan, $cyan);
+			@include toggleColor(color, "emphasised-link-color");
 			text-decoration: none;
 		}
 		&:visited {
-			@include toggleDarkMode(color, $cyan, $cyan);
+			@include toggleColor(color, "emphasised-link-color");
 			text-decoration: none;
 		}
 		&:hover {
-			@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
+			@include toggleColor(color, "link-color--hover");
 			text-decoration: 	underline;	
 		}
 		&:focus {
-			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
-			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
-			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+			@include toggleColor(color, "link-color--focus");
+			@include toggleColor(background, "link-background--focus");
+			outline: 2px solid;
+			@include toggleColor(outline-color, "outline-color");
 		}
 		&:active {
 			text-decoration: 	$link-text-decoration-active;

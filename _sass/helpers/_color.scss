@@ -1,0 +1,19 @@
+@function color($color, $palette: light) {
+	
+	@if $palette == "light" {
+		$color: quote($color);
+
+		@if not map-has-key($colors, $color) {
+			@error "Unknown color – `#{$color}`";
+		}
+	} @else {
+		$color: quote("dark--" + $color);
+
+		@if not map-has-key($colors, $color) {
+			@error "Unknown color – `#{$color}`";
+		}
+	}
+	
+	@return map-get($colors, $color);
+	
+}

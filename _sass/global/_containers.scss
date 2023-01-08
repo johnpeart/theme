@@ -13,6 +13,11 @@
 	margin-left: auto;
 	margin-right: auto;
 		
-	@include toggleSizes(max-width, 100%, $container-sm, $container-md, $container-lg, $container-xl);
-
+	@include toggleSizes(max-width,
+		100%,
+		container("sm"),
+		container("md"),
+		container("lg"),
+		container("xl")
+	);
 }

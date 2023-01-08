@@ -3,7 +3,7 @@ figure {
 	position: relative;
 	box-sizing: 	content-box;
 	
-	@include toggleDarkMode(color, $body-color, $body-color-dark);
+	@include toggleColor(color, "color");
 	@include toggleSizes(
 		margin-bottom, 
 		$font-size--p--xs,
@@ -14,7 +14,7 @@ figure {
 	);
 	margin-top: 0;
 	
-	@include toggleSizes(width, 100%, 100%, ($md - 66px), ($lg - 50px), ($xl - 100px));
+	@include toggleSizes(width, 100%, 100%, (container("md") - 66px), (container("lg") - 50px), (container("xl") - 100px));
 	@include toggleSizes(max-width, 100%, 100%, unset, unset, unset);
 	@include toggleSizes(margin-left, 0, 0, -65px, -90px, -115px);
 	@include toggleSizes(margin-right, 0, 0, -65px, -90px, -115px);
@@ -27,14 +27,14 @@ figure {
 		padding-top: $container-padding * 0.5;
 		padding-bottom: 0;
 			
-		@include toggleDarkMode(color, $gray-600, $gray-400);
+		@include toggleColor(color, "figcaption-color");
 		font-style: italic;	
 		
 		&:before {
 			position: relative;
 			display: block;
 			border-top: 5px solid;
-			@include toggleDarkMode(color, $gray-600, $gray-400);
+			@include toggleColor(color, "figcaption-color");
 			width: 150px;
 			padding-top: $container-padding;
 			content: "";
@@ -42,19 +42,20 @@ figure {
 		
 		a {			
 			&:link {
-				@include toggleDarkMode(color, $gray-600, $gray-400);
+				@include toggleColor(color, "figcaption-link-color");
 			}
 			&:visited {
-				@include toggleDarkMode(color, $gray-600, $gray-400);
+				@include toggleColor(color, "figcaption-link-color");
 			}
 			&:hover {
-				@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
+				@include toggleColor(color, "link-color--hover");
 				text-decoration: 	$link-text-decoration-hover;
 			}
 			&:focus {
-				@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
-				@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
-				@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+				@include toggleColor(color, "link-color--focus");
+				@include toggleColor(background, "link-background--focus");
+				outline: 2px solid;
+				@include toggleColor(outline-color, "outline-color");
 			}
 			&:active {
 				text-decoration: 	$link-text-decoration-active;
@@ -84,7 +85,7 @@ img {
 	position: relative;
 	box-sizing: 	content-box;
 	
-	@include toggleSizes(width, 100%, 100%, ($md - 66px), ($lg - 50px), ($xl - 100px));
+	@include toggleSizes(width, 100%, 100%, (container("md") - 66px), (container("lg") - 50px), (container("xl") - 100px));
 	@include toggleSizes(max-width, 100%, 100%, unset, unset, unset);
 	@include toggleSizes(margin-left, 0, 0, -65px, -90px, -115px);
 	@include toggleSizes(margin-right, 0, 0, -65px, -90px, -115px);

@@ -54,7 +54,7 @@
   
   &:focus,
   &:hover {
-    @include toggleDarkMode(color, $skiplink-color, $skiplink-color-dark);
-    @include toggleDarkMode(background, $skiplink-background, $skiplink-background-dark);
+    @include toggleColor(color, "skiplink-color");
+    @include toggleColor(background, "skiplink-background");
   }
 }

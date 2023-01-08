@@ -9,18 +9,22 @@
 //
 
 // Breakpoints
-$xs: 	 							0;
-$sm: 	 							600px;
-$md: 	 							766px;
-$lg: 	 							1000px;
-$xl: 	 							1200px;
+$breakpoint: (
+	"xs": 0,
+	"sm": 600px,
+	"md": 766px,
+	"lg": 1000px,
+	"xl": 1200px
+);
 
-// Container sizes
-$container-xs: 	 					300px;
-$container-sm: 	 					560px;
-$container-md: 	 					600px;
-$container-lg: 	 					800px;
-$container-xl: 	 					900px;
+$container: (
+	"xs":    300px,
+	"sm":    560px,
+	"md":    600px,
+	"lg":    800px,
+	"xl":    900px
+);
+
 $container-padding: 	 			15px;
 
 // --------------------------------------//
@@ -43,62 +47,186 @@ $sup-font-feature-settings:			"ss02", "tnum", "liga", "zero", "kern", "frac";
 
 // PALETTE
 // All colours used should be referenced here
-$absolute-black:					#000000;
-$white:   	 						#fafafa !default;
-$gray-100:	 						#f8f9fa !default;
-$gray-200:	 						#e9ecef !default;
-$gray-300:	 						#dee2e6 !default;
-$gray-400:	 						#ced4da !default;
-$gray-500: 	 						#adb5bd !default;
-$gray-600: 	 						#868e96 !default;
-$gray-700: 	 						#495057 !default;
-$gray-800: 	 						#343a40 !default;
-$gray-900: 	 						#212529 !default;
-$black:    	 						#1d1d1d !default;
-$absolute-white:					#FFFFFF;
 
-$blue:    	 						#007aff !default;
-$desaturated-blue: 					#3b5998 !default;
-$purple:  	 						#c643fc !default;
-$magenta:   	 					#e6007e !default;
-$red:     	 						#B10E1E !default;
-$orange:  	 						#ff5e3a !default;
-$yellow:  	 						#ffed00 !default;
-$bad-ideas-yellow:                  #FFD700 !default;
-$green:   	 						#0bd318 !default;
-$cyan:    	 						#009fe3 !default;
+$colors: (
+	
+	"white":   	 								#FAFAFA,
+	"absolute-white":							#FFFFFF,
+			
+	"black":    	 							#1D1D1D,
+	"absolute-black":							#000000,
+			
+	"gray-100":	 								#F8F9FA,
+	"gray-200":	 								#E9ECEF,
+	"gray-300":	 								#DEE2E6,
+	"gray-400":	 								#CED4DA,
+	"gray-500": 	 							#ADB5BD,
+	"gray-600": 	 							#868E96,
+	"gray-700": 	 							#495057,
+	"gray-800": 	 							#343A40,
+	"gray-900": 	 							#212529,
+			
+	"blue":    	 								#007AFF,
+	"desaturated-blue": 						#3B5998,
+	"purple":  	 								#C643FC,
+	"magenta":   	 							#E6007E,
+	"red":     	 								#B10E1E,
+	"orange":  	 								#ff5E3A,
+	"yellow":  	 								#FFED00,
+	"bad-ideas-yellow":                 		#FFD700,
+	"green":   	 								#0BD318,
+	"cyan":    	 								#009FE3,
+	
+	
+	/// main.scss colors
+	"background":							#FAFAFA,
+	"color":								#1D1D1D,
+			
+	"dark--background":						#1D1D1D,
+	"dark--color":							#FAFAFA,
+	
+	/// links
+	"link-color":								#1D1D1D,
+	"emphasised-link-color":					#009FE3,
+	"subtle-link-color":						#ADB5BD,
+	"link-color--hover":						#009FE3,
+	"link-color--focus":						#FAFAFA,
+	"outline-color":				#009FE3,
+	"link-background--focus":					#009FE3,
+				
+	"dark--link-color":							#FAFAFA,
+	"dark--emphasised-link-color":				#009FE3,
+	"dark--subtle-link-color":					#868E96,
+	"dark--link-color--hover":					#009FE3,
+	"dark--link-color--focus":					#FAFAFA,
+	"dark--outline-color":						#009FE3,
+	"dark--link-background--focus":				#009FE3,
+		
+		
+	/// screenreader.scss colors		
+	"skiplink-background":						#009FE3,
+	"skiplink-color":							#FAFAFA,
+		
+	"dark--skiplink-background":				#009FE3,
+	"dark--skiplink-color":						#1D1D1D,
+	
+	
+	/// borders
+	"border-color":							#CED4DA,
+	"dark--border-color":					#495057,
+			
+			
+	/// buttons		
+	"button-color":								#FAFAFA,
+	"button-background":						#009FE3,
+	"button-color--hover":						#FAFAFA,
+	"button-background--hover":					#1D1D1D,
+	"button-color--focus":						#FAFAFA,
+	"button-background--focus":					#1D1D1D,
+	"button-border-color":						#009FE3,
+	"button-outline-color--focus":				#009FE3,
+			
+	"dark--button-color":						#FAFAFA,
+	"dark--button-background":					#009FE3,
+	"dark--button-color--hover":				#009FE3,
+	"dark--button-background--hover":			#1D1D1D,
+	"dark--button-color--focus":				#FAFAFA,
+	"dark--button-background--focus":			#1D1D1D,
+	"dark--button-border-color":				#009FE3,
+	"dark--button-outline-color--focus":		#009FE3,
+	
+	
+	/// input fields
+	"input-color":								#1D1D1D,
+	"input-background":							#FFFFFF,
+	"input-background--focus":					#F8F9FA,
+	"input-border-color":						#1D1D1D,
+	"input-label-hint-color": 					#868E96,
+			
+	"dark--input-color":						#FAFAFA,
+	"dark--input-background":					#000000,
+	"dark--input-background--focus":			#212529,
+	"dark--input-border-color":					#FAFAFA,
+	"dark--input-label-hint-color": 			#DEE2E6,
+			
+	"radio-background":							#E9ECEF,
+	"radio-button-border-color":				#1D1D1D,
+	"radio-button-center-color":				#009FE3,
+	"radio-shadow":								#009FE3,
+	"dark--radio-background":					#495057,
+	"dark--radio-button-border-color":			#FAFAFA,
+	"dark--radio-button-center-color":			#009FE3,
 
-// This is the 'prominent' colour used across the theme
-$brand:								$cyan;
-
-// SKIP LINK COLOURS
-// See 'helpers/_screenreaders.scss'
-// Light mode
-$skiplink-background:				$brand;
-$skiplink-color:					$white;
-// Dark mode
-$skiplink-background-dark:			$brand;
-$skiplink-color-dark:				$black;
-
-// HTML AND BODY COLOURS
-// Light mode
-$html-background:					$white;
-$body-background:					$white;
-$header-background:					$white;
-$footer-background:					$white;
-$html-color:						$black;
-$body-color:						$black;
-$header-color:						$black;
-$footer-color:						$black;
-// Dark mode
-$html-background-dark:				$black;
-$body-background-dark:				$black;
-$header-background-dark:			$black;
-$footer-background-dark:			$black;
-$html-color-dark:					$white;
-$body-color-dark:					$white;
-$header-color-dark:					$white;
-$footer-color-dark:					$white;
+	
+	/// images
+	"figcaption-color":							#868E96,
+	"figcaption-link-color":					#868E96,
+	"dark--figcaption-color":					#CED4DA,
+	"dark--figcaption-link-color":				#CED4DA,
+	
+	
+	// Backgrounds
+	"default-element-background":				#E9ECEF,
+	"dark--default-element-background":			#495057,
+			
+			
+	/// tables		
+	"table-border-color":						#E9ECEF,
+	"table-head-foot-border-color":				#1D1D1D,
+			
+	"dark--table-border-color":					#343A40,
+	"dark--table-head-foot-border-color":		#FAFAFA,
+	
+	
+	/// progress element
+	"progress--bar--background":				#E9ECEF,
+	"progress-total--bar--background":			#ADB5BD,
+	"progress--value--background":				#009FE3,
+	"progress--value--background-secondary":	#C643FC,
+	"dark--progress--bar--background":			#495057,
+	"dark--progress-total--bar--background":	#ADB5BD,
+	"dark--progress--value--background":		#009FE3,
+	"dark--progress--value--background-secondary":	#C643FC,
+	
+	
+	/// post.scss
+	"secondary-text--color":					#868E96,
+	"dark--secondary-text--color":				#CED4DA,
+	
+	"table-of-contents--border-color":			#CED4DA,
+	"dark--table-of-contents--border-color":	#495057,
+	
+	"app-sheet--secondary-text--color":			#868E96,
+	"app-sheet--background":					#E9ECEF,
+	"app-sheet--background--hover":				#DEE2E6,
+	"app-sheet--border-color":					#CED4DA,
+	"dark--app-sheet--secondary-text--color":	#868E96,
+	"dark--app-sheet--background":				#343A40,
+	"dark--app-sheet--background--hover":		#495057,
+	"dark--app-sheet--border-color":			#CED4DA,
+	
+	"author-card--background":					#E9ECEF,
+	"dark--author-card--background":			#343A40,
+	
+	// chiplet
+	"chiplet-background--default":				#009FE3,
+	"chiplet-background--green":				#0BD318,
+	"chiplet-color":							#FAFAFA,
+	
+	"dark--chiplet-background--default":		#009FE3,
+	"dark--chiplet-background--green":			#0BD318,
+	"dark--chiplet-color":						#FAFAFA,
+	
+	/// code styles
+	"code-color":								#1D1D1D,
+	"code-color--blockquote":					#1D1D1D,
+	"code-background":							#E9ECEF,
+	
+	"dark--code-color":							#FAFAFA,
+	"dark--code-color--blockquote":				#FAFAFA,
+	"dark--code-background":						#495057,
+	
+);
 
 // LINK COLOURS AND DECORATION
 // See 'global/_typography'
@@ -108,51 +236,7 @@ $link-text-decoration:				underline;
 $link-text-decoration-hover:		underline;
 $link-text-decoration-active:		underline;
 $link-text-decoration-focus:		none;
-// Light mode
-$link-color:						$black;
-$link-color--hover:					$brand;
-$link-color--focus:					$white;
-$link-background--focus:			$brand;
-$link-outline--focus:				2px $brand solid;
-$link-border--focus:				10px $white solid;
-// Dark mode
-$link-color-dark:					$white;
-$link-color--hover-dark:			$brand;
-$link-color--focus-dark:			$white;
-$link-background--focus-dark:		$brand;
-$link-outline--focus-dark:			2px $brand solid;
-$link-border--focus-dark:			10px $black solid;
 
-// accordian COLOURS AND DECORATION
-// See 'global/_typography'
-$accordian-font-weight:					inherit;
-$accordian-outline:						none;
-$accordian-text-decoration:				underline;
-$accordian-text-decoration-hover:		none;
-$accordian-text-decoration-active:		underline;
-$accordian-text-decoration-focus:		none;
-// Light mode
-$accordian-color:						$black;
-$accordian-color--hover:				$brand;
-$accordian-color--focus:				$black;
-$accordian-background--focus:			unset;
-$accordian-outline--focus:				3px $brand solid;
-$accordian-border--focus:				none;
-$accordian-color--active:				$white;
-$accordian-background--active:			$brand;
-$accordian-outline--active:				3px $brand solid;
-$accordian-border--active:				1px transparent solid;
-// Dark mode
-$accordian-color-dark:					$white;
-$accordian-color--hover-dark:			$brand;
-$accordian-color--focus-dark:			$white;
-$accordian-background--focus-dark:		unset;
-$accordian-outline--focus-dark:			3px $brand solid;
-$accordian-border--focus-dark:			none;
-$accordian-color--active-dark:			$white;
-$accordian-background--active-dark:		$brand;
-$accordian-outline--active-dark:		3px $brand solid;
-$accordian-border--active-dark:			1px transparent solid;
 
 // HEADER LINK COLOURS AND DECORATION
 $header-link-font-weight:				normal;
@@ -161,18 +245,6 @@ $header-link-text-decoration:			none;
 $header-link-text-decoration-hover:		underline;
 $header-link-text-decoration-active:	none;
 $header-link-text-decoration-focus:		none;
-// Light mode
-$header-link-color:						$black;
-$header-link-color--hover:				$brand;
-$header-link-color--focus:				$white;
-$header-link-background--focus:			$brand;
-$header-link-outline--focus:			2px $brand solid;
-// Dark mode
-$header-link-color-dark:				$white;
-$header-link-color--hover-dark:			$brand;
-$header-link-color--focus-dark:			$white;
-$header-link-background--focus-dark:	$brand;
-$header-link-outline--focus-dark: 		2px $brand solid;
 
 // FOOTER LINK COLOURS AND DECORATION
 $footer-link-font-weight:				normal;
@@ -181,34 +253,6 @@ $footer-link-text-decoration:			none;
 $footer-link-text-decoration-hover:		underline;
 $footer-link-text-decoration-active:	none;
 $footer-link-text-decoration-focus:		none;
-// Light mode
-$footer-link-color:						$gray-500;
-$footer-link-color--hover:				$brand;
-$footer-link-color--focus:				$white;
-$footer-link-background--focus:			$brand;
-$footer-link-outline--focus:			2px $brand solid;
-// Dark mode
-$footer-link-color-dark:				$gray-600;
-$footer-link-color--hover-dark:			$brand;
-$footer-link-color--focus-dark:			$white;
-$footer-link-background--focus-dark:	$brand;
-$footer-link-outline--focus-dark:		2px $brand solid;
-
-// BLOCK QUOTE STYLES
-// Light mode
-$blockquote-background:				$gray-200;
-// Dark mode
-$blockquote-background-dark:		$gray-700;
-
-// CODE STYLING
-// Light mode
-$code-color:						$black;
-$code-color--blockquote:			$black;
-$code-background:					$gray-200;
-// Dark mode
-$code-color-dark:					$white;
-$code-color--blockquote-dark:		$white;
-$code-background-dark:				$gray-700;
 
 // --------------------------------------//
 // --------------------------------------//
@@ -238,8 +282,89 @@ $footer--padding-bottom--xl:	60px;
 
 // TEXT SIZES
 
+// $template: (
+// 	
+// 	"font-size": (
+// 		"xs": ,
+// 		"sm": ,
+// 		"md": ,
+// 		"lg": ,
+// 		"xl": 
+// 	),
+// 	"line-height": (
+// 		"xs": ,
+// 		"sm": ,
+// 		"md": ,
+// 		"lg": ,
+// 		"xl": 
+// 	),
+// 	"padding": (
+// 		"xs": ,
+// 		"sm": ,
+// 		"md": ,
+// 		"lg": ,
+// 		"xl": 
+// 	),
+// 	"font-weight": (
+// 		"xs": ,
+// 		"sm": ,
+// 		"md": ,
+// 		"lg": ,
+// 		"xl": 
+// 	),
+// 	"font-style": (
+// 		"xs": ,
+// 		"sm": ,
+// 		"md": ,
+// 		"lg": ,
+// 		"xl": 
+// 	)
+// 	
+// );
+
 // PARAGRAPH TEXT
 // Applies to 'p' and equivalent text
+
+$body: (
+	
+	"font-size": (
+		"xs": 22px,
+		"sm": 22px,
+		"md": 22px,
+		"lg": 26px,
+		"xl": 30px
+	),
+	"line-height": (
+		"xs": 1.25,
+		"sm": 1.25,
+		"md": 1.25,
+		"lg": 1.25,
+		"xl": 1.2
+	),
+	"padding": (
+		"xs": 0 0 22px 0,
+		"sm": 0 0 22px 0,
+		"md": 0 0 22px 0,
+		"lg": 0 0 26px 0,
+		"xl": 0 0 30px 0
+	),
+	"font-weight": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	),
+	"font-style": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	)
+	
+);
+
 // Size
 $font-size--p--xs:		22px;
 $font-size--p--sm:		22px;
@@ -516,9 +641,9 @@ $touch-target-size:                 44px;
 $input-size:                       	40px;
 $border-width-form-element:         3px;
 $border-focus-width:                1px;
-$input-border-color:                $black;
-$input-error-color:                 $red;
-$input-focus-color:                 $brand;
+$input-border-color:                map-get($colors, "black");
+$input-error-color:                 map-get($colors, "red");
+$input-focus-color:                 map-get($colors, "cyan");
 $input-padding:                     5px;
 
 $radios-size:                       40px;

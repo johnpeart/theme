@@ -1,5 +1,5 @@
 footer#site-footer {
-	@include toggleDarkMode(background, $footer-background, $footer-background-dark);
+	@include toggleColor(background, "background");
 	@include toggleSizes(padding-top, $footer--padding-top--xs, $footer--padding-top--sm, $footer--padding-top--md, $footer--padding-top--lg, $footer--padding-top--xl);
 	@include toggleSizes(padding-bottom, $footer--padding-bottom--xs, $footer--padding-bottom--sm, $footer--padding-bottom--md, $footer--padding-bottom--lg, $footer--padding-bottom--xl);
 }
@@ -38,19 +38,20 @@ nav#footer--links {
 		text-decoration: 	$footer-link-text-decoration;
 		
 		&:link {
-			@include toggleDarkMode(color, $footer-link-color, $footer-link-color-dark);
+			@include toggleColor(color, "subtle-link-color");
 		}
 		&:visited {
-			@include toggleDarkMode(color, $footer-link-color, $footer-link-color-dark);
+			@include toggleColor(color, "subtle-link-color");
 		}
 		&:hover {
-			@include toggleDarkMode(color, $footer-link-color--hover, $footer-link-color--hover-dark);
+			@include toggleColor(color, "link-color--hover");
 			text-decoration: 	$footer-link-text-decoration-hover;
 		}
 		&:focus {
-			@include toggleDarkMode(color, $footer-link-color--focus, $footer-link-color--focus-dark);
-			@include toggleDarkMode(background, $footer-link-background--focus, $footer-link-background--focus-dark);
-			@include toggleDarkMode(outline, $footer-link-outline--focus, $footer-link-outline--focus-dark);
+			@include toggleColor(color, "link-color--focus");
+			@include toggleColor(background, "link-background--focus");
+			outline: 2px solid;
+			@include toggleColor(outline-color, "outline-color");
 		}
 		&:active {
 			text-decoration: 	$footer-link-text-decoration-active;
@@ -136,7 +137,8 @@ footer#site-footer img.footer--memoji {
 		height: 30px;
 		width: 2px;
 		margin: 0 10px 0 5px;
-		border-right: 2px solid $gray-300;
+		border-right: 2px solid;
+		@include toggleColor(border-color, "border-color");
 		content: "";
 	}
 	
@@ -159,19 +161,19 @@ footer#site-footer img.footer--memoji {
 			padding: 0;
 						
 			path {
-				@include toggleDarkMode(fill, $body-color, $body-color-dark);
+				@include toggleColor(fill, "color");
 			}
 		}
 		
 		
 		&:link svg path {
-			@include toggleDarkMode(fill, $gray-400, $gray-400);
+			fill: map-get($colors, "gray-400");
 		}
 		&:visited svg path {
-			@include toggleDarkMode(fill, $gray-400, $gray-400);
+			fill: map-get($colors, "gray-400");
 		}
 		&:hover svg path {
-			@include toggleDarkMode(fill, $link-color--hover, $link-color--hover-dark);
+			@include toggleColor(fill, "link-color--hover");
 			text-decoration: none;
 		}
 		&:focus svg {

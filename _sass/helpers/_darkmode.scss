@@ -1,12 +1,15 @@
-@mixin toggleDarkMode($attribute, $light, $dark) {
-	#{$attribute}: $light;
+@mixin darkMode() {
 	@media (prefers-color-scheme: dark) {
-		#{$attribute}: $dark;	
+		@content;
 	}
 }
 
-@mixin dark-mode {
+
+/// Toggles a color for light mode or dark mode.
+/// Looks up the $colors map in variables.sass and returns the colors.
+@mixin toggleColor($attribute, $color) {
+	#{$attribute}: color($color);
 	@media (prefers-color-scheme: dark) {
-		@content;
+		#{$attribute}: color($color, dark);	
 	}
 }

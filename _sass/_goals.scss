@@ -14,7 +14,8 @@ body#goals {
 	
 	article.goal-collection {
 		@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
-		@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
+		border-top: 1px solid;
+		@include toggleColor(border-color, "border-color");
 	}
 	
 	h2.goal-year {
@@ -33,21 +34,22 @@ body#goals {
 	
 	a.goal-url {
 		&:link {
-			@include toggleDarkMode(color, $cyan, $cyan);
+			@include toggleColor(color, "emphasised-link-color");
 			text-decoration: none;
 		}
 		&:visited {
-			@include toggleDarkMode(color, $cyan, $cyan);
+			@include toggleColor(color, "emphasised-link-color");
 			text-decoration: none;
 		}
 		&:hover {
-			@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
+			@include toggleColor(color, "link-color--hover");
 			text-decoration: 	underline;	
 		}
 		&:focus {
-			@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
-			@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
-			@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+			@include toggleColor(color, "link-color--focus");
+			@include toggleColor(background, "link-background--focus");
+			outline: 2px solid;
+			@include toggleColor(outline-color, "outline-color");
 		}
 		&:active {
 			text-decoration: 	$link-text-decoration-active;
@@ -73,13 +75,13 @@ body#goals {
 			height: 	20px;
 	
 			&::-webkit-progress-bar {
-				@include toggleDarkMode(background, $gray-200, $gray-700);
+				@include toggleColor(background, "progress--bar--background");
 				border: 			none;
 				border-radius: 		2px;
 			}
 			
 			&::-webkit-progress-value {
-				background-color: 	$cyan;			
+				@include toggleColor(background, "progress--value--background");
 				border-radius: 2px; 
 				background-size: 600px;
 			}
@@ -92,7 +94,7 @@ body#goals {
 			margin-bottom: 0;
 	
 			&::-webkit-progress-bar {
-				@include toggleDarkMode(background, $gray-200, $gray-700);
+				@include toggleColor(background, "progress--bar--background");
 				border: 			none;			
 				border-top-left-radius: 2px; 
 				border-top-right-radius: 2px;			
@@ -101,7 +103,7 @@ body#goals {
 			}
 			
 			&::-webkit-progress-value {
-				background-color: 	$cyan;			
+				@include toggleColor(background, "progress--value--background");
 				border-top-left-radius: 2px; 
 				border-top-right-radius: 2px; 		
 				border-bottom-left-radius: 0; 
@@ -116,7 +118,7 @@ body#goals {
 			margin-top: 0;
 	
 			&::-webkit-progress-bar {
-				@include toggleDarkMode(background, $cyan, $cyan);
+				@include toggleColor(background, "progress--bar--background");
 				border: 			none;			
 				border-top-left-radius: 0; 
 				border-top-right-radius: 0; 	
@@ -125,7 +127,7 @@ body#goals {
 			}
 			
 			&::-webkit-progress-value {
-				background-color: 	$purple;		
+				@include toggleColor(background, "progress--value--background-secondary");
 				border-top-left-radius: 0; 
 				border-top-right-radius: 0; 		
 				border-bottom-left-radius: 2px; 
@@ -190,28 +192,28 @@ body#goal {
 				&.standard {
 				
 					height: 	20px;
-
+				
 					&::-webkit-progress-bar {
-						@include toggleDarkMode(background, $gray-200, $gray-700);
+						@include toggleColor(background, "progress--bar--background");
 						border: 			none;
 						border-radius: 		2px;
 					}
 					
 					&::-webkit-progress-value {
-						background-color: 	$cyan;			
+						@include toggleColor(background, "progress--value--background");
 						border-radius: 2px; 
 						background-size: 600px;
 					}
-
+				
 				}
-
+				
 				&.stretch-top {
-
+				
 					height: 10px;
 					margin-bottom: 0;
-
+				
 					&::-webkit-progress-bar {
-						@include toggleDarkMode(background, $gray-200, $gray-700);
+						@include toggleColor(background, "progress--bar--background");
 						border: 			none;			
 						border-top-left-radius: 2px; 
 						border-top-right-radius: 2px;			
@@ -220,22 +222,22 @@ body#goal {
 					}
 					
 					&::-webkit-progress-value {
-						background-color: 	$cyan;			
+						@include toggleColor(background, "progress--value--background");
 						border-top-left-radius: 2px; 
 						border-top-right-radius: 2px; 		
 						border-bottom-left-radius: 0; 
 						border-bottom-right-radius: 0;
 						background-size: 600px;
 					}
-
+				
 				}
 				&.stretch-bottom {
-
+				
 					height: 10px;
 					margin-top: 0;
-
+				
 					&::-webkit-progress-bar {
-						@include toggleDarkMode(background, $cyan, $cyan);
+						@include toggleColor(background, "progress--bar--background");
 						border: 			none;			
 						border-top-left-radius: 0; 
 						border-top-right-radius: 0; 	
@@ -244,19 +246,19 @@ body#goal {
 					}
 					
 					&::-webkit-progress-value {
-						background-color: 	$purple;		
+						@include toggleColor(background, "progress--value--background-secondary");
 						border-top-left-radius: 0; 
 						border-top-right-radius: 0; 		
 						border-bottom-left-radius: 2px; 
 						border-bottom-right-radius: 2px; 
 						background-size: 600px;
 					}
-
+				
 				}
 			}
 			&.totaliser {
 				
-				@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
+				@include toggleColor(background, "default-element-background");
 				
 				padding: 		20px;
 				margin-top: 	60px;
@@ -274,7 +276,7 @@ body#goal {
 				progress[value] {
 					
 					&::-webkit-progress-bar {
-						background-color: 	$gray-500;
+						@include toggleColor(background, "progress-total--bar--background");
 					}
 				}
 			}	

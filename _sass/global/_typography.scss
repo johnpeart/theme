@@ -1,22 +1,23 @@
 a {
-	font-weight: 		$link-font-weight;
+	font-weight: 		inherit;
 	text-decoration: 	$link-text-decoration;
 	cursor: pointer;
 
 	&:link {
-		@include toggleDarkMode(color, $link-color, $link-color-dark);
+		@include toggleColor(color, "link-color")
 	}
 	&:visited {
-		@include toggleDarkMode(color, $link-color, $link-color-dark);
+		@include toggleColor(color, "link-color")
 	}
 	&:hover {
-		@include toggleDarkMode(color, $link-color--hover, $link-color--hover-dark);
+		@include toggleColor(color, "link-color--hover");
 		text-decoration: 	$link-text-decoration-hover;
 	}
 	&:focus {
-		@include toggleDarkMode(color, $link-color--focus, $link-color--focus-dark);
-		@include toggleDarkMode(background, $link-background--focus, $link-background--focus-dark);
-		@include toggleDarkMode(outline, $link-outline--focus, $link-outline--focus-dark);
+		@include toggleColor(color, "link-color--focus");
+		@include toggleColor(background, "link-background--focus");
+		outline: 2px solid;
+		@include toggleColor(outline-color, "outline-color");
 	}
 	&:active {
 		text-decoration: 	$link-text-decoration-active;
@@ -26,7 +27,7 @@ a {
 hr {
 	border: unset;
 	border-top: 3px solid;
-	@include toggleDarkMode(border-color, $gray-300, $gray-600);
+	@include toggleColor(border-color, "border-color");
 	margin: ($container-padding * 2) 0 ($container-padding * 4) 0;
 	padding: 0;
 }
@@ -87,8 +88,8 @@ p, li, td  {
 		font-size: 		inherit;
 		font-weight: 	normal;
 
-		@include toggleDarkMode(color, $code-color, $code-color-dark);
-		@include toggleDarkMode(background, $code-background, $code-background-dark);
+		@include toggleColor(color, "code-color");
+		@include toggleColor(background, "code-background");
 
 		border-radius: 	5px;
 		padding:		0 3px;
@@ -115,7 +116,7 @@ sup {
 }
 
 blockquote {
-	@include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
+	@include toggleColor(background, "default-element-background");
 	padding: 20px;
 	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
 
@@ -130,7 +131,7 @@ blockquote {
 
 	code, kbd {
 		font-family: $font-family;
-		@include toggleDarkMode(color, $code-color--blockquote, $code-color--blockquote-dark);
+		@include toggleColor(color, "code-color--blockquote");
 	}
 
 	ul {
@@ -248,8 +249,8 @@ pre {
 
 	overflow-x: scroll;
 
-	@include toggleDarkMode(color, $code-color, $code-color-dark);
-	@include toggleDarkMode(background, $code-background, $code-background-dark);
+	@include toggleColor(color, "code-color");
+	@include toggleColor(background, "code-background");
 
 	font-family: $font-family;
 
@@ -272,7 +273,8 @@ table {
 	@include toggleSizes(margin, $padding--p--xs, $padding--p--sm, $padding--p--md, $padding--p--lg, $padding--p--xl);
 
 	tr {
-		@include toggleDarkMode(border-bottom, 1px solid $gray-200, 1px solid $gray-800);
+		border-left: 1px solid;
+		@include toggleColor(border-color, "table-border-color");
 
 		&:last-child {
 			border-bottom: none !important;
@@ -282,8 +284,9 @@ table {
 	th, td {
 		padding: 5px 10px;
 		vertical-align: top;
-
-		@include toggleDarkMode(border-left, 1px solid $gray-200, 1px solid $gray-800);
+		
+		border-left: 1px solid;
+		@include toggleColor(border-color, "table-border-color");
 
 		&:first-child {
 			border-left: none;
@@ -297,11 +300,13 @@ table {
 	}
 
 	thead {
-		@include toggleDarkMode(border-bottom, 2px solid $black, 2px solid $white);
+		border-bottom: 2px solid;
+		@include toggleColor(border-color, "table-head-foot-border-color");
 	}
 
 	tfoot {
-		@include toggleDarkMode(border-top, 2px solid $black, 2px solid $white);
+		border-bottom: 2px solid;
+		@include toggleColor(border-color, "table-head-foot-border-color");
 	}
 
 }
@@ -380,8 +385,8 @@ summary {
 
 	@include toggleSizes(padding, ($font-size--p--xs * 0.5) 0, ($font-size--p--sm * 0.5) 0, ($font-size--p--md * 0.5) 0, ($font-size--p--lg * 0.5) 0, ($font-size--p--xl * 0.5) 0);
 
-	@include toggleDarkMode(border-top, 1px solid $gray-400, 1px solid $gray-700);
-
+	border-top: 1px solid;
+	@include toggleColor(border-color, "border-color");
 
 
 	h1, h2, h3, h4, h5, h6 {
@@ -399,20 +404,22 @@ summary {
 	}
 
 	&:hover {
-		@include toggleDarkMode(color, $accordian-color--hover, $accordian-color--hover-dark);
+		@include toggleColor(color, "link-color--hover");
 	}
 	&:focus {
-		@include toggleDarkMode(color, $accordian-color--focus, $accordian-color--focus-dark);
-		@include toggleDarkMode(background, $accordian-background--focus, $accordian-background--focus-dark);
-		@include toggleDarkMode(border-top, $accordian-border--active, $accordian-border--active-dark);
-		@include toggleDarkMode(outline, $accordian-outline--focus, $accordian-outline--focus-dark);
+		@include toggleColor(color, "color");
+		background: unset;
+		border-top: 1px solid transparent;
+		outline: 3px solid;
+		@include toggleColor(outline-color, "outline-color");
 		outline-offset: 3px;
 	}
 	&:active {
-		@include toggleDarkMode(color, $accordian-color--active, $accordian-color--active-dark);
-		@include toggleDarkMode(background, $accordian-background--active, $accordian-background--active-dark);
-		@include toggleDarkMode(border-top, $accordian-border--active, $accordian-border--active-dark);
-		@include toggleDarkMode(outline, $accordian-outline--active, $accordian-outline--active-dark);
+		@include toggleColor(color, "link-color--focus");
+		@include toggleColor(background, "link-background--focus");		
+		border-top: 1px solid transparent;
+		outline: 3px solid;
+		@include toggleColor(outline, "outline-color");
 		outline-offset: 0px;
 	}
 

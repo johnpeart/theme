@@ -12,20 +12,20 @@ body.theme-eurovision {
 		}
 		span.song-artist {
 			font-weight: normal;
-			@include toggleDarkMode(color, $gray-600, $gray-400);
+			@include toggleColor(color, "secondary-text--color");
 		}
 		
 		&:hover,
 		&:hover span {
-			@include toggleDarkMode(color, $accordian-color--hover, $accordian-color--hover-dark);
+			@include toggleColor(color, "link-color--hover");
 		}
 		&:focus,
 		&:focus span {
-			@include toggleDarkMode(color, $accordian-color--focus, $accordian-color--focus-dark);
+			@include toggleColor(color, "color");
 		}
 		&:active,
 		&:active span {
-			@include toggleDarkMode(color, $accordian-color--active, $accordian-color--active-dark);
+			@include toggleColor(color, "link-color--focus");
 		}
 		
 	}

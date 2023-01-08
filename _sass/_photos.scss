@@ -44,8 +44,8 @@ body#photos {
 		width: 100%;
 
 		padding: 10px 15px;
-		background: $brand;
-		color: $black;
+		@include toggleColor(background, "link-background--focus");
+		@include toggleColor(color, "link-color--focus");
 
 		white-space: nowrap;
 		overflow: hidden;
@@ -59,7 +59,6 @@ body#photos {
 		justify-content: flex-start;
 		align-items: flex-end;
 
-		background: $yellow;
 		background-position: center !important;
 		background-size: cover !important;
 
@@ -69,10 +68,12 @@ body#photos {
 		text-decoration: none;
 
 		&:hover {
-			outline: 3px solid $cyan;
+			outline: 3px solid;
+			@include toggleColor(outline-color, "link-background--focus");
 		}
 		&:focus {
-			outline: 3px solid $cyan;
+			outline: 3px solid;
+			@include toggleColor(outline-color, "link-background--focus");
 		}
 		&:focus,
 		&:hover {
@@ -197,7 +198,7 @@ body#photo {
 
   dl {
 
-    @include toggleDarkMode(background, $blockquote-background, $blockquote-background-dark);
+    @include toggleColor(background, "default-element-background");
 
     padding: 			20px;
     padding-bottom: 	0px;
