@@ -1,0 +1,67 @@
+table {
+	width: 		100%;
+	border-collapse: collapse;
+
+	@include toggleSizes(
+		font-size,
+		$font-size--p--xs,
+		$font-size--p--sm,
+		$font-size--p--md,
+		$font-size--p--lg,
+		$font-size--p--xl
+	);
+	@include toggleSizes(
+		line-height,
+		$line-height--p--xs,
+		$line-height--p--sm,
+		$line-height--p--md,
+		$line-height--p--lg,
+		$line-height--p--xl
+	);
+	@include toggleSizes(
+		margin,
+		$padding--p--xs,
+		$padding--p--sm,
+		$padding--p--md,
+		$padding--p--lg,
+		$padding--p--xl
+	);
+
+	tr {
+		border-bottom: 1px solid;
+		@include toggleColor(border-color, "border-color");
+
+		&:last-child {
+			border-bottom: none !important;
+		}
+	}
+
+	th, td {
+		padding: 5px 10px;
+		vertical-align: top;
+		
+		border-left: 1px solid;
+		@include toggleColor(border-color, "border-color");
+		
+		&:first-child {
+			border-left: none;
+		}
+	}
+
+	thead,
+	tfoot {
+		@extend strong;
+		text-align: left;
+	}
+
+	thead {
+		border-bottom: 2px solid;
+		@include toggleColor(border-color, "color");
+	}
+
+	tfoot {
+		border-bottom: 2px solid;
+		@include toggleColor(border-color, "color");
+	}
+
+}

@@ -1,0 +1,78 @@
+ul {
+
+	list-style: none;
+	padding-top: 0;
+	@include toggleSizes(
+		padding-left,
+		($font-size--p--xs * 1.5),
+		($font-size--p--sm * 1.5),
+		0,
+		0,
+		0
+	);
+	@include toggleSizes(
+		padding-bottom,
+		$font-size--p--xs,
+		$font-size--p--sm,
+		$font-size--p--md,
+		$font-size--p--lg,
+		$font-size--p--xl
+	);
+
+}
+ol {
+
+	list-style: decimal;
+	padding-top: 0;
+	@include toggleSizes(
+		padding-left,
+		($font-size--p--xs * 2),
+		($font-size--p--sm * 2),
+		0,
+		0,
+		0
+	);
+	@include toggleSizes(
+	padding-bottom,
+		$font-size--p--xs,
+		$font-size--p--sm,
+		$font-size--p--md,
+		$font-size--p--lg,
+		$font-size--p--xl
+	);
+
+}
+
+li {
+
+	@include toggleSizes(
+		font-size,
+		$font-size--p--xs,
+		$font-size--p--sm,
+		$font-size--p--md,
+		$font-size--p--lg,
+		$font-size--p--xl
+	);
+	@include toggleSizes(
+		line-height,
+		$line-height--p--xs,
+		$line-height--p--sm,
+		$line-height--p--md,
+		$line-height--p--lg,
+		$line-height--p--xl
+	);
+	padding-bottom: 0;
+
+	font-weight:		normal;
+
+	&.lead {
+		padding-bottom: 	0;
+		font-weight:		bold;
+	}
+
+	span.small-caps {
+		font-variant: 	small-caps !important;
+		font-size: 		120%;
+	}
+	
+}

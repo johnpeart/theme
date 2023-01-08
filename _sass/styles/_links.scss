@@ -1,0 +1,25 @@
+a {
+	font-weight: 		inherit;
+	text-decoration: 	underline;
+	cursor: pointer;
+
+	&:link {
+		@include toggleColor(color, "link-color")
+	}
+	&:visited {
+		@include toggleColor(color, "link-color")
+	}
+	&:hover {
+		@include toggleColor(color, "link-color--hover");
+		text-decoration: 	underline;
+	}
+	&:focus {
+		@include toggleColor(color, "link-color--focus");
+		@include toggleColor(background, "link-background--focus");
+		outline: 2px solid;
+		@include toggleColor(outline-color, "outline-color");
+	}
+	&:active {
+		text-decoration: 	underline;
+	}
+}

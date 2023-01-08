@@ -1,0 +1,73 @@
+dd {
+
+	@include toggleSizes(
+		font-size,
+		$font-size--p--xs,
+		$font-size--p--sm,
+		$font-size--p--md,
+		$font-size--p--lg,
+		$font-size--p--xl
+	);
+	@include toggleSizes(
+		line-height,
+		$line-height--p--xs,
+		$line-height--p--sm,
+		$line-height--p--md,
+		$line-height--p--lg,
+		$line-height--p--xl
+	);
+	@include toggleSizes(
+		padding,
+		$padding--p--xs,
+		$padding--p--sm,
+		$padding--p--md,
+		$padding--p--lg,
+		$padding--p--xl
+	);
+
+	font-weight:		normal;
+
+	&.lead {
+		padding-bottom: 	0;
+		font-weight:		bold;
+	}
+
+	span.small-caps {
+		font-variant: 	small-caps !important;
+		font-size: 		120%;
+	}
+
+}
+
+dt {
+	@include toggleSizes(
+		font-size,
+		$font-size--p--xs,
+		$font-size--p--sm,
+		$font-size--p--md,
+		$font-size--p--lg,
+		$font-size--p--xl
+	);
+	@include toggleSizes(
+		line-height,
+		$line-height--p--xs,
+		$line-height--p--sm,
+		$line-height--p--md,
+		$line-height--p--lg,
+		$line-height--p--xl
+	);
+	
+	padding-bottom: 0;
+	
+	font-weight:		normal;
+	
+	&.lead {
+		padding-bottom: 	0;
+		font-weight:		bold;
+	}
+	
+	span.small-caps {
+		font-variant: 	small-caps !important;
+		font-size: 		120%;
+	}
+}

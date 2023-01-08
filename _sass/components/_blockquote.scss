@@ -1,0 +1,44 @@
+blockquote {
+	@include toggleColor(background, "default-element-background");
+	padding: 20px;
+	@include toggleSizes(
+		margin,
+		$padding--p--xs,
+		$padding--p--sm,
+		$padding--p--md,
+		$padding--p--lg,
+		$padding--p--xl
+	);
+
+	p {
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	code, kbd {
+		font-family: $font-family;
+		@include toggleColor(color, "code-color--blockquote");
+	}
+
+	ul {
+		padding-left: $font-size--p--xs * 1.5;
+	}
+	ol {
+
+		padding-left: $font-size--p--xs * 2.5;
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	p ~ ol,
+	p ~ ul {
+		margin-top: -1 * $font-size--p--xs;
+		padding-bottom: 0.5 * $font-size--p--xs;
+	}
+
+}

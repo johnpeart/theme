@@ -143,3 +143,63 @@
 	.vi { color: lighten(map-get($colors, "cyan"), 30%) } /* Name.Variable.Instance */
 	.il { color: lighten(map-get($colors, "blue"), 30%) } /* Literal.Number.Integer.Long */
 }
+
+p, li, td  {
+
+	> kbd,
+	> code {
+
+		font-size: 		inherit;
+		font-weight: 	normal;
+
+		@include toggleColor(color, "code-color");
+		@include toggleColor(background, "code-background");
+
+		border-radius: 	5px;
+		padding:		0 3px;
+
+	}
+
+}
+
+pre {
+	display: block;
+	position: relative;
+
+	overflow-x: scroll;
+
+	@include toggleColor(color, "code-color");
+	@include toggleColor(background, "code-background");
+
+	font-family: $font-family;
+
+	padding: $font-size--p--xs;
+	@include toggleSizes(
+		margin,
+		$padding--p--xs,
+		$padding--p--sm,
+		$padding--p--md,
+		$padding--p--lg,
+		$padding--p--xl
+	);
+
+	code {
+		@include toggleSizes(
+			font-size,
+			$font-size--p--xs,
+			$font-size--p--sm,
+			$font-size--p--md,
+			$font-size--p--lg,
+			$font-size--p--xl
+		);
+		@include toggleSizes(
+			line-height,
+			$line-height--p--xs,
+			$line-height--p--sm,
+			$line-height--p--md,
+			$line-height--p--lg,
+			$line-height--p--xl
+		);
+	}
+
+}
