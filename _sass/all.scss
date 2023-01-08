@@ -1,10 +1,9 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-	"_reset",
-
-	"variables/_default",
-	"variables/_override",
-	"global/_fonts",
+	"_variables",
+	
+	"core/_reset",
+	"core/_fonts",
 
 	"helpers/_breakpoints",
 	"helpers/_color",
@@ -13,30 +12,30 @@
 	"helpers/_darkmode",
 	"helpers/_screenreaders",
 
-	"global/_containers",
-	"global/_typography",
-	"global/_code",
-	"global/_forms",
+	"core/_containers",
+	"core/_main",
+	
+	"styles/_typography",
+	"styles/_code",
+	
+	"components/_header",
+	"components/_footer",
 
-	"global/_main",
-	"global/_header",
-	"global/_footer",
-
-	"global/_images",
-	"global/_forms",
-	"global/_notfound",
-
-	"_home",
-	"_loop",
-	"_post",
-	"_page",
-	"_about",
-	"_projects",
-	"_podcasts",
-	"_goals",
-	"_wishlist",
-	"_manuals",
-	"_photos",
+	"components/_images",
+	"components/_forms",
+	
+	"layouts/_notfound",
+	"layouts/_home",
+	"layouts/_loop",
+	"layouts/_post",
+	"layouts/_page",
+	"layouts/_about",
+	"layouts/_projects",
+	"layouts/_podcasts",
+	"layouts/_goals",
+	"layouts/_wishlist",
+	"layouts/_manuals",
+	"layouts/_photos",
 
 	"_themes",
   "_webmentions"
