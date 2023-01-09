@@ -1,30 +1,6 @@
 dd {
 
-	@include toggleSizes(
-		font-size,
-		$font-size--p--xs,
-		$font-size--p--sm,
-		$font-size--p--md,
-		$font-size--p--lg,
-		$font-size--p--xl
-	);
-	@include toggleSizes(
-		line-height,
-		$line-height--p--xs,
-		$line-height--p--sm,
-		$line-height--p--md,
-		$line-height--p--lg,
-		$line-height--p--xl
-	);
-	@include toggleSizes(
-		padding,
-		$padding--p--xs,
-		$padding--p--sm,
-		$padding--p--md,
-		$padding--p--lg,
-		$padding--p--xl
-	);
-
+	@include font($body);
 	font-weight:		normal;
 
 	&.lead {
@@ -40,24 +16,8 @@ dd {
 }
 
 dt {
-	@include toggleSizes(
-		font-size,
-		$font-size--p--xs,
-		$font-size--p--sm,
-		$font-size--p--md,
-		$font-size--p--lg,
-		$font-size--p--xl
-	);
-	@include toggleSizes(
-		line-height,
-		$line-height--p--xs,
-		$line-height--p--sm,
-		$line-height--p--md,
-		$line-height--p--lg,
-		$line-height--p--xl
-	);
-	
-	padding-bottom: 0;
+	@include font($body);
+	padding-bottom: 0 !important;
 	
 	font-weight:		normal;
 	

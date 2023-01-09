@@ -18,22 +18,22 @@ details {
 	&[open] {
 		@include toggleSizes(
 			padding-bottom,
-			$font-size--p--xs,
-			$font-size--p--sm,
-			$font-size--p--md,
-			$font-size--p--lg,
-			$font-size--p--xl
+			22px,
+			22px,
+			22px,
+			26px,
+			30px
 		);
 	}
 
 	p {
 		@include toggleSizes(
 			padding,
-			0 0 ($font-size--p--xs * 0.5) 0,
-			0 0 ($font-size--p--sm * 0.5) 0,
-			0 0 ($font-size--p--md * 0.5) 0,
-			0 0 ($font-size--p--lg * 0.5) 0,
-			0 0 ($font-size--p--xl * 0.5) 0
+			0 0 11px 0,
+			0 0 11px 0,
+			0 0 11px 0,
+			0 0 13px 0,
+			0 0 15px 0
 		);
 	}
 
@@ -93,11 +93,11 @@ summary {
 
 	@include toggleSizes(
 		padding,
-		($font-size--p--xs * 0.5) 0,
-		($font-size--p--sm * 0.5) 0,
-		($font-size--p--md * 0.5) 0,
-		($font-size--p--lg * 0.5) 0,
-		($font-size--p--xl * 0.5) 0
+		11px 0,
+		11px 0,
+		11px 0,
+		13px 0,
+		15px 0
 	);
 
 	border-top: 1px solid;

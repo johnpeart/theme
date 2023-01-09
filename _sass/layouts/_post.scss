@@ -4,15 +4,7 @@ body[id$='post'] {
 		margin-bottom: $container-padding * 3;
 	}
 	section.post-body > p:first-of-type {
-		font-weight: bold;
-		@include toggleSizes(
-			font-size,
-			($font-size--p--xs * 1.1),
-			($font-size--p--sm * 1.25),
-			($font-size--p--md * 1.25),
-			($font-size--p--lg * 1.25),
-			($font-size--p--xl * 1.25)
-		);
+		@include font($body--lead);
 	}
 	
 	header.post-title {
@@ -56,11 +48,11 @@ body[id$='post'] {
 
 		@include toggleSizes(
 			left,
-			$font-size--p--xs,
-			-($font-size--p--sm * 0.5),
-			-($font-size--p--md * 0.5),
-			-($font-size--p--lg * 0.5),
-			-($font-size--p--xl * 0.5)
+			22px,
+			-(11px),
+			-(11px),
+			-(13px),
+			-(15px)
 		);
 	}
 
@@ -269,11 +261,11 @@ body[id$='post'] {
 
 		@include toggleSizes(
 			padding,
-			$padding--p--xs,
-			$padding--p--sm,
-			$padding--p--md,
-			$padding--p--lg,
-			$padding--p--xl
+			0 0 $container-padding 0,
+			0 0 $container-padding 0,
+			0 0 $container-padding 0,
+			0 0 $container-padding 0,
+			0 0 $container-padding 0
 		);
 	}
 
@@ -314,32 +306,15 @@ body[id$='post'] {
 		ul, ol {
 			@include toggleSizes(
 				padding-left,
-				($font-size--p--xs * 1.6),
-				($font-size--p--sm * 1.6),
+				(18px),
+				(18px),
 				0,
 				0,
 				0
 			);
 		}
 		li, p {
-			@include toggleSizes(
-				font-size,
-				($font-size--p--xs * 0.8),
-				($font-size--p--sm * 0.8),
-				($font-size--p--md * 0.8),
-				($font-size--p--lg * 0.8),
-				($font-size--p--xl * 0.8)
-			);
-		}
-		p {
-			@include toggleSizes(
-				padding,
-				$padding--p--xs,
-				$padding--p--sm,
-				$padding--p--md,
-				$padding--p--lg,
-				$padding--p--xl
-			);
+			@include font($body--small)
 		}
 		a.reversefootnote {
 			text-decoration: none;
@@ -417,38 +392,16 @@ body[id$='post'] {
 		}
 
 		p, dl, dt, dd {
-			@include toggleSizes(
-				font-size,
-				($font-size--p--xs * 0.8),
-				($font-size--p--sm * 0.8),
-				($font-size--p--md * 0.8),
-				($font-size--p--lg * 0.8),
-				($font-size--p--xl * 0.8)
-			);
+			@include font($body--small);
 		}
 		
 		p.author--wordmark {
 			position: relative;
 			display: block;
-			font-weight: 	bold;
-			padding-bottom: 0;
 			@include toggleColor(color, "color");
-			@include toggleSizes(
-				font-size,
-				$font-size--p--xs,
-				$font-size--p--sm,
-				$font-size--p--md,
-				$font-size--p--lg,
-				$font-size--p--xl
-			);
-			@include toggleSizes(
-				line-height,
-				$line-height--p--xs,
-				$line-height--p--sm,
-				$line-height--p--md,
-				$line-height--p--lg,
-				$line-height--p--xl
-			);
+			@include font($body);
+			font-weight: 	bold !important;
+			padding-bottom: 0 !important;
 		}
 		
 		a.p-author {			
@@ -605,11 +558,11 @@ body[id$='post'] {
 			text-transform: capitalize;
 			@include toggleSizes(
 				padding-bottom,
-				($font-size--p--xs * 0.5),
-				($font-size--p--sm * 0.5),
-				($font-size--p--md * 0.5),
-				($font-size--p--lg * 0.5),
-				($font-size--p--xl * 0.5)
+				11px,
+				11px,
+				11px,
+				13px,
+				15px
 			);
 			
 			&:last-of-type {

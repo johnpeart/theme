@@ -1,26 +1,13 @@
 body#manuals {
-
-	section#page-content > section {
-		@include toggleSizes(
-			padding-bottom,
-			0,
-			0,
-			($font-size--p--md * 1.5),
-			($font-size--p--lg * 1.5),
-			($font-size--p--xl * 1.5)
-		);
-		
-		@include clearfix;
-	}
 	
 	article.project {
 		@include toggleSizes(
 			padding,
-			($font-size--p--xs * 0.5) 0,
-			($font-size--p--sm * 0.5) 0,
-			($font-size--p--md * 0.5) 0,
-			($font-size--p--lg * 0.5) 0,
-			($font-size--p--xl * 0.5) 0
+			11px 0,
+			11px 0,
+			11px 0,
+			13px 0,
+			15px 0
 		);
 		
 		border-top: 1px solid;

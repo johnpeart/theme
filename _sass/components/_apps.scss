@@ -29,11 +29,11 @@ figure.app-sheet {
 	margin-right: auto;
 	@include toggleSizes(
 		margin-bottom, 
-		$font-size--p--xs,
-		$font-size--p--sm,
-		$font-size--p--md,
-		$font-size--p--lg,
-		$font-size--p--xl
+		22px,
+		22px,
+		22px,
+		26px,
+		30px
 	);	
 	
 	max-width: 600px;
@@ -222,11 +222,11 @@ figure.app-totals {
 	&.app-totals--total {
 		@include toggleSizes(
 			margin-bottom, 
-			$font-size--p--xs,
-			$font-size--p--sm,
-			$font-size--p--md,
-			$font-size--p--lg,
-			$font-size--p--xl
+			22px,
+			22px,
+			22px,
+			26px,
+			30px
 		);
 	}
 	

@@ -256,6 +256,47 @@ $body: (
 	
 );
 
+
+$body--lead: (
+	
+	"font-size": (
+	"xs": 26px,
+	"sm": 26px,
+	"md": 26px,
+	"lg": 32px,
+	"xl": 43px
+	),
+	"line-height": (
+		"xs": 1.25,
+		"sm": 1.25,
+		"md": 1.25,
+		"lg": 1.25,
+		"xl": 1.2
+	),
+	"padding": (
+		"xs": 0 0 22px 0,
+		"sm": 0 0 22px 0,
+		"md": 0 0 22px 0,
+		"lg": 0 0 26px 0,
+		"xl": 0 0 30px 0
+	),
+	"font-weight": (
+		"xs": bold,
+		"sm": bold,
+		"md": bold,
+		"lg": bold,
+		"xl": bold
+	),
+	"font-style": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	)
+	
+);
+
 $body--small: (
 	
 	"font-size": (
@@ -292,13 +333,6 @@ $body--small: (
 		"md": normal,
 		"lg": normal,
 		"xl": normal
-	),
-	"text-transform": (
-		"xs": uppercase,
-		"sm": uppercase,
-		"md": uppercase,
-		"lg": uppercase,
-		"xl": uppercase
 	)
 	
 );
@@ -370,25 +404,6 @@ $body--chiplet: (
 	),
 	
 );
-
-// Size
-$font-size--p--xs:		22px;
-$font-size--p--sm:		22px;
-$font-size--p--md:		22px;
-$font-size--p--lg:		26px;
-$font-size--p--xl:		30px;
-// Line height
-$line-height--p--xs:	1.25;
-$line-height--p--sm:	1.25;
-$line-height--p--md:	1.25;
-$line-height--p--lg:	1.25;
-$line-height--p--xl:	1.2;
-// Padding (bottom spacing)
-$padding--p--xs:		0 0 $font-size--p--xs 0;
-$padding--p--sm:		0 0 $font-size--p--sm 0;
-$padding--p--md:		0 0 $font-size--p--md 0;
-$padding--p--lg:		0 0 $font-size--p--lg 0;
-$padding--p--xl:		0 0 $font-size--p--xl 0;
 
 // HEADER WORDMARK TEXT
 // Applies to the Wordmark only (smaller for the normal links)

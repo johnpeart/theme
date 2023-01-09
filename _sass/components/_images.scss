@@ -6,11 +6,11 @@ figure {
 	@include toggleColor(color, "color");
 	@include toggleSizes(
 		margin-bottom, 
-		$font-size--p--xs,
-		$font-size--p--sm,
-		$font-size--p--md,
-		$font-size--p--lg,
-		$font-size--p--xl
+		22px,
+		22px,
+		22px,
+		26px,
+		30px
 	);
 	margin-top: 0;
 	
@@ -50,24 +50,10 @@ figure {
 	figcaption {
 		margin-top: $container-padding;
 		max-width: 500px;
-		@include toggleSizes(
-	font-size,
-		($font-size--p--xs * 0.8),
-		($font-size--p--sm * 0.8),
-		($font-size--p--md * 0.8),
-		($font-size--p--lg * 0.8),
-		($font-size--p--xl * 0.8)
-	);
-		@include toggleSizes(
-	line-height,
-		$line-height--p--xs,
-		$line-height--p--sm,
-		$line-height--p--md,
-		$line-height--p--lg,
-		$line-height--p--xl
-	);
-		padding-top: $container-padding * 0.5;
-		padding-bottom: 0;
+		@include font($body--small);
+		padding-top: $container-padding * 0.5 !important;
+		padding-bottom: 0 !important;
+		text-transform: none !important;
 			
 		@include toggleColor(color, "figcaption-color");
 		font-style: italic;	
@@ -118,11 +104,11 @@ figure {
 		margin: 0;
 		@include toggleSizes(
 			margin-bottom,
-			($font-size--p--xs * 0.5),
-			($font-size--p--sm * 0.5),
-			($font-size--p--md * 0.5),
-			($font-size--p--lg * 0.5),
-			($font-size--p--xl * 0.5)
+			11px,
+			11px,
+			11px,
+			13px,
+			15px
 		);
 	
 	}

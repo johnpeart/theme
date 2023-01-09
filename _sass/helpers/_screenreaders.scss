@@ -46,29 +46,14 @@
     display: block;
     width: 100%;
     
-    @include toggleSizes(
-        font-size,
-        $font-size--p--xs,
-        $font-size--p--sm,
-        $font-size--p--md,
-        $font-size--p--lg,
-        $font-size--p--xl
-    );
-    @include toggleSizes(
-        line-height,
-        $line-height--p--xs,
-        $line-height--p--sm,
-        $line-height--p--md,
-        $line-height--p--lg,
-        $line-height--p--xl
-    );
+    @include font($body);
     @include toggleSizes(
         padding,
-        10px 0,
-        10px 0,
-        10px 0,
-        10px 0,
-        10px 0
+        10px 0 !important,
+        10px 0 !important,
+        10px 0 !important,
+        10px 0 !important,
+        10px 0 !important
     );
     
     text-align: 			left;

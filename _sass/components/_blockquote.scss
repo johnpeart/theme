@@ -3,11 +3,11 @@ blockquote {
 	padding: 20px;
 	@include toggleSizes(
 		margin,
-		$padding--p--xs,
-		$padding--p--sm,
-		$padding--p--md,
-		$padding--p--lg,
-		$padding--p--xl
+		0 0 22px 0,
+		0 0 22px 0,
+		0 0 22px 0,
+		0 0 26px 0,
+		0 0 30px 0
 	);
 
 	p {
@@ -25,11 +25,11 @@ blockquote {
 	}
 
 	ul {
-		padding-left: $font-size--p--xs * 1.5;
+		padding-left: 33px;
 	}
 	ol {
 
-		padding-left: $font-size--p--xs * 2.5;
+		padding-left: 55px;
 		&:last-child {
 			padding-bottom: 0;
 		}
@@ -37,8 +37,8 @@ blockquote {
 
 	p ~ ol,
 	p ~ ul {
-		margin-top: -1 * $font-size--p--xs;
-		padding-bottom: 0.5 * $font-size--p--xs;
+		margin-top: -22px;
+		padding-bottom: 6px;
 	}
 
 }

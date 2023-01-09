@@ -5,9 +5,9 @@ body#loop {
 			padding-bottom,
 			0,
 			0,
-			($font-size--p--md * 1.5),
-			($font-size--p--lg * 1.5),
-			($font-size--p--xl * 1.5)
+			33px,
+			40px,
+			45px
 		);
 		
 		@include clearfix;
@@ -63,11 +63,11 @@ body#loop {
 		p.loop-item-title {
 			@include toggleSizes(
 			font-size,
-			($font-size--p--xs * 1.2),
-			($font-size--p--sm * 1.2),
-			($font-size--p--md * 1.2),
-			($font-size--p--lg * 1.2),
-			($font-size--p--xl * 1.2)
+			26px,
+			26px,
+			26px,
+			31px,
+			36px
 		);
 			
 			a {

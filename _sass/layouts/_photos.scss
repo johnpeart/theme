@@ -276,73 +276,57 @@ body#photo {
   }
 
   div.footnotes {
-
-    &:before {
-		display: block;
-		
-		@include font($h3);
-		
-		font-weight: 		bold;
-		font-style: 		normal;
-		text-align: 		left;
-		text-decoration: 	none;
-		text-transform: 	none;
-		
-		content: "Footnotes";
-    }
-
-    @include toggleSizes(
-		padding-top,
-		45px,
-		60px,
-		60px,
-		90px,
-		120px
-	);
-    @include toggleSizes(
-		max-width,
-		400px,
-		500px,
-		450px,
-		600px,
-		600px
-	);
-
-    ul, ol {
-      @include toggleSizes(
-		padding-left,
-		($font-size--p--xs * 1.6),
-		($font-size--p--sm * 1.6),
-		0,
-		0,
-		0
-	);
-    }
-    li, p {
-      @include toggleSizes(
-		font-size,
-		($font-size--p--xs * 0.8),
-		($font-size--p--sm * 0.8),
-		($font-size--p--md * 0.8),
-		($font-size--p--lg * 0.8),
-		($font-size--p--xl * 0.8)
-	);
-    }
-    p {
-      @include toggleSizes(
-		padding,
-		$padding--p--xs,
-		$padding--p--sm,
-		$padding--p--md,
-		$padding--p--lg,
-		$padding--p--xl
-	);
-    }
-    a.reversefootnote {
-      text-decoration: none;
-      font-family: $font-family !important;
-    }
-
+  
+	  &:before {
+		  display: block;
+  
+		  @include font($h3);
+  
+		  font-weight: 		bold;
+		  font-style: 		normal;
+		  text-align: 		left;
+		  text-decoration: 	none;
+		  text-transform: 	none;
+  
+		  content: "Footnotes";
+  
+	  }
+  
+	  @include toggleSizes(
+		  padding-top,
+		  45px,
+		  60px,
+		  60px,
+		  90px,
+		  120px
+	  );
+	  @include toggleSizes(
+		  max-width,
+		  400px,
+		  500px,
+		  450px,
+		  600px,
+		  600px
+	  );
+  
+	  ul, ol {
+		  @include toggleSizes(
+			  padding-left,
+			  (18px),
+			  (18px),
+			  0,
+			  0,
+			  0
+		  );
+	  }
+	  li, p {
+		  @include font($body--small)
+	  }
+	  a.reversefootnote {
+		  text-decoration: none;
+		  font-family: $font-family !important;
+	  }
+  
   }
 
 }

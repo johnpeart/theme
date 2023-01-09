@@ -4,19 +4,19 @@ ul {
 	padding-top: 0;
 	@include toggleSizes(
 		padding-left,
-		($font-size--p--xs * 1.5),
-		($font-size--p--sm * 1.5),
+		33px,
+		33px,
 		0,
 		0,
 		0
 	);
 	@include toggleSizes(
 		padding-bottom,
-		$font-size--p--xs,
-		$font-size--p--sm,
-		$font-size--p--md,
-		$font-size--p--lg,
-		$font-size--p--xl
+		22px,
+		22px,
+		22px,
+		26px,
+		30px
 	);
 
 }
@@ -26,41 +26,27 @@ ol {
 	padding-top: 0;
 	@include toggleSizes(
 		padding-left,
-		($font-size--p--xs * 2),
-		($font-size--p--sm * 2),
+		35px,
+		35px,
 		0,
 		0,
 		0
 	);
 	@include toggleSizes(
 	padding-bottom,
-		$font-size--p--xs,
-		$font-size--p--sm,
-		$font-size--p--md,
-		$font-size--p--lg,
-		$font-size--p--xl
+		22px,
+		22px,
+		22px,
+		26px,
+		30px
 	);
 
 }
 
 li {
 
-	@include toggleSizes(
-		font-size,
-		$font-size--p--xs,
-		$font-size--p--sm,
-		$font-size--p--md,
-		$font-size--p--lg,
-		$font-size--p--xl
-	);
-	@include toggleSizes(
-		line-height,
-		$line-height--p--xs,
-		$line-height--p--sm,
-		$line-height--p--md,
-		$line-height--p--lg,
-		$line-height--p--xl
-	);
+	@include font($body);
+	
 	padding-bottom: 0;
 
 	font-weight:		normal;

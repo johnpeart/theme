@@ -173,33 +173,19 @@ pre {
 
 	font-family: $font-family;
 
-	padding: $font-size--p--xs;
+	padding: $container-padding;
+	
 	@include toggleSizes(
 		margin,
-		$padding--p--xs,
-		$padding--p--sm,
-		$padding--p--md,
-		$padding--p--lg,
-		$padding--p--xl
+		0 0 22px 0,
+		0 0 22px 0,
+		0 0 22px 0,
+		0 0 26px 0,
+		0 0 30px 0
 	);
 
 	code {
-		@include toggleSizes(
-			font-size,
-			$font-size--p--xs,
-			$font-size--p--sm,
-			$font-size--p--md,
-			$font-size--p--lg,
-			$font-size--p--xl
-		);
-		@include toggleSizes(
-			line-height,
-			$line-height--p--xs,
-			$line-height--p--sm,
-			$line-height--p--md,
-			$line-height--p--lg,
-			$line-height--p--xl
-		);
+		@include font($body);
 	}
 
 }
