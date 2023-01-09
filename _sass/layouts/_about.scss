@@ -15,17 +15,7 @@ body#about {
 				
 	h2.about-header {
 		
-		text-align: 		left;
-		
-		@include toggleSizes(
-			font-size,
-			($font-size--h2--xs * 1.25),
-			($font-size--h2--sm *1.25),
-			($font-size--h2--md * 1.5),
-			($font-size--h2--lg * 1.5),
-			($font-size--h2--xl * 1.5)
-		);
-		
+		text-align: 		left;		
 		&.about-career {
 			padding-top: 0;
 		}
@@ -36,11 +26,11 @@ body#about {
 		
 		@include toggleSizes(
 			font-size,
-			($font-size--h3--xs * 1.15),
-			($font-size--h3--sm * 1.25),
-			($font-size--h3--md * 1.2),
-			($font-size--h3--lg * 1.25),
-			($font-size--h3--xl * 1.3)
+			25px,
+			27px,
+			27px,
+			32.5px,
+			40px
 		);
 		
 		a {
@@ -61,58 +51,10 @@ body#about {
 		padding: 0;
 		font-style: normal;
 		
-		@include toggleSizes(
-			font-size,
-			$font-size--h4--xs,
-			$font-size--h4--sm,
-			$font-size--h4--md,
-			$font-size--h4--lg,
-			$font-size--h4--xl
-		);
-		@include toggleSizes(
-			line-height,
-			$line-height--h4--xs,
-			$line-height--h4--sm,
-			$line-height--h4--md,
-			$line-height--h4--lg,
-			$line-height--h4--xl
-		);
-		
 	}
 	
 	p.about-time {
 		padding: 0;
-	}
-	
-	h5.about-job-projects {
-		
-		text-align: 		left;
-		
-		@include toggleSizes(
-			font-size,
-			$font-size--h5--xs,
-			$font-size--h5--sm,
-			$font-size--h5--md,
-			$font-size--h5--lg,
-			$font-size--h5--xl
-		);
-		@include toggleSizes(
-			line-height,
-			$line-height--h5--xs,
-			$line-height--h5--sm,
-			$line-height--h5--md,
-			$line-height--h5--lg,
-			$line-height--h5--xl
-		);
-		@include toggleSizes(
-			padding,
-			$padding--h5--xs,
-			$padding--h5--sm,
-			$padding--h5--md,
-			$padding--h5--lg,
-			$padding--h5--xl
-		);
-		
 	}
 	
 	summary.about-job-entry {

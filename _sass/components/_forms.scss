@@ -59,7 +59,7 @@ a.button {
 	display: block;
 	position: relative;
 
-	min-height: $input-size;
+	min-height: map-get($form-elements, "input-size");
 
 	@extend p;
 	padding: 0;
@@ -70,7 +70,7 @@ a.button {
 }
 
 .radio-input {
-	padding-left: $radios-size;
+	padding-left: map-get($form-elements, "radios-size");
 
 	&:last-child,
 	&:last-of-type {
@@ -110,14 +110,14 @@ textarea {
 	min-height: 40px;
 	
 	margin-top: 15px;
-	padding: $input-padding;
+	padding: map-get($form-elements, "input-padding");
 
 	border-radius: 0;
 
 	@include toggleColor(background, "input-background");
 	@include toggleColor(color, "input-color");
 	
-	border: $border-width-form-element solid;
+	border: map-get($form-elements, "border-width-form-element") solid;
 	@include toggleColor(border-color, "input-border-color");
 	
 	// Disable inner shadow and remove rounded corners
@@ -126,26 +126,26 @@ textarea {
 
 
 	&:hover {
-		outline: $border-width-form-element solid $input-focus-color;
+		outline: map-get($form-elements, "border-width-form-element") solid map-get($form-elements, "input-focus-color");
 		outline-offset: 0px;
-		border: $border-width-form-element solid;
+		border: map-get($form-elements, "border-width-form-element") solid;
 		@include toggleColor(border-color, "input-border-color");
 	}
 	&:focus {
-		outline: $border-width-form-element solid $input-focus-color;
+		outline: map-get($form-elements, "border-width-form-element") solid map-get($form-elements, "input-focus-color");
 		outline-offset: 3px;
 
 		@include toggleColor(background, "input-background--focus");
-		box-shadow: inset 0 0 0 $border-focus-width;
+		box-shadow: inset 0 0 0 map-get($form-elements, "border-focus-width");
 		@include darkMode() {
-			box-shadow: inset 0 0 0 $border-focus-width map-get($colors, "absolute-black");
+			box-shadow: inset 0 0 0 map-get($form-elements, "border-focus-width") map-get($colors, "absolute-black");
 		}
-		border: $border-width-form-element solid;
+		border: map-get($form-elements, "border-width-form-element") solid;
 		@include toggleColor(border-color, "input-border-color");
 	}
 
 	&:invalid {
-		border: $border-width-form-element solid $input-error-color;
+		border: map-get($form-elements, "border-width-form-element") solid map-get($form-elements, "input-error-color");
 	}
 
 }
@@ -155,7 +155,7 @@ textarea {
 }
 
 input[type="radio"] {
-	$input-offset: ($touch-target-size - $radios-size) * 0.5;
+	$input-offset: (map-get($form-elements, "touch-target-size") - map-get($form-elements, "radios-size")) * 0.5;
 	cursor: pointer;
 
 	position: absolute;
@@ -164,18 +164,18 @@ input[type="radio"] {
 	top: $input-offset * -1;
 	left: $input-offset * -1;
 
-	width: $touch-target-size;
-	height: $touch-target-size;
+	width: map-get($form-elements, "touch-target-size");
+	height: map-get($form-elements, "touch-target-size");
 	margin: 0;
 
 	opacity: 0;
 
 	~ label {
 		display: inline-block;
-		height: $input-size;
+		height: map-get($form-elements, "input-size");
 		margin-top: 0;
 		margin-bottom: 0;
-		padding: 0px $radios-label-padding-left-right;
+		padding: 0px map-get($form-elements, "radios-label-padding-left-right");
 		cursor: pointer;
 		// remove 300ms pause on mobile
 		touch-action: manipulation;
@@ -189,8 +189,8 @@ input[type="radio"] {
 			top: 0;
 			left: 0;
 
-			width: $radios-size;
-			height: $radios-size;
+			width: map-get($form-elements, "radios-size");
+			height: map-get($form-elements, "radios-size");
 			border: 2px solid;
 			@include toggleColor(border-color, "radio-button-border-color");
 			border-radius: 50%;
@@ -232,13 +232,13 @@ input[type="radio"] {
 	}
 
 	~ .label-hint,  {
-		padding-right: $radios-label-padding-left-right;
-		padding-left: $radios-label-padding-left-right;
+		padding-right: map-get($form-elements, "radios-label-padding-left-right");
+		padding-left: map-get($form-elements, "radios-label-padding-left-right");
 	}
 
 	~ input[type="text"]  {
-		margin-left: $radios-label-padding-left-right;
-		width: calc(100% - #{$radios-label-padding-left-right});
+		margin-left: map-get($form-elements, "radios-label-padding-left-right");
+		width: calc(100% - #{map-get($form-elements, "radios-label-padding-left-right")});
 	}
 
 }

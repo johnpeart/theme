@@ -278,41 +278,17 @@ body#photo {
   div.footnotes {
 
     &:before {
-      display: block;
-
-      	@include toggleSizes(
-			font-size,
-			$font-size--h3--xs,
-			$font-size--h3--sm,
-			$font-size--h3--md,
-			$font-size--h3--lg,
-			$font-size--h3--xl
-		);
-      	@include toggleSizes(
-			line-height,
-			$line-height--h3--xs,
-			$line-height--h3--sm,
-			$line-height--h3--md,
-			$line-height--h3--lg,
-			$line-height--h3--xl
-		);
-      	@include toggleSizes(
-			padding,
-			$padding--h3--xs,
-			$padding--h3--sm,
-			$padding--h3--md,
-			$padding--h3--lg,
-			$padding--h3--xl
-		);
-
-      font-weight:			$font-weight--h3;
-      font-style: 			$font-style-h3;
-      text-align: 			$text-align--h3;
-      text-decoration: 	$text-decoration--h3;
-      text-transform: 		$text-transform--h3;
-
-      content: "Footnotes";
-
+		display: block;
+		
+		@include font($h3);
+		
+		font-weight: 		bold;
+		font-style: 		normal;
+		text-align: 		left;
+		text-decoration: 	none;
+		text-transform: 	none;
+		
+		content: "Footnotes";
     }
 
     @include toggleSizes(

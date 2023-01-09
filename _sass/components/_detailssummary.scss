@@ -76,11 +76,11 @@ summary {
 		line-height: 1;
 		@include toggleSizes(
 			font-size,
-			$font-size--h4--xs,
-			$font-size--h4--sm,
-			$font-size--h4--md,
-			$font-size--h4--lg,
-			$font-size--h4--xl
+			22px,
+			22px,
+			22px,
+			26px,
+			30px
 		);
 	}
 
@@ -116,20 +116,13 @@ summary {
 
 		@include toggleSizes(
 			font-size,
-			$font-size--h4--xs,
-			$font-size--h4--sm,
-			$font-size--h4--md,
-			$font-size--h4--lg,
-			$font-size--h4--xl
+			22px,
+			22px,
+			22px,
+			26px,
+			30px
 		);
-		@include toggleSizes(
-			line-height,
-			$line-height--h4--xs,
-			$line-height--h4--sm,
-			$line-height--h4--md,
-			$line-height--h4--lg,
-			$line-height--h4--xl
-		);
+		line-height: 1.25;
 	}
 
 	&:hover {

@@ -103,19 +103,13 @@ figure.app-sheet {
 	}
 	
 	dd.app-sheet--app--name {
-		font-weight: 		$font-weight--h2;
-		font-style: 		$font-style-h2;
-		text-decoration: 	$text-decoration--h2;
-		text-transform: 	$text-transform--h2;
+		font-weight: 		bold;
+		font-style: 		normal;
+		text-align: 		center;
+		text-decoration: 	none;
+		text-transform: 	none;
 		
-		@include toggleSizes(
-			font-size,
-			$font-size--p--xs,
-			$font-size--p--sm,
-			$font-size--h2--md,
-			$font-size--h2--lg,
-			$font-size--h2--xl
-		);
+		@include font($h2);
 		line-height: 1;
 		padding: 0 0 5px 0;
 	}

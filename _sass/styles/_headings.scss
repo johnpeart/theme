@@ -16,112 +16,43 @@ h1 {
 }
 
 h2 {
-	font-weight: 		$font-weight--h2;
-	font-style: 		$font-style-h2;
-	text-align: 		$text-align--h2;
-	text-decoration: 	$text-decoration--h2;
-	text-transform: 	$text-transform--h2;
+	font-weight: 		bold;
+	font-style: 		normal;
+	text-align: 		center;
+	text-decoration: 	none;
+	text-transform: 	none;
 
-	@include font($h1)
+	@include font($h2)
 }
 
 h3 {
-	font-weight: 		$font-weight--h3;
-	font-style: 		$font-style-h3;
-	text-align: 		$text-align--h3;
-	text-decoration: 	$text-decoration--h3;
-	text-transform: 	$text-transform--h3;
+	font-weight: 		bold;
+	font-style: 		normal;
+	text-align: 		left;
+	text-decoration: 	none;
+	text-transform: 	none;
 
-	@include toggleSizes(
-		font-size,
-		$font-size--h3--xs,
-		$font-size--h3--sm,
-		$font-size--h3--md,
-		$font-size--h3--lg,
-		$font-size--h3--xl
-	);
-	@include toggleSizes(
-		line-height,
-		$line-height--h3--xs,
-		$line-height--h3--sm,
-		$line-height--h3--md,
-		$line-height--h3--lg,
-		$line-height--h3--xl
-	);
-	@include toggleSizes(
-		padding,
-		$padding--h3--xs,
-		$padding--h3--sm,
-		$padding--h3--md,
-		$padding--h3--lg,
-		$padding--h3--xl
-	);
+	@include font($h3);
 }
 
 h4 {
-	font-weight: 		$font-weight--h4;
-	font-style: 		$font-style-h4;
-	text-align: 		$text-align--h4;
-	text-decoration: 	$text-decoration--h4;
-	text-transform: 	$text-transform--h4;
-
-	@include toggleSizes(
-		font-size,
-		$font-size--h4--xs,
-		$font-size--h4--sm,
-		$font-size--h4--md,
-		$font-size--h4--lg,
-		$font-size--h4--xl
-	);
-	@include toggleSizes(
-		line-height,
-		$line-height--h4--xs,
-		$line-height--h4--sm,
-		$line-height--h4--md,
-		$line-height--h4--lg,
-		$line-height--h4--xl
-	);
-	@include toggleSizes(
-		padding,
-		$padding--h4--xs,
-		$padding--h4--sm,
-		$padding--h4--md,
-		$padding--h4--lg,
-		$padding--h4--xl
-	);
+	font-weight: 		bold;
+	font-style: 		italic;
+	text-align: 		left;
+	text-decoration: 	none;
+	text-transform: 	none;
+	
+	@include font($h4);
 }
 
 h5 {
-	font-weight: 		$font-weight--h5;
-	font-style: 		$font-style-h5;
-	text-align: 		$text-align--h5;
-	text-decoration: 	$text-decoration--h5;
-	text-transform: 	$text-transform--h5;
-
-	@include toggleSizes(
-		font-size,
-		$font-size--h5--xs,
-		$font-size--h5--sm,
-		$font-size--h5--md,
-		$font-size--h5--lg,
-		$font-size--h5--xl
-	);
-	@include toggleSizes(
-		line-height,
-		$line-height--h5--xs,
-		$line-height--h5--sm,
-		$line-height--h5--md,
-		$line-height--h5--lg,
-		$line-height--h5--xl
-	);
-	@include toggleSizes(
-		padding,
-		$padding--h5--xs,
-		$padding--h5--sm,
-		$padding--h5--md,
-		$padding--h5--lg,
-		$padding--h5--xl
-	);
+	font-weight: 		bold;
+	font-style: 		normal;
+	text-align: 		left;
+	text-decoration: 	none;
+	text-transform: 	none;
+	
+	@include font($h5);
 }
 
 h2 + h3 {

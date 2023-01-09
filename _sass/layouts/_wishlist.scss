@@ -2,19 +2,6 @@
 
 body#wishlist {
 
-	section#page-content > section {
-		@include toggleSizes(
-			padding-bottom,
-			0,
-			0,
-			($font-size--p--md * 1.5),
-			($font-size--p--lg * 1.5),
-			($font-size--p--xl * 1.5)
-		);
-
-		@include clearfix;
-	}
-
 	aside.intro-text {
 
 		span.item-giftidea {
@@ -37,23 +24,9 @@ body#wishlist {
 
 	}
 
-	h2 {
-
-		text-align: 		left;
-
-		@include toggleSizes(
-			font-size,
-			($font-size--h2--xs * 1.25),
-			($font-size--h2--sm *1.25),
-			($font-size--h2--md * 1.5),
-			($font-size--h2--lg * 1.5),
-			($font-size--h2--xl * 1.5)
-		);
-
-		&.about-career {
-			padding-top: 0;
-		}
-
+	h2.wishlist-header {
+		text-align: left;
+		@include font($h2);
 	}
 
 	ul {
@@ -195,20 +168,8 @@ body#wishlist {
 			span.item-purchased {
 				position: relative;
 				float: left;
+				@include font($body--chiplet);
 				@include toggleColor(color, "chiplet-color");
-				border-radius: 6px;
-				padding: 7px;
-				text-transform: uppercase;
-				font-variant: small-caps !important;
-				@include toggleSizes(
-					font-size,
-					($font-size--p--xs * 0.5),
-					($font-size--p--sm * 0.5),
-					($font-size--p--md * 0.5),
-					($font-size--p--lg * 0.5),
-					($font-size--p--xl * 0.5)
-				);
-				vertical-align: middle;
 			}
 
 			@include clearfix;
@@ -216,6 +177,10 @@ body#wishlist {
 	}
 
 	fieldset#toggle-purchased {
+		
+		display: block;
+		position: relative;
+		width: 100%;
 
 		@include toggleColor(background, "default-element-background");
 
@@ -227,11 +192,17 @@ body#wishlist {
 		}
 
 		legend {
-			@extend p;
-			display: inline-block;
+			
+			display: inline;
+			position: relative;
+			
+			@include font($body);
+			font-weight: bold !important;
+			
+			max-height: map-get($form-elements, "radios-size");
+			vertical-align: middle;
 			text-align: left;
 			float: left;
-
 			font-weight: bold;
 			@include sm-up {
 				padding-bottom: 0;
@@ -251,7 +222,7 @@ body#wishlist {
 			label {
 				font-weight: normal;
 				vertical-align: middle;
-				line-height: $input-size;
+				line-height: map-get($form-elements, "$input-size");
 			}
 		}
 

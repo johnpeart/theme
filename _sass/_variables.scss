@@ -303,6 +303,74 @@ $body--small: (
 	
 );
 
+$body--chiplet: (
+	
+	"font-size": (
+		"xs": 11px,
+		"sm": 11px,
+		"md": 11px,
+		"lg": 13px,
+		"xl": 15px
+	),
+	"line-height": (
+		"xs": 1,
+		"sm": 1,
+		"md": 1,
+		"lg": 1,
+		"xl": 1
+	),
+	"padding": (
+		"xs": 7px,
+		"sm": 7px,
+		"md": 7px,
+		"lg": 7px,
+		"xl": 7px
+	),
+	"font-weight": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	),
+	"font-style": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	),
+	"text-transform": (
+		"xs": uppercase,
+		"sm": uppercase,
+		"md": uppercase,
+		"lg": uppercase,
+		"xl": uppercase
+	),
+	"font-variant": (
+		"xs": small-caps,
+		"sm": small-caps,
+		"md": small-caps,
+		"lg": small-caps,
+		"xl": small-caps
+	),
+	"vertical-align": (
+		"xs": middle,
+		"sm": middle,
+		"md": middle,
+		"lg": middle,
+		"xl": middle
+	),
+	"border-radius": (
+		"xs": 6px,
+		"sm": 6px,
+		"md": 6px,
+		"lg": 8px,
+		"xl": 8px
+	),
+	
+);
+
 // Size
 $font-size--p--xs:		22px;
 $font-size--p--sm:		22px;
@@ -566,121 +634,168 @@ $h1-post-date: (
 
 // HEADING 2 TEXT
 // Applies to 'h2' and equivalent text
-// Size
-$font-size--h2--xs:		27px;
-$font-size--h2--sm:		32px;
-$font-size--h2--md:		32px;
-$font-size--h2--lg:		36px;
-$font-size--h2--xl:		40px;
-// Line height
-$line-height--h2--xs:	1.15;
-$line-height--h2--sm:	1.15;
-$line-height--h2--md:	1.15;
-$line-height--h2--lg:	1.15;
-$line-height--h2--xl:	1.15;
-// Padding (bottom spacing)
-$padding--h2--xs:		($font-size--h2--xs * 2) 0 $font-size--h2--xs 0;
-$padding--h2--sm:		($font-size--h2--sm * 2) 0 $font-size--h2--sm 0;
-$padding--h2--md:		($font-size--h2--md * 2) 0 $font-size--h2--md 0;
-$padding--h2--lg:		($font-size--h2--lg * 2) 0 $font-size--h2--lg 0;
-$padding--h2--xl:		($font-size--h2--xl * 2) 0 $font-size--h2--xl 0;
-// Other styles
-$font-weight--h2:		bold;
-$font-style-h2:			normal;
-$text-align--h2:		center;
-$text-decoration--h2:	none;
-$text-transform--h2:	none;
+$h2: (
+	"font-size": (
+		"xs": 27px,
+		"sm": 32px,
+		"md": 32px,
+		"lg": 36px,
+		"xl": 40px
+	),
+	"line-height": (
+		"xs": 1.15,
+		"sm": 1.15,
+		"md": 1.15,
+		"lg": 1.15,
+		"xl": 1.15
+	),
+	"padding": (
+		"xs": 54px 0 27px 0,
+		"sm": 64px 0 32px 0,
+		"md": 64px 0 32px 0,
+		"lg": 72px 0 36px 0,
+		"xl": 80px 0 40px 0
+	)
+);
 
 // HEADING 2 LOOP TITLE TEXT
 // Applies to 'h2' and equivalent text that is in a loop
-// Size
-// Padding (bottom spacing)
-$padding--h2--loop--xs:		($font-size--h2--xs * 2) 0 ($font-size--h2--xs * 0.5) 0;
-$padding--h2--loop--sm:		($font-size--h2--sm * 2) 0 ($font-size--h2--sm * 0.5) 0;
-$padding--h2--loop--md:		($font-size--h2--md * 2) 0 ($font-size--h2--md * 0.5) 0;
-$padding--h2--loop--lg:		($font-size--h2--lg * 2) 0 ($font-size--h2--lg * 0.5) 0;
-$padding--h2--loop--xl:		($font-size--h2--xl * 2) 0 ($font-size--h2--xl * 0.5) 0;
+$h2-loop-title: (
+	"font-size": (
+		"xs": 35px,
+		"sm": 40px,
+		"md": 40px,
+		"lg": 45px,
+		"xl": 50px
+	),
+	"line-height": (
+		"xs": 0.8,
+		"sm": 0.8,
+		"md": 0.8,
+		"lg": 0.8,
+		"xl": 0.8
+	),
+	"padding": (
+		"xs": 27px 0,
+		"sm": 32px 0,
+		"md": 32px 0,
+		"lg": 36px 0,
+		"xl": 40px 0
+	),
+	"float": (
+		"xs": none,
+		"sm": left,
+		"md": left,
+		"lg": left,
+		"xl": left
+	),
+	"width": (
+		"xs": 100%,
+		"sm": 20%,
+		"md": 25%,
+		"lg": 25%,
+		"xl": 25%	
+	),
+	"text-align": (
+		"xs": left,
+		"sm": left,
+		"md": left,
+		"lg": left,
+		"xl": left
+	),
+	"top": (
+		"xs": 0,
+		"sm": 0,
+		"md": 0,
+		"lg": 0,
+		"xl": 0
+	),
+	"position": (
+		"xs": relative,
+		"sm": sticky,
+		"md": sticky,
+		"lg": sticky,
+		"xl": sticky
+	)
+);
 
 // HEADING 3 TEXT
 // Applies to 'h3' and equivalent text
-// Size
-$font-size--h3--xs:		22px;
-$font-size--h3--sm:		22px;
-$font-size--h3--md:		22px;
-$font-size--h3--lg:		26px;
-$font-size--h3--xl:		30px;
-// Line height
-$line-height--h3--xs:	1.25;
-$line-height--h3--sm:	1.25;
-$line-height--h3--md:	1.25;
-$line-height--h3--lg:	1.25;
-$line-height--h3--xl:	1.25;
-// Padding (bottom spacing)
-$padding--h3--xs:		($font-size--h3--xs) 0 ($font-size--h3--xs * 0.66) 0;
-$padding--h3--sm:		($font-size--h3--sm) 0 ($font-size--h3--sm * 0.66) 0;
-$padding--h3--md:		($font-size--h3--md) 0 ($font-size--h3--md * 0.66) 0;
-$padding--h3--lg:		($font-size--h3--lg) 0 ($font-size--h3--lg * 0.66) 0;
-$padding--h3--xl:		($font-size--h3--xl) 0 ($font-size--h3--xl * 0.66) 0;
-// Other styles
-$font-weight--h3:		bold;
-$font-style-h3:			normal;
-$text-align--h3:		left;
-$text-decoration--h3:	none;
-$text-transform--h3:	none;
+$h3: (
+	"font-size": (
+		"xs": 22px,
+		"sm": 22px,
+		"md": 22px,
+		"lg": 26px,
+		"xl": 30px
+	),
+	"line-height": (
+		"xs": 1.25,
+		"sm": 1.25,
+		"md": 1.25,
+		"lg": 1.25,
+		"xl": 1.25
+	),
+	"padding": (
+		"xs": 22px 0 15px 0,
+		"sm": 22px 0 15px 0,
+		"md": 22px 0 15px 0,
+		"lg": 26px 0 17px 0,
+		"xl": 30px 0 20px 0
+	)
+);
 
 // HEADING 4 TEXT
 // Applies to 'h4' and equivalent text
-// Size
-$font-size--h4--xs:		22px;
-$font-size--h4--sm:		22px;
-$font-size--h4--md:		22px;
-$font-size--h4--lg:		26px;
-$font-size--h4--xl:		30px;
-// Line height
-$line-height--h4--xs:	1.25;
-$line-height--h4--sm:	1.25;
-$line-height--h4--md:	1.25;
-$line-height--h4--lg:	1.25;
-$line-height--h4--xl:	1.25;
-// Padding (bottom spacing)
-$padding--h4--xs:		0 0 ($font-size--h4--xs * 0.5) 0;
-$padding--h4--sm:		0 0 ($font-size--h4--sm * 0.5) 0;
-$padding--h4--md:		0 0 ($font-size--h4--md * 0.5) 0;
-$padding--h4--lg:		0 0 ($font-size--h4--lg * 0.5) 0;
-$padding--h4--xl:		0 0 ($font-size--h4--xl * 0.5) 0;
-// Other styles
-$font-weight--h4:		bold;
-$font-style-h4:			italic;
-$text-align--h4:		left;
-$text-decoration--h4:	none;
-$text-transform--h4:	none;
+$h4: (
+	"font-size": (
+		"xs": 22px,
+		"sm": 22px,
+		"md": 22px,
+		"lg": 26px,
+		"xl": 30px
+	),
+	"line-height": (
+		"xs": 1.25,
+		"sm": 1.25,
+		"md": 1.25,
+		"lg": 1.25,
+		"xl": 1.25
+	),
+	"padding": (
+		"xs": 0 0 11px 0,
+		"sm": 0 0 11px 0,
+		"md": 0 0 11px 0,
+		"lg": 0 0 13px 0,
+		"xl": 0 0 15px 0
+	)
+);
 
 // HEADING 5 TEXT
 // Applies to 'h5' and equivalent text
-// Size
-$font-size--h5--xs:		22px;
-$font-size--h5--sm:		22px;
-$font-size--h5--md:		22px;
-$font-size--h5--lg:		26px;
-$font-size--h5--xl:		30px;
-// Line height
-$line-height--h5--xs:	1.25;
-$line-height--h5--sm:	1.25;
-$line-height--h5--md:	1.25;
-$line-height--h5--lg:	1.25;
-$line-height--h5--xl:	1.25;
-// Padding (bottom spacing)
-$padding--h5--xs:		$font-size--h5--xs 0;
-$padding--h5--sm:		$font-size--h5--sm 0;
-$padding--h5--md:		$font-size--h5--md 0;
-$padding--h5--lg:		$font-size--h5--lg 0;
-$padding--h5--xl:		$font-size--h5--xl 0;
-// Other styles
-$font-weight--h5:		bold;
-$font-style-h5:			normal;
-$text-align--h5:		left;
-$text-decoration--h5:	none;
-$text-transform--h5:	none;
+$h5: (
+	"font-size": (
+		"xs": 22px,
+		"sm": 22px,
+		"md": 22px,
+		"lg": 26px,
+		"xl": 30px
+	),
+	"line-height": (
+		"xs": 1.25,
+		"sm": 1.25,
+		"md": 1.25,
+		"lg": 1.25,
+		"xl": 1.25
+	),
+	"padding": (
+		"xs": 22px 0,
+		"sm": 22px 0,
+		"md": 22px 0,
+		"lg": 26px 0,
+		"xl": 30px 0
+	)
+);
 
 // --------------------------------------//
 // --------------------------------------//
@@ -688,15 +803,17 @@ $text-transform--h5:	none;
 
 // FORM ELEMENTS
 
-$touch-target-size:                 44px;
-
-$input-size:                       	40px;
-$border-width-form-element:         3px;
-$border-focus-width:                1px;
-$input-border-color:                map-get($colors, "black");
-$input-error-color:                 map-get($colors, "red");
-$input-focus-color:                 map-get($colors, "cyan");
-$input-padding:                     5px;
-
-$radios-size:                       40px;
-$radios-label-padding-left-right:   20px;
+$form-elements: (
+	"touch-target-size":                44px,
+	
+	"input-size":                       40px,
+	"border-width-form-element":        3px,
+	"border-focus-width":               1px,
+	"input-border-color":               map-get($colors, "black"),
+	"input-error-color":                map-get($colors, "red"),
+	"input-focus-color":                map-get($colors, "cyan"),
+	"input-padding":                    5px,
+	
+	"radios-size":                      40px,
+	"radios-label-padding-left-right":  20px
+);

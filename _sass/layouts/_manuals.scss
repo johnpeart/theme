@@ -29,29 +29,9 @@ body#manuals {
 	
 	h2.project-name {
 		
-		font-weight: 		$font-weight--h3;
-		font-style: 		normal;
+		@include font($h3);
 		text-align: 		left;
-		text-decoration: 	$text-decoration--h3;
-		text-transform: 	$text-transform--h3;
-		padding: 			0;
-		
-		@include toggleSizes(
-			font-size,
-			$font-size--h3--xs,
-			$font-size--h3--sm,
-			$font-size--h3--md,
-			$font-size--h3--lg,
-			$font-size--h3--xl
-		);
-		@include toggleSizes(
-			line-height,
-			$line-height--h3--xs,
-			$line-height--h3--sm,
-			$line-height--h3--md,
-			$line-height--h3--lg,
-			$line-height--h3--xl
-		);
+		padding: 			0 !important;
 		
 	}
 	

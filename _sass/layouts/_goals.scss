@@ -1,19 +1,6 @@
 // Home page styles
 body#goals {
 	
-	section#page-content > section {
-		@include toggleSizes(
-			padding-bottom,
-			0,
-			0,
-			($font-size--p--md * 1.5),
-			($font-size--p--lg * 1.5),
-			($font-size--p--xl * 1.5)
-		);
-		
-		@include clearfix;
-	}
-	
 	article.goal-collection {
 		@include toggleSizes(
 			padding,
@@ -28,31 +15,8 @@ body#goals {
 	}
 	
 	h2.goal-year {
-		
-		font-weight: 		$font-weight--h3;
-		font-style: 		normal;
 		text-align: 		left;
-		text-decoration: 	$text-decoration--h3;
-		text-transform: 	$text-transform--h3;
 		padding: 			0;
-		
-		@include toggleSizes(
-			font-size,
-			$font-size--h2--xs,
-			$font-size--h2--sm,
-			$font-size--h2--md,
-			$font-size--h2--lg,
-			$font-size--h2--xl
-		);
-		@include toggleSizes(
-			line-height,
-			$line-height--h2--xs,
-			$line-height--h2--sm,
-			$line-height--h2--md,
-			$line-height--h2--lg,
-			$line-height--h2--xl
-		);
-		
 	}
 	
 	a.goal-url {
@@ -180,15 +144,7 @@ body#goal {
 	
 	h2.goal-title {
 		text-align: left;
-		
-		@include toggleSizes(
-			padding-bottom,
-			($font-size--h2--xs * 0.25),
-			($font-size--h2--sm * 0.25),
-			($font-size--h2--md * 0.25),
-			($font-size--h2--lg * 0.25),
-			($font-size--h2--xl * 0.25)
-		);
+		padding-bottom: 10px;
 	}
 	
 	ul#goals-list {
