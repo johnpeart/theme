@@ -211,69 +211,7 @@ $colors: (
 // --------------------------------------//
 // --------------------------------------//
 
-// HEADER SIZING
-$header-min-height: 		70px;
-$header-min-height--small: 	56px;
-
-// FOOTER PADDING
-// Top
-$footer--padding-top--xs:	60px;
-$footer--padding-top--sm:	90px;
-$footer--padding-top--md:	90px;
-$footer--padding-top--lg:	120px;
-$footer--padding-top--xl:	120px;
-// Bottom
-$footer--padding-bottom--xs:	45px;
-$footer--padding-bottom--sm:	45px;
-$footer--padding-bottom--md:	60px;
-$footer--padding-bottom--lg:	60px;
-$footer--padding-bottom--xl:	60px;
-
-// --------------------------------------//
-// --------------------------------------//
-// --------------------------------------//
-
 // TEXT SIZES
-
-// $template: (
-// 	
-// 	"font-size": (
-// 		"xs": ,
-// 		"sm": ,
-// 		"md": ,
-// 		"lg": ,
-// 		"xl": 
-// 	),
-// 	"line-height": (
-// 		"xs": ,
-// 		"sm": ,
-// 		"md": ,
-// 		"lg": ,
-// 		"xl": 
-// 	),
-// 	"padding": (
-// 		"xs": ,
-// 		"sm": ,
-// 		"md": ,
-// 		"lg": ,
-// 		"xl": 
-// 	),
-// 	"font-weight": (
-// 		"xs": ,
-// 		"sm": ,
-// 		"md": ,
-// 		"lg": ,
-// 		"xl": 
-// 	),
-// 	"font-style": (
-// 		"xs": ,
-// 		"sm": ,
-// 		"md": ,
-// 		"lg": ,
-// 		"xl": 
-// 	)
-// 	
-// );
 
 // PARAGRAPH TEXT
 // Applies to 'p' and equivalent text
@@ -404,11 +342,11 @@ $wordmark: (
 		"xl": 1
 	),
 	"padding": (
-		"xs": (($header-min-height--small - 30px) * 0.5) 0,
-		"sm": (($header-min-height - 30px) * 0.5) 0,
-		"md": (($header-min-height - 30px) * 0.5) 0,
-		"lg": (($header-min-height - 34px) * 0.5) 0,
-		"xl": (($header-min-height - 36px) * 0.5) 0
+		"xs": 13px 0,
+		"sm": 20px 0,
+		"md": 20px 0,
+		"lg": 18px 0,
+		"xl": 17px 0
 	)
 	
 );
@@ -430,15 +368,15 @@ $header-nav: (
 		"xl": 1
 	),
 	"padding": (
-		"xs": (($header-min-height--small - 26px) * 0.5) 0,
-		"sm": 0 0 (($header-min-height - 22px) * 0.5) 0,
-		"md": 0 0 (($header-min-height - 22px) * 0.5) 0,
-		"lg": 0 0 (($header-min-height - 26px) * 0.5) 0,
-		"xl": 0 0 (($header-min-height - 30px) * 0.5) 0
+		"xs": 15px 0,
+		"sm": 0 0 24px 0,
+		"md": 0 0 24px 0,
+		"lg": 0 0 22px 0,
+		"xl": 0 0 20px 0
 	),
 	"min-height": (
-		"xs": $header-min-height--small,
-		"sm": $header-min-height--small,
+		"xs": 56px,
+		"sm": 56px,
 		"md": 0,
 		"lg": 0,
 		"xl": 0

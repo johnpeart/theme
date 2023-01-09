@@ -29,12 +29,13 @@ body {
 }
 
 main {
+	// Height = 100vh - header (height) - footer (padding-top)
 	@include toggleSizes(
 		min-height, 
-		calc(100vh - #{$header-min-height--small} - #{$footer--padding-top--xs}), 
-		calc(100vh - #{$header-min-height} - #{$footer--padding-top--sm}),
-		calc(100vh - #{$header-min-height} - #{$footer--padding-top--md}),
-		calc(100vh - #{$header-min-height} - #{$footer--padding-top--lg}), 
-		calc(100vh - #{$header-min-height} - #{$footer--padding-top--xl})
+		calc(100vh - 56px - 60px), 
+		calc(100vh - 70px - 90px),
+		calc(100vh - 70px - 90px),
+		calc(100vh - 70px - 120px), 
+		calc(100vh - 70px - 120px)
 	);
 }

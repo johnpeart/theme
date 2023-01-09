@@ -2,19 +2,19 @@ footer#site-footer {
 	@include toggleColor(background, "background");
 	@include toggleSizes(
 		padding-top,
-		$footer--padding-top--xs,
-		$footer--padding-top--sm,
-		$footer--padding-top--md,
-		$footer--padding-top--lg,
-		$footer--padding-top--xl
+		60px,
+		90px,
+		90px,
+		120px,
+		120px
 	);
 	@include toggleSizes(
 		padding-bottom,
-		$footer--padding-bottom--xs,
-		$footer--padding-bottom--sm,
-		$footer--padding-bottom--md,
-		$footer--padding-bottom--lg,
-		$footer--padding-bottom--xl
+		45px,
+		45px,
+		60px,
+		60px,
+		60px
 	);
 }
 
