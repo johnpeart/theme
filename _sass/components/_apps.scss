@@ -105,13 +105,13 @@ figure.app-sheet {
 	dd.app-sheet--app--name {
 		font-weight: 		bold;
 		font-style: 		normal;
-		text-align: 		center;
+		text-align: 		left;
 		text-decoration: 	none;
 		text-transform: 	none;
 		
 		@include font($h2);
 		line-height: 1;
-		padding: 0 0 5px 0;
+		padding: 0 0 5px 0 !important;
 	}
 	
 	dd.app-sheet--app--description {
