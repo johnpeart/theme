@@ -256,4 +256,9 @@ figure.app-totals {
 		padding: 0;
 	}
 	
+	dt.app-totals--app--price,
+	dd.app-totals--app--price {
+		font-weight: bold !important;
+	}
+	
 }
