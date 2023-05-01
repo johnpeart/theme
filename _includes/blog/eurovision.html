@@ -31,11 +31,18 @@
 <summary>
 <h3>
     <span class="entry">
+        <!-- <span class="emoji">{{ entry.emoji }}</span> -->
         <span class="country">{{ entry.country | smartify }}</span>
         <span class="song-artist">{{ entry.song | smartify }} by {{ entry.artist | smartify }}</span>
     </span>
 </h3>
 </summary>
+{% if entry.lyric %}
+<blockquote class="lyric">
+    {{ entry.lyric | markdownify }}
+</blockquote>
+{% endif %}
+
 {{ entry.commentary | markdownify }}
 </details>
 {% endfor %}

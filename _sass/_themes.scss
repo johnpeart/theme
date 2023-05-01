@@ -1,6 +1,9 @@
 body.theme-eurovision {
 	details {
-		
+		blockquote.lyric * {
+			font-style: italic;
+			text-align: center;
+		}	
 	}
 	
 	summary {
