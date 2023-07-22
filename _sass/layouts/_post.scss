@@ -322,6 +322,84 @@ body[id$='post'] {
 		}
 
 	}
+	
+	aside.post-fediverse {
+		
+		display: grid;
+		
+		@include md-down() {
+			grid-template-rows: auto auto;
+			grid-gap: 30px;
+		}
+		
+		@include md-up() {
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 40px;
+		}
+						
+		@include toggleSizes(
+			margin-top,
+			45px,
+			60px,
+			60px,
+			90px,
+			120px
+		);
+		
+		* {
+			margin: unset;
+			padding: unset;
+		}
+		div.post-activity {
+			display: grid;
+			
+			grid-template-columns: auto 1fr;
+			grid-gap: 15px;
+			
+			@include toggleColor(background, "default-element-background");
+			@include toggleSizes(
+				border-radius,
+				15px,
+				15px,
+				20px,
+				20px,
+				20px
+			);
+			@include toggleSizes(
+				padding,
+				15px,
+				15px,
+				15px,
+				15px,
+				15px
+			);			
+			@include toggleSizes(
+				margin-top,
+				10px,
+				10px,
+				10px,
+				10px,
+				10px
+			);
+		}
+		
+		div.post-activity-icon {
+			
+		}
+		
+		div.post-activity-activities {
+			
+		}
+		
+		img {
+			margin: unset;
+		}
+		
+		p.webmentions__not-found {
+			line-height: 50px;
+		}
+		
+	}
 
 	footer.post-meta {
 		display: grid;
@@ -341,11 +419,11 @@ body[id$='post'] {
 						
 		@include toggleSizes(
 			margin-top,
-			45px,
-			60px,
-			60px,
-			90px,
-			120px
+			30px,
+			30px,
+			30px,
+			30px,
+			30px
 		);
 		
 		div.post-author-card {
