@@ -347,9 +347,14 @@ body[id$='post'] {
 		);
 		
 		* {
-			margin: unset;
-			padding: unset;
+			display: block;
+			position: relative;
+			
+			margin: 0;
+			padding: 0;
+			line-height: 1;
 		}
+		
 		div.post-activity {
 			display: grid;
 			
@@ -384,19 +389,29 @@ body[id$='post'] {
 		}
 		
 		div.post-activity-icon {
-			
+			display: grid;
+			position: relative;
+			margin: 0;
+			padding: 0;
+			align-content: center;
 		}
 		
-		div.post-activity-activities {
+		div.webmentions {
+			display: grid;
+			position: relative;
+			margin: 0;
+			padding: 0;
 			
+			height: 100%;
+			align-content: center;
 		}
 		
 		img.webmention__author__photo {
-			margin: unset;
+			
 		}
 		
 		p.webmentions__not-found {
-			line-height: 50px;
+			
 		}
 		
 	}
