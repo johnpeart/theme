@@ -18,9 +18,9 @@ figure {
 		width,
 		100%,
 		100%,
-		(container("md") - 66px),
-		(container("lg") - 50px),
-		(container("xl") - 100px)
+		(container("md") + 100px),
+		(container("lg") + 150px),
+		(container("xl") + 200px)
 	);
 	@include toggleSizes(
 		max-width,
@@ -30,22 +30,9 @@ figure {
 		unset,
 		unset
 	);
-	@include toggleSizes(
-	margin-left,
-		0,
-		0,
-		-65px,
-		-90px,
-		-115px
-	);
-	@include toggleSizes(
-	margin-right,
-		0,
-		0,
-		-65px,
-		-90px,
-		-115px
-	);
+
+	@include toggleSizes(margin-left, 0, 0, -50px, -90px, -115px);
+	@include toggleSizes(margin-right, 0, 0, -50px, -90px, -115px);
 	
 	figcaption {
 		margin-top: $container-padding;
@@ -115,43 +102,21 @@ figure {
 	
 }
 
-img {
+p > img {
 	display: block;
 	position: relative;
-	box-sizing: 	content-box;
 	
 	@include toggleSizes(
 		width,
 		100%,
 		100%,
-		(container("md") - 66px),
-		(container("lg") - 50px),
-		(container("xl") - 100px)
+		(container("md") + 100px),
+		(container("lg") + 150px),
+		(container("xl") + 200px)
 	);
-	@include toggleSizes(
-		max-width,
-		100%,
-		100%,
-		unset,
-		unset,
-		unset
-	);
-	@include toggleSizes(
-		margin-left,
-		0,
-		0,
-		-65px,
-		-90px,
-		-115px
-	);
-	@include toggleSizes(
-		margin-right,
-		0,
-		0,
-		-65px,
-		-90px,
-		-115px
-	);
-			
-	height: auto;
+	@include toggleSizes(max-width, 100%, 100%, unset, unset, unset);
+	@include toggleSizes(margin-left, 0, 0, -50px, -90px, -115px);
+	@include toggleSizes(margin-right, 0, 0, -50px, -90px, -115px);
+	@include toggleSizes(left, 0, 0, 0, 0, 0);
+	@include toggleSizes(right, 0, 0, 0, 0, 0);
 }
