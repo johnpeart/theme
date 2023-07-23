@@ -21,7 +21,8 @@
     padding:0;
 }
 .webmentions__item {
-    margin-bottom: $container-padding;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 /* Single Webmention */

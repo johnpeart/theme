@@ -697,6 +697,11 @@ body[id$='post'] {
 			
 			height: 100%;
 			align-content: center;
+			
+			* {
+				display: block;
+				position: relative;
+			}
 		}
 		
 	}
