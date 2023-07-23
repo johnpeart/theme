@@ -16,7 +16,7 @@
 
 	<!-- Base URLS, duplicate URLs and feeds -->
 	<meta name="url" content="{{ site.url | append: site.baseurl }}">
-	<base href="{{ site.url | append: site.baseurl }}">
+	<base href="{{ site.url | append: site.baseurl | append: page.url | replace: '/index.html','' }}">
 	<!-- Links to top level resource in an hierarchical structure -->
 	<link rel="index" href="{{ site.url | append: site.baseurl }}">
 	<link rel="canonical" href="{{ site.url | append: site.baseurl | append: page.url | replace: '/index.html','' }}">
