@@ -3,7 +3,11 @@
 	<nav aria-label="Menu">
 
 		<p id="header--wordmark">
-			<a href="{{ domain }}" class="header--wordmark-link">John Peart</a>
+			{% if jekyll.environment == "development" %}
+				<a href="//localhost:4000" class="header--wordmark-link">John Peart</a>
+			{% else %}
+				<a href="//www.johnpea.art" class="header--wordmark-link">John Peart</a>
+			{% endif %}
 		</p>
 
 		{% unless site.menu-header == false %}
