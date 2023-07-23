@@ -21,7 +21,7 @@
     padding:0;
 }
 .webmentions__item {
-    margin-bottom: 2rem;
+    margin-bottom: $container-padding;
 }
 
 /* Single Webmention */
@@ -30,17 +30,17 @@
     display:block;
 }
 .webmention__meta {
-    margin-bottom:.5rem;
+    margin-bottom: $container-padding;
 }
 .webmention__author {
-    margin-right:.25rem;
+    margin-right: $container-padding;
 }
 .webmention__author__photo {
     height: 50px;
     width: 50px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right:.5rem;
+    margin-right: $container-padding;
 }
 .webmention__pubdate {
     font-style: italic;

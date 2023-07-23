@@ -22,28 +22,8 @@ layout: default
 			{{ content }}
 				
 		</section>
-		
-		<aside class="post-fediverse">
-			
-			{% include fediverse/activity.html %}
-			
-		</aside>
 				
-		<footer class="post-meta">
-			
-			{% include fediverse/author-card.html %}
-			
-			<dl class="meta-data">
-				<dt class="post-date">Published</dt>
-				<dd>{{ page.date | date: '%-d %B %Y' }}</dd>
-			
-				{% if page.categories %}
-				<dt class="post-categories">Categories</dt>
-				<dd>{% for categories in page.categories %}<span class="p-category">{{ categories }}</span>{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
-				{% endif %}
-			</dl>
-						
-		</footer>
+		{% include blog/footer.html %}
 		
 	</article>
 	

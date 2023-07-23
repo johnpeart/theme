@@ -1,0 +1,21 @@
+<footer class="post-meta">
+	
+	<dl class="meta-data">
+		<div class="meta-data meta-data-details">
+			<dt class="post-date">Published</dt>
+			<dd>{{ page.date | date: '%-d %B %Y' }}</dd>
+		</div>
+	
+		{% if page.categories %}
+		<div class="meta-data meta-data-details">
+			<dt class="post-categories">Categories</dt>
+			<dd>{% for categories in page.categories %}<span class="p-category">{{ categories }}</span>{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
+		</div>
+		{% endif %}
+	</dl>
+	
+	{% include fediverse/activity.html %}
+	
+	{% include fediverse/author-card.html %}
+				
+</footer>

@@ -322,136 +322,96 @@ body[id$='post'] {
 		}
 
 	}
-	
-	aside.post-fediverse {
-		
-		display: grid;
-		
-		@include md-down() {
-			grid-template-rows: auto auto;
-			grid-gap: 30px;
-		}
-		
-		@include md-up() {
-			grid-template-columns: 1fr 1fr;
-			grid-gap: 40px;
-		}
-						
-		@include toggleSizes(
-			margin-top,
-			45px,
-			60px,
-			60px,
-			90px,
-			120px
-		);
-		
-		* {
-			display: block;
-			position: relative;
-			
-			margin: 0;
-			padding: 0;
-			line-height: 1;
-		}
-		
-		div.post-activity {
-			display: grid;
-			
-			grid-template-columns: auto 1fr;
-			grid-gap: 15px;
-			
-			@include toggleColor(background, "default-element-background");
-			@include toggleSizes(
-				border-radius,
-				15px,
-				15px,
-				20px,
-				20px,
-				20px
-			);
-			@include toggleSizes(
-				padding,
-				15px,
-				15px,
-				15px,
-				15px,
-				15px
-			);			
-			@include toggleSizes(
-				margin-top,
-				10px,
-				10px,
-				10px,
-				10px,
-				10px
-			);
-		}
-		
-		div.post-activity-icon {
-			display: grid;
-			position: relative;
-			margin: 0;
-			padding: 0;
-			align-content: center;
-		}
-		
-		div.webmentions {
-			display: grid;
-			position: relative;
-			margin: 0;
-			padding: 0;
-			
-			height: 100%;
-			align-content: center;
-		}
-		
-		img.webmention__author__photo {
-			
-		}
-		
-		p.webmentions__not-found {
-			
-		}
-		
-	}
 
 	footer.post-meta {
 		display: grid;
 		
-		
-		@include md-down() {
-			grid-template-rows: auto auto;
-			grid-template-areas: "meta" "author";
-			grid-gap: 30px;
-		}
-		
-		@include md-up() {
-			grid-template-columns: 1fr 1fr;
-			grid-template-areas: "author meta";
-			grid-gap: 40px;
-		}
-						
 		@include toggleSizes(
 			margin-top,
-			30px,
-			30px,
-			30px,
-			30px,
-			30px
+			$container-padding * 2,
+			$container-padding * 2,
+			$container-padding * 3,
+			$container-padding * 4,
+			$container-padding * 5
+		)
+		
+		@include toggleSizes(
+			grid-template-columns,
+			1fr,
+			1fr,
+			1fr,
+			1fr 1fr,
+			1fr 1fr
+		);
+		
+		@include toggleSizes(
+			grid-template-rows,
+			auto auto auto auto,
+			auto auto auto auto,
+			auto auto auto auto,
+			auto,
+			auto
+		);
+		
+		@include toggleSizes(
+			grid-template-areas,
+			"meta" "likes" "reposts" "author",
+			"meta" "likes" "reposts" "author",
+			"meta" "likes" "reposts" "author",
+			"likes reposts" "meta author",
+			"likes reposts" "meta author"
+		);
+		
+		@include toggleSizes(
+			grid-gap,
+			$container-padding,
+			$container-padding,
+			$container-padding,
+			$container-padding,
+			$container-padding
 		);
 		
 		div.post-author-card {
 			display: grid;
 			grid-area: author;
+			
+			align-content: center;
+			
 			@include toggleSizes(
 				padding,
-				15px,
-				15px,
-				15px,
-				15px,
-				15px
+				$container-padding,
+				$container-padding,
+				$container-padding,
+				$container-padding,
+				$container-padding
 			);
+			
+			@include toggleSizes(
+				grid-template-columns,
+				1fr 2fr,
+				57px auto auto,
+				57px auto auto,
+				114px 1fr,
+				140px 1fr
+			);
+			
+			@include toggleSizes(
+				grid-template-rows,
+				auto auto,
+				auto,
+				auto,
+				auto auto,
+				auto auto
+			);
+			
+			@include toggleSizes(
+				grid-template-areas,
+				"memoji author" "icons icons",
+				"memoji author icons",
+				"memoji author icons",
+				"memoji author" "memoji icons",
+				"memoji author" "memoji icons"
+			)
 			
 			// border-top: 3px solid; 
 			@include toggleColor(background, "default-element-background")
@@ -464,28 +424,31 @@ body[id$='post'] {
 				20px
 			);
 			
-			@include sm-down() {
-				grid-template-rows: auto auto;
-				grid-template-columns: 1fr;
-				
-				align-items: center;
-				justify-items: center;
-				text-align: center;
-			}
-			@include md-up() {
-				grid-template-rows: 1fr;
-				grid-template-columns: 140px auto;
-				grid-gap: 30px;
-				
-				div.author-details {
-					align-content: center;
-					display: grid;
-				}
-			}
+			@include toggleSizes(
+				grid-gap,
+				$container-padding * 2,
+				$container-padding * 2,
+				$container-padding * 2,
+				$container-padding * 2,
+				$container-padding * 2
+			);
 		}
 
 		p, dl, dt, dd {
 			@include font($body--small);
+		}
+		
+		div.author-details {
+			grid-area: author;
+			display: grid;
+			@include toggleSizes(
+				justify-items,
+				flex-start,
+				flex-start,
+				flex-start,
+				flex-start,
+				flex-start
+			);
 		}
 		
 		p.author--wordmark {
@@ -505,8 +468,10 @@ body[id$='post'] {
 		}
 		
 		a.memoji {
-			display: inline-block;
+			grid-area: memoji;
+			display: grid;
 			position: relative;
+			justify-self: center;
 		}
 		
 		img.footer--memoji {
@@ -518,20 +483,23 @@ body[id$='post'] {
 			margin: 0;
 			padding: 0;
 			
-			width: 57px;
-			height: 57px;
-
-			@include md-up {
-				width: 140px;
-				height: 140px;
-
-			}
 			
-			background: map-get($colors, "gray-100");
-			
-			@include darkMode() {
-				background:	map-get($colors, "gray-900");
-			}
+			@include toggleSizes(
+				width,
+				57px,
+				57px,
+				57px,
+				114px,
+				140px
+			);
+			@include toggleSizes(
+				height,
+				57px,
+				57px,
+				57px,
+				114px,
+				140px
+			);
 
 			-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 			filter: grayscale(100%);
@@ -547,14 +515,25 @@ body[id$='post'] {
 		}
 		
 		.author--icons {
+			grid-area: icons;
 			
-			display: block;
+			display: grid;
 			position: relative;
-			width: 100%;
-			height: auto;
+			
+			grid-template-columns: auto auto auto auto auto;
+			align-items: center;
+			
+			@include toggleSizes(
+				justify-items,
+				center,
+				flex-end,
+				flex-end,
+				flex-start,
+				flex-start
+			);
+			
 			padding: 0;
 			margin: 0;
-			margin-top: 20px;
 						
 			* {
 				line-height: 30px !important;
@@ -629,39 +608,95 @@ body[id$='post'] {
 		
 		dl.meta-data {
 			grid-area: meta;
-			@include clearfix;
+			display: grid;
+			grid-gap: $container-padding;
+		}
+		div.meta-data-details {
+			@include toggleColor(background, "default-element-background");
 			@include toggleSizes(
-				padding-top,
+				border-radius,
 				15px,
 				15px,
-				15px,
-				15px,
-				15px
+				20px,
+				20px,
+				20px
 			);
-			border-top: 3px solid; 
-			@include toggleColor(border-color, "secondary-text--color");
+			@include toggleSizes(
+				padding,
+				$container-padding,
+				$container-padding,
+				$container-padding,
+				$container-padding,
+				$container-padding
+			);
 		}
 		dt, dd {
-			display: 	block;
-			@include toggleColor(border-color, "secondary-text--color");
+			
 		}
 		dt {
 			font-weight: 	bold;
 		}
 		dd {
 			text-transform: capitalize;
+		}
+		
+		
+		
+		aside.post-fediverse {
+			
+			* {
+				display: block;
+				position: relative;
+				
+				margin: 0;
+				padding: 0;
+				line-height: 1;
+			}
+			
+		}
+			
+		aside.post-activity {
+			display: grid;
+			
+			grid-template-columns: auto 1fr;
+			grid-gap: $container-padding;
+			
+			@include toggleColor(background, "default-element-background");
 			@include toggleSizes(
-				padding-bottom,
-				11px,
-				11px,
-				11px,
-				13px,
-				15px
+				border-radius,
+				15px,
+				15px,
+				20px,
+				20px,
+				20px
+			);
+			@include toggleSizes(
+				padding,
+				$container-padding,
+				$container-padding,
+				$container-padding,
+				$container-padding,
+				$container-padding
 			);
 			
-			&:last-of-type {
-				padding-bottom: 0;
-			}
+		}
+		
+		aside.post-activity-icon {
+			display: grid;
+			position: relative;
+			margin: 0;
+			padding: 0;
+			align-content: center;
+		}
+		
+		div.webmentions {
+			display: grid;
+			position: relative;
+			margin: 0;
+			padding: 0;
+			
+			height: 100%;
+			align-content: center;
 		}
 		
 	}
