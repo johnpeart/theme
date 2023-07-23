@@ -256,6 +256,46 @@ $body: (
 	
 );
 
+$list: (
+	
+	"font-size": (
+		"xs": 22px,
+		"sm": 22px,
+		"md": 22px,
+		"lg": 26px,
+		"xl": 30px
+	),
+	"line-height": (
+		"xs": 1.25,
+		"sm": 1.25,
+		"md": 1.25,
+		"lg": 1.25,
+		"xl": 1.2
+	),
+	"padding": (
+		"xs": 0 0 0 0,
+		"sm": 0 0 0 0,
+		"md": 0 0 0 0,
+		"lg": 0 0 0 0,
+		"xl": 0 0 0 0
+	),
+	"font-weight": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	),
+	"font-style": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	)
+	
+);
+
 
 $body--lead: (
 	

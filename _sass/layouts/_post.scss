@@ -314,7 +314,8 @@ body[id$='post'] {
 			);
 		}
 		li, p {
-			@include font($body--small)
+			@include font($body--small);
+			margin-bottom: $container-padding;
 		}
 		a.reversefootnote {
 			text-decoration: none;

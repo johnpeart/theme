@@ -45,11 +45,7 @@ ol {
 
 li {
 
-	@include font($body);
-	
-	padding-bottom: 0;
-
-	font-weight:		normal;
+	@include font($list);
 
 	&.lead {
 		padding-bottom: 	0;
