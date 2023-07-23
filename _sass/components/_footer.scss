@@ -212,16 +212,16 @@ footer#site-footer img.footer--memoji {
 			padding: 0;
 						
 			path {
-				@include toggleColor(fill, "color");
+				@include toggleColor(fill, "icon-color");
 			}
 		}
 		
 		
 		&:link svg path {
-			fill: map-get($colors, "gray-400");
+			@include toggleColor(fill, "icon-color");
 		}
 		&:visited svg path {
-			fill: map-get($colors, "gray-400");
+			@include toggleColor(fill, "icon-color");
 		}
 		&:hover svg path {
 			@include toggleColor(fill, "link-color--hover");

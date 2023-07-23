@@ -50,3 +50,12 @@
 .webmention__author .u-url {
     display: inline-block;
 }
+
+.post-activity-icon svg {
+    display: block;
+    position: relative;
+                
+    path {
+        @include toggleColor(fill, "icon-color");
+    }
+}
