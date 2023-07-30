@@ -1,6 +1,6 @@
 <meta property="og:url" 				content="{{ site.url | append: site.baseurl | append: page.url | replace: 'index.html','' }}">
 
-<meta property="og:type" 			content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+<meta property="og:type" 			content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
 
 <meta property="og:title" 			content="{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
 
@@ -14,7 +14,7 @@
 
 <meta property="og:image:height" 	content="630">
 
-<meta property="og:rich_attachment" content="true" />
+<meta property="og:rich_attachment" content="true">
 
 <meta property="og:description" 		content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description  | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
 
@@ -22,6 +22,6 @@
 
 <meta property="og:locale" 			content="en_GB">
 
-<meta property="article:author" 		content="John Peart" />
+<meta property="article:author" 		content="John Peart">
 
-<meta property="article:publisher" 	content="John Peart" />
+<meta property="article:publisher" 	content="John Peart">
