@@ -690,21 +690,6 @@ body[id$='post'] {
 			align-content: center;
 		}
 		
-		div.webmentions {
-			display: grid;
-			position: relative;
-			margin: 0;
-			padding: 0;
-			
-			height: 100%;
-			align-content: center;
-			
-			* {
-				display: block;
-				position: relative;
-			}
-		}
-		
 	}
 
 	iframe {

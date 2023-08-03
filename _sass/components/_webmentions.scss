@@ -1,9 +1,20 @@
 /* Webmention Section */
 
 .webmentions {
-    display:block;
-    text-align: left;
+    display: grid;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    
+    height: 100%;
+    align-content: center;
+    
+    * {
+        display: block;
+        position: relative;
+    }
 }
+
 .webmentions__facepile {
     display:flex;
     align-items: center;
@@ -19,6 +30,12 @@
     @include toggleColor(border-color, "icon-color");
 }
 .webmentions__list {
+    display: grid;
+    grid-auto-columns: 50px;
+    grid-auto-rows: 50px; 
+    grid-gap: $container-padding;
+    grid-auto-flow: column; 
+
     list-style-type: none;
     padding:0;
 }
