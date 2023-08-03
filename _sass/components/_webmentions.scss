@@ -1,4 +1,77 @@
 /* Webmention Section */
+    
+.post-activity {
+    display: grid;
+    
+    grid-template-columns: auto 1fr;
+    grid-gap: $container-padding;
+    
+    @include toggleColor(background, "default-element-background");
+    @include toggleSizes(
+        border-radius,
+        15px,
+        15px,
+        20px,
+        20px,
+        20px
+    );
+    @include toggleSizes(
+        padding,
+        $container-padding,
+        $container-padding,
+        $container-padding,
+        $container-padding,
+        $container-padding
+    );
+    
+}
+
+a.post-activity-icon {
+    display: grid;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    
+    svg.activity-icon path {
+        @include toggleColor(fill, "icon-color");
+        transform-origin: center;
+        transform: scale(1);
+        transition: 0.25s all;
+    }
+    
+    &:hover {
+        svg.activity-icon path {
+            @include toggleColor(fill, "link-color--hover");
+            transition: 0.1s all;
+            transform: scale(1.1);
+        }
+    }
+    
+    &:focus {
+        @include toggleColor(background, "link-background--focus");
+        outline: 2px solid;
+        @include toggleColor(outline-color, "outline-color");
+        svg.activity-icon path {
+            @include toggleColor(fill, "link-color--focus");
+            transition: 0.1s all;
+            transform: scale(1.1);
+        }
+    }
+    &:active {
+        outline: 2px solid;
+        @include toggleColor(outline-color, "outline-color");
+            @include toggleColor(background, "link-background--focus");
+            svg.activity-icon path {
+                @include toggleColor(fill, "link-color--focus");
+                transform-origin: center;
+                transform: scale(1.2);
+                transition: 0.1s all;
+            }
+        }
+    
+}
+
 
 .webmentions {
     display: grid;
@@ -7,6 +80,7 @@
     padding: 0;
     
     height: 100%;
+    max-width: 100%;
     align-content: center;
     
     * {
@@ -31,11 +105,19 @@
 }
 .webmentions__list {
     display: grid;
-    grid-auto-columns: 50px;
-    grid-auto-rows: 50px; 
+    
     grid-gap: $container-padding;
-    grid-auto-flow: column; 
-
+    
+    @include toggleSizes(
+        grid-template-columns,
+        50px 50px 50px,
+        50px 50px 50px 50px 50px 50px 50px,
+        50px 50px 50px 50px 50px 50px 50px,
+        50px 50px 50px 50px,
+        50px 50px 50px 50px
+    );
+    grid-auto-rows: 50px;
+    
     list-style-type: none;
     padding:0;
 }
@@ -47,13 +129,17 @@
 /* Single Webmention */
 
 .webmention {
-    display:block;
+    display: flex;
 }
 .webmention__meta {
     margin-bottom: $container-padding;
 }
 .webmention__author {
     margin-right: $container-padding;
+    
+    a.u-url {
+        max-width: 50px;
+    }
 }
 .webmention__author__photo {
     height: 50px;
@@ -75,8 +161,4 @@
 .post-activity-icon svg {
     display: block;
     position: relative;
-                
-    path {
-        @include toggleColor(fill, "icon-color");
-    }
 }

@@ -334,7 +334,7 @@ body[id$='post'] {
 			$container-padding * 3,
 			$container-padding * 4,
 			$container-padding * 5
-		)
+		);
 		
 		@include toggleSizes(
 			grid-template-columns,
@@ -639,55 +639,6 @@ body[id$='post'] {
 		}
 		dd {
 			text-transform: capitalize;
-		}
-		
-		
-		
-		aside.post-fediverse {
-			
-			* {
-				display: block;
-				position: relative;
-				
-				margin: 0;
-				padding: 0;
-				line-height: 1;
-			}
-			
-		}
-			
-		aside.post-activity {
-			display: grid;
-			
-			grid-template-columns: auto 1fr;
-			grid-gap: $container-padding;
-			
-			@include toggleColor(background, "default-element-background");
-			@include toggleSizes(
-				border-radius,
-				15px,
-				15px,
-				20px,
-				20px,
-				20px
-			);
-			@include toggleSizes(
-				padding,
-				$container-padding,
-				$container-padding,
-				$container-padding,
-				$container-padding,
-				$container-padding
-			);
-			
-		}
-		
-		aside.post-activity-icon {
-			display: grid;
-			position: relative;
-			margin: 0;
-			padding: 0;
-			align-content: center;
 		}
 		
 	}
