@@ -1,5 +1,12 @@
 body#editor {
 	
+	
+	* {
+		&.hidden {
+			display: none;
+		}
+	}
+	
 	h1.page-title {
 		padding-top: 0;
 	}
@@ -18,6 +25,7 @@ body#editor {
 				right
 			);
 			
+			margin-right: 0;
 			ul {
 				right: 0;
 			}
@@ -33,12 +41,103 @@ body#editor {
 	
 	section {
 		padding: $container-padding 0;
-		margin: 0 $container-padding;
+		margin: $container-padding 0;
 	}
 	
 	
 	h1.page-title {
 		text-align: center;
+	}
+	
+	dialog#dialog-githubFiles {		
+		width: 100vw;
+		height: 100vh;
+		max-height: unset;
+		max-width: unset;
+		
+		padding: $container-padding 0;
+		margin: 0;
+		
+		border: none;
+		background: none;
+				
+		&::backdrop {
+			@include glass("glass");
+		}
+		
+		.button.button-warning {
+			margin-bottom: $container-padding;
+		}
+	}
+	
+	h2.section-githubFiles--header {
+		@include toggleColor(background, "default-element-background--hover");
+		@include toggleColor(color, "color");
+		padding: $container-padding ($container-padding * 2);
+		border-radius: 8px;
+		text-align: left;
+	}
+	
+	ul.section-githubFiles--files-list {
+		// @include toggleColor(background, "default-element-background");
+		border-radius: 8px;
+		padding: $container-padding 0; 
+		
+		li {
+			margin-bottom: $container-padding * 0.5;
+			background: none;
+		}
+		li button {
+			border-radius: 8px;
+		}
+	}
+	
+	button.files-list-button {
+		display: block;
+		width: 100%;
+		
+		@include toggleColor(background, "default-element-background");
+		@include toggleColor(color, "dropdown-menu--color");
+		font-weight: normal !important;
+		text-align: left;
+		
+		padding: ($container-padding) ($container-padding * 2) !important;
+		margin: 0 !important;
+		
+		border-radius: 0;
+		border-bottom: 1px solid;
+		@include toggleColor(border-color, "default-element-background--hover");
+		
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow-x: hidden;
+		
+		@media (pointer:coarse) {
+			overflow-x: scroll;
+		}
+		
+		&:hover {
+			@include toggleColor(background, "dropdown-menu--background--hover");
+			@include toggleColor(color, "dropdown-menu--color--hover");
+		}
+		
+		&:focus {
+			@include toggleColor(background, "dropdown-menu--background--focus");
+			outline: map-get($form-elements, "border-width-form-element") solid;
+			@include toggleColor(outline-color, "dropdown-menu--outline--focus");
+			outline-offset: map-get($form-elements, "border-width-form-element");
+			@include toggleColor(color, "dropdown-menu--color--focus");
+			cursor: pointer;
+		}
+		
+		&:active {
+			@include toggleColor(background, "dropdown-menu--background--focus");
+			outline: map-get($form-elements, "border-width-form-element") solid;
+			@include toggleColor(outline-color, "dropdown-menu--outline--focus");
+			outline-offset: map-get($form-elements, "border-width-form-element");
+			@include toggleColor(color, "dropdown-menu--color--hover");
+			cursor: pointer;
+		}
 	}
 	
 	select {

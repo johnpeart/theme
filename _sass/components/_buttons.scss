@@ -94,7 +94,7 @@ a.button {
 	}
 	
 	&.dropdown-menu--button {
-		@include toggleColor(background, "dropdown-menu--background");
+		@include toggleColor(background, "dropdown-menu--button--background");
 		@include toggleColor(color, "dropdown-menu--color");
 		font-weight: normal;
 		text-align: left;

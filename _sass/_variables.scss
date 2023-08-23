@@ -214,7 +214,8 @@ $colors: (
 	"dark--code-background":					#495057,
 	
 	/// drop down menu
-	"dropdown-menu--background":					rgba(250, 250, 250, 0.25),
+	"dropdown-menu--background":					#DEE2E6,
+	"dropdown-menu--glass":							rgba(250, 250, 250, 0.25),
 	"dropdown-menu--button--background":			transparent,
 	"dropdown-menu--color":							#1D1D1D,
 	"dropdown-menu--background--hover":				#009FE3,
@@ -223,7 +224,8 @@ $colors: (
 	"dropdown-menu--color--hover":					#FAFAFA,
 	"dropdown-menu--color--focus":					#FAFAFA,
 	
-	"dark--dropdown-menu--background":					rgba(33, 37, 41, 0),
+	"dark--dropdown-menu--background":					#343A40,
+	"dark--dropdown-menu--glass":						rgba(33, 37, 41, 0.25),
 	"dark--dropdown-menu--button--background":			transparent,
 	"dark--dropdown-menu--color":						#FAFAFA,
 	"dark--dropdown-menu--background--hover":			#009FE3,
@@ -231,6 +233,10 @@ $colors: (
 	"dark--dropdown-menu--outline--focus":				#009FE3,
 	"dark--dropdown-menu--color--hover":				#FAFAFA,
 	"dark--dropdown-menu--color--focus":				#FAFAFA,
+	
+	// glass
+	"glass":							rgba(33, 37, 41, 0.25),
+	"dark--glass":						rgba(250, 250, 250, 0.25),
 	
 );
 

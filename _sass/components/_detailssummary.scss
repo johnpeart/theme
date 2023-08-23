@@ -281,7 +281,7 @@ ul.dropdown-menu {
 	padding: 0;
 	margin: $container-padding 0;
 	
-	@include glass("dropdown-menu--background");
+	@include glass("dropdown-menu--glass", 20px);
 
 	border-radius: 8px;
 	list-style: none;
