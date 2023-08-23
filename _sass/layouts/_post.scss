@@ -415,7 +415,7 @@ body[id$='post'] {
 			)
 			
 			// border-top: 3px solid; 
-			@include toggleColor(background, "default-element-background")
+			@include toggleColor(background, "default-element-background");
 			@include toggleSizes(
 				border-radius,
 				15px,

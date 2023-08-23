@@ -1,13 +1,13 @@
 legend {
-	@extend h2;
-	text-align: left;
+	@include font($legend);
+	font-weight: bold;
+	text-align: center;
 }
 
 span.sub-legend {
-	@extend h3;
+	@include font($sub-legend);
 	display: block;
-	text-align: left;
-	padding: 36px 0 30px;
+	text-align: center;
 }
 
 legend > span.sub-legend {
@@ -42,7 +42,7 @@ label {
 	@extend p;
 	display: block;
 	font-weight: 600;
-	padding-bottom: 0;
+	padding-bottom: $container-padding;
 
 	&.hidden {
 		@include sr-only;
@@ -69,10 +69,10 @@ textarea {
 	width: 100%;
 	min-height: 40px;
 	
-	margin-top: 15px;
+	margin-bottom: $container-padding * 2;
 	padding: map-get($form-elements, "input-padding");
 
-	border-radius: 0;
+	border-radius: 8px;
 
 	@include toggleColor(background, "input-background");
 	@include toggleColor(color, "input-color");

@@ -148,3 +148,171 @@ summary {
 	@include clearfix;
 
 }
+
+
+
+
+
+// Drop down menu
+details.dropdown-menu {
+	
+	@include toggleSizes(
+		display, 
+		block, 
+		block, 
+		inline, 
+		inline, 
+		inline
+	);
+	
+	@include toggleSizes(
+		width, 
+		100%, 
+		100%, 
+		auto, 
+		auto, 
+		auto
+	);
+	
+	@include toggleSizes(
+		margin, 
+		0 0 $container-padding 0, 
+		0 0 $container-padding 0, 
+		0, 
+		0, 
+		0
+	);
+		
+	position: relative;
+	padding: 0;
+
+	&[open] > summary::-webkit-details-marker,
+	&[open] > summary::marker {
+		display: none;
+		list-style-image: none;
+		content: '';
+	}
+
+	&[open] {
+		padding-bottom: 0;
+	}
+
+	*:last-child {
+		padding-bottom: 0;
+	}
+}
+
+summary.dropdown-menu {
+
+	/* Hide the marker completely. */
+	list-style-image: none;
+	&::marker,
+	&::-webkit-details-marker {
+	  display: none;
+	  list-style-image: none;
+	  content: '';
+	  width: 0;
+	  height: 0;
+	}
+
+	&:before {
+		display: none;
+	}
+
+	display: block;
+	position: relative;
+	text-align: left;
+	box-sizing: border-box;
+	
+	min-width: 100px;
+	
+
+	@include toggleSizes(
+		padding,
+		($container-padding * 0.75) ($container-padding * 2),
+		($container-padding * 0.75) ($container-padding * 2),
+		($container-padding * 0.75) ($container-padding * 2),
+		($container-padding * 0.75) ($container-padding * 2),
+		($container-padding * 0.75) ($container-padding * 2)
+	);
+
+	@include toggleColor(background, "dropdown-menu--background");
+		
+	cursor: pointer;
+	
+	border-top: none;
+	
+	border-radius: 8px;
+
+	&:hover {
+		@include toggleColor(color, "link-color--hover");
+	}
+	&:focus {
+		@include toggleColor(background, "dropdown-menu--background--focus");
+		@include toggleColor(color, "dropdown-menu--color--focus");
+		@include toggleColor(outline-color, "dropdown-menu--outline--focus");
+		border-top: none;
+	}
+	&:active {
+		@include toggleColor(background, "dropdown-menu--background--hover", true);
+		@include toggleColor(color, "dropdown-menu--color--hover", true);
+		border-top: none;
+	}
+
+	@include clearfix;
+
+}
+
+ul.dropdown-menu {
+	position: absolute;
+	min-width: 200px;
+	
+	@include toggleSizes(
+		width, 
+		100%, 
+		100%, 
+		auto, 
+		auto, 
+		auto
+	);
+	
+	box-sizing: border-box;
+	z-index: 2;
+	padding: 0;
+	margin: $container-padding 0;
+	
+	@include glass("dropdown-menu--background");
+
+	border-radius: 8px;
+	list-style: none;
+	
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);;
+	
+	li {
+		
+		> button {
+			display: block;
+			width: 100%;
+			margin-bottom: $container-padding !important;
+			border-radius: 0;
+		}
+		
+		&:first-child > button {
+			border-radius: 8px 8px 0 0;
+		}
+		
+		&:last-child > button {
+			border-radius: 0 0 8px 8px;
+		}
+		
+		&:first-child:last-child > button {
+			border-radius: 8px;
+		}
+		
+	}
+	
+	hr.dropdown-menu--separator {
+		margin: 0;
+		width: 100%;
+	}
+}

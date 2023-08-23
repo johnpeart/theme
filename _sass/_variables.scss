@@ -72,7 +72,7 @@ $colors: (
 	"magenta":   	 							#E6007E,
 	"red":     	 								#B10E1E,
 	"orange":  	 								#ff5E3A,
-	"yellow":  	 								#FFED00,
+	"yellow":  	 								#FFD700,
 	"bad-ideas-yellow":                 		#FFD700,
 	"green":   	 								#0BD318,
 	"cyan":    	 								#009FE3,
@@ -87,14 +87,16 @@ $colors: (
 	
 	/// links
 	"link-color":								#1D1D1D,
+	"link-color--secondary":					#495057,
 	"emphasised-link-color":					#009FE3,
 	"subtle-link-color":						#ADB5BD,
 	"link-color--hover":						#009FE3,
 	"link-color--focus":						#FAFAFA,
-	"outline-color":				#009FE3,
+	"outline-color":							#009FE3,
 	"link-background--focus":					#009FE3,
 				
 	"dark--link-color":							#FAFAFA,
+	"dark--link-color--secondary":				#CED4DA,
 	"dark--emphasised-link-color":				#009FE3,
 	"dark--subtle-link-color":					#868E96,
 	"dark--link-color--hover":					#009FE3,
@@ -123,21 +125,23 @@ $colors: (
 	/// buttons		
 	"button-color":								#FAFAFA,
 	"button-background":						#009FE3,
+	"button-background--secondary":				#868E96,
 	"button-color--hover":						#FAFAFA,
-	"button-background--hover":					#1D1D1D,
-	"button-color--focus":						#FAFAFA,
-	"button-background--focus":					#1D1D1D,
+	"button-background--hover":					darken(#868E96, 20%),
+	"button-color--focus":						#1D1D1D,
+	"button-background--focus":					#FFD700,
 	"button-border-color":						#009FE3,
-	"button-outline-color--focus":				#009FE3,
+	"button-outline-color--focus":				#FFD700,
 			
 	"dark--button-color":						#FAFAFA,
 	"dark--button-background":					#009FE3,
-	"dark--button-color--hover":				#009FE3,
-	"dark--button-background--hover":			#1D1D1D,
-	"dark--button-color--focus":				#FAFAFA,
-	"dark--button-background--focus":			#1D1D1D,
+	"dark--button-background--secondary":		#DEE2E6,
+	"dark--button-color--hover":				#FAFAFA,
+	"dark--button-background--hover":			darken(#DEE2E6, 20%),
+	"dark--button-color--focus":				#1D1D1D,
+	"dark--button-background--focus":			#FFD700,
 	"dark--button-border-color":				#009FE3,
-	"dark--button-outline-color--focus":		#009FE3,
+	"dark--button-outline-color--focus":		#FFD700,
 	
 	
 	/// input fields
@@ -207,7 +211,26 @@ $colors: (
 	
 	"dark--code-color":							#FAFAFA,
 	"dark--code-color--blockquote":				#FAFAFA,
-	"dark--code-background":						#495057,
+	"dark--code-background":					#495057,
+	
+	/// drop down menu
+	"dropdown-menu--background":					rgba(250, 250, 250, 0.25),
+	"dropdown-menu--button--background":			transparent,
+	"dropdown-menu--color":							#1D1D1D,
+	"dropdown-menu--background--hover":				#009FE3,
+	"dropdown-menu--background--focus":				#009FE3,
+	"dropdown-menu--outline--focus":				#009FE3,
+	"dropdown-menu--color--hover":					#FAFAFA,
+	"dropdown-menu--color--focus":					#FAFAFA,
+	
+	"dark--dropdown-menu--background":					rgba(33, 37, 41, 0),
+	"dark--dropdown-menu--button--background":			transparent,
+	"dark--dropdown-menu--color":						#FAFAFA,
+	"dark--dropdown-menu--background--hover":			#009FE3,
+	"dark--dropdown-menu--background--focus":			#009FE3,
+	"dark--dropdown-menu--outline--focus":				#009FE3,
+	"dark--dropdown-menu--color--hover":				#FAFAFA,
+	"dark--dropdown-menu--color--focus":				#FAFAFA,
 	
 );
 
@@ -856,6 +879,58 @@ $h5: (
 	)
 );
 
+// HEADING 1 TEXT
+// Applies to 'h1' and equivalent text
+$legend: (
+	"font-size": (
+		"xs": 27px,
+		"sm": 32px,
+		"md": 32px,
+		"lg": 36px,
+		"xl": 40px
+	),
+	"line-height": (
+		"xs": 1.15,
+		"sm": 1.15,
+		"md": 1.15,
+		"lg": 1.15,
+		"xl": 1.15
+	),
+	"padding": (
+		"xs": 0 0 27px 0,
+		"sm": 0 0 32px 0,
+		"md": 0 0 32px 0,
+		"lg": 0 0 36px 0,
+		"xl": 0 0 40px 0
+	)
+);
+
+$sub-legend: (
+	
+	"font-size": (
+		"xs": 22px,
+		"sm": 22px,
+		"md": 22px,
+		"lg": 26px,
+		"xl": 30px
+	),
+	"line-height": (
+		"xs": 1.25,
+		"sm": 1.25,
+		"md": 1.25,
+		"lg": 1.25,
+		"xl": 1.2
+	),
+	"padding": (
+		"xs": 0 0 22px 0,
+		"sm": 0 0 22px 0,
+		"md": 0 0 22px 0,
+		"lg": 0 0 26px 0,
+		"xl": 0 0 30px 0
+	)
+
+	
+);
 // --------------------------------------//
 // --------------------------------------//
 // --------------------------------------//
@@ -871,7 +946,7 @@ $form-elements: (
 	"input-border-color":               map-get($colors, "black"),
 	"input-error-color":                map-get($colors, "red"),
 	"input-focus-color":                map-get($colors, "cyan"),
-	"input-padding":                    5px,
+	"input-padding":                    10px 15px,
 	
 	"radios-size":                      40px,
 	"radios-label-padding-left-right":  20px

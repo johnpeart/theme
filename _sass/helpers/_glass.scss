@@ -1,0 +1,7 @@
+@mixin glass($color, $blur: 5px) {
+	
+	@include toggleColor(background, "#{$color}");
+	-webkit-backdrop-filter: blur($blur);
+			backdrop-filter: blur($blur);
+	
+}

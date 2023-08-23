@@ -1,15 +1,28 @@
 button.button,
 a.button {
+	
+	display: inline-block;
+	
 	cursor: pointer;
 	
-	@include font($body);
-	
-	padding: 10px 5px !important;
-	margin: 10px 0;
+	@include toggleSizes(width, 100%, 100%, auto, auto, auto);
 	
 	min-width: 150px;
 	min-height: 40px;
-	font-weight: bold;
+	
+	
+	@include font($body);
+	font-weight: bold !important;
+	
+	@include toggleSizes(
+		padding, 
+		($container-padding * 0.5) $container-padding !important, 
+		($container-padding * 0.5) $container-padding !important, 
+		$container-padding ($container-padding * 2) !important, 
+		$container-padding ($container-padding * 2) !important, 
+		$container-padding ($container-padding * 2) !important
+	);
+
 	vertical-align: middle;
 	line-height: 40px;
 	text-align: center;
@@ -17,25 +30,115 @@ a.button {
 	
 	@include toggleColor(background, "button-background");
 	@include toggleColor(color, "button-color");
-	border: 1px solid;
-	@include toggleColor(border-color, "button-border-color");
+	
+	border: none;
+	border-radius: 8px;
 	
 	&:hover {
 		@include toggleColor(background, "button-background--hover");
 		cursor: pointer;
 		@include toggleColor(color, "button-color--hover");
 	}
-
+	
 	&:focus {
 		@include toggleColor(background, "button-background--focus");
-		outline: 2px solid;
-		@include toggleColor(outline-color, "button-outline-color--focus")
-		cursor: pointer;
+		outline: map-get($form-elements, "border-width-form-element") solid;
+		@include toggleColor(outline-color, "button-outline-color--focus");
+		outline-offset: map-get($form-elements, "border-width-form-element");
 		@include toggleColor(color, "button-color--focus");
+		cursor: pointer;
+	}
+	
+	&:active {
+		@include toggleColor(background, "button-background--focus");
+		outline: map-get($form-elements, "border-width-form-element") solid;
+		@include toggleColor(outline-color, "button-outline-color--focus");
+		outline-offset: map-get($form-elements, "border-width-form-element");
+		@include toggleColor(color, "button-color--focus");
+		cursor: pointer;
 	}
 
 	&:last-child,
 	&:last-of-type {
 		margin-bottom: 0;
+	}
+	
+	&.button-secondary {
+		@include toggleColor(background, "button-background--secondary");
+		@include toggleColor(color, "button-color");
+		
+		&:hover {
+			@include toggleColor(background, "button-background--hover");
+			cursor: pointer;
+			@include toggleColor(color, "button-color--hover");
+		}
+		
+		&:focus {
+			@include toggleColor(background, "button-background--focus");
+			outline: map-get($form-elements, "border-width-form-element") solid;
+			@include toggleColor(outline-color, "button-outline-color--focus");
+			outline-offset: map-get($form-elements, "border-width-form-element");
+			@include toggleColor(color, "button-color--focus");
+			cursor: pointer;
+		}
+		
+		&:active {
+			@include toggleColor(background, "button-background--focus");
+			outline: map-get($form-elements, "border-width-form-element") solid;
+			@include toggleColor(outline-color, "button-outline-color--focus");
+			outline-offset: map-get($form-elements, "border-width-form-element");
+			@include toggleColor(color, "button-color--focus");
+			cursor: pointer;
+		}
+		
+	}
+	
+	&.dropdown-menu--button {
+		@include toggleColor(background, "dropdown-menu--background");
+		@include toggleColor(color, "dropdown-menu--color");
+		font-weight: normal;
+		text-align: left;
+		
+		padding: $container-padding !important;
+		margin: 0 !important;
+		
+		white-space: nowrap;
+		
+		&:hover {
+			@include toggleColor(background, "dropdown-menu--background--hover");
+			@include toggleColor(color, "dropdown-menu--color--hover");
+		}
+		
+		&:focus {
+			@include toggleColor(background, "dropdown-menu--background--focus");
+			outline: map-get($form-elements, "border-width-form-element") solid;
+			@include toggleColor(outline-color, "dropdown-menu--outline--focus");
+			outline-offset: map-get($form-elements, "border-width-form-element");
+			@include toggleColor(color, "dropdown-menu--color--focus");
+			cursor: pointer;
+		}
+		
+		&:active {
+			@include toggleColor(background, "dropdown-menu--background--focus");
+			outline: map-get($form-elements, "border-width-form-element") solid;
+			@include toggleColor(outline-color, "dropdown-menu--outline--focus");
+			outline-offset: map-get($form-elements, "border-width-form-element");
+			@include toggleColor(color, "dropdown-menu--color--hover");
+			cursor: pointer;
+		}
+	}
+	
+	&.button-action {
+		&:hover {
+			background: map-get($colors, "green") !important;
+			color: map-get($colors, "black") !important;
+		}
+	}
+	
+	&.button-warning {
+		&:hover {
+			background: map-get($colors, "red") !important;
+			color: map-get($colors, "white") !important;
+		}
 	}
 }
