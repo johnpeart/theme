@@ -1,14 +1,14 @@
 body#editor {
 	
-	
 	* {
 		&.hidden {
 			display: none;
 		}
 	}
 	
-	h1.page-title {
-		padding-top: 0;
+	section {
+		padding: $container-padding 0;
+		margin: $container-padding 0;
 	}
 	
 	nav#editor--toolbar {
@@ -39,15 +39,56 @@ body#editor {
 		@include clearfix();
 	}
 	
-	section {
-		padding: $container-padding 0;
-		margin: $container-padding 0;
-	}
+	// Login screen
 	
+	section#section-githubLogin {
+		
+		padding-top: $container-padding * 5;
+		
+		p.get-token {
+			padding: 0;
+			margin-top: $container-padding;
+		}
+	}
 	
 	h1.page-title {
 		text-align: center;
+		padding-top: 0;
 	}
+	
+	// Repo select screen
+	
+	section#section-githubRepo {
+		
+		padding-top: $container-padding * 5;
+		
+	}
+	
+	#form-githubLogin,
+	#form-githubRepo {
+		max-width: 600px;
+		
+		@include toggleSizes(padding, $container-padding, $container-padding, $container-padding, $container-padding * 2, $container-padding * 2)
+		margin: 0 auto;
+		
+		@include toggleColor(background, "default-element-background");
+		@include toggleSizes(
+			border-radius,
+			15px,
+			15px,
+			20px,
+			20px,
+			20px
+		);
+		
+		text-align: center;
+		
+		input {
+			text-align: center;
+		}
+	}
+	
+	// File list 
 	
 	dialog#dialog-githubFiles {		
 		width: 100vw;
@@ -142,37 +183,6 @@ body#editor {
 	
 	select {
 		text-align-last: center;
-	}
-	
-	#section-githubLogin {
-		p.get-token {
-			padding: 0;
-			margin-top: $container-padding;
-		}
-	}
-
-	#form-githubLogin,
-	#form-githubRepository {
-		max-width: 600px;
-		
-		@include toggleSizes(padding, $container-padding, $container-padding, $container-padding, $container-padding * 2, $container-padding * 2)
-		margin: 0 auto;
-		
-		@include toggleColor(background, "default-element-background");
-		@include toggleSizes(
-			border-radius,
-			15px,
-			15px,
-			20px,
-			20px,
-			20px
-		);
-		
-		text-align: center;
-		
-		input {
-			text-align: center;
-		}
 	}
 	
 }
