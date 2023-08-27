@@ -126,6 +126,14 @@ a.button {
 			@include toggleColor(color, "dropdown-menu--color--hover");
 			cursor: pointer;
 		}
+		
+		&:disabled {
+			@include toggleColor(color, "subtle-link-color");
+			&:hover {
+				cursor: auto;
+				background: none !important;
+			}
+		}
 	}
 	
 	&.button-action {

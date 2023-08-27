@@ -6,12 +6,10 @@ body#editor {
 		}
 	}
 	
-	section {
-		padding: $container-padding 0;
-		margin: $container-padding 0;
-	}
-	
-	nav#editor--toolbar {
+	nav#editor-toolbar {
+		
+		@include toggleColor(background, "background");
+		
 		padding: $container-padding 0;
 		
 		details.dropdown-menu--float-right {
@@ -37,10 +35,7 @@ body#editor {
 		}
 		
 		@include clearfix();
-	}
-	
-	// Login screen
-	
+	}	
 	section#section-githubLogin {
 		
 		padding-top: $container-padding * 5;
@@ -56,16 +51,7 @@ body#editor {
 		padding-top: 0;
 	}
 	
-	// Repo select screen
-	
-	section#section-githubRepo {
-		
-		padding-top: $container-padding * 5;
-		
-	}
-	
-	#form-githubLogin,
-	#form-githubRepo {
+	#form-githubLogin {
 		max-width: 600px;
 		
 		@include toggleSizes(padding, $container-padding, $container-padding, $container-padding, $container-padding * 2, $container-padding * 2)
@@ -88,101 +74,42 @@ body#editor {
 		}
 	}
 	
-	// File list 
+	// Text editor
 	
-	dialog#dialog-githubFiles {		
-		width: 100vw;
-		height: 100vh;
-		max-height: unset;
-		max-width: unset;
-		
-		padding: $container-padding 0;
-		margin: 0;
-		
-		border: none;
-		background: none;
-				
-		&::backdrop {
-			@include glass("glass");
-		}
-		
-		.button.button-warning {
-			margin-bottom: $container-padding;
-		}
+	input#fileName {
+		@extend h1;
 	}
 	
-	h2.section-githubFiles--header {
-		@include toggleColor(background, "default-element-background--hover");
-		@include toggleColor(color, "color");
-		padding: $container-padding ($container-padding * 2);
-		border-radius: 8px;
-		text-align: left;
+	textarea#textEditor {
+		height: 80vh;
 	}
 	
-	ul.section-githubFiles--files-list {
-		// @include toggleColor(background, "default-element-background");
-		border-radius: 8px;
-		padding: $container-padding 0; 
-		
-		li {
-			margin-bottom: $container-padding * 0.5;
-			background: none;
-		}
-		li button {
-			border-radius: 8px;
-		}
-	}
-	
-	button.files-list-button {
-		display: block;
+	input#fileName,
+	textarea#textEditor {
 		width: 100%;
 		
-		@include toggleColor(background, "default-element-background");
-		@include toggleColor(color, "dropdown-menu--color");
-		font-weight: normal !important;
-		text-align: left;
+		padding: $container-padding 0;
 		
-		padding: ($container-padding) ($container-padding * 2) !important;
-		margin: 0 !important;
-		
+		@include toggleColor(background, "background");
+		border: none;
 		border-radius: 0;
-		border-bottom: 1px solid;
-		@include toggleColor(border-color, "default-element-background--hover");
 		
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow-x: hidden;
+		resize: none;
 		
-		@media (pointer:coarse) {
-			overflow-x: scroll;
-		}
+		caret-color: color("cyan");
 		
-		&:hover {
-			@include toggleColor(background, "dropdown-menu--background--hover");
-			@include toggleColor(color, "dropdown-menu--color--hover");
-		}
+		overflow: visible;
 		
+		&:hover,
 		&:focus {
-			@include toggleColor(background, "dropdown-menu--background--focus");
-			outline: map-get($form-elements, "border-width-form-element") solid;
-			@include toggleColor(outline-color, "dropdown-menu--outline--focus");
-			outline-offset: map-get($form-elements, "border-width-form-element");
-			@include toggleColor(color, "dropdown-menu--color--focus");
-			cursor: pointer;
+			border: none;
+			outline: none;
+			-webkit-box-shadow: none;
+			
+			&::placeholder {
+				@include toggleColor(color, "color");
+			}
 		}
-		
-		&:active {
-			@include toggleColor(background, "dropdown-menu--background--focus");
-			outline: map-get($form-elements, "border-width-form-element") solid;
-			@include toggleColor(outline-color, "dropdown-menu--outline--focus");
-			outline-offset: map-get($form-elements, "border-width-form-element");
-			@include toggleColor(color, "dropdown-menu--color--hover");
-			cursor: pointer;
-		}
-	}
-	
-	select {
-		text-align-last: center;
 	}
 	
 }

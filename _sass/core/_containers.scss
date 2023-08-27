@@ -20,4 +20,12 @@
 		container("lg"),
 		container("xl")
 	);
+	
+	&.container-flex {
+		display: flex;
+		
+		@include sm-down {
+			flex-direction: column;
+		}
+	}
 }

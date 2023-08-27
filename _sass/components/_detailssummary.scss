@@ -156,6 +156,25 @@ summary {
 // Drop down menu
 details.dropdown-menu {
 	
+	&.full-width {
+		display: flex;
+		flex-grow: 1;
+		min-width: 0;
+		margin-right: 0 !important;
+		
+		> summary {			
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow-x: scroll;
+			
+			-ms-overflow-style: none;  /* IE and Edge */
+			scrollbar-width: none;  /* Firefox */
+			&::-webkit-scrollbar {
+			  display: none;
+			}
+		}
+	}
+	
 	@include toggleSizes(
 		display, 
 		block, 
@@ -224,8 +243,6 @@ summary.dropdown-menu {
 	text-align: left;
 	box-sizing: border-box;
 	
-	min-width: 100px;
-	
 
 	@include toggleSizes(
 		padding,
@@ -265,7 +282,7 @@ summary.dropdown-menu {
 
 ul.dropdown-menu {
 	position: absolute;
-	min-width: 200px;
+	min-width: 30vw;
 	
 	@include toggleSizes(
 		width, 
@@ -277,16 +294,9 @@ ul.dropdown-menu {
 	);
 	
 	box-sizing: border-box;
-	z-index: 2;
+	z-index: 100;
 	padding: 0;
-	margin: $container-padding 0;
-	
-	@include glass("dropdown-menu--glass", 20px);
-
-	border-radius: 8px;
 	list-style: none;
-	
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);;
 	
 	li {
 		
@@ -297,18 +307,29 @@ ul.dropdown-menu {
 			border-radius: 0;
 		}
 		
-		&:first-child > button {
-			border-radius: 8px 8px 0 0;
-		}
+	}
+	
+	section {
 		
-		&:last-child > button {
-			border-radius: 0 0 8px 8px;
-		}
+		@include glass("dropdown-menu--glass", 20px);
 		
-		&:first-child:last-child > button {
-			border-radius: 8px;
-		}
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 		
+		border-radius: 8px;
+		margin: $container-padding 0;
+		
+		&:first-child,
+		&:last-child {
+			li:first-child > button {
+				border-radius: 8px 8px 0 0;
+			}
+			li:last-child > button {
+				border-radius: 0 0 8px 8px;
+			}
+			li:first-child:last-child > button {
+				border-radius: 8px;
+			}
+		}
 	}
 	
 	hr.dropdown-menu--separator {
