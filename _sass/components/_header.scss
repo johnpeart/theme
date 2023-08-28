@@ -1,118 +1,28 @@
-header#site-header {
-	display: block;
-	position: relative;
-	@include toggleColor(background, "background");
-}
+header#site-header nav#header--site-nav {
 	
-nav#header--site-nav a {
-	font-weight: 		normal;
-	text-decoration: 	none;
+	@include clearfix();
 	
-	&:link {
-		@include toggleColor(color, "color");
-	}
-	&:visited {
-		@include toggleColor(color, "color");
-	}
-	&:hover {
-		@include toggleColor(color, "link-color--hover");
-		text-decoration: 	underline;
-	}
-	&:focus {
-		@include toggleColor(color, "link-color--focus");
-		@include toggleColor(background, "link-background--focus");
-		outline: 2px solid;
-		@include toggleColor(outline-color, "outline-color");
-	}
-	&:active {
-		text-decoration: 	none;
-	}
-}	
-
-p#header--wordmark {
-	position: relative;
-	display: block;
-	z-index: 10000;
-	
-	padding: 0;
-	
-	@include font($wordmark)
-
-	a {
-		display: inline-block;
-	}
-	a.header--wordmark-link {
-		font-weight: 	bold;
-		
-		&:link {
-			@include toggleColor(color, "link-color");
-			text-decoration: none;
-		}
-		&:visited {
-			@include toggleColor(color, "link-color");
-		}
-		&:hover {
-			@include toggleColor(color, "link-color--hover");
-			text-decoration: 	underline;	
-		}
-		&:focus {
-			@include toggleColor(color, "link-color--focus");
-			@include toggleColor(background, "link-background--focus");
-			outline: 2px solid;
-			@include toggleColor(outline-color, "outline-color");
-		}
-		&:active {
-			text-decoration: 	underline;
-		}
-	}
-	
-	span.wordmark-hidden {
-		@include xs {
-			@include sr-only;	
-		}
-	}
-	
-}
-
-header.site-header {
-	
-	ul.nav {
-		display: block;
+	p#header--wordmark {
 		position: relative;
-		float: none;
-		clear: both;
-		z-index: 1000;
+		display: block;
+		z-index: 10000;
 		
-		padding-left: 0;
+		float: left;
 		
-		&.closed {
-			@include sr-only;
-		}
-		&.open {
-			height: auto;
-			width: 100%;
-			opacity: 1;
-		}
-		// Hide the scroll bars
-		&::-webkit-scrollbar {
-			display: none;
-		}
-		-ms-overflow-style: none;  /* IE and Edge */
-		scrollbar-width: none;  /* Firefox */
+		padding: 0;
 		
-		li {
+		@include font($wordmark);
+		
+		a.header--wordmark-link {
 			display: inline-block;
-			@include font($header-nav);
-		}
-		
-		a {
+			font-weight: 	bold;
+			
 			&:link {
-				@include toggleColor(color, "emphasised-link-color");
+				@include toggleColor(color, "link-color");
 				text-decoration: none;
 			}
 			&:visited {
-				@include toggleColor(color, "emphasised-link-color");
-				text-decoration: none;
+				@include toggleColor(color, "link-color");
 			}
 			&:hover {
 				@include toggleColor(color, "link-color--hover");
@@ -128,108 +38,176 @@ header.site-header {
 				text-decoration: 	underline;
 			}
 		}
-	}	
-} 
+	}
+	
+	details#header-menu-button--details {
+		
+		display: inline;
+		position: relative;
+		width: auto;
+		margin: 0;
+		padding: 0;
+		float: right;
+		
+		@include clearfix();
+		
+		&[open] > summary::-webkit-details-marker,
+		&[open] > summary::marker {
+			display: none;
+			list-style-image: none;
+			content: '';
+		}
+		
+		&[open] > summary:before {
+			content: '';
+		}
 
-button.menu-button {
-	z-index: 99999999;
+	}
 	
-	display: block;
-	position: absolute;
-	min-width: unset;
+	summary#header-menu-button--summary {
+		
+		display: block;
+		position: relative;
+		text-align: left;
+		box-sizing: border-box;
+		margin: 13px;
+		padding: 5px;
+		width: 40px;
+		height: 40px;
+		right: -($container-padding);
+		border: none;
+		border-radius: 10px;
+		
+		@include clearfix();
+		
+		/* Hide the marker completely. */
+		list-style-image: none;
+		&::marker,
+		&::-webkit-details-marker {
+		  display: none;
+		  list-style-image: none;
+		  content: '';
+		  width: 0;
+		  height: 0;
+		}
+		
+		&:before {
+			content: '' !important;
+		}
+		
+	}
 	
-	@include toggleSizes(
-		width,
-		20px,
-		20px,
-		25px,
-		25px,
-		25px
-	);
-	@include toggleSizes(
-		height,
-		20px,
-		20px,
-		25px,
-		25px,
-		25px
-	);
+	ul#header-menu-items {
+		position: absolute;
+		
+		@include toggleSizes(
+			right,
+			-15px,
+			0,
+			0,
+			0,
+			0
+		);
+		
+		@include toggleSizes(
+			min-width,
+			calc(100vw - (#{$container-padding} * 2)),
+			50vw,
+			50vw,
+			30vw,
+			30vw
+		);
+		
+		padding: $container-padding;
+		
+		box-sizing: border-box;
+		z-index: 100;
+		list-style: none;
+		
+		text-align: center;
+		
+		@include glass("glass", 20px);
+		@include toggleColor(box-shadow, "shadow");
+		border-radius: 20px;
+	}
 	
-	padding: 5px;
-	top: 18px;
-	right: 18px;
-	box-sizing: content-box;
+	li.header-link {
+		display: block;
+		position: relative;
+		
+		width: 100%;
+		height: auto;
+		
+		box-sizing: border-box;
+		margin-bottom: $container-padding;
+		
+		&:last-child {
+			margin: 0;
+		}
+	}
 	
-	@include toggleColor(background, "background");
-	border: 0;
+	li.header-link a {
+		display: block;
+		position: relative;
+		
+		width: 100%;
+		height: auto;
+		
+		padding: $container-padding;
+		
+		box-sizing: border-box;
+		@include toggleColor(background, "default-element-background");
+		border-radius: 10px;
+		
+		&:link {
+			text-decoration: 	none;
+			@include toggleColor(color, "emphasised-link-color");
+		}
+		&:visited {
+			text-decoration: 	none;
+			@include toggleColor(color, "emphasised-link-color");
+		}
+		&:hover {
+			text-decoration: 	none;	
+			@include toggleColor(color, "button-color--hover");
+			@include toggleColor(background, "button-background");
+		}
+		&:focus {
+			text-decoration: 	none;
+			@include toggleColor(color, "link-color--focus");
+			@include toggleColor(background, "link-background--focus");
+			outline: 2px solid;
+			@include toggleColor(outline-color, "outline-color");
+			outline-offset: 3px;
+		}
+		&:active {
+			text-decoration: 	none;
+			outline: 2px solid;
+			@include toggleColor(outline-color, "outline-color");
+			outline-offset: 3px;
+		}
+	}
 	
 	svg {
-		@include toggleSizes(
-			width,
-			20px,
-			20px,
-			25px,
-			25px,
-			25px
-		);
-		@include toggleSizes(
-			height,
-			20px,
-			20px,
-			25px,
-			25px,
-			25px
-		);
+		position: relative;
+		display: inline-block;
+		width: 30px;
 	}
 	
-	svg path#menuicon {
-		fill: map-get($colors, "gray-500");
-		@include darkMode() {
-			fill: map-get($colors, "gray-600");
-		}
-		transform-origin: center;
+	details summary svg {
 		transform: rotate(0deg);
-		transition: 0.25s all;
+		transform-origin: center;
+		transition: 0.2s all;
 	}
 	
-	&.open {
-		svg#header-menu-toggle-image path#menuicon {
-			@include toggleColor(fill, "color");
-			transform-origin: center;
-			transform: rotate(45deg);
-			transition: 0.1s all;
-		}
+	details[open] summary svg {
+		transform: rotate(45deg);
+		transform-origin: center;
+		transition: 0.2s all;
 	}
 	
-	&:hover {
-		svg#header-menu-toggle-image path#menuicon {
-			@include toggleColor(fill, "link-color--hover");
-			transition: 0.1s all;
-		}
+	details:active svg path#menuicon {
+		@include toggleColor(fill, "link-color--focus");
 	}
-	
-	&:focus {
-		@include toggleColor(background, "link-background--focus");
-		outline: 2px solid;
-		@include toggleColor(outline-color, "outline-color");
-		svg#header-menu-toggle-image path#menuicon {
-			@include toggleColor(fill, "link-color--focus");
-			transition: 0.1s all;
-		}
-	}
-	&:active {
-		outline: 2px solid;
-@include toggleColor(outline-color, "outline-color");
-		@include toggleColor(background, "link-background--focus");
-		svg#header-menu-toggle-image path#menuicon {
-			@include toggleColor(fill, "link-color--focus");
-			transform-origin: center;
-			transform: rotate(22.5deg);
-			transition: 0.1s all;
-		}
-	}
-}
 
-header#site-header {
-	@include clearfix;
 }

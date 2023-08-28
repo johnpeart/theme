@@ -213,6 +213,10 @@ $colors: (
 	"dark--code-color--blockquote":				#FAFAFA,
 	"dark--code-background":					#495057,
 	
+	// box shadow
+	"shadow":									(0 10px 20px rgba(29, 29, 29, 0.2), 0 6px 6px rgba(29, 29, 29, 0.3)),
+	"dark--shadow":									(0 10px 20px rgba(29, 29, 29, 0.2), 0 6px 6px rgba(29, 29, 29, 0.3)),
+	
 	/// drop down menu
 	"dropdown-menu--background":					#DEE2E6,
 	"dropdown-menu--glass":							rgba(250, 250, 250, 0.25),
@@ -235,8 +239,8 @@ $colors: (
 	"dark--dropdown-menu--color--focus":				#FAFAFA,
 	
 	// glass
-	"glass":							rgba(33, 37, 41, 0.25),
-	"dark--glass":						rgba(250, 250, 250, 0.25),
+	"glass":							rgba(250, 250, 250, 0.25),
+	"dark--glass":						rgba(33, 37, 41, 0.25),
 	
 );
 
@@ -498,11 +502,11 @@ $wordmark: (
 		"xl": 1
 	),
 	"padding": (
-		"xs": 13px 0,
-		"sm": 20px 0,
-		"md": 20px 0,
-		"lg": 18px 0,
-		"xl": 17px 0
+		"xs": 18px 0,
+		"sm": 18px 0,
+		"md": 18px 0,
+		"lg": 16px 0,
+		"xl": 15px 0
 	)
 	
 );
