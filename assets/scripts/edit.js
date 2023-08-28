@@ -36,6 +36,8 @@ if (sessionStorage.getItem('username') == null || sessionStorage.getItem('token'
 
 // HELPERS 
 
+
+
 function openModal(nameOfModal) {
 	var d = document.getElementById(nameOfModal);
 	d.showModal();
