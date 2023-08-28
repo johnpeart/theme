@@ -54,14 +54,5 @@
 
 	<!-- JS -->
 	<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/scripts.js' }}" async></script>
-	{% if page.categories contains "eurovision" %}
-	<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/blog/eurovision.js' }}" async></script>
-	{% endif %}
-	{% if page.layout == "images/home" %}
-	<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/images/scripts.js' }}" async></script>
-	{% endif %}
-	{% if page.layout == "wishlist" %}
-	<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/wishlist/toggle-purchased.js' }}" async></script>
-	{% endif %}
 
 </head>

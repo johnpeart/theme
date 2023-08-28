@@ -1,4 +1,5 @@
-body[id$='post'] {
+body[id$='post'],
+body[id$='post-eurovision'] {
 
 	figure.featured-image {
 		margin-bottom: $container-padding * 3;
