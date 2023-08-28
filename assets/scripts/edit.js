@@ -31,7 +31,6 @@ if (sessionStorage.getItem('username') == null || sessionStorage.getItem('token'
 	hideElement('section-githubFileContent');
 	showElement('section-githubLogin');
 } else {			
-	githubGetUsername();
 	githubGetFilesFolders('','');
 }
 
@@ -334,14 +333,7 @@ function githubOpenFile(name, path) {
 }
 
 
-// ACCOUNT MENU
-
-// githubGetUsername()
-// Update the 'Account' menu button with the logged in user's name.
-function githubGetUsername() {
-	document.getElementById('accountName').innerText = sessionStorage.getItem('username');
-}
-
+// LOGOUT
 function clearLocalStorage() {
 	sessionStorage.clear()
 	showElement('section-githubLogin');
