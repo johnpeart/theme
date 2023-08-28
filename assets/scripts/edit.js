@@ -12,8 +12,6 @@ var now = currentdate.toISOString().slice(0,10); // "2014-05-12"
 				
 
 // BUTTONS
-const details = Array.from(document.querySelectorAll('details'))
-
 const loginButton = document.getElementById('loginButton')
 const deleteButton = document.getElementById('deleteButton')
 const listButton = document.getElementById('listButton')
@@ -37,16 +35,6 @@ if (sessionStorage.getItem('username') == null || sessionStorage.getItem('token'
 
 
 // HELPERS 
-
-// Collapses the <details> items when you click another <details> item on the page.
-details.forEach((detail) => {
-	detail.addEventListener('click', (e) => {
-		const active = details.find(d => d.open)
-			if (!e.currentTarget.open && active) {
-			active.open = false
-		}
-	})
-})
 
 function openModal(nameOfModal) {
 	var d = document.getElementById(nameOfModal);
