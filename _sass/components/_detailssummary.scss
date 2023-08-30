@@ -311,9 +311,9 @@ ul.dropdown-menu {
 	
 	section {
 		
-		@include glass("dropdown-menu--glass", 20px);
-		
-		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		@include glass("glass", 20px);
+		@include toggleColor(box-shadow, "shadow");
+		border: 1px solid rgba(250, 250, 250, 0.1);
 		
 		border-radius: 8px;
 		margin: $container-padding 0;
