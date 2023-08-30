@@ -214,8 +214,8 @@ $colors: (
 	"dark--code-background":					#495057,
 	
 	// box shadow
-	"shadow":									(0 10px 20px rgba(29, 29, 29, 0.2), 0 6px 6px rgba(29, 29, 29, 0.3)),
-	"dark--shadow":									(0 10px 20px rgba(29, 29, 29, 0.2), 0 6px 6px rgba(29, 29, 29, 0.3)),
+	"shadow":									0 4px 30px rgba(0, 0, 0, 0.1),
+	"dark--shadow":								0 4px 30px rgba(0, 0, 0, 0.1),
 	
 	/// drop down menu
 	"dropdown-menu--background":					#DEE2E6,
@@ -239,8 +239,8 @@ $colors: (
 	"dark--dropdown-menu--color--focus":				#FAFAFA,
 	
 	// glass
-	"glass":							rgba(250, 250, 250, 0.25),
-	"dark--glass":						rgba(33, 37, 41, 0.25),
+	"glass":							linear-gradient(145deg, rgba(248, 249, 250, 0.25), rgba(233, 236, 239, 0.75)),
+	"dark--glass":						linear-gradient(145deg, rgba(33, 37, 41, 0.75), rgba(52, 58, 64, 0.75))
 	
 );
 
