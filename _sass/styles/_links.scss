@@ -17,8 +17,7 @@ a {
 		@include toggleColor(color, "link-color--focus");
 		@include toggleColor(background, "link-background--focus");
 		outline: 2px solid;
-		outline-offset: 3px;
-		border-radius: 5px;
+		outline-offset: 0;
 		text-decoration: none;
 		@include toggleColor(outline-color, "outline-color");
 	}

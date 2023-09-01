@@ -99,15 +99,7 @@ header#site-header nav#header--site-nav {
 	
 	ul#header-menu-items {
 		position: absolute;
-		
-		@include toggleSizes(
-			right,
-			-15px,
-			0,
-			0,
-			0,
-			0
-		);
+		right: 0;
 		
 		@include toggleSizes(
 			min-width,
