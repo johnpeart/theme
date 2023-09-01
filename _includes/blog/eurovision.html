@@ -1,3 +1,6 @@
+{% if page.eurovision-entries %}
+<h2>The entries</h2>
+
 <fieldset id="toggle-esc-entries">
 
     <legend>Toggle entries</legend>
@@ -25,7 +28,7 @@
 </fieldset>
 
 <div id="esc-entries" data-show="all">
-{% assign entries = page.entries | sort: "country" %}
+{% assign entries = page.eurovision-entries | sort: "country" %}
 {% for entry in entries %}
 <details class="esc-entry" data-semifinal="{{ entry.semifinal }}" data-final="{{ entry.final }}">
 <summary>
@@ -47,3 +50,11 @@
 </details>
 {% endfor %}
 </div>
+
+{% if page.summing-up %}
+<h2>Summing up</h2>
+{{ page.summing-up | markdownify }}
+{% endif %}
+
+<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/blog/eurovision.js' }}" async></script>
+{% endif %}

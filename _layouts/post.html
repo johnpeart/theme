@@ -18,20 +18,8 @@ layout: default
 		</header>
 
 		<section class="post-body e-content">
-			
 			{{ content }}
-			
-			{% if page.entries %}
-			<h2>The entries</h2>
-			
 			{% include blog/eurovision.html %}
-			
-			{% if page.summing-up %}
-			<h2>Summing up</h2>
-			{{ page.summing-up | markdownify }}
-			{% endif %}
-			{% endif %}
-				
 		</section>
 				
 		{% include blog/footer.html %}
