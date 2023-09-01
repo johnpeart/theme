@@ -598,16 +598,17 @@ body[id$='post-eurovision'] {
 					} 
 				}
 				&:hover svg path {
+					@include toggleColor(background, "background", true);
 					@include toggleColor(fill, "link-color--hover");
 					text-decoration: none;
 				}
-				&:focus svg {
-					background: transparent;
-					border: none;
-					outline: none;
+				&:focus {
+					outline-offset: 0;
+					outline: 5px solid;
 				}
 				&:focus svg path {
-					fill: white;
+					@include toggleColor(background, "link-color--hover");	
+					@include toggleColor(fill, "background", true);
 					outline: none;
 				}
 				&:active svg path {
