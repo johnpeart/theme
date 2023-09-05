@@ -120,3 +120,23 @@ p > img {
 	@include toggleSizes(left, 0, 0, 0, 0, 0);
 	@include toggleSizes(right, 0, 0, 0, 0, 0);
 }
+
+svg.hero-image {
+	display: block;
+	position: relative;
+		
+	@include toggleSizes(
+		width,
+		100%,
+		100%,
+		(container("md") + 100px),
+		(container("lg") + 150px),
+		(container("xl") + 200px)
+	);
+	
+	@include toggleSizes(max-width, 100%, 100%, unset, unset, unset);
+	@include toggleSizes(margin-left, 0, 0, -50px, -90px, -115px);
+	@include toggleSizes(margin-right, 0, 0, -50px, -90px, -115px);
+	@include toggleSizes(left, 0, 0, 0, 0, 0);
+	@include toggleSizes(right, 0, 0, 0, 0, 0);
+}
