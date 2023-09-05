@@ -134,9 +134,19 @@ svg.hero-image {
 		(container("xl") + 200px)
 	);
 	
+	@include toggleColor(fill, "color");
 	@include toggleSizes(max-width, 100%, 100%, unset, unset, unset);
 	@include toggleSizes(margin-left, 0, 0, -50px, -90px, -115px);
 	@include toggleSizes(margin-right, 0, 0, -50px, -90px, -115px);
+	@include toggleSizes(
+		margin-bottom, 
+		22px,
+		22px,
+		22px,
+		26px,
+		30px
+	);
+	margin-top: 0;
 	@include toggleSizes(left, 0, 0, 0, 0, 0);
 	@include toggleSizes(right, 0, 0, 0, 0, 0);
 }
