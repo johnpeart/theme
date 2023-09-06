@@ -28,7 +28,7 @@
 			<ul>
 				{% if site.footer-menu %}
 					{% for menuitem in site.footer-menu %}
-					<li><a href="{{ menuitem.link }}" class="footer--nav-link" title="Visit the {{ item.label }} page">{{ menuitem.label }}</a></li>
+					<li><a href="{{ menuitem.link }}" class="footer--nav-link" title="Visit the {{ menuitem.label }} page">{{ menuitem.label }}</a></li>
 					{% endfor %}
 				{% else %}
 					<li><a href="//johnpe.art/about" class="footer--nav-link" title="Visit the About me page">About me</a></li>
