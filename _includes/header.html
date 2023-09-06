@@ -23,8 +23,8 @@
 			</summary>
 			
 			<ul id="header-menu-items" class="nav">
-				{% if site.data.header-menu %}
-					{% for menuitem in site.data.header-menu %}
+				{% if site.header-menu %}
+					{% for menuitem in site.header-menu %}
 					<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
 					{% endfor %}
 				{% else %}
