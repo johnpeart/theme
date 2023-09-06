@@ -5,8 +5,10 @@
 		<p id="header--wordmark">
 			{% if jekyll.environment == "development" %}
 				<a href="//localhost:4000" class="header--wordmark-link">{{ site.title }}</a>
+			{% elsif site.header-url %}
+				<a href="{{ site.header-url }}" class="header--wordmark-link">{{ site.title }}</a>
 			{% else %}
-				<a href="{{ site.url }}" class="header--wordmark-link">{{ site.title }}</a>
+				<a href="//johnpe.art" class="header--wordmark-link">{{ site.title }}</a>
 			{% endif %}
 		</p>
 		
