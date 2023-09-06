@@ -119,8 +119,8 @@ header#site-header nav#header--site-nav {
 		text-align: center;
 		
 		@include glass("glass", 20px);
-		@include toggleColor(box-shadow, "shadow");
-		border: 1px solid rgba(250, 250, 250, 0.1);
+		@include toggleColor(box-shadow, "shadow-2");
+		border: 1px solid rgba(250, 250, 250, 0.3);
 		border-radius: 20px;
 		
 		transition: ease-in-out all 1s;
