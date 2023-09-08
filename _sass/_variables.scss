@@ -73,7 +73,6 @@ $colors: (
 	"red":     	 								#B10E1E,
 	"orange":  	 								#ff5E3A,
 	"yellow":  	 								#FFD700,
-	"bad-ideas-yellow":                 		#FFD700,
 	"green":   	 								#0BD318,
 	"cyan":    	 								#009FE3,
 	
@@ -249,7 +248,26 @@ $colors: (
 	
 	// glass
 	"glass":							linear-gradient(145deg, rgba(248, 249, 250, 0.25), rgba(233, 236, 239, 0.75)),
-	"dark--glass":						linear-gradient(145deg, rgba(33, 37, 41, 0.75), rgba(52, 58, 64, 0.75))
+	"dark--glass":						linear-gradient(145deg, rgba(33, 37, 41, 0.75), rgba(52, 58, 64, 0.75)),
+	
+	// post-it notes
+	"post-it--yellow":					#FFD700,
+	"post-it--yellow--curl":			lighten(#FFD700, 25%),
+	"post-it--yellow--border":			#DEE2E6,
+	"post-it--yellow--top":				darken(#FFD700, 1%),
+	"dark--post-it--yellow--curl":		darken(#FFD700, 20%),
+	
+	"post-it--magenta":					#e6647e,
+	"post-it--magenta--curl":			lighten(#e6647e, 10%),
+	"post-it--magenta--border":			lighten(#e6647e, 10%),
+	"post-it--magenta--top":			darken(#e6647e, 1%),
+	"dark--post-it--magenta--curl":		darken(#e6647e, 10%),
+	
+	"post-it--cyan":					#649fe3,
+	"post-it--cyan--curl":			lighten(#649fe3, 10%),
+	"post-it--cyan--border":			#cbe5ff,
+	"post-it--cyan--top":			darken(#649fe3, 1%),
+	"dark--post-it--cyan--curl":		darken(#649fe3, 20%),
 	
 );
 
@@ -948,6 +966,45 @@ $sub-legend: (
 		"xl": 0 0 30px 0
 	)
 
+);
+
+$post-it: (
+	
+	"font-size": (
+		"xs": 18px,
+		"sm": 18px,
+		"md": 22px,
+		"lg": 26px,
+		"xl": 32px
+	),
+	"line-height": (
+		"xs": 1.25,
+		"sm": 1.25,
+		"md": 1.3,
+		"lg": 1.25,
+		"xl": 1.2
+	),
+	"padding": (
+		"xs": 0 0 22px 0,
+		"sm": 0 0 22px 0,
+		"md": 0 0 22px 0,
+		"lg": 0 0 26px 0,
+		"xl": 0 0 30px 0
+	),
+	"font-weight": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	),
+	"font-style": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	)
 	
 );
 // --------------------------------------//
