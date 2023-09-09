@@ -253,19 +253,19 @@ $colors: (
 	// post-it notes
 	"post-it--yellow":					#FFD700,
 	"post-it--yellow--curl":			lighten(#FFD700, 25%),
-	"post-it--yellow--border":			#DEE2E6,
+	"post-it--yellow--border":			lighten(#FFD700, 25%),
 	"post-it--yellow--top":				darken(#FFD700, 1%),
 	"dark--post-it--yellow--curl":		darken(#FFD700, 20%),
 	
 	"post-it--magenta":					#e6647e,
 	"post-it--magenta--curl":			lighten(#e6647e, 10%),
-	"post-it--magenta--border":			lighten(#e6647e, 10%),
+	"post-it--magenta--border":			lighten(#e6647e, 5%),
 	"post-it--magenta--top":			darken(#e6647e, 1%),
 	"dark--post-it--magenta--curl":		darken(#e6647e, 10%),
 	
 	"post-it--cyan":					#649fe3,
 	"post-it--cyan--curl":			lighten(#649fe3, 10%),
-	"post-it--cyan--border":			#cbe5ff,
+	"post-it--cyan--border":			lighten(#649fe3, 1%),
 	"post-it--cyan--top":			darken(#649fe3, 1%),
 	"dark--post-it--cyan--curl":		darken(#649fe3, 20%),
 	
