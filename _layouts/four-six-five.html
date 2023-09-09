@@ -18,7 +18,7 @@ layout: default
 			</div>
 		</div>
 		</section>
-		<section class="social--post-footer">
+		<section class="social--post-colophon">
 			<aside class="post-activity post-activity-likes">
 			
 			  <a href="/2023/07/30/into-the-fediverse/" title="Find out more about how to 'like' this post." class="post-activity-icon">
@@ -30,7 +30,7 @@ layout: default
 				</svg>
 			  </a>
 			  
-			  <p class="post-activity-count">{% webmention_likes page.url %}</p>
+			  {% webmention_count page.url likes %}
 			
 			</aside>
 			
@@ -45,7 +45,7 @@ layout: default
 				</svg>
 			  </a>
 				
-			  <p class="post-activity-count">{% webmention_reposts page.url %}</p>
+			  {% webmention_count page.url reposts %}
 			  
 			</aside>
 			<p class="post-date"><a href="{{ post.url }}" class="post-published-date u-url u-uid"><time datetime="{{ post.date | date: '%Y-%m-%d %H:%M'}}" class="dt-published">{{ post.date | date: "%-d %B %Y at %H:%M" }}</time></a></p>
