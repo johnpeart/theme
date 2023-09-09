@@ -971,8 +971,8 @@ $sub-legend: (
 $post-it: (
 	
 	"font-size": (
-		"xs": 18px,
-		"sm": 18px,
+		"xs": 20px,
+		"sm": 20px,
 		"md": 22px,
 		"lg": 26px,
 		"xl": 32px
@@ -997,6 +997,46 @@ $post-it: (
 		"md": normal,
 		"lg": normal,
 		"xl": normal
+	),
+	"font-style": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	)
+	
+);
+
+$post-it-title: (
+	
+	"font-size": (
+		"xs": 26px,
+		"sm": 26px,
+		"md": 32px,
+		"lg": 36px,
+		"xl": 44px
+	),
+	"line-height": (
+		"xs": 1.2,
+		"sm": 1.2,
+		"md": 1.2,
+		"lg": 1.2,
+		"xl": 1.2
+	),
+	"padding": (
+		"xs": 0 0 $container-padding 0,
+		"sm": 0 0 $container-padding 0,
+		"md": 0 0 $container-padding 0,
+		"lg": 0 0 $container-padding 0,
+		"xl": 0 0 $container-padding 0
+	),
+	"font-weight": (
+		"xs": bold,
+		"sm": bold,
+		"md": bold,
+		"lg": bold,
+		"xl": bold
 	),
 	"font-style": (
 		"xs": normal,
