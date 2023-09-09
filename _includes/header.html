@@ -12,6 +12,7 @@
 			{% endif %}
 		</p>
 		
+		{% if site.header-menu %}
 		<details id="header-menu-button--details" class="details-menu">
 			<summary id="header-menu-button--summary">
 				<svg id="header-menu-toggle-image" version="1.1" viewBox="0 0 20 20">
@@ -23,21 +24,12 @@
 			</summary>
 			
 			<ul id="header-menu-items" class="nav">
-				{% if site.header-menu %}
-					{% for menuitem in site.header-menu %}
-					<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
-					{% endfor %}
-				{% else %}
-					<li class="header-link"><a href="/writing">Writing</a></li>
-			
-					<li class="header-link"><a href="/photos">Photos</a></li>
-			
-					<li class="header-link"><a href="/projects">Projects</a></li>
-			
-					<li class="header-link"><a href="/about">About me</a></li>
-				{% endif %}
+				{% for menuitem in site.header-menu %}
+				<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
+				{% endfor %}
 			</ul>
 		</details>
+		{% endif %}
 
 	</nav>
 
