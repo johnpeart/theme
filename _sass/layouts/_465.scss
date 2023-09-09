@@ -288,10 +288,10 @@ body#four-six-five {
 			}
 		}
 		
-		p.post-activity-count {
+		span.webmention-count {
 			@include font($h2);
 			align-self: center;
-			padding: 0 !important;
+			padding: 0 0 0 $container-padding !important;
 		}
 		
 		p.post-date {
