@@ -23,26 +23,15 @@
 		</aside>
 		{% endunless %}
 		
+		{% if site.footer-menu %}
 		<nav id="footer--links">
-			
 			<ul>
-				{% if site.footer-menu %}
-					{% for menuitem in site.footer-menu %}
-					<li><a href="{{ menuitem.link }}" class="footer--nav-link" title="Visit the {{ menuitem.label }} page">{{ menuitem.label }}</a></li>
-					{% endfor %}
-				{% else %}
-					<li><a href="//johnpe.art/about" class="footer--nav-link" title="Visit the About me page">About me</a></li>
-					<li><a href="//johnpe.art/writing" class="footer--nav-link" title="Visit the Writing page">Writing</a></li>
-					<li><a href="//johnpe.art/photos" class="footer--nav-link" title="Visit the Photos pages">Photos</a></li>
-					<li><a href="//johnpe.art/podcast" class="footer--nav-link" title="Visit the Podcasts page">Podcasts</a></li>
-					<li><a href="//johnpe.art/goals" class="footer--nav-link" title="Visit the Goals pages">Goals</a></li>
-					<li><a href="//johnpe.art/projects" class="footer--nav-link" title="Visit the Projects page">Projects</a></li>
-					<li><a href="//johnpe.art/manuals" class="footer--nav-link" title="Visit the manuals Manuals for my projects">Manuals</a></li>
-					<li><a href="//johnpe.art/wishlist" class="footer--nav-link" title="See my wishlist">Wishlist</a></li>
-				{% endif %}
+				{% for menuitem in site.footer-menu %}
+				<li><a href="{{ menuitem.link }}" class="footer--nav-link" title="Visit the {{ menuitem.label }} page">{{ menuitem.label }}</a></li>
+				{% endfor %}
 			</ul>
-			
 		</nav>
+		{% endif %}
 	
 	</div>
 	
