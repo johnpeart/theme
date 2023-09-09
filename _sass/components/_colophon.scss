@@ -1,0 +1,330 @@
+
+
+footer.post-colophon {
+	display: grid;
+	
+	@include toggleSizes(
+		margin-top,
+		$container-padding * 2,
+		$container-padding * 2,
+		$container-padding * 3,
+		$container-padding * 4,
+		$container-padding * 5
+	);
+	
+	@include toggleSizes(
+		grid-template-columns,
+		1fr,
+		1fr,
+		1fr,
+		1fr 1fr,
+		1fr 1fr
+	);
+	
+	@include toggleSizes(
+		grid-template-rows,
+		auto auto auto auto,
+		auto auto auto auto,
+		auto auto auto auto,
+		auto,
+		auto
+	);
+	
+	@include toggleSizes(
+		grid-template-areas,
+		"meta" "likes" "reposts" "author",
+		"meta" "likes" "reposts" "author",
+		"meta" "likes" "reposts" "author",
+		"likes reposts" "meta author",
+		"likes reposts" "meta author"
+	);
+	
+	@include toggleSizes(
+		grid-gap,
+		$container-padding,
+		$container-padding,
+		$container-padding,
+		$container-padding,
+		$container-padding
+	);
+	
+	div.post-author-card {
+		display: grid;
+		grid-area: author;
+		
+		align-content: center;
+		
+		@include toggleSizes(
+			padding,
+			$container-padding,
+			$container-padding,
+			$container-padding,
+			$container-padding,
+			$container-padding
+		);
+		
+		@include toggleSizes(
+			grid-template-columns,
+			1fr 2fr,
+			57px auto auto,
+			57px auto auto,
+			114px 1fr,
+			140px 1fr
+		);
+		
+		@include toggleSizes(
+			grid-template-rows,
+			auto auto,
+			auto,
+			auto,
+			auto auto,
+			auto auto
+		);
+		
+		@include toggleSizes(
+			grid-template-areas,
+			"memoji author" "icons icons",
+			"memoji author icons",
+			"memoji author icons",
+			"memoji author" "memoji icons",
+			"memoji author" "memoji icons"
+		)
+		
+		// border-top: 3px solid; 
+		@include toggleColor(background, "default-element-background");
+		@include toggleSizes(
+			border-radius,
+			15px,
+			15px,
+			20px,
+			20px,
+			20px
+		);
+		
+		@include toggleSizes(
+			grid-gap,
+			$container-padding * 2,
+			$container-padding * 2,
+			$container-padding * 2,
+			$container-padding * 2,
+			$container-padding * 2
+		);
+	}
+
+	p, dl, dt, dd {
+		@include font($body--small);
+	}
+	
+	div.author-details {
+		grid-area: author;
+		display: grid;
+		@include toggleSizes(
+			justify-items,
+			flex-start,
+			flex-start,
+			flex-start,
+			flex-start,
+			flex-start
+		);
+	}
+	
+	p.author--wordmark {
+		position: relative;
+		display: block;
+		@include toggleColor(color, "color");
+		@include font($body);
+		font-weight: 	bold !important;
+		padding-bottom: 0 !important;
+	}
+	
+	a.p-author {			
+		&:link, 
+		&:visited {
+			text-decoration: none;
+		}
+	}
+	
+	a.memoji {
+		grid-area: memoji;
+		display: grid;
+		position: relative;
+		justify-self: center;
+	}
+	
+	img.footer--memoji {
+		display: block;
+		position: relative;
+		
+		box-sizing: border-box;
+		
+		margin: 0;
+		padding: 0;
+		
+		
+		@include toggleSizes(
+			width,
+			57px,
+			57px,
+			57px,
+			114px,
+			140px
+		);
+		@include toggleSizes(
+			height,
+			57px,
+			57px,
+			57px,
+			114px,
+			140px
+		);
+
+		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+		filter: grayscale(100%);
+		transform: scale(1) rotate(0);
+		transition: 1s all;
+		
+		&:hover {
+			-webkit-filter: none; /* Safari 6.0 - 9.0 */
+			filter: none;
+			transform: scale(1.1) rotate(-5deg);
+			transition: 1s all;
+		}
+		
+		@include toggleSizes(
+			border-radius,
+			5px,
+			5px,
+			13px,
+			13px,
+			13px
+		);
+	}
+	
+	.author--icons {
+		grid-area: icons;
+		
+		display: grid;
+		position: relative;
+		
+		grid-template-columns: auto auto auto auto auto;
+		align-items: center;
+		
+		@include toggleSizes(
+			justify-items,
+			center,
+			flex-end,
+			flex-end,
+			flex-start,
+			flex-start
+		);
+		
+		padding: 0;
+		margin: 0;
+					
+		* {
+			line-height: 30px !important;
+			text-decoration: none;
+		}
+		
+		span.footer--icons--separator {
+			display: inline-block;
+			height: 30px;
+			width: 2px;
+			margin: 0 10px 0 5px;
+			border-right: 2px solid;
+			@include toggleColor(border-color, "border-color");
+			content: "";
+		}
+		
+		a {
+			
+			display: inline-block;
+			position: relative;
+			
+			margin: 0;
+			margin-right: 10px;
+			padding: 0;
+			
+			svg.footer--icons--social {
+				display: block;
+				position: relative;
+				
+				height: 30px;
+				width: 30px;
+				margin: 0;
+				padding: 0;
+							
+				path {
+					@include toggleColor(fill, "color");
+				}
+			}
+			
+			
+			&:link svg path {
+				fill: map-get($colors, "gray-600");
+				@include darkMode() {
+					fill: map-get($colors, "gray-400");	
+				} 
+			}
+			&:visited svg path {
+				fill: map-get($colors, "gray-600");
+				@include darkMode() {
+					fill: map-get($colors, "gray-400");	
+				} 
+			}
+			&:hover svg path {
+				@include toggleColor(background, "background", true);
+				@include toggleColor(fill, "link-color--hover");
+				text-decoration: none;
+			}
+			&:focus {
+				outline-offset: 0;
+				outline: 5px solid;
+			}
+			&:focus svg path {
+				@include toggleColor(background, "link-color--hover");	
+				@include toggleColor(fill, "background", true);
+				outline: none;
+			}
+			&:active svg path {
+				text-decoration: 	none;
+			}
+			
+		}
+	}
+	
+	dl.meta-data {
+		grid-area: meta;
+		display: grid;
+		grid-gap: $container-padding;
+	}
+	div.meta-data-details {
+		@include toggleColor(background, "default-element-background");
+		@include toggleSizes(
+			border-radius,
+			15px,
+			15px,
+			20px,
+			20px,
+			20px
+		);
+		@include toggleSizes(
+			padding,
+			$container-padding,
+			$container-padding,
+			$container-padding,
+			$container-padding,
+			$container-padding
+		);
+	}
+	dt, dd {
+		
+	}
+	dt {
+		font-weight: 	bold;
+	}
+	dd {
+		text-transform: capitalize;
+	}
+	
+}
