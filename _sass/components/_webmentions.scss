@@ -164,7 +164,8 @@ a.post-activity-icon {
 .webmention-count {
     @include font($body);
     align-self: center;
-    line-height: 1 !important;
+    line-height: 35px !important;
+    vertical-align: middle;
     padding: 0 0 0 $container-padding !important;
 }
 

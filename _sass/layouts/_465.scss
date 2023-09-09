@@ -239,7 +239,7 @@ body#four-six-five {
 		@include font($post-it-title);
 	}
 	
-	.social--post-footer {
+	.social--post-colophon {
 		
 		display: grid;
 		position: relative;
@@ -286,12 +286,18 @@ body#four-six-five {
 				box-shadow: 	 20px  20px 60px #191919,
 								-20px -20px 60px #212529;
 			}
-		}
-		
-		span.webmention-count {
-			@include font($h2);
-			align-self: center;
-			padding: 0 0 0 $container-padding !important;
+			
+			&.post-activity-likes {
+				@include sm-down() {
+					justify-self: flex-end;
+				}
+			}
+			
+			&.post-activity-reposts {
+				@include sm-down() {
+					justify-self: flex-start;
+				}
+			}
 		}
 		
 		p.post-date {
