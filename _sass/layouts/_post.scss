@@ -18,29 +18,6 @@ body[id$='post'] {
 		@include toggleColor(color, "secondary-text--color");
 		@include font($h1-post-date);
 	}
-	aside.post-published-date p a.post-published-date  {
-		font-weight: bold;
-		&:link {
-			@include toggleColor(color, "secondary-text--color");
-			text-decoration: none;
-		}
-		&:visited {
-			@include toggleColor(color, "secondary-text--color");
-		}
-		&:hover {
-			@include toggleColor(color, "secondary-text--color");
-			text-decoration: 	underline;
-		}
-		&:focus {
-			@include toggleColor(color, "link-color--focus");
-			@include toggleColor(background, "link-background--focus");
-			outline: 2px solid;
-			@include toggleColor(outline-color, "outline-color");
-		}
-		&:active {
-			text-decoration: 	underline;
-		}
-	}
 	
 	section.post-body ul > li::before {
 		position: absolute;

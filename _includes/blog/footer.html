@@ -3,7 +3,13 @@
 	<dl class="meta-data">
 		<div class="meta-data meta-data-details">
 			<dt class="post-date">Published</dt>
-			<dd>{{ page.date | date: '%-d %B %Y' }}</dd>
+			<dd>
+				<a href="{{ page.url }}" class="no-underline u-url u-uid">
+					<time datetime="{{ page.date | date: '%Y-%m-%d %H:%M'}}" class="dt-published">
+						{{ page.date | date: '%-d %B %Y' }}
+					</time>
+				</a>
+			</dd>
 		</div>
 	
 		{% if page.categories %}
