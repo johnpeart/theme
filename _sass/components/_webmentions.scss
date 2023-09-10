@@ -103,9 +103,11 @@
 .webmention__author__photo {
     height: 50px;
     width: 50px;
-    border-radius: 10px;
+    border-radius: 50%;
     object-fit: cover;
     margin-right: $container-padding;
+    border: 1px solid;
+    @include toggleColor(border-color, "icon-color");
 }
 .webmention__pubdate {
     font-style: italic;

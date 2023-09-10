@@ -32,11 +32,11 @@ body[id^='stream'] {
 		
 		@include toggleSizes(
 			grid-template-areas,
-			"likes boosts" "date date",
-			"likes boosts date",
-			"likes boosts date",
-			"likes boosts date",
-			"likes boosts date"
+			"likes boosts" "meta meta",
+			"likes boosts meta",
+			"likes boosts meta",
+			"likes boosts meta",
+			"likes boosts meta"
 		);
 		
 		@include toggleSizes(
@@ -68,8 +68,8 @@ body[id^='stream'] {
 			}
 		}
 		
-		p.post-date {
-			grid-area: date;
+		div.meta {
+			grid-area: meta;
 			width: 100%;
 			@include toggleSizes(
 				text-align,
@@ -82,6 +82,10 @@ body[id^='stream'] {
 			padding: 0;
 			@include sm-down() {
 				padding-top: $container-padding;
+			}
+			
+			p {
+				padding: 0;
 			}
 		}
 	}
