@@ -1,0 +1,219 @@
+.post-it {
+	
+	display: grid;
+	position: relative;
+	direction: inline-block;
+	
+	@include toggleSizes(
+		width,
+		275px,
+		300px,
+		450px,
+		525px,
+		638px
+	);
+	   
+	@include toggleSizes(
+		height,
+		275px,
+		300px,
+		300px,
+		350px,
+		425px
+	);
+	   
+	@include toggleSizes(
+		padding,
+		$container-padding,
+		$container-padding * 1.5,
+		$container-padding * 1.5,
+		$container-padding * 2,
+		$container-padding * 2
+	);
+	@include toggleSizes(
+		margin,
+		$container-padding * 2 auto,
+		$container-padding * 4 auto,
+		$container-padding * 4 auto,	
+		$container-padding * 4 auto,
+		$container-padding * 4 auto,
+	)
+	outline-offset: 0;
+
+	@include toggleSizes(
+		border-top,
+		60px solid,
+		72px solid,
+		72px solid,
+		72px solid,
+		102px solid
+	);
+	
+	&.post-it--yellow {
+		border-bottom-right-radius: 120px 10px;
+		
+		border-color: map-get($colors, "post-it--yellow--top");
+		background: map-get($colors, "post-it--yellow"); // Fallback
+		background: linear-gradient(135deg, 
+			map-get($colors, "post-it--yellow") 81%,
+			map-get($colors, "post-it--yellow") 82%,
+			map-get($colors, "post-it--yellow") 82%,
+			map-get($colors, "post-it--yellow--curl") 100%
+		);
+		outline: 1px solid map-get($colors, "post-it--yellow--border");
+		
+		@include darkMode() {
+			background: linear-gradient(135deg, 
+				map-get($colors, "post-it--yellow") 81%,
+				map-get($colors, "post-it--yellow") 82%,
+				map-get($colors, "post-it--yellow") 82%,
+				map-get($colors, "dark--post-it--yellow--curl") 100%
+			);
+		}
+		
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			right:-0px; bottom:20px;
+			width: 200px;
+			height: 25px;
+			background: rgba(0, 0, 0, 0.2);
+			box-shadow: 4px 15px 5px rgba(0, 0, 0, 0.40);
+			-moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+			 -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+				  -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+				 -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+					 transform: matrix(-1, -0.1, 0, 1, 0, 0);
+			transition: all 0.5s;
+		}
+		
+		transition: all 0.5s;
+		
+		&:hover {
+			background: linear-gradient(135deg, 
+				map-get($colors, "post-it--yellow") 69%,
+				map-get($colors, "post-it--yellow") 70%,
+				map-get($colors, "post-it--yellow") 70%,
+				map-get($colors, "post-it--yellow--curl") 100%
+			);
+			
+			@include darkMode() {
+				background: linear-gradient(135deg, 
+					map-get($colors, "post-it--yellow") 69%,
+					map-get($colors, "post-it--yellow") 70%,
+					map-get($colors, "post-it--yellow") 70%,
+					map-get($colors, "dark--post-it--yellow--curl") 100%
+				);
+			}
+			border-bottom-right-radius: 300px 50px;
+			
+			transition: all 0.5s;
+			
+			&::after {
+				content: "";
+				position: absolute;
+				z-index: -1;
+				right: -0px; 
+				bottom: 55px;
+				width: 200px;
+				height: 25px;
+				background: rgba(0, 0, 0, 0.2);
+				box-shadow: 4px 30px 25px rgba(0, 0, 0, 0.40);
+				-moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+				 -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+					  -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+					 -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+						 transform: matrix(-1, -0.1, 0, 1, 0, 0);
+				transition: all 0.5s;
+			}
+			
+		}
+	}
+	
+	&.post-it--magenta {
+		border-bottom-right-radius: 150px 25px;
+		
+		border-color: map-get($colors, "post-it--magenta--top");
+		background: map-get($colors, "post-it--magenta"); // Fallback
+		background: linear-gradient(135deg, 
+			map-get($colors, "post-it--magenta") 81%,
+			map-get($colors, "post-it--magenta") 82%,
+			map-get($colors, "post-it--magenta") 82%,
+			map-get($colors, "post-it--magenta--curl") 100%
+		);
+		outline: 1px solid map-get($colors, "post-it--magenta--border");
+		
+		@include darkMode() {
+			background: linear-gradient(135deg, 
+				map-get($colors, "post-it--magenta") 81%,
+				map-get($colors, "post-it--magenta") 82%,
+				map-get($colors, "post-it--magenta") 82%,
+				map-get($colors, "dark--post-it--magenta--curl") 100%
+			);
+		}
+		
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			right: -0px; 
+			bottom:35px;
+			width: 200px;
+			height: 40px;
+			background: rgba(0, 0, 0, 0.2);
+			box-shadow: 6px 25px 5px rgba(0, 0, 0, 0.40);
+			-moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+			 -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+				  -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+				 -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+					 transform: matrix(-1, -0.1, 0, 1, 0, 0);
+		}
+	}
+	
+	&.post-it--cyan {
+		border-bottom-left-radius: 120px 20px;
+
+		border-color: map-get($colors, "post-it--cyan--top");
+		background: map-get($colors, "post-it--cyan"); // Fallback
+		background: linear-gradient(-135deg, 
+			map-get($colors, "post-it--cyan") 81%,
+			map-get($colors, "post-it--cyan") 82%,
+			map-get($colors, "post-it--cyan") 82%,
+			map-get($colors, "post-it--cyan--curl") 100%
+		);
+		outline: 1px solid map-get($colors, "post-it--cyan--border");
+		
+		@include darkMode() {
+			background: linear-gradient(-135deg, 
+				map-get($colors, "post-it--cyan") 81%,
+				map-get($colors, "post-it--cyan") 82%,
+				map-get($colors, "post-it--cyan") 82%,
+				map-get($colors, "dark--post-it--cyan--curl") 100%
+			);
+		}
+		
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			left: 0px; 
+			bottom: 30px;
+			width: 200px;
+			height: 25px;
+			background: rgba(0, 0, 0, 0.2);
+			box-shadow: -5px 25px 5px rgba(0, 0, 0, 0.40);
+				-moz-transform: matrix(-1, 0.1, 0, 1, 0, 0);
+			 -webkit-transform: matrix(-1, 0.1, 0, 1, 0, 0);
+				  -o-transform: matrix(-1, 0.1, 0, 1, 0, 0);
+				 -ms-transform: matrix(-1, 0.1, 0, 1, 0, 0);
+					 transform: matrix(-1, 0.1, 0, 1, 0, 0);
+		}
+	}
+	
+	.post-it--title {
+		align-self: center;
+		@include font-postitnote($post-it-title);
+	}
+
+}

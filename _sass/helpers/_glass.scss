@@ -1,6 +1,16 @@
-@mixin glass($color, $blur: 5px) {
+@mixin glass($color: "glass", $blur: 5px) {
 	
-	@include toggleColor(background, "#{$color}");
+	@if $color == glass {
+		background: linear-gradient(145deg, rgba(248, 249, 250, 0.25), rgba(233, 236, 239, 0.75));
+		@include darkMode() {
+			background: linear-gradient(145deg, rgba(33, 37, 41, 0.75), rgba(52, 58, 64, 0.75));
+		}
+	} @else if $color == dark {
+		background: linear-gradient(145deg, rgba(33, 37, 41, 0.75), rgba(52, 58, 64, 0.75));
+		color: map-get($colors, "white");
+	} @else {
+		@error "Unknown glass type. Use 'glass' or 'dark'.";
+	}
 	-webkit-backdrop-filter: blur($blur);
 			backdrop-filter: blur($blur);
 	

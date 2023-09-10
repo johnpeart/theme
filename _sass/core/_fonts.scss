@@ -73,3 +73,19 @@
 		
 	font-display: fallback;
 }
+
+@font-face {
+	font-family: 'Permanent Marker';
+	
+	font-weight: regular;
+	font-style: normal;
+	
+	src:	url('../fonts/PermanentMarker-Regular.ttf');
+	
+	-moz-font-feature-settings:	$font-feature-settings;
+	-o-font-feature-settings:	$font-feature-settings;
+	-webkit-font-feature-settings:	$font-feature-settings;
+	font-feature-settings:	$font-feature-settings;
+		
+	font-display: fallback;
+}

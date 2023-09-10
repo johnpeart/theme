@@ -1,12 +1,33 @@
 @mixin typography-common {
 	font-family: $font-family;
 }
+@mixin typography-common-postitnote {
+	font-family: $font-family-postitnote;
+}
 
 @mixin font($font) {
 	
 	@each $style, $sizes in $font {
 		
 		@include typography-common;
+		
+		@include toggleSizes(
+			$style, 
+			map-get($sizes, "xs"),  
+			map-get($sizes, "sm"),  
+			map-get($sizes, "md"), 
+			map-get($sizes, "lg"),  
+			map-get($sizes, "xl")
+		);
+	}
+	
+}
+
+@mixin font-postitnote($font) {
+	
+	@each $style, $sizes in $font {
+		
+		@include typography-common-postitnote;
 		
 		@include toggleSizes(
 			$style, 

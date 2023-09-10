@@ -6,15 +6,7 @@
     grid-template-columns: auto 1fr;
     grid-gap: $container-padding;
     
-    @include toggleColor(background, "default-element-background");
-    @include toggleSizes(
-        border-radius,
-        15px,
-        15px,
-        20px,
-        20px,
-        20px
-    );
+    @include plastic(inset);
     @include toggleSizes(
         padding,
         $container-padding,
@@ -26,15 +18,12 @@
     
 }
 
-a.post-activity-icon {
+.post-activity-icon {
     display: grid;
     position: relative;
     margin: 0;
     padding: 0;
     align-content: center;
-    
-    border-radius: 100%;
-    outline-offset: 3px;
     
     svg.activity-icon path {
         @include toggleColor(fill, "icon-color");
@@ -43,6 +32,12 @@ a.post-activity-icon {
         transition: 0.25s all;
     }
     
+}
+    
+a.post-activity-icon {    
+    
+    border-radius: 10px;
+    outline-offset: 3px;
     &:hover {
         svg.activity-icon path {
             @include toggleColor(fill, "link-color--hover");

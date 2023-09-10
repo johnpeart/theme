@@ -35,6 +35,8 @@ $container-padding: 	 			15px;
 
 // Font face
 $font-family: 						"JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", Roboto, "Segoe UI", Arial, sans-serif !default;
+// Font face – Marker pen
+$font-family-postitnote:			"Permanent Marker", 'Segoe Print', 'Marker Felt', Chilanka, TSCu_Comic, casual, cursive;
 // Feature settings
 $font-feature-settings:				"ss02", "tnum", "liga", "zero", "kern";
 $sup-font-feature-settings:			"ss02", "tnum", "liga", "zero", "kern", "frac";
@@ -246,16 +248,12 @@ $colors: (
 	"dark--dropdown-menu--color--hover":				#FAFAFA,
 	"dark--dropdown-menu--color--focus":				#FAFAFA,
 	
-	// glass
-	"glass":							linear-gradient(145deg, rgba(248, 249, 250, 0.25), rgba(233, 236, 239, 0.75)),
-	"dark--glass":						linear-gradient(145deg, rgba(33, 37, 41, 0.75), rgba(52, 58, 64, 0.75)),
-	
 	// post-it notes
 	"post-it--yellow":					#FFD700,
 	"post-it--yellow--curl":			lighten(#FFD700, 25%),
 	"post-it--yellow--border":			lighten(#FFD700, 25%),
 	"post-it--yellow--top":				darken(#FFD700, 1%),
-	"dark--post-it--yellow--curl":		darken(#FFD700, 20%),
+	"dark--post-it--yellow--curl":		darken(#FFD700, 15%),
 	
 	"post-it--magenta":					#e6647e,
 	"post-it--magenta--curl":			lighten(#e6647e, 10%),
@@ -970,13 +968,6 @@ $sub-legend: (
 
 $post-it: (
 	
-	"font-size": (
-		"xs": 20px,
-		"sm": 20px,
-		"md": 22px,
-		"lg": 26px,
-		"xl": 32px
-	),
 	"line-height": (
 		"xs": 1.25,
 		"sm": 1.25,
@@ -1032,13 +1023,6 @@ $post-it-title: (
 		"xl": 0 0 $container-padding 0
 	),
 	"font-weight": (
-		"xs": bold,
-		"sm": bold,
-		"md": bold,
-		"lg": bold,
-		"xl": bold
-	),
-	"font-style": (
 		"xs": normal,
 		"sm": normal,
 		"md": normal,
