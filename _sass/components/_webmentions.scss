@@ -24,52 +24,13 @@
     margin: 0;
     padding: 0;
     align-content: center;
-    
     svg.activity-icon path {
         @include toggleColor(fill, "icon-color");
         transform-origin: center;
         transform: scale(1);
         transition: 0.25s all;
-    }
-    
+    }   
 }
-    
-a.post-activity-icon {    
-    
-    border-radius: 10px;
-    outline-offset: 3px;
-    &:hover {
-        svg.activity-icon path {
-            @include toggleColor(fill, "link-color--hover");
-            transition: 0.1s all;
-            transform: scale(1.1);
-        }
-    }
-    
-    &:focus {
-        @include toggleColor(background, "link-background--focus");
-        outline: 2px solid;
-        @include toggleColor(outline-color, "outline-color");
-        svg.activity-icon path {
-            @include toggleColor(fill, "link-color--focus");
-            transition: 0.1s all;
-            transform: scale(1.1);
-        }
-    }
-    &:active {
-        outline: 2px solid;
-        @include toggleColor(outline-color, "outline-color");
-            @include toggleColor(background, "link-background--focus");
-            svg.activity-icon path {
-                @include toggleColor(fill, "link-color--focus");
-                transform-origin: center;
-                transform: scale(1.2);
-                transition: 0.1s all;
-            }
-        }
-    
-}
-
 
 .webmentions {
     display: grid;
