@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<main id="content" class="container">
+
+	{% for page in paginator.posts %}
+	
+	<article class="social e-content">
+	{% include stream/postitnote.html %}
+	{% if page.content.size > 0 %}
+		<section class="post--body">
+			{{ page.content }}
+		</section>
+	{% endif %}
+	{% include stream/footer.html %}
+	</article>
+	
+	{% endfor %}
+	
+	{% if paginator.total_pages > 1 %}
+	<ul>
+	  {% if paginator.previous_page %}
+	  <li>
+		<a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+	  </li>
+	  {% endif %}
+	  {% if paginator.next_page %}
+	  <li>
+		<a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+	  </li>
+	  {% endif %}
+	</ul>
+	{% endif %}
+
+</main>
+
+{% include footer.html %}

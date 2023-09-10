@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<main id="content" class="container">	
+	<article class="social e-content">
+	{% include stream/postitnote.html %}
+	{% if page.content.size > 0 %}
+		<section class="post--body">
+			{{ page.content }}
+		</section>
+	{% endif %}
+	{% include stream/footer.html %}
+	</article>
+</main>
+
+{% include footer.html %}

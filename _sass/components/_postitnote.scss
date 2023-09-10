@@ -48,6 +48,19 @@
 		72px solid,
 		102px solid
 	);
+	transition: all 0.25s;
+	&::after {
+		transition: all 0.25s;
+	}
+	
+	&:hover {
+		transition: all 0.25s;
+		&::after {
+			transition: all 0.25s;
+		}
+	}
+	
+	color: map-get($colors, "black");
 	
 	&.post-it--yellow {
 		border-bottom-right-radius: 120px 10px;
@@ -85,10 +98,7 @@
 				  -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
 				 -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
 					 transform: matrix(-1, -0.1, 0, 1, 0, 0);
-			transition: all 0.5s;
 		}
-		
-		transition: all 0.5s;
 		
 		&:hover {
 			background: linear-gradient(135deg, 
@@ -108,8 +118,6 @@
 			}
 			border-bottom-right-radius: 300px 50px;
 			
-			transition: all 0.5s;
-			
 			&::after {
 				content: "";
 				position: absolute;
@@ -120,12 +128,6 @@
 				height: 25px;
 				background: rgba(0, 0, 0, 0.2);
 				box-shadow: 4px 30px 25px rgba(0, 0, 0, 0.40);
-				-moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-				 -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-					  -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-					 -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-						 transform: matrix(-1, -0.1, 0, 1, 0, 0);
-				transition: all 0.5s;
 			}
 			
 		}
@@ -169,6 +171,39 @@
 				 -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
 					 transform: matrix(-1, -0.1, 0, 1, 0, 0);
 		}
+		
+		&:hover {
+			background: linear-gradient(135deg, 
+				map-get($colors, "post-it--magenta") 69%,
+				map-get($colors, "post-it--magenta") 70%,
+				map-get($colors, "post-it--magenta") 70%,
+				map-get($colors, "post-it--magenta--curl") 100%
+			);
+			
+			@include darkMode() {
+				background: linear-gradient(135deg, 
+					map-get($colors, "post-it--magenta") 69%,
+					map-get($colors, "post-it--magenta") 70%,
+					map-get($colors, "post-it--magenta") 70%,
+					map-get($colors, "dark--post-it--magenta--curl") 100%
+				);
+			}
+			border-bottom-right-radius: 300px 50px;
+			
+			&::after {
+				content: "";
+				position: absolute;
+				z-index: -1;
+				right: -0px; 
+				bottom: 55px;
+				width: 200px;
+				height: 25px;
+				background: rgba(0, 0, 0, 0.2);
+				box-shadow: 4px 30px 25px rgba(0, 0, 0, 0.40);
+				-moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+			}
+			
+		}
 	}
 	
 	&.post-it--cyan {
@@ -198,9 +233,9 @@
 			position: absolute;
 			z-index: -1;
 			left: 0px; 
-			bottom: 30px;
+			bottom: 35px;
 			width: 200px;
-			height: 25px;
+			height: 55px;
 			background: rgba(0, 0, 0, 0.2);
 			box-shadow: -5px 25px 5px rgba(0, 0, 0, 0.40);
 				-moz-transform: matrix(-1, 0.1, 0, 1, 0, 0);
@@ -209,6 +244,39 @@
 				 -ms-transform: matrix(-1, 0.1, 0, 1, 0, 0);
 					 transform: matrix(-1, 0.1, 0, 1, 0, 0);
 		}
+		
+		&:hover {
+			background: linear-gradient(-135deg, 
+				map-get($colors, "post-it--cyan") 69%,
+				map-get($colors, "post-it--cyan") 70%,
+				map-get($colors, "post-it--cyan") 70%,
+				map-get($colors, "post-it--cyan--curl") 100%
+			);
+			
+			@include darkMode() {
+				background: linear-gradient(-135deg, 
+					map-get($colors, "post-it--cyan") 69%,
+					map-get($colors, "post-it--cyan") 70%,
+					map-get($colors, "post-it--cyan") 70%,
+					map-get($colors, "dark--post-it--cyan--curl") 100%
+				);
+			}
+			border-bottom-left-radius: 300px 50px;
+			
+			&::after {
+				content: "";
+				position: absolute;
+				z-index: -1;
+				left: 10px; 
+				bottom: 55px;
+				width: 200px;
+				height: 55px;
+				background: rgba(0, 0, 0, 0.2);
+				box-shadow: 4px 30px 25px rgba(0, 0, 0, 0.40);
+			}
+			
+		}
+		
 	}
 	
 	.post-it--title {
