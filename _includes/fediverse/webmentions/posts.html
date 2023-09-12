@@ -1,0 +1,16 @@
+{% if webmentions.size > 0 %}
+  <ol class="webmentions--list">
+    {% for webmention in webmentions %}
+      <li id="webmention-{{ webmention.id }}" class="webmentions--item webmention webmention--{{ webmention.type }}">
+        <a class="webmention--title webmention--source u-url" href="{{ webmention.url }}" rel="nofollow">{{ webmention.title }}</a>
+        <div class="webmention--meta">
+          {% if webmention.pubdate %}
+            <time class="webmention--pubdate dt-published" datetime="{{ webmention.pubdate | date: '%FT%T%:z' }}">{{ webmention.pubdate | date: '%d %B %Y' }}</time>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+{% else %}
+  <p class="webmentions--not-found">No posts were found</p>
+{% endif %}

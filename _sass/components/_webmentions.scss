@@ -1,12 +1,192 @@
-/* Webmention Section */
+footer#post-footer,
+footer#stream-footer {
+    display: grid;
+    position: relative;
     
-.post-activity {
+    @include toggleSizes(
+        grid-template-columns,
+        1fr,
+        1fr,
+        1fr,
+        1fr 1fr,
+        1fr 1fr
+    );
+    
+    @include toggleSizes(
+        grid-template-areas,
+        "meta" "likes" "reposts" "replies" "author",
+        "meta" "likes" "reposts" "replies" "author",
+        "meta" "likes" "reposts" "replies" "author",
+        "likes reposts" "replies replies" "meta author",
+        "likes reposts" "replies replies" "meta author"
+    );
+    
+    #webmentions--likes {
+        grid-area: likes;
+    }
+    
+    #webmentions--reposts {
+        grid-area: reposts;
+    }
+    
+    #webmentions--replies {
+        grid-area: replies;
+    }
+    
+    @include toggleSizes(
+        grid-gap,
+        $container-padding,
+        $container-padding,
+        $container-padding,
+        $container-padding,
+        $container-padding
+    );
+    
+    @include toggleSizes(
+        margin-top,
+        $container-padding * 2,
+        $container-padding * 2,
+        $container-padding * 3,
+        $container-padding * 4,
+        $container-padding * 5
+    );
+    
+    aside#webmentions--likes,
+    aside#webmentions--reposts,
+    aside#post-author-card,
+    aside#meta-data--published,
+    aside#meta-data--categories  {
+        @include plastic(inset, 3px);
+    }
+    
+}
+
+aside#webmentions--likes,
+aside#webmentions--reposts {
+    
     display: grid;
     
     grid-template-columns: auto 1fr;
+    grid-template-areas: "icon webmentions";
     grid-gap: $container-padding;
+    padding: $container-padding;
     
-    @include plastic(inset);
+    ol.webmentions--list {
+         
+        grid-area: webmentions;
+        display: flex;
+        scroll-behavior: smooth;
+        overflow-x: scroll;
+        list-style-type: none;
+        padding:0;
+        margin: 0;
+        
+        @include clearfix();
+    }
+    
+    li.webmentions--item {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-right: $container-padding;
+        float: left;
+    }
+    
+}
+
+.post-activity-icon {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    align-self: flex-start;
+    grid-area: icon;
+    svg {
+        display: block;
+        position: relative;
+    }
+    svg.activity-icon path {
+        @include toggleColor(fill, "icon-color");
+    }   
+}
+
+aside#webmentions--replies {
+    
+    ol.webmentions--list {
+        padding: 0;
+        list-style: none;
+    }
+    
+    li.webmentions--item {
+        display: grid;
+        
+        grid-template-areas: "header" "content";
+        grid-gap: $container-padding;
+        
+        @include plastic(raised, 2px);
+        border-radius: 10px !important;
+        padding: $container-padding;
+        margin-bottom: $container-padding;
+        &:last-of-type { margin: 0; }
+    }
+    
+    header.webmention--meta {
+        grid-area: header;
+    }
+    section.webmention--reply--content {
+        grid-area: content;@include plastic(inset, 2px);
+        border-radius: 10px !important;
+        padding: $container-padding;
+        margin-bottom: $container-padding;
+        &:last-of-type { margin: 0; }
+    }
+    
+    section.webmention--author {
+        display: grid;
+        
+        @include toggleColor(color, "secondary-text--color");
+        grid-template-columns: 65px 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "photo name" "photo date";
+        
+        @include md-up {
+            grid-gap: $container-padding;
+            grid-template-columns: auto 1fr auto;
+            grid-template-rows: 1fr;
+            grid-template-areas: "photo name date";
+        }
+    }
+    
+    a.webmention--author--photo {
+        align-self: center;
+    }
+    
+    p.webmention--reply--author-name {
+        grid-area: name;
+        @include font($body--small);
+    }
+    span.webmention--reply--author-url {
+        display: block;
+        width: 100%;
+    }
+    .webmention--reply--publish-date {
+        grid-area: date;
+        @include font($body--small);
+    }
+    
+    .webmentions--no-activity {
+        @include plastic(raised, 2px);
+        border-radius: 10px !important;
+        padding: $container-padding;
+    }
+    
+}
+
+aside#post-author-card {
+    display: grid;
+    grid-area: author;
+    
+    align-content: center;
+    
     @include toggleSizes(
         padding,
         $container-padding,
@@ -16,116 +196,274 @@
         $container-padding
     );
     
-}
-
-.post-activity-icon {
-    display: grid;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    align-content: center;
-    svg.activity-icon path {
-        @include toggleColor(fill, "icon-color");
-        transform-origin: center;
-        transform: scale(1);
-        transition: 0.25s all;
-    }   
-}
-
-.webmentions {
-    display: grid;
-    position: relative;
-    margin: 0;
-    padding: 0;
+    @include toggleSizes(
+        grid-template-columns,
+        1fr 2fr,
+        57px auto auto,
+        57px auto auto,
+        114px 1fr,
+        140px 1fr
+    );
     
-    height: 100%;
-    max-width: 100%;
-    align-content: center;
+    @include toggleSizes(
+        grid-template-rows,
+        auto auto,
+        auto,
+        auto,
+        auto auto,
+        auto auto
+    );
     
-    * {
+    @include toggleSizes(
+        grid-template-areas,
+        "memoji author" "icons icons",
+        "memoji author icons",
+        "memoji author icons",
+        "memoji author" "memoji icons",
+        "memoji author" "memoji icons"
+    );
+    
+    @include toggleSizes(
+        grid-gap,
+        $container-padding * 2,
+        $container-padding * 2,
+        $container-padding * 2,
+        $container-padding * 2,
+        $container-padding * 2
+    );
+    
+    p, dl, dt, dd {
+        @include font($body--small);
+    }
+    
+    .author--icons {
+        grid-area: icons;
+        
+        display: grid;
+        position: relative;
+        
+        grid-template-columns: auto auto auto auto auto;
+        align-items: center;
+        
+        @include toggleSizes(
+            justify-items,
+            center,
+            flex-end,
+            flex-end,
+            flex-start,
+            flex-start
+        );
+        
+        padding: 0;
+        margin: 0;
+                    
+        * {
+            line-height: 30px !important;
+            text-decoration: none;
+        }
+        
+        span.footer--icons--separator {
+            display: inline-block;
+            height: 30px;
+            width: 2px;
+            margin: 0 10px 0 5px;
+            border-right: 2px solid;
+            @include toggleColor(border-color, "border-color");
+            content: "";
+        }
+        
+        a {
+            
+            display: inline-block;
+            position: relative;
+            
+            margin: 0;
+            margin-right: 10px;
+            padding: 0;
+            
+            svg.footer--icons--social {
+                display: block;
+                position: relative;
+                
+                height: 30px;
+                width: 30px;
+                margin: 0;
+                padding: 0;
+                            
+                path {
+                    @include toggleColor(fill, "color");
+                }
+            }
+            
+            
+            &:link svg path {
+                fill: map-get($colors, "gray-600");
+                @include darkMode() {
+                    fill: map-get($colors, "gray-400");	
+                } 
+            }
+            &:visited svg path {
+                fill: map-get($colors, "gray-600");
+                @include darkMode() {
+                    fill: map-get($colors, "gray-400");	
+                } 
+            }
+            &:hover svg path {
+                @include toggleColor(background, "background", true);
+                @include toggleColor(fill, "link-color--hover");
+                text-decoration: none;
+            }
+            &:focus {
+                outline-offset: 0;
+                outline: 5px solid;
+            }
+            &:focus svg path {
+                @include toggleColor(background, "link-color--hover");	
+                @include toggleColor(fill, "background", true);
+                outline: none;
+            }
+            &:active svg path {
+                text-decoration: 	none;
+            }
+            
+        }
+    }
+    
+    div.author-details {
+        grid-area: author;
+        display: grid;
+        @include toggleSizes(
+            justify-items,
+            flex-start,
+            flex-start,
+            flex-start,
+            flex-start,
+            flex-start
+        );
+    }
+    
+    p.author--wordmark {
+        position: relative;
+        display: block;
+        @include toggleColor(color, "color");
+        @include font($body);
+        font-weight: 	bold !important;
+        padding-bottom: 0 !important;
+    }
+    
+    
+    a.p-author {			
+        &:link, 
+        &:visited {
+            text-decoration: none;
+        }
+    }
+    
+    a.memoji {
+        grid-area: memoji;
+        display: grid;
+        position: relative;
+        justify-self: center;
+    }
+    
+    img.footer--memoji {
         display: block;
         position: relative;
+        
+        box-sizing: border-box;
+        
+        margin: 0;
+        padding: 0;
+        
+        
+        @include toggleSizes(
+            width,
+            57px,
+            57px,
+            57px,
+            114px,
+            140px
+        );
+        @include toggleSizes(
+            height,
+            57px,
+            57px,
+            57px,
+            114px,
+            140px
+        );
+    
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        transform: scale(1) rotate(0);
+        transition: 1s all;
+        
+        &:hover {
+            -webkit-filter: none; /* Safari 6.0 - 9.0 */
+            filter: none;
+            transform: scale(1.1) rotate(-5deg);
+            transition: 1s all;
+        }
+        
+        @include toggleSizes(
+            border-radius,
+            5px,
+            5px,
+            13px,
+            13px,
+            13px
+        );
     }
 }
 
-.webmentions__facepile {
-    display:flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.webmentions__face {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex: none;
-    border: 1px solid;
-    @include toggleColor(border-color, "icon-color");
-}
-.webmentions__list {
+dl.meta-data {
+    grid-area: meta;
     display: grid;
-    
     grid-gap: $container-padding;
     
-    @include toggleSizes(
-        grid-template-columns,
-        50px 50px 50px,
-        50px 50px 50px 50px 50px 50px 50px,
-        50px 50px 50px 50px 50px 50px 50px,
-        50px 50px 50px 50px,
-        50px 50px 50px 50px
-    );
-    grid-auto-rows: 50px;
     
-    list-style-type: none;
-    padding:0;
+    .meta-data-details {
+        display: block;
+        position: relative;
+        @include toggleSizes(
+            padding,
+            $container-padding,
+            $container-padding,
+            $container-padding,
+            $container-padding,
+            $container-padding
+        );
+    }    
+    p, dl, dt, dd {
+        @include font($body--small);
+    }
+    dt, dd {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+    dt {
+        font-weight: 	bold;
+    }
+    dd {
+        text-transform: capitalize;
+    }
+    
 }
-.webmentions__item {
-    margin-bottom: 0;
+
+.webmentions--not-found {
+    line-height: 50px;
+    align-self: center;
     padding-bottom: 0;
 }
 
-/* Single Webmention */
-
-.webmention {
-    display: flex;
-}
-.webmention__meta {
-    margin-bottom: $container-padding;
-}
-.webmention__author {
-    margin-right: $container-padding;
-    
-    a.u-url {
-        max-width: 50px;
-    }
-}
-.webmention__author__photo {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: $container-padding;
-    border: 1px solid;
-    @include toggleColor(border-color, "icon-color");
-}
-.webmention__pubdate {
-    font-style: italic;
-}
-
-.webmention__author .u-url {
-    display: inline-block;
-}
-
-.webmention-count {
-    @include font($body);
-    align-self: center;
-    line-height: 35px !important;
-    vertical-align: middle;
-    padding: 0 0 0 $container-padding !important;
-}
-
-.post-activity-icon svg {
+img.webmention--author--photo {
     display: block;
     position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    &.bubble-clip {
+        border-radius: 100% 100% 0% 100%;
+    }
 }

@@ -1,7 +1,7 @@
 <footer id="post-footer">
 	
 	<dl class="meta-data">
-		<div class="meta-data meta-data-details">
+		<aside id="meta-data--published" class="meta-data meta-data-details">
 			<dt class="post-date">Published</dt>
 			<dd>
 				<a href="{{ page.url }}" class="no-underline u-url u-uid">
@@ -10,13 +10,13 @@
 					</time>
 				</a>
 			</dd>
-		</div>
+		</aside>
 	
 		{% if page.categories %}
-		<div class="meta-data meta-data-details">
+		<aside id="meta-data--categories" class="meta-data meta-data-details">
 			<dt class="post-categories">Categories</dt>
 			<dd>{% for categories in page.categories %}<span class="p-category">{{ categories }}</span>{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
-		</div>
+		</aside>
 		{% endif %}
 	</dl>
 	
