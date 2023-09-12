@@ -10,6 +10,6 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-redirect-from"
   gem "jekyll-sass-converter", "~> 2.0"
-  gem "jekyll-webmention_io"
+  gem "jekyll-webmention_io", :git => "https://github.com/johnpeart/jekyll-webmention_io.git"
 end
 gem "webrick", "~> 1.7"
