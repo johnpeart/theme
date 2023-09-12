@@ -1,0 +1,17 @@
+<span class="post-activity-icon">
+	{% if webmention_types == "likes" %}
+		{% include fediverse/icons/likes.html %}
+	{% elsif webmention_types == "reposts" %}
+		{% include fediverse/icons/reposts.html %}
+	{% elsif webmention_types == "comments" %}
+		{% include fediverse/icons/comments.html %}
+	{% elsif webmention_types == "links" %}
+		{% include fediverse/icons/links.html %}
+	{% elsif webmention_types == "posts" %}
+		{% include fediverse/icons/posts.html %}
+	{% elsif webmention_types == "bookmarks" %}
+		{% include fediverse/icons/bookmarks.html %}
+	{% elsif webmention_types == "rsvp" %}
+		{% include fediverse/icons/rsvp.html %}
+	{% endif %}
+</span>

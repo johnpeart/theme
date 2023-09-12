@@ -1,13 +1,15 @@
-{% if page.layout == 'post' %}
-  {% webmention_likes page.url %}
-{% elsif paginator %}
+{% if paginator %}
   {% webmention_count page.url likes %}
+{% else %}
+  {% webmention_likes page.url %}
 {% endif %}
 
-{% if page.layout == 'post' %}
-  {% webmention_reposts page.url %}
-{% elsif paginator %}
+{% if paginator %}
   {% webmention_count page.url reposts %}
+{% else %}
+  {% webmention_reposts page.url %}
 {% endif %}
 
-{% webmention_replies page.url %}
+{% unless paginator %}
+  {% webmention_replies page.url %}
+{% endunless %}
