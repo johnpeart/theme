@@ -51,14 +51,14 @@ footer#stream-footer {
         $container-padding * 5
     );
     
-    aside#webmentions--likes,
-    aside#webmentions--reposts,
-    aside#post-author-card,
-    aside#meta-data--published,
-    aside#meta-data--categories  {
-        @include plastic(inset, 3px);
-    }
-    
+}
+
+aside#webmentions--likes,
+aside#webmentions--reposts,
+aside#post-author-card,
+aside#meta-data--published,
+aside#meta-data--categories  {
+    @include plastic(inset, 3px);
 }
 
 aside#webmentions--likes,
@@ -455,6 +455,14 @@ dl.meta-data {
     line-height: 50px;
     align-self: center;
     padding-bottom: 0;
+}
+
+.webmention-count {
+    @include font($body);
+    align-self: center;
+    line-height: 35px !important;
+    vertical-align: middle;
+    padding: 0 0 0 $container-padding !important;
 }
 
 img.webmention--author--photo {

@@ -20,13 +20,7 @@
                 </a>
               {% else %}
                 <a class="webmention--reply--author-image u-url" href="{{ webmention.author.url }}" rel="nofollow">
-                  <svg version="1.1" class="webmention--author--photo bubble-clip u-photo" viewBox="0 0 100 100" width="50" height="50">
-                    <defs/>
-                    <g id="speech-bubble" fill="none" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-dasharray="none">
-                      <title>Canvas 1</title>
-                        <path d="M 50 99.99996 L 50.050157 99.99996 L 99.99996 99.99996 L 99.99996 50.050157 C 99.99997 50.03344 99.99998 50.01672 99.99998 50 C 99.99998 37.20391 95.11841 24.40782 85.35527 14.64473 C 65.82909 -4.881554 34.170913 -4.881554 14.64473 14.64473 C -4.881554 34.170913 -4.881554 65.82909 14.64473 85.35527 C 24.40782 95.11841 37.20391 99.99998 50 99.99998 Z M 31.410592 43.58943 C 34.95107 47.12989 34.95107 52.87011 31.410592 56.41057 C 27.87013 59.95105 22.129912 59.95105 18.58945 56.41057 C 15.048971 52.87011 15.048971 47.12989 18.58945 43.58943 C 22.129912 40.04895 27.87013 40.04895 31.410592 43.58943 M 56.41057 43.58943 C 59.95105 47.12989 59.95105 52.87011 56.41057 56.41057 C 52.87011 59.95105 47.12989 59.95105 43.58943 56.41057 C 40.04895 52.87011 40.04895 47.12989 43.58943 43.58943 C 47.12989 40.04895 52.87011 40.04895 56.41057 43.58943 M 81.41055 43.58943 C 84.95103 47.12989 84.95103 52.87011 81.41055 56.41057 C 77.87009 59.95105 72.12987 59.95105 68.58941 56.41057 C 65.04893 52.87011 65.04893 47.12989 68.58941 43.58943 C 72.12987 40.04895 77.87009 40.04895 81.41055 43.58943" fill="black"/>
-                    </g>
-                  </svg>
+                  {% include fediverse/icons/replies.html %}
                 </a>
               {% endif %}
               <p class="webmention--reply--author-name p-name"><a class="webmention--author u-url" href="{{ webmention.author.url }}" rel="nofollow">{{ webmention.author.name}}</a><span class="webmention--reply--author-url">{{ webmention.author.url | remove: "http://" | remove: "https://" }}</span></p>

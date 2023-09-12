@@ -1,6 +1,6 @@
 {% capture webmention_types %}{{ types | join: ',' }}{% endcapture %}
 
-<aside id="webmentions--likes" class="post-activity post-activity-{{ webmention_types }}">
+<aside id="webmentions--{{ webmention_types }}" class="post-activity post-activity-{{ webmention_types }}">
 
 	{% include fediverse/icons/icons.html %}
 
