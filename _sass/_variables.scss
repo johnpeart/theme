@@ -959,7 +959,7 @@ $sub-legend: (
 
 );
 
-$post-it: (
+$handwritten: (
 	
 	"line-height": (
 		"xs": 1.25,
@@ -992,7 +992,7 @@ $post-it: (
 	
 );
 
-$post-it-title: (
+$handwritten-title: (
 	
 	"font-size": (
 		"xs": 26px,
@@ -1014,6 +1014,39 @@ $post-it-title: (
 		"md": 0 0 $container-padding 0,
 		"lg": 0 0 $container-padding 0,
 		"xl": 0 0 $container-padding 0
+	),
+	"font-weight": (
+		"xs": normal,
+		"sm": normal,
+		"md": normal,
+		"lg": normal,
+		"xl": normal
+	)
+	
+);
+
+$handwritten-body: (
+	
+	"font-size": (
+		"xs": 26px,
+		"sm": 26px,
+		"md": 32px,
+		"lg": 36px,
+		"xl": 44px
+	),
+	"line-height": (
+		"xs": 1,
+		"sm": 1,
+		"md": 1,
+		"lg": 1,
+		"xl": 1
+	),
+	"padding": (
+		"xs": 0 0 26px 0,
+		"sm": 0 0 26px 0,
+		"md": 0 0 32px 0,
+		"lg": 0 0 36px 0,
+		"xl": 0 0 44px 0
 	),
 	"font-weight": (
 		"xs": normal,

@@ -281,7 +281,7 @@
 	
 	.post-it--title {
 		align-self: center;
-		@include font-postitnote($post-it-title);
+		@include font-postitnote($handwritten-title);
 	}
 
 }

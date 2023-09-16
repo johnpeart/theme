@@ -7,7 +7,7 @@ layout: default
 <main id="content" class="container">	
 	<article class="social h-entry">
 		<section class="e-content">
-		{% include stream/postitnote.html %}
+		{% include {{ page.collection | append: '.html' | prepend: 'stream/' }} %}
 		{% if page.content.size > 0 %}
 			<section class="post--body">
 				{{ page.content }}
