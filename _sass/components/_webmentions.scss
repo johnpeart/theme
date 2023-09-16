@@ -93,6 +93,13 @@ aside#webmentions--reposts {
     
 }
 
+.post-activity-icon--small {
+    svg {
+        height: 35px;
+        width: 35px;
+    }
+}
+
 .post-activity-icon {
     display: block;
     position: relative;
