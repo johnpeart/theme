@@ -1,0 +1,107 @@
+nav.pagination {
+
+	position: relative;
+	display:        flex;
+
+	width:          100%;
+
+	@include sm-down {
+		flex-direction: column;
+	}
+
+	margin-top: 30px;
+
+	@include clearfix;
+
+	span[class^="page--next-prev--"] {
+
+		@extend h4;
+		font-style: normal;
+
+		display: block;
+		position: relative;
+		flex: 1;
+
+		padding: 0;
+
+		text-align: center;
+		
+		@include sm-down {
+			margin: 15px 0 0 0;
+
+			&:last-child {
+				margin-bottom: 15px;
+			}
+		}
+
+		@include md-up {
+
+			margin: 30px 0;
+
+			width: 50%;
+			max-width: 50%;
+
+			&:first-child {
+				margin-right: 15px;
+			}
+			&:last-child {
+				margin-left: 15px;
+			}
+			&:only-child {
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+		}
+
+		@include clearfix;
+	}
+
+	span.page--next-prev--prev {
+		@include md-up {
+			float:      left;
+		}
+	}
+
+	span.page--next-prev--next {
+		@include md-up {
+			float:      right;
+		}
+	}
+
+	span.page--next-prev--prev-blank {
+		background: none;
+
+		&:hover {
+			background: none;
+		}
+
+		@include sm-down {
+			display: none;
+		}
+	}
+	
+	span[class^="page--next-prev--"] a {
+		display: block;
+		
+		padding: $container-padding;
+		outline: 0;
+		
+		@include plastic(raised, 5px);
+		transition: all 0.25s ease-out;
+		&:link {
+			text-decoration: none;
+		}
+		&:hover {
+			@include plastic(raised, 2px);
+			outline:    none;
+			transition: all 0.25s ease-out;
+		}
+		&:active {
+			@include plastic(inset, 2px);
+			transition: all 0.25s ease-out;
+		}
+	
+	}
+
+}

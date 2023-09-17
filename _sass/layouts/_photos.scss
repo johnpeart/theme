@@ -3,208 +3,33 @@ body#photos {
 	section#page-content {
 		@include clearfix;
 	}
-
-	article.grid-item {
-		display: block;
-		position: relative;
-		list-style: none;
-		padding: 0;
-		float: left;
-
-		line-height: 1;
-
-		@include toggleSizes(
-			margin,
-			0 0 10px 0,
-			0 0 10px 0,
-			0 0 20px 0,
-			0 0 20px 0,
-			0 0 20px 0
-		);
-		@include toggleSizes(
-			max-width,
-			100%,
-			100%,
-			50%,
-			50%,
-			50%
-		);
-		@include toggleSizes(
-			width,
-			100%,
-			100%,
-			calc(50% - 10px),
-			calc(50% - 10px),
-			calc(50% - 10px)
-		);
-		@include toggleSizes(
-			height,
-			200px,
-			200px,
-			300px,
-			300px,
-			300px
-		);
-
-		@include md-up {
-			&:nth-of-type(odd) {
-				margin-left: 0;
-				margin-right: 10px;
-			}
-			&:nth-of-type(even) {
-				margin-left: 10px;
-				margin-right: 0;
-			}
-		}
-
-	}
-
-	p.grid-caption {
-
-		display: block;
-		opacity: 0;
-
-		width: 100%;
-
-		padding: 10px 15px;
-		@include toggleColor(background, "link-background--focus");
-		@include toggleColor(color, "link-color--focus");
-
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-
-	}
-
-	a.grid-link {
-
-		display: flex;
-		justify-content: flex-start;
-		align-items: flex-end;
-
-		background-position: center !important;
-		background-size: cover !important;
-
-		width: 100%;
-		height: 100%;
-
+	
+	.polaroid a {
+		background: #ffffff;
+		display: inline-block;
+		margin: 55px 75px 30px;
+		padding: 15px 15px 30px;
+		text-align: center;
 		text-decoration: none;
-
-		&:hover {
-			outline: 3px solid;
-			@include toggleColor(outline-color, "link-background--focus");
-		}
-		&:focus {
-			outline: 3px solid;
-			@include toggleColor(outline-color, "link-background--focus");
-		}
-		&:focus,
-		&:hover {
-			p.grid-caption {
-				opacity: 1;
-			}
-		}
-
-	}
-
-	nav.pagination {
-
+		-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+		-moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+		-webkit-transition: all .20s linear;
+		-moz-transition: all .20s linear;
+		transition: all .20s linear;
+		z-index: 0;
 		position: relative;
-		display:        flex;
-
-		width:          100%;
-
-		@include sm-down {
-			flex-direction: column;
+		
+		&:after {
+		  color: #333;
+		  font-size: 25px;
+		  content: attr(title);
+		  position: relative;
+		  top: 15px;
 		}
-
-		margin-top: 30px;
-
-		@include clearfix;
-
-		p[class^="page--next-prev--"] {
-
-			@extend h4;
-			font-style: normal;
-
-			position: relative;
-			flex: 1;
-
-			padding: 0;
-
-			text-align: center;
-
-			@include sm-down {
-				margin: 15px 0 0 0;
-
-				&:last-child {
-					margin-bottom: 15px;
-				}
-			}
-
-			@include md-up {
-
-				margin: 30px 0;
-
-				width: 50%;
-				max-width: 50%;
-
-				&:first-child {
-					margin-right: 15px;
-				}
-				&:last-child {
-					margin-left: 15px;
-				}
-				&:only-child {
-					margin-left: 0;
-					margin-right: 0;
-				}
-
-			}
-
-			a {
-				display: inline-block;
-
-				&:hover {
-
-				}
-
-			}
-
-			&:hover {
-				outline:    none;
-			}
-
-			@include clearfix;
-		}
-
-		p.page--next-prev--prev {
-			@include md-up {
-				float:      left;
-				text-align: left;
-			}
-		}
-
-		p.page--next-prev--next {
-			@include md-up {
-				float:      right;
-				text-align: right;
-			}
-		}
-
-		p.page--next-prev--prev-blank {
-			background: none;
-
-			&:hover {
-				background: none;
-			}
-
-			@include sm-down {
-				display: none;
-			}
-		}
-
 	}
+
+	
 
 }
 
@@ -221,9 +46,9 @@ body#photo {
 
   dl {
 
-    @include toggleColor(background, "default-element-background");
+    @include plastic(inset, 3px);
 
-    padding: 			20px;
+    padding: 			$container-padding * 1.5;
     padding-bottom: 	0px;
 
     margin-top: 		0;
@@ -269,6 +94,10 @@ body#photo {
 			left,
 			left
 		);
+		
+		dt {
+			font-weight: bold;
+		}
 
     }
 

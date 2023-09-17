@@ -13,10 +13,9 @@ layout: default
 		{{ content }}
 		
 		{% for post in paginator.posts %}
-		<article class="photostream grid-item">
-			<a href="{{ post.url }}" title="View {{ post.title }}" class="grid-link"
-				style="background: url('{{ site.url | append: site.baseurl | append: '/assets/images/photos/' | append: post.image }}')">
-				<p class="grid-caption">{{ post.title }}</p>
+		<article class="polaroid">
+			<a href="{{ post.url }}" title="{{ post.title }}">
+				<img src="{{ site.url | append: site.baseurl | append: '/assets/images/photos/' | append: post.image }}">
 			</a>
 		</article>
 		{% endfor %}
@@ -26,22 +25,22 @@ layout: default
 	{% if paginator.total_pages > 1 %}
 	<nav class="pagination" role="navigation">
 		{% if paginator.previous_page %}
-		<p class="page--next-prev--prev">
+		<span class="page--next-prev--prev">
 			<a class="page--next-prev--label" href="{{ paginator.previous_page_path | relative_url }}" title="Go to previous page">← Newer posts</a>
-		</p>
+		</span>
 		{% else %}
-		<p class="page--next-prev--prev-blank">
-		</p>  
+		<span class="page--next-prev--prev-blank">
+		</span>  
 		{% endif %}
 	
 	
 		{% if paginator.next_page %}
-		<p class="page--next-prev--next">
+		<span class="page--next-prev--next">
 			<a class="page--next-prev--label" href="{{ paginator.next_page_path | relative_url }}" title="Go to next page">Older posts →</a>
-		</p>  
+		</span>  
 		{% else %}
-		<p class="page--next-prev--prev-blank">
-		</p>  
+		<span class="page--next-prev--prev-blank">
+		</span>  
 		{% endif %}
 	</nav>
 	{% endif %}

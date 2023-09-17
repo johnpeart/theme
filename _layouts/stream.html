@@ -23,18 +23,26 @@ layout: default
 	{% endfor %}
 	
 	{% if paginator.total_pages > 1 %}
-	<ul>
-	  {% if paginator.previous_page %}
-	  <li>
-		<a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
-	  </li>
-	  {% endif %}
-	  {% if paginator.next_page %}
-	  <li>
-		<a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
-	  </li>
-	  {% endif %}
-	</ul>
+	<nav class="pagination" role="navigation">
+		{% if paginator.previous_page %}
+		<span class="page--next-prev--prev">
+			<a class="page--next-prev--label" href="{{ paginator.previous_page_path | relative_url }}" title="Go to previous page">← Newer posts</a>
+		</span>
+		{% else %}
+		<span class="page--next-prev--prev-blank">
+		</span>  
+		{% endif %}
+	
+	
+		{% if paginator.next_page %}
+		<span class="page--next-prev--next">
+			<a class="page--next-prev--label" href="{{ paginator.next_page_path | relative_url }}" title="Go to next page">Older posts →</a>
+		</span>  
+		{% else %}
+		<span class="page--next-prev--prev-blank">
+		</span>  
+		{% endif %}
+	</nav>
 	{% endif %}
 
 </main>
