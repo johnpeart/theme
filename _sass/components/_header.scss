@@ -104,10 +104,10 @@ header#site-header nav#header--site-nav {
 		@include toggleSizes(
 			min-width,
 			calc(100vw - (#{$container-padding} * 2)),
-			50vw,
-			50vw,
-			30vw,
-			30vw
+			400px,
+			400px,
+			400px,
+			400px
 		);
 		
 		padding: $container-padding;

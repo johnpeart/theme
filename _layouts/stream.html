@@ -11,13 +11,8 @@ layout: default
 	<article class="social h-entry">
 		<section class="e-content">
 		{% include {{ page.collection | append: '.html' | prepend: 'stream/' }} %}
-		{% if page.content.size > 0 %}
-			<section class="post--body">
-				{{ page.content }}
-			</section>
-		{% endif %}
 		</section>
-	{% include stream/footer.html %}
+		{% include stream/footer.html %}
 	</article>
 	
 	{% endfor %}

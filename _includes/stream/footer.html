@@ -3,8 +3,8 @@
 	{% include fediverse/activity.html %}
 	
 	<div class="meta">
-		<p><a href="{{ page.url }}" class="post-published-date u-url u-uid"><time datetime="{{ page.date | date: '%Y-%m-%d %H:%M'}}" class="dt-published">{{ page.date | date: "%-d %B %Y" }}</time></a></p>
-		<p><a href="//johnpe.art" rel="me" class="p-author link-secondary no-underline">John Peart</a></p>
+		<p><a href="{{ page.url }}" class="post-published-date u-url u-uid" title="Read the {{ page.collection }} post '{{ page.title }}'"><time datetime="{{ page.date | date: '%Y-%m-%d %H:%M'}}" class="dt-published">{{ page.date | date: "%-d %B %Y" }}</time></a></p>
+		<p><a href="//johnpe.art" rel="me" class="p-author link-secondary no-underline" title="Go to the author's website">John Peart</a></p>
 	</div>
 	
 </footer>

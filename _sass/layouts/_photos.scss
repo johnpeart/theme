@@ -44,65 +44,7 @@ body#photo {
     max-height: 		100vh;
   }
 
-  dl {
-
-    @include plastic(inset, 3px);
-
-    padding: 			$container-padding * 1.5;
-    padding-bottom: 	0px;
-
-    margin-top: 		0;
-
-
-    p,dd {
-      &:first-child {
-        padding-top: 0;
-      }
-      &:last-of-type {
-        padding-bottom: 0;
-      }
-    }
-
-    span.dl-item {
-
-      display: block;
-      position: relative;
-
-      padding-bottom: 20px !important;
-
-      @include toggleSizes(
-			max-width,
-			100%,
-			100%,
-			50%,
-			50%,
-			50%
-		);
-      @include toggleSizes(
-			width,
-			100%,
-			100%,
-			50%,
-			50%,
-			50%
-		);
-      @include toggleSizes(
-			float,
-			none,
-			none,
-			left,
-			left,
-			left
-		);
-		
-		dt {
-			font-weight: bold;
-		}
-
-    }
-
-    @include clearfix;
-  }
+  
 
   div.footnotes {
   
