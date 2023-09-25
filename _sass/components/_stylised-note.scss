@@ -2,7 +2,6 @@
 	
 	display: grid;
 	position: relative;
-	direction: inline-block;
 	
 	@include toggleSizes(
 		width,
