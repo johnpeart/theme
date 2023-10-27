@@ -1,43 +1,30 @@
-@at-root {
-	@-ms-viewport { 
-		width: device-width;
-	} // stylelint-disable-line at-rule-no-vendor-prefix
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
 html {
 	box-sizing: border-box;
 	-ms-overflow-style: scrollbar;
 	min-height: 100vh;
-	
+
 	font-family: 			$font-family;
 	font-kerning: 			auto;
 	letter-spacing: 		normal;
-	
-	@include toggleColor(background, "background");
-	@include toggleColor(color, "color");
 }
 
+html,
 body {
-	@include toggleColor(background, "background");
-	@include toggleColor(color, "color");
+	background: 			var(--background);
+	color: 					var(--color);
 }
 
 main {
 	// Height = 100vh - header (height) - footer (padding-top)
-	@include toggleSizes(
-		min-height, 
-		calc(100vh - 56px - 60px), 
-		calc(100vh - 70px - 90px),
-		calc(100vh - 70px - 90px),
-		calc(100vh - 70px - 120px), 
-		calc(100vh - 70px - 120px)
-	);
-	
+	min-height: calc(100vh - 56px - 60px);
+
+	@include tablet {
+		min-height: calc(100vh - 70px - 90px);
+	}
+
+	@include desktop {
+		min-height: calc(100vh - 70px - 120px);
+	}
+
 	z-index: 0;
 }

@@ -1,0 +1,49 @@
+@include darkMode {
+
+	html,
+	body {
+		// background: 			colour("black");
+		// color: 					colour("white");
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	textarea,
+	select {
+
+		// background-color: colour("black");
+		// color: colour("white");
+		// border-color: colour("gray-600");
+
+		&:hover {
+
+		}
+		&:focus {
+			// border-color: colour("gray-600");
+			// box-shadow: inset 0 0 0 form("border-focus-width") colour("absolute-black");
+		}
+		&:invalid {
+
+		}
+		&:active {
+
+		}
+		&:disabled {
+
+		}
+
+	}
+
+	.label-hint {
+		// color: colour("gray-300");
+	}
+
+	kbd,
+	code,
+	pre {
+		// color: colour("white");
+		// background: colour("gray-700");
+	}
+
+}

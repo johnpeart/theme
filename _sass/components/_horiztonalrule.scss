@@ -1,7 +1,6 @@
 hr {
 	border: unset;
-	border-top: 3px solid;
-	@include toggleColor(border-color, "border-color");
-	margin: ($container-padding * 2) 0 ($container-padding * 4) 0;
-	padding: 0;
+	height: 10px;
+	border-radius: 3px;
+	@include plastic(inset, 2px);
 }

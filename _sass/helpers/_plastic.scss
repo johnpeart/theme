@@ -1,43 +1,20 @@
 @mixin plastic($shape, $depth: 5px) {
-	
-	// background
-	@include glass("glass", 5px);
+
 	// corner radius
-	@include toggleSizes(
-		border-radius,
-		15px,
-		15px,
-		20px,
-		20px,
-		20px
-	);	
+	border-radius: $border-radius;
 	// depth
 	@if $shape == raised {
 			// border
-			border: 1px solid rgba(250, 250, 250, 0.3);
-			box-shadow:  #{$depth} #{$depth} #{$depth} #DADADA,
-						-#{$depth} -#{$depth} #{$depth} #FFFFFF;
-					
-		@include darkMode() {
-			// border
-			border: 1px solid rgba(100, 100, 100, 0.3);
-			box-shadow:  #{$depth} #{$depth} #{$depth} rgb(0,0,0),
-						-#{$depth} -#{$depth} #{$depth} rgb(45,45,45);
-		}
+			border: 1px solid var(--glass-border, colour("white"));
+			box-shadow:  #{$depth} #{$depth} #{$depth} var(--plastic-shadow-1, colour("gray-300")),
+						-#{$depth} -#{$depth} #{$depth} var(--plastic-shadow-2, colour("absolute-white"));
 	} @else if $shape == inset {
 			// border
-			border: 1px solid rgba(250, 250, 250, 0.3);
-			box-shadow: inset  #{$depth} #{$depth} #{$depth} #DADADA,
-						inset -#{$depth} -#{$depth} #{$depth} #FFFFFF;
-					
-		@include darkMode() {
-			// border
-			border: 1px solid rgba(100, 100, 100, 0.3);
-			box-shadow: inset  #{$depth} #{$depth} #{$depth}  rgb(0,0,0),
-						inset -#{$depth} -#{$depth} #{$depth} rgb(45,45,45);
-		}	
+			border: 1px solid var(--glass-border, colour("white"));
+			box-shadow: inset  #{$depth} #{$depth} #{$depth} var(--plastic-shadow-1, colour("gray-300")),
+						inset -#{$depth} -#{$depth} #{$depth} var(--plastic-shadow-2, colour("absolute-white"));
 	} @else {
 		@error "Unknown shape #{$shape}. Use 'raised' or 'inset'.";
 	}
-	
+
 }

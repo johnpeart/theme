@@ -248,22 +248,22 @@ function githubGetFilesFolders(name, path) {
 		} else {
 			
 			// Create a list of folder names
-			var foldersList = '<li><button id="" class="button dropdown-menu--button" disabled>Folders</button></li>'
+			var foldersList = '<li><button id="" class="button button--dropdown-menu-item" disabled>Folders</button></li>'
 			
 			if (path != '') {
-				foldersList += '<li><button id="" class="button dropdown-menu--button" onclick="githubGetFilesFolders(\'/Home\', \'\')">Home</button></li>';
+				foldersList += '<li><button id="" class="button button--dropdown-menu-item" onclick="githubGetFilesFolders(\'/Home\', \'\')">Home</button></li>';
 			}
 			contents.forEach(function (item) {
 				if (item.type === 'dir') {
-					foldersList += '<li><button type="button" class="button dropdown-menu--button" onclick="githubGetFilesFolders(\'' + item.name + '\', \'' + item.path + '\')">' + item.name + '</button></li>'
+					foldersList += '<li><button type="button" class="button button--dropdown-menu-item" onclick="githubGetFilesFolders(\'' + item.name + '\', \'' + item.path + '\')">' + item.name + '</button></li>'
 				}
 			});
 			
 			// Create a list of file names
-			var filesList = '<li><button id="" class="button dropdown-menu--button" disabled>Files</button></li>';
+			var filesList = '<li><button id="" class="button button--dropdown-menu-item" disabled>Files</button></li>';
 			contents.forEach(function (item) {
 				if (item.type === 'file') {
-					filesList += '<li><button type="button" class="button dropdown-menu--button" onclick="githubOpenFile(\'' + item.name + '\', \'' + item.path + '\'); closeDetails(\'editor-toolbar--folder\')">' + item.name + '</button></li>'
+					filesList += '<li><button type="button" class="button button--dropdown-menu-item" onclick="githubOpenFile(\'' + item.name + '\', \'' + item.path + '\'); closeDetails(\'editor-toolbar--folder\')">' + item.name + '</button></li>'
 				}
 			});
 			

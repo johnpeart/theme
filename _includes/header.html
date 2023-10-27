@@ -1,6 +1,6 @@
-<header id="site-header" class="container">
+<header id="site-header">
 
-	<nav id="header--site-nav" aria-label="Menu">
+	<nav id="header--site-nav" class="container" aria-label="Menu">
 
 		<p id="header--wordmark">
 			{% if jekyll.environment == "development" %}
@@ -11,7 +11,7 @@
 				<a href="//johnpe.art" class="header--wordmark-link">{{ site.title }}</a>
 			{% endif %}
 		</p>
-		
+
 		{% if site.header-menu %}
 		<details id="header-menu-button--details" class="details-menu">
 			<summary id="header-menu-button--summary">
@@ -22,7 +22,7 @@
 				</svg>
 				<span class="sr-only">Menu</span>
 			</summary>
-			
+
 			<ul id="header-menu-items" class="nav">
 				{% for menuitem in site.header-menu %}
 				<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>

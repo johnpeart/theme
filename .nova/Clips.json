@@ -1,0 +1,53 @@
+{
+  "clips" : [
+    {
+      "content" : "colour(\"${:colour}\");",
+      "name" : "Colour",
+      "scope" : "editor",
+      "syntax" : "scss",
+      "trigger" : "colour"
+    },
+    {
+      "content" : "@include mobile {\n\t${:content}\n}",
+      "name" : "Mobile",
+      "scope" : "editor",
+      "syntax" : "scss",
+      "trigger" : "mob"
+    },
+    {
+      "content" : "@include tablet {\n\t${:content}\n}",
+      "name" : "Tablet",
+      "scope" : "editor",
+      "syntax" : "scss",
+      "trigger" : "tab"
+    },
+    {
+      "content" : "@include tablet-up {\n\t${:content}\n}",
+      "name" : "Tablet up",
+      "scope" : "editor",
+      "syntax" : "scss",
+      "trigger" : "tab-up"
+    },
+    {
+      "content" : "@include tablet-down {\n\t${:content}\n}",
+      "name" : "Tablet down",
+      "scope" : "editor",
+      "syntax" : "scss",
+      "trigger" : "tab-down"
+    },
+    {
+      "content" : "@include desktop {\n\t${:content}\n}",
+      "name" : "Desktop",
+      "scope" : "editor",
+      "syntax" : "scss",
+      "trigger" : "desk"
+    },
+    {
+      "content" : "\\$${:name}: (\n\t\"font-size\": (\n\t\t\"mobile\": ${:size},\n\t\t\"tablet\": ${:size},\n\t\t\"desktop\": ${:size},\n\t),\n\t\"line-height\": (\n\t\t\"mobile\": ${:size},\n\t\t\"tablet\": ${:size},\n\t\t\"desktop\": ${:size},\n\t)\n);",
+      "name" : "Font stack",
+      "scope" : "editor",
+      "syntax" : "scss",
+      "trigger" : "font stack"
+    }
+  ]
+}

@@ -1,54 +1,51 @@
 a {
-	font-weight: 		inherit;
-	text-decoration: 	underline;
 	cursor: pointer;
-	
+	font-weight: inherit;
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-decoration-skip-ink: auto;
+
 	&:link {
-		@include toggleColor(color, "link-color")
+		color: var(--link-color);
 	}
 	&:visited {
-		@include toggleColor(color, "link-color")
+		color: var(--link-color);
 	}
 	&:hover {
-		@include toggleColor(color, "link-color--hover");
+		color: var(--link-hoverColor);
 		text-decoration: 	underline;
 	}
 	&:focus {
-		@include toggleColor(color, "link-color--focus");
-		@include toggleColor(background, "link-background--focus");
-		outline: 2px solid;
+		color: var(--link-focusColor);
+		background: var(--link-focusBackground);
+		outline: 2px solid var(--link-outlineColor);
 		outline-offset: 0;
 		text-decoration: none;
-		@include toggleColor(outline-color, "outline-color");
 	}
 	&:active {
 		text-decoration: 	underline;
 	}
-	
+
 	&.link-secondary,
 	&.post-published-date {
 		&:link {
-			@include toggleColor(color, "secondary-text--color");
+			color: var(--link-secondary-color);
 			text-decoration: none;
 		}
 		&:visited {
-			@include toggleColor(color, "secondary-text--color");
+			color: var(--link-secondary-color);
 		}
 		&:hover {
-			@include toggleColor(color, "secondary-text--color");
+			color: var(--link-secondary-color);
 			text-decoration: 	underline;
 		}
 		&:focus {
-			@include toggleColor(color, "link-color--focus");
-			@include toggleColor(background, "link-background--focus");
-			outline: 2px solid;
-			@include toggleColor(outline-color, "outline-color");
-		}
-		&:active {
-			text-decoration: 	underline;
+			color: var(--link-focusColor);
+			background: var(--link-focusBackground);
+			outline: 2px solid var(--link-outlineColor);
 		}
 	}
-	
+
 	&.no-underline {
 		&:link {
 			text-decoration: none;
@@ -60,13 +57,9 @@ a {
 			text-decoration: 	underline;
 		}
 		&:focus {
-			@include toggleColor(color, "link-color--focus");
-			@include toggleColor(background, "link-background--focus");
-			outline: 2px solid;
-			@include toggleColor(outline-color, "outline-color");
-		}
-		&:active {
-			text-decoration: 	underline;
+			color: var(--link-focusColor);
+			background: var(--link-focusBackground);
+			outline: 2px solid var(--link-outlineColor);
 		}
 	}
 }

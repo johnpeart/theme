@@ -1,270 +1,234 @@
 // Home page styles
 body#goals {
-	
+
 	article.goal-collection {
-		@include toggleSizes(
-			padding,
-			11px 0,
-			11px 0,
-			11px 0,
-			13px 0,
-			15px 0
-		);
+		padding: 15px 0;
 		border-top: 1px solid;
-		@include toggleColor(border-color, "border-color");
+		border-color: var(--secondary-borderColor, colour("gray-400"));
 	}
-	
+
 	h2.goal-year {
 		text-align: 		left;
 		padding: 			0;
 	}
-	
-	a.goal-url {
-		&:link {
-			@include toggleColor(color, "emphasised-link-color");
-			text-decoration: none;
-		}
-		&:visited {
-			@include toggleColor(color, "emphasised-link-color");
-			text-decoration: none;
-		}
-		&:hover {
-			@include toggleColor(color, "link-color--hover");
-			text-decoration: 	underline;	
-		}
-		&:focus {
-			@include toggleColor(color, "link-color--focus");
-			@include toggleColor(background, "link-background--focus");
-			outline: 2px solid;
-			@include toggleColor(outline-color, "outline-color");
-		}
-		&:active {
-			text-decoration: 	underline;
-		}
-	}
-	
+
 	progress[value] {
-		
+
 		position: relative;
 		display: block;
-	
+
 		-webkit-appearance: none;
 				appearance: none;
-				
+
 		width: 		100%;
 		max-width: 			600px;
-		
+
 		padding: 	0;
 		margin: 	20px 0;
-	
+
 		&.standard {
-		
+
 			height: 	20px;
-	
+
 			&::-webkit-progress-bar {
-				@include toggleColor(background, "progress--bar--background");
+				background: var(--secondary-background, colour("gray-200"));
 				border: 			none;
 				border-radius: 		2px;
 			}
-			
+
 			&::-webkit-progress-value {
-				@include toggleColor(background, "progress--value--background");
-				border-radius: 2px; 
+				background: var(--progress-barBackground, colour("cyan"));
+				border-radius: 2px;
 				background-size: 600px;
 			}
-	
+
 		}
-	
+
 		&.stretch-top {
-	
+
 			height: 10px;
 			margin-bottom: 0;
-	
+
 			&::-webkit-progress-bar {
-				@include toggleColor(background, "progress--bar--background");
-				border: 			none;			
-				border-top-left-radius: 2px; 
-				border-top-right-radius: 2px;			
-				border-bottom-left-radius: 0; 
+				background: var(--secondary-background, colour("gray-200"));
+				border: 			none;
+				border-top-left-radius: 2px;
+				border-top-right-radius: 2px;
+				border-bottom-left-radius: 0;
 				border-bottom-right-radius: 0;
 			}
-			
+
 			&::-webkit-progress-value {
-				@include toggleColor(background, "progress--value--background");
-				border-top-left-radius: 2px; 
-				border-top-right-radius: 2px; 		
-				border-bottom-left-radius: 0; 
+				background: var(--progress-barBackground, colour("cyan"));
+				border-top-left-radius: 2px;
+				border-top-right-radius: 2px;
+				border-bottom-left-radius: 0;
 				border-bottom-right-radius: 0;
 				background-size: 600px;
 			}
-	
+
 		}
 		&.stretch-bottom {
-	
+
 			height: 10px;
 			margin-top: 0;
-	
+
 			&::-webkit-progress-bar {
-				@include toggleColor(background, "progress--bar--background");
-				border: 			none;			
-				border-top-left-radius: 0; 
-				border-top-right-radius: 0; 	
-				border-bottom-left-radius: 2px; 
+				background: var(--secondary-background, colour("gray-200"));
+				border: 			none;
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+				border-bottom-left-radius: 2px;
 				border-bottom-right-radius: 2px;
 			}
-			
+
 			&::-webkit-progress-value {
-				@include toggleColor(background, "progress--value--background-secondary");
-				border-top-left-radius: 0; 
-				border-top-right-radius: 0; 		
-				border-bottom-left-radius: 2px; 
-				border-bottom-right-radius: 2px; 
+				background: var(--progress-barSecondaryBackground, colour("cyan"));
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+				border-bottom-left-radius: 2px;
+				border-bottom-right-radius: 2px;
 				background-size: 600px;
 			}
-	
+
 		}
 	}
 
-	
+
 }
 body#goal {
-	
+
 	section#page-content > section {
-		@include toggleSizes(
-			padding-bottom,
-			0,
-			0,
-			28px,
-			33px,
-			37.5px
-		);
-		
+		@include tablet-up {
+			padding-bottom: $container-padding * 3;
+		}
+
 		@include clearfix;
 	}
-	
+
 	h2.goal-title {
 		text-align: left;
 		padding-bottom: 10px;
 	}
-	
+
 	ul#goals-list {
 		max-width: 			600px;
-		
+
 		padding: 			0;
 		margin: 			0;
-		
+
 		list-style: 		none !important;
-		
+
 		li {
 			list-style: 	none;
 			padding: 		0;
-						
+
 			box-sizing: 	border-box;
-	
+
 			progress[value] {
-				
+
 				position: relative;
 				display: block;
 
 				-webkit-appearance: none;
 						appearance: none;
-						
+
 				width: 		100%;
-				
+
 				padding: 	0;
 				margin: 	20px 0;
 
 				&.standard {
-				
+
 					height: 	20px;
-				
+
 					&::-webkit-progress-bar {
-						@include toggleColor(background, "progress--bar--background");
+						background: colour("gray-200");
 						border: 			none;
 						border-radius: 		2px;
 					}
-					
+
 					&::-webkit-progress-value {
-						@include toggleColor(background, "progress--value--background");
-						border-radius: 2px; 
+						background: colour("cyan");
+						border-radius: 2px;
 						background-size: 600px;
 					}
-				
+
 				}
-				
+
 				&.stretch-top {
-				
+
 					height: 10px;
 					margin-bottom: 0;
-				
+
 					&::-webkit-progress-bar {
-						@include toggleColor(background, "progress--bar--background");
-						border: 			none;			
-						border-top-left-radius: 2px; 
-						border-top-right-radius: 2px;			
-						border-bottom-left-radius: 0; 
+						background: colour("gray-200");
+						border: 			none;
+						border-top-left-radius: 2px;
+						border-top-right-radius: 2px;
+						border-bottom-left-radius: 0;
 						border-bottom-right-radius: 0;
 					}
-					
+
 					&::-webkit-progress-value {
-						@include toggleColor(background, "progress--value--background");
-						border-top-left-radius: 2px; 
-						border-top-right-radius: 2px; 		
-						border-bottom-left-radius: 0; 
+						background: colour("cyan");
+						border-top-left-radius: 2px;
+						border-top-right-radius: 2px;
+						border-bottom-left-radius: 0;
 						border-bottom-right-radius: 0;
 						background-size: 600px;
 					}
-				
+
 				}
 				&.stretch-bottom {
-				
+
 					height: 10px;
 					margin-top: 0;
-				
+
 					&::-webkit-progress-bar {
-						@include toggleColor(background, "progress--bar--background");
-						border: 			none;			
-						border-top-left-radius: 0; 
-						border-top-right-radius: 0; 	
-						border-bottom-left-radius: 2px; 
+						background: colour("gray-200");
+						border: 			none;
+						border-top-left-radius: 0;
+						border-top-right-radius: 0;
+						border-bottom-left-radius: 2px;
 						border-bottom-right-radius: 2px;
 					}
-					
+
 					&::-webkit-progress-value {
-						@include toggleColor(background, "progress--value--background-secondary");
-						border-top-left-radius: 0; 
-						border-top-right-radius: 0; 		
-						border-bottom-left-radius: 2px; 
-						border-bottom-right-radius: 2px; 
+						background: colour("purple");
+						border-top-left-radius: 0;
+						border-top-right-radius: 0;
+						border-bottom-left-radius: 2px;
+						border-bottom-right-radius: 2px;
 						background-size: 600px;
 					}
-				
+
 				}
 			}
 			&.totaliser {
-				
-				@include toggleColor(background, "default-element-background");
-				
+
+				background: colour("gray-200");
+
 				padding: 		20px;
 				margin-top: 	60px;
-				
+
 				border-radius: 	5px;
-				
+
 				box-sizing: border-box;
-				
+
 				h2 {
 					margin-top: 0;
 					margin-bottom: 0;
 					padding-top: 0;
 				}
-				
+
 				progress[value] {
-					
+
 					&::-webkit-progress-bar {
-						@include toggleColor(background, "progress-total--bar--background");
+						background: colour("gray-500");
 					}
 				}
-			}	
+			}
 		}
-	}		
+	}
 }

@@ -41,26 +41,23 @@
 .skip-link {
     @include sr-only;
     @include sr-only-focusable;
-    
+
     z-index: 999999;
     display: block;
     width: 100%;
-    
-    @include font($body);
-    @include toggleSizes(
-        padding,
-        10px 0 !important,
-        10px 0 !important,
-        10px 0 !important,
-        10px 0 !important,
-        10px 0 !important
-    );
-    
+
+    padding: 10px 0 !important;
+
     text-align: 			left;
-    
+
     &:focus,
     &:hover {
-        @include toggleColor(color, "skiplink-color");
-        @include toggleColor(background, "skiplink-background");
+
+        background: colour("cyan");
+        color: colour("white");
+
+        @include darkMode {
+            color: colour("black");
+        }
     }
 }

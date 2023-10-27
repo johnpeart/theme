@@ -1,152 +1,124 @@
-button.button,
-a.button {
-	
-	display: inline-block;
-	
+button {
 	cursor: pointer;
-	
-	@include toggleSizes(width, 100%, 100%, auto, auto, auto);
-	
-	min-width: 150px;
-	min-height: 40px;
-	
-	
-	@include font($body);
-	font-weight: bold !important;
-	
-	@include toggleSizes(
-		padding, 
-		($container-padding * 0.5) $container-padding !important, 
-		($container-padding * 0.5) $container-padding !important, 
-		$container-padding ($container-padding * 2) !important, 
-		$container-padding ($container-padding * 2) !important, 
-		$container-padding ($container-padding * 2) !important
-	);
+	@include typography($p, "default");
 
-	vertical-align: middle;
-	line-height: 40px;
-	text-align: center;
-	text-decoration: none;
-	
-	@include toggleColor(background, "button-background");
-	@include toggleColor(color, "button-color");
-	
-	border: none;
-	border-radius: 8px;
-	
+	width: 100%;
+	border: 1px solid;
+	padding: $container-padding;
+	margin: 0 0 $container-padding 0;
+	outline-offset: form("outline-focus-offset");
+	line-height: 1 !important;
+
+	@include tablet-up {
+		width: auto;
+	}
+
 	&:hover {
-		@include toggleColor(background, "button-background--hover");
-		cursor: pointer;
-		@include toggleColor(color, "button-color--hover");
-	}
-	
-	&:focus {
-		@include toggleColor(background, "button-background--focus");
-		outline: map-get($form-elements, "border-width-form-element") solid;
-		@include toggleColor(outline-color, "button-outline-color--focus");
-		outline-offset: map-get($form-elements, "border-width-form-element");
-		@include toggleColor(color, "button-color--focus");
-		cursor: pointer;
-	}
-	
-	&:active {
-		@include toggleColor(background, "button-background--focus");
-		outline: map-get($form-elements, "border-width-form-element") solid;
-		@include toggleColor(outline-color, "button-outline-color--focus");
-		outline-offset: map-get($form-elements, "border-width-form-element");
-		@include toggleColor(color, "button-color--focus");
-		cursor: pointer;
+		background: var(--button-hoverBackground, colour("gray-400"));
+		color: var(--button-color, colour("white"));
 	}
 
-	&:last-child,
-	&:last-of-type {
-		margin-bottom: 0;
+	&:focus {
+		outline: form("border-width") solid var(--button-outlineColor, colour("cyan"));
 	}
-	
-	&.button-secondary {
-		@include toggleColor(background, "button-background--secondary");
-		@include toggleColor(color, "button-color");
-		
-		&:hover {
-			@include toggleColor(background, "button-background--hover");
-			cursor: pointer;
-			@include toggleColor(color, "button-color--hover");
-		}
-		
-		&:focus {
-			@include toggleColor(background, "button-background--focus");
-			outline: map-get($form-elements, "border-width-form-element") solid;
-			@include toggleColor(outline-color, "button-outline-color--focus");
-			outline-offset: map-get($form-elements, "border-width-form-element");
-			@include toggleColor(color, "button-color--focus");
-			cursor: pointer;
-		}
-		
-		&:active {
-			@include toggleColor(background, "button-background--focus");
-			outline: map-get($form-elements, "border-width-form-element") solid;
-			@include toggleColor(outline-color, "button-outline-color--focus");
-			outline-offset: map-get($form-elements, "border-width-form-element");
-			@include toggleColor(color, "button-color--focus");
-			cursor: pointer;
-		}
-		
+
+
+	&:hover:focus {
+		background: var(--button-hoverFocusBackground, colour("gray-200"));
 	}
-	
-	&.dropdown-menu--button {
-		@include toggleColor(background, "dropdown-menu--button--background");
-		@include toggleColor(color, "dropdown-menu--color");
-		font-weight: normal;
-		text-align: left;
-		
-		padding: $container-padding !important;
-		margin: 0 !important;
-		
-		white-space: nowrap;
-		
-		&:hover {
-			@include toggleColor(background, "dropdown-menu--background--hover");
-			@include toggleColor(color, "dropdown-menu--color--hover");
-		}
-		
-		&:focus {
-			@include toggleColor(background, "dropdown-menu--background--focus");
-			outline: map-get($form-elements, "border-width-form-element") solid;
-			@include toggleColor(outline-color, "dropdown-menu--outline--focus");
-			outline-offset: map-get($form-elements, "border-width-form-element");
-			@include toggleColor(color, "dropdown-menu--color--focus");
-			cursor: pointer;
-		}
-		
-		&:active {
-			@include toggleColor(background, "dropdown-menu--background--focus");
-			outline: map-get($form-elements, "border-width-form-element") solid;
-			@include toggleColor(outline-color, "dropdown-menu--outline--focus");
-			outline-offset: map-get($form-elements, "border-width-form-element");
-			@include toggleColor(color, "dropdown-menu--color--hover");
-			cursor: pointer;
-		}
-		
-		&:disabled {
-			@include toggleColor(color, "subtle-link-color");
-			&:hover {
-				cursor: auto;
-				background: none !important;
-			}
-		}
+
+	&:active {
+		outline: form("border-width") solid var(--button-outlineColor, colour("cyan"));
+		outline-offset: form("outline-active-offset");
 	}
-	
-	&.button-action {
-		&:hover {
-			background: map-get($colors, "green") !important;
-			color: map-get($colors, "black") !important;
-		}
+}
+
+.button {
+	color: var(--button-color, colour("black"));
+	background: var(--button-background, colour("white"));
+
+	@include plastic(raised, 6px);
+	transition: background 0.25s;
+	transition: box-shadow 0.25s;
+	font-weight: bold;
+
+	&:hover {
+		color: var(--button-hoverColor, colour("cyan"));
+		background: var(--button-hoverBackground, colour("gray-100"));
+		@include plastic(raised, 2px);
+		transition: background 0.25s;
+		transition: box-shadow 0.25s;
 	}
-	
-	&.button-warning {
-		&:hover {
-			background: map-get($colors, "red") !important;
-			color: map-get($colors, "white") !important;
-		}
+
+	&:focus {
+		background: var(--button-focusBackground, colour("gray-100"));
+		@include plastic(raised, 2px);
+		transition: background 0.25s;
+		transition: box-shadow 0.25s;
+	}
+
+	&:hover:focus {
+		background: var(--button-hoverFocusBackground, colour("gray-200"));
+		@include plastic(raised, 2px);
+		transition: background 0.25s;
+		transition: box-shadow 0.25s;
+	}
+
+	&:active {
+		background: var(--button-activeBackground, colour("white"));
+		@include plastic(inset, 4px);
+		transition: background 0.25s;
+		transition: box-shadow 0.25s;
+		outline: none;
+	}
+}
+
+.button--dropdown-menu-item {
+	text-align: left;
+	border: none;
+	padding: $container-padding !important;
+	outline-offset: form("outline-offset");
+	margin: 0 !important;
+
+	display: block;
+	width: 100%;
+	border-radius: 10px;
+
+	&:hover {
+		background: var(--dropdownButton-hoverBackground, colour("cyan"));
+		color: var(--dropdownButton-hoverColor, colour("white"));
+	}
+
+	&:focus {
+		color: var(--dropdownButton-focusColor, colour("cyan"));
+	}
+
+	&:hover:focus {
+		background: var(--dropdownButton-hoverBackground, colour("cyan"));
+		color: var(--dropdownButton-hoverColor, colour("white"));
+	}
+
+	&:active {
+		background: var(--dropdownButton-hoverBackground, colour("cyan"));
+		color: var(--dropdownButton-hoverColor, colour("white"));
+	}
+
+	&:disabled,
+	&:disabled:focus, &:disabled:hover, &:disabled:active {
+		background: var(--dropdownButton-disabledBackground, colour("gray-200"));
+		color: var(--dropdownButton-disabledColor, colour("gray-700"));
+		text-align: center;
+		cursor: unset;
+		outline: none;
+	}
+
+}
+
+// The .button--dropdown-menu-item button sits inside a list element.
+// This sets the padding around the button.
+li.dropdown-item {
+	padding: $container-padding $container-padding 0;
+	&:last-child {
+		padding: $container-padding;
 	}
 }

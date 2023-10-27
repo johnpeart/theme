@@ -1,0 +1,176 @@
+// COLOUR PALETTE
+// All colours used should be referenced here
+// Use @colour("name of colour") in code to select.
+
+$colours: (
+	"white":   	 								#FAFAFA,
+	"absolute-white":							#FFFFFF,
+
+	"black":    	 							#1D1D1D,
+	"absolute-black":							#000000,
+
+	"gray-100":	 								#F8F9FA,
+	"gray-200":	 								#E9ECEF,
+	"gray-300":	 								#DEE2E6,
+	"gray-400":	 								#CED4DA,
+	"gray-500": 	 							#ADB5BD,
+	"gray-600": 	 							#868E96,
+	"gray-700": 	 							#495057,
+	"gray-800": 	 							#343A40,
+	"gray-900": 	 							#212529,
+
+	"blue":    	 								#007AFF,
+	"desaturated-blue": 						#3B5998,
+	"purple":  	 								#C643FC,
+	"magenta":   	 							#E6007E,
+	"red":     	 								#B10E1E,
+	"red-tint":	 								#FAC4C9,
+	"orange":  	 								#ff5E3A,
+	"yellow":  	 								#FFD700,
+	"green-tone": 								#045009,
+	"green":   	 								#0BD318,
+	"green-tint":   	 						#BAFBBF,
+	"cyan":    	 								#009FE3,
+
+	// Glass
+	"glass-background": linear-gradient(145deg, rgba(248, 249, 250, 0.25), rgba(233, 236, 239, 0.75)),
+	"dark--glass-background": linear-gradient(145deg, rgba(25, 25, 25, 0.75), rgba(35, 35, 35, 0.75)),
+	"glass-border": rgba(250, 250, 250, 0.3),
+	"dark--glass-border": rgba(100, 100, 100, 0.3),
+
+	// Notes
+	"post-it--yellow":					#FFD700,
+	"post-it--magenta":					#E6647E,
+	"post-it--cyan":					#649fE3
+);
+
+:root {
+	// Colour palette
+	--white:   	 				#FAFAFA;
+	--absolute-white:			#FFFFFF;
+
+	--black:    	 			#1D1D1D;
+	--absolute-black:			#000000;
+
+	--gray-100:	 				#F8F9FA;
+	--gray-200:	 				#E9ECEF;
+	--gray-300:	 				#DEE2E6;
+	--gray-400:	 				#CED4DA;
+	--gray-500: 	 			#ADB5BD;
+	--gray-600: 	 			#868E96;
+	--gray-700: 	 			#495057;
+	--gray-800: 	 			#343A40;
+	--gray-900: 	 			#212529;
+
+	--blue:    	 				#007AFF;
+	--desaturated-blue: 		#3B5998;
+	--purple:  	 				#C643FC;
+	--magenta:   	 			#E6007E;
+	--red:     	 				#B10E1E;
+	--red-tint:					#FAC4C9;
+	--orange:  	 				#ff5E3A;
+	--yellow:  	 				#FFD700;
+	--green-tone: 				#045009;
+	--green:   	 				#0BD318;
+	--green-tint:				#BAFBBF;
+	--cyan:    	 				#009FE3;
+	--cyan-tint:				#007bb0;
+
+	--post-it--yellow:			var(--yellow);
+	--post-it--magenta:			#E6647E;
+	--post-it--cyan:			#649fE3;
+
+	--glass-background:				linear-gradient(
+										145deg,
+										rgba(248, 249, 250, 0.6),
+										rgba(233, 236, 239, 0.6)
+									);
+	--glass-border: 				var(--absolute-white);
+	--plastic-shadow-1:				var(--gray-300);
+	--plastic-shadow-2:				var(--absolute-white);
+
+	// Element colours
+	--background: 					var(--white);
+	--color:						var(--black);
+	--strikethrough-color:			var(--red);
+	--secondary-background: 		var(--gray-200);
+	--secondary-hoverBackground:	var(--gray-300);
+	--secondary-borderColor:		var(--gray-400);
+	--secondary-color:				var(--gray-600);
+
+	--link-color:					var(--color);
+	--link-hoverColor:				var(--cyan);
+	--link-focusBackground:			var(--cyan);
+	--link-focusColor:				var(--white);
+	--link-outlineColor:			var(--cyan);
+	--link-secondary-color:			var(--gray-600);
+
+	--button-color:					var(--black);
+	--button-background:			var(--white);
+	--button-hoverBackground:		var(--absolute-white);
+	--button-focusBackground:		var(--gray-100);
+	--button-hoverFocusBackground:	var(--gray-200);
+	--button-activeBackground:		var(--white);
+
+	--dropdownButton-hoverBackground:	var(--cyan);
+	--dropdownButton-hoverColor:	var(--white);
+	--dropdownButton-focusBackground:	var(--cyan);
+	--dropdownButton-focusColor:	var(--cyan);
+	--dropdownButton-disabledColor:	var(--gray-700);
+	--dropdownButton-disabledBackground: var(--gray-200);
+
+	--details--hoverColor:			var(--cyan);
+	--details--hoverBackground:		var(--absolute-white);
+	--details--outlineColor:		var(--cyan);
+
+	--blockquote-background:		var(--secondary-background);
+
+	--dl--background:				var(--secondary-background);
+	--dl--hoverBackground:			var(--secondary-hoverBackground);
+	--dl--borderColor:				var(--secondary-borderColor);
+
+	--form--color:					var(--color);
+	--form--activeColor:			var(--link-focusColor);
+	--form--activeBackground:		var(--link-focusBackground);
+	--form--focusBorderColor:		var(--link-focusBackground);
+
+	--radio-colour:					var(--cyan);
+	--form--focusBackground:		var(--color);
+
+	--progress-barBackground: var(--cyan);
+	--progress-barSecondaryBackground: var(--purple);
+
+	@include darkMode() {
+		// Dark mode overrides
+		// Colour palette
+		--glass-background:				linear-gradient(
+											145deg,
+											rgba(25, 25, 25, 0.75),
+											rgba(35, 35, 35, 0.75)
+										);
+		--glass-border: 				rgba(100, 100, 100, 0.3);--plastic-shadow-1:				var(--absolute-black);
+		--plastic-shadow-2:				var(--gray-900);
+
+		// Element colours
+		--background: 					var(--black);
+		--color:						var(--white);
+		--secondary-background: 		var(--gray-800);
+		--secondary-hoverBackground: 	var(--gray-700);
+		--secondary-borderColor:		var(--gray-600);
+		--secondary-color:				var(--gray-500);
+
+		--link-focusColor:				var(--black);
+		--link-secondary-color:			var(--gray-500);
+
+		--button-color:					var(--white);
+		--button-background:			var(--black);
+		--button-hoverBackground:		var(--gray-900);
+		--button-focusBackground:		var(--gray-900);
+		--button-hoverFocusBackground:	var(--gray-800);
+		--button-activeBackground:		var(--black);
+
+		--dropdownButton-hoverColor:	var(--black);
+		--dropdownButton-disabledColor:	var(--gray-500);
+		--dropdownButton-disabledBackground: var(--gray-800);
+	}
+}

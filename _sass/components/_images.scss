@@ -2,151 +2,117 @@ figure {
 	display: block;
 	position: relative;
 	box-sizing: 	content-box;
-	
-	@include toggleColor(color, "color");
-	@include toggleSizes(
-		margin-bottom, 
-		22px,
-		22px,
-		22px,
-		26px,
-		30px
-	);
 	margin-top: 0;
-	
-	@include toggleSizes(
-		width,
-		100%,
-		100%,
-		(container("md") + 100px),
-		(container("lg") + 150px),
-		(container("xl") + 200px)
-	);
-	@include toggleSizes(
-		max-width,
-		100%,
-		100%,
-		unset,
-		unset,
-		unset
-	);
-
-	@include toggleSizes(margin-left, 0, 0, -50px, -90px, -115px);
-	@include toggleSizes(margin-right, 0, 0, -50px, -90px, -115px);
-	
-	figcaption {
-		margin-top: $container-padding;
-		max-width: 500px;
-		@include font($body--small);
-		padding-top: $container-padding * 0.5 !important;
-		padding-bottom: 0 !important;
-		text-transform: none !important;
-			
-		@include toggleColor(color, "figcaption-color");
-		font-style: italic;	
-		
-		&:before {
-			position: relative;
-			display: block;
-			border-top: 5px solid;
-			@include toggleColor(color, "figcaption-color");
-			width: 150px;
-			padding-top: $container-padding;
-			content: "";
-		}
-		
-		a {			
-			&:link {
-				@include toggleColor(color, "figcaption-link-color");
-			}
-			&:visited {
-				@include toggleColor(color, "figcaption-link-color");
-			}
-			&:hover {
-				@include toggleColor(color, "link-color--hover");
-				text-decoration: 	underline;
-			}
-			&:focus {
-				@include toggleColor(color, "link-color--focus");
-				@include toggleColor(background, "link-background--focus");
-				outline: 2px solid;
-				@include toggleColor(outline-color, "outline-color");
-			}
-			&:active {
-				text-decoration: 	underline;
-			}
-		}
-		
+	margin-bottom: 22px;
+	width: 100%;
+	max-width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+	@include tablet {
+		width: containers("tablet") + 100px;
+		max-width: unset;
+		margin-right: -50px;
+		margin-left: -50px;
 	}
-	
+	@include desktop {
+		margin-bottom: 30px;
+		width: containers("desktop") + 200px;
+		max-width: unset;
+		margin-right: -115px;
+		margin-left: -115px;
+	}
+	figcaption {
+		padding: $container-padding;
+		max-width: 600px;
+		width: auto;
+		@include glass(20px, 2);
+
+		@include typography($smaller, "default");
+
+		@include tablet-up {
+			position: absolute;
+			bottom: -$container-padding;
+			left: -$container-padding;
+		}
+	}
+
+	&.featured-image {
+		margin-bottom: $container-padding * 3;
+	}
+
 	img {
 		display: block;
 		position: relative;
-		box-sizing: 	content-box;
-		
+		box-sizing: content-box;
 		width: 100%;
-		max-width: 100%;		
+		max-width: 100%;
 		height: auto;
-		
-		margin: 0;
-		@include toggleSizes(
-			margin-bottom,
-			11px,
-			11px,
-			11px,
-			13px,
-			15px
-		);
-	
+		margin: 0 0 15px;
+		border-radius: $border-radius;
+		box-shadow: shadow(2);
+
+		+ figcaption {
+			overflow-y: clip;
+			transition: 1s;
+		}
+		&:hover {
+			+ figcaption {
+				transition: 1s;
+			}
+		}
+
+		border-radius: $border-radius;
+		box-shadow: shadow(2);
+
 	}
-	
+
 }
 
-p > img {
-	display: block;
-	position: relative;
-	
-	@include toggleSizes(
-		width,
-		100%,
-		100%,
-		(container("md") + 100px),
-		(container("lg") + 150px),
-		(container("xl") + 200px)
-	);
-	@include toggleSizes(max-width, 100%, 100%, unset, unset, unset);
-	@include toggleSizes(margin-left, 0, 0, -50px, -90px, -115px);
-	@include toggleSizes(margin-right, 0, 0, -50px, -90px, -115px);
-	@include toggleSizes(left, 0, 0, 0, 0, 0);
-	@include toggleSizes(right, 0, 0, 0, 0, 0);
-}
-
+p > img,
 svg.hero-image {
 	display: block;
 	position: relative;
-		
-	@include toggleSizes(
-		width,
-		100%,
-		100%,
-		(container("md") + 100px),
-		(container("lg") + 150px),
-		(container("xl") + 200px)
-	);
-	
-	@include toggleColor(fill, "color");
-	@include toggleSizes(max-width, 100%, 100%, unset, unset, unset);
-	@include toggleSizes(margin-left, 0, 0, -50px, -90px, -115px);
-	@include toggleSizes(margin-right, 0, 0, -50px, -90px, -115px);
-	@include toggleSizes(
-		margin-bottom, 
-		22px,
-		22px,
-		22px,
-		26px,
-		30px
-	);
-	margin-top: 0;
-	@include toggleSizes(left, 0, 0, 0, 0, 0);
-	@include toggleSizes(right, 0, 0, 0, 0, 0);
+
+	width: 100%;
+	max-width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+	left: 0;
+	right: 0;
+	@include tablet {
+		width: containers("tablet") + 100px;
+		max-width: unset;
+		margin: $container-padding -50px;
+	}
+	@include desktop {
+		margin-bottom: 30px;
+		width: containers("desktop") + 200px;
+		max-width: unset;
+		margin: $container-padding -115px;
+	}
+
+	&.rounded {
+		border-radius: $border-radius;
+		box-shadow: shadow(2);
+	}
+}
+
+
+img.app-icon {
+	grid-area: icon;
+	margin: 0;
+	max-height: 57px;
+	max-width: 57px;
+	border-radius: 10px;
+	box-shadow: shadow(2);
+	@include tablet-up {
+		box-shadow: shadow(3);
+	}
+	&.large {
+		@include tablet-up {
+			max-height: 104px;
+			max-width: 104px;
+			border-radius: $border-radius;
+		}
+	}
 }

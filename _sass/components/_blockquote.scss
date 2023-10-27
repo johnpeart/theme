@@ -1,14 +1,7 @@
 blockquote {
-	@include toggleColor(background, "default-element-background");
+	background: var(--secondary-background);
 	padding: 20px;
-	@include toggleSizes(
-		margin,
-		0 0 22px 0,
-		0 0 22px 0,
-		0 0 22px 0,
-		0 0 26px 0,
-		0 0 30px 0
-	);
+	@include typography($p, "default");
 
 	p {
 		&:first-child {
@@ -19,9 +12,12 @@ blockquote {
 		}
 	}
 
-	code, kbd {
-		font-family: $font-family;
-		@include toggleColor(color, "code-color--blockquote");
+	code {
+		background: var(--background, colour("white"));
+	}
+
+	kbd {
+		background: var(--background, colour("white"));
 	}
 
 	ul {
@@ -39,6 +35,14 @@ blockquote {
 	p ~ ul {
 		margin-top: -22px;
 		padding-bottom: 6px;
+	}
+
+	&.lyric {
+		text-align: center;
+		border-radius: $border-radius;
+		* {
+			font-style: italic;
+		}
 	}
 
 }

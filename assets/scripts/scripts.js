@@ -1,4 +1,4 @@
-var details = [...document.querySelectorAll('.details-menu')];
+var details = [...document.querySelectorAll('details')];
 
 // Collapses the <details> items when you click another <details> item on the page.
 details.forEach((detail) => {

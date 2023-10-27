@@ -1,41 +1,29 @@
 body[id$='post'] {
 
-	figure.featured-image {
-		margin-bottom: $container-padding * 3;
-	}
-	section.post-body > p:first-of-type {
-		@include font($body--lead);
-	}
-	
-	header.post-title {
-		h1.post-title {
-			padding-top: 0;
-		}
-	}
-	
-	aside.post-published-date p {
+	time.published-datetime {
+		@include typography($post-date);
+		display: block;
+		line-height: 1;
+		color: colour("gray-600");
 		font-weight: bold;
-		@include toggleColor(color, "secondary-text--color");
-		@include font($h1-post-date);
 	}
-	
+
 	section.post-body ul > li::before {
 		position: absolute;
 		content: "\2014";
 
-		@include toggleSizes(
-			left,
-			22px,
-			-(11px),
-			-(11px),
-			-(13px),
-			-(15px)
-		);
+		left: 15px;
+		@include tablet {
+			left: -11px;
+		}
+		@include desktop {
+			left: -15px;
+		}
 	}
 
 	#markdown-toc {
 
-		@include toggleColor(background, "default-element-background");
+		background: colour("gray-200");
 		padding:	20px;
 
 		> li {
@@ -50,21 +38,21 @@ body[id$='post'] {
 
 		a {
 			&:link {
-				@include toggleColor(color, "link-color");
+				color: colour("black");
 				text-decoration: none;
 			}
 			&:visited {
-				@include toggleColor(color, "link-color");
+				color: colour("black");
 			}
 			&:hover {
-				@include toggleColor(color, "link-color--hover");
+				color: colour("cyan");
 				text-decoration: 	underline;
 			}
 			&:focus {
-				@include toggleColor(color, "link-color--focus");
-				@include toggleColor(background, "link-background--focus");
+				color: colour("white");
+				background: colour("cyan");
 				outline: 2px solid;
-				@include toggleColor(outline-color, "outline-color");
+				outline-color: colour("cyan");
 			}
 			&:active {
 				text-decoration: 	underline;
@@ -81,35 +69,20 @@ body[id$='post'] {
 			margin: 0;
 
 			li {
-				@include toggleSizes(
-					padding-left,
-					0,
-					0,
-					15px,
-					15px,
-					15px
-				);
+				padding-left: 0;
+				@include tablet-up {
+					padding-left: 15px;
+				}
 				margin: 0;
 
 				&::before {
 
-					position: relative;
-					@include toggleSizes(
-						display,
-						none,
-						none,
-						inline-block,
-						inline-block,
-						inline-block
-					);
-					@include toggleSizes(
-						left,
-						0,
-						0,
-						-15px,
-						-15px,
-						-15px
-					);
+					display: none;
+					@include tablet-up {
+						display: inline-block;
+						position: relative;
+						left: -15px;
+					}
 
 				}
 			}
@@ -137,59 +110,13 @@ body[id$='post'] {
 	details.table-of-contents {
 		&[open] {
 			border-bottom: 1px solid;
-			@include toggleColor(border-color, "border-color");
+			border-color: colour("gray-600");
 		}
 	}
 
 	details.table-of-contents #markdown-toc {
 		background: none;
 		padding: $container-padding 0;
-	}
-
-	fieldset#toggle-esc-entries {
-
-		@include toggleColor(background, "default-element-background");
-
-		padding: 15px 10px 10px;
-		margin-bottom: 20px;
-
-		@include sm-up {
-			padding: 20px;
-		}
-
-		legend {
-			@include sr-only;
-		}
-
-		div.radio-input {
-
-			display: inline-block;
-			width: 100%;
-
-			margin-bottom: 10px;
-
-			@include sm-up {
-				float: left;
-				clear: none;
-				width: 50%;
-
-				&:nth-of-type(3),
-				&:nth-of-type(4) {
-					margin-bottom: 0px;
-				}
-			}
-
-
-			label {
-				font-weight: normal;
-				vertical-align: middle;
-				line-height: map-get($form-elements, "$input-size");
-			}
-
-		}
-
-		@include clearfix;
-
 	}
 
 	div#esc-entries {
@@ -235,15 +162,7 @@ body[id$='post'] {
 		   -moz-font-feature-settings: 	normal !important;
 			   -o-font-feature-settings: 	normal !important;
 				font-feature-settings:	normal !important;
-
-		@include toggleSizes(
-			padding,
-			0 0 $container-padding 0,
-			0 0 $container-padding 0,
-			0 0 $container-padding 0,
-			0 0 $container-padding 0,
-			0 0 $container-padding 0
-		);
+		padding:0 0 $container-padding 0;
 	}
 
 	div.footnotes {
@@ -251,7 +170,7 @@ body[id$='post'] {
 		&:before {
 			display: block;
 
-			@include font($h3);
+			@include typography($h3);
 
 			font-weight: 		bold;
 			font-style: 		normal;
@@ -263,35 +182,26 @@ body[id$='post'] {
 
 		}
 
-		@include toggleSizes(
-			padding-top,
-			45px,
-			60px,
-			60px,
-			90px,
-			120px
-		);
-		@include toggleSizes(
-			max-width,
-			400px,
-			500px,
-			450px,
-			600px,
-			600px
-		);
+		padding-top: 45px;
+		max-width: 400px;
+		@include tablet {
+			padding-top: 60px;
+			max-width: 450px;
+		}
+		@include desktop {
+			padding-top: 120px;
+			max-width: 600px;
+		}
 
 		ul, ol {
-			@include toggleSizes(
-				padding-left,
-				(18px),
-				(18px),
-				0,
-				0,
-				0
-			);
+			padding-left: 18px;
+			@include tablet-up {
+				padding-left: 0;
+			}
 		}
 		li, p {
-			@include font($body--small);
+			@include typography($small);
+			line-height: 1.2;
 			margin-bottom: $container-padding;
 		}
 		a.reversefootnote {
@@ -306,5 +216,5 @@ body[id$='post'] {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	
+
 }

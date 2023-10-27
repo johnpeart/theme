@@ -1,0 +1,73 @@
+// MEDIA QUERIES
+// Used to create responsive layouts.
+// Use with @include [device size] { content }.
+
+@function breakpoints($size) {
+
+	$size: quote($size);
+
+	@if not map-has-key($breakpoints, $size) {
+		@error "Unknown breakpoint size – `#{$size}`";
+	}
+
+	@return map-get($breakpoints, $size);
+}
+
+@function containers($size) {
+
+	$size: quote($size);
+
+	@if not map-has-key($containers, $size) {
+		@error "Unknown container size – `#{$size}`";
+	}
+
+	@return map-get($containers, $size);
+}
+
+
+@mixin mobile {
+	@media 	only screen
+			and (max-width: breakpoints("tablet") - 1px) {
+				@content;
+			}
+}
+
+@mixin tablet {
+	@media 	only screen
+			and (min-width: breakpoints("tablet"))
+			and (max-width: breakpoints("desktop") - 1px) {
+				@content;
+			}
+}
+
+@mixin tablet-down {
+	@media 	only screen
+			and (max-width: breakpoints("desktop") - 1px) {
+				@content;
+			}
+}
+
+@mixin tablet-up {
+	@media 	only screen
+			and (min-width: breakpoints("tablet")) {
+				@content;
+			}
+}
+
+@mixin desktop {
+	@media 	only screen
+			and (min-width: breakpoints("desktop")) {
+				@content;
+			}
+}
+
+@mixin responsive($attribute, $mobile, $tablet, $desktop) {
+	// Use 'mobile' as the default (optimising for mobile phone screens)
+	#{$attribute}: 	$mobile;
+	@include tablet {
+		#{$attribute}: 	$tablet;
+	}
+	@include desktop {
+		#{$attribute}: 	$desktop;
+	}
+}

@@ -1,51 +1,20 @@
 body#manuals {
-	
+
 	article.project {
-		@include toggleSizes(
-			padding,
-			11px 0,
-			11px 0,
-			11px 0,
-			13px 0,
-			15px 0
-		);
-		
+		padding: $container-padding 0;
+
 		border-top: 1px solid;
-		@include toggleColor(border-color, "border-color");
+		border-color: var(--secondary-borderColor, colour("gray-400"));
 	}
-	
+
 	h2.project-name {
-		
-		@include font($h3);
+
+		@include typography($h3, "default");
 		text-align: 		left;
 		padding: 			0 !important;
-		
+
 	}
-	
-	a.project-url {
-		&:link {
-			@include toggleColor(color, "emphasised-link-color");
-			text-decoration: none;
-		}
-		&:visited {
-			@include toggleColor(color, "emphasised-link-color");
-			text-decoration: none;
-		}
-		&:hover {
-			@include toggleColor(color, "link-color--hover");
-			text-decoration: 	underline;	
-		}
-		&:focus {
-			@include toggleColor(color, "link-color--focus");
-			@include toggleColor(background, "link-background--focus");
-			outline: 2px solid;
-			@include toggleColor(outline-color, "outline-color");
-		}
-		&:active {
-			text-decoration: 	underline;
-		}
-	}
-	
+
 	p.project-notes {
 		padding: 0;
 	}

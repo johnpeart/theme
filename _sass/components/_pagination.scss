@@ -5,7 +5,7 @@ nav.pagination {
 
 	width:          100%;
 
-	@include sm-down {
+	@include mobile {
 		flex-direction: column;
 	}
 
@@ -15,8 +15,7 @@ nav.pagination {
 
 	span[class^="page--next-prev--"] {
 
-		@extend h4;
-		font-style: normal;
+		@include typography($p, "default");
 
 		display: block;
 		position: relative;
@@ -25,16 +24,14 @@ nav.pagination {
 		padding: 0;
 
 		text-align: center;
-		
-		@include sm-down {
-			margin: 15px 0 0 0;
 
-			&:last-child {
-				margin-bottom: 15px;
-			}
+		margin: 15px 0 0 0;
+
+		&:last-child {
+			margin-bottom: 15px;
 		}
 
-		@include md-up {
+		@include tablet-up {
 
 			margin: 30px 0;
 
@@ -58,13 +55,15 @@ nav.pagination {
 	}
 
 	span.page--next-prev--prev {
-		@include md-up {
+		cursor: pointer;
+		@include tablet-up {
 			float:      left;
 		}
 	}
 
 	span.page--next-prev--next {
-		@include md-up {
+		cursor: pointer;
+		@include tablet-up {
 			float:      right;
 		}
 	}
@@ -76,32 +75,57 @@ nav.pagination {
 			background: none;
 		}
 
-		@include sm-down {
+		@include mobile {
 			display: none;
 		}
 	}
-	
+
 	span[class^="page--next-prev--"] a {
 		display: block;
-		
+
 		padding: $container-padding;
-		outline: 0;
-		
+		transition: box-shadow 0.25s;
+		transition: background 0.25s;
+		color: var(--button-color, colour("black"));
+		background: var(--button-background, colour("white"));
+		font-weight: bold;
+		@include plastic(raised, 6px);
+
 		@include plastic(raised, 5px);
 		transition: all 0.25s ease-out;
 		&:link {
 			text-decoration: none;
 		}
 		&:hover {
+			color: var(--button-hoverColor, colour("cyan"));
+			background: var(--button-hoverBackground, colour("gray-100"));
 			@include plastic(raised, 2px);
-			outline:    none;
-			transition: all 0.25s ease-out;
+			transition: background 0.25s;
+			transition: box-shadow 0.25s;
 		}
+
+		&:focus {
+			background: var(--button-focusBackground, colour("gray-100"));
+			@include plastic(raised, 2px);
+			transition: background 0.25s;
+			transition: box-shadow 0.25s;
+		}
+
+		&:hover:focus {
+			background: var(--button-hoverFocusBackground, colour("gray-200"));
+			@include plastic(raised, 2px);
+			transition: background 0.25s;
+			transition: box-shadow 0.25s;
+		}
+
 		&:active {
-			@include plastic(inset, 2px);
-			transition: all 0.25s ease-out;
+			background: var(--button-activeBackground, colour("white"));
+			@include plastic(inset, 4px);
+			transition: background 0.25s;
+			transition: box-shadow 0.25s;
+			outline: none;
 		}
-	
+
 	}
 
 }

@@ -5,29 +5,29 @@ layout: default
 {% include header.html %}
 
 <main id="content" class="container">
-						
+
 	<article id="post-content" class="h-entry">
-		
+
 		<header class="post-title">
-			
-			<aside class="post-published-date">
-				<p><time datetime="{{page.date | date: '%Y-%m-%d'}}" class="dt-published">{{ page.date | date: "%-d %B %Y" }}</time></p>
+
+			<aside class="published-date">
+				<time datetime="{{page.date | date: '%Y-%m-%d'}}" class="published-datetime dt-published">{{ page.date | date: "%-d %B %Y" }}</time>
 			</aside>
 			<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
 
 		</header>
-		
+
 		{% include blog/emoji-hero-image.html %}
 
 		<section class="post-body e-content">
 			{{ content }}
 			{% include blog/eurovision.html %}
 		</section>
-		
+
 	</article>
-			
+
 	{% include blog/footer.html %}
-	
+
 </main>
 
 {% include footer.html %}

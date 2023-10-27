@@ -1,60 +1,18 @@
 ul {
-
 	list-style: none;
-	padding-top: 0;
-	@include toggleSizes(
-		padding-left,
-		33px,
-		33px,
-		0,
-		0,
-		0
-	);
-	@include toggleSizes(
-		padding-bottom,
-		22px,
-		22px,
-		22px,
-		26px,
-		30px
-	);
-
 }
+
 ol {
-
 	list-style: decimal;
-	padding-top: 0;
-	@include toggleSizes(
-		padding-left,
-		35px,
-		35px,
-		0,
-		0,
-		0
-	);
-	@include toggleSizes(
-	padding-bottom,
-		22px,
-		22px,
-		22px,
-		26px,
-		30px
-	);
-
 }
 
-li {
-
-	@include font($list);
-
-	&.lead {
-		padding-bottom: 	0;
-		font-weight:		bold;
+ul,
+ol {
+	padding: 0 0 22px 30px;
+	@include tablet {
+		padding: 0 0 22px 0;
 	}
-
-	span.small-caps {
-		font-variant: 	small-caps !important;
-		font-size: 		120%;
+	@include desktop {
+		padding: 0 0 30px 0px;
 	}
-	
 }

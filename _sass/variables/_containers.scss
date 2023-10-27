@@ -1,0 +1,18 @@
+// BREAKPOINTS AND CONTAINER SIZING
+// Used to create responsive layouts.
+
+// Breakpoints
+$breakpoints: (
+	"mobile": 0,
+	"tablet": 768px,
+	"desktop": 1200px
+);
+
+// Container sizes at each breakpoint
+$containers: (
+	"mobile": 300px,
+	"tablet": 700px,
+	"desktop": 900px
+);
+
+$container-padding: 15px;

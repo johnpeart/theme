@@ -5,50 +5,29 @@ body#podcasts {
 	section {
 		padding-top: 			75px;
 		padding-bottom: 		50px;
-		
+
 		&#podcasts {
 			padding: 0;
 		}
 	}
-	
+
 	img.featured {
 		margin: 0;
 		padding: 0;
 		width: unset;
-		max-width: unset;
+		max-width: 200px;
 		width: 100%;
-	
-		@include toggleSizes(
-			max-width,
-			200px,
-			200px,
-			300px,
-			300px,
-			300px
-		);
-		@include toggleSizes(
-			margin-top,
-			0,
-			0,
-			100px,
-			100px,
-			100px
-		);
-		@include toggleSizes(
-			margin-bottom,
-			30px,
-			30px,
-			30px,
-			30px,
-			30px
-		);
-		margin-right: 0 !important;
-		margin-left: 0 !important;
+		margin: 0 0 30px 0;
+
+		@include tablet-up {
+			max-width: 300px;
+			margin: 100px 0 30px 0;
+		}
 	}
 
-	section#pride-on { 
+	section#pride-on {
 
-		color: map-get($colors, "white");
+		color: colour("white");
 
 		padding-top: 0;
 		padding-bottom: 100px;
@@ -56,13 +35,13 @@ body#podcasts {
 		div.container {
 			padding-top: 15px;
 			padding-bottom: 15px;
-			
-			background:  map-get($colors, "magenta");
+
+			background:  colour("magenta");
 			background-image: url('/assets/images/podcasts/pride-on-arrows.svg');
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
-			
+
 			@include clearfix;
 		}
 
@@ -80,61 +59,49 @@ body#podcasts {
 
 		img {
 			width: 100%;
-			max-width: 300px;			
-			@include toggleSizes(
-				margin-top,
-				0,
-				0,
-				100px,
-				100px,
-				100px
-			);
-			@include toggleSizes(
-				margin-bottom,
-				30px,
-				30px,
-				30px,
-				30px,
-				30px
-			);
+			max-width: 300px;
+			margin: 0 0 30px 0;
+			@include tablet {
+				margin-top: 100px;
+			}
 		}
 
 		p.link {
 			margin-top: 20px;
 
 			a {
-				
+
 				display: inline-block;
-				
+
 				&:link {
-					color: map-get($colors, "white");
+					color: colour("white");
 					text-decoration: none;
-					border: 2px solid map-get($colors, "white");
+					border: 2px solid colour("white");
 					padding: 10px 25px;
 				}
 				&:visited {
-					color: map-get($colors, "black");
-					text-decoration: none;					
+					color: colour("black");
+					text-decoration: none;
 				}
 				&:hover {
-					color: map-get($colors, "magenta");
-					outline: 2px solid map-get($colors, "white");
+					color: colour("magenta");
+					outline: 2px solid colour("white");
 					outline-offset: 2px !important;
-					background: map-get($colors, "white");
+					background: colour("white");
 				}
 				&:focus {
-					outline: 2px solid map-get($colors, "white");
+					outline: 2px solid colour("white");
 					outline-offset: 0px;
-					border: 2px solid map-get($colors, "magenta");
-					color: map-get($colors, "magenta");
-					background: map-get($colors, "white");
+					border: 2px solid colour("magenta");
+					color: colour("magenta");
+					background: colour("white");
 				}
 				&:active {
-					outline-offset: 4px !important;					
+					outline-offset: 4px !important;
 				}
 			}
 		}
-	
+
 	}
 
 	footer#site-footer section.container {

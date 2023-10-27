@@ -1,0 +1,14 @@
+/// Get colour
+@function colour($colour) {
+
+  @if type-of($colour) == "color" {
+	// stylelint-disable-next-line scss/function-quote-no-quoted-strings-inside
+	$colour: quote("#{$colour}");
+  }
+
+  @if not map-has-key($colours, $colour) {
+	@error "Unknown colour `#{$colour}`";
+  }
+
+  @return map-get($colours, $colour);
+}

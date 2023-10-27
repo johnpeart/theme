@@ -1,18 +1,54 @@
-p {
-	
-	@include font($body);
+p, li, dd, dt {
+	@include typography($p);
+	font-style: normal;
+	font-weight: normal;
 
-	&.lead {
-		padding-bottom: 	0;
-		font-weight:		bold;
+	&.small {
+		@include typography($small);
+		line-height: 1.2;
 	}
 
-	span.small-caps {
+	&.small-caps,
+	.small-caps {
 		font-variant: 	small-caps !important;
 		font-size: 		120%;
 	}
 
+	&.lead {
+		font-weight: bold;
+	}
+
+	&.no-padding {
+		padding: 0 !important;
+	}
 }
+
+p.lead,
+body[id$='post'] section.post-body > p:first-of-type {
+	@include typography($lead);
+	font-weight: bold;
+}
+
+p {
+	padding: 0 0 22px 0;
+	@include desktop {
+		padding: 0 0 30px 0;
+	}
+
+	&.lead {
+		padding: 0;
+	}
+}
+
+li {
+	padding: 0;
+}
+
+dd.lead,
+dt.lead {
+	padding-bottom: 	0;
+}
+
 
 strong, b,dt {
 	font-weight: 	bold;

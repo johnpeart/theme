@@ -1,58 +1,75 @@
 h1 {
+	@include typography($h1);
+	line-height: 		1.0;
 	font-weight: 		bold;
 	font-style: 		normal;
 	text-align: 		left;
 	text-decoration: 	none;
 	text-transform: 	none;
 
-	@include font($h1);
 	&.display {
-		@include font($h1-display);
+		@include typography($hello);
 	}
-	
+
 	&.page-title {
-		@include font($h1-page-title);
+		@include typography($page-title);
 	}
 }
 
 h2 {
+	@include typography($h2);
+	line-height: 		1.15;
 	font-weight: 		bold;
 	font-style: 		normal;
 	text-align: 		center;
 	text-decoration: 	none;
 	text-transform: 	none;
 
-	@include font($h2)
+	&.loop-header {
+		@include typography($loop-header);
+		line-height: 0.8;
+		text-align: left;
+		float: none;
+		width: 100%;
+		position: relative;
+		@include tablet-up {
+			@include supports-sticky() {
+				top: 50px;
+			}
+			float: left;
+			width: 25%;
+		}
+	}
 }
 
 h3 {
+	@include typography($h3);
+	line-height: 		1.25;
 	font-weight: 		bold;
 	font-style: 		normal;
 	text-align: 		left;
 	text-decoration: 	none;
 	text-transform: 	none;
-
-	@include font($h3);
 }
 
 h4 {
+	@include typography($h3);
+	line-height: 		1.25;
 	font-weight: 		bold;
 	font-style: 		italic;
 	text-align: 		left;
 	text-decoration: 	none;
 	text-transform: 	none;
-	
-	@include font($h4);
 }
 
 h5 {
+	@include typography($h3);
+	line-height: 		1.25;
 	font-weight: 		bold;
 	font-style: 		normal;
 	text-align: 		left;
 	text-decoration: 	none;
 	text-transform: 	none;
-	
-	@include font($h5);
 }
 
 h2 + h3 {

@@ -1,41 +1,25 @@
+fieldset {
+	@include glass(20px, 2);
+	padding: $container-padding;
+	margin-bottom: $container-padding * 2;
+	@include clearfix();
+}
+
 legend {
-	@include font($legend);
+	@include typography($legend);
+	float: left;
 	font-weight: bold;
 	text-align: center;
 }
 
 span.sub-legend {
-	@include font($sub-legend);
+	@include typography($sub-legend);
 	display: block;
 	text-align: center;
 }
 
 legend > span.sub-legend {
 	padding-top: 0 !important;
-}
-	
-.text-input,
-.radio-input {
-	display: block;
-	position: relative;
-
-	min-height: map-get($form-elements, "input-size");
-
-	@extend p;
-	padding: 0;
-
-	margin-bottom: 30px;
-
-	clear: left;
-}
-
-.radio-input {
-	padding-left: map-get($form-elements, "radios-size");
-
-	&:last-child,
-	&:last-of-type {
-		margin-bottom: 0;
-	}
 }
 
 label {
@@ -55,150 +39,9 @@ label {
 
 .label-hint {
 	@extend p;
-	@include toggleColor(color, "input-label-hint-color");
+	color: colour("gray-600");
 	padding-bottom: 0;
 	display: block;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-textarea {
-	@extend p;
-	box-sizing: border-box;
-	width: 100%;
-	min-height: 40px;
-	
-	margin-bottom: $container-padding * 2;
-	padding: map-get($form-elements, "input-padding");
 
-	border-radius: 8px;
-
-	@include toggleColor(background, "input-background");
-	@include toggleColor(color, "input-color");
-	
-	border: map-get($form-elements, "border-width-form-element") solid;
-	@include toggleColor(border-color, "input-border-color");
-	
-	// Disable inner shadow and remove rounded corners
-	-webkit-appearance: none;
-	appearance: none;
-
-
-	&:hover {
-		outline: map-get($form-elements, "border-width-form-element") solid map-get($form-elements, "input-focus-color");
-		outline-offset: 0px;
-		border: map-get($form-elements, "border-width-form-element") solid;
-		@include toggleColor(border-color, "input-border-color");
-	}
-	&:focus {
-		outline: map-get($form-elements, "border-width-form-element") solid map-get($form-elements, "input-focus-color");
-		outline-offset: 3px;
-
-		@include toggleColor(background, "input-background--focus");
-		box-shadow: inset 0 0 0 map-get($form-elements, "border-focus-width");
-		@include darkMode() {
-			box-shadow: inset 0 0 0 map-get($form-elements, "border-focus-width") map-get($colors, "absolute-black");
-		}
-		border: map-get($form-elements, "border-width-form-element") solid;
-		@include toggleColor(border-color, "input-border-color");
-	}
-
-	&:invalid {
-		border: map-get($form-elements, "border-width-form-element") solid map-get($form-elements, "input-error-color");
-	}
-
-}
-
-textarea {
-	resize: vertical;
-}
-
-input[type="radio"] {
-	$input-offset: (map-get($form-elements, "touch-target-size") - map-get($form-elements, "radios-size")) * 0.5;
-	cursor: pointer;
-
-	position: absolute;
-
-	z-index: 1;
-	top: $input-offset * -1;
-	left: $input-offset * -1;
-
-	width: map-get($form-elements, "touch-target-size");
-	height: map-get($form-elements, "touch-target-size");
-	margin: 0;
-
-	opacity: 0;
-
-	~ label {
-		display: inline-block;
-		height: map-get($form-elements, "input-size");
-		margin-top: 0;
-		margin-bottom: 0;
-		padding: 0px map-get($form-elements, "radios-label-padding-left-right");
-		cursor: pointer;
-		// remove 300ms pause on mobile
-		touch-action: manipulation;
-	
-		font-weight:    600;
-
-		&::before {
-			content: "";
-			box-sizing: border-box;
-			position: absolute;
-			top: 0;
-			left: 0;
-
-			width: map-get($form-elements, "radios-size");
-			height: map-get($form-elements, "radios-size");
-			border: 2px solid;
-			@include toggleColor(border-color, "radio-button-border-color");
-			border-radius: 50%;
-			background: transparent;
-		}
-
-		&::after {
-			content: "";
-
-			position: absolute;
-			top: 10px;
-			left: 10px;
-
-			width: 0;
-			height: 0;
-
-			border: 10px solid;
-			@include toggleColor(border-color, "radio-button-center-color")
-			border-radius: 50%;
-			opacity: 0;
-			background: map-get($colors, "black");
-		}
-	
-	}
-
-	&:focus + label::before {
-		border-width: 4px;
-		box-shadow: 0 0 0 3px map-get($colors, "radio-shadow");
-	}
-
-	&:hover + label::before {
-		box-shadow: 0 0 0 3px map-get($colors, "radio-shadow");
-		@include toggleColor(background, "radio-background")
-		border-width: 2px;
-	}
-
-	&:checked + label::after {
-		opacity: 1;
-	}
-
-	~ .label-hint,  {
-		padding-right: map-get($form-elements, "radios-label-padding-left-right");
-		padding-left: map-get($form-elements, "radios-label-padding-left-right");
-	}
-
-	~ input[type="text"]  {
-		margin-left: map-get($form-elements, "radios-label-padding-left-right");
-		width: calc(100% - #{map-get($form-elements, "radios-label-padding-left-right")});
-	}
-
-}

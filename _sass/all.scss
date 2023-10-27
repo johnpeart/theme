@@ -1,15 +1,23 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+	"helpers/_colours",
+	"helpers/_darkmode",
+
+	"variables/_colours",
+	"variables/_shadows",
+	"variables/_containers",
+	"variables/_typography",
+	"variables/_elements",
 	"_variables",
-	
+
 	"core/_reset",
 	"core/_fonts",
 
-	"helpers/_breakpoints",
-	"helpers/_color",
-	"helpers/_clearfix",
+	"helpers/_media-queries",
 	"helpers/_sticky",
-	"helpers/_darkmode",
+	"helpers/_forms",
+	"helpers/_shadows",
+	"helpers/_clearfix",
 	"helpers/_typography",
 	"helpers/_screenreaders",
 	"helpers/_glass",
@@ -18,21 +26,20 @@
 
 	"core/_containers",
 	"core/_main",
-	
+
 	"styles/_footnotes",
 	"styles/_headings",
 	"styles/_links",
 	"styles/_lists",
 	"styles/_paragraph",
 	"styles/_code",
-	
-	"components/_apps",
+
 	"components/_blockquote",
 	"components/_buttons",
-	"components/_definitionlists",
+	"components/_chiplet",
+	"components/_definitionlist",
 	"components/_detailssummary",
 	"components/_footer",
-	"components/_forms",
 	"components/_header",
 	"components/_horiztonalrule",
 	"components/_images",
@@ -43,7 +50,12 @@
 	"components/_stylised-note",
 	"components/_stylised-list",
 	"components/_stylised-photo",
-	
+	"components/_forms",
+	"components/_input",
+	"components/_textarea",
+	"components/_radios",
+	"components/_select",
+
 	"layouts/_notfound",
 	"layouts/_home",
 	"layouts/_loop",
@@ -58,5 +70,5 @@
 	"layouts/_manuals",
 	"layouts/_editor",
 
-	"_themes"
+	"_darkmode"
 ;

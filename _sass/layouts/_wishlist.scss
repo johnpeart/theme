@@ -7,11 +7,11 @@ body#wishlist {
 		span.item-giftidea {
 			position: relative;
 
-			color: map-get($colors, "white");
-			background: map-get($colors, "cyan");
+			color: colour("white");
+			background: colour("cyan");
 
 			border: 1px solid;
-			@include toggleColor(border-color, "chiplet-background--default");
+			border-color: colour("cyan");
 			border-radius: 6px;
 
 			padding: 0px 7px;
@@ -26,7 +26,7 @@ body#wishlist {
 
 	h2.wishlist-header {
 		text-align: left;
-		@include font($h2);
+		@include typography($h2);
 	}
 
 	ul {
@@ -48,72 +48,36 @@ body#wishlist {
 			box-sizing: 	border-box;
 
 			border-top: 1px solid;
-			@include toggleColor(border-color, "border-color");
+			border-color: colour("gray-600");
 
 			div.item-info {
 
 				display: block;
-				@include toggleSizes(
-					float,
-					none,
-					left,
-					left,
-					left,
-					left
-				);
-				@include toggleSizes(
-					clear,
-					both,
-					none,
-					none,
-					none,
-					none
-				);
-				@include toggleSizes(
-					width,
-					100%,
-					70%,
-					70%,
-					70%,
-					70%
-				);
+				float: none;
+				clear: both;
+				width: 100%;
+
+				@include tablet-up {
+					float: left;
+					clear: none;
+					width: 70%;
+				}
 
 			}
 			aside.item-metadata {
 
 				display: block;
-				@include toggleSizes(
-					float,
-					none,
-					right,
-					right,
-					right,
-					right
-				);
-				@include toggleSizes(
-					clear,
-					both,
-					none,
-					none,
-					none,
-					none
-				);
-				@include toggleSizes(
-					width,
-					100%,
-					30%,
-					30%,
-					30%,
-					30%
-				);
-				@include toggleSizes(
-					padding,
-					10px 0 0 0,
-					0,
-					0,
-					0,
-					0
-				);
+				float: none;
+				clear: both;
+				width: 100%;
+				padding: 10px 0 0 0;
+
+				@include tablet-up {
+					padding: 0;
+					float: right;
+					clear: none;
+					width: 30%;
+				}
 
 			}
 
@@ -125,22 +89,22 @@ body#wishlist {
 			}
 			a.item-link {
 				&:link {
-					@include toggleColor(color, "emphasised-link-color");
+					color: colour("cyan");
 					text-decoration: none;
 				}
 				&:visited {
-					@include toggleColor(color, "emphasised-link-color");
+					color: colour("cyan");
 					text-decoration: none;
 				}
 				&:hover {
-					@include toggleColor(color, "link-color--hover");
+					color: colour("cyan");
 					text-decoration: 	underline;
 				}
 				&:focus {
-					@include toggleColor(color, "link-color--focus");
-					@include toggleColor(background, "link-background--focus");
+					color: colour("white");
+					background: colour("cyan");
 					outline: 2px solid;
-					@include toggleColor(outline-color, "outline-color");
+					outline-color: colour("cyan");
 				}
 				&:active {
 					text-decoration: 	underline;
@@ -154,22 +118,10 @@ body#wishlist {
 				margin-left: 20px;
 				float: right;
 			}
-			span.item-giftidea {
-				@include toggleColor(background, "chiplet-background--default");
-				border: 1px solid;
-				@include toggleColor(border-color, "chiplet-background--default");
-			}
-			span.item-purchased {
-				@include toggleColor(background, "chiplet-background--green");
-				border: 1px solid;
-				@include toggleColor(border-color, "chiplet-background--green");
-			}
 			span.item-giftidea,
 			span.item-purchased {
 				position: relative;
 				float: left;
-				@include font($body--chiplet);
-				@include toggleColor(color, "chiplet-color");
 			}
 
 			@include clearfix;
@@ -177,34 +129,34 @@ body#wishlist {
 	}
 
 	fieldset#toggle-purchased {
-		
+
 		display: block;
 		position: relative;
 		width: 100%;
 
-		@include toggleColor(background, "default-element-background");
+		background: colour("gray-200");
 
 		padding: 15px 10px 10px;
 
-		@include sm-up {
+		@include tablet-up {
 			text-align: right;
 			padding: 20px;
 		}
 
 		legend {
-			
+
 			display: inline;
 			position: relative;
-			
-			@include font($body);
+
+			@include typography($p);
 			font-weight: bold !important;
-			
-			max-height: map-get($form-elements, "radios-size");
+
+			max-height: form("radios-size");
 			vertical-align: middle;
 			text-align: left;
 			float: left;
 			font-weight: bold;
-			@include sm-up {
+			@include tablet-up {
 				padding-bottom: 0;
 				margin-bottom: 0;
 			}
@@ -214,7 +166,7 @@ body#wishlist {
 
 			margin-bottom: 10px;
 
-			@include sm-up {
+			@include tablet-up {
 				display: inline-block;
 				margin-bottom: 0;
 			}
@@ -222,7 +174,7 @@ body#wishlist {
 			label {
 				font-weight: normal;
 				vertical-align: middle;
-				line-height: map-get($form-elements, "$input-size");
+				line-height: form("input-size");
 			}
 		}
 

@@ -5,43 +5,43 @@ layout: default
 {% include header.html %}
 
 <main id="content" class="container">
-				
+
 	<section id="page-content">
 
 		<h1 class="page-title">Wishlist</h1>
-		
+
 		<aside class="intro-text">
-			
+
 			{{ content }}
-			
+
 		</aside>
-		
+
 		<fieldset id="toggle-purchased">
 			<legend>Toggle purchased items</legend>
-			
+
 			<div class="radio-input">
 				<input type="radio" name="toggle-purchased" id="show-purchased" value="show">
 				<label for="show-purchased">Show</label>
 			</div>
-			
+
 			<div class="radio-input">
 				<input type="radio" name="toggle-purchased" id="hide-purchased" value="hide" checked>
 				<label for="hide-purchased">Hide</label>
 			</div>
-			
+
 		</fieldset>
 
 		{% assign wishlists = site.wishlist | group_by: 'list' | sort: 'name' %}
 		{% for list in wishlists %}
-		
+
 		<section>
-			
+
 			<header>
 				<h2 class="wishlist-header wishlist-{{ list.name | slugify }}">
 					{{ list.name | smartify }}
 				</h2>
 			</header>
-						
+
 			<ul>
 			{% assign items = list.items | sort: 'price' %}
 			{% for item in items %}
@@ -56,7 +56,7 @@ layout: default
 					</div>
 					<aside class="item-metadata">
 						{% if item.gift-idea == true %}
-						<span class="item-giftidea">Gift idea</span>
+						<span class="chiplet item-giftidea">Gift idea</span>
 						{% endif %}
 						{% if item.price == 0.00 %}
 						<span class="item-price">Varies</span>
@@ -75,7 +75,7 @@ layout: default
 						{% endif %}
 					</div>
 					<aside class="item-metadata">
-						<span class="item-purchased">Purchased</span>
+						<span class="chiplet chiplet-green item-purchased">Purchased</span>
 						{% if item.price == 0.00 %}
 						<span class="item-price">Varies</span>
 						{% else %}
@@ -84,17 +84,17 @@ layout: default
 					</aside>
 				</li>
 				{% endif %}
-				
+
 			{% endfor %}
 			</ul>
-			
+
 		</section>
-		
-		
+
+
 		{% endfor %}
-							
+
 	</section>
-	
+
 </main>
 
 {% include footer.html %}

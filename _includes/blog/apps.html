@@ -1,108 +1,56 @@
+{% if include.position == "first" %}
+<figure class="apps-list">
+{% endif %}
+
 {% if include.type == "sheet" %}
 
 <figure class="app-sheet">
-  <dl class="app-sheet--app--info">
-    
-    <header class="app-sheet--app--header">
-      <img class="app-sheet--app--icon" src="{{ site.url | append: site.baseurl | append: '/assets/images/posts' | append: page.url | append: include.image }}" alt="{{ include.alt }}">
-      
-      <div class="text">
-        <dt class="app-sheet--app--name">App name</dt>
-        <dd class="app-sheet--app--name">{{ include.name }}</dd>
-        
-        <dt class="app-sheet--app--description">In-app purchase description</dt>
-        <dd class="app-sheet--app--description">{{ include.description }}</dd>
-        
-        {% if include.payment %}
-        <span class="app-sheet--app--iap-label">{{ include.payment }}</span>
-        {% endif %}
-      </div>
-    
-    </header>
-    
-    <div class="app-sheet--block app-sheet--app--developer">
-      <dt class="app-sheet--app--developer">Developer</dt>
-      <dd class="app-sheet--app--developer">{{ include.developer }}</dd>
-    </div>
-    
-    <div class="app-sheet--block app-sheet--app--price">
-      <dt class="app-sheet--app--price">Price</dt>
-      <dd class="app-sheet--app--price">{{ include.price | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
-    </div>
+  <dl class="dl--app">
+    <img class="app-icon large" src="{{ site.url | append: site.baseurl | append: '/assets/images/posts' | append: page.url | append: include.image }}" alt="{{ include.alt }}">
+    <dt class="app-name-label sr-only">App name</dt>
+    <dd class="app-name">{{ include.name }}</dd>
+    <dt class="app-description-label sr-only">In-app purchase description</dt>
+    <dd class="app-description">{{ include.description }}</dd>
+    {% if include.payment-type %}
+    <dt class="app-type-label sr-only">Type</dt>
+    <dd class="app-type">{{ include.payment-type }}</dd>
+    {% endif %}
+    <dt class="app-dev-label">Developer</dt>
+    <dd class="app-dev">{{ include.developer }}</dd>
+    <dt class="app-price-label">Price</dt>
+    <dd class="app-price">{{ include.price | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
   </dl>
 </figure>
 
 {% elsif include.type == "list" %}
-
-<figure class="apps-list">
-  <dl class="apps-list--app--info">
-      <img class="apps-list--app--icon" src="{{ site.url | append: site.baseurl | append: '/assets/images/posts' | append: page.url | append: include.image }}" alt="{{ include.alt }}">
-      
-      <dt class="apps-list--app--name">App name</dt>
-      <dd class="apps-list--app--name">{{ include.name }}</dd>
-    
-      <dt class="apps-list--app--price">Price</dt>
+  <dl class="dl--app">
+      <img class="app-icon" src="{{ site.url | append: site.baseurl | append: '/assets/images/posts' | append: page.url | append: include.image }}" alt="{{ include.alt }}">
+      <dt class="sr-only">App name</dt>
+      <dd>{{ include.name }}</dd>
+      <dt class="sr-only">Price</dt>
       {% if include.price contains "included" %}
-      <dd class="app-sheet--app--price small-caps">{{ include.price }}</dd>
+      <dd class="small-caps">{{ include.price }}</dd>
       {% else %}
-      <dd class="app-sheet--app--price">{{ include.price | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
+      <dd>{{ include.price | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
       {% endif %}
-
   </dl>
-</figure>
 
 {% elsif include.type == "total" %}
 
-<figure class="app-totals app-totals--total">
-  <dl class="app-totals">
-      <dt class="app-totals--app--price">Total</dt>
-      <dd class="app-totals--app--price">{{ include.total | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
+  <dl class="dl--total">
+      <dt>Total</dt>
+      <dd>{{ include.total | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
   </dl>
-</figure>
 
 {% elsif include.type == "subtotal" %}
 
-<figure class="app-totals app-totals--sub-total">
-  <dl class="app-totals">
-      <dt class="app-totals--app--price">Sub-total</dt>
-      <dd class="app-totals--app--price">{{ include.total | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
+  <dl class="dl--total">
+      <dt>Sub-total</dt>
+      <dd>{{ include.total | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
   </dl>
+
+{% endif %}
+
+{% if include.position == "last" %}
 </figure>
-
-{% else %}
-
-<figure class="app-sheet">
-  <dl class="app-sheet--app--info">
-    
-    <header class="app-sheet--app--header">
-      <img class="app-sheet--app--icon" src="{{ site.url | append: site.baseurl | append: '/assets/images/posts' | append: page.url | append: include.image }}" alt="{{ include.alt }}">
-      
-      <div class="text">
-        <dt class="app-sheet--app--name">App name</dt>
-        <dd class="app-sheet--app--name">{{ include.name }}</dd>
-        
-        <dt class="app-sheet--app--description">In-app purchase description</dt>
-        <dd class="app-sheet--app--description">{{ include.description }}</dd>
-        
-        {% if include.payment == "iap" %}
-        <span class="app-sheet--app--iap-label">In-app purchase</span>
-        {% elsif include.payment == "one-time" %}
-        <span class="app-sheet--app--iap-label">One-time purchase</span>
-        {% endif %}
-      </div>
-    
-    </header>
-    
-    <div class="app-sheet--block app-sheet--app--developer">
-      <dt class="app-sheet--app--developer">Developer</dt>
-      <dd class="app-sheet--app--developer">{{ include.developer }}</dd>
-    </div>
-    
-    <div class="app-sheet--block app-sheet--app--price">
-      <dt class="app-sheet--app--price">Price</dt>
-      <dd class="app-sheet--app--price">{{ include.price | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
-    </div>
-  </dl>
-</figure>
-
 {% endif %}

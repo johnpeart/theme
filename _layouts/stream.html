@@ -7,38 +7,17 @@ layout: default
 <main id="content" class="container">
 
 	{% for page in paginator.posts %}
-	
+
 	<article class="social h-entry">
 		<section class="e-content">
 		{% include {{ page.collection | append: '.html' | prepend: 'stream/' }} %}
 		</section>
 		{% include stream/footer.html %}
 	</article>
-	
+
 	{% endfor %}
-	
-	{% if paginator.total_pages > 1 %}
-	<nav class="pagination" role="navigation">
-		{% if paginator.previous_page %}
-		<span class="page--next-prev--prev">
-			<a class="page--next-prev--label" href="{{ paginator.previous_page_path | relative_url }}" title="Go to previous page">← Newer posts</a>
-		</span>
-		{% else %}
-		<span class="page--next-prev--prev-blank">
-		</span>  
-		{% endif %}
-	
-	
-		{% if paginator.next_page %}
-		<span class="page--next-prev--next">
-			<a class="page--next-prev--label" href="{{ paginator.next_page_path | relative_url }}" title="Go to next page">Older posts →</a>
-		</span>  
-		{% else %}
-		<span class="page--next-prev--prev-blank">
-		</span>  
-		{% endif %}
-	</nav>
-	{% endif %}
+
+	{% include pagination.html %}
 
 </main>
 

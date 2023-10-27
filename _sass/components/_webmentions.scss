@@ -2,55 +2,30 @@ footer#post-footer,
 footer#stream-footer {
     display: grid;
     position: relative;
-    
-    @include toggleSizes(
-        grid-template-columns,
-        1fr,
-        1fr,
-        1fr,
-        1fr 1fr,
-        1fr 1fr
-    );
-    
-    @include toggleSizes(
-        grid-template-areas,
-        "meta" "likes" "reposts" "replies" "author",
-        "meta" "likes" "reposts" "replies" "author",
-        "meta" "likes" "reposts" "replies" "author",
-        "likes reposts" "replies replies" "meta author",
-        "likes reposts" "replies replies" "meta author"
-    );
-    
+
+    grid-template-columns:  1fr;
+    grid-template-areas: "meta" "likes" "reposts" "replies" "author";
+    grid-gap: $container-padding;
+    margin-top: $container-padding * 2;
+
+    @include tablet-up {
+        grid-template-columns:  1fr 1fr;
+        grid-template-areas: "likes reposts" "replies replies" "meta author";
+        margin-top: $container-padding * 4;
+    }
+
     #webmentions--likes {
         grid-area: likes;
     }
-    
+
     #webmentions--reposts {
         grid-area: reposts;
     }
-    
+
     #webmentions--replies {
         grid-area: replies;
     }
-    
-    @include toggleSizes(
-        grid-gap,
-        $container-padding,
-        $container-padding,
-        $container-padding,
-        $container-padding,
-        $container-padding
-    );
-    
-    @include toggleSizes(
-        margin-top,
-        $container-padding * 2,
-        $container-padding * 2,
-        $container-padding * 3,
-        $container-padding * 4,
-        $container-padding * 5
-    );
-    
+
 }
 
 aside#webmentions--likes,
@@ -63,16 +38,16 @@ aside#meta-data--categories  {
 
 aside#webmentions--likes,
 aside#webmentions--reposts {
-    
+
     display: grid;
-    
+
     grid-template-columns: auto 1fr;
     grid-template-areas: "icon webmentions";
     grid-gap: $container-padding;
     padding: $container-padding;
-    
+
     ol.webmentions--list {
-         
+
         grid-area: webmentions;
         display: flex;
         scroll-behavior: smooth;
@@ -80,17 +55,17 @@ aside#webmentions--reposts {
         list-style-type: none;
         padding:0;
         margin: 0;
-        
+
         @include clearfix();
     }
-    
+
     li.webmentions--item {
         margin-bottom: 0;
         padding-bottom: 0;
         padding-right: $container-padding;
         float: left;
     }
-    
+
 }
 
 .post-activity-icon--small {
@@ -112,30 +87,30 @@ aside#webmentions--reposts {
         position: relative;
     }
     svg.activity-icon path {
-        @include toggleColor(fill, "icon-color");
-    }   
+        fill: colour("gray-600");
+    }
 }
 
 aside#webmentions--replies {
-    
+
     ol.webmentions--list {
         padding: 0;
         list-style: none;
     }
-    
+
     li.webmentions--item {
         display: grid;
-        
+
         grid-template-areas: "header" "content";
         grid-gap: $container-padding;
-        
+
         @include plastic(raised, 2px);
         border-radius: 10px !important;
         padding: $container-padding;
         margin-bottom: $container-padding;
         &:last-of-type { margin: 0; }
     }
-    
+
     header.webmention--meta {
         grid-area: header;
     }
@@ -146,30 +121,31 @@ aside#webmentions--replies {
         margin-bottom: $container-padding;
         &:last-of-type { margin: 0; }
     }
-    
+
     section.webmention--author {
         display: grid;
-        
-        @include toggleColor(color, "secondary-text--color");
+
+        color: colour("gray-600");
         grid-template-columns: 65px 1fr;
         grid-template-rows: auto auto;
         grid-template-areas: "photo name" "photo date";
-        
-        @include md-up {
+
+        @include tablet-up {
             grid-gap: $container-padding;
             grid-template-columns: auto 1fr auto;
             grid-template-rows: 1fr;
             grid-template-areas: "photo name date";
         }
     }
-    
+
     a.webmention--author--photo {
         align-self: center;
     }
-    
+
     p.webmention--reply--author-name {
         grid-area: name;
-        @include font($body--small);
+        @include typography($small);
+			line-height: 1.2;
     }
     span.webmention--reply--author-url {
         display: block;
@@ -177,147 +153,117 @@ aside#webmentions--replies {
     }
     .webmention--reply--publish-date {
         grid-area: date;
-        @include font($body--small);
+        @include typography($small);
+			line-height: 1.2;
     }
-    
+
     .webmentions--no-activity {
         @include plastic(raised, 2px);
         border-radius: 10px !important;
         padding: $container-padding;
     }
-    
+
 }
 
 aside#post-author-card {
     display: grid;
     grid-area: author;
-    
+
     align-content: center;
-    
-    @include toggleSizes(
-        padding,
-        $container-padding,
-        $container-padding,
-        $container-padding,
-        $container-padding,
-        $container-padding
-    );
-    
-    @include toggleSizes(
-        grid-template-columns,
-        1fr 2fr,
-        57px auto auto,
-        57px auto auto,
-        114px 1fr,
-        140px 1fr
-    );
-    
-    @include toggleSizes(
-        grid-template-rows,
-        auto auto,
-        auto,
-        auto,
-        auto auto,
-        auto auto
-    );
-    
-    @include toggleSizes(
-        grid-template-areas,
-        "memoji author" "icons icons",
-        "memoji author icons",
-        "memoji author icons",
-        "memoji author" "memoji icons",
-        "memoji author" "memoji icons"
-    );
-    
-    @include toggleSizes(
-        grid-gap,
-        $container-padding * 2,
-        $container-padding * 2,
-        $container-padding * 2,
-        $container-padding * 2,
-        $container-padding * 2
-    );
-    
-    p, dl, dt, dd {
-        @include font($body--small);
+
+    padding: $container-padding;
+
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "memoji author" "icons icons";
+    grid-gap: $container-padding * 2;
+
+    @include tablet {
+        grid-template-columns: 57px auto auto;
+        grid-template-rows: auto;
+        grid-template-areas:  "memoji author icons";
     }
-    
+
+    @include desktop {
+        grid-template-columns: 140px 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "memoji author" "memoji icons";
+    }
+
+
+    p, dl, dt, dd {
+        @include typography($small);
+			line-height: 1.2;
+    }
+
     .author--icons {
         grid-area: icons;
-        
+
         display: grid;
         position: relative;
-        
+
         grid-template-columns: auto auto auto auto auto;
         align-items: center;
-        
-        @include toggleSizes(
-            justify-items,
-            center,
-            flex-end,
-            flex-end,
-            flex-start,
-            flex-start
-        );
-        
+
+        justify-items: center;
+        @include tablet {
+            justify-items: flex-end;
+        }
+        @include desktop {
+            justify-items: flex-start;
+        }
+
         padding: 0;
         margin: 0;
-                    
+
         * {
             line-height: 30px !important;
             text-decoration: none;
         }
-        
+
         span.footer--icons--separator {
             display: inline-block;
             height: 30px;
             width: 2px;
             margin: 0 10px 0 5px;
             border-right: 2px solid;
-            @include toggleColor(border-color, "border-color");
+            border-color: colour("gray-600");
             content: "";
         }
-        
+
         a {
-            
+
             display: inline-block;
             position: relative;
-            
+
             margin: 0;
             margin-right: 10px;
             padding: 0;
-            
+
             svg.footer--icons--social {
                 display: block;
                 position: relative;
-                
+
                 height: 30px;
                 width: 30px;
                 margin: 0;
                 padding: 0;
-                            
+
                 path {
-                    @include toggleColor(fill, "color");
+                    fill: colour("black");
                 }
             }
-            
-            
+
+
             &:link svg path {
-                fill: map-get($colors, "gray-600");
-                @include darkMode() {
-                    fill: map-get($colors, "gray-400");	
-                } 
+                fill: colour("gray-600");
             }
             &:visited svg path {
-                fill: map-get($colors, "gray-600");
-                @include darkMode() {
-                    fill: map-get($colors, "gray-400");	
-                } 
+                fill: colour("gray-600");
             }
             &:hover svg path {
-                @include toggleColor(background, "background", true);
-                @include toggleColor(fill, "link-color--hover");
+                background: colour("white");
+                fill: colour("cyan");
                 text-decoration: none;
             }
             &:focus {
@@ -325,101 +271,76 @@ aside#post-author-card {
                 outline: 5px solid;
             }
             &:focus svg path {
-                @include toggleColor(background, "link-color--hover");	
-                @include toggleColor(fill, "background", true);
+                background: colour("cyan");
+                fill: colour("white");
                 outline: none;
             }
             &:active svg path {
                 text-decoration: 	none;
             }
-            
+
         }
     }
-    
+
     div.author-details {
         grid-area: author;
         display: grid;
-        @include toggleSizes(
-            justify-items,
-            flex-start,
-            flex-start,
-            flex-start,
-            flex-start,
-            flex-start
-        );
+        justify-items: flex-start;
     }
-    
+
+    p.footer--site-link {
+        padding-bottom: 0;
+    }
+
     p.author--wordmark {
         position: relative;
         display: block;
-        @include toggleColor(color, "color");
-        @include font($body);
+        color: colour("black");
+        @include typography($p);
         font-weight: 	bold !important;
         padding-bottom: 0 !important;
     }
-    
-    
-    a.p-author {			
-        &:link, 
+
+
+    a.p-author {
+        &:link,
         &:visited {
             text-decoration: none;
         }
     }
-    
+
     a.memoji {
         grid-area: memoji;
         display: grid;
         position: relative;
         justify-self: center;
     }
-    
+
     img.footer--memoji {
         display: block;
         position: relative;
-        
+
         box-sizing: border-box;
-        
+
         margin: 0;
         padding: 0;
-        
-        
-        @include toggleSizes(
-            width,
-            57px,
-            57px,
-            57px,
-            114px,
-            140px
-        );
-        @include toggleSizes(
-            height,
-            57px,
-            57px,
-            57px,
-            114px,
-            140px
-        );
-    
-        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(100%);
-        transform: scale(1) rotate(0);
-        transition: 1s all;
-        
-        &:hover {
-            -webkit-filter: none; /* Safari 6.0 - 9.0 */
-            filter: none;
-            transform: scale(1.1) rotate(-5deg);
-            transition: 1s all;
+
+        width: 57px;
+        height: 57px;
+        @include desktop {
+            width: 140px;
+            height: 140px;
         }
-        
-        @include toggleSizes(
-            border-radius,
-            5px,
-            5px,
-            13px,
-            13px,
-            13px
-        );
+
+        transform: scale(1) rotate(0);
+        transition: transform 1s;
+
+        &:hover {
+            transform: scale(1.1) rotate(-5deg);
+            transition: transform 1s;
+        }
+
+        border-radius: 10px;
     }
 }
 
@@ -427,22 +348,16 @@ dl.meta-data {
     grid-area: meta;
     display: grid;
     grid-gap: $container-padding;
-    
-    
+
+
     .meta-data-details {
         display: block;
         position: relative;
-        @include toggleSizes(
-            padding,
-            $container-padding,
-            $container-padding,
-            $container-padding,
-            $container-padding,
-            $container-padding
-        );
-    }    
+        padding: $container-padding;
+    }
     p, dl, dt, dd {
-        @include font($body--small);
+        @include typography($small);
+			line-height: 1.2;
     }
     dt, dd {
         display: block;
@@ -455,7 +370,7 @@ dl.meta-data {
     dd {
         text-transform: capitalize;
     }
-    
+
 }
 
 .webmentions--not-found {
@@ -465,7 +380,7 @@ dl.meta-data {
 }
 
 .webmention-count {
-    @include font($body);
+    @include typography($p);
     align-self: center;
     line-height: 35px !important;
     vertical-align: middle;
@@ -481,4 +396,108 @@ img.webmention--author--photo {
     &.bubble-clip {
         border-radius: 100% 100% 0% 100%;
     }
+}
+
+
+
+
+// Web mentions
+details.webmention--replies {
+
+	display: block;
+	position: relative;
+
+	padding: $container-padding;
+	@include plastic(inset, 3px);
+	box-sizing: content-box;
+
+	&[open] > summary::-webkit-details-marker,
+	&[open] > summary::marker {
+		display: none;
+		list-style-image: none;
+		content: '';
+	}
+
+	&[open] > summary {
+		margin-bottom: $container-padding;
+        box-shadow: unset;
+        border: unset;
+        border-radius: 10px;
+	}
+}
+
+summary.webmention--replies {
+
+	&:before {
+		display: block;
+		position: relative;
+		content: '+';
+		top: 5px;
+		font-weight: bold;
+		line-height: 30px;
+		font-size: 40px;
+		height: 30px;
+		padding: 0;
+
+		grid-area: plus;
+	}
+
+	display: grid;
+	position: relative;
+	text-align: left;
+	box-sizing: border-box;
+	padding: 0;
+	min-height: 50px;
+	align-content: center;
+	border-radius: 10px;
+	cursor: pointer;
+    border: none;
+    box-shadow: none;
+
+	grid-template-rows: auto;
+	grid-template-columns: auto 1fr auto;
+	grid-template-areas: "icon replies plus";
+	grid-column-gap: $container-padding;
+
+	border-top: none;
+
+	&:hover {
+		color: colour("cyan");
+
+	}
+	&:focus {
+		background: colour("cyan");
+		color: colour("white");
+		outline-color: colour("cyan");
+		border-top: none;
+	}
+	&:active {
+		background: colour("cyan");
+		color: colour("white");
+		border-top: none;
+	}
+	&:hover svg path {
+		background: colour("white");
+		fill: colour("cyan");
+		text-decoration: none;
+	}
+	&:focus {
+		outline-offset: form("border-width");
+		outline: form("border-width") solid;
+	}
+	&:focus svg path {
+		background: colour("cyan");
+		fill: colour("white");
+		outline: none;
+	}
+	&:active svg path {
+		text-decoration: 	none;
+	}
+
+	@include clearfix;
+
+	* {
+		font-weight: bold !important;
+		align-self: center;
+	}
 }

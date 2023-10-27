@@ -1,89 +1,66 @@
 body[id^='stream'] {
-	
+
 	article.social {
 		display: grid;
 		position: relative;
-		
+
 		padding: $container-padding * 2 0;
 		margin-bottom: $container-padding;
-		
+
 		border-bottom: 1px solid;
-		@include toggleColor(border-color, "border-color");
-		
+		border-color: colour("gray-600");
+
 		&:last-child {
 			border: none;
 		}
 	}
-	
+
 	.stream-footer {
-		
+
 		display: grid;
 		position: relative;
-		
-		@include toggleSizes(
-			grid-template-columns,
-			1fr 1fr,
-			auto auto 1fr,
-			auto auto 1fr,
-			auto auto 1fr,
-			auto auto 1fr
-		);
+
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: "likes boosts" "meta meta";
+		justify-items: center;
+
+		@include tablet-up {
+			grid-template-columns: auto auto 1fr;
+			grid-template-areas: "likes boosts meta";
+			justify-items: flex-start;
+		};
 		grid-gap: $container-padding;
-		
-		@include toggleSizes(
-			grid-template-areas,
-			"likes boosts" "meta meta",
-			"likes boosts meta",
-			"likes boosts meta",
-			"likes boosts meta",
-			"likes boosts meta"
-		);
-		
-		@include toggleSizes(
-			justify-items,
-			center,
-			flex-start,
-			flex-start,
-			flex-start,
-			flex-start	
-		);
-		
+
 		align-items: center;
-		
+
 		margin-top: $container-padding * 2;
-		
+
 		aside.post-activity {
 			grid-gap: 0;
-			
+
 			&.post-activity-likes {
-				@include sm-down() {
+				@include mobile {
 					justify-self: flex-end;
 				}
 			}
-			
+
 			&.post-activity-reposts {
-				@include sm-down() {
+				@include mobile {
 					justify-self: flex-start;
 				}
 			}
 		}
-		
+
 		div.meta {
 			grid-area: meta;
 			width: 100%;
-			@include toggleSizes(
-				text-align,
-				center,
-				right,
-				right,
-				right,
-				right
-			);
+			text-align: right;
 			padding: 0;
-			@include sm-down() {
+			@include mobile {
+				text-align: center;
 				padding-top: $container-padding;
 			}
-			
+
 			p {
 				padding: 0;
 			}

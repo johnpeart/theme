@@ -1,141 +1,124 @@
 footer#site-footer {
-	@include toggleColor(background, "background");
-	@include toggleSizes(
-		padding-top,
-		60px,
-		90px,
-		90px,
-		120px,
-		120px
-	);
-	@include toggleSizes(
-		padding-bottom,
-		45px,
-		45px,
-		60px,
-		60px,
-		60px
-	);
+	display: block;
+	position: relative;
+
+	padding-top: 60px;
+	padding-bottom: 45px;
+
+	@include tablet {
+		padding-top: 90px;
+		padding-bottom: 60px;
+	}
+	@include desktop {
+		padding-top: 120px;
+		padding-bottom: 60px;
+	}
+
+	.footer {
+		display: block;
+		position: relative;
+		@include clearfix();
+	}
 }
 
 aside#footer--wordmark {
-	@include toggleSizes(
-		float,
-		none,
-		left,
-		left,
-		left,
-		left
-	);
-	@include toggleSizes(
-		width,
-		100%,
-		50%,
-		50%,
-		50%,
-		50%
-	);
-	
+
+	display: block;
+	position: relative;
+	float: none;
+	width: 100%;
+
+	@include tablet-up {
+		float: left;
+		width: 50%;
+	}
+
 	p.footer--wordmark {
 		font-weight: 	bold;
 		padding-bottom: 0;
-		@include font($footer-wordmark);
+		@include typography($p);
 	}
-	
+
 	p.footer--wordmark a {
-		&:link, 
+		&:link,
 		&:visited {
 			text-decoration: none;
 		}
 	}
 	a.footer--site-link {
-		@include font($footer-wordmark);	
+		@include typography($p);
 	}
-	
+
 }
 
 nav#footer--links {
+	display: block;
+	position: relative;
+	float: none;
+	width: 100%;
 
-	@include toggleSizes(
-		float,
-		none,
-		right,
-		right,
-		right,
-		right
-	);
-	@include toggleSizes(
-		width,
-		100%,
-		50%,
-		50%,
-		50%,
-		50%
-	);
+	@include tablet-up {
+		float: right;
+		width: 50%;
+	}
 
 	a {
 		font-weight: 		normal;
 		text-decoration: 	none;
-		
+
 		&:link {
-			@include toggleColor(color, "subtle-link-color");
+			color: colour("gray-600");
 		}
 		&:visited {
-			@include toggleColor(color, "subtle-link-color");
+			color: colour("gray-600");
 		}
 		&:hover {
-			@include toggleColor(color, "link-color--hover");
+			color: colour("cyan");
 			text-decoration: 	underline;
 		}
 		&:focus {
-			@include toggleColor(color, "link-color--focus");
-			@include toggleColor(background, "link-background--focus");
+			color: colour("white");
+			background: colour("cyan");
 			outline: 2px solid;
-			@include toggleColor(outline-color, "outline-color");
+			outline-color: colour("cyan");
 		}
 		&:active {
 			text-decoration: 	none;
 		}
-	}	
-	
+	}
+
 	li {
 		display: inline-block;
 		position: relative;
-		
+
 		width: 50%;
 		float: left;
-		
+
 		border: none !important;
-		
-		@include font($footer-body);
-		
+
+		@include typography($small);
+		padding-bottom: $container-padding * 0.5;
+		text-align: right;
+
 		&:last-child {
-			@include toggleSizes(
-				float,
-				left,
-				right,
-				right,
-				right,
-				right
-			);
+			float: left;
+			@include tablet-up {
+				float: right;
+			}
 		}
-		
+
 	}
-	
+
 	ul {
 		padding: 0;
 		margin: 0;
-		
+
 		list-style: none;
-		
-		@include toggleSizes(
-	float,
-	left,
-	right,
-	right,
-	right,
-	right
-);
+
+		float: left;
+		@include tablet-up {
+			float: right;
+		}
 		@include clearfix;
 	}
 
@@ -146,20 +129,20 @@ footer#site-footer {
 }
 
 footer#site-footer img.footer--memoji {
-	
+
 	display: block;
 	position: relative;
-	
+
 	margin: 0;
 	padding: 0;
-	
+
 	max-width: 30px;
 	max-height: 30px;
-	
+
 	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 	filter: grayscale(100%);
 	transition: 0.5s all;
-	
+
 	&:hover {
 		-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
 		filter: grayscale(0%);
@@ -168,66 +151,66 @@ footer#site-footer img.footer--memoji {
 }
 
 .footer--icons {
-	
+
 	display: block;
 	position: relative;
 	width: 100%;
 	height: auto;
 	padding: 0;
 	margin: 0;
-	
-	@include md-down() {
-		margin: 0 0 45px;	
-	}	
-	
+
+	@include tablet-down {
+		margin: 0 0 45px;
+	}
+
 	* {
 		line-height: 30px !important;
 		text-decoration: none;
 	}
-	
+
 	span.footer--icons--separator {
 		display: inline-block;
 		height: 30px;
 		width: 2px;
 		margin: 0 10px 0 5px;
 		border-right: 2px solid;
-		@include toggleColor(border-color, "border-color");
+		border-color: colour("gray-600");
 		content: "";
 	}
-	
+
 	a {
-		
+
 		display: inline-block;
 		position: relative;
-		
+
 		margin: 0;
 		margin-right: 10px;
 		padding: 0;
-		
+
 		svg.footer--icons--social {
 			display: block;
 			position: relative;
-			
+
 			height: 30px;
 			width: 30px;
 			margin: 0;
 			padding: 0;
-						
+
 			path {
-				@include toggleColor(fill, "icon-color");
+				fill: colour("gray-600");
 			}
 		}
-		
-		
+
+
 		&:link svg path {
-			@include toggleColor(fill, "icon-color");
+			fill: colour("gray-600");
 		}
 		&:visited svg path {
-			@include toggleColor(fill, "icon-color");
+			fill: colour("gray-600");
 		}
 		&:hover svg path {
-			@include toggleColor(background, "background", true);
-			@include toggleColor(fill, "link-color--hover");
+			background: colour("white");
+			fill: colour("cyan");
 			text-decoration: none;
 		}
 		&:focus {
@@ -235,13 +218,13 @@ footer#site-footer img.footer--memoji {
 			outline: 5px solid;
 		}
 		&:focus svg path {
-			@include toggleColor(background, "link-color--hover");	
-			@include toggleColor(fill, "background", true);
+			background: colour("cyan");
+			fill: colour("white");
 			outline: none;
 		}
 		&:active svg path {
 			text-decoration: 	none;
 		}
-		
+
 	}
 }

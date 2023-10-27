@@ -1,0 +1,11 @@
+/// Get colour
+@function form($setting) {
+  // stylelint-disable-next-line scss/function-quote-no-quoted-strings-inside
+  $setting: quote("#{$setting}");
+
+  @if not map-has-key($form-elements, $setting) {
+  @error "Unknown form element setting `#{$setting}`";
+  }
+
+  @return map-get($form-elements, $setting);
+}

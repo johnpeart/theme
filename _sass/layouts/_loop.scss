@@ -1,101 +1,78 @@
 body#loop {
-	
+
 	section#page-content > section {
-		@include toggleSizes(
-			padding-bottom,
-			0,
-			0,
-			33px,
-			40px,
-			45px
-		);
-		
+		padding-bottom: 0;
+		@include tablet {
+			padding-bottom: $container-padding * 2;
+		}
+		@include desktop {
+			padding-bottom: $container-padding * 3;
+		}
+
 		@include clearfix;
 	}
-	
-	h2.loop-header {
-		@include font($h2-loop-title);
-	}
-	
+
 	ul.loop {
 		padding-left: 0;
 		padding-bottom: 0;
-		@include toggleSizes(
-			float,
-			none,
-			left,
-			left,
-			left,
-			left
-		);
-		@include toggleSizes(
-			width,
-			100%,
-			80%,
-			75%,
-			75%,
-			75%
-		);
-		@include toggleSizes(
-			padding-top,
-			27px,
-			32px,
-			32px,
-			36px,
-			40px
-		);
+
+		float: none;
+		width: 100%;
+		padding-top: $container-padding * 2;
+
+		@include tablet-up {
+			float: left;
+			width: 75%;
+			padding-top: $container-padding * 3;
+		}
 
 		li:before {
 			position: 		absolute;
 			content: 		none;
-			
+
 			left: 			0;
 		}
-		
+
 		p.loop-item-date {
+
+			@include typography($p, "default");
 			padding-bottom: 0;
-			
+
 			time {
 				font-weight: 	bold;
 			}
 		}
-		
+
 		p.loop-item-title {
-			@include toggleSizes(
-			font-size,
-			26px,
-			26px,
-			26px,
-			31px,
-			36px
-		);
-			
+
+			@include typography($large, "default");
+
 			a {
 				&:link {
-					@include toggleColor(color, "emphasised-link-color");
+					color: colour("cyan");
 					text-decoration: none;
 				}
 				&:visited {
-					@include toggleColor(color, "emphasised-link-color");
+					color: colour("cyan");
 					text-decoration: none;
 				}
 				&:hover {
-					@include toggleColor(color, "link-color--hover");
-					text-decoration: 	underline;	
+					color: colour("cyan");
+					text-decoration: 	underline;
 				}
 				&:focus {
-					@include toggleColor(color, "link-color--focus");
-					@include toggleColor(background, "link-background--focus");
+					color: colour("white");
+					background: colour("cyan");
 					outline: 2px solid;
-					@include toggleColor(outline-color, "outline-color");
+					outline-color: colour("cyan");
 				}
 				&:active {
 					text-decoration: 	underline;
 				}
 			}
-			
+
 		}
-		
+
 	}
-	
+
 }

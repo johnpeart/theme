@@ -1,18 +1,43 @@
 .polaroid {
-	
+
 	display: block;
 	position: relative;
 	z-index: 0;
-	
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
-	
+
 	background: linear-gradient(145deg, rgba(250, 250, 255, 1), rgba(245, 245, 250, 1));
 	text-decoration: none;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	transition: all .25s linear;
-	
+	outline: 0;
+
+	max-width: 100%;
+	padding: $container-padding;
+	margin: $container-padding * 2 auto;
+
+	@include tablet {
+		max-width: 500px;
+		padding: $container-padding * 1.5;
+		margin: $container-padding * 4 auto;
+	}
+	@include desktop {
+		max-width: 800px;
+		padding: $container-padding * 2;
+		margin: $container-padding * 4 auto;
+	}
+
+	&:hover {
+		transition: all 0.25s;
+		&::after {
+			opacity: 0;
+			transition: all 0.25s;
+		}
+	}
+
+	img {
+		display: inline-block;
+		max-width: 100%;
+	}
+
 	&::after {
 		content: '';
 		width: 100%;
@@ -24,51 +49,12 @@
 		top: 0;
 		transition: all 0.25s;
 	}
-	
-	@include toggleSizes(
-		max-width,
-		100%,
-		100%,
-		500px,
-		700px,
-		800px
-	)
-	
-	&:hover {
-		transition: all 0.25s;
-		&::after {
-			opacity: 0;
-			transition: all 0.25s;
-		}
-	}
-	   
-	@include toggleSizes(
-		padding,
-		$container-padding,
-		$container-padding * 1.5,
-		$container-padding * 1.5,
-		$container-padding * 2,
-		$container-padding * 2
-	);
-	@include toggleSizes(
-		margin,
-		$container-padding * 2 auto,
-		$container-padding * 4 auto,
-		$container-padding * 4 auto,	
-		$container-padding * 4 auto,
-		$container-padding * 4 auto,
-	);
-	outline: 0;
-	
-	img {
-		display: inline-block;
-		max-width: 100%;
-	}
-	
+
 	.polaroid--title {
 		text-align: center;
-		color: map-get($colors, "black");
-		@include font-postitnote($handwritten-title);
+		color: colour("black");
+		@include typography($marker, "marker");
+		line-height: 1.2;
 		padding: $container-padding 0 0 0 !important;
 	}
 
@@ -76,7 +62,7 @@
 
 dl.exif {
 
-	@include plastic(inset, 3px);
+	@include glass(20px, 2);
 
 	padding: 			$container-padding * 1.5;
 	padding-bottom: 	0px;
@@ -100,34 +86,15 @@ dl.exif {
 
 	  padding-bottom: 20px !important;
 
-	  @include toggleSizes(
-			max-width,
-			100%,
-			100%,
-			50%,
-			50%,
-			50%
-		);
-	  @include toggleSizes(
-			width,
-			100%,
-			100%,
-			50%,
-			50%,
-			50%
-		);
-	  @include toggleSizes(
-			float,
-			none,
-			none,
-			left,
-			left,
-			left
-		);
-		
-		dt {
-			font-weight: bold;
-		}
+	  max-width: 100%;
+	  width: 50%;
+	  float: none;
+
+	  @include tablet-up {
+		  max-width: 50%;
+		  width: 50%;
+		  float: left;
+	  }
 
 	}
 

@@ -8,27 +8,27 @@ layout: page
 
 {% for type in types %}
 <section>
-	
+
 	<header>
 		<h2 class="about-header about-{{ type.name | slugify }}">
 			{{ type.name | smartify }}
 		</h2>
 	</header>
-	
+
 	{% assign roles = type.items | sort: "date" | group_by: "organisation" | reverse %}
 	{% for org in roles %}
 	<article>
-		
+
 		<header>
 			<h3 class="about-organisation">{{ org.name }}</h3>
 		</header>
 		{% assign jobs = org.items | sort: "date" | reverse %}
 		{% for job in jobs %}
-		
+
 			{% assign content = job.content | strip_newlines %}
 			{% if content == "" %}
-			
-			<div class="about-job-entry">
+
+			<div class="faux-details">
 				<h4 class="about-job-title">{{ job.title | smartify }}</h4>
 				{% if entry.end == "present" %}
 				<p class="about-time">{{ job.dates.start | date: '%B %Y' }} to {{ job.dates.end }}</p>
@@ -36,11 +36,11 @@ layout: page
 				<p class="about-time">{{ job.dates.start | date: '%B %Y' }} to {{ job.dates.end | date: '%B %Y' }}</p>
 				{% endif %}
 			</div>
-			
+
 			{% else %}
-			
+
 			<details class="about-job-entry">
-			
+
 				<summary class="about-job-entry">
 					<h4 class="about-job-title">{{ job.title | smartify }}</h4>
 					{% if entry.end == "present" %}
@@ -49,10 +49,10 @@ layout: page
 					<p class="about-time">{{ job.dates.start | date: '%B %Y' }} to {{ job.dates.end | date: '%B %Y' }}</p>
 					{% endif %}
 				</summary>
-				
+
 				<section class="about-details">
 					{{ job.content | markdownify }}
-				
+
 					{% if job.projects %}
 					<ul class="about-job-projects">
 						<h5 class="about-job-projects">Major projects and publications</h5>
@@ -66,15 +66,15 @@ layout: page
 					</ul>
 					{% endif %}
 				</section>
-							
+
 			</details>
-			
+
 			{% endif %}
-		
+
 		{% endfor %}
-	
+
 	</article>
 	{% endfor %}
-	
+
 </section>
 {% endfor %}

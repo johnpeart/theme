@@ -1,42 +1,36 @@
-@mixin typography-common {
-	font-family: $font-family;
-}
-@mixin typography-common-postitnote {
-	font-family: $font-family-postitnote;
+@mixin typography-common($font-family: default) {
+	@if ($font-family == "default") {
+		font-family: $font-family-default;
+	} @else if ($font-family == "marker") {
+		font-family: $font-family-postitnote;
+	} @else {
+		font-family: $font-family-default;
+	}
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+
+	color: var(--color, colour("black"));
 }
 
-@mixin font($font) {
-	
-	@each $style, $sizes in $font {
-		
+@mixin typography($font, $type: "default") {
+
+	@if ($type == "default") {
 		@include typography-common;
-		
-		@include toggleSizes(
-			$style, 
-			map-get($sizes, "xs"),  
-			map-get($sizes, "sm"),  
-			map-get($sizes, "md"), 
-			map-get($sizes, "lg"),  
-			map-get($sizes, "xl")
-		);
+	} @else if ($type == "marker") {
+		@include typography-common("marker");
+	} @else {
+		@include typography-common;
 	}
-	
-}
 
-@mixin font-postitnote($font) {
-	
 	@each $style, $sizes in $font {
-		
-		@include typography-common-postitnote;
-		
-		@include toggleSizes(
-			$style, 
-			map-get($sizes, "xs"),  
-			map-get($sizes, "sm"),  
-			map-get($sizes, "md"), 
-			map-get($sizes, "lg"),  
-			map-get($sizes, "xl")
-		);
+		@include responsive(
+			$style,
+			map-get($sizes, "mobile"),
+			map-get($sizes, "tablet"),
+			map-get($sizes, "desktop")
+		)
 	}
-	
+
 }

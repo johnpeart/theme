@@ -1,115 +1,95 @@
 body#editor {
-	
+
 	* {
 		&.hidden {
 			display: none;
 		}
 	}
-	
+
 	nav#editor-toolbar {
-		
-		@include toggleColor(background, "background");
-		
+
+		background: colour("white");
+
 		padding: $container-padding 0;
-		
+
 		details.dropdown-menu--float-right {
-			
-			@include toggleSizes(
-				float, 
-				left, 
-				left, 
-				right, 
-				right, 
-				right
-			);
-			
+			@include tablet-up {
+				float: right;
+			}
 			margin-right: 0;
 			ul {
 				right: 0;
 			}
-				
 		}
-		
+
 		details {
 			margin-right: $container-padding;
 		}
-		
+
 		@include clearfix();
-	}	
+	}
 	section#section-githubLogin {
-		
+
 		padding-top: $container-padding * 5;
-		
+
 		p.get-token {
 			padding: 0;
 			margin-top: $container-padding;
 		}
 	}
-	
+
 	h1.page-title {
 		text-align: center;
 		padding-top: 0;
 	}
-	
+
 	#form-githubLogin {
 		max-width: 600px;
-		
-		@include toggleSizes(padding, $container-padding, $container-padding, $container-padding, $container-padding * 2, $container-padding * 2)
-		margin: 0 auto;
-		
-		@include toggleColor(background, "default-element-background");
-		@include toggleSizes(
-			border-radius,
-			15px,
-			15px,
-			20px,
-			20px,
-			20px
-		);
-		
+		padding: $container-padding;
+		margin: $container-padding auto;
+
 		text-align: center;
-		
 		input {
 			text-align: center;
 		}
 	}
-	
+
 	// Text editor
-	
+
 	input#fileName {
 		@extend h1;
 	}
-	
+
 	textarea#textEditor {
 		height: 80vh;
 	}
-	
+
 	input#fileName,
 	textarea#textEditor {
 		width: 100%;
-		
+
 		padding: $container-padding 0;
-		
-		@include toggleColor(background, "background");
+
+		background: colour("white");
 		border: none;
 		border-radius: 0;
-		
+
 		resize: none;
-		
-		caret-color: color("cyan");
-		
+
+		caret-color: colour("cyan");
+
 		overflow: visible;
-		
+
 		&:hover,
 		&:focus {
 			border: none;
 			outline: none;
 			-webkit-box-shadow: none;
-			
+
 			&::placeholder {
-				@include toggleColor(color, "color");
+				color: colour("black");
 			}
 		}
 	}
-	
+
 }

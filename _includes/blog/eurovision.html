@@ -1,7 +1,7 @@
 {% if page.eurovision-entries %}
 <h2>The entries</h2>
 
-<fieldset id="toggle-esc-entries">
+<fieldset id="toggle-esc-entries" class="radios">
 
     <legend>Toggle entries</legend>
 
@@ -30,13 +30,13 @@
 <div id="esc-entries" data-show="all">
 {% assign entries = page.eurovision-entries | sort: "country" %}
 {% for entry in entries %}
-<details class="esc-entry" data-semifinal="{{ entry.semifinal }}" data-final="{{ entry.final }}">
+<details data-semifinal="{{ entry.semifinal }}" data-final="{{ entry.final }}">
 <summary>
 <h3>
     <span class="entry">
         <!-- <span class="emoji">{{ entry.emoji }}</span> -->
-        <span class="country">{{ entry.country | smartify }}</span>
-        <span class="song-artist">{{ entry.song | smartify }} by {{ entry.artist | smartify }}</span>
+        <span class="summary-title">{{ entry.country | smartify }}</span>
+        <span class="summary-sub-title">{{ entry.song | smartify }} by {{ entry.artist | smartify }}</span>
     </span>
 </h3>
 </summary>

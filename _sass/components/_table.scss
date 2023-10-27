@@ -1,20 +1,29 @@
-table {
-	width: 		100%;
-	border-collapse: collapse;
+.mobile-overflow {
+	@include mobile {
+		overflow-x: auto;
+	}
+}
 
-	@include font($body);
-	@include toggleSizes(
-		margin,
-		0 0 22px 0,
-		0 0 22px 0,
-		0 0 22px 0,
-		0 0 26px 0,
-		0 0 30px 0
-	);
+table {
+	@include typography($p);
+	@include plastic(raised, 2px);
+	border-collapse: collapse;
+	width: 100%;
+	@include tablet {
+		width: containers("tablet") + 100px;
+		margin-right: -50px;
+		margin-left: -50px;
+	}
+	@include desktop {
+		margin-bottom: 30px;
+		width: containers("desktop") + 200px;
+		margin-right: -115px;
+		margin-left: -115px;
+	}
+	border: none;
 
 	tr {
-		border-bottom: 1px solid;
-		@include toggleColor(border-color, "border-color");
+		border-bottom: 1px solid var(--secondary-borderColor, colour("gray-400"));
 
 		&:last-child {
 			border-bottom: none !important;
@@ -22,12 +31,11 @@ table {
 	}
 
 	th, td {
-		padding: 5px 10px;
+		padding: $container-padding;
 		vertical-align: top;
-		
-		border-left: 1px solid;
-		@include toggleColor(border-color, "border-color");
-		
+
+		border-left: 1px solid var(--secondary-borderColor, colour("gray-400"));
+
 		&:first-child {
 			border-left: none;
 		}
@@ -40,13 +48,23 @@ table {
 	}
 
 	thead {
-		border-bottom: 2px solid;
-		@include toggleColor(border-color, "color");
+		border-bottom: 2px solid colour("black");
 	}
 
 	tfoot {
-		border-bottom: 2px solid;
-		@include toggleColor(border-color, "color");
+		border-bottom: 2px solid colour("black");
+	}
+
+	caption {
+		display: table-caption;
+		caption-side: bottom;
+
+		@include typography($p, "default");
+		@include plastic(inset, 2px);
+		text-align: left;
+
+		margin: $container-padding 0;
+		padding: $container-padding;
 	}
 
 }
