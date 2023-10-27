@@ -122,31 +122,31 @@ body[id$='post'] {
 	div#esc-entries {
 
 		&[data-show="all"] {
-			details.esc-entry {
+			details {
 				display: block;
 			}
 		}
 		&[data-show="sf1"] {
-			details.esc-entry {
+			details {
 				display: none;
 			}
-			details.esc-entry[data-semifinal="1"] {
+			details[data-semifinal="1"] {
 				display: block;
 			}
 		}
 		&[data-show="sf2"] {
-			details.esc-entry {
+			details {
 				display: none;
 			}
-			details.esc-entry[data-semifinal="2"] {
+			details[data-semifinal="2"] {
 				display: block;
 			}
 		}
 		&[data-show="final"] {
-			details.esc-entry[data-final="true"] {
+			details[data-final="true"] {
 				display: block;
 			}
-			details.esc-entry[data-final="false"] {
+			details[data-final="false"] {
 				display: none;
 			}
 		}
