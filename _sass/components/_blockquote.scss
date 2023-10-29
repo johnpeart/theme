@@ -37,12 +37,13 @@ blockquote {
 		padding-bottom: 6px;
 	}
 
-	&.lyric {
-		text-align: center;
-		border-radius: $border-radius;
-		* {
-			font-style: italic;
-		}
-	}
+}
 
+blockquote.lyric {
+	text-align: center;
+	border-radius: $border-radius;
+	margin: $container-padding 0;
+	* {
+		font-style: italic;
+	}
 }
