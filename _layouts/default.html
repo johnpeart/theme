@@ -8,7 +8,9 @@
   	{% include skiplink.html %}
     {% include header.html %}
   	{{ content }}
+    {% unless page.layout == "post" %}
     {% include footer.html %}
+    {% endunless %}
     {% include analytics.html %}
 
   </body>
