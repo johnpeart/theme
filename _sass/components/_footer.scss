@@ -58,6 +58,7 @@ nav#footer--links {
 	width: 100%;
 
 	@include tablet-up {
+		text-align: right;
 		float: right;
 		width: 50%;
 	}
@@ -98,7 +99,6 @@ nav#footer--links {
 
 		@include typography($small);
 		padding-bottom: $container-padding * 0.5;
-		text-align: right;
 
 		&:last-child {
 			float: left;
