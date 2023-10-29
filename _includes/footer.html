@@ -1,0 +1,47 @@
+<footer id="site-footer" class="container">
+
+	<div class="footer">
+
+		<aside id="author-card" class="h-card vcard p-author">
+			{% include memoji.html %}
+			<p class="p-name author--name"><a rel="author" class="p-author u-uid" href="{{ site.url }}"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a></p>
+			<p class="author--site-link"><a href="//www.johnpe.art" rel="me" class="u-url footer--site-link">www.johnpe.art</a></p>
+
+			<div class="author--icons">
+				{% include social-icons/mastodon.html %}
+				{% include social-icons/linkedin.html %}
+				{% include social-icons/github.html %}
+				<span class="footer--icons--separator"></span>
+				{% include social-icons/buymeacoffee.html %}
+			</div>
+		</aside>
+
+		{% if page.layout == "post" %}
+
+		<dl class="meta-data">
+			{% if page.date %}
+			<aside id="meta-data--published" class="meta-data meta-data-details">
+				<dt class="post-date">Published</dt>
+				<dd>
+					<a href="{{ page.url }}" class="no-underline u-url u-uid">
+						<time datetime="{{ page.date | date: '%Y-%m-%d %H:%M'}}" class="dt-published">
+							{{ page.date | date: '%-d %B %Y' }}
+						</time>
+					</a>
+				</dd>
+			</aside>
+			{% endif %}
+
+			{% if page.categories %}
+			<aside id="meta-data--categories" class="meta-data meta-data-details">
+				<dt class="post-categories">Categories</dt>
+				<dd>{% for categories in page.categories %}<span class="p-category">{{ categories }}</span>{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
+			</aside>
+			{% endif %}
+		</dl>
+
+		{% endif %}
+
+	</div>
+
+</footer>
