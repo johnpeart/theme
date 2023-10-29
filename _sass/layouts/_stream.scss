@@ -4,15 +4,10 @@ body[id^='stream'] {
 		display: grid;
 		position: relative;
 
-		padding: $container-padding * 2 0;
+		min-height: 80vh;
+
+		padding: $container-padding * 2 0 0;
 		margin-bottom: $container-padding;
-
-		border-bottom: 1px solid;
-		border-color: colour("gray-600");
-
-		&:last-child {
-			border: none;
-		}
 	}
 
 	.stream-footer {
@@ -20,50 +15,57 @@ body[id^='stream'] {
 		display: grid;
 		position: relative;
 
-		grid-template-columns: 1fr 1fr;
-		grid-template-areas: "likes boosts" "meta meta";
-		justify-items: center;
-
-		@include tablet-up {
-			grid-template-columns: auto auto 1fr;
-			grid-template-areas: "likes boosts meta";
-			justify-items: flex-start;
-		};
-		grid-gap: $container-padding;
-
+		grid-template-columns: auto auto 1fr;
+		grid-template-areas: "likes boosts date" "likes boosts name";
+		grid-column-gap: $container-padding;
 		align-items: center;
+		margin-bottom: $container-padding * 2;
 
-		margin-top: $container-padding * 2;
-
-		aside.post-activity {
-			grid-gap: 0;
-
-			&.post-activity-likes {
-				@include mobile {
-					justify-self: flex-end;
-				}
-			}
-
-			&.post-activity-reposts {
-				@include mobile {
-					justify-self: flex-start;
-				}
-			}
+		p {
+			padding: 0;
 		}
 
-		div.meta {
-			grid-area: meta;
-			width: 100%;
-			text-align: right;
-			padding: 0;
-			@include mobile {
-				text-align: center;
-				padding-top: $container-padding;
-			}
+		aside#webmentions--likes {
+			grid-area: likes;
+		}
+		aside#webmentions--reposts {
+			grid-area: boosts;
+		}
+		p.name {
+			grid-area: name;
+			justify-self: flex-end;
+		}
+		p.date {
+			grid-area: date;
+			justify-self: flex-end;
+		}
 
-			p {
-				padding: 0;
+		.post-activity {
+			@include plastic(inset, 4px);
+			padding: $container-padding;
+		}
+
+		span.icon {
+			display: inline-block;
+			position: relative;
+			content: "";
+			height: 13px;
+			width: 13px;
+			@include tablet {
+				height: 15px;
+				width: 15px;
 			}
+			@include desktop {
+				height: 18px;
+				width: 18px;
+			}
+			margin-right: 10px;
+		}
+		aside#webmentions--likes span.icon {
+			background-image: var(--heart-icon);
+		}
+		aside#webmentions--reposts span.icon {
+			background-image: var(--share-icon);
 		}
 	}
 }
