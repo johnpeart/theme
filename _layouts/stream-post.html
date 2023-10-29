@@ -2,9 +2,7 @@
 layout: default
 ---
 
-{% include header.html %}
-
-<main id="content" class="container">	
+<main id="content" class="container">
 	<article class="social h-entry">
 		<section class="e-content">
 		{% include {{ page.collection | append: '.html' | prepend: 'stream/' }} %}
@@ -20,23 +18,23 @@ layout: default
 				<dt>Date taken:</dt>
 				<dd>{{ page.date | date: "%d %B %Y" }}</dd>
 				</span>
-				
+
 				{% for EXIF in page.EXIF %}
-					
+
 					<span class="dl-item">
 					{% if EXIF.camera != "" %}
 					<dt>Camera:</dt>
 					<dd>{{ EXIF.camera }}</dd>
 					{% endif %}
 					</span>
-					
+
 					<span class="dl-item">
 					{% if EXIF.apeture != "" %}
 					<dt>Apeture:</dt>
 					<dd>{{ EXIF.apeture | prepend: "ƒ/"}}</dd>
 					{% endif %}
 					</span>
-					
+
 					<span class="dl-item">
 					{% if EXIF.shutter != "" %}
 					<dt>Shutter speed:</dt>
@@ -47,28 +45,28 @@ layout: default
 					{% endif %}
 					{% endif %}
 					</span>
-					
+
 					<span class="dl-item">
 					{% if EXIF.focallength != "" %}
 					<dt>Focal length:</dt>
 					<dd>{{ EXIF.focallength | append: "mm" }}</dd>
 					{% endif %}
 					</span>
-					
+
 					<span class="dl-item">
 					{% if EXIF.iso != "" %}
 					<dt>ISO:</dt>
 					<dd>{{ EXIF.iso }}</dd>
 					{% endif %}
 					</span>
-					
+
 				{% endfor %}
 			</dl>
 		</aside>
 		{% endif %}
 		</section>
-	{% include blog/footer.html %}
 	</article>
+	{% include webmentions.html %}
 </main>
 
-{% include footer.html %}
+

@@ -2,7 +2,7 @@ header#site-header {
 	display: block;
 	z-index: 999999;
 	@include supports-sticky() {
-		margin: $container-padding;
+		margin: $container-padding auto;
 		top: $container-padding;
 	}
 

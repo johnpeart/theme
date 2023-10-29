@@ -1,495 +1,240 @@
-footer#post-footer,
-footer#stream-footer {
-    display: grid;
-    position: relative;
-
-    grid-template-columns:  1fr;
-    grid-template-areas: "meta" "likes" "reposts" "replies" "author";
-    grid-gap: $container-padding;
-    margin-top: $container-padding * 2;
-
-    @include tablet-up {
-        grid-template-columns:  1fr 1fr;
-        grid-template-areas: "likes reposts" "replies replies" "meta author";
-        margin-top: $container-padding * 4;
-    }
-
-    #webmentions--likes {
-        grid-area: likes;
-    }
-
-    #webmentions--reposts {
-        grid-area: reposts;
-    }
-
-    #webmentions--replies {
-        grid-area: replies;
-    }
+footer#webmentions {
 
 }
 
-aside#webmentions--likes,
-aside#webmentions--reposts,
-aside#post-author-card,
-aside#meta-data--published,
-aside#meta-data--categories  {
-    @include plastic(inset, 3px);
+ol.webmentons--list,
+li.webmentions--item {
+    list-style: none !important;
+    list-style-type: none !important;
+    @include clearfix();
 }
 
-aside#webmentions--likes,
-aside#webmentions--reposts {
-
-    display: grid;
-
-    grid-template-columns: auto 1fr;
-    grid-template-areas: "icon webmentions";
-    grid-gap: $container-padding;
-    padding: $container-padding;
-
-    ol.webmentions--list {
-
-        grid-area: webmentions;
-        display: flex;
-        scroll-behavior: smooth;
-        overflow-x: scroll;
-        list-style-type: none;
-        padding:0;
+li.webmentions--item {
+    margin-bottom: $container-padding * 2;
+    &:last-of-type {
         margin: 0;
-
-        @include clearfix();
     }
-
-    li.webmentions--item {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        padding-right: $container-padding;
-        float: left;
-    }
-
-}
-
-.post-activity-icon--small {
-    svg {
-        height: 35px;
-        width: 35px;
-    }
-}
-
-.post-activity-icon {
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    align-self: flex-start;
-    grid-area: icon;
-    svg {
-        display: block;
-        position: relative;
-    }
-    svg.activity-icon path {
-        fill: colour("gray-600");
-    }
-}
-
-aside#webmentions--replies {
-
-    ol.webmentions--list {
-        padding: 0;
-        list-style: none;
-    }
-
-    li.webmentions--item {
-        display: grid;
-
-        grid-template-areas: "header" "content";
-        grid-gap: $container-padding;
-
-        @include plastic(raised, 2px);
-        border-radius: 10px !important;
-        padding: $container-padding;
-        margin-bottom: $container-padding;
-        &:last-of-type { margin: 0; }
-    }
-
-    header.webmention--meta {
-        grid-area: header;
-    }
-    section.webmention--reply--content {
-        grid-area: content;@include plastic(inset, 2px);
-        border-radius: 10px !important;
-        padding: $container-padding;
-        margin-bottom: $container-padding;
-        &:last-of-type { margin: 0; }
-    }
-
-    section.webmention--author {
-        display: grid;
-
-        color: colour("gray-600");
-        grid-template-columns: 65px 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas: "photo name" "photo date";
-
-        @include tablet-up {
-            grid-gap: $container-padding;
-            grid-template-columns: auto 1fr auto;
-            grid-template-rows: 1fr;
-            grid-template-areas: "photo name date";
-        }
-    }
-
-    a.webmention--author--photo {
-        align-self: center;
-    }
-
-    p.webmention--reply--author-name {
-        grid-area: name;
-        @include typography($small);
-			line-height: 1.2;
-    }
-    span.webmention--reply--author-url {
-        display: block;
-        width: 100%;
-    }
-    .webmention--reply--publish-date {
-        grid-area: date;
-        @include typography($small);
-			line-height: 1.2;
-    }
-
-    .webmentions--no-activity {
-        @include plastic(raised, 2px);
-        border-radius: 10px !important;
-        padding: $container-padding;
-    }
-
-}
-
-aside#post-author-card {
-    display: grid;
-    grid-area: author;
-
-    align-content: center;
-
-    padding: $container-padding;
-
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto auto;
-    grid-template-areas: "memoji author" "icons icons";
-    grid-gap: $container-padding * 2;
-
-    @include tablet {
-        grid-template-columns: 57px auto auto;
-        grid-template-rows: auto;
-        grid-template-areas:  "memoji author icons";
-    }
-
-    @include desktop {
-        grid-template-columns: 140px 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas: "memoji author" "memoji icons";
-    }
-
-
-    p, dl, dt, dd {
-        @include typography($small);
-			line-height: 1.2;
-    }
-
-    .author--icons {
-        grid-area: icons;
-
-        display: grid;
-        position: relative;
-
-        grid-template-columns: auto auto auto auto auto;
-        align-items: center;
-
-        justify-items: center;
-        @include tablet {
-            justify-items: flex-end;
-        }
-        @include desktop {
-            justify-items: flex-start;
-        }
-
-        padding: 0;
-        margin: 0;
-
-        * {
-            line-height: 30px !important;
-            text-decoration: none;
-        }
-
-        span.footer--icons--separator {
-            display: inline-block;
-            height: 30px;
-            width: 2px;
-            margin: 0 10px 0 5px;
-            border-right: 2px solid;
-            border-color: colour("gray-600");
-            content: "";
-        }
-
-        a {
-
-            display: inline-block;
-            position: relative;
-
-            margin: 0;
-            margin-right: 10px;
-            padding: 0;
-
-            svg.footer--icons--social {
-                display: block;
-                position: relative;
-
-                height: 30px;
-                width: 30px;
-                margin: 0;
-                padding: 0;
-
-                path {
-                    fill: colour("black");
-                }
-            }
-
-
-            &:link svg path {
-                fill: colour("gray-600");
-            }
-            &:visited svg path {
-                fill: colour("gray-600");
-            }
-            &:hover svg path {
-                background: colour("white");
-                fill: colour("cyan");
-                text-decoration: none;
-            }
-            &:focus {
-                outline-offset: 0;
-                outline: 5px solid;
-            }
-            &:focus svg path {
-                background: colour("cyan");
-                fill: colour("white");
-                outline: none;
-            }
-            &:active svg path {
-                text-decoration: 	none;
-            }
-
-        }
-    }
-
-    div.author-details {
-        grid-area: author;
-        display: grid;
-        justify-items: flex-start;
-    }
-
-    p.footer--site-link {
-        padding-bottom: 0;
-    }
-
-    p.author--wordmark {
-        position: relative;
-        display: block;
-        color: colour("black");
-        @include typography($p);
-        font-weight: 	bold !important;
-        padding-bottom: 0 !important;
-    }
-
-
-    a.p-author {
-        &:link,
-        &:visited {
-            text-decoration: none;
-        }
-    }
-
-    a.memoji {
-        grid-area: memoji;
-        display: grid;
-        position: relative;
-        justify-self: center;
-    }
-
-    img.footer--memoji {
-        display: block;
-        position: relative;
-
-        box-sizing: border-box;
-
-        margin: 0;
-        padding: 0;
-
-        width: 57px;
-        height: 57px;
-        @include desktop {
-            width: 140px;
-            height: 140px;
-        }
-
-        border-radius: 10px;
-    }
-}
-
-dl.meta-data {
-    grid-area: meta;
-    display: grid;
-    grid-gap: $container-padding;
-
-
-    .meta-data-details {
-        display: block;
-        position: relative;
-        padding: $container-padding;
-    }
-    p, dl, dt, dd {
-        @include typography($small);
-			line-height: 1.2;
-    }
-    dt, dd {
-        display: block;
-        position: relative;
-        width: 100%;
-    }
-    dt {
-        font-weight: 	bold;
-    }
-    dd {
-        text-transform: capitalize;
-    }
-
-}
-
-.webmentions--not-found {
-    line-height: 50px;
-    align-self: center;
-    padding-bottom: 0;
-}
-
-.webmention-count {
-    @include typography($p);
-    align-self: center;
-    line-height: 35px !important;
-    vertical-align: middle;
-    padding: 0 0 0 $container-padding !important;
 }
 
 img.webmention--author--photo {
-    display: block;
+    display: none;
+}
+
+.webmention--reply article.webmention {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-row-gap: $container-padding * 0.5;
+    grid-column-gap: $container-padding;
+    grid-template-areas: "author" "msg";
+}
+
+.from-them.webmention--reply article.webmention {
+    float: left;
+}
+
+.from-me.webmention--reply article.webmention {
+    float: right;
+}
+
+.webmention--content {
+    grid-area: msg;
+}
+.webmention--reply .webmention--author {
+    grid-area: author;
+}
+.webmention--reply .webmention--meta {
+    grid-area: meta;
+}
+
+.from-them.webmention--reply .webmention--author,
+.from-them.webmention--reply .webmention--meta {
+    justify-self: flex-start;
+    padding-left: $container-padding;
+}
+
+.from-me.webmention--reply .webmention--author,
+.from-me.webmention--reply .webmention--meta {
+    justify-self: flex-end;
+    padding-right: $container-padding;
+}
+
+.webmention--author,
+.webmention--meta {
+    @include typography($small, "default");
+    color: var(--webmention-authorColor, colour("gray-600"));
+}
+
+.webmention--reply .webmention--content {
     position: relative;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    &.bubble-clip {
-        border-radius: 100% 100% 0% 100%;
+    max-width: 550px;
+    padding: $container-padding * 0.5 $container-padding;
+    border-radius: $border-radius;
+    clear: both;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+    }
+
+    &:after {
+        -webkit-transform: translate(-30px, -2px);
+        background:var(--background, colour("white"));
+        width: 10px;
+        height: 20px;
+    }
+}
+.from-them.webmention--reply .webmention--content {
+    background: var(--webmention-fromThemBackground, colour("gray-400"));
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        bottom: -2px;
+        left: -7px;
+        height: 20px;
+        border-left: 20px solid var(--webmention-fromThemBackground, colour("gray-400"));
+        border-bottom-right-radius: 16px 14px;
+        -webkit-transform: translate(0, -2px);
+    }
+
+    &:after {
+        z-index: 3;
+        bottom: -2px;
+        left: 20px;
+        border-bottom-right-radius: 10px;
+    }
+    p {
+        color: var(--webmention-fromThemColor, colour("black"));
+    }
+
+    a {
+        &:link {
+            color: var(--webmention-fromThemColor, colour("black"));
+        }
+        &:visited {
+            color: var(--webmention-fromThemColor, colour("black"));
+        }
+        &:focus {
+            color: var(--webmention-fromThemLinkColor, colour("white"));
+            background: var(--webmention-fromThemLinkBackground, colour("cyan"));
+            outline: 2px solid var(--webmention-fromThemLinkBackground, colour("cyan"));
+            outline-offset: 0;
+            text-decoration: none;
+        }
+        &:active {
+            text-decoration: 	underline;
+        }
     }
 }
 
+.from-me.webmention--reply .webmention--content {
+    background: var(--webmention-fromMeBackground, colour("cyan"));
 
+    &:before {
+        z-index: -1;
+        bottom: -2px;
+        right: -7px;
+        height: 20px;
+        border-right: 20px solid var(--webmention-fromMeBackground, colour("cyan"));
+        border-bottom-left-radius: $border-radius $border-radius - 3px;
+        -webkit-transform: translate(0, -2px);
+    }
 
+    &:after {
+        z-index: 1;
+        bottom: -2px;
+        right: -40px;
+        width: 10px;
+        height: 20px;
+        border-bottom-left-radius: $border-radius;
+    }
 
-// Web mentions
-details.webmention--replies {
+    p {
+        color: var(--webmention-fromMeColor, colour("white"));
+    }
 
-	display: block;
-	position: relative;
-
-	padding: $container-padding;
-	@include plastic(inset, 3px);
-	box-sizing: content-box;
-
-	&[open] > summary::-webkit-details-marker,
-	&[open] > summary::marker {
-		display: none;
-		list-style-image: none;
-		content: '';
-	}
-
-	&[open] > summary {
-		margin-bottom: $container-padding;
-        box-shadow: unset;
-        border: unset;
-        border-radius: 10px;
-	}
+    a {
+        &:link {
+            color: var(--webmention-fromMeColor, colour("white"));
+        }
+        &:visited {
+            color: var(--webmention-fromMeColor, colour("white"));
+        }
+        &:focus {
+            color: var(--webmention-fromMeLinkColor, colour("cyan"));
+            background: var(--webmention-fromMeLinkBackground, colour("white"));
+            outline: 2px solid var(--webmention-fromMeLinkBackground, colour("white"));
+            outline-offset: 0;
+            text-decoration: none;
+        }
+        &:active {
+            text-decoration: 	underline;
+        }
+    }
 }
 
-summary.webmention--replies {
+.webmention--like,
+.webmention--repost {
+    article.webmention {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-areas: "msg";
+        grid-template-columns: 1fr;
+    }
+    .webmention--content {
+        text-align: center;
+    }
 
-	&:before {
-		display: block;
-		position: relative;
-		content: '+';
-		top: 5px;
-		font-weight: bold;
-		line-height: 30px;
-		font-size: 40px;
-		height: 30px;
-		padding: 0;
+    .webmention--content p {
+        @include typography($small, "default");
+        color: var(--webmention-authorColor, colour("gray-600"));
+    }
+}
 
-		grid-area: plus;
-	}
+.webmention--content a {
+    &:link {
+        text-decoration: none;
+    }
+    &:visited {
+        text-decoration: none;
+    }
+    &:hover {
+        text-decoration: 	underline;
+    }
+    &:focus {
+        text-decoration: underline;
+    }
+    &:active {
+        text-decoration: 	underline;
+    }
+}
 
-	display: grid;
-	position: relative;
-	text-align: left;
-	box-sizing: border-box;
-	padding: 0;
-	min-height: 50px;
-	align-content: center;
-	border-radius: 10px;
-	cursor: pointer;
-    border: none;
-    box-shadow: none;
+.webmention--content p {
+    padding: 0;
+}
 
-	grid-template-rows: auto;
-	grid-template-columns: auto 1fr auto;
-	grid-template-areas: "icon replies plus";
-	grid-column-gap: $container-padding;
-
-	border-top: none;
-
-	&:hover {
-		color: colour("cyan");
-
-	}
-	&:focus {
-		background: colour("cyan");
-		color: colour("white");
-		outline-color: colour("cyan");
-		border-top: none;
-	}
-	&:active {
-		background: colour("cyan");
-		color: colour("white");
-		border-top: none;
-	}
-	&:hover svg path {
-		background: colour("white");
-		fill: colour("cyan");
-		text-decoration: none;
-	}
-	&:focus {
-		outline-offset: form("border-width");
-		outline: form("border-width") solid;
-	}
-	&:focus svg path {
-		background: colour("cyan");
-		fill: colour("white");
-		outline: none;
-	}
-	&:active svg path {
-		text-decoration: 	none;
-	}
-
-	@include clearfix;
-
-	* {
-		font-weight: bold !important;
-		align-self: center;
-	}
+.webmention--author a {
+    &:link {
+        color: var(--webmention-authorColor, colour("gray-600"));
+        text-decoration: none;
+    }
+    &:visited {
+        color: var(--webmention-authorColor, colour("gray-600"));
+        text-decoration: none;
+    }
+    &:hover {
+        color: var(--webmention-hoverColor, colour("cyan"));
+    }
+    &:focus {
+        color: var(--webmention-fromThemLinkColor, colour("white"));
+        background: var(--webmention-fromThemLinkBackground, colour("cyan"));
+        outline: 2px solid var(--webmention-fromThemLinkBackground, colour("cyan"));
+        outline-offset: 0;
+        text-decoration: none;
+    }
+    &:active {
+        text-decoration: 	underline;
+    }
 }

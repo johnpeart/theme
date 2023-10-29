@@ -30,6 +30,16 @@ $small: (
 	)
 );
 
+
+// <p>, <li>, etc.
+$metadata: (
+	"font-size": (
+		"mobile": 20px,
+		"tablet": 22px,
+		"desktop": 22px
+	)
+);
+
 // <figcaption>, etc.
 $smaller: (
 	"font-size": (

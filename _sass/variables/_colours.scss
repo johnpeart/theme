@@ -137,8 +137,21 @@ $colours: (
 	--radio-colour:					var(--cyan);
 	--form--focusBackground:		var(--color);
 
-	--progress-barBackground: var(--cyan);
+	--progress-barBackground: 		var(--cyan);
 	--progress-barSecondaryBackground: var(--purple);
+
+	--icon-background:				var(--gray-600);
+	--icon-hoverBackground: 		var(--cyan);
+
+	--webmention-fromMeColor:		var(--white);
+	--webmention-fromMeBackground:	var(--cyan);
+	--webmention-fromMeLinkColor:		var(--cyan);
+	--webmention-fromMeLinkBackground:	var(--white);
+
+	--webmention-fromThemColor:			var(--black);
+	--webmention-fromThemBackground:	var(--gray-400);
+	--webmention-fromThemLinkColor:		var(--white);
+	--webmention-fromThemLinkBackground:	var(--cyan);
 
 	@include darkMode() {
 		// Dark mode overrides

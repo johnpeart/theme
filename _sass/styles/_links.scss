@@ -6,19 +6,19 @@ a {
 	text-decoration-skip-ink: auto;
 
 	&:link {
-		color: var(--link-color);
+		color: var(--link-color, colour("black"));
 	}
 	&:visited {
-		color: var(--link-color);
+		color: var(--link-color, colour("black"));
 	}
 	&:hover {
-		color: var(--link-hoverColor);
+		color: var(--link-hoverColor, colour("cyan"));
 		text-decoration: 	underline;
 	}
 	&:focus {
-		color: var(--link-focusColor);
-		background: var(--link-focusBackground);
-		outline: 2px solid var(--link-outlineColor);
+		color: var(--link-focusColor, colour("white"));
+		background: var(--link-focusBackground, colour("cyan"));
+		outline: 2px solid var(--link-outlineColor, colour("cyan"));
 		outline-offset: 0;
 		text-decoration: none;
 	}
@@ -29,20 +29,20 @@ a {
 	&.link-secondary,
 	&.post-published-date {
 		&:link {
-			color: var(--link-secondary-color);
+			color: var(--link-secondary-color, colour("gray-600"));
 			text-decoration: none;
 		}
 		&:visited {
-			color: var(--link-secondary-color);
+			color: var(--link-secondary-color, colour("gray-600"));
 		}
 		&:hover {
-			color: var(--link-secondary-color);
+			color: var(--link-secondary-color, colour("gray-600"));
 			text-decoration: 	underline;
 		}
 		&:focus {
-			color: var(--link-focusColor);
-			background: var(--link-focusBackground);
-			outline: 2px solid var(--link-outlineColor);
+			color: var(--link-focusColor, colour("white"));
+			background: var(--link-focusBackground, colour("cyan"));
+			outline: 2px solid var(--link-outlineColor, colour("cyan"));
 		}
 	}
 
@@ -57,9 +57,9 @@ a {
 			text-decoration: 	underline;
 		}
 		&:focus {
-			color: var(--link-focusColor);
-			background: var(--link-focusBackground);
-			outline: 2px solid var(--link-outlineColor);
+			color: var(--link-focusColor, colour("white"));
+			background: var(--link-focusBackground, colour("cyan"));
+			outline: 2px solid var(--link-outlineColor, colour("cyan"));
 		}
 	}
 }
