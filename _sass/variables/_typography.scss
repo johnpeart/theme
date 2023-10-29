@@ -231,3 +231,18 @@ $marker: (
 		"desktop": 0 0 44px 0
 	),
 );
+
+// Marker pen typeface
+// <p>
+$marker-small: (
+	"font-size": (
+		"mobile": 26px,
+		"tablet": 26px,
+		"desktop": 32px
+	),
+	"padding": (
+		"mobile": 0 0 26px 0,
+		"tablet": 0 0 32px 0,
+		"desktop": 0 0 44px 0
+	),
+);

@@ -20,8 +20,8 @@
 		margin: $container-padding * 4 auto;
 	}
 	@include desktop {
-		max-width: 800px;
-		padding: $container-padding * 2;
+		max-width: 600px;
+		padding: $container-padding * 1.5;
 		margin: $container-padding * 4 auto;
 	}
 
@@ -53,7 +53,7 @@
 	.polaroid--title {
 		text-align: center;
 		color: colour("black");
-		@include typography($marker, "marker");
+		@include typography($marker-small, "marker");
 		line-height: 1.2;
 		padding: $container-padding 0 0 0 !important;
 	}
