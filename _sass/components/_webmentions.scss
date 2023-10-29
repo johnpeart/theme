@@ -9,8 +9,13 @@ li.webmentions--item {
     @include clearfix();
 }
 
+ol.webmentions--list {
+    padding: 0;
+}
+
 li.webmentions--item {
     margin-bottom: $container-padding * 2;
+    padding: 0 $container-padding * 0.5;
     &:last-of-type {
         margin: 0;
     }
