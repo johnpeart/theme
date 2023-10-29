@@ -20,7 +20,8 @@ img.webmention--author--photo {
     display: none;
 }
 
-.webmention--reply article.webmention {
+.webmention--reply article.webmention,
+.webmention--post article.webmention {
     display: grid;
     grid-template-rows: auto auto;
     grid-row-gap: $container-padding * 0.5;
@@ -28,32 +29,40 @@ img.webmention--author--photo {
     grid-template-areas: "author" "msg";
 }
 
-.from-them.webmention--reply article.webmention {
+.from-them.webmention--reply article.webmention,
+.from-them.webmention--post article.webmention {
     float: left;
 }
 
-.from-me.webmention--reply article.webmention {
+.from-me.webmention--reply article.webmention,
+.from-me.webmention--post article.webmention {
     float: right;
 }
 
 .webmention--content {
     grid-area: msg;
 }
-.webmention--reply .webmention--author {
+.webmention--reply .webmention--author,
+.webmention--post .webmention--author {
     grid-area: author;
 }
-.webmention--reply .webmention--meta {
+.webmention--reply .webmention--meta,
+.webmention--post .webmention--meta {
     grid-area: meta;
 }
 
 .from-them.webmention--reply .webmention--author,
-.from-them.webmention--reply .webmention--meta {
+.from-them.webmention--reply .webmention--meta,
+.from-them.webmention--post .webmention--author,
+.from-them.webmention--post .webmention--meta {
     justify-self: flex-start;
     padding-left: $container-padding;
 }
 
 .from-me.webmention--reply .webmention--author,
-.from-me.webmention--reply .webmention--meta {
+.from-me.webmention--reply .webmention--meta,
+.from-me.webmention--post .webmention--author,
+.from-me.webmention--post .webmention--meta {
     justify-self: flex-end;
     padding-right: $container-padding;
 }
@@ -64,7 +73,8 @@ img.webmention--author--photo {
     color: var(--webmention-authorColor, colour("gray-600"));
 }
 
-.webmention--reply .webmention--content {
+.webmention--reply .webmention--content,
+.webmention--post .webmention--content {
     position: relative;
     max-width: 550px;
     padding: $container-padding * 0.5 $container-padding;
@@ -84,7 +94,8 @@ img.webmention--author--photo {
         height: 20px;
     }
 }
-.from-them.webmention--reply .webmention--content {
+.from-them.webmention--reply .webmention--content,
+.from-them.webmention--post .webmention--content {
     background: var(--webmention-fromThemBackground, colour("gray-400"));
 
     &:before {
@@ -129,7 +140,8 @@ img.webmention--author--photo {
     }
 }
 
-.from-me.webmention--reply .webmention--content {
+.from-me.webmention--reply .webmention--content,
+.from-me.webmention--post .webmention--content {
     background: var(--webmention-fromMeBackground, colour("cyan"));
 
     &:before {

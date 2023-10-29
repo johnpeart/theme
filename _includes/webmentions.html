@@ -1,20 +1,10 @@
 <footer id="webmentions">
-	{% webmentions page.url %}
-
-	<!-- {% if paginator %}
-	  {% webmention_count page.url likes %}
-	{% else %}
-	  {% webmention_likes page.url %}
-	{% endif %}
 
 	{% if paginator %}
+	  {% webmention_count page.url likes %}
 	  {% webmention_count page.url reposts %}
 	{% else %}
-	  {% webmention_reposts page.url %}
+	  {% webmentions page.url posts replies likes reposts %}
 	{% endif %}
-
-	{% unless paginator %}
-	  {% webmention_replies page.url %}
-	{% endunless %} -->
 
 </footer>
