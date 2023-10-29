@@ -332,14 +332,6 @@ aside#post-author-card {
             height: 140px;
         }
 
-        transform: scale(1) rotate(0);
-        transition: transform 1s;
-
-        &:hover {
-            transform: scale(1.1) rotate(-5deg);
-            transition: transform 1s;
-        }
-
         border-radius: 10px;
     }
 }
