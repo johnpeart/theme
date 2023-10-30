@@ -1,3 +1,12 @@
+.quickpost {
+	display: block;
+	padding: $container-padding;
+	@include tablet-up {
+		padding: $container-padding * 4;
+	}
+	background: var(--background, colour("white"));
+}
+
 .polaroid {
 
 	display: block;
@@ -12,17 +21,15 @@
 
 	max-width: 100%;
 	padding: $container-padding;
-	margin: $container-padding * 2 auto;
+	margin: 0 auto;
 
 	@include tablet {
 		max-width: 500px;
 		padding: $container-padding * 1.5;
-		margin: $container-padding * 4 auto;
 	}
 	@include desktop {
 		max-width: 600px;
 		padding: $container-padding * 1.5;
-		margin: $container-padding * 4 auto;
 	}
 
 	&:hover {

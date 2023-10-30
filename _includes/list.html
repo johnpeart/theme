@@ -1,10 +1,12 @@
-<header class="quickpost paper-list">
-	<section class="paper-list--header">
-		<h1 class="p-name paper-list--title">{{ page.title }}</h1>
-	</section>
-	<ul class="paper-list--body">
-		{% for item in page.list %}
-			<li class="paper-list--item paper-list--item--{{ item.status }}">{{ item.todo }}</li>
-		{% endfor %}
-	</ul>
-</header>
+<div class="quickpost">
+	<header class="paper-list">
+		<section class="paper-list--header">
+			<h1 class="p-name paper-list--title">{{ page.title }}</h1>
+		</section>
+		<ul class="paper-list--body">
+			{% for item in page.list %}
+				<li class="paper-list--item paper-list--item--{{ item.status }}">{{ item.todo }}</li>
+			{% endfor %}
+		</ul>
+	</header>
+</div>
