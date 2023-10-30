@@ -23,7 +23,7 @@
 	<link rel="archives" href="{{ site.url | append: site.baseurl | append: '/archives' }}">
 
 	<!-- Gives information about the author -->
-	<link rel="me" href="{{ site.url }}" type="text/html">
+	{% if site.url %}<link rel="me" href="{{ site.url }}" type="text/html">{% endif %}
 	{% if site.twitter-url %}<link rel="me" href="{{ site.twitter-url }}" type="text/html">{% endif %}
 	{% if site.linkedin-url %}<link rel="me" href="{{ site.linkedin-url }}" type="text/html">{% endif %}
 	{% if site.github-url %}<link rel="me" href="{{ site.github-url }}" type="text/html">{% endif %}
