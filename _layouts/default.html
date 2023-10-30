@@ -8,7 +8,7 @@
   	{% include skiplink.html %}
     {% include header.html %}
   	{{ content }}
-    {% unless page.layout == "post" %}
+    {% unless page.layout contains "post" %}
     {% include footer.html %}
     {% endunless %}
     {% include analytics.html %}

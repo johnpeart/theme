@@ -5,7 +5,7 @@ layout: default
 <main id="content" class="container">
 	<article class="social h-entry">
 		<section class="e-content">
-		{% include {{ page.collection | append: '.html' | prepend: 'stream/' }} %}
+		{% include {{ page.collection | append: '.html' }} %}
 		{% if page.content.size > 0 %}
 			<section class="post--body">
 				{{ page.content }}
@@ -67,6 +67,7 @@ layout: default
 		</section>
 	</article>
 	{% include webmentions.html %}
+	{% include footer.html type="post" %}
 </main>
 
 

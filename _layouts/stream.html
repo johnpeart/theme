@@ -8,9 +8,9 @@ layout: default
 
 	<article class="social h-entry">
 		<section class="e-content">
-		{% include {{ page.collection | append: '.html' | prepend: 'stream/' }} %}
+		{% include {{ page.collection | append: '.html' }} %}
 		</section>
-		{% include stream/footer.html %}
+		{% include footer.html type="stream" %}
 	</article>
 
 	{% endfor %}

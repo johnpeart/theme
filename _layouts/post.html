@@ -15,16 +15,15 @@ layout: default
 
 		</header>
 
-		{% include blog/emoji-hero-image.html %}
+		{% include emoji-hero-image.html %}
 
 		<section class="post-body e-content">
 			{{ content }}
-			{% include blog/eurovision.html %}
+			{% include eurovision.html %}
 		</section>
 
 		{% include webmentions.html %}
-
-		{% include footer.html %}
+		{% include footer.html type="post" %}
 
 	</article>
 
