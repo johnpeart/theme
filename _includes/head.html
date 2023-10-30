@@ -23,19 +23,58 @@
 	<link rel="archives" href="{{ site.url | append: site.baseurl | append: '/archives' }}">
 
 	<!-- Gives information about the author -->
-	{% include head/rel-me.html %}
-	
+	<link rel="me" href="{{ site.url }}" type="text/html">
+	{% if site.twitter-url %}<link rel="me" href="{{ site.twitter-url }}" type="text/html">{% endif %}
+	{% if site.linkedin-url %}<link rel="me" href="{{ site.linkedin-url }}" type="text/html">{% endif %}
+	{% if site.github-url %}<link rel="me" href="{{ site.github-url }}" type="text/html">{% endif %}
+	{% if site.flickr-url %}<link rel="me" href="{{ site.flickr-url }}" type="text/html">{% endif %}
+	{% if site.instagram-url %}<link rel="me" href="{{ site.instagram-url }}" type="text/html">{% endif %}
+	{% if site.mastodon-url %}<link rel="me" href="{{ site.mastodon-url }}" type="text/html">{% endif %}
+	{% if site.webmention-io %}<link href="mailto:{{ site.webmention-io.email }}" rel="me">{% endif %}
+
 	<!-- Web mentions -->
 	{% webmentions_head %}
 
 	<!-- Facebook Open Graph settings -->
-	{% include head/facebook-opengraph.html %}
+	<meta property="og:url" 				content="{{ site.url | append: site.baseurl | append: page.url | replace: 'index.html','' }}">
+	<meta property="og:type" 			content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+	<meta property="og:title" 			content="{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
+	{% if page.layout == 'quick-post' %}
+	<meta property="og:image" 			content="{{ site.url | append: site.post-images-path | append: '/' | append: page.image }}">
+	{% else %}
+	<meta property="og:image" 			content="{% if page.image %}{{ page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">
+	{% endif %}
+	<meta property="og:image:width" 		content="1200">
+	<meta property="og:image:height" 	content="630">
+	<meta property="og:rich_attachment" content="true">
+	<meta property="og:description" 		content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description  | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+	<meta property="og:site_name" 		content="John Peart">
+	<meta property="og:locale" 			content="en_GB">
+	<meta property="article:author" 		content="John Peart">
+	<meta property="article:publisher" 	content="John Peart">
 
 	<!-- Twitter Cards settings -->
-	{% include head/twitter-cards.html %}
+	<meta name="twitter:card" 			content="summary_large_image">
+	<meta name="twitter:site" 			content="{{ '@' | append: site.twitter-handle }}">
+	<meta name="twitter:creator" 		content="{{ '@' | append: site.twitter-handle }}">
+	<meta name="twitter:url" 			content="{{ site.url | append: site.baseurl | append: page.url | replace: 'index.html','' }}">
+	<meta name="twitter:title" 			content="{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
+	<meta name="twitter:description" 	content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description  | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+	{% if page.layout == 'quick-post' %}
+	<meta name="twitter:image" 			content="{{ site.url | append: site.post-images-path | append: '/' | append: page.image }}">
+	{% else %}
+	<meta name="twitter:image" 			content="{% if page.image %}{{ page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">
+	{% endif %}
+	<meta name="twitter:image:alt" 		content="{% if page.image-alt %}{{ page.image-alt | strip_html }}{% else %}{{ page.title }}{% endif %}">
 
 	<!-- Schema.org settings -->
-	{% include head/schema-org.html %}
+	<meta itemprop="name" content="{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
+	<meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description  | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+	{% if page.layout == 'quick-post' %}
+	<meta itemprop="image" 			content="{{ site.url | append: site.post-images-path | append: '/' | append: page.image }}">
+	{% else %}
+	<meta itemprop="image" content="{% if page.image %}{{ page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">
+	{% endif %}
 
 	<!-- Favicons -->
 	<!-- Place favicon.ico in the root directory - no tag necessary -->
