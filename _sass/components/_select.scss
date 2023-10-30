@@ -15,14 +15,20 @@ select {
 	border-radius: form("border-radius");
 	border: form("border-width") solid;
 
-	background-color: colour("absolute-white");
-	color: colour("black");
-	border-color: colour("black");
+	background-color: var(--background, colour("white"));
+	color: var(--color, colour("black"));
+	border-color: var(--color, colour("black"));
 
 	background-image: url("data:image/svg+xml,%3Csvg fill='%23009FE3' height='40' viewBox='0 0 24 24' width='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position-x: 100%;
 	background-position-y: 50%;
+
+	&:hover {
+		outline: form("border-width") solid var(--cyan, colour("cyan"));
+		outline-offset: 0px;
+		border: form("border-width") solid;
+	}
 
 	&:focus {
 		outline: form("border-width") solid var(--form--focusBorderColor, colour("cyan"));

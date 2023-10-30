@@ -49,22 +49,19 @@ body#loop {
 
 			a {
 				&:link {
-					color: colour("cyan");
+					color: var(--cyan, colour("cyan"));
 					text-decoration: none;
 				}
 				&:visited {
-					color: colour("cyan");
+					color: var(--cyan, colour("cyan"));
 					text-decoration: none;
 				}
 				&:hover {
-					color: colour("cyan");
+					color: var(--cyan, colour("cyan"));
 					text-decoration: 	underline;
 				}
 				&:focus {
-					color: colour("white");
-					background: colour("cyan");
-					outline: 2px solid;
-					outline-color: colour("cyan");
+					color: var(--color, colour("white"));
 				}
 				&:active {
 					text-decoration: 	underline;

@@ -52,7 +52,7 @@
 
 	.polaroid--title {
 		text-align: center;
-		color: colour("black");
+		color: var(--markerpen-color, colour("black")) !important;
 		@include typography($marker-small, "marker");
 		line-height: 1.2;
 		padding: $container-padding 0 0 0 !important;

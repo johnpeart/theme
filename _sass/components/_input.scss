@@ -9,11 +9,11 @@ input[type="email"] {
 	margin-bottom: $container-padding * 2;
 	padding: form("input-padding");
 
-	border: form("border-width") solid colour("black");
+	border: form("border-width") solid var(--color, colour("black"));
 	border-radius: form("border-radius");
 
-	background: colour("absolute-white");
-	color: colour("black");
+	background: var(--background, colour("white"));
+	color: var(--color, colour("black"));
 
 	// Disable inner shadow and remove rounded corners
 	-webkit-appearance: none;
@@ -21,21 +21,20 @@ input[type="email"] {
 
 
 	&:hover {
-		outline: form("border-width") solid colour("cyan");
+		outline: form("border-width") solid var(--cyan, colour("cyan"));
 		outline-offset: 0px;
 		border: form("border-width") solid;
 	}
 	&:focus {
-		outline: form("border-width") solid colour("cyan");
+		outline: form("border-width") solid var(--cyan, colour("cyan"));
 		outline-offset: 3px;
-
-		background: colour("gray-100");
+		color: var(--color, colour("black"));
 		box-shadow: inset 0 0 0 form("border-focus-width");
-		border: form("border-width") solid colour("black");
+		border: form("border-width") solid var(--color, colour("black"));
 	}
 
 	&:invalid {
-		border: form("border-width") solid colour("red");
+		border: form("border-width") solid var(--red, colour("red"));
 	}
 
 }

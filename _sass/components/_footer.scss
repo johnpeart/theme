@@ -178,7 +178,7 @@ div.author--icons {
 		}
 		&:focus svg path {
 			background: var(--link-outlineColor, colour("cyan"));
-			fill: colour("white");
+			fill: var(--white, colour("white"));
 			outline: none;
 		}
 		&:active svg path {

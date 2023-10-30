@@ -25,8 +25,8 @@
 	}
 
 	.paper-list--title {
-		color: colour("red");
 		@include typography($marker, "marker");
+		color: var(--red, colour("red"));
 		line-height: 1;
 		padding: 0;
 	}
@@ -34,8 +34,8 @@
 		padding: 0;
 	}
 	.paper-list--item {
-		color: colour("black");
 		@include typography($marker, "marker");
+		color: var(--markerpen-color, colour("black"));
 		line-height: 1;
 
 		&:last-child {

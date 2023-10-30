@@ -46,18 +46,14 @@
     display: block;
     width: 100%;
 
+    @include typography($p, "default");
     padding: 10px 0 !important;
 
     text-align: 			left;
 
     &:focus,
     &:hover {
-
-        background: colour("cyan");
-        color: colour("white");
-
-        @include darkMode {
-            color: colour("black");
-        }
+        background: var(--skiplink-background, colour("cyan"));
+        color: var(--skiplink-color, colour("white"));
     }
 }

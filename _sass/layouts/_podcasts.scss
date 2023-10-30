@@ -27,7 +27,7 @@ body#podcasts {
 
 	section#pride-on {
 
-		color: colour("white");
+		color: var(--white, colour("white"));
 
 		padding-top: 0;
 		padding-bottom: 100px;
@@ -36,7 +36,7 @@ body#podcasts {
 			padding-top: 15px;
 			padding-bottom: 15px;
 
-			background:  colour("magenta");
+			background:  var(--magenta, colour("magenta"));
 			background-image: url('/assets/images/podcasts/pride-on-arrows.svg');
 			background-size: cover;
 			background-position: center;
@@ -74,27 +74,27 @@ body#podcasts {
 				display: inline-block;
 
 				&:link {
-					color: colour("white");
+					color: var(--white, colour("white"));
 					text-decoration: none;
-					border: 2px solid colour("white");
+					border: 2px solid var(--white, colour("white"));
 					padding: 10px 25px;
 				}
 				&:visited {
-					color: colour("black");
+					color: var(--black, colour("black"));
 					text-decoration: none;
 				}
 				&:hover {
-					color: colour("magenta");
-					outline: 2px solid colour("white");
+					color: var(--magenta, colour("magenta"));
+					outline: 2px solid var(--white, colour("white"));
 					outline-offset: 2px !important;
-					background: colour("white");
+					background: var(--white, colour("white"));
 				}
 				&:focus {
-					outline: 2px solid colour("white");
+					outline: 2px solid var(--white, colour("white"));
 					outline-offset: 0px;
-					border: 2px solid colour("magenta");
-					color: colour("magenta");
-					background: colour("white");
+					border: 2px solid var(--magenta, colour("magenta"));
+					color: var(--magenta, colour("magenta"));
+					background: var(--white, colour("white"));
 				}
 				&:active {
 					outline-offset: 4px !important;

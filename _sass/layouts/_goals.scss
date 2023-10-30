@@ -1,100 +1,14 @@
 // Home page styles
 body#goals {
-
 	article.goal-collection {
 		padding: 15px 0;
-		border-top: 1px solid;
-		border-color: var(--secondary-borderColor, colour("gray-400"));
+		border-top: 1px solid var(--secondary-borderColor, colour("gray-400"));
 	}
 
 	h2.goal-year {
 		text-align: 		left;
 		padding: 			0;
 	}
-
-	progress[value] {
-
-		position: relative;
-		display: block;
-
-		-webkit-appearance: none;
-				appearance: none;
-
-		width: 		100%;
-		max-width: 			600px;
-
-		padding: 	0;
-		margin: 	20px 0;
-
-		&.standard {
-
-			height: 	20px;
-
-			&::-webkit-progress-bar {
-				background: var(--secondary-background, colour("gray-200"));
-				border: 			none;
-				border-radius: 		2px;
-			}
-
-			&::-webkit-progress-value {
-				background: var(--progress-barBackground, colour("cyan"));
-				border-radius: 2px;
-				background-size: 600px;
-			}
-
-		}
-
-		&.stretch-top {
-
-			height: 10px;
-			margin-bottom: 0;
-
-			&::-webkit-progress-bar {
-				background: var(--secondary-background, colour("gray-200"));
-				border: 			none;
-				border-top-left-radius: 2px;
-				border-top-right-radius: 2px;
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
-			}
-
-			&::-webkit-progress-value {
-				background: var(--progress-barBackground, colour("cyan"));
-				border-top-left-radius: 2px;
-				border-top-right-radius: 2px;
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
-				background-size: 600px;
-			}
-
-		}
-		&.stretch-bottom {
-
-			height: 10px;
-			margin-top: 0;
-
-			&::-webkit-progress-bar {
-				background: var(--secondary-background, colour("gray-200"));
-				border: 			none;
-				border-top-left-radius: 0;
-				border-top-right-radius: 0;
-				border-bottom-left-radius: 2px;
-				border-bottom-right-radius: 2px;
-			}
-
-			&::-webkit-progress-value {
-				background: var(--progress-barSecondaryBackground, colour("cyan"));
-				border-top-left-radius: 0;
-				border-top-right-radius: 0;
-				border-bottom-left-radius: 2px;
-				border-bottom-right-radius: 2px;
-				background-size: 600px;
-			}
-
-		}
-	}
-
-
 }
 body#goal {
 
@@ -112,8 +26,6 @@ body#goal {
 	}
 
 	ul#goals-list {
-		max-width: 			600px;
-
 		padding: 			0;
 		margin: 			0;
 
@@ -122,97 +34,16 @@ body#goal {
 		li {
 			list-style: 	none;
 			padding: 		0;
+			max-width: 600px;
 
 			box-sizing: 	border-box;
 
-			progress[value] {
 
-				position: relative;
-				display: block;
-
-				-webkit-appearance: none;
-						appearance: none;
-
-				width: 		100%;
-
-				padding: 	0;
-				margin: 	20px 0;
-
-				&.standard {
-
-					height: 	20px;
-
-					&::-webkit-progress-bar {
-						background: colour("gray-200");
-						border: 			none;
-						border-radius: 		2px;
-					}
-
-					&::-webkit-progress-value {
-						background: colour("cyan");
-						border-radius: 2px;
-						background-size: 600px;
-					}
-
-				}
-
-				&.stretch-top {
-
-					height: 10px;
-					margin-bottom: 0;
-
-					&::-webkit-progress-bar {
-						background: colour("gray-200");
-						border: 			none;
-						border-top-left-radius: 2px;
-						border-top-right-radius: 2px;
-						border-bottom-left-radius: 0;
-						border-bottom-right-radius: 0;
-					}
-
-					&::-webkit-progress-value {
-						background: colour("cyan");
-						border-top-left-radius: 2px;
-						border-top-right-radius: 2px;
-						border-bottom-left-radius: 0;
-						border-bottom-right-radius: 0;
-						background-size: 600px;
-					}
-
-				}
-				&.stretch-bottom {
-
-					height: 10px;
-					margin-top: 0;
-
-					&::-webkit-progress-bar {
-						background: colour("gray-200");
-						border: 			none;
-						border-top-left-radius: 0;
-						border-top-right-radius: 0;
-						border-bottom-left-radius: 2px;
-						border-bottom-right-radius: 2px;
-					}
-
-					&::-webkit-progress-value {
-						background: colour("purple");
-						border-top-left-radius: 0;
-						border-top-right-radius: 0;
-						border-bottom-left-radius: 2px;
-						border-bottom-right-radius: 2px;
-						background-size: 600px;
-					}
-
-				}
-			}
 			&.totaliser {
 
-				background: colour("gray-200");
-
-				padding: 		20px;
-				margin-top: 	60px;
-
-				border-radius: 	5px;
+				@include glass(20px, 2);
+				padding: 		$container-padding;
+				margin-top: 	$container-padding * 8;
 
 				box-sizing: border-box;
 
@@ -221,14 +52,101 @@ body#goal {
 					margin-bottom: 0;
 					padding-top: 0;
 				}
-
-				progress[value] {
-
-					&::-webkit-progress-bar {
-						background: colour("gray-500");
-					}
-				}
 			}
 		}
+
+		p.goal-description,
+		p:last-child {
+			padding: 0;
+		}
+	}
+}
+
+
+progress[value] {
+
+	position: relative;
+	display: block;
+
+	-webkit-appearance: none;
+			appearance: none;
+
+	width: 		100%;
+	max-width: 600px;
+
+	padding: 	0;
+	margin: 	20px 0;
+
+	&.standard {
+
+		height: 	20px;
+
+		&::-webkit-progress-bar {
+			background: var(--secondary-background, colour("gray-200"));
+			border: 			none;
+			border-radius: 		2px;
+		}
+
+		&::-webkit-progress-value {
+			background: var(--progress-barBackground, colour("cyan"));
+			border-radius: 2px;
+			background-size: 600px;
+		}
+
+	}
+
+	&.stretch-top {
+
+		height: 10px;
+		margin-bottom: 0;
+
+		&::-webkit-progress-bar {
+			background: var(--secondary-background, colour("gray-200"));
+			border: 			none;
+			border-top-left-radius: 2px;
+			border-top-right-radius: 2px;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		&::-webkit-progress-value {
+			background: var(--progress-barBackground, colour("cyan"));
+			border-top-left-radius: 2px;
+			border-top-right-radius: 2px;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			background-size: 600px;
+		}
+
+	}
+	&.stretch-bottom {
+
+		height: 10px;
+		margin-top: 0;
+
+		&::-webkit-progress-bar {
+			background: var(--secondary-background, colour("gray-200"));
+			border: 			none;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			border-bottom-left-radius: 2px;
+			border-bottom-right-radius: 2px;
+		}
+
+		&::-webkit-progress-value {
+			background: var(--progress-barSecondaryBackground, colour("purple"));
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			border-bottom-left-radius: 2px;
+			border-bottom-right-radius: 2px;
+			background-size: 600px;
+		}
+
+	}
+}
+
+.totaliser progress[value] {
+	&::-webkit-progress-bar {
+		background: var(--background, colour("white"))
 	}
 }

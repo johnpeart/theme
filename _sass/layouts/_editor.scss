@@ -8,7 +8,7 @@ body#editor {
 
 	nav#editor-toolbar {
 
-		background: colour("white");
+		background: var(--background, colour("white"));
 
 		padding: $container-padding 0;
 
@@ -23,7 +23,12 @@ body#editor {
 		}
 
 		details {
-			margin-right: $container-padding;
+			@include mobile {
+				margin-bottom: $container-padding;
+			}
+			@include tablet-up {
+				margin-right: $container-padding;
+			}
 		}
 
 		@include clearfix();
@@ -70,13 +75,13 @@ body#editor {
 
 		padding: $container-padding 0;
 
-		background: colour("white");
+		background: var(--background, colour("white"));
 		border: none;
 		border-radius: 0;
 
 		resize: none;
 
-		caret-color: colour("cyan");
+		caret-color: var(--caret-color, colour("cyan"));
 
 		overflow: visible;
 
@@ -87,7 +92,7 @@ body#editor {
 			-webkit-box-shadow: none;
 
 			&::placeholder {
-				color: colour("black");
+				color: var(--color, colour("black"));
 			}
 		}
 	}

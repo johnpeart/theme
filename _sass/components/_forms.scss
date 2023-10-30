@@ -1,19 +1,18 @@
 fieldset {
-	@include glass(20px, 2);
-	padding: $container-padding;
 	margin-bottom: $container-padding * 2;
 	@include clearfix();
 }
 
 legend {
-	@include typography($legend);
+	@include typography($p, "default");
+	width: 100%;
+	padding: 0 0 $container-padding;
 	float: left;
 	font-weight: bold;
 	text-align: center;
 }
 
 span.sub-legend {
-	@include typography($sub-legend);
 	display: block;
 	text-align: center;
 }
@@ -39,7 +38,7 @@ label {
 
 .label-hint {
 	@extend p;
-	color: colour("gray-600");
+	color: var(--labelHint-color, colour("gray-600"));
 	padding-bottom: 0;
 	display: block;
 }

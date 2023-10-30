@@ -14,21 +14,6 @@ layout: default
 
 		</aside>
 
-		<fieldset id="toggle-purchased">
-			<legend>Toggle purchased items</legend>
-
-			<div class="radio-input">
-				<input type="radio" name="toggle-purchased" id="show-purchased" value="show">
-				<label for="show-purchased">Show</label>
-			</div>
-
-			<div class="radio-input">
-				<input type="radio" name="toggle-purchased" id="hide-purchased" value="hide" checked>
-				<label for="hide-purchased">Hide</label>
-			</div>
-
-		</fieldset>
-
 		{% assign wishlists = site.wishlist | group_by: 'list' | sort: 'name' %}
 		{% for list in wishlists %}
 
@@ -92,6 +77,21 @@ layout: default
 		{% endfor %}
 
 	</section>
+
+	<fieldset id="toggle-purchased">
+		<legend>Toggle purchased items</legend>
+
+		<div class="radio-input">
+			<input type="radio" name="toggle-purchased" id="show-purchased" value="show">
+			<label for="show-purchased">Show</label>
+		</div>
+
+		<div class="radio-input">
+			<input type="radio" name="toggle-purchased" id="hide-purchased" value="hide" checked>
+			<label for="hide-purchased">Hide</label>
+		</div>
+
+	</fieldset>
 
 </main>
 

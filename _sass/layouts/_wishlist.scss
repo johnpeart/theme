@@ -2,28 +2,6 @@
 
 body#wishlist {
 
-	aside.intro-text {
-
-		span.item-giftidea {
-			position: relative;
-
-			color: colour("white");
-			background: colour("cyan");
-
-			border: 1px solid;
-			border-color: colour("cyan");
-			border-radius: 6px;
-
-			padding: 0px 7px;
-			text-transform: uppercase;
-			font-variant: small-caps !important;
-			font-size: 70%;
-			top: -5px;
-			vertical-align: middle;
-		}
-
-	}
-
 	h2.wishlist-header {
 		text-align: left;
 		@include typography($h2);
@@ -48,7 +26,7 @@ body#wishlist {
 			box-sizing: 	border-box;
 
 			border-top: 1px solid;
-			border-color: colour("gray-600");
+			border-color: var(--secondary-borderColor, colour("gray-400"));
 
 			div.item-info {
 
@@ -87,29 +65,6 @@ body#wishlist {
 				width: 100%;
 				padding-bottom: 0;
 			}
-			a.item-link {
-				&:link {
-					color: colour("cyan");
-					text-decoration: none;
-				}
-				&:visited {
-					color: colour("cyan");
-					text-decoration: none;
-				}
-				&:hover {
-					color: colour("cyan");
-					text-decoration: 	underline;
-				}
-				&:focus {
-					color: colour("white");
-					background: colour("cyan");
-					outline: 2px solid;
-					outline-color: colour("cyan");
-				}
-				&:active {
-					text-decoration: 	underline;
-				}
-			}
 			p.item-name,
 			a.item-link {
 				font-weight: bold;
@@ -134,29 +89,18 @@ body#wishlist {
 		position: relative;
 		width: 100%;
 
-		background: colour("gray-200");
+		margin: $container-padding * 3 0 0 0;
+		padding: $container-padding;
 
-		padding: 15px 10px 10px;
-
-		@include tablet-up {
-			text-align: right;
-			padding: 20px;
-		}
+		@include glass(20px, 2);
+		text-align: right;
 
 		legend {
-
-			display: inline;
-			position: relative;
-
-			@include typography($p);
-			font-weight: bold !important;
-
 			max-height: form("radios-size");
-			vertical-align: middle;
-			text-align: left;
-			float: left;
-			font-weight: bold;
 			@include tablet-up {
+				width: unset;
+				text-align: left;
+				float: left;
 				padding-bottom: 0;
 				margin-bottom: 0;
 			}

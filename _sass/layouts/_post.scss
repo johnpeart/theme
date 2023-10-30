@@ -4,7 +4,7 @@ body[id$='post'] {
 		@include typography($post-date);
 		display: block;
 		line-height: 1;
-		color: colour("gray-600");
+		color: var(--secondary-color, colour("gray-600"));
 		font-weight: bold;
 	}
 
@@ -23,8 +23,8 @@ body[id$='post'] {
 
 	#markdown-toc {
 
-		background: colour("gray-200");
-		padding:	20px;
+		@include glass(20px, 2);
+		padding: $container-padding;
 
 		> li {
 			> a {
@@ -33,29 +33,6 @@ body[id$='post'] {
 
 			&::before {
 				display: none !important;
-			}
-		}
-
-		a {
-			&:link {
-				color: colour("black");
-				text-decoration: none;
-			}
-			&:visited {
-				color: colour("black");
-			}
-			&:hover {
-				color: colour("cyan");
-				text-decoration: 	underline;
-			}
-			&:focus {
-				color: colour("white");
-				background: colour("cyan");
-				outline: 2px solid;
-				outline-color: colour("cyan");
-			}
-			&:active {
-				text-decoration: 	underline;
 			}
 		}
 
@@ -110,7 +87,7 @@ body[id$='post'] {
 	details.table-of-contents {
 		&[open] {
 			border-bottom: 1px solid;
-			border-color: colour("gray-600");
+			border-color: var(--secondary-borderColor, colour("gray-400"));
 		}
 	}
 

@@ -39,18 +39,16 @@
 		}
 	}
 
-	color: colour("black");
-
 	&.post-it--yellow {
 		border-bottom-right-radius: 120px 10px;
 
-		border-color: darken(colour("post-it--yellow"), 1%);
-		background: colour("post-it--yellow"); // Fallback
+		border-color: var(--post-it--yellow--top, colour("post-it--yellow--top"));
+		background: var(--post-it--yellow, colour("post-it--yellow")); // Fallback
 		background: linear-gradient(135deg,
-			colour("post-it--yellow") 81%,
-			colour("post-it--yellow") 82%,
-			colour("post-it--yellow") 82%,
-			lighten(colour("post-it--yellow"), 25%) 100%
+			var(--post-it--yellow, colour("post-it--yellow")) 81%,
+			var(--post-it--yellow, colour("post-it--yellow")) 82%,
+			var(--post-it--yellow, colour("post-it--yellow")) 82%,
+			var(--post-it--yellow--corner, colour("post-it--yellow--corner")) 100%
 		);
 		outline: 1px solid lighten(colour("post-it--yellow"), 25%);
 
@@ -72,10 +70,10 @@
 
 		&:hover {
 			background: linear-gradient(135deg,
-				colour("post-it--yellow") 69%,
-				colour("post-it--yellow") 70%,
-				colour("post-it--yellow") 70%,
-				lighten(colour("post-it--yellow"), 25%) 100%
+				var(--post-it--yellow, colour("post-it--yellow")) 69%,
+				var(--post-it--yellow, colour("post-it--yellow")) 70%,
+				var(--post-it--yellow, colour("post-it--yellow")) 70%,
+				var(--post-it--yellow--corner, colour("post-it--yellow--corner")) 100%
 			);
 			border-bottom-right-radius: 300px 50px;
 
@@ -97,15 +95,15 @@
 	&.post-it--cyan {
 		border-bottom-left-radius: 120px 20px;
 
-		border-color: darken(colour("post-it--cyan"), 1%);
-		background: colour("post-it--cyan"); // Fallback
+		border-color: var(--post-it--cyan--top, colour("post-it--cyan--top"));
+		background: var(--post-it--cyan, colour("post-it--cyan")); // Fallback
 		background: linear-gradient(-135deg,
-			colour("post-it--cyan") 81%,
-			colour("post-it--cyan") 82%,
-			colour("post-it--cyan") 82%,
-			lighten(colour("post-it--cyan"), 10%) 100%
+			var(--post-it--cyan, colour("post-it--cyan")) 81%,
+			var(--post-it--cyan, colour("post-it--cyan")) 82%,
+			var(--post-it--cyan, colour("post-it--cyan")) 82%,
+			var(--post-it--cyan--corner, colour("post-it--cyan--corner")) 100%
 		);
-		outline: 1px solid lighten(colour("post-it--cyan"), 1%);
+		outline: 1px solid var(--post-it--cyan--corner, colour("post-it--cyan--corner"));
 
 		&::after {
 			content: "";
@@ -126,10 +124,10 @@
 
 		&:hover {
 			background: linear-gradient(-135deg,
-				colour("post-it--cyan") 69%,
-				colour("post-it--cyan") 70%,
-				colour("post-it--cyan") 70%,
-				lighten(colour("post-it--cyan"), 10%) 100%
+				var(--post-it--cyan, colour("post-it--cyan")) 69%,
+				var(--post-it--cyan, colour("post-it--cyan")) 70%,
+				var(--post-it--cyan, colour("post-it--cyan")) 70%,
+				var(--post-it--cyan--corner, colour("post-it--cyan--corner")) 100%
 			);
 			border-bottom-left-radius: 300px 50px;
 
@@ -152,6 +150,7 @@
 	.post-it--title {
 		align-self: center;
 		@include typography($marker, "marker");
+		color: var(--markerpen-color, colour("black"));
 		line-height: 1.1;
 	}
 

@@ -48,11 +48,11 @@ table {
 	}
 
 	thead {
-		border-bottom: 2px solid colour("black");
+		border-bottom: 2px solid var(--color, colour("black"));
 	}
 
 	tfoot {
-		border-bottom: 2px solid colour("black");
+		border-bottom: 2px solid var(--color, colour("black"));
 	}
 
 	caption {

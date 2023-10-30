@@ -90,7 +90,7 @@ input[type="radio"] {
 			border: 10px solid var(--radio-color, colour("cyan"));
 			border-radius: 50%;
 			opacity: 0;
-			background: colour("black");
+			background: var(--color, colour("black"));
 		}
 
 	}
@@ -102,7 +102,7 @@ input[type="radio"] {
 
 	&:hover + label::before {
 		box-shadow: 0 0 0 3px var(--radio-color, colour("cyan"));
-		background: colour("white");
+		background: var(--background, colour("white"));
 		border-width: 2px;
 	}
 

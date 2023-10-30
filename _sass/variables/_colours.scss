@@ -40,8 +40,11 @@ $colours: (
 
 	// Notes
 	"post-it--yellow":					#FFD700,
-	"post-it--magenta":					#E6647E,
-	"post-it--cyan":					#649fE3
+	"post-it--yellow--top":				#FAD300,
+	"post-it--yellow--corner":			#FFEB80,
+	"post-it--cyan":					#649fE3,
+	"post-it--cyan--top":				#5B9AE1,
+	"post-it--cyan--corner":			#8FBAEB
 );
 
 :root {
@@ -77,8 +80,11 @@ $colours: (
 	--cyan-tint:				#007bb0;
 
 	--post-it--yellow:			var(--yellow);
-	--post-it--magenta:			#E6647E;
+	--post-it--yellow--top:		#FAD300;
+	--post-it--yellow--corner:	#FFEB80;
 	--post-it--cyan:			#649fE3;
+	--post-it--cyan--top:		#5B9AE1;
+	--post-it--cyan--corner:	#8FBAEB;
 
 	--glass-background:				linear-gradient(
 										145deg,
@@ -92,6 +98,7 @@ $colours: (
 	// Element colours
 	--background: 					var(--white);
 	--color:						var(--black);
+	--markerpen-color:				var(--black);
 	--strikethrough-color:			var(--red);
 	--secondary-background: 		var(--gray-200);
 	--secondary-hoverBackground:	var(--gray-300);
@@ -136,6 +143,7 @@ $colours: (
 
 	--radio-colour:					var(--cyan);
 	--form--focusBackground:		var(--color);
+	--labelHint-color: 				var(--gray-600);
 
 	--progress-barBackground: 		var(--cyan);
 	--progress-barSecondaryBackground: var(--purple);
@@ -152,6 +160,11 @@ $colours: (
 	--webmention-fromThemBackground:	var(--gray-400);
 	--webmention-fromThemLinkColor:		var(--white);
 	--webmention-fromThemLinkBackground:	var(--cyan);
+
+	--caret-color:					var(--cyan);
+
+	--skiplink-color:				var(--white);
+	--skiplink-background:			var(--cyan);
 
 	@include darkMode() {
 		// Dark mode overrides
@@ -185,5 +198,7 @@ $colours: (
 		--dropdownButton-hoverColor:	var(--black);
 		--dropdownButton-disabledColor:	var(--gray-500);
 		--dropdownButton-disabledBackground: var(--gray-800);
+
+		--skiplink-color:				var(--black);
 	}
 }
