@@ -25,7 +25,7 @@ details[open] {
 
 	> summary {
 		margin-bottom: $container-padding;
-		@include plastic(inset, 2px);
+		@include plastic(inset, 4px);
 		transition: box-shadow 0.25s;
 	}
 
@@ -70,7 +70,7 @@ summary {
 	text-align: left;
 
 	padding: $container-padding;
-	@include plastic(raised, 2px);
+	@include plastic(raised, 6px);
 	transition: box-shadow 0.25s;
 
 	@include typography($p, "default");
@@ -78,6 +78,7 @@ summary {
 	&:hover {
 		color: var(--details--hoverColor, colour("cyan"));
 		@include plastic(raised, 2px);
+		transition: box-shadow 0.25s;
 	}
 	&:focus {
 		outline: form("border-width") solid var(--details--outlineColor, colour("cyan"));

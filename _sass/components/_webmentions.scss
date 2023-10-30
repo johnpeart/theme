@@ -193,7 +193,8 @@ img.webmention--author--photo {
 }
 
 .webmention--like,
-.webmention--repost {
+.webmention--repost,
+.webmention--bookmark {
     article.webmention {
         display: grid;
         grid-template-rows: auto;
@@ -275,5 +276,8 @@ span.heart {
 }
 span.share {
     background-image: var(--share-icon);
+}
+span.bookmark {
+    background-image: var(--bookmark-icon);
 }
 

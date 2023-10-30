@@ -1,0 +1,69 @@
+#markdown-toc {
+
+    padding: $container-padding;
+
+    > li {
+        > a {
+            font-weight: bold;
+        }
+
+        &::before {
+            display: none !important;
+        }
+    }
+
+}
+
+ul#markdown-toc {
+
+    > li > ul {
+
+        padding-left: 0;
+        margin: 0;
+
+        li {
+            padding-left: 0;
+            @include tablet-up {
+                padding-left: 15px;
+            }
+            margin: 0;
+
+            &::before {
+
+                display: none;
+                @include tablet-up {
+                    display: inline-block;
+                    position: relative;
+                    left: -15px;
+                }
+
+            }
+        }
+
+    }
+
+}
+
+ol#markdown-toc {
+
+    list-style-type: none;
+
+    > li > ol {
+        padding-left: 50px;
+        margin: 0;
+    }
+
+    li:last-child > ol {
+        padding-bottom: 11px;
+    }
+
+}
+
+details.table-of-contents[open] {
+    @include plastic(inset, 4px);
+    padding-top: 0;
+    summary {
+        border: none;
+        box-shadow: none;
+    }
+}
