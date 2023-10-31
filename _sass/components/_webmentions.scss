@@ -102,6 +102,7 @@ img.webmention--author--photo {
 .from-them.webmention--reply .webmention--content,
 .from-them.webmention--post .webmention--content {
     background: var(--webmention-fromThemBackground, colour("gray-400"));
+    color: var(--webmention-fromThemColor, colour("black"));
 
     &:before {
         content: "";
