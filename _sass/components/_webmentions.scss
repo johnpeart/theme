@@ -29,9 +29,10 @@ img.webmention--author--photo {
 .webmention--post article.webmention {
     display: grid;
     grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
     grid-row-gap: $container-padding * 0.5;
     grid-column-gap: $container-padding;
-    grid-template-areas: "author" "msg";
+    grid-template-areas: "author author" "msg .";
 }
 
 .from-them.webmention--reply article.webmention,
