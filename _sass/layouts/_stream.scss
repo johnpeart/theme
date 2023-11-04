@@ -150,3 +150,8 @@ article.stream--item--reply {
 .webmention-count--bookmarks {
 	grid-area: bookmarks;
 }
+
+
+.stream--item--reply--author .u-photo {
+	display: none;
+}
