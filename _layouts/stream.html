@@ -18,7 +18,7 @@ layout: default
 					<a href="{{ page.url }}" class="u-url">wrote a blogpost</a></span>
 				</aside>
 				<section class="e-content stream--item--content">
-					{% if page.image %}<img src="{{ page.image | prepend: '/assets/images/' }}">{% endif %}
+					{% if page.image %}<img class="post-image" src="{{ page.image | prepend: '/assets/images/' }}">{% endif %}
 					<h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 					{{ page.excerpt | markdownify }}
 				</section>
