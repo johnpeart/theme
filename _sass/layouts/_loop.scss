@@ -57,13 +57,14 @@ body#loop {
 					text-decoration: none;
 				}
 				&:hover {
-					color: var(--cyan, colour("cyan"));
+					color: var(--link-hoverColor, colour("cyan"));
 					text-decoration: 	underline;
 				}
 				&:focus {
-					color: var(--color, colour("white"));
+					color: var(--link-focusColor, colour("white"));
 				}
 				&:active {
+					color: var(--link-hoverColor, colour("cyan"));
 					text-decoration: 	underline;
 				}
 			}
