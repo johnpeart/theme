@@ -188,11 +188,11 @@ li.conversation--item {
         grid-template-areas: "msg";
         grid-template-columns: 1fr;
     }
-    .conversation--item--content {
+    .conversation--item--interaction--content {
         max-width: 100%;
         text-align: center;
     }
-    .conversation--item--content p {
+    .conversation--item--interaction--content p {
         @include typography($small, "default");
         color: var(--webmention-authorColor, colour("gray-600"));
     }
@@ -226,7 +226,7 @@ li.conversation--item {
 }
 
 .conversation--item a,
-.stream-item a {
+.stream--item a {
     &:link {
         text-decoration: underline;
     }
@@ -249,7 +249,7 @@ li.conversation--item {
 }
 
 .conversation--item--author a,
-.conversation--item--content a {
+.conversation--item--interaction--content a {
     &:link {
         color: var(--webmention-authorColor, colour("gray-600"));
         text-decoration: none;
