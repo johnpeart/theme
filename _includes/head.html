@@ -5,7 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title>{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ site.title | strip_html | strip_newlines | truncate: 200 }}{% endif %}</title>
+	<title>
+		{%- if page.collection == "reply" %}
+			{{ page.content | strip_html | truncate: 100 }}
+		{%- elsif page.title -%}
+			{{ page.title | strip_html | strip_newlines | truncate: 200 }}
+		{%- else -%}
+			{{ site.title | strip_html | strip_newlines | truncate: 200 }}
+		{%- endif -%}
+	</title>
 
 	<!-- Short description of the page (limit to 150 characters) -->
 	<!-- In *some* situations this description is used as a part of the snippet shown in the search results. -->
