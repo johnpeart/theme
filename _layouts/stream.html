@@ -10,6 +10,7 @@ layout: default
 
 		{% if paginator.page < 2 %}
 		{{ page.content | markdownify }}
+		<hr>
 		{% endif %}
 
 		{% for page in paginator.posts %}
