@@ -10,7 +10,9 @@ layout: default
 			{% if page.collection == "posts" %}
 			<article class="h-entry stream--item stream--item--blogpost">
 				<aside class="stream--item--author">
-					<span class="author--name">On <time datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, I <a href="{{ page.url }}">wrote a blogpost</a></span>
+					{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
+					<span class="p-name author--name"><a rel="author" class="p-author u-uid" href="{{ site.url }}">John Peart</a></span>
+					<a href="{{ page.url }}" class="u-url">wrote a blogpost</a></span>
 				</aside>
 				<section class="e-content stream--item--content">
 					{% if page.image %}<img src="{{ page.image | prepend: '/assets/images/' }}">{% endif %}
@@ -26,13 +28,13 @@ layout: default
 			</article>
 			{% else %}
 			<article class="h-entry stream--item stream--item--{{ page.collection }}">
-				<aside class="stream--item--author p-author">
-					<span class="author--name">On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>,
-						{% if page.collection == "polaroid" -%}<a href="{{ page.url }}">I posted a photo</a>
-						{% elsif page.collection == "note" -%}<a href="{{ page.url }}">I wrote a note</a>
-						{% elsif page.collection == "list" -%}<a href="{{ page.url }}">I wrote a list</a>
-						{% else -%}<a href="{{ page.url }}">I posted</a>{%- endif -%}
-					</span>
+				<aside class="stream--item--author h-card p-author">
+					{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
+					<span class="p-name author--name"><a rel="author" class="p-author u-uid" href="{{ site.url }}">John Peart</a></span>
+					{% if page.collection == "polaroid" -%}<a href="{{ page.url }}" class="u-url">posted a photo</a>
+					{% elsif page.collection == "note" -%}<a href="{{ page.url }}" class="u-url">wrote a note</a>
+					{% elsif page.collection == "list" -%}<a href="{{ page.url }}" class="u-url">wrote a list</a>
+					{% else -%}<a href="{{ page.url }}" class="u-url">posted</a>{%- endif -%}
 				</aside>
 				<section class="e-content stream--item--content stream--item--{{ page.collection }}--content">
 					{% include {{ page.collection | append: '.html' }} %}
