@@ -39,8 +39,11 @@ a {
 			color: var(--link-secondary-color, colour("gray-600"));
 			text-decoration: 	underline;
 		}
+		&:hover:focus {
+			text-decoration: underline;
+		}
 		&:focus {
-			color: var(--link-focusColor, colour("white"));
+			color: var(--link-, colour("white"));
 			background: var(--link-focusBackground, colour("cyan"));
 			outline: 2px solid var(--link-outlineColor, colour("cyan"));
 		}

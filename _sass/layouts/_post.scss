@@ -8,6 +8,22 @@ body[id$='post'] {
 		font-weight: bold;
 	}
 
+	header.post-title aside {
+		display: inline-block;
+		padding: 90px 0 15px 0;
+		@include tablet {
+			padding: 90px 0 15px 0;
+		}
+		@include desktop {
+			padding: 150px 0 45px 0;
+		}
+		// "padding": (
+		// 	"mobile": 90px  0 15px 0,
+		// 	"tablet": 120px 0 30px 0,
+		// 	"desktop": 150px 0 45px 0
+		// )
+	}
+
 	section.post-body ul > li::before {
 		position: absolute;
 		content: "\2014";
