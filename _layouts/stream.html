@@ -6,9 +6,8 @@ layout: default
 
 	<section id="page-content">
 
-		<h1 class="page-title">{{ page.title | smartify }}</h1>
-
-		{% if paginator.page < 2 %}
+		{% if paginator.page == 1 %}
+		<h1 class="page-title">Stream</h1>
 		{{ page.content | markdownify }}
 		<hr>
 		{% endif %}
