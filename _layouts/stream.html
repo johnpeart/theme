@@ -6,6 +6,12 @@ layout: default
 
 	<section id="page-content">
 
+		<h1 class="page-title">{{ page.title | smartify }}</h1>
+
+		{% if paginator.page < 2 %}
+		{{ page.content | markdownify }}
+		{% endif %}
+
 		{% for page in paginator.posts %}
 			{% if page.collection == "posts" %}
 			<article class="h-entry stream--item stream--item--blogpost">
