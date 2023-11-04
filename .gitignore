@@ -20,9 +20,12 @@ Gemfile.lock
 *_note
 *_list
 *_polaroid
+*_reply
 404.html
 465.html
 *_data
+/_includes/templates
 /assets/images/guides
+/assets/images/social
 /assets/images/posts
 /assets/images/photos
