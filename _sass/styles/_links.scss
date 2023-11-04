@@ -48,13 +48,13 @@ a {
 
 	&.no-underline {
 		&:link {
-			text-decoration: none;
+			text-decoration: none !important;
 		}
 		&:visited {
-			text-decoration: none;
+			text-decoration: none !important;
 		}
 		&:hover {
-			text-decoration: 	underline;
+			text-decoration: 	underline !important;
 		}
 		&:focus {
 			color: var(--link-focusColor, colour("white"));

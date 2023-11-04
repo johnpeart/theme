@@ -1,16 +1,32 @@
-<aside class="stream--item--quoted--author p-author h-card">
-	<span class="author--name">On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, <a href="{{ page.reply_to.author-url }}" class="p-author">{{ page.reply_to.author }}</a> <a href="{{ page.reply_to.post-url }}">wrote</a></span>
-</aside>
-<section class="stream--item--quote conversation--item--reply from-them">
-	<blockquote class="stream--item--quote--content conversation--item--content">
-		{{ page.reply_to.content | default: "Original content" | markdownify }}
-	</blockquote>
+<section class="h-cite u-in-reply-to quote">
+	<aside class="stream--item--quoted--author">
+		{% if page.reply_to.post.date %}On <time class="dt-published" datetime="{{ page.reply_to.post.date | date: '%FT%T%:z' }}">{{ page.reply_to.post.date | date: '%d %B %Y' }}</time>, {% endif %}
+		<a href="{{ page.reply_to.author.url }}" class="h-card p-author p-name">{{ page.reply_to.author.name }}</a>
+		{% if page.reply_to.original.url %}
+			<a href="{{ page.reply_to.post.url }}" class="u-url">replied</a> to <a href="{{ page.reply_to.original.url }}">{% if page.reply_to.original.title %}<br>“{{ page.reply_to.original.title }}”{% else %}this post{% endif %}</a>
+		{% else %}
+			<a href="{{ page.reply_to.post.url }}" class="u-url">wrote</a>
+		{% endif %}
+	</aside>
+	<section class="stream--item--quote conversation--item--reply from-them">
+		<blockquote class="stream--item--quote--content conversation--item--content h-cite">
+			{{ page.reply_to.post.content | markdownify }}
+		</blockquote>
+	</section>
+	<aside class="stream--item--quoted--author">
+
+	</aside>
 </section>
-<aside class="stream--item--author p-author">
-	<span class="author--name">On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, <a rel="author" class="p-author p-name u-uid" href="{{ site.url }}"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a> <a href="{{ page.url }}">replied</a></span>
-</aside>
-<section class="stream--item--reply conversation--item--reply from-me">
-	<section class="e-content stream--item--reply--content conversation--item--content">
-		{{ page.content }}
+
+<section class="reply">
+	<aside class="stream--item--reply--author p-author">
+		{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
+		<a href="{{ site.url }}" class="h-card p-author p-name u-url"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a>
+		<a href="{{ page.url }}" class="u-url">replied</a>
+	</aside>
+	<section class="stream--item--reply conversation--item--reply from-me">
+		<section class="e-content stream--item--reply--content conversation--item--content">
+			{{ page.content }}
+		</section>
 	</section>
 </section>
