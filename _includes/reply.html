@@ -1,7 +1,7 @@
 <section class="u-in-reply-to h-cite quote">
 	<aside class="stream--item--quoted--author">
 		{% if page.reply_to.post.date %}On <time class="dt-published" datetime="{{ page.reply_to.post.date | date: '%FT%T%:z' }}">{{ page.reply_to.post.date | date: '%d %B %Y' }}</time>, {% endif %}
-		<a href="{{ page.reply_to.author.url }}" class="h-card p-author p-name">{{ page.reply_to.author.name }}</a>
+		<a href="{{ page.reply_to.author.url }}">{{ page.reply_to.author.name }}</a>
 		{% if page.reply_to.original.url %}
 			<a href="{{ page.reply_to.post.url }}" class="u-url">replied</a> to <a href="{{ page.reply_to.original.url }}" class="u-url">{% if page.reply_to.original.title %}<br>“{{ page.reply_to.original.title }}”{% else %}this post{% endif %}</a>
 		{% else %}
