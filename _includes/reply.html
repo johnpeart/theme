@@ -19,9 +19,10 @@
 </section>
 
 <section class="reply">
-	<aside class="stream--item--reply--author p-author">
+	<aside class="stream--item--reply--author h-card p-author">
 		{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
-		<a href="{{ page.url }}" class="u-url">I replied</a>
+		<span class="p-name author--name"><a rel="author" class="p-author u-url u-uid" href="{{ site.url }}">John Peart</a></span>
+		<a href="{{ page.url }}" class="u-url">replied</a>
 	</aside>
 	<section class="stream--item--reply conversation--item--reply from-me">
 		<section class="e-content stream--item--reply--content conversation--item--content">
