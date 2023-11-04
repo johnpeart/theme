@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body id="{{ page.layout | slugify }}" class="{% for category in page.categories %}theme-{{ category }}{% endfor %}{% if jekyll.environment == 'development' %} debug{% endif %}">
+  <body id="{{ page.layout | slugify }}" class="{% for category in page.categories %}theme-{{ category | downcase }} {% endfor %}{% if jekyll.environment == 'development' %} debug{% endif %}">
 
   	{% include skiplink.html %}
     {% include header.html %}

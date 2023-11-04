@@ -119,3 +119,14 @@ body[id$='post'] {
 	}
 
 }
+
+.polaroid-post .polaroid-post--content,
+.list-post .list-post--content,
+.note-post .note-post--content {
+	display: block;
+	padding: $container-padding;
+	@include tablet-up {
+		padding: $container-padding * 4;
+	}
+	background: var(--background, colour("white"));
+}

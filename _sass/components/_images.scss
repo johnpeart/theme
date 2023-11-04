@@ -8,11 +8,13 @@ figure {
 	max-width: 100%;
 	margin-right: 0;
 	margin-left: 0;
+	margin-bottom: $container-padding * 2;
 	@include tablet {
 		width: containers("tablet") + 100px;
 		max-width: unset;
 		margin-right: -50px;
 		margin-left: -50px;
+		margin-bottom: $container-padding * 4;
 	}
 	@include desktop {
 		margin-bottom: 30px;
@@ -20,6 +22,7 @@ figure {
 		max-width: unset;
 		margin-right: -115px;
 		margin-left: -115px;
+		margin-bottom: $container-padding * 4;
 	}
 	figcaption {
 		padding: $container-padding;
@@ -68,7 +71,34 @@ figure {
 
 }
 
-p > img,
+p > img {
+	display: block;
+	position: relative;
+
+	width: 100%;
+	max-width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+	left: 0;
+	right: 0;
+	@include tablet {
+		width: containers("tablet") + 100px;
+		max-width: unset;
+		margin: $container-padding $container-padding - 50px;
+	}
+	@include desktop {
+		margin-bottom: 30px;
+		width: containers("desktop") + 200px;
+		max-width: unset;
+		margin: $container-padding $container-padding - 115px;
+	}
+
+	&.rounded {
+		border-radius: $border-radius;
+		box-shadow: shadow(2);
+	}
+}
+
 svg.hero-image {
 	display: block;
 	position: relative;
@@ -82,18 +112,13 @@ svg.hero-image {
 	@include tablet {
 		width: containers("tablet") + 100px;
 		max-width: unset;
-		margin: $container-padding -50px;
+		margin: $container-padding $container-padding - 50px $container-padding * 3;
 	}
 	@include desktop {
 		margin-bottom: 30px;
 		width: containers("desktop") + 200px;
 		max-width: unset;
-		margin: $container-padding -115px;
-	}
-
-	&.rounded {
-		border-radius: $border-radius;
-		box-shadow: shadow(2);
+		margin: $container-padding $container-padding - 115px $container-padding * 3;
 	}
 }
 
@@ -115,4 +140,8 @@ img.app-icon {
 			border-radius: $border-radius;
 		}
 	}
+}
+
+.stream-post--content img {
+	border-radius: $border-radius $border-radius 0 0;
 }

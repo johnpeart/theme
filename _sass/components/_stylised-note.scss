@@ -15,7 +15,6 @@
 		width: 450px;
 		height: 300px;
 		padding: $container-padding * 1.5;
-		margin: $container-padding * 4 auto;
 		border-top: 72px solid;
 	}
 
@@ -23,7 +22,6 @@
 		width: 638px;
 		height: 425px;
 		padding: $container-padding * 2;
-		margin: $container-padding * 4 auto;
 		border-top: 102px solid;
 	}
 
@@ -154,4 +152,10 @@
 		line-height: 1.1;
 	}
 
+}
+
+.note-post .post-it {
+	@include tablet-up {
+		margin: $container-padding * 4 auto;
+	}
 }

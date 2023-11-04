@@ -47,3 +47,9 @@ blockquote.lyric {
 		font-style: italic;
 	}
 }
+
+.stream-post--reply--quote blockquote {
+	background: unset;
+	padding: 0;
+	width: unset;
+}

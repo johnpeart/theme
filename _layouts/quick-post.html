@@ -3,7 +3,7 @@ layout: default
 ---
 
 <main id="content" class="container">
-	<article class="social h-entry">
+	<article class="{{ page.collection }}-post h-entry">
 		<section class="e-content">
 		{% include {{ page.collection | append: '.html' }} %}
 		{% if page.content.size > 0 %}

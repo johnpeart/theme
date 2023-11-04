@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<main id="content" class="container">
+
+	<article id="post-content" class="h-entry conversation-item stream--item stream--item--reply">
+
+		<aside class="stream--item--quoted--author p-author h-card">
+			<span class="author--name">On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, <a href="{{ page.reply_to.author-url }}" class="p-author">{{ page.reply_to.author }}</a> <a href="{{ page.reply_to.post-url }}">wrote</a></span>
+		</aside>
+		<section class="stream--item--quote conversation--item--reply from-them">
+			<blockquote class="stream--item--quote--content conversation--item--content">
+				{{ page.reply_to.content | default: "Original content" | markdownify }}
+			</blockquote>
+		</section>
+
+		<aside class="stream--item--author p-author">
+			<span class="author--name">On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, <a rel="author" class="p-author p-name u-uid" href="{{ site.url }}"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a> <a href="{{ page.url }}">replied</a></span>
+		</aside>
+		<section class="stream--item--reply conversation--item--reply from-me">
+			<section class="e-content stream--item--reply--content conversation--item--content">
+				{{ content }}
+			</section>
+		</section>
+
+		{% include webmentions.html type="stream" %}
+		{% include footer.html type="post" %}
+
+	</article>
+
+</main>
+
+

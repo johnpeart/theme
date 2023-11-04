@@ -1,10 +1,13 @@
-<footer id="webmentions">
-
-	{% if paginator %}
-	  {% webmention_count page.url likes %}
-	  {% webmention_count page.url reposts %}
+<footer class="webmentions stream--item--interactions">
+	{% if include.type == "stream" %}
+		<aside class="stream--item--interactions--count webmention webmention--count">
+			{% webmention_count page.url replies %}
+			{% webmention_count page.url reposts %}
+			{% webmention_count page.url likes %}
+			{% webmention_count page.url bookmarks %}
+		</aside>
+		{% webmention_replies page.url %}
 	{% else %}
-	  {% webmentions page.url posts replies likes reposts %}
+		{% webmentions page.url posts replies likes reposts %}
 	{% endif %}
-
 </footer>

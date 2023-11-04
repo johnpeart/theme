@@ -4,17 +4,46 @@ layout: default
 
 <main id="content" class="container">
 
-	{% for page in paginator.posts %}
+	<section id="page-content">
 
-	<article class="social h-entry">
-		<section class="e-content">
-		{% include {{ page.collection | append: '.html' }} %}
-		</section>
-		{% include footer.html type="stream" %}
-	</article>
+		{% for page in paginator.posts %}
+			{% if page.collection == "posts" %}
+			<article class="h-entry stream--item stream--item--blogpost">
+				<aside class="stream--item--author p-author">
+					<span class="author--name">On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, <a rel="author" class="p-author p-name u-uid" href="{{ site.url }}"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a> wrote a <a href="{{ page.url }}">blogpost</a></span>
+				</aside>
+				<section class="e-content stream--item--content">
+					{% if page.image %}<img src="{{ page.image | prepend: '/assets/images/' }}">{% endif %}
+					<h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+					{{ page.excerpt | markdownify }}
+				</section>
+				{% include webmentions.html type="stream" %}
+			</article>
+			{% elsif page.collection == "reply" %}
+			<article class="h-entry stream--item conversation-item stream--item--reply">
+				{% include {{ page.collection | append: '.html' }} %}
+				{% include webmentions.html type="stream" %}
+			</article>
+			{% else %}
+			<article class="h-entry stream--item stream--item--{{ page.collection }}">
+				<aside class="stream--item--author p-author">
+					<span class="author--name">On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, <a rel="author" class="p-author p-name u-uid" href="{{ site.url }}"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a>
+						{% if page.collection == "polaroid" -%}posted a <a href="{{ page.url }}">photo</a>
+						{% elsif page.collection == "note" -%}wrote a <a href="{{ page.url }}">note</a>
+						{% elsif page.collection == "list" -%}wrote a <a href="{{ page.url }}">list</a>
+						{% else -%}<a href="{{ page.url }}">posted</a>{%- endif -%}
+					</span>
+				</aside>
+				<section class="e-content stream--item--content stream--item--{{ page.collection }}--content">
+					{% include {{ page.collection | append: '.html' }} %}
+				</section>
+				{% include webmentions.html type="stream" %}
+			</article>
+			{% endif %}
+		{% endfor %}
 
-	{% endfor %}
+		{% include pagination.html %}
 
-	{% include pagination.html %}
+	</section>
 
 </main>

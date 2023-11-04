@@ -1,6 +1,6 @@
-<div class="quickpost">
+<div class="{{ page.collection }}-post--content">
 	<header class="polaroid">
 		<img src="{{ site.url | append: site.baseurl | append: '/assets/images' | append: page.image }}" loading="lazy">
-		<h1 class="polaroid--title p-name">{{ page.title }}</h1>
+		<h1 class="polaroid--title p-name"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 	</header>
 </div>
