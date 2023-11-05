@@ -32,8 +32,8 @@ layout: default
 			</article>
 			{% elsif page.collection == "reply" %}
 			<article class="h-entry stream--item conversation-item stream--item--reply">
-				{% include {{ page.collection | append: '.html' }} %}
-				{% include webmentions.html type="stream" %}
+				{% include cite.html %}
+				{% include reply.html %}
 			</article>
 			{% else %}
 			<article class="h-entry stream--item stream--item--{{ page.collection }}">
