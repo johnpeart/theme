@@ -1,254 +1,254 @@
 header#site-header {
-	display: block;
-	z-index: 999999;
-	@include supports-sticky() {
-		margin: $container-padding auto;
-		top: $container-padding;
-	}
+    display: block;
+    z-index: 999999;
+    @include supports-sticky() {
+        margin: $container-padding auto;
+        top: $container-padding;
+    }
 
 }
 header#site-header nav#header--site-nav {
 
-	@include glass(20px, 2, true);
-	@include typography($p, "default");
-	text-align: center;
-	line-height: 1 !important;
-	padding: $container-padding !important;
-	font-weight: 900 !important;
-	@include clearfix();
+    @include glass(20px, 2, true);
+    @include typography($p, "default");
+    text-align: center;
+    line-height: 1 !important;
+    padding: $container-padding !important;
+    font-weight: 900 !important;
+    @include clearfix();
 
-	p#header--wordmark {
-		position: relative;
-		display: inline-block;
-		z-index: 10000;
+    p#header--wordmark {
+        position: relative;
+        display: inline-block;
+        z-index: 10000;
 
-		float: left;
+        float: left;
 
-		font-size: 26px;
-		@include tablet {
-			font-size: 28px;
-		}
-		@include desktop {
-			font-size: 30px;
-		}
-		padding: 0;
+        font-size: 26px;
+        @include tablet {
+            font-size: 28px;
+        }
+        @include desktop {
+            font-size: 30px;
+        }
+        padding: 0;
 
 
-		a.header--wordmark-link {
-			display: inline-block;
-			font-weight: 	bold;
+        a.header--wordmark-link {
+            display: inline-block;
+            font-weight:     bold;
 
-			&:link {
-				color: var(--link-color, colour("black"));
-				text-decoration: none;
-			}
-			&:visited {
-				color: var(--link-color, colour("black"));
-			}
-			&:hover {
-				color: var(--link-hoverColor, colour("cyan"));
-				text-decoration: 	underline;
-			}
-			&:focus {
-				color: var(--link-focusColor, colour("white"));
-				background: var(--link-focusBackground, colour("cyan"));
-				outline: 2px solid;
-				outline-color: var(--link-outlineColor, colour("cyan"));
-			}
-			&:active {
-				text-decoration: 	underline;
-			}
-		}
-	}
+            &:link {
+                color: var(--link-color, colour("black"));
+                text-decoration: none;
+            }
+            &:visited {
+                color: var(--link-color, colour("black"));
+            }
+            &:hover {
+                color: var(--link-hoverColor, colour("cyan"));
+                text-decoration:     underline;
+            }
+            &:focus {
+                color: var(--link-focusColor, colour("white"));
+                background: var(--link-focusBackground, colour("cyan"));
+                outline: 2px solid;
+                outline-color: var(--link-outlineColor, colour("cyan"));
+            }
+            &:active {
+                text-decoration:     underline;
+            }
+        }
+    }
 
-	details#header-menu-button--details {
+    details#header-menu-button--details {
 
-		display: inline;
-		position: relative;
-		width: auto;
-		margin: 0;
-		padding: 0;
-		float: right;
+        display: inline;
+        position: relative;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        float: right;
 
-		@include clearfix();
+        @include clearfix();
 
-		&[open] > summary::-webkit-details-marker,
-		&[open] > summary::marker {
-			display: none;
-			list-style-image: none;
-			content: '';
-		}
+        &[open] > summary::-webkit-details-marker,
+        &[open] > summary::marker {
+            display: none;
+            list-style-image: none;
+            content: '';
+        }
 
-		&[open] > summary:before {
-			content: '';
-		}
+        &[open] > summary:before {
+            content: '';
+        }
 
-	}
+    }
 
-	summary#header-menu-button--summary {
+    summary#header-menu-button--summary {
 
-		display: block;
-		position: relative;
-		text-align: left;
-		box-sizing: border-box;
-		margin: 0;
-		right: 0;
-		border: none;
-		border-radius: 10px;
-		border: 0;
-		background: none;
-		box-shadow: none;
-		padding: 4px;
-		width: 27px;
-		height: 27px;
-		@include tablet {
-			padding: 4px;
-			width: 30px;
-			height: 30px;
-		}
-		@include desktop {
-			padding: 0 7px;
-			width: 36px;
-			height: 36px;
-		}
+        display: block;
+        position: relative;
+        text-align: left;
+        box-sizing: border-box;
+        margin: 0;
+        right: 0;
+        border: none;
+        border-radius: 10px;
+        border: 0;
+        background: none;
+        box-shadow: none;
+        padding: 4px;
+        width: 27px;
+        height: 27px;
+        @include tablet {
+            padding: 4px;
+            width: 30px;
+            height: 30px;
+        }
+        @include desktop {
+            padding: 0 7px;
+            width: 36px;
+            height: 36px;
+        }
 
-		@include clearfix();
-		&:before {
-			display: none;
-		}
-		margin: 0 !important;
-		border-radius: $border-radius;
-		@include clearfix;
+        @include clearfix();
+        &:before {
+            display: none;
+        }
+        margin: 0 !important;
+        border-radius: $border-radius;
+        @include clearfix;
 
-	}
+    }
 
-	ul#header-menu-items {
-		display: block;
-		position: absolute;
-		z-index: 100;
-		right: -($container-padding);
-		box-sizing: border-box;
-		padding: $container-padding;
-		list-style: none;
-		text-align: center;
-		max-height: 80vh;
-		overflow-y: scroll;
-		@include glass(20px, 2);
-		margin: $container-padding * 2 0 $container-padding;
+    ul#header-menu-items {
+        display: block;
+        position: absolute;
+        z-index: 100;
+        right: -($container-padding);
+        box-sizing: border-box;
+        padding: $container-padding;
+        list-style: none;
+        text-align: center;
+        max-height: 80vh;
+        overflow-y: scroll;
+        @include glass(20px, 2);
+        margin: $container-padding * 2 0 $container-padding;
 
-		min-width: 30vw;
-		width: 100%;
-		max-width: 100%;
-		min-width: calc(100vw - (#{$container-padding} * 2));
-		@include tablet-up {
-			min-width: 400px;
-			max-width: breakpoints("tablet");
-		}
-	}
+        min-width: 30vw;
+        width: 100%;
+        max-width: 100%;
+        min-width: calc(100vw - (#{$container-padding} * 2));
+        @include tablet-up {
+            min-width: 400px;
+            max-width: breakpoints("tablet");
+        }
+    }
 
-	li.header-link {
-		display: block;
-		position: relative;
+    li.header-link {
+        display: block;
+        position: relative;
 
-		width: 100%;
-		height: auto;
+        width: 100%;
+        height: auto;
 
-		box-sizing: border-box;
-		margin-bottom: $container-padding;
+        box-sizing: border-box;
+        margin-bottom: $container-padding;
 
-		&:last-child {
-			margin: 0;
-		}
-	}
+        &:last-child {
+            margin: 0;
+        }
+    }
 
-	li.header-link a {
+    li.header-link a {
 
-		&:link {
-			text-align: center;
-			border: none;
-			padding: $container-padding !important;
-			outline-offset: form("outline-offset");
-			margin: 0 !important;
+        &:link {
+            text-align: center;
+            border: none;
+            padding: $container-padding !important;
+            outline-offset: form("outline-offset");
+            margin: 0 !important;
 
-			display: block;
-			width: 100%;
-			border-radius: 10px;
-			text-decoration: none;
-		}
+            display: block;
+            width: 100%;
+            border-radius: 10px;
+            text-decoration: none;
+        }
 
-		&:hover {
-			background: var(--dropdownButton-hoverBackground, colour("cyan"));
-			color: var(--dropdownButton-hoverColor, colour("white"));
-		}
+        &:hover {
+            background: var(--dropdownButton-hoverBackground, colour("cyan"));
+            color: var(--dropdownButton-hoverColor, colour("white"));
+        }
 
-		&:focus {
-			color: var(--dropdownButton-focusColor, colour("cyan"));
-			background: transparent;
-			outline: form("border-width") solid var(--details--outlineColor, colour("cyan"));
-		}
+        &:focus {
+            color: var(--dropdownButton-focusColor, colour("cyan"));
+            background: transparent;
+            outline: form("border-width") solid var(--details--outlineColor, colour("cyan"));
+        }
 
-		&:hover:focus {
-			background: var(--dropdownButton-hoverBackground, colour("cyan"));
-			color: var(--dropdownButton-hoverColor, colour("white"));
-		}
+        &:hover:focus {
+            background: var(--dropdownButton-hoverBackground, colour("cyan"));
+            color: var(--dropdownButton-hoverColor, colour("white"));
+        }
 
-		&:active {
-			background: var(--dropdownButton-hoverBackground, colour("cyan"));
-			color: var(--dropdownButton-hoverColor, colour("white"));
-		}
+        &:active {
+            background: var(--dropdownButton-hoverBackground, colour("cyan"));
+            color: var(--dropdownButton-hoverColor, colour("white"));
+        }
 
-		&:disabled,
-		&:disabled:focus, &:disabled:hover, &:disabled:active {
-			background: var(--dropdownButton-disabledBackground, colour("gray-200"));
-			color: var(--dropdownButton-disabledColor, colour("gray-700"));
-			text-align: center;
-			cursor: unset;
-			outline: none;
-		}
-	}
+        &:disabled,
+        &:disabled:focus, &:disabled:hover, &:disabled:active {
+            background: var(--dropdownButton-disabledBackground, colour("gray-200"));
+            color: var(--dropdownButton-disabledColor, colour("gray-700"));
+            text-align: center;
+            cursor: unset;
+            outline: none;
+        }
+    }
 
-	svg {
-		position: relative;
-		display: inline-block;
-		width: 19px;
-		@include tablet {
-			width: 20px;
-		}
-		@include desktop {
-			width: 22px;
-		}
-	}
+    svg {
+        position: relative;
+        display: inline-block;
+        width: 19px;
+        @include tablet {
+            width: 20px;
+        }
+        @include desktop {
+            width: 22px;
+        }
+    }
 
-	details summary svg {
-		transform: rotate(0deg);
-		transform-origin: center;
-		transition: 0.2s all;
-	}
+    details summary svg {
+        transform: rotate(0deg);
+        transform-origin: center;
+        transition: 0.2s all;
+    }
 
-	details[open] summary svg {
-		transform: rotate(45deg);
-		transform-origin: center;
-		transition: 0.2s all;
-	}
+    details[open] summary svg {
+        transform: rotate(45deg);
+        transform-origin: center;
+        transition: 0.2s all;
+    }
 
-	details:active svg path#menuicon {
-		color: var(--cyan, colour("cyan"));
-	}
+    details:active svg path#menuicon {
+        color: var(--cyan, colour("cyan"));
+    }
 
-	summary svg path#menuicon {
-		fill: var(--color, colour("black"));
-	}
+    summary svg path#menuicon {
+        fill: var(--color, colour("black"));
+    }
 
-	summary:hover svg path#menuicon {
-		fill: var(--cyan, colour("cyan"));
-	}
+    summary:hover svg path#menuicon {
+        fill: var(--cyan, colour("cyan"));
+    }
 
-	summary:focus {
-		outline: none;
-	}
+    summary:focus {
+        outline: none;
+    }
 
-	summary:focus svg path#menuicon {
-		fill: var(--cyan, colour("cyan"));
-	}
+    summary:focus svg path#menuicon {
+        fill: var(--cyan, colour("cyan"));
+    }
 
 }

@@ -1,51 +1,51 @@
 select {
 
-	background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 95% 50%;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	appearance: none;
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 95% 50%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
 
-	@include typography($p);
+    @include typography($p);
 
-	width: 100%;
-	min-height: form("input-size");
-	padding: form("input-padding") !important;
-	margin-bottom: $container-padding * 2;
+    width: 100%;
+    min-height: form("input-size");
+    padding: form("input-padding") !important;
+    margin-bottom: $container-padding * 2;
 
-	border-radius: form("border-radius");
-	border: form("border-width") solid;
+    border-radius: form("border-radius");
+    border: form("border-width") solid;
 
-	background-color: var(--background, colour("white"));
-	color: var(--color, colour("black"));
-	border-color: var(--color, colour("black"));
+    background-color: var(--background, colour("white"));
+    color: var(--color, colour("black"));
+    border-color: var(--color, colour("black"));
 
-	background-image: url("data:image/svg+xml,%3Csvg fill='%23009FE3' height='40' viewBox='0 0 24 24' width='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-	background-repeat: no-repeat;
-	background-position-x: 100%;
-	background-position-y: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg fill='%23009FE3' height='40' viewBox='0 0 24 24' width='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 50%;
 
-	&:hover {
-		outline: form("border-width") solid var(--cyan, colour("cyan"));
-		outline-offset: 0px;
-		border: form("border-width") solid;
-	}
+    &:hover {
+        outline: form("border-width") solid var(--cyan, colour("cyan"));
+        outline-offset: 0px;
+        border: form("border-width") solid;
+    }
 
-	&:focus {
-		outline: form("border-width") solid var(--form--focusBorderColor, colour("cyan"));
-		outline-offset: 3px;
-		border: form("border-width") solid var(--form--focusBackground, colour("black"));
-	}
+    &:focus {
+        outline: form("border-width") solid var(--form--focusBorderColor, colour("cyan"));
+        outline-offset: 3px;
+        border: form("border-width") solid var(--form--focusBackground, colour("black"));
+    }
 
-	&:disabled {
-		opacity: 0.5;
-		color: inherit;
-		cursor: not-allowed;
-	}
+    &:disabled {
+        opacity: 0.5;
+        color: inherit;
+        cursor: not-allowed;
+    }
 
-	select option:active,
-	select option:checked,
-	select:focus::-ms-value {
-		color: var(--form--activeColor, colour("white"));
-		background-color: var(--form--activeBackground, colour("blue"));
-	}
+    select option:active,
+    select option:checked,
+    select:focus::-ms-value {
+        color: var(--form--activeColor, colour("white"));
+        background-color: var(--form--activeBackground, colour("blue"));
+    }
 }

@@ -1,148 +1,148 @@
 body[id$='post'] {
 
-	time.published-datetime {
-		@include typography($post-date);
-		display: block;
-		line-height: 1;
-		color: var(--secondary-color, colour("gray-600"));
-		font-weight: bold;
-	}
+    time.published-datetime {
+        @include typography($post-date);
+        display: block;
+        line-height: 1;
+        color: var(--secondary-color, colour("gray-600"));
+        font-weight: bold;
+    }
 
-	header.post-title aside {
-		display: inline-block;
-		padding: 90px 0 15px 0;
-		@include tablet {
-			padding: 90px 0 15px 0;
-		}
-		@include desktop {
-			padding: 150px 0 45px 0;
-		}
-		// "padding": (
-		// 	"mobile": 90px  0 15px 0,
-		// 	"tablet": 120px 0 30px 0,
-		// 	"desktop": 150px 0 45px 0
-		// )
-	}
+    header.post-title aside {
+        display: inline-block;
+        padding: 90px 0 15px 0;
+        @include tablet {
+            padding: 90px 0 15px 0;
+        }
+        @include desktop {
+            padding: 150px 0 45px 0;
+        }
+        // "padding": (
+        //     "mobile": 90px  0 15px 0,
+        //     "tablet": 120px 0 30px 0,
+        //     "desktop": 150px 0 45px 0
+        // )
+    }
 
-	section.post-body ul > li::before {
-		position: absolute;
-		content: "\2014";
+    section.post-body ul > li::before {
+        position: absolute;
+        content: "\2014";
 
-		left: 15px;
-		@include tablet {
-			left: -11px;
-		}
-		@include desktop {
-			left: -15px;
-		}
-	}
+        left: 15px;
+        @include tablet {
+            left: -11px;
+        }
+        @include desktop {
+            left: -15px;
+        }
+    }
 
-	div#esc-entries {
+    div#esc-entries {
 
-		&[data-show="all"] {
-			details {
-				display: block;
-			}
-		}
-		&[data-show="sf1"] {
-			details {
-				display: none;
-			}
-			details[data-semifinal="1"] {
-				display: block;
-			}
-		}
-		&[data-show="sf2"] {
-			details {
-				display: none;
-			}
-			details[data-semifinal="2"] {
-				display: block;
-			}
-		}
-		&[data-show="final"] {
-			details[data-final="true"] {
-				display: block;
-			}
-			details[data-final="false"] {
-				display: none;
-			}
-		}
+        &[data-show="all"] {
+            details {
+                display: block;
+            }
+        }
+        &[data-show="sf1"] {
+            details {
+                display: none;
+            }
+            details[data-semifinal="1"] {
+                display: block;
+            }
+        }
+        &[data-show="sf2"] {
+            details {
+                display: none;
+            }
+            details[data-semifinal="2"] {
+                display: block;
+            }
+        }
+        &[data-show="final"] {
+            details[data-final="true"] {
+                display: block;
+            }
+            details[data-final="false"] {
+                display: none;
+            }
+        }
 
-	}
+    }
 
-	div.twitter-tweet {
+    div.twitter-tweet {
 
-		margin-left: auto;
-		margin-right: auto;
+        margin-left: auto;
+        margin-right: auto;
 
-		-webkit-font-feature-settings: 	normal !important;
-		   -moz-font-feature-settings: 	normal !important;
-			   -o-font-feature-settings: 	normal !important;
-				font-feature-settings:	normal !important;
-		padding:0 0 $container-padding 0;
-	}
+        -webkit-font-feature-settings:     normal !important;
+           -moz-font-feature-settings:     normal !important;
+               -o-font-feature-settings:     normal !important;
+                font-feature-settings:    normal !important;
+        padding:0 0 $container-padding 0;
+    }
 
-	div.footnotes {
+    div.footnotes {
 
-		&:before {
-			display: block;
+        &:before {
+            display: block;
 
-			@include typography($h3);
+            @include typography($h3);
 
-			font-weight: 		bold;
-			font-style: 		normal;
-			text-align: 		left;
-			text-decoration: 	none;
-			text-transform: 	none;
+            font-weight:         bold;
+            font-style:         normal;
+            text-align:         left;
+            text-decoration:     none;
+            text-transform:     none;
 
-			content: "Footnotes";
+            content: "Footnotes";
 
-		}
+        }
 
-		padding-top: 45px;
-		max-width: 400px;
-		@include tablet {
-			padding-top: 60px;
-			max-width: 450px;
-		}
-		@include desktop {
-			padding-top: 120px;
-			max-width: 600px;
-		}
+        padding-top: 45px;
+        max-width: 400px;
+        @include tablet {
+            padding-top: 60px;
+            max-width: 450px;
+        }
+        @include desktop {
+            padding-top: 120px;
+            max-width: 600px;
+        }
 
-		ul, ol {
-			padding-left: 18px;
-			@include tablet-up {
-				padding-left: 0;
-			}
-		}
-		li, p {
-			@include typography($small);
-			line-height: 1.2;
-			margin-bottom: $container-padding;
-		}
-		a.reversefootnote {
-			text-decoration: none;
-		}
+        ul, ol {
+            padding-left: 18px;
+            @include tablet-up {
+                padding-left: 0;
+            }
+        }
+        li, p {
+            @include typography($small);
+            line-height: 1.2;
+            margin-bottom: $container-padding;
+        }
+        a.reversefootnote {
+            text-decoration: none;
+        }
 
-	}
+    }
 
-	iframe {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
+    iframe {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
 }
 
 .polaroid-post .polaroid-post--content,
 .list-post .list-post--content,
 .note-post .note-post--content {
-	display: block;
-	padding: $container-padding;
-	@include tablet-up {
-		padding: $container-padding * 4;
-	}
-	background: var(--background, colour("white"));
+    display: block;
+    padding: $container-padding;
+    @include tablet-up {
+        padding: $container-padding * 4;
+    }
+    background: var(--background, colour("white"));
 }

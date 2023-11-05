@@ -1,131 +1,131 @@
 nav.pagination {
 
-	position: relative;
-	display:        flex;
+    position: relative;
+    display:        flex;
 
-	width:          100%;
+    width:          100%;
 
-	@include mobile {
-		flex-direction: column;
-	}
+    @include mobile {
+        flex-direction: column;
+    }
 
-	margin-top: 30px;
+    margin-top: 30px;
 
-	@include clearfix;
+    @include clearfix;
 
-	span[class^="page--next-prev--"] {
+    span[class^="page--next-prev--"] {
 
-		@include typography($p, "default");
+        @include typography($p, "default");
 
-		display: block;
-		position: relative;
-		flex: 1;
+        display: block;
+        position: relative;
+        flex: 1;
 
-		padding: 0;
+        padding: 0;
 
-		text-align: center;
+        text-align: center;
 
-		margin: 15px 0 0 0;
+        margin: 15px 0 0 0;
 
-		&:last-child {
-			margin-bottom: 15px;
-		}
+        &:last-child {
+            margin-bottom: 15px;
+        }
 
-		@include tablet-up {
+        @include tablet-up {
 
-			margin: 30px 0;
+            margin: 30px 0;
 
-			width: 50%;
-			max-width: 50%;
+            width: 50%;
+            max-width: 50%;
 
-			&:first-child {
-				margin-right: 15px;
-			}
-			&:last-child {
-				margin-left: 15px;
-			}
-			&:only-child {
-				margin-left: 0;
-				margin-right: 0;
-			}
+            &:first-child {
+                margin-right: 15px;
+            }
+            &:last-child {
+                margin-left: 15px;
+            }
+            &:only-child {
+                margin-left: 0;
+                margin-right: 0;
+            }
 
-		}
+        }
 
-		@include clearfix;
-	}
+        @include clearfix;
+    }
 
-	span.page--next-prev--prev {
-		cursor: pointer;
-		@include tablet-up {
-			float:      left;
-		}
-	}
+    span.page--next-prev--prev {
+        cursor: pointer;
+        @include tablet-up {
+            float:      left;
+        }
+    }
 
-	span.page--next-prev--next {
-		cursor: pointer;
-		@include tablet-up {
-			float:      right;
-		}
-	}
+    span.page--next-prev--next {
+        cursor: pointer;
+        @include tablet-up {
+            float:      right;
+        }
+    }
 
-	span.page--next-prev--prev-blank {
-		background: none;
+    span.page--next-prev--prev-blank {
+        background: none;
 
-		&:hover {
-			background: none;
-		}
+        &:hover {
+            background: none;
+        }
 
-		@include mobile {
-			display: none;
-		}
-	}
+        @include mobile {
+            display: none;
+        }
+    }
 
-	span[class^="page--next-prev--"] a {
-		display: block;
+    span[class^="page--next-prev--"] a {
+        display: block;
 
-		padding: $container-padding;
-		transition: box-shadow 0.25s;
-		transition: background 0.25s;
-		color: var(--button-color, colour("black"));
-		background: var(--button-background, colour("white"));
-		font-weight: bold;
-		@include plastic(raised, 6px);
+        padding: $container-padding;
+        transition: box-shadow 0.25s;
+        transition: background 0.25s;
+        color: var(--button-color, colour("black"));
+        background: var(--button-background, colour("white"));
+        font-weight: bold;
+        @include plastic(raised, 6px);
 
-		@include plastic(raised, 5px);
-		transition: all 0.25s ease-out;
-		&:link {
-			text-decoration: none;
-		}
-		&:hover {
-			color: var(--button-hoverColor, colour("cyan"));
-			background: var(--button-hoverBackground, colour("gray-100"));
-			@include plastic(raised, 2px);
-			transition: background 0.25s;
-			transition: box-shadow 0.25s;
-		}
+        @include plastic(raised, 5px);
+        transition: all 0.25s ease-out;
+        &:link {
+            text-decoration: none;
+        }
+        &:hover {
+            color: var(--button-hoverColor, colour("cyan"));
+            background: var(--button-hoverBackground, colour("gray-100"));
+            @include plastic(raised, 2px);
+            transition: background 0.25s;
+            transition: box-shadow 0.25s;
+        }
 
-		&:focus {
-			background: var(--button-focusBackground, colour("gray-100"));
-			@include plastic(raised, 2px);
-			transition: background 0.25s;
-			transition: box-shadow 0.25s;
-		}
+        &:focus {
+            background: var(--button-focusBackground, colour("gray-100"));
+            @include plastic(raised, 2px);
+            transition: background 0.25s;
+            transition: box-shadow 0.25s;
+        }
 
-		&:hover:focus {
-			background: var(--button-hoverFocusBackground, colour("gray-200"));
-			@include plastic(raised, 2px);
-			transition: background 0.25s;
-			transition: box-shadow 0.25s;
-		}
+        &:hover:focus {
+            background: var(--button-hoverFocusBackground, colour("gray-200"));
+            @include plastic(raised, 2px);
+            transition: background 0.25s;
+            transition: box-shadow 0.25s;
+        }
 
-		&:active {
-			background: var(--button-activeBackground, colour("white"));
-			@include plastic(inset, 4px);
-			transition: background 0.25s;
-			transition: box-shadow 0.25s;
-			outline: none;
-		}
+        &:active {
+            background: var(--button-activeBackground, colour("white"));
+            @include plastic(inset, 4px);
+            transition: background 0.25s;
+            transition: box-shadow 0.25s;
+            outline: none;
+        }
 
-	}
+    }
 
 }

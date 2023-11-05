@@ -9,235 +9,235 @@ $sup-font-feature-settings: "ss02", "tnum", "liga", "zero", "kern", "frac";
 
 // <p>, <li>, etc.
 $p: (
-	"font-size": (
-		"mobile": 22px,
-		"tablet": 24px,
-		"desktop": 30px
-	),
-	"line-height": (
-		"mobile": 1.25,
-		"tablet": 1.25,
-		"desktop": 1.2
-	)
+    "font-size": (
+        "mobile": 22px,
+        "tablet": 24px,
+        "desktop": 30px
+    ),
+    "line-height": (
+        "mobile": 1.25,
+        "tablet": 1.25,
+        "desktop": 1.2
+    )
 );
 
 // <p>, <li>, etc.
 $small: (
-	"font-size": (
-		"mobile": 18px,
-		"tablet": 20px,
-		"desktop": 24px
-	)
+    "font-size": (
+        "mobile": 18px,
+        "tablet": 20px,
+        "desktop": 24px
+    )
 );
 
 
 // <p>, <li>, etc.
 $metadata: (
-	"font-size": (
-		"mobile": 20px,
-		"tablet": 22px,
-		"desktop": 22px
-	)
+    "font-size": (
+        "mobile": 20px,
+        "tablet": 22px,
+        "desktop": 22px
+    )
 );
 
 // <figcaption>, etc.
 $smaller: (
-	"font-size": (
-		"mobile": 16px,
-		"tablet": 16px,
-		"desktop": 20px
-	)
+    "font-size": (
+        "mobile": 16px,
+        "tablet": 16px,
+        "desktop": 20px
+    )
 );
 
 // <p class="lead">
 $lead: (
-	"font-size": (
-		"mobile": 26px,
-		"tablet": 32px,
-		"desktop": 43px
-	),
-	"line-height": (
-		"mobile": 1.25,
-		"tablet": 1.25,
-		"desktop": 1.2
-	)
+    "font-size": (
+        "mobile": 26px,
+        "tablet": 32px,
+        "desktop": 43px
+    ),
+    "line-height": (
+        "mobile": 1.25,
+        "tablet": 1.25,
+        "desktop": 1.2
+    )
 );
 
 // loop titles
 $large: (
-	"font-size": (
-		"mobile": 26px,
-		"tablet": 30px,
-		"desktop": 36px
-	),
-	"line-height": (
-		"mobile": 1.25,
-		"tablet": 1.25,
-		"desktop": 1.2
-	)
+    "font-size": (
+        "mobile": 26px,
+        "tablet": 30px,
+        "desktop": 36px
+    ),
+    "line-height": (
+        "mobile": 1.25,
+        "tablet": 1.25,
+        "desktop": 1.2
+    )
 );
 
 // <h1>
 $h1: (
-	"font-size": (
-		"mobile": 45px,
-		"tablet": 60px,
-		"desktop": 75px
-	),
-	"padding": (
-		"mobile": 0 0 45px,
-		"tablet": 0 0 60px,
-		"desktop": 0 0 75px
-	)
+    "font-size": (
+        "mobile": 45px,
+        "tablet": 60px,
+        "desktop": 75px
+    ),
+    "padding": (
+        "mobile": 0 0 45px,
+        "tablet": 0 0 60px,
+        "desktop": 0 0 75px
+    )
 );
 
 // <h1 class="display">
 $hello: (
-	"font-size": (
-		"mobile": 66px,
-		"tablet": 120px,
-		"desktop": 164px
-	),
-	"padding": (
-		"mobile": 90px 0 15px 0,
-		"tablet": 150px 0 15px 0,
-		"desktop": 240px 0 15px 0
-	)
+    "font-size": (
+        "mobile": 66px,
+        "tablet": 120px,
+        "desktop": 164px
+    ),
+    "padding": (
+        "mobile": 90px 0 15px 0,
+        "tablet": 150px 0 15px 0,
+        "desktop": 240px 0 15px 0
+    )
 );
 
 // <h1 class="page-title">
 $page-title: (
-	"font-size": (
-		"mobile": 66px,
-		"tablet": 80px,
-		"desktop": 120px
-	),
-	"padding": (
-		"mobile": 90px  0 15px 0,
-		"tablet": 120px 0 45px 0,
-		"desktop": 150px 0 45px 0
-	)
+    "font-size": (
+        "mobile": 66px,
+        "tablet": 80px,
+        "desktop": 120px
+    ),
+    "padding": (
+        "mobile": 90px  0 15px 0,
+        "tablet": 120px 0 45px 0,
+        "desktop": 150px 0 45px 0
+    )
 );
 
 // <h2>
 $h2: (
-	"font-size": (
-		"mobile": 27px,
-		"tablet": 32px,
-		"desktop": 40px
-	),
-	"padding": (
-		"mobile": 54px 0 27px,
-		"tablet": 64px 0 64px,
-		"desktop": 80px 0 40px
-	)
+    "font-size": (
+        "mobile": 27px,
+        "tablet": 32px,
+        "desktop": 40px
+    ),
+    "padding": (
+        "mobile": 54px 0 27px,
+        "tablet": 64px 0 64px,
+        "desktop": 80px 0 40px
+    )
 );
 
 // <h2 class="loop-header">
 $loop-header: (
-	"font-size": (
-		"mobile": 35px,
-		"tablet": 40px,
-		"desktop": 50px
-	),
-	"padding": (
-		"mobile": 27px 0,
-		"tablet": 47px 0 35px 0,
-		"desktop": 47px 0 35px 0
-	)
+    "font-size": (
+        "mobile": 35px,
+        "tablet": 40px,
+        "desktop": 50px
+    ),
+    "padding": (
+        "mobile": 27px 0,
+        "tablet": 47px 0 35px 0,
+        "desktop": 47px 0 35px 0
+    )
 );
 
 // <h3>
 $h3: (
-	"font-size": (
-		"mobile": 22px,
-		"tablet": 26px,
-		"desktop": 30px
-	),
-	"padding": (
-		"mobile": 22px 0 15px,
-		"tablet": 26px 0 18px,
-		"desktop": 30px 0 20px
-	)
+    "font-size": (
+        "mobile": 22px,
+        "tablet": 26px,
+        "desktop": 30px
+    ),
+    "padding": (
+        "mobile": 22px 0 15px,
+        "tablet": 26px 0 18px,
+        "desktop": 30px 0 20px
+    )
 );
 
 // <h4>
 $h4: (
-	"font-size": (
-		"mobile": 22px,
-		"tablet": 26px,
-		"desktop": 30px
-	),
-	"padding": (
-		"mobile": 0 0 11px,
-		"tablet": 0 0 11px,
-		"desktop": 0 0 15px
-	)
+    "font-size": (
+        "mobile": 22px,
+        "tablet": 26px,
+        "desktop": 30px
+    ),
+    "padding": (
+        "mobile": 0 0 11px,
+        "tablet": 0 0 11px,
+        "desktop": 0 0 15px
+    )
 );
 
 // <h5>
 $h5: (
-	"font-size": (
-		"mobile": 22px,
-		"tablet": 26px,
-		"desktop": 30px
-	),
-	"padding": (
-		"mobile": 22px 0,
-		"tablet": 26px 0,
-		"desktop": 30px 0
-	)
+    "font-size": (
+        "mobile": 22px,
+        "tablet": 26px,
+        "desktop": 30px
+    ),
+    "padding": (
+        "mobile": 22px 0,
+        "tablet": 26px 0,
+        "desktop": 30px 0
+    )
 );
 
 // aside.post-published-date p
 $post-date: (
-	"font-size": (
-		"mobile": 26px,
-		"tablet": 34px,
-		"desktop": 42px
-	)
+    "font-size": (
+        "mobile": 26px,
+        "tablet": 34px,
+        "desktop": 42px
+    )
 );
 
 // <pre>, <code>, <kbd>
 $code: (
-	"font-size": (
-		"mobile": 18px,
-		"tablet": 18px,
-		"desktop": 26px
-	),
-	"line-height": (
-		"mobile": 1.25,
-		"tablet": 1.25,
-		"desktop": 1.25
-	)
+    "font-size": (
+        "mobile": 18px,
+        "tablet": 18px,
+        "desktop": 26px
+    ),
+    "line-height": (
+        "mobile": 1.25,
+        "tablet": 1.25,
+        "desktop": 1.25
+    )
 );
 
 // Marker pen typeface
 // <p>
 $marker: (
-	"font-size": (
-		"mobile": 26px,
-		"tablet": 32px,
-		"desktop": 44px
-	),
-	"padding": (
-		"mobile": 0 0 26px 0,
-		"tablet": 0 0 32px 0,
-		"desktop": 0 0 44px 0
-	),
+    "font-size": (
+        "mobile": 26px,
+        "tablet": 32px,
+        "desktop": 44px
+    ),
+    "padding": (
+        "mobile": 0 0 26px 0,
+        "tablet": 0 0 32px 0,
+        "desktop": 0 0 44px 0
+    ),
 );
 
 // Marker pen typeface
 // <p>
 $marker-small: (
-	"font-size": (
-		"mobile": 26px,
-		"tablet": 26px,
-		"desktop": 32px
-	),
-	"padding": (
-		"mobile": 0 0 26px 0,
-		"tablet": 0 0 32px 0,
-		"desktop": 0 0 44px 0
-	),
+    "font-size": (
+        "mobile": 26px,
+        "tablet": 26px,
+        "desktop": 32px
+    ),
+    "padding": (
+        "mobile": 0 0 26px 0,
+        "tablet": 0 0 32px 0,
+        "desktop": 0 0 44px 0
+    ),
 );

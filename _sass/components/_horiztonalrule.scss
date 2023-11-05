@@ -1,6 +1,6 @@
 hr {
-	border: unset;
-	height: 10px;
-	border-radius: 3px;
-	@include plastic(inset, 2px);
+    border: unset;
+    height: 10px;
+    border-radius: 3px;
+    @include plastic(inset, 2px);
 }

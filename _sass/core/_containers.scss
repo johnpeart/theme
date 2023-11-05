@@ -1,33 +1,33 @@
 .container {
 
-	display: 			block;
-	position: 			relative;
+    display:             block;
+    position:             relative;
 
-	padding-left: 		$container-padding;
-	padding-right: 		$container-padding;
-	padding-top: 		0;
-	padding-bottom: 	0;
+    padding-left:         $container-padding;
+    padding-right:         $container-padding;
+    padding-top:         0;
+    padding-bottom:     0;
 
-	width: 100%;
+    width: 100%;
 
-	margin-left: auto;
-	margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 
-	max-width: 100%;
+    max-width: 100%;
 
-	@include tablet {
-		max-width: containers("tablet");
-	}
+    @include tablet {
+        max-width: containers("tablet");
+    }
 
-	@include desktop {
-		max-width: containers("desktop");
-	}
+    @include desktop {
+        max-width: containers("desktop");
+    }
 
-	&.container-flex {
-		display: flex;
+    &.container-flex {
+        display: flex;
 
-		@include mobile {
-			flex-direction: column;
-		}
-	}
+        @include mobile {
+            flex-direction: column;
+        }
+    }
 }

@@ -1,70 +1,70 @@
 .mobile-overflow {
-	@include mobile {
-		overflow-x: auto;
-	}
+    @include mobile {
+        overflow-x: auto;
+    }
 }
 
 table {
-	@include typography($p);
-	@include plastic(raised, 2px);
-	border-collapse: collapse;
-	width: 100%;
-	@include tablet {
-		width: containers("tablet") + 100px;
-		margin-right: -50px;
-		margin-left: -50px;
-	}
-	@include desktop {
-		margin-bottom: 30px;
-		width: containers("desktop") + 200px;
-		margin-right: -115px;
-		margin-left: -115px;
-	}
-	border: none;
+    @include typography($p);
+    @include plastic(raised, 2px);
+    border-collapse: collapse;
+    width: 100%;
+    @include tablet {
+        width: containers("tablet") + 100px;
+        margin-right: -50px;
+        margin-left: -50px;
+    }
+    @include desktop {
+        margin-bottom: 30px;
+        width: containers("desktop") + 200px;
+        margin-right: -115px;
+        margin-left: -115px;
+    }
+    border: none;
 
-	tr {
-		border-bottom: 1px solid var(--secondary-borderColor, colour("gray-400"));
+    tr {
+        border-bottom: 1px solid var(--secondary-borderColor, colour("gray-400"));
 
-		&:last-child {
-			border-bottom: none !important;
-		}
-	}
+        &:last-child {
+            border-bottom: none !important;
+        }
+    }
 
-	th, td {
-		padding: $container-padding;
-		vertical-align: top;
+    th, td {
+        padding: $container-padding;
+        vertical-align: top;
 
-		border-left: 1px solid var(--secondary-borderColor, colour("gray-400"));
+        border-left: 1px solid var(--secondary-borderColor, colour("gray-400"));
 
-		&:first-child {
-			border-left: none;
-		}
-	}
+        &:first-child {
+            border-left: none;
+        }
+    }
 
-	thead,
-	tfoot {
-		@extend strong;
-		text-align: left;
-	}
+    thead,
+    tfoot {
+        @extend strong;
+        text-align: left;
+    }
 
-	thead {
-		border-bottom: 2px solid var(--color, colour("black"));
-	}
+    thead {
+        border-bottom: 2px solid var(--color, colour("black"));
+    }
 
-	tfoot {
-		border-bottom: 2px solid var(--color, colour("black"));
-	}
+    tfoot {
+        border-bottom: 2px solid var(--color, colour("black"));
+    }
 
-	caption {
-		display: table-caption;
-		caption-side: bottom;
+    caption {
+        display: table-caption;
+        caption-side: bottom;
 
-		@include typography($p, "default");
-		@include plastic(inset, 2px);
-		text-align: left;
+        @include typography($p, "default");
+        @include plastic(inset, 2px);
+        text-align: left;
 
-		margin: $container-padding 0;
-		padding: $container-padding;
-	}
+        margin: $container-padding 0;
+        padding: $container-padding;
+    }
 
 }

@@ -1,26 +1,26 @@
 .chiplet {
-	@include typography($small);
-	padding: 3px 7px;
-	font-weight: bold;
-	font-style: normal;
-	text-transform: uppercase;
-	font-variant: small-caps;
-	vertical-align: middle;
-	border-radius: 8px;
+    @include typography($small);
+    padding: 3px 7px;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    vertical-align: middle;
+    border-radius: 8px;
 
-	background: var(--cyan, colour("cyan"));
-	color: var(--white, colour("white"));
+    background: var(--cyan, colour("cyan"));
+    color: var(--white, colour("white"));
 
-	&.chiplet-green {
-		background: var(--green, colour("green"));
-	}
+    &.chiplet-green {
+        background: var(--green, colour("green"));
+    }
 
-	&.chiplet-red {
-		background: var(--red, colour("red"));
-	}
+    &.chiplet-red {
+        background: var(--red, colour("red"));
+    }
 
-	&.chiplet-yellow {
-		background: var(--yellow, colour("yellow"));
-		color: var(--black, colour("black"));
-	}
+    &.chiplet-yellow {
+        background: var(--yellow, colour("yellow"));
+        color: var(--black, colour("black"));
+    }
 }

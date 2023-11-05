@@ -1,20 +1,20 @@
 @mixin plastic($shape, $depth: 5px) {
 
-	// corner radius
-	border-radius: $border-radius;
-	// depth
-	@if $shape == raised {
-			// border
-			border: 1px solid var(--glass-border, colour("white"));
-			box-shadow:  #{$depth} #{$depth} #{$depth} var(--plastic-shadow-1, colour("gray-300")),
-						-#{$depth} -#{$depth} #{$depth} var(--plastic-shadow-2, colour("absolute-white"));
-	} @else if $shape == inset {
-			// border
-			border: 1px solid var(--glass-border, colour("white"));
-			box-shadow: inset  #{$depth} #{$depth} #{$depth} var(--plastic-shadow-1, colour("gray-300")),
-						inset -#{$depth} -#{$depth} #{$depth} var(--plastic-shadow-2, colour("absolute-white"));
-	} @else {
-		@error "Unknown shape #{$shape}. Use 'raised' or 'inset'.";
-	}
+    // corner radius
+    border-radius: $border-radius;
+    // depth
+    @if $shape == raised {
+            // border
+            border: 1px solid var(--glass-border, colour("white"));
+            box-shadow:  #{$depth} #{$depth} #{$depth} var(--plastic-shadow-1, colour("gray-300")),
+                        -#{$depth} -#{$depth} #{$depth} var(--plastic-shadow-2, colour("absolute-white"));
+    } @else if $shape == inset {
+            // border
+            border: 1px solid var(--glass-border, colour("white"));
+            box-shadow: inset  #{$depth} #{$depth} #{$depth} var(--plastic-shadow-1, colour("gray-300")),
+                        inset -#{$depth} -#{$depth} #{$depth} var(--plastic-shadow-2, colour("absolute-white"));
+    } @else {
+        @error "Unknown shape #{$shape}. Use 'raised' or 'inset'.";
+    }
 
 }

@@ -1,144 +1,144 @@
 fieldset.radios {
 
-	padding: 15px 10px 10px;
-	margin-bottom: 20px;
+    padding: 15px 10px 10px;
+    margin-bottom: 20px;
 
-	@include tablet-up {
-		padding: 20px;
-	}
+    @include tablet-up {
+        padding: 20px;
+    }
 
-	legend {
-		@include sr-only;
-	}
+    legend {
+        @include sr-only;
+    }
 
-	div.radio-input {
+    div.radio-input {
 
-		display: inline-block;
-		width: 100%;
+        display: inline-block;
+        width: 100%;
 
-		margin-bottom: 10px;
+        margin-bottom: 10px;
 
-		@include tablet-up {
-			float: left;
-			clear: none;
-			width: 50%;
+        @include tablet-up {
+            float: left;
+            clear: none;
+            width: 50%;
 
-			&:nth-of-type(3),
-			&:nth-of-type(4) {
-				margin-bottom: 0px;
-			}
-		}
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+                margin-bottom: 0px;
+            }
+        }
 
-	}
+    }
 
-	@include clearfix;
+    @include clearfix;
 
 }
 
 input[type="radio"] {
-	$input-offset: (form("touch-target-size") - form("radios-size")) * 0.5;
-	cursor: pointer;
+    $input-offset: (form("touch-target-size") - form("radios-size")) * 0.5;
+    cursor: pointer;
 
-	position: absolute;
+    position: absolute;
 
-	z-index: 1;
-	top: $input-offset * -1;
-	left: $input-offset * -1;
+    z-index: 1;
+    top: $input-offset * -1;
+    left: $input-offset * -1;
 
-	width: form("touch-target-size");
-	height: form("touch-target-size");
-	margin: 0;
+    width: form("touch-target-size");
+    height: form("touch-target-size");
+    margin: 0;
 
-	opacity: 0;
+    opacity: 0;
 
-	~ label {
-		display: inline-block;
-		height: form("input-size");
-		margin-top: 0;
-		margin-bottom: 0;
-		padding: 0px form("radios-label-padding-left-right");
-		cursor: pointer;
-		// remove 300ms pause on mobile
-		touch-action: manipulation;
+    ~ label {
+        display: inline-block;
+        height: form("input-size");
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0px form("radios-label-padding-left-right");
+        cursor: pointer;
+        // remove 300ms pause on mobile
+        touch-action: manipulation;
 
-		font-weight:    600;
+        font-weight:    600;
 
-		&::before {
-			content: "";
-			box-sizing: border-box;
-			position: absolute;
-			top: 0;
-			left: 0;
+        &::before {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
 
-			width: form("radios-size");
-			height: form("radios-size");
-			border: 2px solid var(--color, colour("black"));
-			border-radius: 50%;
-			background: var(--background, colour("white"));
-		}
+            width: form("radios-size");
+            height: form("radios-size");
+            border: 2px solid var(--color, colour("black"));
+            border-radius: 50%;
+            background: var(--background, colour("white"));
+        }
 
-		&::after {
-			content: "";
+        &::after {
+            content: "";
 
-			position: absolute;
-			top: 10px;
-			left: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
 
-			width: 0;
-			height: 0;
+            width: 0;
+            height: 0;
 
-			border: 10px solid var(--radio-color, colour("cyan"));
-			border-radius: 50%;
-			opacity: 0;
-			background: var(--color, colour("black"));
-		}
+            border: 10px solid var(--radio-color, colour("cyan"));
+            border-radius: 50%;
+            opacity: 0;
+            background: var(--color, colour("black"));
+        }
 
-	}
+    }
 
-	&:focus + label::before {
-		border-width: 4px;
-		box-shadow: 0 0 0 3px var(--radio-color, colour("cyan"));
-	}
+    &:focus + label::before {
+        border-width: 4px;
+        box-shadow: 0 0 0 3px var(--radio-color, colour("cyan"));
+    }
 
-	&:hover + label::before {
-		box-shadow: 0 0 0 3px var(--radio-color, colour("cyan"));
-		background: var(--background, colour("white"));
-		border-width: 2px;
-	}
+    &:hover + label::before {
+        box-shadow: 0 0 0 3px var(--radio-color, colour("cyan"));
+        background: var(--background, colour("white"));
+        border-width: 2px;
+    }
 
-	&:checked + label::after {
-		opacity: 1;
-	}
+    &:checked + label::after {
+        opacity: 1;
+    }
 
-	~ .label-hint,  {
-		padding-right: form("radios-label-padding-left-right");
-		padding-left: form("radios-label-padding-left-right");
-	}
+    ~ .label-hint,  {
+        padding-right: form("radios-label-padding-left-right");
+        padding-left: form("radios-label-padding-left-right");
+    }
 
-	~ input[type="text"]  {
-		margin-left: form("radios-label-padding-left-right");
-		width: calc(100% - #{form("radios-label-padding-left-right")});
-	}
+    ~ input[type="text"]  {
+        margin-left: form("radios-label-padding-left-right");
+        width: calc(100% - #{form("radios-label-padding-left-right")});
+    }
 
 }
 
 
 .radio-input {
-	display: block;
-	position: relative;
+    display: block;
+    position: relative;
 
-	min-height: form("input-size");
+    min-height: form("input-size");
 
-	@extend p;
-	padding: 0;
+    @extend p;
+    padding: 0;
 
-	margin-bottom: 30px;
-	clear: left;
+    margin-bottom: 30px;
+    clear: left;
 
-	padding-left: map-get($form-elements, "radios-size");
+    padding-left: map-get($form-elements, "radios-size");
 
-	&:last-child,
-	&:last-of-type {
-		margin-bottom: 0;
-	}
+    &:last-child,
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 }

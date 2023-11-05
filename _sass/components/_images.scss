@@ -1,147 +1,147 @@
 figure {
-	display: block;
-	position: relative;
-	box-sizing: 	content-box;
-	margin-top: 0;
-	margin-bottom: 22px;
-	width: 100%;
-	max-width: 100%;
-	margin-right: 0;
-	margin-left: 0;
-	margin-bottom: $container-padding * 2;
-	@include tablet {
-		width: containers("tablet") + 100px;
-		max-width: unset;
-		margin-right: -50px;
-		margin-left: -50px;
-		margin-bottom: $container-padding * 4;
-	}
-	@include desktop {
-		margin-bottom: 30px;
-		width: containers("desktop") + 200px;
-		max-width: unset;
-		margin-right: -115px;
-		margin-left: -115px;
-		margin-bottom: $container-padding * 4;
-	}
-	figcaption {
-		padding: $container-padding;
-		max-width: 600px;
-		width: auto;
-		@include glass(20px, 2, true);
+    display: block;
+    position: relative;
+    box-sizing:     content-box;
+    margin-top: 0;
+    margin-bottom: 22px;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: $container-padding * 2;
+    @include tablet {
+        width: containers("tablet") + 100px;
+        max-width: unset;
+        margin-right: -50px;
+        margin-left: -50px;
+        margin-bottom: $container-padding * 4;
+    }
+    @include desktop {
+        margin-bottom: 30px;
+        width: containers("desktop") + 200px;
+        max-width: unset;
+        margin-right: -115px;
+        margin-left: -115px;
+        margin-bottom: $container-padding * 4;
+    }
+    figcaption {
+        padding: $container-padding;
+        max-width: 600px;
+        width: auto;
+        @include glass(20px, 2, true);
 
-		@include typography($smaller, "default");
+        @include typography($smaller, "default");
 
-		@include tablet-up {
-			position: absolute;
-			bottom: -$container-padding;
-			left: -$container-padding;
-		}
-	}
+        @include tablet-up {
+            position: absolute;
+            bottom: -$container-padding;
+            left: -$container-padding;
+        }
+    }
 
-	&.featured-image {
-		margin-bottom: $container-padding * 3;
-	}
+    &.featured-image {
+        margin-bottom: $container-padding * 3;
+    }
 
-	img {
-		display: block;
-		position: relative;
-		box-sizing: content-box;
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-		margin: 0 0 15px;
-		border-radius: $border-radius;
-		box-shadow: shadow(2);
+    img {
+        display: block;
+        position: relative;
+        box-sizing: content-box;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 0 15px;
+        border-radius: $border-radius;
+        box-shadow: shadow(2);
 
-		+ figcaption {
-			overflow-y: clip;
-			transition: 1s;
-		}
-		&:hover {
-			+ figcaption {
-				transition: 1s;
-			}
-		}
+        + figcaption {
+            overflow-y: clip;
+            transition: 1s;
+        }
+        &:hover {
+            + figcaption {
+                transition: 1s;
+            }
+        }
 
-		border-radius: $border-radius;
-		box-shadow: shadow(2);
+        border-radius: $border-radius;
+        box-shadow: shadow(2);
 
-	}
+    }
 
 }
 
 p > img {
-	display: block;
-	position: relative;
+    display: block;
+    position: relative;
 
-	width: 100%;
-	max-width: 100%;
-	margin-right: 0;
-	margin-left: 0;
-	left: 0;
-	right: 0;
-	@include tablet {
-		width: containers("tablet") + 100px;
-		max-width: unset;
-		margin: $container-padding $container-padding - 50px;
-	}
-	@include desktop {
-		margin-bottom: 30px;
-		width: containers("desktop") + 200px;
-		max-width: unset;
-		margin: $container-padding $container-padding - 115px;
-	}
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    left: 0;
+    right: 0;
+    @include tablet {
+        width: containers("tablet") + 100px;
+        max-width: unset;
+        margin: $container-padding $container-padding - 50px;
+    }
+    @include desktop {
+        margin-bottom: 30px;
+        width: containers("desktop") + 200px;
+        max-width: unset;
+        margin: $container-padding $container-padding - 115px;
+    }
 
-	&.rounded {
-		border-radius: $border-radius;
-		box-shadow: shadow(2);
-	}
+    &.rounded {
+        border-radius: $border-radius;
+        box-shadow: shadow(2);
+    }
 }
 
 svg.hero-image {
-	display: block;
-	position: relative;
+    display: block;
+    position: relative;
 
-	width: 100%;
-	max-width: 100%;
-	margin-right: 0;
-	margin-left: 0;
-	left: 0;
-	right: 0;
-	@include tablet {
-		width: containers("tablet") + 100px;
-		max-width: unset;
-		margin: $container-padding $container-padding - 50px $container-padding * 3;
-	}
-	@include desktop {
-		margin-bottom: 30px;
-		width: containers("desktop") + 200px;
-		max-width: unset;
-		margin: $container-padding $container-padding - 115px $container-padding * 3;
-	}
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    left: 0;
+    right: 0;
+    @include tablet {
+        width: containers("tablet") + 100px;
+        max-width: unset;
+        margin: $container-padding $container-padding - 50px $container-padding * 3;
+    }
+    @include desktop {
+        margin-bottom: 30px;
+        width: containers("desktop") + 200px;
+        max-width: unset;
+        margin: $container-padding $container-padding - 115px $container-padding * 3;
+    }
 }
 
 
 img.app-icon {
-	grid-area: icon;
-	margin: 0;
-	max-height: 57px;
-	max-width: 57px;
-	border-radius: 10px;
-	box-shadow: shadow(2);
-	@include tablet-up {
-		box-shadow: shadow(3);
-	}
-	&.large {
-		@include tablet-up {
-			max-height: 104px;
-			max-width: 104px;
-			border-radius: $border-radius;
-		}
-	}
+    grid-area: icon;
+    margin: 0;
+    max-height: 57px;
+    max-width: 57px;
+    border-radius: 10px;
+    box-shadow: shadow(2);
+    @include tablet-up {
+        box-shadow: shadow(3);
+    }
+    &.large {
+        @include tablet-up {
+            max-height: 104px;
+            max-width: 104px;
+            border-radius: $border-radius;
+        }
+    }
 }
 
 .stream--item--content img.post-image {
-	border-radius: $border-radius $border-radius 0 0;
+    border-radius: $border-radius $border-radius 0 0;
 }

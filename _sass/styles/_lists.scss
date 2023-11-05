@@ -1,18 +1,18 @@
 ul {
-	list-style: none;
+    list-style: none;
 }
 
 ol {
-	list-style: decimal;
+    list-style: decimal;
 }
 
 ul,
 ol {
-	padding: 0 0 22px 30px;
-	@include tablet {
-		padding: 0 0 22px 0;
-	}
-	@include desktop {
-		padding: 0 0 30px 0px;
-	}
+    padding: 0 0 22px 30px;
+    @include tablet {
+        padding: 0 0 22px 0;
+    }
+    @include desktop {
+        padding: 0 0 30px 0px;
+    }
 }

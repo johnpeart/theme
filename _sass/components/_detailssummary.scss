@@ -1,250 +1,250 @@
 details {
-	display: block;
-	position: relative;
-	margin: 0 0 $container-padding 0;
+    display: block;
+    position: relative;
+    margin: 0 0 $container-padding 0;
 
-	> .container {
-		width: calc(100% - (#{$container-padding} * 2));
-		margin: 0 0 0 ($container-padding * 2);
-		padding: 0;
-	}
+    > .container {
+        width: calc(100% - (#{$container-padding} * 2));
+        margin: 0 0 0 ($container-padding * 2);
+        padding: 0;
+    }
 }
 
 details[open] {
 
-	> summary::-webkit-details-marker,
-	> summary::marker {
-		display: none;
-		list-style-image: none;
-		content: '';
-	}
+    > summary::-webkit-details-marker,
+    > summary::marker {
+        display: none;
+        list-style-image: none;
+        content: '';
+    }
 
-	> summary:before {
-		content: '–';
-	}
+    > summary:before {
+        content: '–';
+    }
 
-	> summary {
-		margin-bottom: $container-padding;
-		@include plastic(inset, 4px);
-		transition: box-shadow 0.25s;
-	}
+    > summary {
+        margin-bottom: $container-padding;
+        @include plastic(inset, 4px);
+        transition: box-shadow 0.25s;
+    }
 
-	margin-bottom: $container-padding;
+    margin-bottom: $container-padding;
 }
 
 summary {
 
-	/* Hide the marker completely. */
-	list-style-image: none;
-	&::marker,
-	&::-webkit-details-marker {
-	  display: none;
-	  list-style-image: none;
-	  content: '';
-	  width: 0;
-	  height: 0;
-	}
+    /* Hide the marker completely. */
+    list-style-image: none;
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+      list-style-image: none;
+      content: '';
+      width: 0;
+      height: 0;
+    }
 
-	&:before {
-		display: block;
-		position: relative;
-		top: 0;
-		right: 0;
-		left: auto;
-		content: '+';
-		width: $container-padding * 2;
-		float: right;
+    &:before {
+        display: block;
+        position: relative;
+        top: 0;
+        right: 0;
+        left: auto;
+        content: '+';
+        width: $container-padding * 2;
+        float: right;
 
-		text-align: right;
-		font-weight: bold;
-		line-height: 1;
-		@include typography($p, "default");
-		color: unset;
-	}
+        text-align: right;
+        font-weight: bold;
+        line-height: 1;
+        @include typography($p, "default");
+        color: unset;
+    }
 
-	display: block;
-	position: relative;
+    display: block;
+    position: relative;
 
-	cursor: pointer;
-	font-style: normal;
-	text-align: left;
+    cursor: pointer;
+    font-style: normal;
+    text-align: left;
 
-	padding: $container-padding;
-	@include plastic(raised, 6px);
-	transition: box-shadow 0.25s;
+    padding: $container-padding;
+    @include plastic(raised, 6px);
+    transition: box-shadow 0.25s;
 
-	@include typography($p, "default");
+    @include typography($p, "default");
 
-	&:hover {
-		color: var(--details--hoverColor, colour("cyan"));
-		@include plastic(raised, 2px);
-		transition: box-shadow 0.25s;
-	}
-	&:focus {
-		outline: form("border-width") solid var(--details--outlineColor, colour("cyan"));
-	}
+    &:hover {
+        color: var(--details--hoverColor, colour("cyan"));
+        @include plastic(raised, 2px);
+        transition: box-shadow 0.25s;
+    }
+    &:focus {
+        outline: form("border-width") solid var(--details--outlineColor, colour("cyan"));
+    }
 
-	h1, h2, h3, h4, h5, h6, p {
-		@include typography($p, "default");
-		max-width: calc(100% - 30px);
-		width: 100%;
-		float: left;
-		display: inline-block;
-		text-align: left;
-		padding: 0;
-		font-style: normal;
-		text-align: left;
-		color: unset;
-	}
+    h1, h2, h3, h4, h5, h6, p {
+        @include typography($p, "default");
+        max-width: calc(100% - 30px);
+        width: 100%;
+        float: left;
+        display: inline-block;
+        text-align: left;
+        padding: 0;
+        font-style: normal;
+        text-align: left;
+        color: unset;
+    }
 
-	.summary-title,
-	.summary-sub-title {
-		@include typography($p, "default");
-		max-width: calc(100% - 30px);
-		width: 100%;
-		float: left;
-		display: inline-block;
-		text-align: left;
-		padding: 0;
-		font-style: normal;
-		text-align: left;
-		color: unset;
-	}
+    .summary-title,
+    .summary-sub-title {
+        @include typography($p, "default");
+        max-width: calc(100% - 30px);
+        width: 100%;
+        float: left;
+        display: inline-block;
+        text-align: left;
+        padding: 0;
+        font-style: normal;
+        text-align: left;
+        color: unset;
+    }
 
-	.summary-sub-title {
-		font-weight: normal;
-	}
+    .summary-sub-title {
+        font-weight: normal;
+    }
 
-	@include clearfix;
+    @include clearfix;
 
 }
 
 
 
 div.faux-details {
-	display: block;
-	position: relative;
+    display: block;
+    position: relative;
 
-	font-style: normal;
-	text-align: left;
+    font-style: normal;
+    text-align: left;
 
-	padding: $container-padding;
-	@include plastic(raised, 2px);
-	transition: box-shadow 0.25s;
+    padding: $container-padding;
+    @include plastic(raised, 2px);
+    transition: box-shadow 0.25s;
 
-	@include typography($p, "default");
+    @include typography($p, "default");
 
-	h1, h2, h3, h4, h5, h6, p {
-		@include typography($p, "default");
-		max-width: calc(100% - 30px);
-		width: 100%;
-		float: left;
-		display: inline-block;
-		text-align: left;
-		padding: 0;
-		font-style: normal;
-		text-align: left;
-		color: unset;
-	}
+    h1, h2, h3, h4, h5, h6, p {
+        @include typography($p, "default");
+        max-width: calc(100% - 30px);
+        width: 100%;
+        float: left;
+        display: inline-block;
+        text-align: left;
+        padding: 0;
+        font-style: normal;
+        text-align: left;
+        color: unset;
+    }
 
-	.summary-title,
-	.summary-sub-title {
-		@include typography($p, "default");
-		max-width: calc(100% - 30px);
-		width: 100%;
-		float: left;
-		display: inline-block;
-		text-align: left;
-		padding: 0;
-		font-style: normal;
-		text-align: left;
-		color: unset;
-	}
+    .summary-title,
+    .summary-sub-title {
+        @include typography($p, "default");
+        max-width: calc(100% - 30px);
+        width: 100%;
+        float: left;
+        display: inline-block;
+        text-align: left;
+        padding: 0;
+        font-style: normal;
+        text-align: left;
+        color: unset;
+    }
 
-	.summary-sub-title {
-		font-weight: normal;
-	}
+    .summary-sub-title {
+        font-weight: normal;
+    }
 
-	@include clearfix;
+    @include clearfix;
 }
 
 
 
 // Drop down menu
 details.dropdown-menu {
-	position: relative;
-	display: inline;
-	width: auto;
-	margin: 0 0 $container-padding 0;
-	padding: 0;
+    position: relative;
+    display: inline;
+    width: auto;
+    margin: 0 0 $container-padding 0;
+    padding: 0;
 
-	@include mobile {
-		display: block;
-		width: 100%;
-		margin: 0;
-	}
+    @include mobile {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
 
-	&[open] > summary::-webkit-details-marker,
-	&[open] > summary::marker {
-		display: none;
-		list-style-image: none;
-		content: '';
-	}
+    &[open] > summary::-webkit-details-marker,
+    &[open] > summary::marker {
+        display: none;
+        list-style-image: none;
+        content: '';
+    }
 
-	&[open] {
-		padding-bottom: 0;
-	}
+    &[open] {
+        padding-bottom: 0;
+    }
 
-	&.full-width {
-		display: flex;
-		flex-grow: 1;
-		min-width: 0;
-		margin-right: 0 !important;
+    &.full-width {
+        display: flex;
+        flex-grow: 1;
+        min-width: 0;
+        margin-right: 0 !important;
 
-		> summary {
-			text-overflow: ellipsis;
-			white-space: nowrap;
-			overflow-x: scroll;
+        > summary {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow-x: scroll;
 
-			-ms-overflow-style: none;  /* IE and Edge */
-			scrollbar-width: none;  /* Firefox */
-			&::-webkit-scrollbar {
-			  display: none;
-			}
-		}
-	}
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            &::-webkit-scrollbar {
+              display: none;
+            }
+        }
+    }
 }
 
 summary.dropdown-menu {
-	&:before {
-		display: none;
-	}
-	margin: 0 !important;
-	border-radius: $border-radius;
-	@include clearfix;
-	> * {
-		font-weight: bold;
-	}
+    &:before {
+        display: none;
+    }
+    margin: 0 !important;
+    border-radius: $border-radius;
+    @include clearfix;
+    > * {
+        font-weight: bold;
+    }
 }
 
 ul.dropdown-menu {
-	position: absolute;
-	min-width: 30vw;
-	width: 100%;
-	box-sizing: border-box;
-	padding: 0;
-	list-style: none;
+    position: absolute;
+    min-width: 30vw;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    list-style: none;
 
-	section {
-		position: relative;
-		z-index: 100;
-		@include glass(20px, 2);
-		margin: $container-padding 0;
+    section {
+        position: relative;
+        z-index: 100;
+        @include glass(20px, 2);
+        margin: $container-padding 0;
 
-		max-width: 100%;
-		@include tablet-up {
-			max-width: breakpoints("tablet");
-		}
- 	}
+        max-width: 100%;
+        @include tablet-up {
+            max-width: breakpoints("tablet");
+        }
+     }
 
 }

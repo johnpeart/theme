@@ -1,220 +1,220 @@
 footer#site-footer {
-	display: block;
-	position: relative;
+    display: block;
+    position: relative;
 
-	padding-top: 60px;
+    padding-top: 60px;
 
-	@include tablet {
-		padding-top: 90px;
-		padding-bottom: 60px;
-	}
-	@include desktop {
-		padding-top: 120px;
-		padding-bottom: 60px;
-	}
+    @include tablet {
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+    @include desktop {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
 
-	.footer {
-		display: block;
-		position: relative;
-		@include clearfix();
-	}
+    .footer {
+        display: block;
+        position: relative;
+        @include clearfix();
+    }
 }
 
 footer#site-footer div.footer {
-	display: grid;
+    display: grid;
 
-	grid-template-columns: 1fr;
-	grid-template-rows: auto auto;
-	grid-template-areas: "post-meta" "author";
-	grid-gap: $container-padding;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "post-meta" "author";
+    grid-gap: $container-padding;
 
-	@include tablet-up {
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto;
-		grid-template-areas: "author post-meta";
-	}
+    @include tablet-up {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "author post-meta";
+    }
 }
 
 #author-card {
-	grid-area: author;
+    grid-area: author;
 
-	display: grid;
-	position: relative;
-	margin-bottom: $container-padding;
-	padding: $container-padding;
-	height: 100%;
+    display: grid;
+    position: relative;
+    margin-bottom: $container-padding;
+    padding: $container-padding;
+    height: 100%;
 
-	@include glass(20px, 2);
-	text-align: center;
+    @include glass(20px, 2);
+    text-align: center;
 
-	grid-gap: $container-padding;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: auto 1fr 1fr;
+    grid-gap: $container-padding;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
 
-	grid-template-areas:
-		"photo name"
-		"photo website"
-		"icons icons";
+    grid-template-areas:
+        "photo name"
+        "photo website"
+        "icons icons";
 
-	@include desktop {
-		grid-column-gap: $container-padding;
-		grid-row-gap: 0;
+    @include desktop {
+        grid-column-gap: $container-padding;
+        grid-row-gap: 0;
 
-		grid-template-columns: auto 1fr;
-		grid-template-areas:
-			"photo name"
-			"photo website"
-			"photo icons";
-	}
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+            "photo name"
+            "photo website"
+            "photo icons";
+    }
 }
 
 a.author--photo {
-	grid-area: photo;
-	display: grid;
+    grid-area: photo;
+    display: grid;
 }
 
 img.memoji {
-	display: block;
-	position: relative;
+    display: block;
+    position: relative;
 
-	box-sizing: border-box;
+    box-sizing: border-box;
 
-	margin: 0;
-	padding: 0;
-	justify-self: center;
-	align-self: center;
+    margin: 0;
+    padding: 0;
+    justify-self: center;
+    align-self: center;
 
-	width: 70px;
-	height: 70px;
-	@include desktop {
-		width: 140px;
-		height: 140px;
-	}
+    width: 70px;
+    height: 70px;
+    @include desktop {
+        width: 140px;
+        height: 140px;
+    }
 }
 
 p.author--name {
-	grid-area: name;
+    grid-area: name;
 
-	a {
-		font-weight: bold;
-	}
+    a {
+        font-weight: bold;
+    }
 }
 p.author--site-link {
-	grid-area: website;
+    grid-area: website;
 }
 
 p.author--name,
 p.author--site-link {
-	padding: 0;
+    padding: 0;
 
-	a {
-		text-decoration: none;
-	}
+    a {
+        text-decoration: none;
+    }
 }
 
 div.author--icons {
-	grid-area: icons;
+    grid-area: icons;
 
-	display: grid;
-	position: relative;
+    display: grid;
+    position: relative;
 
-	grid-template-columns: 2fr 2fr 2fr 1fr 2fr;
-	align-items: center;
-	justify-items: center;
+    grid-template-columns: 2fr 2fr 2fr 1fr 2fr;
+    align-items: center;
+    justify-items: center;
 
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
 
-	* {
-		line-height: 30px !important;
-		text-decoration: none;
-	}
+    * {
+        line-height: 30px !important;
+        text-decoration: none;
+    }
 
-	span.footer--icons--separator {
-		display: inline-block;
-		height: 30px;
-		width: 2px;
-		margin: 0 5px;
-		border-right: 2px solid;
-		border-color: var(--icon-background, colour("gray-600"));
-		content: "";
-	}
+    span.footer--icons--separator {
+        display: inline-block;
+        height: 30px;
+        width: 2px;
+        margin: 0 5px;
+        border-right: 2px solid;
+        border-color: var(--icon-background, colour("gray-600"));
+        content: "";
+    }
 
-	a {
+    a {
 
-		display: inline-block;
-		position: relative;
+        display: inline-block;
+        position: relative;
 
-		margin: 0;
-		padding: 0;
+        margin: 0;
+        padding: 0;
 
-		svg.footer--icons--social {
-			display: block;
-			position: relative;
+        svg.footer--icons--social {
+            display: block;
+            position: relative;
 
-			height: 30px;
-			width: 30px;
-			margin: 0;
-			padding: 0;
+            height: 30px;
+            width: 30px;
+            margin: 0;
+            padding: 0;
 
-			path {
-				fill: var(--color, colour("black"));
-			}
-		}
+            path {
+                fill: var(--color, colour("black"));
+            }
+        }
 
 
-		&:link svg path,
-		&:visited svg path {
-			fill: var(--icon-background, colour("gray-600"));
-		}
-		&:hover svg path {
-			background: var(--background, colour("white"));
-			fill: var(--icon-hoverBackground, colour("cyan"));
-			text-decoration: none;
-		}
-		&:focus {
-			outline-offset: 0;
-			outline: 5px solid var(--link-outlineColor, colour("cyan"));
-		}
-		&:focus svg path {
-			background: var(--link-outlineColor, colour("cyan"));
-			fill: var(--white, colour("white"));
-			outline: none;
-		}
-		&:active svg path {
-			text-decoration: 	none;
-		}
+        &:link svg path,
+        &:visited svg path {
+            fill: var(--icon-background, colour("gray-600"));
+        }
+        &:hover svg path {
+            background: var(--background, colour("white"));
+            fill: var(--icon-hoverBackground, colour("cyan"));
+            text-decoration: none;
+        }
+        &:focus {
+            outline-offset: 0;
+            outline: 5px solid var(--link-outlineColor, colour("cyan"));
+        }
+        &:focus svg path {
+            background: var(--link-outlineColor, colour("cyan"));
+            fill: var(--white, colour("white"));
+            outline: none;
+        }
+        &:active svg path {
+            text-decoration:     none;
+        }
 
-	}
+    }
 }
 
 dl.meta-data {
-	grid-area: post-meta;
+    grid-area: post-meta;
 
-	display: grid;
-	grid-template-rows: auto auto;
-	grid-gap: $container-padding;
-	height: 100%;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: $container-padding;
+    height: 100%;
 
-	aside {
-		padding: $container-padding;
-		@include glass(20px, 2);
-	}
+    aside {
+        padding: $container-padding;
+        @include glass(20px, 2);
+    }
 
-	p, dl, dt, dd {
-		@include typography($metadata);
-			line-height: 1.2;
-	}
-	dt, dd {
-		display: block;
-		position: relative;
-		width: 100%;
-	}
-	dt {
-		font-weight: 	bold;
-	}
-	dd {
-		text-transform: capitalize;
-	}
+    p, dl, dt, dd {
+        @include typography($metadata);
+            line-height: 1.2;
+    }
+    dt, dd {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+    dt {
+        font-weight:     bold;
+    }
+    dd {
+        text-transform: capitalize;
+    }
 
 }

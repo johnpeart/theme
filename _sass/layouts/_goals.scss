@@ -1,152 +1,152 @@
 // Home page styles
 body#goals {
-	article.goal-collection {
-		padding: 15px 0;
-		border-top: 1px solid var(--secondary-borderColor, colour("gray-400"));
-	}
+    article.goal-collection {
+        padding: 15px 0;
+        border-top: 1px solid var(--secondary-borderColor, colour("gray-400"));
+    }
 
-	h2.goal-year {
-		text-align: 		left;
-		padding: 			0;
-	}
+    h2.goal-year {
+        text-align:         left;
+        padding:             0;
+    }
 }
 body#goal {
 
-	section#page-content > section {
-		@include tablet-up {
-			padding-bottom: $container-padding * 3;
-		}
+    section#page-content > section {
+        @include tablet-up {
+            padding-bottom: $container-padding * 3;
+        }
 
-		@include clearfix;
-	}
+        @include clearfix;
+    }
 
-	h2.goal-title {
-		text-align: left;
-		padding-bottom: 10px;
-	}
+    h2.goal-title {
+        text-align: left;
+        padding-bottom: 10px;
+    }
 
-	ul#goals-list {
-		padding: 			0;
-		margin: 			0;
+    ul#goals-list {
+        padding:             0;
+        margin:             0;
 
-		list-style: 		none !important;
+        list-style:         none !important;
 
-		li {
-			list-style: 	none;
-			padding: 		0;
-			max-width: 600px;
+        li {
+            list-style:     none;
+            padding:         0;
+            max-width: 600px;
 
-			box-sizing: 	border-box;
+            box-sizing:     border-box;
 
 
-			&.totaliser {
+            &.totaliser {
 
-				@include glass(20px, 2);
-				padding: 		$container-padding;
-				margin-top: 	$container-padding * 8;
+                @include glass(20px, 2);
+                padding:         $container-padding;
+                margin-top:     $container-padding * 8;
 
-				box-sizing: border-box;
+                box-sizing: border-box;
 
-				h2 {
-					margin-top: 0;
-					margin-bottom: 0;
-					padding-top: 0;
-				}
-			}
-		}
+                h2 {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    padding-top: 0;
+                }
+            }
+        }
 
-		p.goal-description,
-		p:last-child {
-			padding: 0;
-		}
-	}
+        p.goal-description,
+        p:last-child {
+            padding: 0;
+        }
+    }
 }
 
 
 progress[value] {
 
-	position: relative;
-	display: block;
+    position: relative;
+    display: block;
 
-	-webkit-appearance: none;
-			appearance: none;
+    -webkit-appearance: none;
+            appearance: none;
 
-	width: 		100%;
-	max-width: 600px;
+    width:         100%;
+    max-width: 600px;
 
-	padding: 	0;
-	margin: 	20px 0;
+    padding:     0;
+    margin:     20px 0;
 
-	&.standard {
+    &.standard {
 
-		height: 	20px;
+        height:     20px;
 
-		&::-webkit-progress-bar {
-			background: var(--secondary-background, colour("gray-200"));
-			border: 			none;
-			border-radius: 		2px;
-		}
+        &::-webkit-progress-bar {
+            background: var(--secondary-background, colour("gray-200"));
+            border:             none;
+            border-radius:         2px;
+        }
 
-		&::-webkit-progress-value {
-			background: var(--progress-barBackground, colour("cyan"));
-			border-radius: 2px;
-			background-size: 600px;
-		}
+        &::-webkit-progress-value {
+            background: var(--progress-barBackground, colour("cyan"));
+            border-radius: 2px;
+            background-size: 600px;
+        }
 
-	}
+    }
 
-	&.stretch-top {
+    &.stretch-top {
 
-		height: 10px;
-		margin-bottom: 0;
+        height: 10px;
+        margin-bottom: 0;
 
-		&::-webkit-progress-bar {
-			background: var(--secondary-background, colour("gray-200"));
-			border: 			none;
-			border-top-left-radius: 2px;
-			border-top-right-radius: 2px;
-			border-bottom-left-radius: 0;
-			border-bottom-right-radius: 0;
-		}
+        &::-webkit-progress-bar {
+            background: var(--secondary-background, colour("gray-200"));
+            border:             none;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
 
-		&::-webkit-progress-value {
-			background: var(--progress-barBackground, colour("cyan"));
-			border-top-left-radius: 2px;
-			border-top-right-radius: 2px;
-			border-bottom-left-radius: 0;
-			border-bottom-right-radius: 0;
-			background-size: 600px;
-		}
+        &::-webkit-progress-value {
+            background: var(--progress-barBackground, colour("cyan"));
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            background-size: 600px;
+        }
 
-	}
-	&.stretch-bottom {
+    }
+    &.stretch-bottom {
 
-		height: 10px;
-		margin-top: 0;
+        height: 10px;
+        margin-top: 0;
 
-		&::-webkit-progress-bar {
-			background: var(--secondary-background, colour("gray-200"));
-			border: 			none;
-			border-top-left-radius: 0;
-			border-top-right-radius: 0;
-			border-bottom-left-radius: 2px;
-			border-bottom-right-radius: 2px;
-		}
+        &::-webkit-progress-bar {
+            background: var(--secondary-background, colour("gray-200"));
+            border:             none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
 
-		&::-webkit-progress-value {
-			background: var(--progress-barSecondaryBackground, colour("purple"));
-			border-top-left-radius: 0;
-			border-top-right-radius: 0;
-			border-bottom-left-radius: 2px;
-			border-bottom-right-radius: 2px;
-			background-size: 600px;
-		}
+        &::-webkit-progress-value {
+            background: var(--progress-barSecondaryBackground, colour("purple"));
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+            background-size: 600px;
+        }
 
-	}
+    }
 }
 
 .totaliser progress[value] {
-	&::-webkit-progress-bar {
-		background: var(--background, colour("white"))
-	}
+    &::-webkit-progress-bar {
+        background: var(--background, colour("white"))
+    }
 }

@@ -1,100 +1,100 @@
 body#editor {
 
-	* {
-		&.hidden {
-			display: none;
-		}
-	}
+    * {
+        &.hidden {
+            display: none;
+        }
+    }
 
-	nav#editor-toolbar {
+    nav#editor-toolbar {
 
-		background: var(--background, colour("white"));
+        background: var(--background, colour("white"));
 
-		padding: $container-padding 0;
+        padding: $container-padding 0;
 
-		details.dropdown-menu--float-right {
-			@include tablet-up {
-				float: right;
-			}
-			margin-right: 0;
-			ul {
-				right: 0;
-			}
-		}
+        details.dropdown-menu--float-right {
+            @include tablet-up {
+                float: right;
+            }
+            margin-right: 0;
+            ul {
+                right: 0;
+            }
+        }
 
-		details {
-			@include mobile {
-				margin-bottom: $container-padding;
-			}
-			@include tablet-up {
-				margin-right: $container-padding;
-			}
-		}
+        details {
+            @include mobile {
+                margin-bottom: $container-padding;
+            }
+            @include tablet-up {
+                margin-right: $container-padding;
+            }
+        }
 
-		@include clearfix();
-	}
-	section#section-githubLogin {
+        @include clearfix();
+    }
+    section#section-githubLogin {
 
-		padding-top: $container-padding * 5;
+        padding-top: $container-padding * 5;
 
-		p.get-token {
-			padding: 0;
-			margin-top: $container-padding;
-		}
-	}
+        p.get-token {
+            padding: 0;
+            margin-top: $container-padding;
+        }
+    }
 
-	h1.page-title {
-		text-align: center;
-		padding-top: 0;
-	}
+    h1.page-title {
+        text-align: center;
+        padding-top: 0;
+    }
 
-	#form-githubLogin {
-		max-width: 600px;
-		padding: $container-padding;
-		margin: $container-padding auto;
+    #form-githubLogin {
+        max-width: 600px;
+        padding: $container-padding;
+        margin: $container-padding auto;
 
-		text-align: center;
-		input {
-			text-align: center;
-		}
-	}
+        text-align: center;
+        input {
+            text-align: center;
+        }
+    }
 
-	// Text editor
+    // Text editor
 
-	input#fileName {
-		@extend h1;
-	}
+    input#fileName {
+        @extend h1;
+    }
 
-	textarea#textEditor {
-		height: 80vh;
-	}
+    textarea#textEditor {
+        height: 80vh;
+    }
 
-	input#fileName,
-	textarea#textEditor {
-		width: 100%;
+    input#fileName,
+    textarea#textEditor {
+        width: 100%;
 
-		padding: $container-padding 0;
+        padding: $container-padding 0;
 
-		background: var(--background, colour("white"));
-		border: none;
-		border-radius: 0;
+        background: var(--background, colour("white"));
+        border: none;
+        border-radius: 0;
 
-		resize: none;
+        resize: none;
 
-		caret-color: var(--caret-color, colour("cyan"));
+        caret-color: var(--caret-color, colour("cyan"));
 
-		overflow: visible;
+        overflow: visible;
 
-		&:hover,
-		&:focus {
-			border: none;
-			outline: none;
-			-webkit-box-shadow: none;
+        &:hover,
+        &:focus {
+            border: none;
+            outline: none;
+            -webkit-box-shadow: none;
 
-			&::placeholder {
-				color: var(--color, colour("black"));
-			}
-		}
-	}
+            &::placeholder {
+                color: var(--color, colour("black"));
+            }
+        }
+    }
 
 }

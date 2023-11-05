@@ -1,38 +1,38 @@
 textarea {
-	@extend p;
-	box-sizing: border-box;
-	width: 100%;
-	min-height: 40px;
+    @extend p;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 40px;
 
-	margin-bottom: $container-padding * 2;
-	padding: form("input-padding");
+    margin-bottom: $container-padding * 2;
+    padding: form("input-padding");
 
-	border: form("border-width") solid var(--color, colour("black"));
-	border-radius: form("border-radius");
+    border: form("border-width") solid var(--color, colour("black"));
+    border-radius: form("border-radius");
 
-	background: var(--background, colour("white"));
-	color: var(--color, colour("black"));
+    background: var(--background, colour("white"));
+    color: var(--color, colour("black"));
 
-	// Disable inner shadow and remove rounded corners
-	-webkit-appearance: none;
-	appearance: none;
+    // Disable inner shadow and remove rounded corners
+    -webkit-appearance: none;
+    appearance: none;
 
 
-	&:hover {
-		outline: form("border-width") solid var(--cyan, colour("cyan"));
-		outline-offset: 0px;
-		border: form("border-width") solid;
-	}
-	&:focus {
-		outline: form("border-width") solid var(--cyan, colour("cyan"));
-		outline-offset: 3px;
-		color: var(--color, colour("black"));
-		box-shadow: inset 0 0 0 form("border-focus-width");
-		border: form("border-width") solid var(--color, colour("black"));
-	}
+    &:hover {
+        outline: form("border-width") solid var(--cyan, colour("cyan"));
+        outline-offset: 0px;
+        border: form("border-width") solid;
+    }
+    &:focus {
+        outline: form("border-width") solid var(--cyan, colour("cyan"));
+        outline-offset: 3px;
+        color: var(--color, colour("black"));
+        box-shadow: inset 0 0 0 form("border-focus-width");
+        border: form("border-width") solid var(--color, colour("black"));
+    }
 
-	&:invalid {
-		border: form("border-width") solid var(--red, colour("red"));
-	}
-	resize: vertical;
+    &:invalid {
+        border: form("border-width") solid var(--red, colour("red"));
+    }
+    resize: vertical;
 }

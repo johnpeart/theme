@@ -2,112 +2,112 @@
 
 body#podcasts {
 
-	section {
-		padding-top: 			75px;
-		padding-bottom: 		50px;
+    section {
+        padding-top:             75px;
+        padding-bottom:         50px;
 
-		&#podcasts {
-			padding: 0;
-		}
-	}
+        &#podcasts {
+            padding: 0;
+        }
+    }
 
-	img.featured {
-		margin: 0;
-		padding: 0;
-		width: unset;
-		max-width: 200px;
-		width: 100%;
-		margin: 0 0 30px 0;
+    img.featured {
+        margin: 0;
+        padding: 0;
+        width: unset;
+        max-width: 200px;
+        width: 100%;
+        margin: 0 0 30px 0;
 
-		@include tablet-up {
-			max-width: 300px;
-			margin: 100px 0 30px 0;
-		}
-	}
+        @include tablet-up {
+            max-width: 300px;
+            margin: 100px 0 30px 0;
+        }
+    }
 
-	section#pride-on {
+    section#pride-on {
 
-		p {
-			color: var(--white, colour("white"));
-		}
+        p {
+            color: var(--white, colour("white"));
+        }
 
-		padding-top: 0;
-		padding-bottom: 100px;
+        padding-top: 0;
+        padding-bottom: 100px;
 
-		div.container {
-			padding-top: 15px;
-			padding-bottom: 15px;
+        div.container {
+            padding-top: 15px;
+            padding-bottom: 15px;
 
-			background:  var(--magenta, colour("magenta"));
-			background-image: url('/assets/images/podcasts/pride-on-arrows.svg');
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
+            background:  var(--magenta, colour("magenta"));
+            background-image: url('/assets/images/podcasts/pride-on-arrows.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
 
-			@include clearfix;
-		}
+            @include clearfix;
+        }
 
-		div.pod-description {
-			max-width: 65ch;
+        div.pod-description {
+            max-width: 65ch;
 
-			float: left;
-			margin: 50px 30px;
+            float: left;
+            margin: 50px 30px;
 
-			p:last-child {
-				padding-bottom: 0;
-			}
-		}
+            p:last-child {
+                padding-bottom: 0;
+            }
+        }
 
-		img {
-			width: 100%;
-			max-width: 300px;
-			margin: 0 0 30px 0;
-			@include tablet {
-				margin-top: 100px;
-			}
-		}
+        img {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 0 30px 0;
+            @include tablet {
+                margin-top: 100px;
+            }
+        }
 
-		p.link {
-			margin-top: 20px;
+        p.link {
+            margin-top: 20px;
 
-			a {
+            a {
 
-				display: inline-block;
+                display: inline-block;
 
-				&:link {
-					color: var(--white, colour("white"));
-					text-decoration: none;
-					border: 2px solid var(--white, colour("white"));
-					padding: 10px 25px;
-				}
-				&:visited {
-					color: var(--black, colour("black"));
-					text-decoration: none;
-				}
-				&:hover {
-					color: var(--magenta, colour("magenta"));
-					outline: 2px solid var(--white, colour("white"));
-					outline-offset: 2px !important;
-					background: var(--white, colour("white"));
-				}
-				&:focus {
-					outline: 2px solid var(--white, colour("white"));
-					outline-offset: 0px;
-					border: 2px solid var(--magenta, colour("magenta"));
-					color: var(--magenta, colour("magenta"));
-					background: var(--white, colour("white"));
-				}
-				&:active {
-					outline-offset: 4px !important;
-				}
-			}
-		}
+                &:link {
+                    color: var(--white, colour("white"));
+                    text-decoration: none;
+                    border: 2px solid var(--white, colour("white"));
+                    padding: 10px 25px;
+                }
+                &:visited {
+                    color: var(--black, colour("black"));
+                    text-decoration: none;
+                }
+                &:hover {
+                    color: var(--magenta, colour("magenta"));
+                    outline: 2px solid var(--white, colour("white"));
+                    outline-offset: 2px !important;
+                    background: var(--white, colour("white"));
+                }
+                &:focus {
+                    outline: 2px solid var(--white, colour("white"));
+                    outline-offset: 0px;
+                    border: 2px solid var(--magenta, colour("magenta"));
+                    color: var(--magenta, colour("magenta"));
+                    background: var(--white, colour("white"));
+                }
+                &:active {
+                    outline-offset: 4px !important;
+                }
+            }
+        }
 
-	}
+    }
 
-	footer#site-footer section.container {
-		padding-top: 0 !important;
-		padding-bottom: 0 !important;
-	}
+    footer#site-footer section.container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
 
 }

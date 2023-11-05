@@ -1,46 +1,46 @@
 fieldset {
-	margin-bottom: $container-padding * 2;
-	@include clearfix();
+    margin-bottom: $container-padding * 2;
+    @include clearfix();
 }
 
 legend {
-	@include typography($p, "default");
-	width: 100%;
-	padding: 0 0 $container-padding;
-	float: left;
-	font-weight: bold;
-	text-align: center;
+    @include typography($p, "default");
+    width: 100%;
+    padding: 0 0 $container-padding;
+    float: left;
+    font-weight: bold;
+    text-align: center;
 }
 
 span.sub-legend {
-	display: block;
-	text-align: center;
+    display: block;
+    text-align: center;
 }
 
 legend > span.sub-legend {
-	padding-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 label {
-	@extend p;
-	display: block;
-	font-weight: 600;
-	padding-bottom: $container-padding;
+    @extend p;
+    display: block;
+    font-weight: 600;
+    padding-bottom: $container-padding;
 
-	&.hidden {
-		@include sr-only;
-	}
+    &.hidden {
+        @include sr-only;
+    }
 
-	&.hidden ~ input {
-		margin: 0;
-	}
+    &.hidden ~ input {
+        margin: 0;
+    }
 }
 
 .label-hint {
-	@extend p;
-	color: var(--labelHint-color, colour("gray-600"));
-	padding-bottom: 0;
-	display: block;
+    @extend p;
+    color: var(--labelHint-color, colour("gray-600"));
+    padding-bottom: 0;
+    display: block;
 }
 
 

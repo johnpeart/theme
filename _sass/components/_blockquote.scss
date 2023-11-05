@@ -1,55 +1,55 @@
 blockquote {
-	background: var(--secondary-background);
-	padding: 20px;
-	@include typography($p, "default");
+    background: var(--secondary-background);
+    padding: 20px;
+    @include typography($p, "default");
 
-	p {
-		&:first-child {
-			padding-top: 0;
-		}
-		&:last-child {
-			padding-bottom: 0;
-		}
-	}
+    p {
+        &:first-child {
+            padding-top: 0;
+        }
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
 
-	code {
-		background: var(--background, colour("white"));
-	}
+    code {
+        background: var(--background, colour("white"));
+    }
 
-	kbd {
-		background: var(--background, colour("white"));
-	}
+    kbd {
+        background: var(--background, colour("white"));
+    }
 
-	ul {
-		padding-left: 33px;
-	}
-	ol {
+    ul {
+        padding-left: 33px;
+    }
+    ol {
 
-		padding-left: 55px;
-		&:last-child {
-			padding-bottom: 0;
-		}
-	}
+        padding-left: 55px;
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
 
-	p ~ ol,
-	p ~ ul {
-		margin-top: -22px;
-		padding-bottom: 6px;
-	}
+    p ~ ol,
+    p ~ ul {
+        margin-top: -22px;
+        padding-bottom: 6px;
+    }
 
 }
 
 blockquote.lyric {
-	text-align: center;
-	border-radius: $border-radius;
-	margin: $container-padding 0;
-	* {
-		font-style: italic;
-	}
+    text-align: center;
+    border-radius: $border-radius;
+    margin: $container-padding 0;
+    * {
+        font-style: italic;
+    }
 }
 
 .stream-post--reply--quote blockquote {
-	background: unset;
-	padding: 0;
-	width: unset;
+    background: unset;
+    padding: 0;
+    width: unset;
 }

@@ -1,33 +1,33 @@
 html {
-	box-sizing: border-box;
-	-ms-overflow-style: scrollbar;
-	min-height: 100vh;
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+    min-height: 100vh;
 
-	font-kerning: 			auto;
-	letter-spacing: 		normal;
+    font-kerning:             auto;
+    letter-spacing:         normal;
 }
 
 html,
 body {
-	background: 			var(--background);
-	color: 					var(--color);
+    background:             var(--background);
+    color:                     var(--color);
 }
 
 body {
-	padding-bottom: 45px;
+    padding-bottom: 45px;
 }
 
 main {
-	// Height = 100vh - header (height) - footer (padding-top)
-	min-height: calc(100vh - 56px - 60px);
+    // Height = 100vh - header (height) - footer (padding-top)
+    min-height: calc(100vh - 56px - 60px);
 
-	@include tablet {
-		min-height: calc(100vh - 70px - 90px);
-	}
+    @include tablet {
+        min-height: calc(100vh - 70px - 90px);
+    }
 
-	@include desktop {
-		min-height: calc(100vh - 70px - 120px);
-	}
+    @include desktop {
+        min-height: calc(100vh - 70px - 120px);
+    }
 
-	z-index: 0;
+    z-index: 0;
 }

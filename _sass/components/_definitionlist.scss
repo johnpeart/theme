@@ -1,170 +1,170 @@
 figure dl {
-	padding: $container-padding;
+    padding: $container-padding;
 
-	display: grid;
+    display: grid;
 
-	grid-template-rows: auto auto;
-	grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
 
-	@include tablet-up {
-		grid-template-rows: 1fr;
-		grid-template-columns: auto 1fr;
-	}
-	column-gap: $container-padding * 2;
-	row-gap: $container-padding;
+    @include tablet-up {
+        grid-template-rows: 1fr;
+        grid-template-columns: auto 1fr;
+    }
+    column-gap: $container-padding * 2;
+    row-gap: $container-padding;
 
-	background: var(--dl--background, colour("gray-200"));
+    background: var(--dl--background, colour("gray-200"));
 }
 
 dd, dt {
-	padding: 0;
+    padding: 0;
 
-	&.small-caps {
-		@include typography($small);
-		text-transform: uppercase;
-		line-height: 1.2;
-		color: var(--secondary-color);
-	}
+    &.small-caps {
+        @include typography($small);
+        text-transform: uppercase;
+        line-height: 1.2;
+        color: var(--secondary-color);
+    }
 
-	&.bold {
-		font-weight: bold;
-	}
+    &.bold {
+        font-weight: bold;
+    }
 }
 
 figure.app-sheet {
 
-	margin: 0 auto;
-	max-width: 570px;
-	margin-bottom: $container-padding;
+    margin: 0 auto;
+    max-width: 570px;
+    margin-bottom: $container-padding;
 
-	.dl--app {
-		box-shadow: shadow(2);
-		border-radius: $border-radius;
-		display: grid;
+    .dl--app {
+        box-shadow: shadow(2);
+        border-radius: $border-radius;
+        display: grid;
 
-		grid-template-rows: auto auto auto auto auto;
-		grid-template-columns: 80px auto auto auto;
-		@include tablet-up {
-			grid-template-columns: 130px auto auto auto;
-			padding: 20px;
-			border-radius: $border-radius * 2;
-		}
-		row-gap: 0;
-		column-gap: 0;
-		grid-template-areas: 	"icon app-name app-name app-name"
-								"icon app-description app-description app-description"
-								"icon app-type app-type app-type"
-								"app-dev-label app-dev-label app-dev app-dev"
-								"app-price-label app-price-label app-price app-price";
-	}
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-columns: 80px auto auto auto;
+        @include tablet-up {
+            grid-template-columns: 130px auto auto auto;
+            padding: 20px;
+            border-radius: $border-radius * 2;
+        }
+        row-gap: 0;
+        column-gap: 0;
+        grid-template-areas:     "icon app-name app-name app-name"
+                                "icon app-description app-description app-description"
+                                "icon app-type app-type app-type"
+                                "app-dev-label app-dev-label app-dev app-dev"
+                                "app-price-label app-price-label app-price app-price";
+    }
 
-	.app-name {
-		grid-area: app-name;
-		font-weight: 		bold;
-		font-style: 		normal;
-		text-align: 		left;
-		text-decoration: 	none;
-		text-transform: 	none;
+    .app-name {
+        grid-area: app-name;
+        font-weight:         bold;
+        font-style:         normal;
+        text-align:         left;
+        text-decoration:     none;
+        text-transform:     none;
 
-		@include typography($h2, "default");
-		line-height: 1;
-		padding: 0 0 0 0 !important;
-	}
-	.app-description {
-		grid-area: app-description;
-	}
-	.app-type {
-		grid-area: app-type;
-	}
-	.app-description,
-	.app-type {
-		// @include typography($small);
-		line-height: 1;
-		color: var(--secondary-color);
-	}
-	.app-price-label {
-		grid-area: app-price-label;
-	}
-	.app-price {
-		grid-area: app-price;
-	}
-	.app-dev-label {
-		grid-area: app-dev-label;
-	}
-	.app-dev {
-		grid-area: app-dev;
-	}
-	.app-price-label,
-	.app-price,
-	.app-dev-label,
-	.app-dev {
-		border-top: form("border-width") solid var(--dl--borderColor, colour("gray-400"));
-		margin-top: $container-padding;
-		padding: 10px 0 0 0;
-	}
-	.app-dev-label,
-	.app-dev {
-		margin-top: $container-padding * 2;
-	}
-	.app-dev,
-	.app-price {
-		text-align: right;
-	}
+        @include typography($h2, "default");
+        line-height: 1;
+        padding: 0 0 0 0 !important;
+    }
+    .app-description {
+        grid-area: app-description;
+    }
+    .app-type {
+        grid-area: app-type;
+    }
+    .app-description,
+    .app-type {
+        // @include typography($small);
+        line-height: 1;
+        color: var(--secondary-color);
+    }
+    .app-price-label {
+        grid-area: app-price-label;
+    }
+    .app-price {
+        grid-area: app-price;
+    }
+    .app-dev-label {
+        grid-area: app-dev-label;
+    }
+    .app-dev {
+        grid-area: app-dev;
+    }
+    .app-price-label,
+    .app-price,
+    .app-dev-label,
+    .app-dev {
+        border-top: form("border-width") solid var(--dl--borderColor, colour("gray-400"));
+        margin-top: $container-padding;
+        padding: 10px 0 0 0;
+    }
+    .app-dev-label,
+    .app-dev {
+        margin-top: $container-padding * 2;
+    }
+    .app-dev,
+    .app-price {
+        text-align: right;
+    }
 
-	@include clearfix();
+    @include clearfix();
 }
 
 
 figure.apps-list {
 
-	margin: 0 auto;
-	max-width: 570px;
+    margin: 0 auto;
+    max-width: 570px;
 
-	dl {
-		box-shadow: shadow(2);
-		&:hover {
-			background: var(--dl--hoverBackground, colour("gray-300"));
-		}
-		&:first-child {
-			border-radius: 10px 10px 0 0;
-		}
-		&:last-child {
-			border-radius: 0 0 10px 10px;
-			margin-bottom: $container-padding * 2;
-		}
-	}
+    dl {
+        box-shadow: shadow(2);
+        &:hover {
+            background: var(--dl--hoverBackground, colour("gray-300"));
+        }
+        &:first-child {
+            border-radius: 10px 10px 0 0;
+        }
+        &:last-child {
+            border-radius: 0 0 10px 10px;
+            margin-bottom: $container-padding * 2;
+        }
+    }
 
-	dl.dl--app {
-		display: grid;
+    dl.dl--app {
+        display: grid;
 
-		grid-template-rows: auto auto;
-		grid-template-columns: auto 1fr;
-		grid-template-areas: 'icon name' 'icon price';
-		align-items: center;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto 1fr;
+        grid-template-areas: 'icon name' 'icon price';
+        align-items: center;
 
-		@include tablet-up {
-			grid-template-rows: 1fr;
-			grid-template-columns: auto 1fr auto;
-			grid-template-areas: 'icon name price';
-		}
-		column-gap: 20px;
+        @include tablet-up {
+            grid-template-rows: 1fr;
+            grid-template-columns: auto 1fr auto;
+            grid-template-areas: 'icon name price';
+        }
+        column-gap: 20px;
 
-	}
+    }
 
-	dl.dl--total {
-		display: grid;
+    dl.dl--total {
+        display: grid;
 
-		grid-template-rows: auto auto;
-		grid-template-columns: 1fr;
-		grid-template-areas: 'label' 'price';
-		align-items: center;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'label' 'price';
+        align-items: center;
 
-		@include tablet-up {
-			grid-template-rows: 1fr;
-			grid-template-columns: 1fr auto;
-			grid-template-areas: 'label price';
-		}
-		column-gap: 20px;
-		border-top: form("border-width") solid var(--dl--borderColor, colour("gray-400"));
-	}
+        @include tablet-up {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr auto;
+            grid-template-areas: 'label price';
+        }
+        column-gap: 20px;
+        border-top: form("border-width") solid var(--dl--borderColor, colour("gray-400"));
+    }
 }

@@ -1,157 +1,157 @@
 article.stream--item {
-	display: grid;
-	grid-column-gap: $container-padding;
-	grid-row-gap: $container-padding * 0.5;
-	margin: $container-padding * 4 0;
-	@include tablet-up {
-		margin: $container-padding * 6 0;
-	}
+    display: grid;
+    grid-column-gap: $container-padding;
+    grid-row-gap: $container-padding * 0.5;
+    margin: $container-padding * 4 0;
+    @include tablet-up {
+        margin: $container-padding * 6 0;
+    }
 }
 article.stream--item--blogpost,
 article.stream--item--polaroid,
 article.stream--item--note,
 article.stream--item--list {
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 100%;
-	grid-template-areas: "from" "post" "webmentions";
-	@include tablet-up {
-		padding: 0 $container-padding * 0.5;
-		grid-template-columns: 1fr auto;
-		grid-template-areas: "from from" ". post" "webmentions webmentions";
-	}
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 100%;
+    grid-template-areas: "from" "post" "webmentions";
+    @include tablet-up {
+        padding: 0 $container-padding * 0.5;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "from from" ". post" "webmentions webmentions";
+    }
 }
 article.stream--item--reply {
-	width: 100%;
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 100%;
-	grid-template-areas: "to" "from" "webmentions";
+    width: 100%;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 100%;
+    grid-template-areas: "to" "from" "webmentions";
 }
 .stream--item--quoted--author {
-	grid-area: to;
-	justify-self: flex-start;
-	text-align: left;
-	padding: 0 0 $container-padding * 0.5 $container-padding * 1.5;
+    grid-area: to;
+    justify-self: flex-start;
+    text-align: left;
+    padding: 0 0 $container-padding * 0.5 $container-padding * 1.5;
 }
 .stream--item--reply--author {
-	text-align: right;
-	grid-area: from;
-	justify-self: flex-end;
-	padding: 0 $container-padding * 1.5 $container-padding * 0.5 0;
+    text-align: right;
+    grid-area: from;
+    justify-self: flex-end;
+    padding: 0 $container-padding * 1.5 $container-padding * 0.5 0;
 }
 .stream--item--quote {
-	grid-area: quote;
-	display: block;
-	justify-self: flex-start;
-	@include clearfix();
+    grid-area: quote;
+    display: block;
+    justify-self: flex-start;
+    @include clearfix();
 }
 .stream--item--quote--content {
-	float: left;
+    float: left;
 }
 .stream--item--reply {
-	grid-area: post;
-	display: block;
-	@include clearfix();
+    grid-area: post;
+    display: block;
+    @include clearfix();
 }
 .stream--item--reply--content {
-	float: right;
+    float: right;
 }
 .stream--item--author {
-	text-align: right;
-	grid-area: from;
-	justify-self: flex-end;
-	padding: 0 $container-padding 0 0;
+    text-align: right;
+    grid-area: from;
+    justify-self: flex-end;
+    padding: 0 $container-padding 0 0;
 }
 .stream--item--author,
 .stream--item--quoted--author,
 .stream--item--reply--author {
-	@include typography($small, "default");
-	color: var(--webmention-authorColor, colour("gray-600"));
-	line-height: 1.2;
-	a {
-		&:link {
-			color: var(--webmention-authorColor, colour("gray-600"));
-			text-decoration: none;
-		}
-		&:visited {
-			color: var(--webmention-authorColor, colour("gray-600"));
-			text-decoration: none;
-		}
-		&:hover {
-			color: var(--webmention-fromMeLinkColor, colour("cyan"));
-			text-decoration: underline;
-		}
-		&:focus:hover {
-			color: var(--webmention-fromThemLinkColor, colour("white"));
-			text-decoration: underline;
-		}
-		&:focus {
-			color: var(--webmention-fromThemLinkColor, colour("white"));
-			background: var(--webmention-fromThemLinkBackground, colour("cyan"));
-			outline: 2px solid var(--webmention-fromThemLinkBackground, colour("cyan"));
-			text-decoration: none;
-		}
-		&:active {
-			text-decoration: 	underline;
-		}
-	}
+    @include typography($small, "default");
+    color: var(--webmention-authorColor, colour("gray-600"));
+    line-height: 1.2;
+    a {
+        &:link {
+            color: var(--webmention-authorColor, colour("gray-600"));
+            text-decoration: none;
+        }
+        &:visited {
+            color: var(--webmention-authorColor, colour("gray-600"));
+            text-decoration: none;
+        }
+        &:hover {
+            color: var(--webmention-fromMeLinkColor, colour("cyan"));
+            text-decoration: underline;
+        }
+        &:focus:hover {
+            color: var(--webmention-fromThemLinkColor, colour("white"));
+            text-decoration: underline;
+        }
+        &:focus {
+            color: var(--webmention-fromThemLinkColor, colour("white"));
+            background: var(--webmention-fromThemLinkBackground, colour("cyan"));
+            outline: 2px solid var(--webmention-fromThemLinkBackground, colour("cyan"));
+            text-decoration: none;
+        }
+        &:active {
+            text-decoration:     underline;
+        }
+    }
 }
 .stream--item--content {
-	grid-area: post;
-	max-width: 650px;
+    grid-area: post;
+    max-width: 650px;
 }
 .stream--item--blogpost .stream--item--content {
-	justify-self: flex-end;
-	border-radius: $border-radius;
-	clear: both;
-	@include glass(20px, 2);
-	h1.post-title {
-		@include typography($h2, "default");
-		padding: $container-padding !important;
-	}
-	p {
-		padding: 0 $container-padding $container-padding;
-	}
+    justify-self: flex-end;
+    border-radius: $border-radius;
+    clear: both;
+    @include glass(20px, 2);
+    h1.post-title {
+        @include typography($h2, "default");
+        padding: $container-padding !important;
+    }
+    p {
+        padding: 0 $container-padding $container-padding;
+    }
 }
 .stream--item--polaroid--content,
 .stream--item--note--content,
 .stream--item--list--content {
-	@include mobile {
-		width: 100%;
-	}
-	justify-self: flex-end;
-	.paper-list,
-	.post-it {
-		margin: 0 0 0 auto;
-	}
+    @include mobile {
+        width: 100%;
+    }
+    justify-self: flex-end;
+    .paper-list,
+    .post-it {
+        margin: 0 0 0 auto;
+    }
 }
 .stream--item--interactions {
-	grid-area: webmentions;
+    grid-area: webmentions;
 }
 .stream--item--interactions--count {
-	padding: 0 $container-padding * 1.5;
-	margin: 0 0 $container-padding 0;
+    padding: 0 $container-padding * 1.5;
+    margin: 0 0 $container-padding 0;
 }
 .stream-post--webmentions {
-	grid-area: interactions;
+    grid-area: interactions;
 }
 
 .webmention-count--replies {
-	grid-area: replies;
+    grid-area: replies;
 }
 
 .webmention-count--reposts {
-	grid-area: reposts;
+    grid-area: reposts;
 }
 
 .webmention-count--likes {
-	grid-area: likes;
+    grid-area: likes;
 }
 
 .webmention-count--bookmarks {
-	grid-area: bookmarks;
+    grid-area: bookmarks;
 }
 
 .stream--item--author .u-photo,
 .stream--item--reply--author .u-photo {
-	display: none;
+    display: none;
 }

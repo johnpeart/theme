@@ -1,67 +1,67 @@
 p, li, dd, dt {
-	@include typography($p);
-	font-style: normal;
-	font-weight: normal;
+    @include typography($p);
+    font-style: normal;
+    font-weight: normal;
 
-	&.small {
-		@include typography($small);
-		line-height: 1.2;
-	}
+    &.small {
+        @include typography($small);
+        line-height: 1.2;
+    }
 
-	&.small-caps,
-	.small-caps {
-		font-variant: 	small-caps !important;
-		font-size: 		120%;
-	}
+    &.small-caps,
+    .small-caps {
+        font-variant:     small-caps !important;
+        font-size:         120%;
+    }
 
-	&.lead {
-		font-weight: bold;
-	}
+    &.lead {
+        font-weight: bold;
+    }
 
-	&.no-padding {
-		padding: 0 !important;
-	}
+    &.no-padding {
+        padding: 0 !important;
+    }
 }
 
 p.lead,
 body[id$='post'] section.post-body > p:first-of-type {
-	@include typography($lead);
-	font-weight: bold;
+    @include typography($lead);
+    font-weight: bold;
 }
 
 p {
-	padding: 0 0 22px 0;
-	@include desktop {
-		padding: 0 0 30px 0;
-	}
+    padding: 0 0 22px 0;
+    @include desktop {
+        padding: 0 0 30px 0;
+    }
 
-	&.lead {
-		padding: 0;
-	}
+    &.lead {
+        padding: 0;
+    }
 }
 
 li {
-	padding: 0;
+    padding: 0;
 }
 
 dd.lead,
 dt.lead {
-	padding-bottom: 	0;
+    padding-bottom:     0;
 }
 
 
 strong, b,dt {
-	font-weight: 	bold;
+    font-weight:     bold;
 }
 
 em, i {
-	font-style: 	italic;
+    font-style:     italic;
 }
 
 u {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 center {
-	text-align: center;
+    text-align: center;
 }

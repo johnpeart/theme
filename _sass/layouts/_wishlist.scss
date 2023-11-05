@@ -2,126 +2,126 @@
 
 body#wishlist {
 
-	h2.wishlist-header {
-		text-align: left;
-		@include typography($h2);
-	}
+    h2.wishlist-header {
+        text-align: left;
+        @include typography($h2);
+    }
 
-	ul {
-		padding: 			0;
-		margin: 			0;
+    ul {
+        padding:             0;
+        margin:             0;
 
-		list-style: 		none !important;
+        list-style:         none !important;
 
-		li.wishlist-item {
+        li.wishlist-item {
 
-			display: block;
-			&.hidden {
-				display: none;
-			}
+            display: block;
+            &.hidden {
+                display: none;
+            }
 
-			list-style: 	none;
-			padding: 		20px 0 20px 0;
+            list-style:     none;
+            padding:         20px 0 20px 0;
 
-			box-sizing: 	border-box;
+            box-sizing:     border-box;
 
-			border-top: 1px solid;
-			border-color: var(--secondary-borderColor, colour("gray-400"));
+            border-top: 1px solid;
+            border-color: var(--secondary-borderColor, colour("gray-400"));
 
-			div.item-info {
+            div.item-info {
 
-				display: block;
-				float: none;
-				clear: both;
-				width: 100%;
+                display: block;
+                float: none;
+                clear: both;
+                width: 100%;
 
-				@include tablet-up {
-					float: left;
-					clear: none;
-					width: 70%;
-				}
+                @include tablet-up {
+                    float: left;
+                    clear: none;
+                    width: 70%;
+                }
 
-			}
-			aside.item-metadata {
+            }
+            aside.item-metadata {
 
-				display: block;
-				float: none;
-				clear: both;
-				width: 100%;
-				padding: 10px 0 0 0;
+                display: block;
+                float: none;
+                clear: both;
+                width: 100%;
+                padding: 10px 0 0 0;
 
-				@include tablet-up {
-					padding: 0;
-					float: right;
-					clear: none;
-					width: 30%;
-				}
+                @include tablet-up {
+                    padding: 0;
+                    float: right;
+                    clear: none;
+                    width: 30%;
+                }
 
-			}
+            }
 
-			p.item-name,
-			p.item-extradetails {
-				display: block;
-				width: 100%;
-				padding-bottom: 0;
-			}
-			p.item-name,
-			a.item-link {
-				font-weight: bold;
-			}
-			span.item-price {
-				margin-left: 20px;
-				float: right;
-			}
-			span.item-giftidea,
-			span.item-purchased {
-				position: relative;
-				float: left;
-			}
+            p.item-name,
+            p.item-extradetails {
+                display: block;
+                width: 100%;
+                padding-bottom: 0;
+            }
+            p.item-name,
+            a.item-link {
+                font-weight: bold;
+            }
+            span.item-price {
+                margin-left: 20px;
+                float: right;
+            }
+            span.item-giftidea,
+            span.item-purchased {
+                position: relative;
+                float: left;
+            }
 
-			@include clearfix;
-		}
-	}
+            @include clearfix;
+        }
+    }
 
-	fieldset#toggle-purchased {
+    fieldset#toggle-purchased {
 
-		display: block;
-		position: relative;
-		width: 100%;
+        display: block;
+        position: relative;
+        width: 100%;
 
-		margin: $container-padding * 3 0 0 0;
-		padding: $container-padding;
+        margin: $container-padding * 3 0 0 0;
+        padding: $container-padding;
 
-		@include glass(20px, 2);
-		text-align: center;
-		@include tablet-up {
-			text-align: right;
-		}
+        @include glass(20px, 2);
+        text-align: center;
+        @include tablet-up {
+            text-align: right;
+        }
 
-		legend {
-			max-height: form("radios-size");
-			@include tablet-up {
-				width: unset;
-				text-align: left;
-				float: left;
-				padding-bottom: 0;
-				margin-bottom: 0;
-			}
-		}
+        legend {
+            max-height: form("radios-size");
+            @include tablet-up {
+                width: unset;
+                text-align: left;
+                float: left;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
 
-		div.radio-input {
+        div.radio-input {
 
-			display: inline-block;
-			margin-bottom: 0;
-			label {
-				font-weight: normal;
-				vertical-align: middle;
-				line-height: form("input-size");
-			}
-		}
+            display: inline-block;
+            margin-bottom: 0;
+            label {
+                font-weight: normal;
+                vertical-align: middle;
+                line-height: form("input-size");
+            }
+        }
 
-		@include clearfix;
+        @include clearfix;
 
-	}
+    }
 
 }

@@ -1,81 +1,81 @@
 h1 {
-	@include typography($h1);
-	line-height: 		1.0;
-	font-weight: 		bold;
-	font-style: 		normal;
-	text-align: 		left;
-	text-decoration: 	none;
-	text-transform: 	none;
+    @include typography($h1);
+    line-height:         1.0;
+    font-weight:         bold;
+    font-style:         normal;
+    text-align:         left;
+    text-decoration:     none;
+    text-transform:     none;
 
-	&.display {
-		@include typography($hello);
-	}
+    &.display {
+        @include typography($hello);
+    }
 
-	&.page-title {
-		@include typography($page-title);
-	}
+    &.page-title {
+        @include typography($page-title);
+    }
 }
 
 h2 {
-	@include typography($h2);
-	line-height: 		1.15;
-	font-weight: 		bold;
-	font-style: 		normal;
-	text-align: 		center;
-	text-decoration: 	none;
-	text-transform: 	none;
+    @include typography($h2);
+    line-height:         1.15;
+    font-weight:         bold;
+    font-style:         normal;
+    text-align:         center;
+    text-decoration:     none;
+    text-transform:     none;
 
-	&.loop-header {
-		@include typography($loop-header);
-		line-height: 0.8;
-		text-align: left;
-		float: none;
-		width: 100%;
-		position: relative;
-		@include tablet-up {
-			@include supports-sticky() {
-				top: 50px;
-			}
-			float: left;
-			width: 25%;
-		}
-	}
+    &.loop-header {
+        @include typography($loop-header);
+        line-height: 0.8;
+        text-align: left;
+        float: none;
+        width: 100%;
+        position: relative;
+        @include tablet-up {
+            @include supports-sticky() {
+                top: 50px;
+            }
+            float: left;
+            width: 25%;
+        }
+    }
 }
 
 h3 {
-	@include typography($h3);
-	line-height: 		1.25;
-	font-weight: 		bold;
-	font-style: 		normal;
-	text-align: 		left;
-	text-decoration: 	none;
-	text-transform: 	none;
+    @include typography($h3);
+    line-height:         1.25;
+    font-weight:         bold;
+    font-style:         normal;
+    text-align:         left;
+    text-decoration:     none;
+    text-transform:     none;
 }
 
 h4 {
-	@include typography($h3);
-	line-height: 		1.25;
-	font-weight: 		bold;
-	font-style: 		italic;
-	text-align: 		left;
-	text-decoration: 	none;
-	text-transform: 	none;
+    @include typography($h3);
+    line-height:         1.25;
+    font-weight:         bold;
+    font-style:         italic;
+    text-align:         left;
+    text-decoration:     none;
+    text-transform:     none;
 }
 
 h5 {
-	@include typography($h3);
-	line-height: 		1.25;
-	font-weight: 		bold;
-	font-style: 		normal;
-	text-align: 		left;
-	text-decoration: 	none;
-	text-transform: 	none;
+    @include typography($h3);
+    line-height:         1.25;
+    font-weight:         bold;
+    font-style:         normal;
+    text-align:         left;
+    text-decoration:     none;
+    text-transform:     none;
 }
 
 h2 + h3 {
-	padding-top: 0 !important;
+    padding-top: 0 !important;
 }
 h3 + h4 {
-	margin: 0;
-	padding-top: 0 !important;
+    margin: 0;
+    padding-top: 0 !important;
 }

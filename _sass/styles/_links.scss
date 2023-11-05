@@ -1,68 +1,68 @@
 a {
-	cursor: pointer;
-	font-weight: inherit;
-	text-decoration: underline;
-	text-decoration-thickness: 2px;
-	text-decoration-skip-ink: auto;
+    cursor: pointer;
+    font-weight: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: auto;
 
-	&:link {
-		color: var(--link-color, colour("black"));
-	}
-	&:visited {
-		color: var(--link-color, colour("black"));
-	}
-	&:hover {
-		color: var(--link-hoverColor, colour("cyan"));
-		text-decoration: 	underline;
-	}
-	&:focus {
-		color: var(--link-focusColor, colour("white"));
-		background: var(--link-focusBackground, colour("cyan"));
-		outline: 2px solid var(--link-outlineColor, colour("cyan"));
-		outline-offset: 0;
-		text-decoration: none;
-	}
-	&:active {
-		text-decoration: 	underline;
-	}
+    &:link {
+        color: var(--link-color, colour("black"));
+    }
+    &:visited {
+        color: var(--link-color, colour("black"));
+    }
+    &:hover {
+        color: var(--link-hoverColor, colour("cyan"));
+        text-decoration:     underline;
+    }
+    &:focus {
+        color: var(--link-focusColor, colour("white"));
+        background: var(--link-focusBackground, colour("cyan"));
+        outline: 2px solid var(--link-outlineColor, colour("cyan"));
+        outline-offset: 0;
+        text-decoration: none;
+    }
+    &:active {
+        text-decoration:     underline;
+    }
 
-	&.link-secondary,
-	&.post-published-date {
-		&:link {
-			color: var(--link-secondary-color, colour("gray-600"));
-			text-decoration: none;
-		}
-		&:visited {
-			color: var(--link-secondary-color, colour("gray-600"));
-		}
-		&:hover {
-			color: var(--link-secondary-color, colour("gray-600"));
-			text-decoration: 	underline;
-		}
-		&:hover:focus {
-			text-decoration: underline;
-		}
-		&:focus {
-			color: var(--link-, colour("white"));
-			background: var(--link-focusBackground, colour("cyan"));
-			outline: 2px solid var(--link-outlineColor, colour("cyan"));
-		}
-	}
+    &.link-secondary,
+    &.post-published-date {
+        &:link {
+            color: var(--link-secondary-color, colour("gray-600"));
+            text-decoration: none;
+        }
+        &:visited {
+            color: var(--link-secondary-color, colour("gray-600"));
+        }
+        &:hover {
+            color: var(--link-secondary-color, colour("gray-600"));
+            text-decoration:     underline;
+        }
+        &:hover:focus {
+            text-decoration: underline;
+        }
+        &:focus {
+            color: var(--link-, colour("white"));
+            background: var(--link-focusBackground, colour("cyan"));
+            outline: 2px solid var(--link-outlineColor, colour("cyan"));
+        }
+    }
 
-	&.no-underline {
-		&:link {
-			text-decoration: none !important;
-		}
-		&:visited {
-			text-decoration: none !important;
-		}
-		&:hover {
-			text-decoration: 	underline !important;
-		}
-		&:focus {
-			color: var(--link-focusColor, colour("white"));
-			background: var(--link-focusBackground, colour("cyan"));
-			outline: 2px solid var(--link-outlineColor, colour("cyan"));
-		}
-	}
+    &.no-underline {
+        &:link {
+            text-decoration: none !important;
+        }
+        &:visited {
+            text-decoration: none !important;
+        }
+        &:hover {
+            text-decoration:     underline !important;
+        }
+        &:focus {
+            color: var(--link-focusColor, colour("white"));
+            background: var(--link-focusBackground, colour("cyan"));
+            outline: 2px solid var(--link-outlineColor, colour("cyan"));
+        }
+    }
 }

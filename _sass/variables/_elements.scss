@@ -2,20 +2,20 @@
 // Any interface elements
 
 $form-elements: (
-	"touch-target-size": 44px,
+    "touch-target-size": 44px,
 
-	"input-size": 40px,
-	"border-width": 3px,
-	"border-focus-width": 1px,
-	"border-radius": 8px,
-	"input-padding": 10px 15px,
+    "input-size": 40px,
+    "border-width": 3px,
+    "border-focus-width": 1px,
+    "border-radius": 8px,
+    "input-padding": 10px 15px,
 
-	"outline-offset": 3px,
-	"outline-focus-offset": 0px,
-	"outline-active-offset": 3px,
+    "outline-offset": 3px,
+    "outline-focus-offset": 0px,
+    "outline-active-offset": 3px,
 
-	"radios-size": 40px,
-	"radios-label-padding-left-right": 20px
+    "radios-size": 40px,
+    "radios-label-padding-left-right": 20px
 );
 
-$border-radius:	$container-padding;
+$border-radius:    $container-padding;

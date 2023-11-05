@@ -1,14 +1,14 @@
 @mixin glass($blur: 5px, $shadow: 3, $effect: false) {
 
-	border-radius: $border-radius;
-	border: 1px solid var(--glass-border, colour("absolute-white"));
+    border-radius: $border-radius;
+    border: 1px solid var(--glass-border, colour("absolute-white"));
 
-	background: var(--glass-background, colour("gray-100"));
-	box-shadow: shadow($shadow);
+    background: var(--glass-background, colour("gray-100"));
+    box-shadow: shadow($shadow);
 
-	@if $effect == true {
-		-webkit-backdrop-filter: blur($blur);
-				backdrop-filter: blur($blur);
-	}
+    @if $effect == true {
+        -webkit-backdrop-filter: blur($blur);
+                backdrop-filter: blur($blur);
+    }
 
 }

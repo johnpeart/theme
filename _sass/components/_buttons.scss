@@ -1,124 +1,124 @@
 button {
-	cursor: pointer;
-	@include typography($p, "default");
+    cursor: pointer;
+    @include typography($p, "default");
 
-	width: 100%;
-	border: 1px solid;
-	padding: $container-padding;
-	margin: 0 0 $container-padding 0;
-	outline-offset: form("outline-focus-offset");
-	line-height: 1 !important;
+    width: 100%;
+    border: 1px solid;
+    padding: $container-padding;
+    margin: 0 0 $container-padding 0;
+    outline-offset: form("outline-focus-offset");
+    line-height: 1 !important;
 
-	@include tablet-up {
-		width: auto;
-	}
+    @include tablet-up {
+        width: auto;
+    }
 
-	&:hover {
-		background: var(--button-hoverBackground, colour("gray-400"));
-		color: var(--button-color, colour("white"));
-	}
+    &:hover {
+        background: var(--button-hoverBackground, colour("gray-400"));
+        color: var(--button-color, colour("white"));
+    }
 
-	&:focus {
-		outline: form("border-width") solid var(--button-outlineColor, colour("cyan"));
-	}
+    &:focus {
+        outline: form("border-width") solid var(--button-outlineColor, colour("cyan"));
+    }
 
 
-	&:hover:focus {
-		background: var(--button-hoverFocusBackground, colour("gray-200"));
-	}
+    &:hover:focus {
+        background: var(--button-hoverFocusBackground, colour("gray-200"));
+    }
 
-	&:active {
-		outline: form("border-width") solid var(--button-outlineColor, colour("cyan"));
-		outline-offset: form("outline-active-offset");
-	}
+    &:active {
+        outline: form("border-width") solid var(--button-outlineColor, colour("cyan"));
+        outline-offset: form("outline-active-offset");
+    }
 }
 
 .button {
-	color: var(--button-color, colour("black"));
-	background: var(--button-background, colour("white"));
+    color: var(--button-color, colour("black"));
+    background: var(--button-background, colour("white"));
 
-	@include plastic(raised, 6px);
-	transition: background 0.25s;
-	transition: box-shadow 0.25s;
-	font-weight: bold;
+    @include plastic(raised, 6px);
+    transition: background 0.25s;
+    transition: box-shadow 0.25s;
+    font-weight: bold;
 
-	&:hover {
-		color: var(--button-hoverColor, colour("cyan"));
-		background: var(--button-hoverBackground, colour("gray-100"));
-		@include plastic(raised, 2px);
-		transition: background 0.25s;
-		transition: box-shadow 0.25s;
-	}
+    &:hover {
+        color: var(--button-hoverColor, colour("cyan"));
+        background: var(--button-hoverBackground, colour("gray-100"));
+        @include plastic(raised, 2px);
+        transition: background 0.25s;
+        transition: box-shadow 0.25s;
+    }
 
-	&:focus {
-		background: var(--button-focusBackground, colour("gray-100"));
-		@include plastic(raised, 2px);
-		transition: background 0.25s;
-		transition: box-shadow 0.25s;
-	}
+    &:focus {
+        background: var(--button-focusBackground, colour("gray-100"));
+        @include plastic(raised, 2px);
+        transition: background 0.25s;
+        transition: box-shadow 0.25s;
+    }
 
-	&:hover:focus {
-		background: var(--button-hoverFocusBackground, colour("gray-200"));
-		@include plastic(raised, 2px);
-		transition: background 0.25s;
-		transition: box-shadow 0.25s;
-	}
+    &:hover:focus {
+        background: var(--button-hoverFocusBackground, colour("gray-200"));
+        @include plastic(raised, 2px);
+        transition: background 0.25s;
+        transition: box-shadow 0.25s;
+    }
 
-	&:active {
-		background: var(--button-activeBackground, colour("white"));
-		@include plastic(inset, 4px);
-		transition: background 0.25s;
-		transition: box-shadow 0.25s;
-		outline: none;
-	}
+    &:active {
+        background: var(--button-activeBackground, colour("white"));
+        @include plastic(inset, 4px);
+        transition: background 0.25s;
+        transition: box-shadow 0.25s;
+        outline: none;
+    }
 }
 
 .button--dropdown-menu-item {
-	text-align: left;
-	border: none;
-	padding: $container-padding !important;
-	outline-offset: form("outline-offset");
-	margin: 0 !important;
+    text-align: left;
+    border: none;
+    padding: $container-padding !important;
+    outline-offset: form("outline-offset");
+    margin: 0 !important;
 
-	display: block;
-	width: 100%;
-	border-radius: 10px;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
 
-	&:hover {
-		background: var(--dropdownButton-hoverBackground, colour("cyan"));
-		color: var(--dropdownButton-hoverColor, colour("white"));
-	}
+    &:hover {
+        background: var(--dropdownButton-hoverBackground, colour("cyan"));
+        color: var(--dropdownButton-hoverColor, colour("white"));
+    }
 
-	&:focus {
-		color: var(--dropdownButton-focusColor, colour("cyan"));
-	}
+    &:focus {
+        color: var(--dropdownButton-focusColor, colour("cyan"));
+    }
 
-	&:hover:focus {
-		background: var(--dropdownButton-hoverBackground, colour("cyan"));
-		color: var(--dropdownButton-hoverColor, colour("white"));
-	}
+    &:hover:focus {
+        background: var(--dropdownButton-hoverBackground, colour("cyan"));
+        color: var(--dropdownButton-hoverColor, colour("white"));
+    }
 
-	&:active {
-		background: var(--dropdownButton-hoverBackground, colour("cyan"));
-		color: var(--dropdownButton-hoverColor, colour("white"));
-	}
+    &:active {
+        background: var(--dropdownButton-hoverBackground, colour("cyan"));
+        color: var(--dropdownButton-hoverColor, colour("white"));
+    }
 
-	&:disabled,
-	&:disabled:focus, &:disabled:hover, &:disabled:active {
-		background: var(--dropdownButton-disabledBackground, colour("gray-200"));
-		color: var(--dropdownButton-disabledColor, colour("gray-700"));
-		text-align: center;
-		cursor: unset;
-		outline: none;
-	}
+    &:disabled,
+    &:disabled:focus, &:disabled:hover, &:disabled:active {
+        background: var(--dropdownButton-disabledBackground, colour("gray-200"));
+        color: var(--dropdownButton-disabledColor, colour("gray-700"));
+        text-align: center;
+        cursor: unset;
+        outline: none;
+    }
 
 }
 
 // The .button--dropdown-menu-item button sits inside a list element.
 // This sets the padding around the button.
 li.dropdown-item {
-	padding: $container-padding $container-padding 0;
-	&:last-child {
-		padding: $container-padding;
-	}
+    padding: $container-padding $container-padding 0;
+    &:last-child {
+        padding: $container-padding;
+    }
 }

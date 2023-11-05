@@ -1,16 +1,16 @@
 sup {
-	font-feature-settings: $sup-font-feature-settings;
-	text-decoration: none;
-	margin-left: 2px;
+    font-feature-settings: $sup-font-feature-settings;
+    text-decoration: none;
+    margin-left: 2px;
 
-	a {
-		text-decoration: none;
+    a {
+        text-decoration: none;
 
-		&:hover {
-			text-decoration: underline;
-		}
-		&:focus {
-			text-decoration: none;
-		}
-	}
+        &:hover {
+            text-decoration: underline;
+        }
+        &:focus {
+            text-decoration: none;
+        }
+    }
 }

@@ -1,26 +1,26 @@
 body#projects {
 
-	h2.projects-header {
-		text-align: 		left;
-		&.projects-blogs {
-			padding-top: 0;
-		}
-	}
+    h2.projects-header {
+        text-align:         left;
+        &.projects-blogs {
+            padding-top: 0;
+        }
+    }
 
-	article.project-entry {
-		padding: $container-padding 0;
-		border-top: 1px solid;
-		border-color: var(--secondary-borderColor, colour("gray-400"));
-	}
+    article.project-entry {
+        padding: $container-padding 0;
+        border-top: 1px solid;
+        border-color: var(--secondary-borderColor, colour("gray-400"));
+    }
 
-	h3.project-name {
-		text-align: 		left;
-		padding: 			0;
-	}
+    h3.project-name {
+        text-align:         left;
+        padding:             0;
+    }
 
-	p.project-notes {
-		padding: 0;
-	}
+    p.project-notes {
+        padding: 0;
+    }
 
 
 }
