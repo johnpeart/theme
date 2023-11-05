@@ -93,7 +93,10 @@ body#wishlist {
 		padding: $container-padding;
 
 		@include glass(20px, 2);
-		text-align: right;
+		text-align: center;
+		@include tablet-up {
+			text-align: right;
+		}
 
 		legend {
 			max-height: form("radios-size");
@@ -108,13 +111,8 @@ body#wishlist {
 
 		div.radio-input {
 
-			margin-bottom: 10px;
-
-			@include tablet-up {
-				display: inline-block;
-				margin-bottom: 0;
-			}
-
+			display: inline-block;
+			margin-bottom: 0;
 			label {
 				font-weight: normal;
 				vertical-align: middle;

@@ -10,7 +10,6 @@ Gemfile.lock
 *.DS_Store
 *_posts
 *_archive
-*_pages
 *_podcasts
 *_photos
 *_about
@@ -26,6 +25,7 @@ Gemfile.lock
 404.html
 465.html
 *_data
+/pages
 /_includes/templates
 /assets/images/guides
 /assets/images/social
