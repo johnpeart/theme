@@ -28,12 +28,13 @@ layout: default
 					<h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 					{{ page.excerpt | markdownify }}
 				</section>
-				{% include webmentions.html type="stream" %}
+				{% include webmentions.html type="replies" %}
 			</article>
 			{% elsif page.collection == "reply" %}
 			<article class="h-entry stream--item conversation-item stream--item--reply">
 				{% include cite.html %}
 				{% include reply.html %}
+				{% include webmentions.html type="count" %}
 			</article>
 			{% else %}
 			<article class="h-entry stream--item stream--item--{{ page.collection }}">
@@ -51,7 +52,7 @@ layout: default
 				<section class="e-content stream--item--content stream--item--{{ page.collection }}--content">
 					{% include {{ page.collection | append: '.html' }} %}
 				</section>
-				{% include webmentions.html type="stream" %}
+				{% include webmentions.html type="replies" %}
 			</article>
 			{% endif %}
 			<hr>

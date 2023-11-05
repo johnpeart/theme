@@ -1,4 +1,4 @@
-{% if include.type == "stream" %}
+{% if include.type == "replies" %}
 <footer class="webmentions stream--item--interactions">
 	<aside class="stream--item--interactions--count webmention webmention--count">
 		{% webmention_count page.url replies %}
@@ -7,6 +7,15 @@
 		{% webmention_count page.url bookmarks %}
 	</aside>
 	{% webmention_replies page.url %}
+</footer>
+{% elsif include.type == "count" %}
+<footer class="webmentions stream--item--interactions">
+	<aside class="stream--item--interactions--count webmention webmention--count">
+		{% webmention_count page.url replies %}
+		{% webmention_count page.url reposts %}
+		{% webmention_count page.url likes %}
+		{% webmention_count page.url bookmarks %}
+	</aside>
 </footer>
 {% else %}
 <footer class="webmentions">
