@@ -7,35 +7,11 @@ layout: default
 	<section id="page-content">
 
 		{% if paginator.page == 1 %}
-		<h1 class="page-title">Stream</h1>
+		<h1 class="page-title">Photos</h1>
 		{{ page.content | markdownify }}
-		<hr>
 		{% endif %}
 
 		{% for page in paginator.posts %}
-			{% if page.collection == "posts" %}
-			<article class="h-entry stream--item stream--item--blogpost">
-				<aside class="stream--item--author">
-					{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
-					<span class="h-card p-author">
-						<img class="photo u-photo memoji" alt="A Memoji avatar of John Peart" src="{{ site.url | append: '/assets/images/me/memoji.png' }}">
-						<span class="p-name author--name"><a rel="author" class="p-author u-url u-uid" href="{{ site.url }}">John Peart</a></span>
-					</span>
-					<a href="{{ page.url }}" class="u-url">wrote a blogpost</a></span>
-				</aside>
-				<section class="e-content stream--item--content">
-					{% if page.image %}<img class="post-image" src="{{ page.image | prepend: '/assets/images/' }}">{% endif %}
-					<h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
-					{{ page.excerpt | markdownify }}
-				</section>
-				{% include webmentions.html type="stream" %}
-			</article>
-			{% elsif page.collection == "reply" %}
-			<article class="h-entry stream--item conversation-item stream--item--reply">
-				{% include cite.html %}
-				{% include reply.html %}
-			</article>
-			{% else %}
 			<article class="h-entry stream--item stream--item--{{ page.collection }}">
 				<aside class="stream--item--author">
 					{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
@@ -53,8 +29,6 @@ layout: default
 				</section>
 				{% include webmentions.html type="stream" %}
 			</article>
-			{% endif %}
-			<hr>
 		{% endfor %}
 
 		{% include pagination.html %}
