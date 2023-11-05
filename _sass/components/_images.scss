@@ -28,7 +28,7 @@ figure {
 		padding: $container-padding;
 		max-width: 600px;
 		width: auto;
-		@include glass(20px, 2);
+		@include glass(20px, 2, true);
 
 		@include typography($smaller, "default");
 

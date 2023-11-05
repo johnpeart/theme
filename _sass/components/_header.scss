@@ -9,7 +9,7 @@ header#site-header {
 }
 header#site-header nav#header--site-nav {
 
-	@include glass(20px, 2);
+	@include glass(20px, 2, true);
 	@include typography($p, "default");
 	text-align: center;
 	line-height: 1 !important;
