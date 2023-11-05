@@ -8,10 +8,10 @@ body#wishlist {
     }
 
     ul {
-        padding:             0;
-        margin:             0;
+        padding: 0;
+        margin: 0;
 
-        list-style:         none !important;
+        list-style: none !important;
 
         li.wishlist-item {
 
@@ -20,10 +20,10 @@ body#wishlist {
                 display: none;
             }
 
-            list-style:     none;
-            padding:         20px 0 20px 0;
+            list-style: none;
+            padding: 20px 0 20px 0;
 
-            box-sizing:     border-box;
+            box-sizing: border-box;
 
             border-top: 1px solid;
             border-color: var(--secondary-borderColor, colour("gray-400"));

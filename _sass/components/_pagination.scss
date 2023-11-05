@@ -1,9 +1,9 @@
 nav.pagination {
 
     position: relative;
-    display:        flex;
+    display:    flex;
 
-    width:          100%;
+    width:  100%;
 
     @include mobile {
         flex-direction: column;
@@ -57,14 +57,14 @@ nav.pagination {
     span.page--next-prev--prev {
         cursor: pointer;
         @include tablet-up {
-            float:      left;
+            float:  left;
         }
     }
 
     span.page--next-prev--next {
         cursor: pointer;
         @include tablet-up {
-            float:      right;
+            float:  right;
         }
     }
 

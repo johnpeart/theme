@@ -13,7 +13,7 @@ a {
     }
     &:hover {
         color: var(--link-hoverColor, colour("cyan"));
-        text-decoration:     underline;
+        text-decoration: underline;
     }
     &:focus {
         color: var(--link-focusColor, colour("white"));
@@ -23,7 +23,7 @@ a {
         text-decoration: none;
     }
     &:active {
-        text-decoration:     underline;
+        text-decoration: underline;
     }
 
     &.link-secondary,
@@ -37,7 +37,7 @@ a {
         }
         &:hover {
             color: var(--link-secondary-color, colour("gray-600"));
-            text-decoration:     underline;
+            text-decoration: underline;
         }
         &:hover:focus {
             text-decoration: underline;
@@ -57,7 +57,7 @@ a {
             text-decoration: none !important;
         }
         &:hover {
-            text-decoration:     underline !important;
+            text-decoration: underline !important;
         }
         &:focus {
             color: var(--link-focusColor, colour("white"));

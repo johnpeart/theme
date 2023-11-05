@@ -2,8 +2,8 @@ kbd {
     @include typography($code, "code");
     color: var(--color);
     background: var(--secondary-background);
-    border-radius:     5px;
-    padding:        0 5px;
+    border-radius: 5px;
+    padding:    0 5px;
     margin: 0;
     box-shadow: 0 0 var(--color, colour("black")), 0 0px var(--color, colour("black")), 0 1px var(--color, colour("black")), 0 2px var(--color, colour("black")), 0 3px var(--color, colour("black")), 0 4px var(--color, colour("black"));
     background-color: var(--background, colour("white"));
@@ -23,8 +23,8 @@ code {
     @include typography($code, "code");
     color: var(--color);
     background: var(--secondary-background);
-    border-radius:     5px;
-    padding:        0 2px;
+    border-radius: 5px;
+    padding:    0 2px;
 }
 
 pre {

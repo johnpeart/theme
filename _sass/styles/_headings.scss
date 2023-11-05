@@ -1,11 +1,11 @@
 h1 {
     @include typography($h1);
-    line-height:         1.0;
-    font-weight:         bold;
-    font-style:         normal;
-    text-align:         left;
-    text-decoration:     none;
-    text-transform:     none;
+    line-height: 1.0;
+    font-weight: bold;
+    font-style: normal;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
 
     &.display {
         @include typography($hello);
@@ -18,12 +18,12 @@ h1 {
 
 h2 {
     @include typography($h2);
-    line-height:         1.15;
-    font-weight:         bold;
-    font-style:         normal;
-    text-align:         center;
-    text-decoration:     none;
-    text-transform:     none;
+    line-height: 1.15;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
 
     &.loop-header {
         @include typography($loop-header);
@@ -44,32 +44,32 @@ h2 {
 
 h3 {
     @include typography($h3);
-    line-height:         1.25;
-    font-weight:         bold;
-    font-style:         normal;
-    text-align:         left;
-    text-decoration:     none;
-    text-transform:     none;
+    line-height: 1.25;
+    font-weight: bold;
+    font-style: normal;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
 }
 
 h4 {
     @include typography($h3);
-    line-height:         1.25;
-    font-weight:         bold;
-    font-style:         italic;
-    text-align:         left;
-    text-decoration:     none;
-    text-transform:     none;
+    line-height: 1.25;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
 }
 
 h5 {
     @include typography($h3);
-    line-height:         1.25;
-    font-weight:         bold;
-    font-style:         normal;
-    text-align:         left;
-    text-decoration:     none;
-    text-transform:     none;
+    line-height: 1.25;
+    font-weight: bold;
+    font-style: normal;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
 }
 
 h2 + h3 {

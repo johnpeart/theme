@@ -6,8 +6,8 @@ body#goals {
     }
 
     h2.goal-year {
-        text-align:         left;
-        padding:             0;
+        text-align: left;
+        padding: 0;
     }
 }
 body#goal {
@@ -26,24 +26,24 @@ body#goal {
     }
 
     ul#goals-list {
-        padding:             0;
-        margin:             0;
+        padding: 0;
+        margin: 0;
 
-        list-style:         none !important;
+        list-style: none !important;
 
         li {
-            list-style:     none;
-            padding:         0;
+            list-style: none;
+            padding: 0;
             max-width: 600px;
 
-            box-sizing:     border-box;
+            box-sizing: border-box;
 
 
             &.totaliser {
 
                 @include glass(20px, 2);
-                padding:         $container-padding;
-                margin-top:     $container-padding * 8;
+                padding: $container-padding;
+                margin-top: $container-padding * 8;
 
                 box-sizing: border-box;
 
@@ -71,20 +71,20 @@ progress[value] {
     -webkit-appearance: none;
             appearance: none;
 
-    width:         100%;
+    width: 100%;
     max-width: 600px;
 
-    padding:     0;
-    margin:     20px 0;
+    padding: 0;
+    margin: 20px 0;
 
     &.standard {
 
-        height:     20px;
+        height: 20px;
 
         &::-webkit-progress-bar {
             background: var(--secondary-background, colour("gray-200"));
-            border:             none;
-            border-radius:         2px;
+            border: none;
+            border-radius: 2px;
         }
 
         &::-webkit-progress-value {
@@ -102,7 +102,7 @@ progress[value] {
 
         &::-webkit-progress-bar {
             background: var(--secondary-background, colour("gray-200"));
-            border:             none;
+            border: none;
             border-top-left-radius: 2px;
             border-top-right-radius: 2px;
             border-bottom-left-radius: 0;
@@ -126,7 +126,7 @@ progress[value] {
 
         &::-webkit-progress-bar {
             background: var(--secondary-background, colour("gray-200"));
-            border:             none;
+            border: none;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-bottom-left-radius: 2px;

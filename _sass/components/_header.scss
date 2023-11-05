@@ -36,7 +36,7 @@ header#site-header nav#header--site-nav {
 
         a.header--wordmark-link {
             display: inline-block;
-            font-weight:     bold;
+            font-weight: bold;
 
             &:link {
                 color: var(--link-color, colour("black"));
@@ -47,7 +47,7 @@ header#site-header nav#header--site-nav {
             }
             &:hover {
                 color: var(--link-hoverColor, colour("cyan"));
-                text-decoration:     underline;
+                text-decoration: underline;
             }
             &:focus {
                 color: var(--link-focusColor, colour("white"));
@@ -56,7 +56,7 @@ header#site-header nav#header--site-nav {
                 outline-color: var(--link-outlineColor, colour("cyan"));
             }
             &:active {
-                text-decoration:     underline;
+                text-decoration: underline;
             }
         }
     }

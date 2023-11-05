@@ -27,10 +27,10 @@ body#loop {
         }
 
         li:before {
-            position:         absolute;
-            content:         none;
+            position: absolute;
+            content: none;
 
-            left:             0;
+            left: 0;
         }
 
         p.loop-item-date {
@@ -39,7 +39,7 @@ body#loop {
             padding-bottom: 0;
 
             time {
-                font-weight:     bold;
+                font-weight: bold;
             }
         }
 
@@ -58,14 +58,14 @@ body#loop {
                 }
                 &:hover {
                     color: var(--link-hoverColor, colour("cyan"));
-                    text-decoration:     underline;
+                    text-decoration: underline;
                 }
                 &:focus {
                     color: var(--link-focusColor, colour("white"));
                 }
                 &:active {
                     color: var(--link-hoverColor, colour("cyan"));
-                    text-decoration:     underline;
+                    text-decoration: underline;
                 }
             }
 

@@ -51,7 +51,7 @@ figure.app-sheet {
         }
         row-gap: 0;
         column-gap: 0;
-        grid-template-areas:     "icon app-name app-name app-name"
+        grid-template-areas: "icon app-name app-name app-name"
                                 "icon app-description app-description app-description"
                                 "icon app-type app-type app-type"
                                 "app-dev-label app-dev-label app-dev app-dev"
@@ -60,11 +60,11 @@ figure.app-sheet {
 
     .app-name {
         grid-area: app-name;
-        font-weight:         bold;
-        font-style:         normal;
-        text-align:         left;
-        text-decoration:     none;
-        text-transform:     none;
+        font-weight: bold;
+        font-style: normal;
+        text-align: left;
+        text-decoration: none;
+        text-transform: none;
 
         @include typography($h2, "default");
         line-height: 1;

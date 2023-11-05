@@ -63,11 +63,11 @@
 
 @mixin responsive($attribute, $mobile, $tablet, $desktop) {
     // Use 'mobile' as the default (optimising for mobile phone screens)
-    #{$attribute}:     $mobile;
+    #{$attribute}: $mobile;
     @include tablet {
-        #{$attribute}:     $tablet;
+        #{$attribute}: $tablet;
     }
     @include desktop {
-        #{$attribute}:     $desktop;
+        #{$attribute}: $desktop;
     }
 }
