@@ -142,6 +142,7 @@ img.app-icon {
     }
 }
 
-.stream--item--content img.post-image {
+.stream--item--content img.post-image,
+.stream--item--share img.post-image {
     border-radius: $border-radius $border-radius 0 0;
 }

@@ -16,12 +16,12 @@ article.stream--item--list {
     grid-template-columns: 100%;
     grid-template-areas: "from" "post" "webmentions";
     @include tablet-up {
-        padding: 0 $container-padding * 0.5;
         grid-template-columns: 1fr auto;
         grid-template-areas: "from from" ". post" "webmentions webmentions";
     }
 }
-article.stream--item--reply {
+article.stream--item--reply,
+article.stream--item--share {
     width: 100%;
     grid-template-rows: auto auto auto;
     grid-template-columns: 100%;
@@ -122,7 +122,10 @@ article.stream--item--reply {
     justify-self: flex-end;
     .paper-list,
     .post-it {
-        margin: 0 0 0 auto;
+        margin: $container-padding auto;
+        @include tablet-up {
+            margin: 0 0 0 auto;
+        }
     }
 }
 .stream--item--interactions {

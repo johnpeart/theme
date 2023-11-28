@@ -1,4 +1,5 @@
 <section class="reply">
+{% if page.layout == "reply" %}
 	<aside class="stream--item--reply--author">
 		{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
 		<span class="h-card p-author">
@@ -12,4 +13,19 @@
 			{{ page.content }}
 		</section>
 	</section>
+{% elsif page.layout == "share" %}
+	<aside class="stream--item--reply--author">
+		{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
+		<span class="h-card p-author">
+			<img class="photo u-photo memoji" alt="A Memoji avatar of John Peart" src="{{ site.url | append: '/assets/images/me/memoji.png' }}">
+			<span class="p-name author--name"><a rel="author" class="p-author u-url u-uid" href="{{ site.url }}">John Peart</a></span>
+		</span>
+		<a href="{{ page.url }}" class="u-url">shared and commented</a>
+	</aside>
+	<section class="stream--item--reply conversation--item--reply from-me">
+		<section class="e-content stream--item--reply--content conversation--item--content">
+			{{ page.content }}
+		</section>
+	</section>
+{% endif %}
 </section>

@@ -24,7 +24,7 @@ layout: default
 					<a href="{{ page.url }}" class="u-url">wrote a blogpost</a></span>
 				</aside>
 				<section class="e-content stream--item--content">
-					{% if page.image %}<img class="post-image" src="{{ page.image | prepend: '/assets/images/' }}">{% endif %}
+					{% if page.image %}<img class="post-image" loading="lazy" src="{{ page.image | prepend: '/assets/images/' }}">{% endif %}
 					<h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 					{{ page.excerpt | markdownify }}
 				</section>
@@ -32,6 +32,12 @@ layout: default
 			</article>
 			{% elsif page.collection == "reply" %}
 			<article class="h-entry stream--item conversation-item stream--item--reply">
+				{% include cite.html %}
+				{% include reply.html %}
+				{% include webmentions.html type="count" %}
+			</article>
+			{% elsif page.collection == "share" %}
+			<article class="h-entry stream--item stream--item--share">
 				{% include cite.html %}
 				{% include reply.html %}
 				{% include webmentions.html type="count" %}
