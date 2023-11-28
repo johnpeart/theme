@@ -1,4 +1,4 @@
-@mixin glass($blur: 5px, $shadow: 3, $effect: false, $bg: "--glass-background") {
+@mixin glass($blur: 5px, $shadow: 3, $effect: false, $bg: --glass-background) {
 
     border-radius: $border-radius;
     border: 1px solid var(--glass-border, colour("absolute-white"));
