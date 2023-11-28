@@ -1,0 +1,111 @@
+.music {
+    display: grid;
+
+    @include glass(0px, 2, false, --glass-background--music);
+    // background: var(--music-red, colour("music-red"));
+    padding: $container-padding;
+
+    grid-tempalte-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: $container-padding;
+
+    @include tablet-up {
+        width: 550px !important;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+    }
+}
+.stream--item .music-post--content {
+    margin: 0 auto;
+}
+.music-post .music {
+    margin: $container-padding * 5 auto;
+}
+
+.music img {
+    max-width: 200px;
+    max-height: 200px;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    justify-self: center;
+}
+
+.music--metadata {
+    display: grid;
+
+    justify-items: center;
+    align-items: center;
+    @include tablet-up {
+        align-items: flex-start;
+        justify-items: flex-start;
+    }
+    grid-template-rows: auto 1fr auto auto;
+}
+
+h1.music--metadata--title {
+    @include typography($large, "default");
+}
+
+h1.music--metadata--title,
+p.music--metadata--artist {
+    padding: 0;
+    margin: 0;
+}
+
+p.music--button {
+    padding: 5px 0 !important;
+    line-height: 1;
+}
+a.music--button {
+    @include typography($small, "default");
+    font-weight: bold;
+    border-radius: 500px;
+    padding: 5px 15px;
+
+    &:link {
+        background: var(--music-red, colour("music-red"));
+        color: var(--white, colour("white"));
+        text-decoration: none;
+    }
+    &:visited {
+        background: var(--music-red, colour("music-red"));
+        color: var(--white, colour("white"));
+        text-decoration: none;
+    }
+    &:hover {
+        background: var(--white, colour("white"));
+        color: var(--music-red, colour("music-red"));
+        text-decoration: none;
+    }
+    &:focus {
+        color: var(--link-focusColor, colour("white"));
+        background: var(--link-focusBackground, colour("cyan"));
+        outline: 2px solid var(--link-outlineColor, colour("cyan"));
+        outline-offset: 0;
+        text-decoration: none;
+    }
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+.star-rating {
+    --star-size: 30px;
+    --star-color: var(--red-tint, colour("red-tint"));
+    --star-background: var(--red, colour("red"));
+    --percent: calc(var(--rating) / 5 * 100%);
+
+    display: inline-block;
+    font-size: var(--star-size);
+    font-family: Times; // make sure ★ appears correctly
+    line-height: 1;
+    margin: $container-padding 0;
+
+    &::before {
+        content: '★★★★★';
+        letter-spacing: 3px;
+        background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

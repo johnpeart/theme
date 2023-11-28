@@ -1,9 +1,9 @@
-@mixin glass($blur: 5px, $shadow: 3, $effect: false) {
+@mixin glass($blur: 5px, $shadow: 3, $effect: false, $bg: "--glass-background") {
 
     border-radius: $border-radius;
     border: 1px solid var(--glass-border, colour("absolute-white"));
 
-    background: var(--glass-background, colour("gray-100"));
+    background: var($bg, colour("gray-100"));
     box-shadow: shadow($shadow);
 
     @if $effect == true {

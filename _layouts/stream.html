@@ -47,6 +47,7 @@ layout: default
 					{% if page.collection == "polaroid" -%}<a href="{{ page.url }}" class="u-url">posted a photo</a>
 					{% elsif page.collection == "note" -%}<a href="{{ page.url }}" class="u-url">wrote a note</a>
 					{% elsif page.collection == "list" -%}<a href="{{ page.url }}" class="u-url">wrote a list</a>
+					{% elsif page.collection == "music" -%}<a href="{{ page.url }}" class="u-url">shared some music</a>
 					{% else -%}<a href="{{ page.url }}" class="u-url">posted</a>{%- endif -%}
 				</aside>
 				<section class="e-content stream--item--content stream--item--{{ page.collection }}--content">

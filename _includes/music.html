@@ -1,0 +1,11 @@
+<div class="{{ page.collection }}-post--content">
+	<header class="music">
+		<img src="{{ page.stream.artwork }}" />
+		<section class="music--metadata p-name">
+			<h1 class="music--metadata--title">{{ page.title }}</h1>
+			<p class="music--metadata--artist">{{ page.artist }}</p>
+			<span class="star-rating" style="--rating: {{ page.rating }};" aria-label="I rated this music {{ page.rating }} out of 5 stars."></span>
+			<p class="music--button"><a class="music--button" href="{{ page.stream.itunes }}" target="_blank" rel="noopener noreferrer">Download on iTunes</a></p>
+		</section>
+	</header>
+</div>

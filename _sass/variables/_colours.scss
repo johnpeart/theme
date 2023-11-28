@@ -24,6 +24,7 @@ $colours: (
     "purple": #C643FC,
     "magenta": #E6007E,
     "red": #B10E1E,
+    "music-red":  #FA243C,
     "red-tint": #FAC4C9,
     "orange": #ff5E3A,
     "yellow": #FFD700,
@@ -70,6 +71,7 @@ $colours: (
     --purple: #C643FC;
     --magenta: #E6007E;
     --red: #B10E1E;
+    --music-red:  #FA243C;
     --red-tint: #FAC4C9;
     --orange: #ff5E3A;
     --yellow: #FFD700;
@@ -90,6 +92,9 @@ $colours: (
     --glass-border: var(--absolute-white);
     --plastic-shadow-1: var(--gray-300);
     --plastic-shadow-2: var(--absolute-white);
+
+
+    --glass-background--music: linear-gradient(135deg, rgba(250, 35, 59, 0.8), rgba(251, 92, 116, 0.3));
 
     // Element colours
     --background: var(--white);
