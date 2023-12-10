@@ -112,7 +112,7 @@ body[id$='post'] {
         }
 
         ul, ol {
-            padding-left: 18px;
+            padding-left: $container-padding * 2;
             @include tablet-up {
                 padding-left: 0;
             }
