@@ -122,10 +122,7 @@ article.stream--item--share {
     justify-self: flex-end;
     .paper-list,
     .post-it {
-        margin: $container-padding auto;
-        @include tablet-up {
             margin: 0 0 0 auto;
-        }
     }
 }
 .stream--item--interactions {
