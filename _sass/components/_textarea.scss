@@ -2,7 +2,6 @@ textarea {
     @extend p;
     box-sizing: border-box;
     width: 100%;
-    min-height: 40px;
 
     margin-bottom: $container-padding * 2;
     padding: form("input-padding");
@@ -34,5 +33,5 @@ textarea {
     &:invalid {
         border: form("border-width") solid var(--red, colour("red"));
     }
-    resize: vertical;
+    overflow: visible;
 }

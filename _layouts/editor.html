@@ -81,7 +81,9 @@ layout: default
 
       <!-- Input field for file content -->
       <label for="textEditor" class="sr-only">Content</label>
-      <textarea id="textEditor" rows="20" placeholder="Start writing..." autofocus></textarea>
+      <div class="grow-wrap">
+      <textarea id="textEditor" rows="20" placeholder="Start writing..." autofocus onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+      </div>
 
   </section>
 
