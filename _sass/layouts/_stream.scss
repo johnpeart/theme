@@ -120,9 +120,11 @@ article.stream--item--share {
         width: 100%;
     }
     justify-self: flex-end;
-    .paper-list,
+    .paper-list {
+        margin: 0 0 0 auto;
+    }
     .post-it {
-            margin: 0 0 0 auto;
+        margin: $container-padding $container-padding $container-padding auto;
     }
 }
 .stream--item--interactions {

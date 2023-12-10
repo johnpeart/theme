@@ -4,7 +4,7 @@
     @include glass(0px, 2, false, --glass-background--music);
     padding: $container-padding;
 
-    grid-tempalte-columns: 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     grid-gap: $container-padding;
 
