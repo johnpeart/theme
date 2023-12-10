@@ -13,10 +13,6 @@ body {
     color: var(--color);
 }
 
-body {
-    padding-bottom: 45px;
-}
-
 main {
     // Height = 100vh - header (height) - footer (padding-top)
     min-height: calc(100vh - 56px - 60px);
