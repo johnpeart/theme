@@ -41,6 +41,7 @@ button {
     transition: background 0.25s;
     transition: box-shadow 0.25s;
     font-weight: bold;
+    text-decoration: none;
 
     &:hover {
         color: var(--button-hoverColor, colour("cyan"));
@@ -83,6 +84,7 @@ button {
     display: block;
     width: 100%;
     border-radius: 10px;
+    text-decoration: none;
 
     &:hover {
         background: var(--dropdownButton-hoverBackground, colour("cyan"));

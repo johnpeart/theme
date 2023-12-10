@@ -23,11 +23,15 @@
         max-width: containers("desktop");
     }
 
-    &.container-flex {
+    &.container--flex {
         display: flex;
 
-        @include mobile {
-            flex-direction: column;
-        }
+        // @include mobile {
+        //     flex-direction: column;
+        // }
+    }
+
+    &.container--full-width {
+        max-width: 100%;
     }
 }

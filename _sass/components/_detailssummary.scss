@@ -178,12 +178,6 @@ details.dropdown-menu {
     margin: 0 0 $container-padding 0;
     padding: 0;
 
-    @include mobile {
-        display: block;
-        width: 100%;
-        margin: 0;
-    }
-
     &[open] > summary::-webkit-details-marker,
     &[open] > summary::marker {
         display: none;
@@ -229,7 +223,7 @@ summary.dropdown-menu {
 
 ul.dropdown-menu {
     position: absolute;
-    min-width: 30vw;
+    min-width: 300px;
     width: 100%;
     box-sizing: border-box;
     padding: 0;
@@ -242,9 +236,6 @@ ul.dropdown-menu {
         margin: $container-padding 0;
 
         max-width: 100%;
-        @include tablet-up {
-            max-width: breakpoints("tablet");
-        }
      }
 
 }

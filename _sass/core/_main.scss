@@ -27,3 +27,7 @@ main {
 
     z-index: 0;
 }
+body#editor main {
+    min-height: calc(100vh - 113px);
+    height: 100%;
+}

@@ -1,93 +1,104 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-<nav id="editor-toolbar" class="">
-  <div class="container container-flex">
-    <details id="editor-toolbar--file" class="details-menu menu dropdown-menu">
-      <summary class="dropdown-menu"><p>⌘</p></summary>
-      <!-- Buttons -->
-      <ul class="dropdown-menu">
+  {% include head.html %}
 
-        <section id="actionsList" class="dropdown-menu--section">
-          <li class="dropdown-item"><button type="button" id="newFileButton" class="button--dropdown-menu-item">New file</button></li>
-          <li class="dropdown-item"><button type="button" id="saveButton" class="button--dropdown-menu-item button-action">Save file</button></li>
-          <li class="dropdown-item"><button type="button" id="deleteButton" class="button--dropdown-menu-item button-warning">Delete file</button></li>
-        </section>
+  <body id="{{ page.layout | slugify }}" class="{% for category in page.categories %}theme-{{ category | downcase }} {% endfor %}{% if jekyll.environment == 'development' %} debug{% endif %}">
 
-        <section id="accountList" class="dropdown-menu--section">
-          <li class="dropdown-item"><button type="button" id="accountName" class="button--dropdown-menu-item" disabled>Account</button></li>
-          <li class="dropdown-item"><button type="button" id="clearButton" class="button--dropdown-menu-item button-warning">Log out</button></li>
-        </section>
+    <nav id="editor-toolbar" class="">
+      <div class="container container--flex">
+        <details id="editor-toolbar--file" class="dropdown-menu">
+          <summary class="dropdown-menu"><p>⌘</p></summary>
+          <!-- Buttons -->
+          <ul class="dropdown-menu">
 
-      </ul>
-    </details>
+            <section id="navList" class="dropdown-menu--section">
+              <li class="dropdown-item"><button type="button" id="" class="button--dropdown-menu-item" disabled>Navigation</button></li>
+              <li class="dropdown-item"><a class="button--dropdown-menu-item no-underline" href="/">Home</a></li>
+            </section>
 
-    <details id="editor-toolbar--folder" class="details-menu dropdown-menu full-width">
-      <summary class="dropdown-menu"><p id="folderName">File browser</p></summary>
-      <!-- Buttons -->
-      <ul class="dropdown-menu">
+            <section id="actionsList" class="dropdown-menu--section">
+              <li class="dropdown-item"><button type="button" id="" class="button--dropdown-menu-item" disabled>Actions</button></li>
+              <li class="dropdown-item"><button type="button" id="newFileButton" class="button--dropdown-menu-item">New file</button></li>
+              <li class="dropdown-item"><button type="button" id="saveButton" class="button--dropdown-menu-item button-action">Save file</button></li>
+              <li class="dropdown-item"><button type="button" id="deleteButton" class="button--dropdown-menu-item button-warning">Delete file</button></li>
+            </section>
 
-        <section id="foldersList" class="dropdown-menu--section">
-          <li class="dropdown-item"><button id="" class="button--dropdown-menu-item" disabled>Folders</button></li>
-        </section>
+            <section id="accountList" class="dropdown-menu--section">
+              <li class="dropdown-item"><button type="button" id="accountName" class="button--dropdown-menu-item" disabled>Account</button></li>
+              <li class="dropdown-item"><button type="button" id="clearButton" class="button--dropdown-menu-item button-warning">Log out</button></li>
+            </section>
 
-        <section id="filesList" class="dropdown-menu--section">
-          <li class="dropdown-item"><button id="" class="button--dropdown-menu-item" disabled>Files</button></li>
-        </section>
+          </ul>
+        </details>
 
-      </ul>
-    </details>
+        <details id="editor-toolbar--folder" class="dropdown-menu full-width">
+          <summary class="dropdown-menu"><p id="folderName">File browser</p></summary>
+          <!-- Buttons -->
+          <ul class="dropdown-menu">
 
-  </div>
-</nav>
+            <section id="foldersList" class="dropdown-menu--section">
+              <li class="dropdown-item"><button id="" class="button--dropdown-menu-item" disabled>Folders</button></li>
+            </section>
 
-<main id="content" class="container">
+            <section id="filesList" class="dropdown-menu--section">
+              <li class="dropdown-item"><button id="" class="button--dropdown-menu-item" disabled>Files</button></li>
+            </section>
 
-  <section id="section-githubLogin" class="hidden">
+          </ul>
+        </details>
 
-    <form id="form-githubLogin">
-
-      <h1 class="page-title">{{ page.title | smartify }}</h1>
-
-      <fieldset id="fields-githubLogin">
-
-        <legend>Log in</legend>
-
-        <!-- Input fields for GitHub credentials -->
-        <label for="username" class="sr-only">Username</label>
-        <input type="text" id="username" placeholder="Username" value="">
-
-        <label for="token" class="sr-only">Personal Access Token</label>
-        <input type="password" id="token" placeholder="Personal Access Token" value="">
-
-      </fieldset>
-
-      <!-- Button to trigger the login action -->
-      <button type="button" id="loginButton" class="button">Log in</button>
-
-      <!-- Button to trigger the login action -->
-      <p class="get-token"><a class="link link-secondary" href="https://github.com/settings/tokens/new">Get a new Personal Access Token</a></p>
-
-    </form>
-
-  </section>
-
-  <section id="section-githubFileContent" class="">
-
-      <!-- Input field for file path -->
-      <label for="fileName" class="sr-only">File name and path</label>
-      <input type="text" id="fileName" placeholder="File name" value="">
-
-      <!-- Input field for file content -->
-      <label for="textEditor" class="sr-only">Content</label>
-      <div class="grow-wrap">
-      <textarea id="textEditor" rows="20" placeholder="Start writing..." autofocus onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
       </div>
+    </nav>
 
-  </section>
+    <main id="content" class="container">
 
-</main>
+      <section id="section-githubLogin" class="hidden">
 
-<script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
-<script src="{{ site.baseurl }}/assets/scripts/edit.js" defer></script>
+        <form id="form-githubLogin">
+
+          <h1 class="page-title">{{ page.title | smartify }}</h1>
+
+          <fieldset id="fields-githubLogin">
+
+            <legend>Log in</legend>
+
+            <!-- Input fields for GitHub credentials -->
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" placeholder="Username" value="">
+
+            <label for="token" class="sr-only">Personal Access Token</label>
+            <input type="password" id="token" placeholder="Personal Access Token" value="">
+
+          </fieldset>
+
+          <!-- Button to trigger the login action -->
+          <button type="button" id="loginButton" class="button">Log in</button>
+
+          <!-- Button to trigger the login action -->
+          <p class="get-token"><a class="link link-secondary" href="https://github.com/settings/tokens/new">Get a new Personal Access Token</a></p>
+
+        </form>
+
+      </section>
+
+      <section id="section-githubFileContent" class="">
+
+          <!-- Input field for file path -->
+          <label for="fileName" class="sr-only">File name and path</label>
+          <input type="text" id="fileName" placeholder="File name" value="">
+
+          <!-- Input field for file content -->
+          <label for="textEditor" class="sr-only">Content</label>
+          <textarea id="textEditor" rows="20" placeholder="Start writing..." autofocus></textarea>
+
+      </section>
+
+    </main>
+
+    <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/scripts/edit.js" defer></script>
+
+  </body>
+
+</html>

@@ -33,5 +33,4 @@ textarea {
     &:invalid {
         border: form("border-width") solid var(--red, colour("red"));
     }
-    overflow: visible;
 }
