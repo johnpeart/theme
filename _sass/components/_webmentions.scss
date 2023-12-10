@@ -302,3 +302,9 @@ li.conversation--item {
     @include typography($small, "default");
     color: var(--webmention-authorColor, colour("gray-600"));
 }
+
+.webmention--reply {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
