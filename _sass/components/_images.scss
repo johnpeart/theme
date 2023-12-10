@@ -105,10 +105,10 @@ svg.hero-image {
 
     width: 100%;
     max-width: 100%;
-    margin-right: 0;
-    margin-left: 0;
+    margin: 0 0 $container-padding * 2 0;
     left: 0;
     right: 0;
+
     @include tablet {
         width: containers("tablet") + 100px;
         max-width: unset;
