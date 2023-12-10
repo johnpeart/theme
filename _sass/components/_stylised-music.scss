@@ -2,7 +2,6 @@
     display: grid;
 
     @include glass(0px, 2, false, --glass-background--music);
-    // background: var(--music-red, colour("music-red"));
     padding: $container-padding;
 
     grid-tempalte-columns: 1fr;
