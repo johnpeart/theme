@@ -7,9 +7,9 @@ const repositoryOwner = '{{ site.github.username }}';
 const repositoryName = '{{ site.github.repo }}';
 const branchName = '{{ site.github.branch }}';
 
-var currentdate = new Date(); 
+var currentdate = new Date();
 var now = currentdate.toISOString().slice(0,10); // "2014-05-12"
-				
+
 
 // BUTTONS
 const loginButton = document.getElementById('loginButton')
@@ -28,13 +28,13 @@ if (sessionStorage.getItem('username') == null || sessionStorage.getItem('token'
 	hideElement('editor-toolbar');
 	hideElement('section-githubFileContent');
 	showElement('section-githubLogin');
-} else {			
+} else {
 	githubGetFilesFolders('','');
 }
 
 
 
-// HELPERS 
+// HELPERS
 
 
 
@@ -76,14 +76,14 @@ function focusElement(nameOfElement) {
 // githubLogin()
 // This screen sets sessionStorage variables 'username' and 'token'.
 // When these variables have not been set, the screen will show on load.
-function githubLogin() {	
+function githubLogin() {
 	// Form fields
 	var username = document.getElementById('username').value;
 	var token = document.getElementById('token').value;
-	
+
 	sessionStorage.setItem('username', username);
 	sessionStorage.setItem('token', token);
-	
+
 	sessionStorage.setItem('repositoryOwner', repositoryOwner);
 	sessionStorage.setItem('repositoryName', repositoryName);
 	sessionStorage.setItem('branchName', branchName);
@@ -92,7 +92,7 @@ function githubLogin() {
 	showElement('editor-toolbar');
 	showElement('section-githubFileContent');
 	focusElement('textEditor');
-	
+
 	githubGetFilesFolders(sessionStorage.getItem('fileName'), sessionStorage.getItem('filePath'));
 }
 
@@ -112,7 +112,7 @@ function githubNewFile() {
 	document.getElementById('textEditor').value = '';
 	document.getElementById('fileName').value = '';
 	focusElement('textEditor');
-	
+
 	closeDetails('editor-toolbar--file');
 }
 
@@ -139,7 +139,7 @@ function githubSaveFile() {
 	}
 	var commitMessage = 'Updated file @ ' + now;
 	var fileContent = document.getElementById('textEditor').value;
-	
+
 	// Initialize the GitHub API with user credentials
 	var github = new GitHub({
 		token: token
@@ -163,7 +163,7 @@ function githubSaveFile() {
 			}
 		}
 	);
-	
+
 	closeDetails('editor-toolbar--file');
 }
 
@@ -185,7 +185,7 @@ function githubDeleteFile() {
 	if (filePath.charAt(0) == '/') {
 		var filePath = filePath.substring(1);
 	}
-	
+
 	// Initialize the GitHub API with user credentials
 	var github = new GitHub({
 		token: token
@@ -221,58 +221,58 @@ deleteButton.addEventListener('click', function () {
 // This is triggered when the page loads.
 
 function githubGetFilesFolders(name, path) {
-	
+
 	// Form fields
 	var username = sessionStorage.getItem('username');
 	var token = sessionStorage.getItem('token');
-	
+
 	var fileName = name;
 	var filePath = path;
-	
+
 	// Initialize the GitHub API with user credentials
 	var github = new GitHub({
 		token: token
 	});
-	
+
 	// Get the repository
 	var repo = github.getRepo(username, repositoryName);
-	
+
 	// Fetch the list of files in the repository
 	repo.getContents(
-		branchName, 
+		branchName,
 		filePath,
-		false, 
+		false,
 		function (err, contents) {
 		if (err) {
 			alert('Getting the repository files and folders failed: \n' + err.message);
 		} else {
-			
+
 			// Create a list of folder names
-			var foldersList = '<li><button id="" class="button button--dropdown-menu-item" disabled>Folders</button></li>'
-			
+			var foldersList = '<li class="dropdown-item"><button id="" class="button--dropdown-menu-item" disabled>Folders</button></li>'
+
 			if (path != '') {
-				foldersList += '<li><button id="" class="button button--dropdown-menu-item" onclick="githubGetFilesFolders(\'/Home\', \'\')">Home</button></li>';
+				foldersList += '<li class="dropdown-item"><button id="" class="button--dropdown-menu-item" onclick="githubGetFilesFolders(\'/Home\', \'\')">Home</button></li>';
 			}
 			contents.forEach(function (item) {
 				if (item.type === 'dir') {
-					foldersList += '<li><button type="button" class="button button--dropdown-menu-item" onclick="githubGetFilesFolders(\'' + item.name + '\', \'' + item.path + '\')">' + item.name + '</button></li>'
+					foldersList += '<li class="dropdown-item"><button type="button" class="button--dropdown-menu-item" onclick="githubGetFilesFolders(\'' + item.name + '\', \'' + item.path + '\')">' + item.name + '</button></li>'
 				}
 			});
-			
+
 			// Create a list of file names
-			var filesList = '<li><button id="" class="button button--dropdown-menu-item" disabled>Files</button></li>';
+			var filesList = '<li class="dropdown-item"><button id="" class="button--dropdown-menu-item" disabled>Files</button></li>';
 			contents.forEach(function (item) {
 				if (item.type === 'file') {
-					filesList += '<li><button type="button" class="button button--dropdown-menu-item" onclick="githubOpenFile(\'' + item.name + '\', \'' + item.path + '\'); closeDetails(\'editor-toolbar--folder\')">' + item.name + '</button></li>'
+					filesList += '<li class="dropdown-item"><button type="button" class="button--dropdown-menu-item" onclick="githubOpenFile(\'' + item.name + '\', \'' + item.path + '\'); closeDetails(\'editor-toolbar--folder\')">' + item.name + '</button></li>'
 				}
 			});
-			
+
 			if (filePath == null) {
 				document.getElementById('folderName').innerHTML = '/';
 			} else {
 				document.getElementById('folderName').innerHTML = '/' + filePath;
 			}
-			
+
 			// Display the list of files in the HTML
 			document.getElementById('foldersList').innerHTML = foldersList;
 			document.getElementById('filesList').innerHTML = filesList;
@@ -286,34 +286,34 @@ function githubOpenFile(name, path) {
 	// Form fields
 	var username = sessionStorage.getItem('username');
 	var token = sessionStorage.getItem('token');
-	
+
 	var filePath = path;
 	var fileName = name;
 	var folderPath = filePath.replace(fileName, '');
 	console.log('fileName: ' + fileName + '; filePath: ' + filePath + '; folderPath: ' + folderPath);
-		
+
 	// Initialize the GitHub API with user credentials
 	var github = new GitHub({
 		token: token
 	});
-	
+
 	// Get the repository
 	var repo = github.getRepo(username, repositoryName);
-	
+
 	// Fetch the list of files in the repository
 	repo.getContents(
-		branchName, 
+		branchName,
 		filePath,
-		true, 
+		true,
 		function (err, contents) {
 		if (err) {
 			alert('Opening the file failed \n: ' + err.message);
-		} else {			
+		} else {
 			var fileContent = contents;
-						
+
 			// Update the folder name in the menu bar
 			document.getElementById('folderName').innerHTML = '/' + folderPath;
-			
+
 			// Put the filename in the text input
 			document.getElementById('fileName').value = fileName;
 			// Display the content of the file

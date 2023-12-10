@@ -8,8 +8,6 @@ body#editor {
 
     nav#editor-toolbar {
 
-        background: var(--background, colour("white"));
-
         padding: $container-padding 0;
 
         details.dropdown-menu--float-right {
