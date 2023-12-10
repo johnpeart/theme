@@ -238,7 +238,7 @@ ul.dropdown-menu {
     section {
         position: relative;
         z-index: 100;
-        @include glass(20px, 2);
+        @include glass(20px, 2, true);
         margin: $container-padding 0;
 
         max-width: 100%;
