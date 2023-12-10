@@ -60,7 +60,7 @@ body#wishlist {
             }
 
             p.item-name,
-            p.item-extradetails {
+            p:last-of-type {
                 display: block;
                 width: 100%;
                 padding-bottom: 0;

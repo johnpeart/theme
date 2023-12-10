@@ -34,7 +34,7 @@ layout: default
 						<p class="item-name">{% if item.link %}<a href="{{ item.link }}" class="item-link" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</p>
 						{% assign content = item.content | strip_newlines %}
 						{% if content != "" %}
-						<p class="item-extradetails">{{ content | smartify }}</p>
+						{{ content | smartify }}
 						{% endif %}
 					</div>
 					<aside class="item-metadata">
@@ -54,7 +54,7 @@ layout: default
 						<p class="item-name">{% if item.link %}<a href="{{ item.link }}" class="item-link" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</p>
 						{% assign content = item.content | strip_newlines %}
 						{% if content != "" %}
-						<p class="item-extradetails">{{ content | smartify }}</p>
+						{{ content | smartify }}
 						{% endif %}
 					</div>
 					<aside class="item-metadata">
