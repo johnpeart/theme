@@ -158,7 +158,7 @@ $colours: (
     --webmention-fromMeLinkBackground: var(--white);
 
     --webmention-fromThemColor: var(--black);
-    --webmention-fromThemBackground: var(--gray-400);
+    --webmention-fromThemBackground: var(--gray-200);
     --webmention-fromThemLinkColor: var(--white);
     --webmention-fromThemLinkBackground: var(--cyan);
 
@@ -198,5 +198,7 @@ $colours: (
         --dropdownButton-disabledBackground: var(--gray-800);
 
         --skiplink-color: var(--black);
+
+        --webmention-fromThemBackground: var(--gray-400);
     }
 }
