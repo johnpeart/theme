@@ -28,13 +28,14 @@
     a {
         &:link {
             text-decoration: none;
+            color: var(--markerpen-color, colour("black"));
         }
         &:visited {
             text-decoration: none;
         }
         &:hover {
             text-decoration: underline;
-            color: var(--color, colour("black"));
+            color: var(--markerpen-color, colour("black"));
         }
         &:active {
             text-decoration: underline;
