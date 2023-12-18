@@ -167,6 +167,9 @@ $colours: (
     --skiplink-color: var(--white);
     --skiplink-background: var(--cyan);
 
+    --star-color: var(--red-tint, colour("red-tint"));
+    --star-background: var(--red, colour("red"));
+
     @include darkMode() {
         // Dark mode overrides
         // Colour palette
@@ -200,5 +203,8 @@ $colours: (
         --skiplink-color: var(--black);
 
         --webmention-fromThemBackground: var(--gray-400);
+
+        --star-color: var(--gray-800, colour("gray-800"));
+        --star-background: var(--white, colour("white"));
     }
 }

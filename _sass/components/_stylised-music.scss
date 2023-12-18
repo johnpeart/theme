@@ -90,8 +90,6 @@ a.music--button {
 
 .star-rating {
     --star-size: 30px;
-    --star-color: var(--red-tint, colour("red-tint"));
-    --star-background: var(--red, colour("red"));
     --percent: calc(var(--rating) / 5 * 100%);
 
     display: inline-block;
