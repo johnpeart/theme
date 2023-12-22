@@ -112,13 +112,13 @@ svg.hero-image {
     @include tablet {
         width: containers("tablet") + 100px;
         max-width: unset;
-        margin: $container-padding $container-padding - 50px $container-padding * 3;
+        margin: $container-padding $container-padding - 80px $container-padding * 3;
     }
     @include desktop {
         margin-bottom: 30px;
         width: containers("desktop") + 200px;
         max-width: unset;
-        margin: $container-padding $container-padding - 115px $container-padding * 3;
+        margin: $container-padding $container-padding - 130px $container-padding * 3;
     }
 }
 
