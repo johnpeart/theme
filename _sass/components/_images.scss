@@ -84,13 +84,13 @@ p > img {
     @include tablet {
         width: containers("tablet") + 100px;
         max-width: unset;
-        margin: $container-padding $container-padding - 50px;
+        margin: $container-padding $container-padding - 80px;
     }
     @include desktop {
         margin-bottom: 30px;
         width: containers("desktop") + 200px;
         max-width: unset;
-        margin: $container-padding $container-padding - 115px;
+        margin: $container-padding $container-padding - 130px;
     }
 
     &.rounded {
