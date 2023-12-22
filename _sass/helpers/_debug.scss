@@ -8,15 +8,11 @@ body.debug:after {
         content: "Desktop";
     }
 
-    display: block;
-    @include supports-sticky() {
-        margin: auto $container-padding;
-        bottom: $container-padding;
-    }
-
-
     display: inline-block;
-    @include glass(10px, 2);
+    position: fixed;
+    margin: auto $container-padding;
+    bottom: $container-padding;
+    @include glass(10px, 2, true);
     border-radius: $border-radius;
     @include typography($p, "marker");
     text-align: center;
