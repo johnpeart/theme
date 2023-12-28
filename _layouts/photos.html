@@ -27,7 +27,7 @@ layout: default
 				<section class="e-content stream--item--content stream--item--{{ page.collection }}--content">
 					{% include {{ page.collection | append: '.html' }} %}
 				</section>
-				{% include webmentions.html type="stream" %}
+				{% include webmentions.html type="count" %}
 			</article>
 		{% endfor %}
 
