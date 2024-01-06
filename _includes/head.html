@@ -1,31 +1,68 @@
 <head prefix="og: http://ogp.me/ns#">
 
+	{% assign author = "John Peart" %}
+	{% assign pageurl = site.url | append: site.baseurl | append: page.url | replace: 'index.html','' %}
+
+	{%- if page.collection == "posts" %}
+		{% assign title = page.title | strip_html | truncate: 200 %}
+		{% assign description = page.excerpt | strip_html | strip_newlines | truncate: 200 %}
+		{% assign type = "article" %}
+	{%- elsif page.collection == "reply" %}
+		{% assign title = page.reply_to.author.name | prepend: "↩️ In reply to " | strip_html | truncate: 200 %}
+		{% assign description = page.content | strip_html | truncate: 200 %}
+		{% assign type = "reply" %}
+		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: site.reply-image %}
+	{%- elsif page.collection == "note" %}
+		{% assign title = page.title | prepend: "🗒️ " | strip_html | truncate: 200 %}
+		{% assign description = page.content | strip_html | truncate: 200 %}
+		{% assign type = "note" %}
+	{%- elsif page.collection == "share" %}
+		{% assign title = page.reply_to.post.title | prepend: "🔁 Commented on ”" | append: "“" | strip_html | truncate: 200 %}
+		{% assign description = page.content | strip_html | truncate: 200 %}
+		{% assign type = "share" %}
+	{%- elsif page.collection == "music" %}
+		{% assign title = page.title | append: "“ by " | append: page.artist | prepend: "🎧 Shared ”" | strip_html | truncate: 200 %}
+		{% assign description = page.content | append: "by " | append: page.artist | strip_html | truncate: 200 %}
+		{% assign type = "music" %}
+	{%- elsif page.collection == "polaroid" %}
+		{% assign title = page.title | prepend: "📷 " | strip_html | truncate: 200 %}
+		{% assign description = page.content | strip_html | truncate: 200 %}
+		{% assign type = "photo" %}
+	{%- elsif page.collection == "game" %}
+		{% assign title = page.title | prepend: "🎮 Shared ”" | append: "“" | strip_html | truncate: 200 %}
+		{% assign description = page.content | strip_html | truncate: 200 %}
+		{% assign type = "game" %}
+	{%- elsif page.title -%}
+		{% assign title = page.title | strip_html | strip_newlines | truncate: 200 %}
+		{% assign description = page.excerpt | strip_html | strip_newlines | truncate: 200 %}
+		{% assign type = "article" %}
+	{%- else -%}
+		{% assign title = site.title | strip_html | strip_newlines | truncate: 200 %}
+		{% assign description = site.description | strip_html | strip_newlines | truncate: 200 %}
+		{% assign type = "website" %}
+	{%- endif -%}
+	{% if page.image %}
+		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: page.image %}
+	{% elsif page.collection %}
+		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: '/assets/images/site/' | append: page.collection | append: ".png" %}
+	{% else %}
+		{% assign image = site.url | append: site.baseurl | append: site.social-media-image %}
+	{% endif %}
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title>
-		{%- if page.collection == "reply" %}
-			{{ page.content | strip_html | truncate: 100 }}
-		{%- elsif page.title -%}
-			{{ page.title | strip_html | strip_newlines | truncate: 200 }}
-		{%- else -%}
-			{{ site.title | strip_html | strip_newlines | truncate: 200 }}
-		{%- endif -%}
-	</title>
-
-	<!-- Short description of the page (limit to 150 characters) -->
-	<!-- In *some* situations this description is used as a part of the snippet shown in the search results. -->
-	<meta name="description" content="{{ site.description | strip_html }}">
-	<meta name="author" content="{{ site.author }}">
+	<title>{{ title }}</title>
+	<meta name="description" content="{{ description }}">
+	<meta name="author" content="{{ author }}">
 
 	<!-- Base URLS, duplicate URLs and feeds -->
 	<meta name="url" content="{{ site.url | append: site.baseurl }}">
 	<base href="{{ site.url | append: site.baseurl | append: page.url | replace: '/index.html','' }}">
 	<!-- Links to top level resource in an hierarchical structure -->
 	<link rel="index" href="{{ site.url | append: site.baseurl }}">
-	<link rel="canonical" href="{{ site.url | append: site.baseurl | append: page.url | replace: '/index.html','' }}">
+	<link rel="canonical" href="{{ pageurl }}">
 	<link rel="alternate" href="{{ site.url | append: site.baseurl | append: '/feed.xml' }}" type="application/rss+xml" title="{{ site.title }}">
 	<!-- Links to a document that describes a collection of records, documents, or other materials of historical interest. -->
 	<link rel="archives" href="{{ site.url | append: site.baseurl | append: '/archives' }}">
@@ -44,33 +81,30 @@
 	{% webmentions_head %}
 
 	<!-- Facebook Open Graph settings -->
-	<meta property="og:url" 				content="{{ site.url | append: site.baseurl | append: page.url | replace: 'index.html','' }}">
-	<meta property="og:type" 			content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-	<meta property="og:title" 			content="{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
-	<meta property="og:image" 			content="{% if page.image %}{{ site.url | append: site.baseurl | append: site.image-path | append: page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">
-	<meta property="og:image:width" 		content="1200">
-	<meta property="og:image:height" 	content="630">
-	<meta property="og:rich_attachment" content="true">
-	<meta property="og:description" 		content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description  | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
-	<meta property="og:site_name" 		content="John Peart">
+	<meta property="og:url" 			content="{{ pageurl }}">
+	<meta property="og:type" 			content="{{ type }}">
+	<meta property="og:title" 			content="{{ title }}">
+	<meta property="og:image" 			content="{{ image }}">
+	<meta property="og:description" 	content="{{ description }}">
+	<meta property="og:site_name" 		content="{{ author }}">
 	<meta property="og:locale" 			content="en_GB">
-	<meta property="article:author" 		content="John Peart">
-	<meta property="article:publisher" 	content="John Peart">
+	<meta property="article:author" 	content="{{ author }}">
+	<meta property="article:publisher" 	content="{{ author }}">
 
 	<!-- Twitter Cards settings -->
 	<meta name="twitter:card" 			content="summary_large_image">
 	<meta name="twitter:site" 			content="{{ '@' | append: site.twitter-handle }}">
 	<meta name="twitter:creator" 		content="{{ '@' | append: site.twitter-handle }}">
-	<meta name="twitter:url" 			content="{{ site.url | append: site.baseurl | append: page.url | replace: 'index.html','' }}">
-	<meta name="twitter:title" 			content="{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
-	<meta name="twitter:description" 	content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description  | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
-	<meta name="twitter:image" 			content="{% if page.image %}{{ site.url | append: site.baseurl | append: site.image-path | append: page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">
-	<meta name="twitter:image:alt" 		content="{% if page.image-alt %}{{ page.image-alt | strip_html }}{% else %}{{ page.title }}{% endif %}">
+	<meta name="twitter:url" 			content="{{ pageurl }}">
+	<meta name="twitter:title" 			content="{{ title }}">
+	<meta name="twitter:description" 	content="{{ description }}">
+	<meta name="twitter:image" 			content="{{ image }}">
+	<meta name="twitter:image:alt" 		content="{{ image }}">
 
 	<!-- Schema.org settings -->
-	<meta itemprop="name" content="{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
-	<meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description  | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
-	<meta itemprop="image" 				content="{% if page.image %}{{ site.url | append: site.baseurl | append: site.image-path | append: page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">
+	<meta itemprop="name" 				content="{{ title }}">
+	<meta itemprop="description" 		content="{{ description }}">
+	<meta itemprop="image" 				content="{{ image }}">
 
 	<!-- Favicons -->
 	<!-- Place favicon.ico in the root directory - no tag necessary -->
