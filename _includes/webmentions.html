@@ -17,4 +17,8 @@
 		{% webmention_count page.url bookmarks %}
 	</aside>
 </footer>
-{% endif %}
+{% else %}
+ <footer class="webmentions">
+	 {% webmentions page.url posts replies likes reposts %}
+ </footer>
+ {% endif %}
