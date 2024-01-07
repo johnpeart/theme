@@ -45,7 +45,7 @@
 	{% if page.image %}
 		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: page.image %}
 	{% elsif page.collection %}
-		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: '/assets/images/site/social-media-' | append: page.collection | append: ".png" %}
+		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: '/site/social-media-' | append: page.collection | append: ".png" %}
 	{% else %}
 		{% assign image = site.url | append: site.baseurl | append: site.social-media-image %}
 	{% endif %}
