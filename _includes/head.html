@@ -69,14 +69,13 @@
 	<link rel="archives" href="{{ site.url | append: site.baseurl | append: '/archives' }}">
 
 	<!-- Gives information about the author -->
-	{% if site.url %}<link rel="me" href="{{ site.url }}" type="text/html">{% endif %}
-	{% if site.twitter-url %}<link rel="me" href="{{ site.twitter-url }}" type="text/html">{% endif %}
-	{% if site.linkedin-url %}<link rel="me" href="{{ site.linkedin-url }}" type="text/html">{% endif %}
-	{% if site.github-url %}<link rel="me" href="{{ site.github-url }}" type="text/html">{% endif %}
-	{% if site.flickr-url %}<link rel="me" href="{{ site.flickr-url }}" type="text/html">{% endif %}
-	{% if site.instagram-url %}<link rel="me" href="{{ site.instagram-url }}" type="text/html">{% endif %}
-	{% if site.mastodon-url %}<link rel="me" href="{{ site.mastodon-url }}" type="text/html">{% endif %}
+	<link rel="me" href="{{ site.url }}" type="text/html">
+	{% if site.linkedin %}<link rel="me" href="{{ site.linkedin.url }}" type="text/html">{% endif %}
+	{% if site.github %}<link rel="me" href="{{ site.github.url }}" type="text/html">{% endif %}
+	{% if site.flickr %}<link rel="me" href="{{ site.flickr.url }}" type="text/html">{% endif %}
+	{% if site.mastodon %}<link rel="me" href="{{ site.mastodon.url }}" type="text/html">{% endif %}
 	{% if site.webmention-io %}<link href="mailto:{{ site.webmention-io.email }}" rel="me">{% endif %}
+	{% if site.gravatar %}<link href="mailto:{{ site.gravatar.url }}" rel="me">{% endif %}
 
 	<!-- Web mentions -->
 	{% webmentions_head %}
