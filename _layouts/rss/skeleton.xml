@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	{% if page.permalink contains "/feed/" %}
+	{% assign filter = page.permalink | remove: '.xml' | remove: "/feed/" %}
+	{% endif -%}
+	<channel>
+		<title>{{ site.title | xml_escape }}{% if filter %} • {{ filter | capitalize }} posts {% else %} • All posts{% endif -%}</title>
+		<description>{{ site.description | xml_escape }}</description>
+		<image>
+			<url>{{ site.url | append: site.baseurl | append: site.social-media-image }}</url>
+			<title>{{ site.title | xml_escape }}{% if filter %} • {{ filter | capitalize }} posts {% else %} • All posts{% endif -%}</title>
+			<link>{{ site.url | append: site.baseurl }}/</link>
+		</image>
+		<link>{{ site.url | append: site.baseurl }}/</link>
+		<atom:link href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+		<pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+		<lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+		<copyright>Copyright {{ site.time | date: "%Y" }} John Peart. Please attribute and link to my work.</copyright>
+		<generator>Jekyll v{{ jekyll.version }}</generator>
+
+		{{ content }}
+
+	</channel>
+</rss>
