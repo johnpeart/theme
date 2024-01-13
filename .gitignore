@@ -4,7 +4,7 @@ _config.yml
 index.md
 index.html
 stream.md
-stream.html
+/stream.html
 Gemfile.lock
 *_site
 *.DS_Store
