@@ -26,30 +26,30 @@
 
 	{%- for post in allposts %}
 
-		{%- if page.collection == "blogpost" %}
-			{% assign title = page.title | strip_html %}
+		{%- if post.collection == "blogpost" %}
+			{% assign title = post.title | strip_html %}
 			{% assign type = "article" %}
-		{%- elsif page.collection == "reply" %}
-			{% assign title = page.reply_to.author.name | prepend: "↩️ In reply to " | strip_html %}
+		{%- elsif post.collection == "reply" %}
+			{% assign title = post.reply_to.author.name | prepend: "↩️ In reply to " | strip_html %}
 			{% assign type = "reply" %}
 			{% assign image = site.url | append: site.baseurl | append: site.image-path | append: site.reply-image %}
-		{%- elsif page.collection == "note" %}
-			{% assign title = page.title | prepend: "🗒️ " | strip_html %}
+		{%- elsif post.collection == "note" %}
+			{% assign title = post.title | prepend: "🗒️ " | strip_html %}
 			{% assign type = "note" %}
-		{%- elsif page.collection == "share" %}
-			{% assign title = page.reply_to.post.title | prepend: "🔁 Commented on “" | append: "”" | strip_html %}
+		{%- elsif post.collection == "share" %}
+			{% assign title = post.reply_to.post.title | prepend: "🔁 Commented on “" | append: "”" | strip_html %}
 			{% assign type = "share" %}
-		{%- elsif page.collection == "music" %}
-			{% assign title = page.title | prepend: "🎧 Shared “" | append: "” by " | append: page.artist | strip_html %}
+		{%- elsif post.collection == "music" %}
+			{% assign title = post.title | prepend: "🎧 Shared “" | append: "” by " | append: post.artist | strip_html %}
 			{% assign type = "music" %}
-		{%- elsif page.collection == "photo" %}
-			{% assign title = page.title | prepend: "📷 " | strip_html %}
+		{%- elsif post.collection == "photo" %}
+			{% assign title = post.title | prepend: "📷 " | strip_html %}
 			{% assign type = "photo" %}
-		{%- elsif page.collection == "game" %}
-			{% assign title = page.title | prepend: "🎮 Shared ”" | append: "“" | strip_html %}
+		{%- elsif post.collection == "game" %}
+			{% assign title = post.title | prepend: "🎮 Shared ”" | append: "“" | strip_html %}
 			{% assign type = "game" %}
-		{%- elsif page.title -%}
-			{% assign title = page.title | strip_html | strip_newlines %}
+		{%- elsif post.title -%}
+			{% assign title = post.title | strip_html | strip_newlines %}
 			{% assign type = "article" %}
 		{%- else -%}
 			{% assign title = site.title | strip_html | strip_newlines %}
@@ -68,17 +68,17 @@
 		<category>{{ cat | xml_escape }}</category>
 		{% endfor -%}
 		<description>
-			{% if page.image and page.image contains "://" %}
-				{% assign image = page.image %}
-			{% elsif page.image %}
-				{% assign image = site.url | append: site.baseurl | append: site.image-path | append: page.image %}
-			{% elsif page.collection %}
-				{% assign image = site.url | append: site.baseurl | append: site.image-path | append: '/site/social-media-' | append: page.collection | append: ".png" %}
+			{% if post.image and post.image contains "://" %}
+				{% assign image = post.image %}
+			{% elsif post.image %}
+				{% assign image = site.url | append: site.baseurl | append: site.image-path | append: post.image %}
+			{% elsif post.collection %}
+				{% assign image = site.url | append: site.baseurl | append: site.image-path | append: '/site/social-media-' | append: post.collection | append: ".png" %}
 			{% else %}
 				{% assign image = site.url | append: site.baseurl | append: site.social-media-image %}
 			{% endif %}
 
-			&lt;img src=&quot;{{ image }}&quot; alt=&quot;{{ page.image-alt }}&quot; /&gt;
+			&lt;img src=&quot;{{ image }}&quot; alt=&quot;{{ post.image-alt }}&quot; /&gt;
 
 			{{ post.content | xml_escape -}}
 		</description>
