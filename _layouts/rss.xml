@@ -21,7 +21,9 @@
 		item.collection == 'photo' or
 		item.collection == 'list' or
 		item.collection == 'game' or
-		item.collection == 'music'
+		item.collection == 'music' or
+		item.collection == 'share' or
+		item.collection == 'reply'
 	" | sort: date | reverse -%}
 
 	{%- for post in allposts %}
