@@ -4,26 +4,15 @@ layout: default
 
 <main id="content" class="container">
 
-	<article id="post-content" class="h-entry">
+	<article id="post-content" class="{{ page.collection }}-post h-entry">
 
-		<header class="post-title">
-
-			<aside class="published-date">
-				<time datetime="{{page.date | date: '%Y-%m-%d'}}" class="published-datetime dt-published">
-					<a href="{{ page.url }}" class="u-url post-published-date">
-						{{ page.date | date: "%-d %B %Y" }}
-					</a>
-				</time>
-			</aside>
-			<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
-
-		</header>
-
-		{% include emoji-hero-image.html %}
+		{% assign collection = page.collection %}
+		{% include /formats/headers.html format=collection %}
 
 		<section class="post-body e-content">
 			{{ content }}
-			{% include eurovision.html %}
+			{% include /formats/eurovision.html %}
+			{% include /formats/photo-metadata.html %}
 		</section>
 
 		{% include webmentions.html type="post" %}

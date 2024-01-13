@@ -1,0 +1,41 @@
+body[id$='blogpost'] {
+
+    time.published-datetime {
+        @include typography($post-date);
+        display: block;
+        line-height: 1;
+        color: var(--secondary-color, colour("gray-600"));
+        font-weight: bold;
+    }
+
+    header.post-title aside {
+        display: inline-block;
+        padding: 90px 0 15px 0;
+        @include tablet {
+            padding: 90px 0 15px 0;
+        }
+        @include desktop {
+            padding: 150px 0 45px 0;
+        }
+    }
+
+    section.post-body ul > li::before {
+        position: absolute;
+        content: "\2014";
+
+        left: 15px;
+        @include tablet {
+            left: -11px;
+        }
+        @include desktop {
+            left: -15px;
+        }
+    }
+
+    iframe {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}

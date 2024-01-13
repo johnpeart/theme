@@ -1,0 +1,81 @@
+{% if include.format == "blogpost" or include.format == "manuals" %}
+	<header class="post-title">
+		<aside class="published-date">
+			<time datetime="{{page.date | date: '%Y-%m-%d'}}" class="published-datetime dt-published">
+				<a href="{{ page.url }}" class="u-url post-published-date">
+					{{ page.date | date: "%-d %B %Y" }}
+				</a>
+			</time>
+		</aside>
+		<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
+		{% if page.emoji %}
+			{% include /formats/emoji-hero-image.html %}
+		{% endif %}
+	</header>
+{% elsif include.format == "note" %}
+	<header class="{{ page.collection }}-title">
+		<div class="note {{ page.colour | default: 'yellow' | prepend: 'post-it--' }}">
+			<h1 class="note--title">{{ page.title }}</h1>
+		</div>
+	</header>
+{% elsif include.format == "photo" %}
+	<header class="{{ page.collection }}-title">
+		<div class="photo">
+			<img src="{{ site.url | append: site.baseurl | append: '/assets/images' | append: page.image }}" class="u-photo" loading="lazy">
+			<h1 class="photo--title p-name"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+		</div>
+	</header>
+{% elsif include.format == "list" %}
+	<header class="{{ page.collection }}-title">
+		<div class="paper-list">
+			<section class="paper-list--header">
+				<h1 class="p-name paper-list--title">{{ page.title }}</h1>
+			</section>
+			<ul class="paper-list--body">
+				{% for item in page.list %}
+					<li class="paper-list--item paper-list--item--{{ item.status }}">{{ item.todo }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</header>
+{% elsif include.format == "music" %}
+	<header class="{{ page.collection }}-title">
+		<div class="music">
+			<img src="{{ page.stream.artwork }}" />
+			<section class="music--metadata p-name">
+				<h1 class="music--metadata--title">{{ page.title }}</h1>
+				<p class="music--metadata--artist">{{ page.artist }}</p>
+				<span class="star-rating" style="--rating: {{ page.rating }};" aria-label="I rated this music {{ page.rating }} out of 5 stars."></span>
+				<p class="music--button"><a class="music--button" href="{{ page.stream.itunes }}" target="_blank" rel="noopener noreferrer">Download on iTunes</a></p>
+			</section>
+		</div>
+	</header>
+{% elsif include.format == "game" %}
+	<header class="post-title">
+		<aside class="published-date">
+			<time datetime="{{page.date | date: '%Y-%m-%d'}}" class="published-datetime dt-published">
+				<a href="{{ page.url }}" class="u-url post-published-date">
+					{{ page.date | date: "%-d %B %Y" }}
+				</a>
+			</time>
+		</aside>
+		<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
+		{% if page.emoji %}
+			{% include emoji-hero-image.html %}
+		{% endif %}
+	</header>
+{% else %}
+	<header class="post-title">
+		<aside class="published-date">
+			<time datetime="{{page.date | date: '%Y-%m-%d'}}" class="published-datetime dt-published">
+				<a href="{{ page.url }}" class="u-url post-published-date">
+					{{ page.date | date: "%-d %B %Y" }}
+				</a>
+			</time>
+		</aside>
+		<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
+		{% if page.emoji %}
+			{% include emoji-hero-image.html %}
+		{% endif %}
+	</header>
+{% endif %}

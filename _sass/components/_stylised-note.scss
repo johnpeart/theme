@@ -1,4 +1,4 @@
-.post-it {
+.note {
 
     display: grid;
     position: relative;
@@ -7,7 +7,8 @@
     width: 275px;
     height: 275px;
     padding: $container-padding,;
-    margin: $container-padding * 2 auto;
+    margin-left: auto;
+    margin-right: auto;
     border-top: 60px solid;
     outline-offset: 0;
 
@@ -23,18 +24,6 @@
         height: 425px;
         padding: $container-padding * 2;
         border-top: 102px solid;
-    }
-
-    transition: all 0.25s;
-    &::after {
-        transition: all 0.25s;
-    }
-
-    &:hover {
-        transition: all 0.25s;
-        &::after {
-            transition: all 0.25s;
-        }
     }
 
     &.post-it--yellow {
@@ -66,28 +55,6 @@
                      transform: matrix(-1, -0.1, 0, 1, 0, 0);
         }
 
-        &:hover {
-            background: linear-gradient(135deg,
-                var(--post-it--yellow, colour("post-it--yellow")) 69%,
-                var(--post-it--yellow, colour("post-it--yellow")) 70%,
-                var(--post-it--yellow, colour("post-it--yellow")) 70%,
-                var(--post-it--yellow--corner, colour("post-it--yellow--corner")) 100%
-            );
-            border-bottom-right-radius: 300px 50px;
-
-            &::after {
-                content: "";
-                position: absolute;
-                z-index: -1;
-                right: -0px;
-                bottom: 55px;
-                width: 200px;
-                height: 25px;
-                background: rgba(0, 0, 0, 0.2);
-                box-shadow: 4px 30px 25px rgba(0, 0, 0, 0.40);
-            }
-
-        }
     }
 
     &.post-it--cyan {
@@ -120,41 +87,18 @@
                      transform: matrix(-1, 0.1, 0, 1, 0, 0);
         }
 
-        &:hover {
-            background: linear-gradient(-135deg,
-                var(--post-it--cyan, colour("post-it--cyan")) 69%,
-                var(--post-it--cyan, colour("post-it--cyan")) 70%,
-                var(--post-it--cyan, colour("post-it--cyan")) 70%,
-                var(--post-it--cyan--corner, colour("post-it--cyan--corner")) 100%
-            );
-            border-bottom-left-radius: 300px 50px;
-
-            &::after {
-                content: "";
-                position: absolute;
-                z-index: -1;
-                left: 10px;
-                bottom: 55px;
-                width: 200px;
-                height: 55px;
-                background: rgba(0, 0, 0, 0.2);
-                box-shadow: 4px 30px 25px rgba(0, 0, 0, 0.40);
-            }
-
-        }
-
-    }
-
-    .post-it--title {
-        align-self: center;
-        @include typography($marker, "marker");
-        color: var(--markerpen-color, colour("black"));
-        line-height: 1.1;
     }
 
 }
 
-.note-post .post-it {
+.note--title {
+    align-self: center;
+    @include typography($marker, "marker");
+    color: var(--markerpen-color, colour("black"));
+    line-height: 1.1;
+}
+
+.note-post header.note-title {
     @include tablet-up {
         margin: $container-padding * 4 auto;
     }

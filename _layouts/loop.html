@@ -2,38 +2,38 @@
 layout: page
 ---
 
-{% for post in site.posts %}
+{% for post in site.blogposts %}
 
 	{% assign currentdate = post.date | date: "%Y" %}
-	
+
 	{% if currentdate != date %}
-	
+
 	{% unless forloop.first %}
 	</ul>
-	
+
 	</section>
 	{% endunless %}
-	
+
 	<section>
-		
+
 	<h2 id="y{{post.date | date: "%Y"}}" class="loop-header">{{ currentdate }}</h2>
-	
+
 	<ul class="loop">
-	
+
 	{% assign date = currentdate %}
-	
+
 	{% endif %}
-	
+
 		<li>
 			<article>
 			<p class="loop-item-date"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B" }}</time></p>
 			<p class="loop-item-title"><a href="{{ post.url }}" title="Read {{ post.title }}">{{ post.title | smartify }}</a></p>
 			</article>
-		</li>	
-	
+		</li>
+
 	{% if forloop.last %}
 	</ul>
-	
+
 	</section>
 	{% endif %}
 

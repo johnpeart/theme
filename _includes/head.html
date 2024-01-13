@@ -3,7 +3,7 @@
 	{% assign author = "John Peart" %}
 	{% assign pageurl = site.url | append: site.baseurl | append: page.url | replace: 'index.html','' %}
 
-	{%- if page.collection == "posts" %}
+	{%- if page.collection == "blogpost" %}
 		{% assign title = page.title | strip_html | truncate: 200 %}
 		{% assign description = page.excerpt | strip_html | strip_newlines | truncate: 200 %}
 		{% assign type = "article" %}
@@ -24,7 +24,7 @@
 		{% assign title = page.title | append: "“ by " | append: page.artist | prepend: "🎧 Shared ”" | strip_html | truncate: 200 %}
 		{% assign description = page.content | append: "by " | append: page.artist | strip_html | truncate: 200 %}
 		{% assign type = "music" %}
-	{%- elsif page.collection == "polaroid" %}
+	{%- elsif page.collection == "photo" %}
 		{% assign title = page.title | prepend: "📷 " | strip_html | truncate: 200 %}
 		{% assign description = page.content | strip_html | truncate: 200 %}
 		{% assign type = "photo" %}

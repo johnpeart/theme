@@ -26,7 +26,7 @@ And then execute:
 Or install it yourself as:
 
     $ gem install jekyll-theme
-    
+
 Or, for Github Pages, add this to the `_config.yml`:
 
 ```yaml
@@ -48,7 +48,6 @@ The layouts available in this theme are:
 
 You can additionally insert into layouts or pages:
 
-- analytics: for Google analytics — you will need a `site.google-analytics` variable in your `_config.yml`
 - figure: for any images that need to include a caption below the images or figures[^1]
 - footer: to add a page footer
 - header: to add a page header
@@ -75,10 +74,10 @@ Unless otherwise stated, you may not reproduce the assets or code in this reposi
 Example code for `figure` below.
 
 ```liquid
-{% include figure.html   
-	url="/posts/whitehalls-broken-junction-aerial.png" 
+{% include figure.html
+	url="/posts/whitehalls-broken-junction-aerial.png"
 	alt="An aerial map of the junction at Storey’s Gate, Birdcage Walk, Horse Guards Road and Great George Street."
-	figure="1" 
+	figure="1"
 	caption="The junction of Storey’s Gate, Birdcage Walk, Horse Guards Road and Great George Street"
 	linktext="Aerial photography from Apple Maps"
 	link="https://maps.apple.com/?q=51.501367,-0.129838&sll=51.501367,-0.129838&sspn=0.003009,0.007918&t=h"

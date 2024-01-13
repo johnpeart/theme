@@ -13,7 +13,8 @@ layout: default
 		{% endif %}
 
 		{% for page in paginator.posts %}
-			{% if page.collection == "posts" %}
+			{% assign collection = page.collection %}
+			{% if collection == "blogpost" %}
 			<article class="h-entry stream--item stream--item--blogpost">
 				<aside class="stream--item--author">
 					{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
@@ -30,34 +31,34 @@ layout: default
 				</section>
 				{% include webmentions.html type="replies" %}
 			</article>
-			{% elsif page.collection == "reply" %}
+			{% elsif collection == "reply" %}
 			<article class="h-entry stream--item conversation-item stream--item--reply">
 				{% include cite.html %}
 				{% include reply.html %}
 				{% include webmentions.html type="count" %}
 			</article>
-			{% elsif page.collection == "share" %}
+			{% elsif collection == "share" %}
 			<article class="h-entry stream--item stream--item--share">
 				{% include cite.html %}
 				{% include reply.html %}
 				{% include webmentions.html type="count" %}
 			</article>
 			{% else %}
-			<article class="h-entry stream--item stream--item--{{ page.collection }}">
+			<article class="h-entry stream--item stream--item--{{ collection }}">
 				<aside class="stream--item--author">
 					{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
 					<span class="h-card p-author">
 						<img class="photo u-photo memoji" alt="A Memoji avatar of John Peart" src="{{ site.url | append: '/assets/images/me/memoji.png' }}">
 						<span class="p-name author--name"><a rel="author" class="p-author u-url u-uid" href="{{ site.url }}">John Peart</a></span>
 					</span>
-					{% if page.collection == "polaroid" -%}<a href="{{ page.url }}" class="u-url">posted a photo</a>
-					{% elsif page.collection == "note" -%}<a href="{{ page.url }}" class="u-url">wrote a note</a>
-					{% elsif page.collection == "list" -%}<a href="{{ page.url }}" class="u-url">wrote a list</a>
-					{% elsif page.collection == "music" -%}<a href="{{ page.url }}" class="u-url">shared some music</a>
+					{% if collection == "photo" -%}<a href="{{ page.url }}" class="u-url">posted a photo</a>
+					{% elsif collection == "note" -%}<a href="{{ page.url }}" class="u-url">wrote a note</a>
+					{% elsif collection == "list" -%}<a href="{{ page.url }}" class="u-url">wrote a list</a>
+					{% elsif collection == "music" -%}<a href="{{ page.url }}" class="u-url">shared some music</a>
 					{% else -%}<a href="{{ page.url }}" class="u-url">posted</a>{%- endif -%}
 				</aside>
-				<section class="e-content stream--item--content stream--item--{{ page.collection }}--content">
-					{% include {{ page.collection | append: '.html' }} %}
+				<section class="e-content stream--item--content stream--item--{{ collection }}--content">
+					{% include /formats/stream.html format=collection %}
 				</section>
 				{% include webmentions.html type="replies" %}
 			</article>

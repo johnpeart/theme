@@ -8,7 +8,7 @@ article.stream--item {
     }
 }
 article.stream--item--blogpost,
-article.stream--item--polaroid,
+article.stream--item--photo,
 article.stream--item--music,
 article.stream--item--note,
 article.stream--item--list {
@@ -113,7 +113,7 @@ article.stream--item--share {
         padding: 0 $container-padding $container-padding;
     }
 }
-.stream--item--polaroid--content,
+.stream--item--photo--content,
 .stream--item--note--content,
 .stream--item--list--content {
     @include mobile {
