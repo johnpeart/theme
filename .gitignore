@@ -31,6 +31,7 @@ Gemfile.lock
 404.html
 465.html
 *_data
+*_feed
 /pages
 /_includes/templates
 /assets/images/guides
