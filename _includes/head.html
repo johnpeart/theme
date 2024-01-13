@@ -17,11 +17,11 @@
 		{% assign description = page.content | strip_html | truncate: 200 %}
 		{% assign type = "note" %}
 	{%- elsif page.collection == "share" %}
-		{% assign title = page.reply_to.post.title | prepend: "🔁 Commented on ”" | append: "“" | strip_html | truncate: 200 %}
+		{% assign title = page.reply_to.post.title | prepend: "🔁 Commented on “" | append: "”" | strip_html | truncate: 200 %}
 		{% assign description = page.content | strip_html | truncate: 200 %}
 		{% assign type = "share" %}
 	{%- elsif page.collection == "music" %}
-		{% assign title = page.title | append: "“ by " | append: page.artist | prepend: "🎧 Shared ”" | strip_html | truncate: 200 %}
+		{% assign title = page.title | append: "” by " | append: page.artist | prepend: "🎧 Shared “" | strip_html | truncate: 200 %}
 		{% assign description = page.content | append: "by " | append: page.artist | strip_html | truncate: 200 %}
 		{% assign type = "music" %}
 	{%- elsif page.collection == "photo" %}
