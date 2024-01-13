@@ -2,7 +2,8 @@
 layout: page
 ---
 
-{% for post in site.blogposts %}
+{% assign posts = site.blogpost | reverse %}
+{% for post in posts %}
 
 	{% assign currentdate = post.date | date: "%Y" %}
 
