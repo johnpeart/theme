@@ -7,12 +7,12 @@ layout: default
 	<article id="post-content" class="{{ page.collection }}-post h-entry">
 
 		{% assign collection = page.collection %}
-		{% include /formats/headers.html format=collection %}
+		{% include formats/headers.html format=collection %}
 
 		<section class="post-body e-content">
 			{{ content }}
-			{% include /formats/eurovision.html %}
-			{% include /formats/photo-metadata.html %}
+			{% include formats/eurovision.html %}
+			{% include formats/photo-metadata.html %}
 		</section>
 
 		{% include webmentions.html type="post" %}

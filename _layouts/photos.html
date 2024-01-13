@@ -26,7 +26,7 @@ layout: default
 					{% else -%}<a href="{{ page.url }}" class="u-url">posted</a>{%- endif -%}
 				</aside>
 				<section class="e-content stream--item--content stream--item--{{ page.collection }}--content">
-					{% include /formats/stream.html format=collection %}
+					{% include formats/stream.html format=collection %}
 				</section>
 				{% include webmentions.html type="count" %}
 			</article>
