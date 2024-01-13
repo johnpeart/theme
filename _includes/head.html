@@ -21,7 +21,7 @@
 		{% assign description = page.content | strip_html | truncate: 200 %}
 		{% assign type = "share" %}
 	{%- elsif page.collection == "music" %}
-		{% assign title = page.title | append: "” by " | append: page.artist | prepend: "🎧 Shared “" | strip_html | truncate: 200 %}
+		{% assign title = page.title | prepend: "🎧 Shared “" | append: "” by " | append: page.artist | strip_html %}
 		{% assign description = page.content | append: "by " | append: page.artist | strip_html | truncate: 200 %}
 		{% assign type = "music" %}
 	{%- elsif page.collection == "photo" %}
@@ -42,7 +42,9 @@
 		{% assign type = "website" %}
 	{%- endif -%}
 
-	{% if page.image %}
+	{% if page.image and page.image contains "://" %}
+		{% assign image = page.image %}
+	{% elsif page.image %}
 		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: page.image %}
 	{% elsif page.collection %}
 		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: '/site/social-media-' | append: page.collection | append: ".png" %}
