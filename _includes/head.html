@@ -66,7 +66,10 @@
 	<!-- Links to top level resource in an hierarchical structure -->
 	<link rel="index" href="{{ site.url | append: site.baseurl }}">
 	<link rel="canonical" href="{{ pageurl }}">
-	<link rel="alternate" href="{{ site.url | append: site.baseurl | append: '/feed.xml' }}" type="application/rss+xml" title="{{ site.title }}">
+	<!-- RSS -->
+	{% for feed in site.feed %}
+	<link rel="alternate" href="{{ site.url | append: site.baseurl | append: feed.permalink }}" type="application/rss+xml" title="{{ "John Peart • " | append: feed.title }}">
+	{% endfor %}
 	<!-- Links to a document that describes a collection of records, documents, or other materials of historical interest. -->
 	<link rel="archives" href="{{ site.url | append: site.baseurl | append: '/archives' }}">
 
@@ -76,7 +79,7 @@
 	{% if site.github %}<link rel="me" href="{{ site.github.url }}" type="text/html">{% endif %}
 	{% if site.mastodon %}<link rel="me" href="{{ site.mastodon.url }}" type="text/html">{% endif %}
 	{% if site.webmention-io.email %}<link href="mailto:{{ site.webmention-io.email }}" rel="me">{% endif %}
-	{% if site.gravatar %}<link href="mailto:{{ site.gravatar.url }}" rel="me">{% endif %}
+	{% if site.gravatar %}<link href="{{ site.gravatar.url }}" rel="me">{% endif %}
 
 	<!-- Web mentions -->
 	{% webmentions_head %}
