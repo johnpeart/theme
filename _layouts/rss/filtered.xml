@@ -60,7 +60,7 @@ layout: rss/skeleton
 
 		&lt;img src=&quot;{{ image }}&quot; alt=&quot;{{ post.image-alt }}&quot; /&gt;
 
-		{{ post.content | xml_escape -}}
+		{{ post.content | markdownify | xml_escape -}}
 	</description>
 </item>
 {% endfor %}
