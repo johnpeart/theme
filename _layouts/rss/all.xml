@@ -91,11 +91,11 @@ layout: rss/skeleton
 			&lt;p&gt;On {{ page.date | date: '%d %B %Y' }}, John Peart shared and commented &lt;/p&gt;
 		{% endif %}
 
-		{% if page.collection == "reply" or page.collection == "reply" %}
+		{% if page.collection == "reply" or page.collection == "share" %}
 		&lt;blockquote&gt;
 		{% endif %}
-		{{ page.content | markdownify | xml_escape -}
-		{% if page.collection == "reply" or page.collection == "reply" %}
+		{{ page.content | markdownify | xml_escape -}}
+		{% if page.collection == "reply" or page.collection == "share" %}
 		&lt;/blockquote&gt;
 		{% endif %}
 		
