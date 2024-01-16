@@ -17,7 +17,7 @@ layout: rss/skeleton
 		{% assign title = page.title | prepend: "🗒️ " | strip_html %}
 		{% assign type = "note" %}
 	{%- elsif page.collection == "share" %}
-		{% assign title = page.reply_to.page.title | prepend: "🔁 Commented on “" | append: "”" | strip_html %}
+		{% assign title = page.reply_to.post.title | prepend: "🔁 Commented on “" | append: "”" | strip_html %}
 		{% assign type = "share" %}
 	{%- elsif page.collection == "music" %}
 		{% assign title = page.title | prepend: "🎧 Shared “" | append: "” by " | append: page.artist | strip_html %}
@@ -83,7 +83,13 @@ layout: rss/skeleton
 			&lt;p&gt;On {{ page.date | date: '%d %B %Y' }}, John Peart shared and commented &lt;/p&gt;
 		{% endif %}
 
-		{{ page.content | markdownify | xml_escape -}}
+		{% if page.collection == "reply" or page.collection == "reply" %}
+		&lt;blockquote&gt;
+		{% endif %}
+		{{ page.content | markdownify | xml_escape -}
+		{% if page.collection == "reply" or page.collection == "reply" %}
+		&lt;/blockquote&gt;
+		{% endif %}
 	</description>
 </item>
 {% endfor %}
