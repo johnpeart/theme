@@ -14,9 +14,9 @@
   	{% include skiplink.html %}
     {% include header.html %}
   	{{ content }}
-    {% unless page.layout contains "post"
-       or page.layout contains "reply"
-       or page.layout contains "share" -%}
+    {% unless page.collection contains "post"
+       or page.collection contains "reply"
+       or page.collection contains "share" -%}
     {% include footer.html %}
     {% endunless %}
     {% include analytics.html %}

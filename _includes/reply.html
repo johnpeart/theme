@@ -1,5 +1,5 @@
 <section class="reply">
-{% if page.layout == "reply" %}
+{% if page.collection == "reply" %}
 	<aside class="stream--item--reply--author">
 		{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
 		<span class="h-card p-author">
@@ -13,7 +13,7 @@
 			{{ page.content }}
 		</section>
 	</section>
-{% elsif page.layout == "share" %}
+{% elsif page.collection == "share" %}
 	<aside class="stream--item--reply--author">
 		{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
 		<span class="h-card p-author">
