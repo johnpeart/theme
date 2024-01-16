@@ -23,9 +23,15 @@
 	<section class="stream--item--quote">
 		{% if page.reply_to.post.image %}<img loading="lazy" class="post-image" src="{{ page.reply_to.post.image }}">{% endif %}
 		{% if page.reply_to.post.title %}<h1 class="post-title"><a href="{{ page.reply_to.post.url }}" class="u-url">{{ page.reply_to.post.title }}</a></h1>{% endif %}
+		{% if page.reply_to.post.content %}
 		<blockquote class="stream--item--quote--content h-cite">
 			{{ page.reply_to.post.content | markdownify  }}
 		</blockquote>
+		{% elsif page.reply_to.post.description %}
+		<blockquote class="stream--item--quote--content h-cite">
+			{{ page.reply_to.post.description | markdownify  }}
+		</blockquote>
+		{% endif %}
 	</section>
 {% endif %}
 </section>
