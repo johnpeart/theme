@@ -4,9 +4,58 @@ layout: page
 
 {{ content | replace: '<p>', '<p class="lead">' }}
 
-{% for feed in site.feed %}
-<article class="collection--list-item">
-	<h2><a href="{{ feed.permalink }}" title="Open the {{ feed.title }} feed">{{ feed.title }}</a></h2>
-	<p>{{ feed.excerpt }}</p>
-</article>
-{% endfor %}
+{% if page.group_by %}
+
+	{% if page.sort_by %}
+		{% assign collection = site[page.collection] | group_by: page.group_by | sort: page.sort_by %}
+	{% else %}
+		{% assign collection = site[page.collection] | group_by: page.group_by %}
+	{% endif %}
+
+	{% for item in collection %}
+		<section class="collection--list">
+
+			<header>
+				<h2 class="collection--list--title">{{ item.name }}</h2>
+			</header>
+
+			{% for item in item.items %}
+			{% unless item.hidden == true %}
+			<article class="collection--list-item">
+				<h3><a href="{{ item.link }}">{{ item.title | smartify }}</a></h3>
+				{% if item.excerpt %}
+				{{ item.excerpt | markdownify }}
+				{% elsif item.content %}
+				{{ item.content | markdownify }}
+				{% endif %}
+			</article>
+			{% endunless %}
+			{% endfor %}
+
+		</section>
+	{% endfor %}
+
+{% else %}
+
+	{% if page.sort_by %}
+		{% assign collection = site[page.collection] | sort: page.sort_by %}
+	{% else %}
+		{% assign collection = site[page.collection] %}
+	{% endif %}
+
+	{% for item in collection  %}
+	<article class="collection--list-item">
+		<h2 class="collection--list--item-title"><a href="{{ item.link }}" title="Open the {{ feed.title }} feed">{{ item.title }}</a></h2>
+		{% if item.excerpt %}
+		{{ item.excerpt | markdownify }}
+		{% elsif item.content %}
+		{{ item.content | markdownify }}
+		{% endif %}
+	</article>
+	{% endfor %}
+
+
+{% endif %}
+
+
+

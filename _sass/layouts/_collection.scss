@@ -15,7 +15,14 @@ body#collection {
     }
 
     h2 {
-        @include typography($h3, "default");
+        text-align: left;
+        &.collection--list--item-title {
+            @include typography($h3, "default");
+            padding: 0 !important;
+        }
+    }
+
+    h3 {
         text-align: left;
         padding: 0 !important;
     }

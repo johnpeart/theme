@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  {% if page.collection %}
+  {% if site.collections contains page.collection %}
   {% assign pageid = page.collection %}
   {% else %}
   {% assign pageid = page.layout %}
