@@ -57,3 +57,10 @@ blockquote.lyric {
     padding: 0;
     width: unset;
 }
+
+q::before {
+    content: open-quote;
+}
+q::after {
+    content: close-quote;
+}

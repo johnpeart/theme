@@ -78,7 +78,11 @@ layout: rss/skeleton
 				&lt;img src=&quot;{{ page.reply_to.post.image }}&quot; alt=&quot;{{ page.image-alt }}&quot; /&gt;
 				{% endif %}
 				{% if page.reply_to.post.title %}&lt;h2&gt;&lt;a href=&quot;{{ page.reply_to.post.url }}&quot;&gt;{{ page.reply_to.post.title }}&lt;/a&gt;&lt;/h2&gt;{% endif %}
+				{% if page.reply_to.post.content %}
 				{{ page.reply_to.post.content | markdownify | xml_escape }}
+				{% elsif page.reply_to.post.description %}
+				{{ page.reply_to.post.description | markdownify | xml_escape }}
+				{% endif %}
 			&lt;/blockquote&gt;
 			&lt;p&gt;On {{ page.date | date: '%d %B %Y' }}, John Peart shared and commented &lt;/p&gt;
 		{% endif %}
@@ -90,7 +94,7 @@ layout: rss/skeleton
 		{% if page.collection == "reply" or page.collection == "share" %}
 		&lt;/blockquote&gt;
 		{% endif %}
-		
+
 	</description>
 </item>
 {% endfor %}

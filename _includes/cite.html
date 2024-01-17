@@ -10,7 +10,7 @@
 		{% endif %}
 	</aside>
 	<section class="stream--item--quote conversation--item--reply from-them">
-		<blockquote class="stream--item--quote--content conversation--item--content h-cite">
+		<blockquote cite="{{ page.reply_to.post.url }}"  class="stream--item--quote--content conversation--item--content h-cite">
 			{{ page.reply_to.post.content | markdownify }}
 		</blockquote>
 	</section>
@@ -24,12 +24,12 @@
 		{% if page.reply_to.post.image %}<img loading="lazy" class="post-image" src="{{ page.reply_to.post.image }}">{% endif %}
 		{% if page.reply_to.post.title %}<h1 class="post-title"><a href="{{ page.reply_to.post.url }}" class="u-url">{{ page.reply_to.post.title }}</a></h1>{% endif %}
 		{% if page.reply_to.post.content %}
-		<blockquote class="stream--item--quote--content h-cite">
-			{{ page.reply_to.post.content | markdownify  }}
+		<blockquote cite="{{ page.reply_to.post.url }}"  class="stream--item--quote--content h-cite">
+			{{ page.reply_to.post.content | remove: '"' | strip | prepend: '<q>' | append: '</q>' | markdownify  }}
 		</blockquote>
 		{% elsif page.reply_to.post.description %}
-		<blockquote class="stream--item--quote--content h-cite">
-			{{ page.reply_to.post.description | markdownify  }}
+		<blockquote cite="{{ page.reply_to.post.url }}" class="stream--item--quote--content h-cite">
+			{{ page.reply_to.post.description | remove: '"' | strip | prepend: '<q>' | append: '</q>' | markdownify  }}
 		</blockquote>
 		{% endif %}
 	</section>
