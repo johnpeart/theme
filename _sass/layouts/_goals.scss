@@ -1,5 +1,6 @@
 // Home page styles
-body#goals {
+body#goals,
+body#goal {
     article.goal-collection {
         padding: 15px 0;
         border-top: 1px solid var(--secondary-borderColor, colour("gray-400"));
