@@ -1,0 +1,12 @@
+---
+layout: page
+---
+
+{{ content | replace: '<p>', '<p class="lead">' }}
+
+{% for feed in site.feed %}
+<article class="collection--list-item">
+	<h2><a href="{{ feed.permalink }}" title="Open the {{ feed.title }} feed">{{ feed.title }}</a></h2>
+	<p>{{ feed.excerpt }}</p>
+</article>
+{% endfor %}
