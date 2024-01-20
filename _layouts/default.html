@@ -14,9 +14,17 @@
   	{% include skiplink.html %}
     {% include header.html %}
   	{{ content }}
-    {% unless page.collection contains "post"
-       or page.collection contains "reply"
-       or page.collection contains "share" -%}
+    {%- unless
+      page.collection contains "post" or
+      page.collection contains "reply" or
+      page.collection contains "share" or
+      page.collection contains "photo" or
+      page.collection contains "list" or
+      page.collection contains "note" or
+      page.collection contains "music" or
+      page.collection contains "game" or
+      page.collection contains "manuals"
+    -%}
     {% include footer.html %}
     {% endunless %}
     {% include analytics.html %}
