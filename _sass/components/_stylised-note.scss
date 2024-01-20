@@ -10,20 +10,21 @@
     border-top: 60px solid;
     outline-offset: 0;
     box-shadow: 100px 100px 100px -110px rgba(25, 25, 25, 0.7);
+    rotate: 2deg;
 
     @include tablet {
         width: 450px;
         height: 300px;
-        margin-right: auto;
+        margin: $container-padding auto;
         padding: $container-padding * 1.5;
         border-top: 72px solid;
-        box-shadow: 130px 115px 100px -135px rgba(25, 25, 25, 0.7);
+        box-shadow: 130px 115px 100px -140px rgba(25, 25, 25, 0.7);
     }
 
     @include desktop {
         width: 638px;
         height: 425px;
-        margin-right: auto;
+        margin: $container-padding auto;
         padding: $container-padding * 2;
         border-top: 102px solid;
         box-shadow: 180px 170px 100px -195px rgba(25, 25, 25, 0.7);
