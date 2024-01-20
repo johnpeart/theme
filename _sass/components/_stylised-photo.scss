@@ -4,20 +4,17 @@
     position: relative;
     z-index: 0;
 
-    rotate: -2deg;
     width: 100%;
     max-width: 350px;
     margin: $container-padding * 0.5 auto;
     padding: $container-padding * 0.75;
 
     @include tablet {
-        margin: $container-padding auto;
         padding: $container-padding;
         width: 500px;
         max-width: 500px;
     }
     @include desktop {
-        margin: $container-padding auto;
         padding: $container-padding * 1.5;
         width: 600px;
         max-width: 600px;
