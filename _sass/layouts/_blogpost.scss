@@ -1,4 +1,4 @@
-body[id$='blogpost'] {
+body[id$='post'] {
 
     time.published-datetime {
         @include typography($post-date);
