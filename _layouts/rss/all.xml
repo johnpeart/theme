@@ -77,7 +77,7 @@ layout: rss/skeleton
 				{% else %}
 				&lt;li&gt;{{ item.todo }}&lt;/li&gt;
 				{% endif %}
-			{% endif %}
+			{% endfor %}
 			&lt;/ul&gt;
 		{% endif %}
 
