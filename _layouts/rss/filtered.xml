@@ -59,6 +59,19 @@ layout: rss/skeleton
 		{% endif %}
 
 		&lt;img src=&quot;{{ image }}&quot; alt=&quot;{{ page.image-alt }}&quot; /&gt;
+		
+		{% if page.collection == "list" %}
+			&lt;h2&gt;{{ title }}&lt;/h2&gt;
+			&lt;ul&gt;
+			{% for item in page.list %}
+				{% if item.status == "done" %}
+				&lt;li&gt;&lt;s&gt;{{ item.todo }}&lt;/s&gt;&lt;/li&gt;
+				{% else %}
+				&lt;li&gt;{{ item.todo }}&lt;/li&gt;
+				{% endif %}
+			{% endif %}
+			&lt;/ul&gt;
+		{% endif %}
 
 		{% if page.collection == "reply" and page.reply_to %}
 			&lt;p&gt;
