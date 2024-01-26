@@ -81,13 +81,13 @@ input[type="radio"] {
             content: "";
 
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 8px;
+            left: 8px;
 
             width: 0;
             height: 0;
 
-            border: 10px solid var(--radio-color);
+            border: 12px solid var(--radio-color);
             border-radius: 50%;
             opacity: 0;
             background: var(--color);
