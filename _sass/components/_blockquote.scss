@@ -17,11 +17,11 @@ blockquote {
     }
 
     code {
-        background: var(--background, colour("white"));
+        background: var(--background);
     }
 
     kbd {
-        background: var(--background, colour("white"));
+        background: var(--background);
     }
 
     ul {

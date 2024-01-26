@@ -4,7 +4,7 @@ body#manuals {
         padding: $container-padding 0;
 
         border-top: 1px solid;
-        border-color: var(--secondary-borderColor, colour("gray-400"));
+        border-color: var(--secondary-borderColor);
     }
 
     h2.project-name {

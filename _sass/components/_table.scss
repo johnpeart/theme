@@ -23,7 +23,7 @@ table {
     border: none;
 
     tr {
-        border-bottom: 1px solid var(--secondary-borderColor, colour("gray-400"));
+        border-bottom: 1px solid var(--secondary-borderColor);
 
         &:last-child {
             border-bottom: none !important;
@@ -34,7 +34,7 @@ table {
         padding: $container-padding;
         vertical-align: top;
 
-        border-left: 1px solid var(--secondary-borderColor, colour("gray-400"));
+        border-left: 1px solid var(--secondary-borderColor);
 
         &:first-child {
             border-left: none;
@@ -48,11 +48,11 @@ table {
     }
 
     thead {
-        border-bottom: 2px solid var(--color, colour("black"));
+        border-bottom: 2px solid var(--color);
     }
 
     tfoot {
-        border-bottom: 2px solid var(--color, colour("black"));
+        border-bottom: 2px solid var(--color);
     }
 
     caption {

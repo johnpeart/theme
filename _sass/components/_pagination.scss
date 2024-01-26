@@ -86,8 +86,8 @@ nav.pagination {
         padding: $container-padding;
         transition: box-shadow 0.25s;
         transition: background 0.25s;
-        color: var(--button-color, colour("black"));
-        background: var(--button-background, colour("white"));
+        color: var(--button-color);
+        background: var(--button-background);
         font-weight: bold;
         @include plastic(raised, 6px);
 
@@ -97,29 +97,29 @@ nav.pagination {
             text-decoration: none;
         }
         &:hover {
-            color: var(--button-hoverColor, colour("cyan"));
-            background: var(--button-hoverBackground, colour("gray-100"));
+            color: var(--button-hoverColor);
+            background: var(--button-hoverBackground);
             @include plastic(raised, 2px);
             transition: background 0.25s;
             transition: box-shadow 0.25s;
         }
 
         &:focus {
-            background: var(--button-focusBackground, colour("gray-100"));
+            background: var(--button-focusBackground);
             @include plastic(raised, 2px);
             transition: background 0.25s;
             transition: box-shadow 0.25s;
         }
 
         &:hover:focus {
-            background: var(--button-hoverFocusBackground, colour("gray-200"));
+            background: var(--button-hoverFocusBackground);
             @include plastic(raised, 2px);
             transition: background 0.25s;
             transition: box-shadow 0.25s;
         }
 
         &:active {
-            background: var(--button-activeBackground, colour("white"));
+            background: var(--button-activeBackground);
             @include plastic(inset, 4px);
             transition: background 0.25s;
             transition: box-shadow 0.25s;

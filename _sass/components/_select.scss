@@ -15,9 +15,9 @@ select {
     border-radius: form("border-radius");
     border: form("border-width") solid;
 
-    background-color: var(--background, colour("white"));
-    color: var(--color, colour("black"));
-    border-color: var(--color, colour("black"));
+    background-color: var(--background);
+    color: var(--color);
+    border-color: var(--color);
 
     background-image: url("data:image/svg+xml,%3Csvg fill='%23009FE3' height='40' viewBox='0 0 24 24' width='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -25,15 +25,15 @@ select {
     background-position-y: 50%;
 
     &:hover {
-        outline: form("border-width") solid var(--cyan, colour("cyan"));
+        outline: form("border-width") solid var(--cyan);
         outline-offset: 0px;
         border: form("border-width") solid;
     }
 
     &:focus {
-        outline: form("border-width") solid var(--form--focusBorderColor, colour("cyan"));
+        outline: form("border-width") solid var(--form--focusBorderColor);
         outline-offset: 3px;
-        border: form("border-width") solid var(--form--focusBackground, colour("black"));
+        border: form("border-width") solid var(--form--focusBackground);
     }
 
     &:disabled {
@@ -45,7 +45,7 @@ select {
     select option:active,
     select option:checked,
     select:focus::-ms-value {
-        color: var(--form--activeColor, colour("white"));
-        background-color: var(--form--activeBackground, colour("blue"));
+        color: var(--form--activeColor);
+        background-color: var(--form--activeBackground);
     }
 }

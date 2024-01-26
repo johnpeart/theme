@@ -42,14 +42,14 @@
     a {
         &:link {
             text-decoration: none !important;
-            color: var(--markerpen-color, colour("black"));
+            color: var(--markerpen-color);
         }
         &:visited {
             text-decoration: none;
         }
         &:hover {
             text-decoration: underline !important;
-            color: var(--markerpen-color, colour("black"));
+            color: var(--markerpen-color);
         }
         &:active {
             text-decoration: underline !important;
@@ -65,7 +65,7 @@
 
 .photo--title {
     text-align: center;
-    color: var(--markerpen-color, colour("black")) !important;
+    color: var(--markerpen-color) !important;
     @include typography($marker-small, "marker");
     line-height: 1.2;
     padding: $container-padding 0 0 0 !important;

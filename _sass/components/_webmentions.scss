@@ -51,24 +51,24 @@ li.conversation--item {
 
 .conversation--item--author {
     @include typography($small, "default");
-    color: var(--webmention-authorColor, colour("gray-600"));
+    color: var(--webmention-authorColor);
 
     a {
         &:link {
-            color: var(--webmention-authorColor, colour("gray-600"));
+            color: var(--webmention-authorColor);
             text-decoration: none;
         }
         &:visited {
-            color: var(--webmention-authorColor, colour("gray-600"));
+            color: var(--webmention-authorColor);
             text-decoration: none;
         }
         &:hover {
-            color: var(--webmention-hoverColor, colour("cyan"));
+            color: var(--webmention-hoverColor);
         }
         &:focus {
-            color: var(--webmention-fromThemLinkColor, colour("white"));
-            background: var(--webmention-fromThemLinkBackground, colour("cyan"));
-            outline: 2px solid var(--webmention-fromThemLinkBackground, colour("cyan"));
+            color: var(--webmention-fromThemLinkColor);
+            background: var(--webmention-fromThemLinkBackground);
+            outline: 2px solid var(--webmention-fromThemLinkBackground);
             outline-offset: 0;
             text-decoration: none;
         }
@@ -92,14 +92,14 @@ li.conversation--item {
 
     &:after {
         -webkit-transform: translate(-30px, -2px);
-        background:var(--background, colour("white"));
+        background:var(--background);
         width: 10px;
         height: 20px;
     }
 }
 .from-them .conversation--item--content {
-    background: var(--webmention-fromThemBackground, colour("gray-400"));
-    color: var(--webmention-fromThemColor, colour("black"));
+    background: var(--webmention-fromThemBackground);
+    color: var(--webmention-fromThemColor);
 
     &:before {
         content: "";
@@ -108,7 +108,7 @@ li.conversation--item {
         bottom: -2px;
         left: -7px;
         height: 15px;
-        border-left: 20px solid var(--webmention-fromThemBackground, colour("gray-400"));
+        border-left: 20px solid var(--webmention-fromThemBackground);
         border-bottom-right-radius: 16px 14px;
         -webkit-transform: translate(0, -2px);
     }
@@ -120,33 +120,33 @@ li.conversation--item {
         border-bottom-right-radius: 10px;
     }
     p {
-        color: var(--webmention-fromThemColor, colour("black"));
+        color: var(--webmention-fromThemColor);
     }
 
     a {
         &:link {
-            color: var(--webmention-fromThemColor, colour("black"));
+            color: var(--webmention-fromThemColor);
         }
         &:visited {
-            color: var(--webmention-fromThemColor, colour("black"));
+            color: var(--webmention-fromThemColor);
         }
         &:focus {
-            color: var(--webmention-fromThemLinkColor, colour("white"));
-            background: var(--webmention-fromThemLinkBackground, colour("cyan"));
-            outline: 2px solid var(--webmention-fromThemLinkBackground, colour("cyan"));
+            color: var(--webmention-fromThemLinkColor);
+            background: var(--webmention-fromThemLinkBackground);
+            outline: 2px solid var(--webmention-fromThemLinkBackground);
         }
     }
 }
 
 .from-me .conversation--item--content {
-    background: var(--webmention-fromMeBackground, colour("cyan"));
+    background: var(--webmention-fromMeBackground);
 
     &:before {
         z-index: -1;
         bottom: -2px;
         right: -7px;
         height: 15px;
-        border-right: 20px solid var(--webmention-fromMeBackground, colour("cyan"));
+        border-right: 20px solid var(--webmention-fromMeBackground);
         border-bottom-left-radius: $border-radius $border-radius - 3px;
         -webkit-transform: translate(0, -2px);
     }
@@ -161,20 +161,20 @@ li.conversation--item {
     }
 
     p {
-        color: var(--webmention-fromMeColor, colour("white"));
+        color: var(--webmention-fromMeColor);
     }
 
     a {
         &:link {
-            color: var(--webmention-fromMeColor, colour("white"));
+            color: var(--webmention-fromMeColor);
         }
         &:visited {
-            color: var(--webmention-fromMeColor, colour("white"));
+            color: var(--webmention-fromMeColor);
         }
         &:focus {
-            color: var(--webmention-fromMeLinkColor, colour("cyan"));
-            background: var(--webmention-fromMeLinkBackground, colour("white"));
-            outline: 2px solid var(--webmention-fromMeLinkBackground, colour("white"));
+            color: var(--webmention-fromMeLinkColor);
+            background: var(--webmention-fromMeLinkBackground);
+            outline: 2px solid var(--webmention-fromMeLinkBackground);
         }
     }
 }
@@ -194,29 +194,29 @@ li.conversation--item {
     }
     .conversation--item--interaction--content p {
         @include typography($small, "default");
-        color: var(--webmention-authorColor, colour("gray-600"));
+        color: var(--webmention-authorColor);
     }
     a {
         &:link {
-            color: var(--webmention-authorColor, colour("gray-600"));
+            color: var(--webmention-authorColor);
             text-decoration: none;
         }
         &:visited {
-            color: var(--webmention-authorColor, colour("gray-600"));
+            color: var(--webmention-authorColor);
             text-decoration: none;
         }
         &:hover {
-            color: var(--webmention-fromMeLinkColor, colour("cyan"));
+            color: var(--webmention-fromMeLinkColor);
             text-decoration: underline;
         }
         &:focus:hover {
-            color: var(--webmention-fromThemLinkColor, colour("white"));
+            color: var(--webmention-fromThemLinkColor);
             text-decoration: underline;
         }
         &:focus {
-            color: var(--webmention-fromThemLinkColor, colour("white"));
-            background: var(--webmention-fromThemLinkBackground, colour("cyan"));
-            outline: 2px solid var(--webmention-fromThemLinkBackground, colour("cyan"));
+            color: var(--webmention-fromThemLinkColor);
+            background: var(--webmention-fromThemLinkBackground);
+            outline: 2px solid var(--webmention-fromThemLinkBackground);
             text-decoration: none;
         }
         &:active {
@@ -251,25 +251,25 @@ li.conversation--item {
 .conversation--item--author a,
 .conversation--item--interaction--content a {
     &:link {
-        color: var(--webmention-authorColor, colour("gray-600"));
+        color: var(--webmention-authorColor);
         text-decoration: none;
     }
     &:visited {
-        color: var(--webmention-authorColor, colour("gray-600"));
+        color: var(--webmention-authorColor);
         text-decoration: none;
     }
     &:hover {
-        color: var(--webmention-fromMeLinkColor, colour("cyan"));
+        color: var(--webmention-fromMeLinkColor);
         text-decoration: underline;
     }
     &:focus:hover {
-        color: var(--webmention-fromThemLinkColor, colour("white"));
+        color: var(--webmention-fromThemLinkColor);
         text-decoration: underline;
     }
     &:focus {
-        color: var(--webmention-fromThemLinkColor, colour("white"));
-        background: var(--webmention-fromThemLinkBackground, colour("cyan"));
-        outline: 2px solid var(--webmention-fromThemLinkBackground, colour("cyan"));
+        color: var(--webmention-fromThemLinkColor);
+        background: var(--webmention-fromThemLinkBackground);
+        outline: 2px solid var(--webmention-fromThemLinkBackground);
         text-decoration: none;
     }
     &:active {
@@ -301,7 +301,7 @@ li.conversation--item {
 
 .webmention--count span {
     @include typography($small, "default");
-    color: var(--webmention-authorColor, colour("gray-600"));
+    color: var(--webmention-authorColor);
 }
 
 .webmention--reply {

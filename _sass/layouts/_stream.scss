@@ -66,29 +66,29 @@ article.stream--item--share {
 .stream--item--quoted--author,
 .stream--item--reply--author {
     @include typography($small, "default");
-    color: var(--webmention-authorColor, colour("gray-600"));
+    color: var(--webmention-authorColor);
     line-height: 1.2;
     a {
         &:link {
-            color: var(--webmention-authorColor, colour("gray-600"));
+            color: var(--webmention-authorColor);
             text-decoration: none;
         }
         &:visited {
-            color: var(--webmention-authorColor, colour("gray-600"));
+            color: var(--webmention-authorColor);
             text-decoration: none;
         }
         &:hover {
-            color: var(--webmention-fromMeLinkColor, colour("cyan"));
+            color: var(--webmention-fromMeLinkColor);
             text-decoration: underline;
         }
         &:focus:hover {
-            color: var(--webmention-fromThemLinkColor, colour("white"));
+            color: var(--webmention-fromThemLinkColor);
             text-decoration: underline;
         }
         &:focus {
-            color: var(--webmention-fromThemLinkColor, colour("white"));
-            background: var(--webmention-fromThemLinkBackground, colour("cyan"));
-            outline: 2px solid var(--webmention-fromThemLinkBackground, colour("cyan"));
+            color: var(--webmention-fromThemLinkColor);
+            background: var(--webmention-fromThemLinkBackground);
+            outline: 2px solid var(--webmention-fromThemLinkBackground);
             text-decoration: none;
         }
         &:active {

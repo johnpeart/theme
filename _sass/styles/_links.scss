@@ -6,19 +6,19 @@ a {
     text-decoration-skip-ink: auto;
 
     &:link {
-        color: var(--link-color, colour("black"));
+        color: var(--link-color);
     }
     &:visited {
-        color: var(--link-color, colour("black"));
+        color: var(--link-color);
     }
     &:hover {
-        color: var(--link-hoverColor, colour("cyan"));
+        color: var(--link-hoverColor);
         text-decoration: underline;
     }
     &:focus {
-        color: var(--link-focusColor, colour("white"));
-        background: var(--link-focusBackground, colour("cyan"));
-        outline: 2px solid var(--link-outlineColor, colour("cyan"));
+        color: var(--link-focusColor);
+        background: var(--link-focusBackground);
+        outline: 2px solid var(--link-outlineColor);
         outline-offset: 0;
         text-decoration: none;
     }
@@ -29,23 +29,23 @@ a {
     &.link-secondary,
     &.post-published-date {
         &:link {
-            color: var(--link-secondary-color, colour("gray-600"));
+            color: var(--link-secondary-color);
             text-decoration: none;
         }
         &:visited {
-            color: var(--link-secondary-color, colour("gray-600"));
+            color: var(--link-secondary-color);
         }
         &:hover {
-            color: var(--link-secondary-color, colour("gray-600"));
+            color: var(--link-secondary-color);
             text-decoration: underline;
         }
         &:hover:focus {
             text-decoration: underline;
         }
         &:focus {
-            color: var(--link-, colour("white"));
-            background: var(--link-focusBackground, colour("cyan"));
-            outline: 2px solid var(--link-outlineColor, colour("cyan"));
+            color: var(--link-);
+            background: var(--link-focusBackground);
+            outline: 2px solid var(--link-outlineColor);
         }
     }
 
@@ -60,9 +60,9 @@ a {
             text-decoration: underline !important;
         }
         &:focus {
-            color: var(--link-focusColor, colour("white"));
-            background: var(--link-focusBackground, colour("cyan"));
-            outline: 2px solid var(--link-outlineColor, colour("cyan"));
+            color: var(--link-focusColor);
+            background: var(--link-focusBackground);
+            outline: 2px solid var(--link-outlineColor);
         }
     }
 }

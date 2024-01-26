@@ -137,7 +137,7 @@ div.author--icons {
         width: 2px;
         margin: 0 5px;
         border-right: 2px solid;
-        border-color: var(--icon-background, colour("gray-600"));
+        border-color: var(--icon-background);
         content: "";
     }
 
@@ -159,27 +159,27 @@ div.author--icons {
             padding: 0;
 
             path {
-                fill: var(--color, colour("black"));
+                fill: var(--color);
             }
         }
 
 
         &:link svg path,
         &:visited svg path {
-            fill: var(--icon-background, colour("gray-600"));
+            fill: var(--icon-background);
         }
         &:hover svg path {
-            background: var(--background, colour("white"));
-            fill: var(--icon-hoverBackground, colour("cyan"));
+            background: var(--background);
+            fill: var(--icon-hoverBackground);
             text-decoration: none;
         }
         &:focus {
             outline-offset: 0;
-            outline: 5px solid var(--link-outlineColor, colour("cyan"));
+            outline: 5px solid var(--link-outlineColor);
         }
         &:focus svg path {
-            background: var(--link-outlineColor, colour("cyan"));
-            fill: var(--white, colour("white"));
+            background: var(--link-outlineColor);
+            fill: var(--white);
             outline: none;
         }
         &:active svg path {

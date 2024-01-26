@@ -13,7 +13,7 @@ figure dl {
     column-gap: $container-padding * 2;
     row-gap: $container-padding;
 
-    background: var(--dl--background, colour("gray-200"));
+    background: var(--dl--background);
 }
 
 dd, dt {
@@ -98,7 +98,7 @@ figure.app-sheet {
     .app-price,
     .app-dev-label,
     .app-dev {
-        border-top: form("border-width") solid var(--dl--borderColor, colour("gray-400"));
+        border-top: form("border-width") solid var(--dl--borderColor);
         margin-top: $container-padding;
         padding: 10px 0 0 0;
     }
@@ -123,7 +123,7 @@ figure.apps-list {
     dl {
         box-shadow: shadow(2);
         &:hover {
-            background: var(--dl--hoverBackground, colour("gray-300"));
+            background: var(--dl--hoverBackground);
         }
         &:first-child {
             border-radius: 10px 10px 0 0;
@@ -165,6 +165,6 @@ figure.apps-list {
             grid-template-areas: 'label price';
         }
         column-gap: 20px;
-        border-top: form("border-width") solid var(--dl--borderColor, colour("gray-400"));
+        border-top: form("border-width") solid var(--dl--borderColor);
     }
 }

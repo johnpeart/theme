@@ -76,12 +76,12 @@ summary {
     @include typography($p, "default");
 
     &:hover {
-        color: var(--details--hoverColor, colour("cyan"));
+        color: var(--details--hoverColor);
         @include plastic(raised, 2px);
         transition: box-shadow 0.25s;
     }
     &:focus {
-        outline: form("border-width") solid var(--details--outlineColor, colour("cyan"));
+        outline: form("border-width") solid var(--details--outlineColor);
     }
 
     h1, h2, h3, h4, h5, h6, p {

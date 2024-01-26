@@ -4,7 +4,7 @@ body[id$='post'] {
         @include typography($post-date);
         display: block;
         line-height: 1;
-        color: var(--secondary-color, colour("gray-600"));
+        color: var(--secondary-color);
         font-weight: bold;
     }
 

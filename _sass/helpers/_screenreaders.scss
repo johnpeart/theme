@@ -53,7 +53,7 @@
 
     &:focus,
     &:hover {
-        background: var(--skiplink-background, colour("cyan"));
-        color: var(--skiplink-color, colour("white"));
+        background: var(--skiplink-background);
+        color: var(--skiplink-color);
     }
 }

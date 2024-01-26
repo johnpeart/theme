@@ -10,7 +10,6 @@ header#site-header {
 }
 header#site-header nav#header--site-nav {
 
-
     @include typography($p, "default");
     text-align: center;
     line-height: 1 !important;
@@ -40,21 +39,21 @@ header#site-header nav#header--site-nav {
             font-weight: bold;
 
             &:link {
-                color: var(--link-color, colour("black"));
+                color: var(--link-color);
                 text-decoration: none;
             }
             &:visited {
-                color: var(--link-color, colour("black"));
+                color: var(--link-color);
             }
             &:hover {
-                color: var(--link-hoverColor, colour("cyan"));
+                color: var(--link-hoverColor);
                 text-decoration: underline;
             }
             &:focus {
-                color: var(--link-focusColor, colour("white"));
-                background: var(--link-focusBackground, colour("cyan"));
+                color: var(--link-focusColor);
+                background: var(--link-focusBackground);
                 outline: 2px solid;
-                outline-color: var(--link-outlineColor, colour("cyan"));
+                outline-color: var(--link-outlineColor);
             }
             &:active {
                 text-decoration: underline;
@@ -178,30 +177,30 @@ header#site-header nav#header--site-nav {
         }
 
         &:hover {
-            background: var(--dropdownButton-hoverBackground, colour("cyan"));
-            color: var(--dropdownButton-hoverColor, colour("white"));
+            background: var(--dropdownButton-hoverBackground);
+            color: var(--dropdownButton-hoverColor);
         }
 
         &:focus {
-            color: var(--dropdownButton-focusColor, colour("cyan"));
+            color: var(--dropdownButton-focusColor);
             background: transparent;
-            outline: form("border-width") solid var(--details--outlineColor, colour("cyan"));
+            outline: form("border-width") solid var(--details--outlineColor);
         }
 
         &:hover:focus {
-            background: var(--dropdownButton-hoverBackground, colour("cyan"));
-            color: var(--dropdownButton-hoverColor, colour("white"));
+            background: var(--dropdownButton-hoverBackground);
+            color: var(--dropdownButton-hoverColor);
         }
 
         &:active {
-            background: var(--dropdownButton-hoverBackground, colour("cyan"));
-            color: var(--dropdownButton-hoverColor, colour("white"));
+            background: var(--dropdownButton-hoverBackground);
+            color: var(--dropdownButton-hoverColor);
         }
 
         &:disabled,
         &:disabled:focus, &:disabled:hover, &:disabled:active {
-            background: var(--dropdownButton-disabledBackground, colour("gray-200"));
-            color: var(--dropdownButton-disabledColor, colour("gray-700"));
+            background: var(--dropdownButton-disabledBackground);
+            color: var(--dropdownButton-disabledColor);
             text-align: center;
             cursor: unset;
             outline: none;
@@ -233,15 +232,15 @@ header#site-header nav#header--site-nav {
     }
 
     details:active svg path#menuicon {
-        color: var(--cyan, colour("cyan"));
+        color: var(--cyan);
     }
 
     summary svg path#menuicon {
-        fill: var(--color, colour("black"));
+        fill: var(--color);
     }
 
     summary:hover svg path#menuicon {
-        fill: var(--cyan, colour("cyan"));
+        fill: var(--cyan);
     }
 
     summary:focus {
@@ -249,7 +248,7 @@ header#site-header nav#header--site-nav {
     }
 
     summary:focus svg path#menuicon {
-        fill: var(--cyan, colour("cyan"));
+        fill: var(--cyan);
     }
 
 }

@@ -8,19 +8,19 @@
     vertical-align: middle;
     border-radius: 8px;
 
-    background: var(--cyan, colour("cyan"));
-    color: var(--white, colour("white"));
+    background: var(--cyan);
+    color: var(--white);
 
     &.chiplet-green {
-        background: var(--green, colour("green"));
+        background: var(--green);
     }
 
     &.chiplet-red {
-        background: var(--red, colour("red"));
+        background: var(--red);
     }
 
     &.chiplet-yellow {
-        background: var(--yellow, colour("yellow"));
-        color: var(--black, colour("black"));
+        background: var(--yellow);
+        color: var(--black);
     }
 }

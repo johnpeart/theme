@@ -14,28 +14,28 @@ button {
     }
 
     &:hover {
-        background: var(--button-hoverBackground, colour("gray-400"));
-        color: var(--button-color, colour("white"));
+        background: var(--button-hoverBackground);
+        color: var(--button-color);
     }
 
     &:focus {
-        outline: form("border-width") solid var(--button-outlineColor, colour("cyan"));
+        outline: form("border-width") solid var(--button-outlineColor);
     }
 
 
     &:hover:focus {
-        background: var(--button-hoverFocusBackground, colour("gray-200"));
+        background: var(--button-hoverFocusBackground);
     }
 
     &:active {
-        outline: form("border-width") solid var(--button-outlineColor, colour("cyan"));
+        outline: form("border-width") solid var(--button-outlineColor);
         outline-offset: form("outline-active-offset");
     }
 }
 
 .button {
-    color: var(--button-color, colour("black"));
-    background: var(--button-background, colour("white"));
+    color: var(--button-color);
+    background: var(--button-background);
 
     @include plastic(raised, 6px);
     transition: background 0.25s;
@@ -44,29 +44,29 @@ button {
     text-decoration: none;
 
     &:hover {
-        color: var(--button-hoverColor, colour("cyan"));
-        background: var(--button-hoverBackground, colour("gray-100"));
+        color: var(--button-hoverColor);
+        background: var(--button-hoverBackground);
         @include plastic(raised, 2px);
         transition: background 0.25s;
         transition: box-shadow 0.25s;
     }
 
     &:focus {
-        background: var(--button-focusBackground, colour("gray-100"));
+        background: var(--button-focusBackground);
         @include plastic(raised, 2px);
         transition: background 0.25s;
         transition: box-shadow 0.25s;
     }
 
     &:hover:focus {
-        background: var(--button-hoverFocusBackground, colour("gray-200"));
+        background: var(--button-hoverFocusBackground);
         @include plastic(raised, 2px);
         transition: background 0.25s;
         transition: box-shadow 0.25s;
     }
 
     &:active {
-        background: var(--button-activeBackground, colour("white"));
+        background: var(--button-activeBackground);
         @include plastic(inset, 4px);
         transition: background 0.25s;
         transition: box-shadow 0.25s;
@@ -87,28 +87,28 @@ button {
     text-decoration: none;
 
     &:hover {
-        background: var(--dropdownButton-hoverBackground, colour("cyan"));
-        color: var(--dropdownButton-hoverColor, colour("white"));
+        background: var(--dropdownButton-hoverBackground);
+        color: var(--dropdownButton-hoverColor);
     }
 
     &:focus {
-        color: var(--dropdownButton-focusColor, colour("cyan"));
+        color: var(--dropdownButton-focusColor);
     }
 
     &:hover:focus {
-        background: var(--dropdownButton-hoverBackground, colour("cyan"));
-        color: var(--dropdownButton-hoverColor, colour("white"));
+        background: var(--dropdownButton-hoverBackground);
+        color: var(--dropdownButton-hoverColor);
     }
 
     &:active {
-        background: var(--dropdownButton-hoverBackground, colour("cyan"));
-        color: var(--dropdownButton-hoverColor, colour("white"));
+        background: var(--dropdownButton-hoverBackground);
+        color: var(--dropdownButton-hoverColor);
     }
 
     &:disabled,
     &:disabled:focus, &:disabled:hover, &:disabled:active {
-        background: var(--dropdownButton-disabledBackground, colour("gray-200"));
-        color: var(--dropdownButton-disabledColor, colour("gray-700"));
+        background: var(--dropdownButton-disabledBackground);
+        color: var(--dropdownButton-disabledColor);
         text-align: center;
         cursor: unset;
         outline: none;

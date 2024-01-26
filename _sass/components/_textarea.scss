@@ -6,11 +6,11 @@ textarea {
     margin-bottom: $container-padding * 2;
     padding: form("input-padding");
 
-    border: form("border-width") solid var(--color, colour("black"));
+    border: form("border-width") solid var(--color);
     border-radius: form("border-radius");
 
-    background: var(--background, colour("white"));
-    color: var(--color, colour("black"));
+    background: var(--background);
+    color: var(--color);
 
     // Disable inner shadow and remove rounded corners
     -webkit-appearance: none;
@@ -18,19 +18,19 @@ textarea {
 
 
     &:hover {
-        outline: form("border-width") solid var(--cyan, colour("cyan"));
+        outline: form("border-width") solid var(--cyan);
         outline-offset: 0px;
         border: form("border-width") solid;
     }
     &:focus {
-        outline: form("border-width") solid var(--cyan, colour("cyan"));
+        outline: form("border-width") solid var(--cyan);
         outline-offset: 3px;
-        color: var(--color, colour("black"));
+        color: var(--color);
         box-shadow: inset 0 0 0 form("border-focus-width");
-        border: form("border-width") solid var(--color, colour("black"));
+        border: form("border-width") solid var(--color);
     }
 
     &:invalid {
-        border: form("border-width") solid var(--red, colour("red"));
+        border: form("border-width") solid var(--red);
     }
 }

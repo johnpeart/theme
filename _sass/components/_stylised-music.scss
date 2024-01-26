@@ -60,24 +60,24 @@ a.music--button {
     padding: 5px 15px;
 
     &:link {
-        background: var(--music-red, colour("music-red"));
-        color: var(--white, colour("white"));
+        background: var(--music-red);
+        color: var(--white);
         text-decoration: none;
     }
     &:visited {
-        background: var(--music-red, colour("music-red"));
-        color: var(--white, colour("white"));
+        background: var(--music-red);
+        color: var(--white);
         text-decoration: none;
     }
     &:hover {
-        background: var(--white, colour("white"));
-        color: var(--music-red, colour("music-red"));
+        background: var(--white);
+        color: var(--music-red);
         text-decoration: none;
     }
     &:focus {
-        color: var(--link-focusColor, colour("white"));
-        background: var(--link-focusBackground, colour("cyan"));
-        outline: 2px solid var(--link-outlineColor, colour("cyan"));
+        color: var(--link-focusColor);
+        background: var(--link-focusBackground);
+        outline: 2px solid var(--link-outlineColor);
         outline-offset: 0;
         text-decoration: none;
     }

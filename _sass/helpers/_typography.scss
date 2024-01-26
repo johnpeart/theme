@@ -11,7 +11,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 
-    color: var(--color, colour("black"));
+    color: var(--color);
 }
 
 @mixin typography($font, $type: "default") {

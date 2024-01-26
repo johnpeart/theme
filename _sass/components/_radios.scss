@@ -72,9 +72,9 @@ input[type="radio"] {
 
             width: form("radios-size");
             height: form("radios-size");
-            border: 2px solid var(--color, colour("black"));
+            border: 2px solid var(--color);
             border-radius: 50%;
-            background: var(--background, colour("white"));
+            background: var(--background);
         }
 
         &::after {
@@ -87,22 +87,22 @@ input[type="radio"] {
             width: 0;
             height: 0;
 
-            border: 10px solid var(--radio-color, colour("cyan"));
+            border: 10px solid var(--radio-color);
             border-radius: 50%;
             opacity: 0;
-            background: var(--color, colour("black"));
+            background: var(--color);
         }
 
     }
 
     &:focus + label::before {
         border-width: 4px;
-        box-shadow: 0 0 0 3px var(--radio-color, colour("cyan"));
+        box-shadow: 0 0 0 3px var(--radio-color);
     }
 
     &:hover + label::before {
-        box-shadow: 0 0 0 3px var(--radio-color, colour("cyan"));
-        background: var(--background, colour("white"));
+        box-shadow: 0 0 0 3px var(--radio-color);
+        background: var(--background);
         border-width: 2px;
     }
 

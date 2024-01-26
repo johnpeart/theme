@@ -49,22 +49,22 @@ body#writing {
 
             a {
                 &:link {
-                    color: var(--cyan, colour("cyan"));
+                    color: var(--cyan);
                     text-decoration: none;
                 }
                 &:visited {
-                    color: var(--cyan, colour("cyan"));
+                    color: var(--cyan);
                     text-decoration: none;
                 }
                 &:hover {
-                    color: var(--link-hoverColor, colour("cyan"));
+                    color: var(--link-hoverColor);
                     text-decoration: underline;
                 }
                 &:focus {
-                    color: var(--link-focusColor, colour("white"));
+                    color: var(--link-focusColor);
                 }
                 &:active {
-                    color: var(--link-hoverColor, colour("cyan"));
+                    color: var(--link-hoverColor);
                     text-decoration: underline;
                 }
             }

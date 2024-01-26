@@ -26,7 +26,7 @@
 
     .paper-list--title {
         @include typography($marker, "marker");
-        color: var(--red, colour("red"));
+        color: var(--red);
         line-height: 1;
     }
     .paper-list--body {
@@ -34,7 +34,7 @@
     }
     .paper-list--item {
         @include typography($marker, "marker");
-        color: var(--markerpen-color, colour("black"));
+        color: var(--markerpen-color);
         line-height: 1;
 
         &:last-child {
@@ -46,7 +46,7 @@
         text-decoration: line-through;
         text-decoration-style: wavy;
         text-decoration-thickness: 5px;
-        text-decoration-color: var(--strikethrough-color, colour("red"));
+        text-decoration-color: var(--strikethrough-color);
     }
 }
 

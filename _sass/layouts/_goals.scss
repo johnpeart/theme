@@ -3,7 +3,7 @@ body#goals,
 body#goal {
     article.goal-collection {
         padding: 15px 0;
-        border-top: 1px solid var(--secondary-borderColor, colour("gray-400"));
+        border-top: 1px solid var(--secondary-borderColor);
     }
 
     h2.goal-year {
@@ -81,13 +81,13 @@ progress[value] {
         height: 20px;
 
         &::-webkit-progress-bar {
-            background: var(--secondary-background, colour("gray-200"));
+            background: var(--secondary-background);
             border: none;
             border-radius: 2px;
         }
 
         &::-webkit-progress-value {
-            background: var(--progress-barBackground, colour("cyan"));
+            background: var(--progress-barBackground);
             border-radius: 2px;
             background-size: 600px;
         }
@@ -100,7 +100,7 @@ progress[value] {
         margin-bottom: 0;
 
         &::-webkit-progress-bar {
-            background: var(--secondary-background, colour("gray-200"));
+            background: var(--secondary-background);
             border: none;
             border-top-left-radius: 2px;
             border-top-right-radius: 2px;
@@ -109,7 +109,7 @@ progress[value] {
         }
 
         &::-webkit-progress-value {
-            background: var(--progress-barBackground, colour("cyan"));
+            background: var(--progress-barBackground);
             border-top-left-radius: 2px;
             border-top-right-radius: 2px;
             border-bottom-left-radius: 0;
@@ -124,7 +124,7 @@ progress[value] {
         margin-top: 0;
 
         &::-webkit-progress-bar {
-            background: var(--secondary-background, colour("gray-200"));
+            background: var(--secondary-background);
             border: none;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
@@ -133,7 +133,7 @@ progress[value] {
         }
 
         &::-webkit-progress-value {
-            background: var(--progress-barSecondaryBackground, colour("purple"));
+            background: var(--progress-barSecondaryBackground);
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-bottom-left-radius: 2px;
@@ -146,6 +146,6 @@ progress[value] {
 
 .totaliser progress[value] {
     &::-webkit-progress-bar {
-        background: var(--background, colour("white"))
+        background: var(--secondary-background);
     }
 }

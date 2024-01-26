@@ -28,7 +28,7 @@ body#podcasts {
     section#pride-on {
 
         p {
-            color: var(--white, colour("white"));
+            color: var(--white);
         }
 
         padding-top: 0;
@@ -38,7 +38,7 @@ body#podcasts {
             padding-top: 15px;
             padding-bottom: 15px;
 
-            background:  var(--magenta, colour("magenta"));
+            background:  var(--magenta);
             background-image: url('/assets/images/podcasts/pride-on-arrows.svg');
             background-size: cover;
             background-position: center;
@@ -75,27 +75,27 @@ body#podcasts {
                 display: inline-block;
 
                 &:link {
-                    color: var(--white, colour("white"));
+                    color: var(--white);
                     text-decoration: none;
-                    border: 2px solid var(--white, colour("white"));
+                    border: 2px solid var(--white);
                     padding: 10px 25px;
                 }
                 &:visited {
-                    color: var(--black, colour("black"));
+                    color: var(--black);
                     text-decoration: none;
                 }
                 &:hover {
-                    color: var(--magenta, colour("magenta"));
-                    outline: 2px solid var(--white, colour("white"));
+                    color: var(--magenta);
+                    outline: 2px solid var(--white);
                     outline-offset: 2px !important;
-                    background: var(--white, colour("white"));
+                    background: var(--white);
                 }
                 &:focus {
-                    outline: 2px solid var(--white, colour("white"));
+                    outline: 2px solid var(--white);
                     outline-offset: 0px;
-                    border: 2px solid var(--magenta, colour("magenta"));
-                    color: var(--magenta, colour("magenta"));
-                    background: var(--white, colour("white"));
+                    border: 2px solid var(--magenta);
+                    color: var(--magenta);
+                    background: var(--white);
                 }
                 &:active {
                     outline-offset: 4px !important;

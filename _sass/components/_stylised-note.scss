@@ -32,30 +32,30 @@
     &.post-it--yellow {
         border-bottom-right-radius: 120px 10px;
 
-        border-color: var(--post-it--yellow--top, colour("post-it--yellow--top"));
-        background: var(--post-it--yellow, colour("post-it--yellow")); // Fallback
+        border-color: var(--post-it--yellow--top);
+        background: var(--post-it--yellow); // Fallback
         background: linear-gradient(130deg,
-            var(--post-it--yellow, colour("post-it--yellow")) 75%,
-            var(--post-it--yellow, colour("post-it--yellow")) 76%,
-            var(--post-it--yellow, colour("post-it--yellow")) 76%,
-            var(--post-it--yellow--corner, colour("post-it--yellow--corner")) 100%
+            var(--post-it--yellow) 75%,
+            var(--post-it--yellow) 76%,
+            var(--post-it--yellow) 76%,
+            var(--post-it--yellow--corner) 100%
         );
-        outline: 1px solid var(--post-it--yellow, colour("post-it--yellow"));
+        outline: 1px solid var(--post-it--yellow);
 
     }
 
     &.post-it--cyan {
         border-bottom-left-radius: 120px 20px;
 
-        border-color: var(--post-it--cyan--top, colour("post-it--cyan--top"));
-        background: var(--post-it--cyan, colour("post-it--cyan")); // Fallback
+        border-color: var(--post-it--cyan--top);
+        background: var(--post-it--cyan); // Fallback
         background: linear-gradient(-135deg,
-            var(--post-it--cyan, colour("post-it--cyan")) 81%,
-            var(--post-it--cyan, colour("post-it--cyan")) 82%,
-            var(--post-it--cyan, colour("post-it--cyan")) 82%,
-            var(--post-it--cyan--corner, colour("post-it--cyan--corner")) 100%
+            var(--post-it--cyan) 81%,
+            var(--post-it--cyan) 82%,
+            var(--post-it--cyan) 82%,
+            var(--post-it--cyan--corner) 100%
         );
-        outline: 1px solid var(--post-it--cyan--corner, colour("post-it--cyan--corner"));
+        outline: 1px solid var(--post-it--cyan--corner);
 
         &::after {
             content: "";
@@ -81,7 +81,7 @@
 .note--title {
     align-self: center;
     @include typography($marker, "marker");
-    color: var(--markerpen-color, colour("black"));
+    color: var(--markerpen-color);
     line-height: 1.1;
 
 }

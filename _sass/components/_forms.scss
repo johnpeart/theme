@@ -38,7 +38,7 @@ label {
 
 .label-hint {
     @extend p;
-    color: var(--labelHint-color, colour("gray-600"));
+    color: var(--labelHint-color);
     padding-bottom: 0;
     display: block;
 }

@@ -7,7 +7,7 @@ body#collection {
     article {
         padding: $container-padding 0;
         border-top: 1px solid;
-        border-color: var(--secondary-borderColor, colour("gray-400"));
+        border-color: var(--secondary-borderColor);
 
         > p {
             padding: 0;

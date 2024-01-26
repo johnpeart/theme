@@ -1,6 +1,5 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-    "helpers/_colours",
     "helpers/_darkmode",
 
     "variables/_colours",
@@ -69,7 +68,6 @@
     "layouts/_blogpost",
     "layouts/_page",
     "layouts/_about",
-    "layouts/_projects",
     "layouts/_podcasts",
     "layouts/_goals",
     "layouts/_wishlist",
