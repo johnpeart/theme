@@ -88,7 +88,7 @@ $colours: (
     --post-it--cyan--top: #5B9AE1;
     --post-it--cyan--corner: #8FBAEB;
 
-    --glass-background: linear-gradient(145deg, rgba(248, 249, 250, 0.6), rgba(233, 236, 239, 0.6));
+    --glass-background: rgba(250, 250, 250, 0.5);
     --glass-border: var(--absolute-white);
     --plastic-shadow-1: var(--gray-300);
     --plastic-shadow-2: var(--absolute-white);
@@ -98,6 +98,7 @@ $colours: (
 
     // Element colours
     --background: var(--white);
+    --translucent-background: rgba(250, 250, 250, 0.5);
     --color: var(--black);
     --markerpen-color: var(--black);
     --strikethrough-color: var(--red);
@@ -173,13 +174,14 @@ $colours: (
     @include darkMode() {
         // Dark mode overrides
         // Colour palette
-        --glass-background: linear-gradient(145deg, rgba(25, 25, 25, 0.75), rgba(35, 35, 35, 0.75));
+        --glass-background: rgba(29, 29, 29, 0.5);
         --glass-border: rgba(100, 100, 100, 0.3);
         --plastic-shadow-1: var(--absolute-black);
         --plastic-shadow-2: var(--gray-900);
 
         // Element colours
         --background: var(--black);
+        --translucent-background: rgba(29, 29, 29, 0.5);
         --color: var(--white);
         --secondary-background: var(--gray-800);
         --secondary-hoverBackground: var(--gray-700);

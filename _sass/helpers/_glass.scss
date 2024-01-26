@@ -1,10 +1,15 @@
-@mixin glass($blur: 5px, $shadow: 3, $effect: false, $bg: --glass-background) {
+@mixin glass($blur: 5px, $shadow: 3, $effect: false, $bg: --translucent-background, $float: true) {
 
-    border-radius: $border-radius;
-    border: 1px solid var(--glass-border, colour("absolute-white"));
+    @if $float == true {
+        border-radius: $border-radius;
+        border: 1px solid var(--glass-border);
+    }
 
-    background: var($bg, colour("gray-100"));
-    box-shadow: shadow($shadow);
+    background: var($bg);
+
+    @if $shadow != false {
+        box-shadow: shadow($shadow);
+    }
 
     @if $effect == true {
         -webkit-backdrop-filter: blur($blur);

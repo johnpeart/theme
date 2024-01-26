@@ -2,14 +2,15 @@ header#site-header {
     display: block;
     z-index: 999999;
     @include supports-sticky() {
-        margin: $container-padding auto;
-        top: $container-padding;
+        top: 0;
+        @include glass(20px, false, true, --translucent-background, false);
+        border-bottom: 1px solid var(--background);
     }
 
 }
 header#site-header nav#header--site-nav {
 
-    @include glass(20px, 2, true);
+
     @include typography($p, "default");
     text-align: center;
     line-height: 1 !important;
@@ -133,8 +134,8 @@ header#site-header nav#header--site-nav {
         text-align: center;
         max-height: 80vh;
         overflow-y: scroll;
-        @include glass(20px, 2, true);
-        margin: $container-padding * 2 0 $container-padding;
+        @include glass(20px, 2, true, --translucent-background);
+        margin: $container-padding * 2 $container-padding;
 
         min-width: 30vw;
         width: 100%;
