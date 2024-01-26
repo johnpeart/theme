@@ -284,6 +284,7 @@ li.conversation--item {
 .conversation--item--content p {
     padding-bottom: $container-padding;
 
+    &:last-of-type,
     &:last-child {
         padding-bottom:  0;
     }
