@@ -1,6 +1,7 @@
 body[id$='post'] {
 
-    time.published-datetime {
+    time.published-datetime,
+    header.post-title aside p {
         @include typography($post-date);
         display: block;
         line-height: 1;

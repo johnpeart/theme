@@ -22,7 +22,7 @@ layout: page
 			{% for item in item.items %}
 			{% unless item.hidden == true %}
 			<article class="collection--list-item">
-				<h3><a href="{{ item.link }}">{{ item.title | smartify }}</a></h3>
+				<h3 class="collection--list--item-title"><a href="{{ item.link }}">{{ item.title | smartify }}</a></h3>
 				{% if item.excerpt %}
 				{{ item.excerpt | markdownify }}
 				{% elsif item.content %}

@@ -1,0 +1,51 @@
+---
+layout: page
+---
+
+{{ content | replace: '<p>', '<p class="lead">' }}
+
+{% assign collection = site.about | group_by: "type" | sort: "name" %}
+
+{% for type in collection %}
+
+	<section class="collection--list">
+
+		<header>
+			<h2 class="collection--list--group-title">{{ type.name }}</h2>
+		</header>
+
+		{% assign roles = type.items | sort: "date" | group_by: "organisation" | reverse %}
+		{% for org in roles %}
+			<header>
+				<h3 class="collection--list--title">{{ org.name }}</h3>
+			</header>
+
+			{% assign jobs = org.items | sort: "date" | reverse %}
+			{% for job in jobs %}
+				<article>
+					<h4 class="collection--list--item-title"><a href="{{ job.url }}">{{ job.title | smaritfy }}</a></h4>
+					{% if job.dates.end == "present" %}
+					<p class="datetime"><time datetime="{{ job.dates.start | date: '%Y-%m-%d' }}">{{ job.dates.start | date: '%B %Y' }}</time> to <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ job.dates.end }}</time></p>
+					{% else %}
+					<p class="datetime"><time datetime="{{ job.dates.start | date: '%Y-%m-%d' }}">{{ job.dates.start | date: '%B %Y' }}</time> to <time datetime="{{ job.dates.end | date: '%Y-%m-%d' }}">{{ job.dates.end | date: '%B %Y' }}</time></p>
+					{% endif %}
+				</article>
+			{% endfor %}
+		{% endfor %}
+
+
+		{% for item in item.items %}
+		{% unless item.hidden == true %}
+		<article class="collection--list-item">
+			<h3><a href="{{ item.link }}">{{ item.title | smartify }}</a></h3>
+			{% if item.excerpt %}
+			{{ item.excerpt | markdownify }}
+			{% elsif item.content %}
+			{{ item.content | markdownify }}
+			{% endif %}
+		</article>
+		{% endunless %}
+		{% endfor %}
+
+	</section>
+{% endfor %}

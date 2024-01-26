@@ -1,7 +1,11 @@
-body#collection {
+body[id^='collection'] {
 
     p.lead:last-of-type {
         margin-bottom: $container-padding * 4;
+    }
+
+    p.datetime {
+        color: var(--secondary-color);
     }
 
     article {
@@ -9,13 +13,18 @@ body#collection {
         border-top: 1px solid;
         border-color: var(--secondary-borderColor);
 
-        > p {
+        > p:last-of-type {
             padding: 0;
         }
     }
 
     h2 {
         text-align: left;
+        &.collection--list--group-title {
+            @include typography($h2, "default");
+            color: var(--secondary-color);
+            padding: $container-padding * 6 0 $container-padding !important;
+        }
         &.collection--list--item-title {
             @include typography($h3, "default");
             padding: 0 !important;
@@ -24,7 +33,42 @@ body#collection {
 
     h3 {
         text-align: left;
-        padding: 0 !important;
+        &.collection--list--title {
+            @include typography($h3, "default");
+            padding: $container-padding * 2 0 $container-padding !important;        }
+        &.collection--list--item-title {
+            padding: 0;
+        }
+    }
+
+    h4 {
+        text-align: left;
+        font-style: normal;
+        padding: 0;
+    }
+
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a {
+        &:link,
+        &:visited {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+        &:focus {
+            color: var(--link-focusColor);
+            background: var(--link-focusBackground);
+            outline: 2px solid var(--link-outlineColor);
+            outline-offset: 0;
+            text-decoration: none;
+        }
+        &:active {
+            text-decoration: underline;
+        }
     }
 
 }

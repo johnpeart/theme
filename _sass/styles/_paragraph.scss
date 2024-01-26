@@ -24,7 +24,7 @@ p, li, dd, dt {
 }
 
 p.lead,
-body[id$='post'] section.post-body > p:first-of-type {
+article.blogpost-post section.post-body > p:first-of-type {
     @include typography($lead);
     font-weight: bold;
 }

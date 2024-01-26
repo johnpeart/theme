@@ -60,9 +60,18 @@
 			</time>
 		</aside>
 		<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
-		{% if page.emoji %}
-			{% include formats/emoji-hero-image.html %}
-		{% endif %}
+	</header>
+{% elsif include.format == "about" %}
+	<header class="post-title about">
+		<aside class="about">
+			{% if page.dates.end == "present" %}
+			<p class="datetime"><time datetime="{{ page.dates.start | date: '%Y-%m-%d' }}">{{ page.dates.start | date: '%B %Y' }}</time> to <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ page.dates.end }}</time></p>
+			{% else %}
+			<p class="datetime"><time datetime="{{ page.dates.start | date: '%Y-%m-%d' }}">{{ page.dates.start | date: '%B %Y' }}</time> to <time datetime="{{ page.dates.end | date: '%Y-%m-%d' }}">{{ page.dates.end | date: '%B %Y' }}</time></p>
+			{% endif %}
+			<p>{{ page.organisation }}</p>
+		</aside>
+		<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
 	</header>
 {% else %}
 	<header class="post-title">

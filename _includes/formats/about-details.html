@@ -1,0 +1,12 @@
+{% if page.collection == "about" and page.projects %}
+<ul class="about-job-projects">
+	<h5 class="about-job-projects">Major projects and publications</h5>
+	{% for project in page.projects %}
+		{% if project.url %}
+		<li><a href="{{ project.url }}" title="Read more about {{ project.project }} (Opens in new window)" target="_blank" rel="noopener noreferrer">{{ project.project | smartify }}</a></li>
+		{% else %}
+		<li>{{ project.project | smartify }}</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+{% endif %}
