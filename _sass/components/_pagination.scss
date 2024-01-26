@@ -89,7 +89,6 @@ nav.pagination {
         color: var(--button-color);
         background: var(--button-background);
         font-weight: bold;
-        @include plastic(raised, 6px);
 
         @include plastic(raised, 5px);
         transition: all 0.25s ease-out;
