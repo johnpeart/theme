@@ -3,7 +3,14 @@ header#site-header {
     z-index: 999999;
     @include supports-sticky() {
         top: 0;
-        @include glass(20px, false, true, --translucent-background, false);
+        &::before {
+            position: absolute;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 100%;
+            @include glass(20px, false, true, --translucent-background, false);
+        }
         border-bottom: 1px solid var(--background);
     }
 
