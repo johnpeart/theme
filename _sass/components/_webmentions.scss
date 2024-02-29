@@ -297,6 +297,7 @@ li.conversation--item {
     grid-column-gap: $container-padding * 2;
     margin: $container-padding * 0.5 0 $container-padding * 2;
     padding-right: $container-padding;
+    color: var(--webmention-authorColor);
 }
 
 .webmention--count span {
