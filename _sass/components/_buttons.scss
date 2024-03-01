@@ -16,6 +16,7 @@ button {
     &:hover {
         background: var(--button-hoverBackground);
         color: var(--button-color);
+        cursor: pointer;
     }
 
     &:focus {
