@@ -22,7 +22,12 @@ layout: page
 			{% for item in item.items %}
 			{% unless item.hidden == true %}
 			<article class="collection--list-item">
-				<h3 class="collection--list--item-title"><a href="{{ item.link }}">{{ item.title | smartify }}</a></h3>
+				{% if item.link %}
+					{% assign link = item.link %}
+				{% else %}
+					{% assign link = item.url %}
+				{% endif %}
+				<h3 class="collection--list--item-title"><a href="{{ link }}">{{ item.title | smartify }}</a></h3>
 				{% if item.excerpt %}
 				{{ item.excerpt | markdownify }}
 				{% elsif item.content %}
@@ -45,7 +50,12 @@ layout: page
 
 	{% for item in collection  %}
 	<article class="collection--list-item">
-		<h2 class="collection--list--item-title"><a href="{{ item.link }}" title="Open the {{ feed.title }} feed">{{ item.title }}</a></h2>
+		{% if item.link %}
+			{% assign link = item.link %}
+		{% else %}
+			{% assign link = item.url %}
+		{% endif %}
+		<h2 class="collection--list--item-title"><a href="{{ link }}" title="Open the {{ feed.title }} feed">{{ item.title }}</a></h2>
 		{% if item.excerpt %}
 		{{ item.excerpt | markdownify }}
 		{% elsif item.content %}
