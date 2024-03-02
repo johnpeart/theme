@@ -138,7 +138,7 @@ header#site-header nav#header--site-nav {
         padding: $container-padding;
         list-style: none;
         text-align: center;
-        max-height: 80vh;
+        max-height: calc(100vh - 100px);
         overflow-y: scroll;
         @include glass(20px, 2, true, --translucent-background);
         margin: $container-padding * 2 $container-padding;
