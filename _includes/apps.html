@@ -15,10 +15,10 @@
     <dt class="app-type-label sr-only">Type</dt>
     <dd class="app-type">{{ include.payment-type }}</dd>
     {% endif %}
-    <dt class="app-dev-label">Developer</dt>
-    <dd class="app-dev">{{ include.developer }}</dd>
-    <dt class="app-price-label">Price</dt>
-    <dd class="app-price">{{ include.price | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
+    <dt class="app-first-label">Developer</dt>
+    <dd class="app-first">{{ include.developer }}</dd>
+    <dt class="app-second-label">Price</dt>
+    <dd class="app-second">{{ include.price | prepend: "£" }}{% if include.frequency %} per {{ include.frequency }}{% endif %}</dd>
   </dl>
 </figure>
 

@@ -54,8 +54,8 @@ figure.app-sheet {
         grid-template-areas: "icon app-name app-name app-name"
                                 "icon app-description app-description app-description"
                                 "icon app-type app-type app-type"
-                                "app-dev-label app-dev-label app-dev app-dev"
-                                "app-price-label app-price-label app-price app-price";
+                                "app-first-label app-first-label app-first app-first"
+                                "app-second-label app-second-label app-second app-second";
     }
 
     .app-name {
@@ -82,32 +82,32 @@ figure.app-sheet {
         line-height: 1;
         color: var(--secondary-color);
     }
-    .app-price-label {
-        grid-area: app-price-label;
+    .app-second-label {
+        grid-area: app-second-label;
     }
-    .app-price {
-        grid-area: app-price;
+    .app-second {
+        grid-area: app-second;
     }
-    .app-dev-label {
-        grid-area: app-dev-label;
+    .app-first-label {
+        grid-area: app-first-label;
     }
-    .app-dev {
-        grid-area: app-dev;
+    .app-first {
+        grid-area: app-first;
     }
-    .app-price-label,
-    .app-price,
-    .app-dev-label,
-    .app-dev {
+    .app-second-label,
+    .app-second,
+    .app-first-label,
+    .app-first {
         border-top: form("border-width") solid var(--dl--borderColor);
         margin-top: $container-padding;
         padding: 10px 0 0 0;
     }
-    .app-dev-label,
-    .app-dev {
+    .app-first-label,
+    .app-first {
         margin-top: $container-padding * 2;
     }
-    .app-dev,
-    .app-price {
+    .app-first,
+    .app-second {
         text-align: right;
     }
 
