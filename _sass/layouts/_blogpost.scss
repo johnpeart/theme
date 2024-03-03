@@ -1,7 +1,8 @@
 body[id$='post'] {
 
     time.published-datetime,
-    header.post-title aside p {
+    header.post-title aside p,
+    span.collection-label {
         @include typography($post-date);
         display: block;
         line-height: 1;

@@ -14,7 +14,12 @@
 	</header>
 {% elsif include.format == "now" %}
 	<header class="post-title">
-		<h1 class="page-title p-name dt-published">{{ page.title | smartify }}</h1>
+		<aside class="collection-label">
+			<span class="collection-label">
+				Now
+			</span>
+		</aside>
+		<h1 class="post-title p-name dt-published">{{ page.title | smartify }}</h1>
 	</header>
 {% elsif include.format == "note" %}
 	<header class="{{ page.collection }}-title">
