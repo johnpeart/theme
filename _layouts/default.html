@@ -14,7 +14,7 @@
   	{% include skiplink.html %}
     {% include header.html %}
   	{{ content }}
-    {%- unless page.collection -%}
+    {%- unless page.collection and page.layout != "collection" -%}
     {% include footer.html %}
     {% endunless %}
     {% include analytics.html %}
