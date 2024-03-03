@@ -12,6 +12,10 @@
 			{% include formats/emoji-hero-image.html %}
 		{% endif %}
 	</header>
+{% elsif include.format == "now" %}
+	<header class="post-title">
+		<h1 class="page-title p-name dt-published">{{ page.title | smartify }}</h1>
+	</header>
 {% elsif include.format == "note" %}
 	<header class="{{ page.collection }}-title">
 		<div class="note {{ page.colour | default: 'yellow' | prepend: 'post-it--' }}">

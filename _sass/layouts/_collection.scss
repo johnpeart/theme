@@ -1,5 +1,9 @@
 body[id^='collection'] {
 
+    .no-border {
+        border: none;
+    }
+    
     p.lead:last-of-type {
         margin-bottom: $container-padding * 4;
     }
