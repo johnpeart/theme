@@ -2,11 +2,11 @@
 // All colours used should be referenced here
 :root {
     // Colour palette
-    --white: #FAFAFA;
-    --absolute-white: #FFFFFF;
+    --white: rgb(250, 250, 250);
+    --absolute-white: rgb(255, 255, 255);
 
-    --black: #1D1D1D;
-    --absolute-black: #000000;
+    --black: rgb(29, 29, 29);
+    --absolute-black: rgb(0, 0, 0);
 
     --gray-100: rgb(248, 249, 250);
     --gray-200: rgb(233, 236, 239);
@@ -18,27 +18,27 @@
     --gray-800: rgb(52, 58, 64);
     --gray-900: rgb(33, 37, 41);
 
-    --blue: #007AFF;
-    --desaturated-blue: #3B5998;
-    --purple: #C643FC;
-    --magenta: #E6007E;
-    --red: #B10E1E;
-    --music-red:  #FA243C;
-    --red-tint: #FAC4C9;
-    --orange: #ff5E3A;
-    --yellow: #FFD700;
-    --green-tone: #045009;
-    --green: #0BD318;
-    --green-tint: #BAFBBF;
-    --cyan: #009FE3;
-    --cyan-tint: #007bb0;
+    --blue: rgb(0, 122, 255);
+    --desaturated-blue: rgb(59, 89, 152);
+    --purple: rgb(198, 67, 252);
+    --magenta: rgb(230, 0, 126);
+    --red: rgb(177, 14, 30);
+    --music-red:  rgb(250, 36, 60);
+    --red-tint: rgb(250, 196, 201);
+    --orange: rgb(255, 94, 58);
+    --yellow: rgb(255, 215, 0);
+    --green-tone: rgb(4, 80, 9);
+    --green: rgb(11, 211, 24);
+    --green-tint: rgb(186, 251, 191);
+    --cyan: rgb(0, 159, 227);
+    --cyan-tint: rgb(0, 123, 176);
 
     --post-it--yellow: var(--yellow);
-    --post-it--yellow--top: #FAD300;
-    --post-it--yellow--corner: #FFF1A8;
-    --post-it--cyan: #649fE3;
-    --post-it--cyan--top: #5B9AE1;
-    --post-it--cyan--corner: #8FBAEB;
+    --post-it--yellow--top: rgb(250, 211, 0);
+    --post-it--yellow--corner: rgb(255, 241, 168);
+    --post-it--cyan: rgb(100, 159, 227);
+    --post-it--cyan--top: rgb(91, 154, 225);
+    --post-it--cyan--corner: rgb(143, 186, 235);
 
     --glass-background--music: linear-gradient(135deg, rgba(248, 249, 250, 0.6), rgba(251, 92, 116, 0.1));
 
