@@ -79,3 +79,22 @@ h3 + h4 {
     margin: 0;
     padding-top: 0 !important;
 }
+
+header.post-title aside {
+    display: inline-block;
+    padding: 90px 0 15px 0;
+    @include tablet {
+        padding: 90px 0 15px 0;
+    }
+    @include desktop {
+        padding: 150px 0 45px 0;
+    }
+}
+
+time.published-datetime {
+    @include typography($post-date);
+    display: block;
+    line-height: 1;
+    color: var(--secondary-color);
+    font-weight: bold;
+}

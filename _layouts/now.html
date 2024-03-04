@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<main id="content" class="container">
+		
+	{% assign collection = site.now | sort: date | reverse %}
+
+	{% for item in collection limit: 1 %}
+	<article id="post-content" class="blogpost-post h-entry">
+		
+		<header class="post-title">
+			<aside class="published-date">
+				<time datetime="{{ page.date | date: '%Y-%m-%d' }}" class="published-datetime dt-published">
+					<a href="{{ page.url }}" class="u-url post-published-date">Now</a>
+				</time>
+			</aside>
+			<h1 class="post-title p-name"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ item.date | date: '%B %Y' }}</time></h1>
+		</header>
+		
+		<section class="post-body e-content">	
+			{{ item.content }}
+		</section>
+	
+	</article>
+	{% endfor %}
+
+</main>
+
+
+{% if collection.size > 1 %}
+<aside id="loop" class="container collection--list">
+
+<h1 class="post-title">Previously</h1>
+{% for item in collection offset: 1 %}
+<article class="collection--list-item h-entry">
+	<h2 class="collection--list--item-title p-name dt-published"><time datetime="{{ page.date | date: '%Y-%m-%d' }}"><a href="{{ item.url }}" title="Read {{ item.date | date: '%B %Y' }}" class="u-url">{{ item.date | date: '%B %Y' }}</a></time></h2>
+	{% if item.excerpt %}
+	{{ item.excerpt | markdownify }}
+	{% endif %}
+</article>
+{% endfor %}
+</aside>
+{% endif %}

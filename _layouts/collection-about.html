@@ -22,7 +22,7 @@ layout: page
 
 			{% assign jobs = org.items | sort: "date" | reverse %}
 			{% for job in jobs %}
-				<article>
+				<article class="collection--list-item">
 					<h4 class="collection--list--item-title"><a href="{{ job.url }}">{{ job.title | smaritfy }}</a></h4>
 					{% if job.dates.end == "present" %}
 					<p class="datetime"><time datetime="{{ job.dates.start | date: '%Y-%m-%d' }}">{{ job.dates.start | date: '%B %Y' }}</time> to <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ job.dates.end }}</time></p>
