@@ -11,11 +11,11 @@ layout: default
 		
 		<header class="post-title">
 			<aside class="published-date">
-				<time datetime="{{ page.date | date: '%Y-%m-%d' }}" class="published-datetime dt-published">
+				<time datetime="{{ item.date | date: '%Y-%m-%d' }}" class="published-datetime dt-published">
 					<a href="{{ item.url }}" class="u-url post-published-date">Now</a>
 				</time>
 			</aside>
-			<h1 class="post-title p-name"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ item.date | date: '%B %Y' }}</time></h1>
+			<h1 class="post-title p-name">{{ item.date | date: '%B %Y' }}</h1>
 		</header>
 		
 		<section class="post-body e-content">	
