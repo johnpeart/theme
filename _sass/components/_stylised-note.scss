@@ -1,23 +1,57 @@
 .note {
+    
+    
+    &.post-it--yellow {
+        --post-it--top:     var(--post-it--yellow--top);
+        --post-it--body:    var(--post-it--yellow);
+        --post-it--corner:    var(--post-it--yellow--corner);
+    }
+    
+    &.post-it--green {
+        --post-it--top:     var(--post-it--green--top);
+        --post-it--body:    var(--post-it--green);
+        --post-it--corner:    var(--post-it--green--corner);
+    }
+    
+    &.post-it--cyan {
+        --post-it--top:     var(--post-it--cyan--top);
+        --post-it--body:    var(--post-it--cyan);
+        --post-it--corner:    var(--post-it--cyan--corner);
+    }
+    
+    &.post-it--magenta {
+        --post-it--top:     var(--post-it--magenta--top);
+        --post-it--body:    var(--post-it--magenta);
+        --post-it--corner:    var(--post-it--magenta--corner);
+    }
 
     display: grid;
     position: relative;
     direction: inline-block;
     width: 275px;
     height: 275px;
-    padding: $container-padding,;
+    padding: $container-padding;
     margin: 0 auto;
-    border-top: 60px solid;
     outline-offset: 0;
-    box-shadow: 100px 100px 100px -110px rgba(25, 25, 25, 0.7);
+    box-shadow: 100px 100px 50px -110px rgba(25, 25, 25, 0.4);
+    border-bottom-right-radius: 120px 10px;
+    border-top: 60px solid var(--post-it--top);
+    background: var(--post-it--body); // Fallback
+    background: linear-gradient(130deg,
+        var(--post-it--body) 75%,
+        var(--post-it--body) 76%,
+        var(--post-it--body) 76%,
+        var(--post-it--corner) 100%
+    );
+    outline: 1px solid var(--post-it--body);
 
     @include tablet {
         width: 450px;
         height: 300px;
         margin: $container-padding auto;
         padding: $container-padding * 1.5;
-        border-top: 72px solid;
-        box-shadow: 130px 115px 100px -140px rgba(25, 25, 25, 0.7);
+        border-top: 72px solid var(--post-it--top);
+        box-shadow: 130px 115px 50px -140px rgba(25, 25, 25, 0.7);
     }
 
     @include desktop {
@@ -25,55 +59,8 @@
         height: 425px;
         margin: $container-padding auto;
         padding: $container-padding * 2;
-        border-top: 102px solid;
-        box-shadow: 180px 170px 100px -195px rgba(25, 25, 25, 0.7);
-    }
-
-    &.post-it--yellow {
-        border-bottom-right-radius: 120px 10px;
-
-        border-color: var(--post-it--yellow--top);
-        background: var(--post-it--yellow); // Fallback
-        background: linear-gradient(130deg,
-            var(--post-it--yellow) 75%,
-            var(--post-it--yellow) 76%,
-            var(--post-it--yellow) 76%,
-            var(--post-it--yellow--corner) 100%
-        );
-        outline: 1px solid var(--post-it--yellow);
-
-    }
-
-    &.post-it--cyan {
-        border-bottom-left-radius: 120px 20px;
-
-        border-color: var(--post-it--cyan--top);
-        background: var(--post-it--cyan); // Fallback
-        background: linear-gradient(-135deg,
-            var(--post-it--cyan) 81%,
-            var(--post-it--cyan) 82%,
-            var(--post-it--cyan) 82%,
-            var(--post-it--cyan--corner) 100%
-        );
-        outline: 1px solid var(--post-it--cyan--corner);
-
-        &::after {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            left: 0px;
-            bottom: 35px;
-            width: 200px;
-            height: 55px;
-            background: rgba(0, 0, 0, 0.2);
-            box-shadow: -5px 25px 5px rgba(0, 0, 0, 0.40);
-                -moz-transform: matrix(-1, 0.1, 0, 1, 0, 0);
-             -webkit-transform: matrix(-1, 0.1, 0, 1, 0, 0);
-                  -o-transform: matrix(-1, 0.1, 0, 1, 0, 0);
-                 -ms-transform: matrix(-1, 0.1, 0, 1, 0, 0);
-                     transform: matrix(-1, 0.1, 0, 1, 0, 0);
-        }
-
+        border-top: 102px solid var(--post-it--top);
+        box-shadow: 180px 170px 50px -195px rgba(25, 25, 25, 0.7);
     }
 
 }

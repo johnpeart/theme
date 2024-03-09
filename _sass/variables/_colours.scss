@@ -33,12 +33,21 @@
     --cyan: rgb(0, 159, 227);
     --cyan-tint: rgb(0, 123, 176);
 
-    --post-it--yellow: var(--yellow);
+    --post-it--yellow: rgb(255, 215, 0);
     --post-it--yellow--top: rgb(250, 211, 0);
     --post-it--yellow--corner: rgb(255, 241, 168);
+    
     --post-it--cyan: rgb(100, 159, 227);
     --post-it--cyan--top: rgb(91, 154, 225);
     --post-it--cyan--corner: rgb(143, 186, 235);
+    
+    --post-it--green: rgb(215, 237, 108);
+    --post-it--green--top:  rgb(211, 232, 106);
+    --post-it--green--corner:  rgb(232, 255, 116);
+    
+    --post-it--magenta: rgb(230, 69, 158);
+    --post-it--magenta--top:  rgb(222, 66, 152);
+    --post-it--magenta--corner:  rgb(255, 128, 198);
 
     --glass-background--music: linear-gradient(135deg, rgba(248, 249, 250, 0.6), rgba(251, 92, 116, 0.1));
 
