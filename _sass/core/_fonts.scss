@@ -80,7 +80,8 @@
     font-weight: 400;
     font-style: normal;
 
-    src:    url('../fonts/PermanentMarker-Regular.ttf');
+    src:    url('../fonts/PermanentMarker-Regular.woff2') format('woff2'),
+            url('../fonts/PermanentMarker-Regular.woff') format('woff');
 
     -moz-font-feature-settings:    $font-feature-settings;
     -o-font-feature-settings:    $font-feature-settings;
