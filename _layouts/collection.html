@@ -49,6 +49,7 @@ layout: page
 		{% assign collection = site[page.collection] %}
 	{% endif %}
 
+	<section class="collection--list">
 	{% for item in collection %}
 	<article class="collection--list-item">
 		{% if item.link %}
@@ -67,6 +68,7 @@ layout: page
 		{% endif %}
 	</article>
 	{% endfor %}
+	</section>
 
 
 {% endif %}
