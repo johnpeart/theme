@@ -1,7 +1,11 @@
 blockquote {
-    background: var(--secondary-background);
+    background: var(--glass-background);
     padding: 20px;
     margin: 0 0 22px 0;
+    
+    border-radius: $border-radius;
+    box-shadow: shadow(2);
+    
     @include desktop {
         margin: 0 0 30px 0;
     }
@@ -72,7 +76,6 @@ blockquote.twitter-tweet {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-    @include glass(0, 3, false, --glass-background);
     
     img {
         width: 100%;

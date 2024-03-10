@@ -53,6 +53,10 @@ figure {
         margin: 0 0 15px;
         border-radius: $border-radius;
         box-shadow: shadow(2);
+        
+        &.padding {
+            padding: $container-padding;
+        }
 
         + figcaption {
             overflow-y: clip;
@@ -97,6 +101,11 @@ p > img {
         border-radius: $border-radius;
         box-shadow: shadow(2);
     }
+}
+
+p.featured img  {
+    border-radius: $border-radius;
+    box-shadow: shadow(2);
 }
 
 svg.hero-image {
