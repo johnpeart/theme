@@ -9,6 +9,7 @@ figure {
     margin-right: 0;
     margin-left: 0;
     margin-bottom: $container-padding * 2;
+    background: var(--glass-background);
     @include tablet {
         width: containers("tablet") + 100px;
         max-width: unset;
