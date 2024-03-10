@@ -20,6 +20,18 @@ article.stream--item--list {
         grid-template-areas: "from from" ". post" "webmentions webmentions";
     }
 }
+article.stream--item--music {
+    align-content: flex-end;
+}
+
+section.stream--item--content .music--nano {
+    margin: 0 0 0 auto !important;
+}
+section.stream--item--content .note,
+section.stream--item--content .photo {
+    margin: 0 $container-padding 0 auto !important;
+}
+
 article.stream--item--reply,
 article.stream--item--share {
     width: 100%;

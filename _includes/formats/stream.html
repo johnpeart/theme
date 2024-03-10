@@ -43,15 +43,16 @@
 </div>
 {% elsif include.format == "music" %}
 <header class="{{ page.collection }}-title">
-	<div class="music">
-		<img src="{{ page.artwork }}" />
-		<section class="music--metadata p-name">
-			<h1 class="music--metadata--title">{{ page.title }}</h1>
-			<p class="music--metadata--artist">{{ page.artist }}</p>
-			<span class="star-rating" style="--rating: {{ page.rating }};" aria-label="I rated this music {{ page.rating }} out of 5 stars."></span>
-			<p class="music--button"><a class="music--button" href="{{ page.itunes }}" target="_blank" rel="noopener noreferrer">Download on iTunes</a></p>
-		</section>
-	</div>
+	<a class="music--nano-link" href="{{ page.url }}" alt="Read more about {{ page.title }} by {{ page.artist }}">
+		<div class="music--nano">
+			<img class="music--artwork" src="{{ page.artwork }}" />
+		</div>
+	</a>
+	<section class="music--metadata sr-only p-name">
+		<h1 class="music--metadata--title">{{ page.title }}</h1>
+		<p class="music--metadata--artist">{{ page.artist }}</p>
+		<p class="star-rating" style="--rating: {{ page.rating }};" aria-label="I rated this music {{ page.rating }} out of 5 stars."></p>
+	</section>
 </header>
 {% elsif include.format == "game" %}
 GAME

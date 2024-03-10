@@ -1,42 +1,48 @@
-.music {
-    display: grid;
-
-    @include glass(0px, 2, false, --glass-background--music);
-    padding: $container-padding;
-
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    grid-gap: $container-padding;
-
-    @include tablet-up {
-        width: 550px !important;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto;
+a.music--nano-link {
+    display: block;
+    position: relative;
+    
+    &:focus {
+        background: var(--link-focusBackground);
+        outline: none;
+        text-decoration: none;
     }
 }
 
-.music-post .music {
-    margin: $container-padding * 5 auto;
+.music-post .music-title {
+    padding: $container-padding * 2 0;
 }
 
-.music img {
-    max-width: 200px;
-    max-height: 200px;
-    aspect-ratio: 1;
-    border-radius: 8px;
+.music--nano {
+    display: grid;
+    
+    margin: 0 auto;
+    
+    width: 100%;
+    max-width: 400px;
+    
+    align-content: center;
+    aspect-ratio: 806/763;
+    background-image: url('/assets/images/site/nano-bg.svg');
+    
+    &::after {
+        position: absolute;
+        display: block;
+        
+        width: 100%;
+        max-width: 400px;
+        
+        aspect-ratio: 806/763;
+        content: "";
+        background-image: url('/assets/images/site/nano-fore.svg');    
+    }
+
+}
+
+.music--artwork {
     justify-self: center;
-}
-
-.music--metadata {
-    display: grid;
-
-    justify-items: center;
-    align-items: center;
-    @include tablet-up {
-        align-items: flex-start;
-        justify-items: flex-start;
-    }
-    grid-template-rows: auto 1fr auto auto;
+    max-width: 67%;
+    border-radius: 5px;
 }
 
 h1.music--metadata--title {
@@ -44,55 +50,22 @@ h1.music--metadata--title {
 }
 
 h1.music--metadata--title,
-p.music--metadata--artist {
+p.music--metadata--artist,
+.star-rating {
+    text-align: center;
     padding: 0;
     margin: 0;
 }
 
-p.music--button {
-    padding: 5px 0 !important;
-    line-height: 1;
-}
-a.music--button {
-    @include typography($small, "default");
-    font-weight: bold;
-    border-radius: 500px;
-    padding: 5px 15px;
-
-    &:link {
-        background: var(--music-red);
-        color: var(--white);
-        text-decoration: none;
-    }
-    &:visited {
-        background: var(--music-red);
-        color: var(--white);
-        text-decoration: none;
-    }
-    &:hover {
-        background: var(--white);
-        color: var(--music-red);
-        text-decoration: none;
-    }
-    &:focus {
-        color: var(--link-focusColor);
-        background: var(--link-focusBackground);
-        outline: 2px solid var(--link-outlineColor);
-        outline-offset: 0;
-        text-decoration: none;
-    }
-    &:active {
-        text-decoration: underline;
-    }
-}
 
 .star-rating {
     --star-size: 30px;
     --percent: calc(var(--rating) / 5 * 100%);
 
-    display: inline-block;
+    display: block;
     font-size: var(--star-size);
     font-family: Times; // make sure ★ appears correctly
+    
     line-height: 1;
     margin: $container-padding 0;
 
