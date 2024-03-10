@@ -56,6 +56,7 @@ figure {
         
         &.padding {
             padding: $container-padding;
+            box-sizing: border-box;
         }
 
         + figcaption {
