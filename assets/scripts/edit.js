@@ -20,7 +20,108 @@ const openFileButton = document.getElementById('openFileButton')
 const closeFilesButton = document.getElementById('closeFilesButton')
 const newFileButton = document.getElementById('newFileButton')
 
+// TEMPLATES
+var aboutTemplate = `---
+type: "Type"
+title: "Role title"
+organisation: "Organisation"
+dates:
+  start: ` + now + `
+  end: ` + now + `
+permalink: /about/role-title
+---`
 
+var blogpostTemplate = `---
+date: ` + now + ` 09:00:00 +0000
+title: "Blogpost title"
+excerpt: "Excerpt"
+image: /posts/YYYY/MM/DD/post-slug/image-name.jpg
+categories:
+- category
+---`
+
+var ideasTemplate = `---
+type: "Type"
+title: "Idea"
+link: "//example.com"
+hidden: false
+---`
+
+var listTemplate = `---
+date: ` + now + ` 09:00:00 +0000
+title: "List template"
+list:
+- status: "done"
+  todo: "Completed task"
+- status: "not done"
+  todo: "Incomplete task"
+---`
+
+var manualsTemplate = `---
+title: LCARS clock
+excerpt: "Excerpt"
+category:
+- category
+---`
+
+var musicTemplate = `---
+date: ` + now + ` 09:00:00 +0000
+title: "Title"
+artist: "Artist"
+rating: 5
+artwork: "//example.com"
+image: "//example.com"
+---`
+
+var noteTemplate = `---
+date: ` + now + ` 09:00:00 +0000
+title: "Title"
+excerpt: "Excerpt"
+colour: "yellow"
+---`
+
+var nowTemplate = `---
+date: ` + now + ` 09:00:00 +0000
+title: "Month 20XX"
+excerpt: "Excerpt"
+image: /site/social-media-now.png
+---`
+
+var replyTemplate = `---
+date: ` + now + ` 09:00:00 +0000
+reply_to:
+  author:
+	name: "Original author"
+	url: "//example.com"
+  post:
+	url: "//example.com/post-title"
+    date: ` + now + ` 09:00:00 +0000
+	content: |
+	  What did they say
+  original:
+	url: "/2024/01/01/original-post"
+	title: "Making “Webmentions” look more conversational"
+---
+My reply`
+
+var shareTemplate = `---
+date: ` + now + ` 09:00:00 +0000
+reply_to:
+  author:
+	name: "Original author"
+	url: "//example.com"
+  publication:
+	name: "Website"
+	url: "//example.com/"
+  post:
+	title: "Post title"
+	url: "//example.com"
+	image: "//example.com/image.jpg"
+	date: ` + now + ` 09:00:00 +0000
+	content: |
+	  Quoted content
+image: "//example.com/image.jpg"
+---`
 
 // SET UP
 if (sessionStorage.getItem('username') == null || sessionStorage.getItem('token') == null) {
@@ -35,9 +136,6 @@ if (sessionStorage.getItem('username') == null || sessionStorage.getItem('token'
 
 
 // HELPERS
-
-
-
 function openModal(nameOfModal) {
 	var d = document.getElementById(nameOfModal);
 	d.showModal();
@@ -107,10 +205,46 @@ loginButton.addEventListener('click', function () {
 
 // githubNewFile()
 // Erases the contents of the 'textEditor' textarea, so you can start from scratch.
+// If a folder is selected, creates a relevant template.
 function githubNewFile() {
+	var folderPath = document.getElementById('folderName').innerText;
+	
 	// Form fields
-	document.getElementById('textEditor').value = '';
-	document.getElementById('fileName').value = '';
+	if (folderPath == "/_about") {
+		document.getElementById('fileName').value = now + '-role-title.md';
+		document.getElementById('textEditor').value = aboutTemplate;
+	} else if (folderPath == "/_blogpost") {
+		document.getElementById('fileName').value = now + '-blogpost-title.md';
+		document.getElementById('textEditor').value = blogpostTemplate;
+	} else if (folderPath == "/_ideas") {
+		document.getElementById('fileName').value = 'ideas-title.md';
+		document.getElementById('textEditor').value = ideasTemplate;
+	} else if (folderPath == "/_list") {
+		document.getElementById('fileName').value = now + '-list-title.md';
+		document.getElementById('textEditor').value = listTemplate;
+	} else if (folderPath == "/_manuals") {
+		document.getElementById('fileName').value = now + '-manual-title.md';
+		document.getElementById('textEditor').value = manualsTemplate;
+	} else if (folderPath == "/_music") {
+		document.getElementById('fileName').value = now + '-music-title.md';
+		document.getElementById('textEditor').value = musicTemplate;
+	} else if (folderPath == "/_note") {
+		document.getElementById('fileName').value = now + '-note-title.md';
+		document.getElementById('textEditor').value = noteTemplate;
+	} else if (folderPath == "/_now") {
+		document.getElementById('fileName').value = now + '-now.md';
+		document.getElementById('textEditor').value = nowTemplate;
+	} else if (folderPath == "/_reply") {
+		document.getElementById('fileName').value = now + '-001.md';
+		document.getElementById('textEditor').value = replyTemplate;
+	} else if (folderPath == "/_share") {
+		document.getElementById('fileName').value = now + '-share-title.md';
+		document.getElementById('textEditor').value = shareTemplate;
+	} else {
+		document.getElementById('fileName').value = '';
+		document.getElementById('textEditor').value = '';
+	}
+	
 	focusElement('textEditor');
 
 	closeDetails('editor-toolbar--file');
