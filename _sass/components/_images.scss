@@ -15,15 +15,14 @@ figure {
         max-width: unset;
         margin-right: -50px;
         margin-left: -50px;
-        margin-bottom: $container-padding * 4;
+        margin-bottom: $container-padding * 3;
     }
     @include desktop {
-        margin-bottom: 30px;
         width: containers("desktop") + 200px;
         max-width: unset;
         margin-right: -115px;
         margin-left: -115px;
-        margin-bottom: $container-padding * 4;
+        margin-bottom: $container-padding * 3;
     }
     figcaption {
         padding: $container-padding;
