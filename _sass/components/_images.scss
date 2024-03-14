@@ -29,7 +29,7 @@ figure {
         padding: $container-padding;
         max-width: 600px;
         width: auto;
-        @include glass(20px, 2, true);
+        @include glass(20px, 2, true, --translucent-background);
 
         @include typography($smaller, "default");
 
