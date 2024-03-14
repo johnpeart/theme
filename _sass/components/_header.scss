@@ -140,7 +140,7 @@ header#site-header nav#header--site-nav {
         text-align: center;
         max-height: calc(100vh - 100px);
         overflow-y: scroll;
-        @include glass(20px, 2, true, --translucent-background);
+        @include glass(20px, 2, true, --glass-background);
         margin: $container-padding * 2 $container-padding;
 
         min-width: 30vw;
