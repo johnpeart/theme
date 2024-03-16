@@ -29,19 +29,19 @@ layout: default
 					<h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 					{{ page.excerpt | markdownify }}
 				</section>
-				{% include webmentions.html type="replies" %}
+				{% include webmentions.html type="count-and-replies" %}
 			</article>
 			{% elsif collection == "reply" %}
 			<article class="h-entry stream--item conversation-item stream--item--reply">
 				{% include cite.html %}
 				{% include reply.html %}
-				{% include webmentions.html type="count" %}
+				{% include webmentions.html type="count-and-replies" %}
 			</article>
 			{% elsif collection == "share" %}
 			<article class="h-entry stream--item stream--item--share">
 				{% include cite.html %}
 				{% include reply.html %}
-				{% include webmentions.html type="count" %}
+				{% include webmentions.html type="count-and-replies" %}
 			</article>
 			{% else %}
 			<article class="h-entry stream--item stream--item--{{ collection }}">
@@ -60,7 +60,7 @@ layout: default
 				<section class="e-content stream--item--content stream--item--{{ collection }}--content">
 					{% include /formats/stream.html format=collection %}
 				</section>
-				{% include webmentions.html type="replies" %}
+				{% include webmentions.html type="count-and-replies" %}
 			</article>
 			{% endif %}
 			<hr>

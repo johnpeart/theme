@@ -17,7 +17,6 @@ li.conversation--item {
     display: grid;
     grid-template-rows: auto auto;
     grid-row-gap: $container-padding * 0.5;
-    grid-column-gap: $container-padding;
     padding: 0 7.5px;
 }
 
@@ -37,6 +36,8 @@ li.conversation--item {
     grid-area: msg;
     max-width: 600px;
 }
+
+
 
 .from-them .conversation--item--author {
     grid-area: to;
