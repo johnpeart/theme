@@ -1,313 +1,72 @@
-ol.conversation,
-li.conversation--item {
-    list-style: none !important;
-    list-style-type: none !important;
-    padding: 0;
-    @include clearfix();
+.interactions.counts {
+	text-align: right;
+	line-height: 1;
+	height: 35px;
+	padding: $container-padding $container-padding 0;
 }
 
-li.conversation--item {
-    margin-bottom: $container-padding * 2;
-    &:last-of-type {
-        margin: 0;
-    }
+.h-entry.reply .interactions.counts,
+.h-entry.share .interactions.counts,
+.h-entry.music .interactions.counts {
+	padding: $container-padding * 0.3 $container-padding 0;
 }
 
-.conversation--item--reply {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-row-gap: $container-padding * 0.5;
-    padding: 0 7.5px;
+.interaction-count {
+	margin: $container-padding * 0.5 0 $container-padding * 2;
+	padding-left: $container-padding * 2;
+	@include typography($small, "default");
+	color: var(--webmention-authorColor);
 }
 
-.from-them .conversation--item--reply {
-    float: left;
-    grid-template-columns: auto 1fr;
-    grid-template-areas: "to to" "msg .";
+.action p {
+	@include typography($small, "default");
+	color: var(--webmention-authorColor);
+	text-align: center;
+	padding: 0;
 }
 
-.from-me .conversation--item--reply {
-    float: right;
-    grid-template-columns: 1fr auto;
-    grid-template-areas: "from from" ". msg";
+article.interaction {
+	padding: $container-padding 0;
 }
 
-.conversation--item--content {
-    grid-area: msg;
-    max-width: 600px;
+.action p a {
+	&:link {
+		color: var(--webmention-authorColor);
+		text-decoration: none;
+	}
+	&:visited {
+		color: var(--webmention-authorColor);
+		text-decoration: none;
+	}
+	&:hover {
+		color: var(--webmention-fromMeLinkColor);
+		text-decoration: underline;
+	}
+	&:focus:hover {
+		color: var(--webmention-fromThemLinkColor);
+		text-decoration: underline;
+	}
+	&:focus {
+		color: var(--webmention-fromThemLinkColor);
+		background: var(--webmention-fromThemLinkBackground);
+		outline: 2px solid var(--webmention-fromThemLinkBackground);
+		text-decoration: none;
+	}
+	&:active {
+		text-decoration: underline;
+	}
 }
 
-
-
-.from-them .conversation--item--author {
-    grid-area: to;
-    justify-self: flex-start;
-    padding-left: $container-padding;
-}
-.from-me .conversation--item--author {
-    grid-area: from;
-    justify-self: flex-end;
-    padding-right: $container-padding;
-}
-
-.conversation--item--author {
-    @include typography($small, "default");
-    color: var(--webmention-authorColor);
-
-    a {
-        &:link {
-            color: var(--webmention-authorColor);
-            text-decoration: none;
-        }
-        &:visited {
-            color: var(--webmention-authorColor);
-            text-decoration: none;
-        }
-        &:hover {
-            color: var(--webmention-hoverColor);
-        }
-        &:focus {
-            color: var(--webmention-fromThemLinkColor);
-            background: var(--webmention-fromThemLinkBackground);
-            outline: 2px solid var(--webmention-fromThemLinkBackground);
-            outline-offset: 0;
-            text-decoration: none;
-        }
-        &:active {
-            text-decoration: underline;
-        }
-    }
-}
-
-.conversation--item--reply .conversation--item--content {
-    position: relative;
-    padding: $container-padding * 0.5 $container-padding;
-    border-radius: $border-radius;
-    clear: both;
-
-    &:before,
-    &:after {
-        content: "";
-        position: absolute;
-    }
-
-    &:after {
-        -webkit-transform: translate(-30px, -2px);
-        background:var(--background);
-        width: 10px;
-        height: 20px;
-    }
-}
-.from-them .conversation--item--content {
-    background: var(--webmention-fromThemBackground);
-    color: var(--webmention-fromThemColor);
-
-    &:before {
-        content: "";
-        position: absolute;
-        z-index: 2;
-        bottom: -2px;
-        left: -7px;
-        height: 15px;
-        border-left: 20px solid var(--webmention-fromThemBackground);
-        border-bottom-right-radius: 16px 14px;
-        -webkit-transform: translate(0, -2px);
-    }
-
-    &:after {
-        z-index: 3;
-        bottom: -2px;
-        left: 20px;
-        border-bottom-right-radius: 10px;
-    }
-    p {
-        color: var(--webmention-fromThemColor);
-    }
-
-    a {
-        &:link {
-            color: var(--webmention-fromThemColor);
-        }
-        &:visited {
-            color: var(--webmention-fromThemColor);
-        }
-        &:focus {
-            color: var(--webmention-fromThemLinkColor);
-            background: var(--webmention-fromThemLinkBackground);
-            outline: 2px solid var(--webmention-fromThemLinkBackground);
-        }
-    }
-}
-
-.from-me .conversation--item--content {
-    background: var(--webmention-fromMeBackground);
-
-    &:before {
-        z-index: -1;
-        bottom: -2px;
-        right: -7px;
-        height: 15px;
-        border-right: 20px solid var(--webmention-fromMeBackground);
-        border-bottom-left-radius: $border-radius $border-radius - 3px;
-        -webkit-transform: translate(0, -2px);
-    }
-
-    &:after {
-        z-index: 1;
-        bottom: -2px;
-        right: -40px;
-        width: 10px;
-        height: 20px;
-        border-bottom-left-radius: $border-radius;
-    }
-
-    p {
-        color: var(--webmention-fromMeColor);
-    }
-
-    a {
-        &:link {
-            color: var(--webmention-fromMeColor);
-        }
-        &:visited {
-            color: var(--webmention-fromMeColor);
-        }
-        &:focus {
-            color: var(--webmention-fromMeLinkColor);
-            background: var(--webmention-fromMeLinkBackground);
-            outline: 2px solid var(--webmention-fromMeLinkBackground);
-        }
-    }
-}
-
-.webmention--like,
-.webmention--repost,
-.webmention--bookmark {
-    article.webmention {
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-areas: "msg";
-        grid-template-columns: 1fr;
-    }
-    .conversation--item--interaction--content {
-        max-width: 100%;
-        text-align: center;
-    }
-    .conversation--item--interaction--content p {
-        @include typography($small, "default");
-        color: var(--webmention-authorColor);
-    }
-    a {
-        &:link {
-            color: var(--webmention-authorColor);
-            text-decoration: none;
-        }
-        &:visited {
-            color: var(--webmention-authorColor);
-            text-decoration: none;
-        }
-        &:hover {
-            color: var(--webmention-fromMeLinkColor);
-            text-decoration: underline;
-        }
-        &:focus:hover {
-            color: var(--webmention-fromThemLinkColor);
-            text-decoration: underline;
-        }
-        &:focus {
-            color: var(--webmention-fromThemLinkColor);
-            background: var(--webmention-fromThemLinkBackground);
-            outline: 2px solid var(--webmention-fromThemLinkBackground);
-            text-decoration: none;
-        }
-        &:active {
-            text-decoration: underline;
-        }
-    }
-}
-
-.conversation--item a,
-.stream--item a {
-    &:link {
-        text-decoration: underline;
-    }
-    &:visited {
-        text-decoration: underline;
-    }
-    &:hover {
-        text-decoration: none;
-        outline-thickness: 2px;
-    }
-    &:focus:hover {
-        text-decoration: underline;
-    }
-    &:focus {
-        text-decoration: none;
-    }
-    &:active {
-        text-decoration: underline;
-    }
-}
-
-.conversation--item--author a,
-.conversation--item--interaction--content a {
-    &:link {
-        color: var(--webmention-authorColor);
-        text-decoration: none;
-    }
-    &:visited {
-        color: var(--webmention-authorColor);
-        text-decoration: none;
-    }
-    &:hover {
-        color: var(--webmention-fromMeLinkColor);
-        text-decoration: underline;
-    }
-    &:focus:hover {
-        color: var(--webmention-fromThemLinkColor);
-        text-decoration: underline;
-    }
-    &:focus {
-        color: var(--webmention-fromThemLinkColor);
-        background: var(--webmention-fromThemLinkBackground);
-        outline: 2px solid var(--webmention-fromThemLinkBackground);
-        text-decoration: none;
-    }
-    &:active {
-        text-decoration: underline;
-    }
-}
-
-.conversation--item--interaction--content p {
-    padding: 0;
-}
-
-.conversation--item--content p {
-    padding-bottom: $container-padding;
-
-    &:last-of-type,
-    &:last-child {
-        padding-bottom:  0;
-    }
-}
-
-.webmention--count {
-    display: grid;
-    grid-template-columns: 1fr auto auto auto auto;
-    grid-template-areas: ". replies reposts likes bookmarks";
-    grid-column-gap: $container-padding * 2;
-    margin: $container-padding * 0.5 0 $container-padding * 2;
-    padding-right: $container-padding;
-    color: var(--webmention-authorColor);
-}
-
-.webmention--count span {
-    @include typography($small, "default");
-    color: var(--webmention-authorColor);
-}
-
-.webmention--reply {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
+span.interaction-icon {
+	display: inline-block;
+	position: relative;
+	content: "";
+	height: 10px;
+	width: 10px;
+	@include tablet-up {
+		height: 15px;
+		width: 15px;
+	}
+	margin-right: 10px;
+	padding: 0;
 }

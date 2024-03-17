@@ -1,4 +1,4 @@
-a.music--nano-link {
+a.music-link {
     display: block;
     position: relative;
     
@@ -13,7 +13,7 @@ a.music--nano-link {
     padding: $container-padding * 2 0;
 }
 
-.music--nano {
+.ipod-nano {
     display: grid;
     
     margin: 0 auto;
@@ -39,18 +39,18 @@ a.music--nano-link {
 
 }
 
-.music--artwork {
+.music-artwork {
     justify-self: center;
     max-width: 63%;
     border-radius: 2px;
 }
 
-h1.music--metadata--title {
+h1.music-metadata-title {
     @include typography($large, "default");
 }
 
-h1.music--metadata--title,
-p.music--metadata--artist,
+h1.music-metadata-title,
+p.music-metadata-artist,
 .star-rating {
     text-align: center;
     padding: 0;

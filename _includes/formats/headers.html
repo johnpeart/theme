@@ -1,5 +1,5 @@
-{% if include.format == "blogpost" or include.format == "manuals" %}
-	<header class="post-title">
+<header class="post-title {{ page.collection }}">
+	{% if include.format == "blogpost" or include.format == "manuals" %}
 		<aside class="published-date">
 			<time datetime="{{page.date | date: '%Y-%m-%d'}}" class="published-datetime dt-published">
 				<a href="{{ page.url }}" class="u-url post-published-date">
@@ -11,55 +11,41 @@
 		{% if page.emoji %}
 			{% include formats/emoji-hero-image.html %}
 		{% endif %}
-	</header>
-{% elsif include.format == "now" %}
-	<header class="post-title">
+	{% elsif include.format == "now" %}
 		<aside class="published-date">
 			<time datetime="{{ page.date | date: '%Y-%m-%d' }}" class="published-datetime dt-published">
 				<a href="{{ page.url }}" class="u-url post-published-date">Now</a>
 			</time>
 		</aside>
 		<h1 class="post-title p-name">{{ page.date | date: '%B %Y' }}</h1>
-	</header>
-{% elsif include.format == "note" %}
-	<header class="{{ page.collection }}-title">
-		<div class="note {{ page.colour | default: 'yellow' | prepend: 'post-it--' }}">
-			<h1 class="note--title">{{ page.title }}</h1>
-		</div>
-	</header>
-{% elsif include.format == "photo" %}
-	<header class="{{ page.collection }}-title">
+	{% elsif include.format == "note" %}
+		<h1 class="post-it {{ page.colour | default: 'yellow' }}">{{ page.title }}</h1>
+	{% elsif include.format == "photo" %}
 		<div class="photo">
-			<img src="{{ site.url | append: site.baseurl | append: '/assets/images' | append: page.image }}" class="u-photo" loading="lazy">
+			<img src="{{ site.url | append: site.baseurl | append: '/assets/images' | append: page.image }}" class="u-photo hidden" loading="lazy">
 			<h1 class="photo--title p-name"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 		</div>
-	</header>
-{% elsif include.format == "list" %}
-	<header class="{{ page.collection }}-title">
-		<div class="paper-list">
-			<section class="paper-list--header">
-				<h1 class="p-name paper-list--title">{{ page.title }}</h1>
-			</section>
-			<ul class="paper-list--body">
-				{% for item in page.list %}
-					<li class="paper-list--item paper-list--item--{{ item.status }}">{{ item.todo }}</li>
-				{% endfor %}
-			</ul>
-		</div>
-	</header>
-{% elsif include.format == "music" %}
-	<header class="{{ page.collection }}-title">
-		<div class="music--nano">
-			<img class="music--artwork" src="{{ page.artwork }}" />
-		</div>
-		<section class="music--metadata p-name">
-			<h1 class="music--metadata--title">{{ page.title }}</h1>
-			<p class="music--metadata--artist">{{ page.artist }}</p>
+	{% elsif include.format == "list" %}
+		<header class="list-header">
+			<h1 class="p-name list-title">{{ page.title }}</h1>
+		</header>
+		<ul class="list-body">
+			{% for item in page.list %}
+				<li class="list-item list-item--{{ item.status }}">{{ item.todo }}</li>
+			{% endfor %}
+		</ul>
+	{% elsif include.format == "music" %}
+		<a class="music-link" href="{{ page.url }}" alt="Read more about {{ page.title }} by {{ page.artist }}">
+			<div class="ipod-nano">
+				<img class="music-artwork" src="{{ page.artwork }}" />
+			</div>
+		</a>
+		<section class="music-metadata p-name">
+			<h1 class="music-metadata-title">{{ page.title }}</h1>
+			<p class="music-metadata-artist">{{ page.artist }}</p>
 			<p class="star-rating" style="--rating: {{ page.rating }};" aria-label="I rated this music {{ page.rating }} out of 5 stars."></p>
 		</section>
-	</header>
-{% elsif include.format == "game" %}
-	<header class="post-title">
+	{% elsif include.format == "game" %}
 		<aside class="published-date">
 			<time datetime="{{page.date | date: '%Y-%m-%d'}}" class="published-datetime dt-published">
 				<a href="{{ page.url }}" class="u-url post-published-date">
@@ -68,9 +54,7 @@
 			</time>
 		</aside>
 		<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
-	</header>
-{% elsif include.format == "about" %}
-	<header class="post-title about">
+	{% elsif include.format == "about" %}
 		<aside class="about">
 			{% if page.dates.end == "present" %}
 			<p class="datetime"><time datetime="{{ page.dates.start | date: '%Y-%m-%d' }}">{{ page.dates.start | date: '%B %Y' }}</time> to <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ page.dates.end }}</time></p>
@@ -80,9 +64,7 @@
 			<p>{{ page.organisation }}</p>
 		</aside>
 		<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
-	</header>
-{% else %}
-	<header class="post-title">
+	{% else %}
 		<aside class="published-date">
 			<time datetime="{{page.date | date: '%Y-%m-%d'}}" class="published-datetime dt-published">
 				<a href="{{ page.url }}" class="u-url post-published-date">
@@ -94,5 +76,5 @@
 		{% if page.emoji %}
 			{% include formats/emoji-hero-image.html %}
 		{% endif %}
-	</header>
-{% endif %}
+	{% endif %}
+</header>

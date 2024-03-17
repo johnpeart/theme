@@ -35,3 +35,10 @@
         max-width: 100%;
     }
 }
+
+.from-them,
+.from-me {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}

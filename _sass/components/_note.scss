@@ -1,0 +1,88 @@
+// Note colours
+.post-it.yellow {
+    --post-it--top:     var(--post-it--yellow--top);
+    --post-it--body:    var(--post-it--yellow);
+    --post-it--corner:    var(--post-it--yellow--corner);
+}
+
+.post-it.green {
+    --post-it--top:     var(--post-it--green--top);
+    --post-it--body:    var(--post-it--green);
+    --post-it--corner:    var(--post-it--green--corner);
+}
+
+.post-it.cyan {
+    --post-it--top:     var(--post-it--cyan--top);
+    --post-it--body:    var(--post-it--cyan);
+    --post-it--corner:    var(--post-it--cyan--corner);
+}
+
+.post-it.magenta {
+    --post-it--top:     var(--post-it--magenta--top);
+    --post-it--body:    var(--post-it--magenta);
+    --post-it--corner:    var(--post-it--magenta--corner);
+}
+
+.note .content,
+.note .post-title {
+    display: block;
+    position: relative;
+    
+    width: 275px;
+    @include tablet {
+        width: 450px;
+    }
+    @include desktop {
+        width: 638px;
+    }
+}
+
+.post-it {
+    
+    display: grid;
+    position: relative;
+    
+    align-content: center;
+    
+    padding: $container-padding !important;
+    outline-offset: 0;
+    border-bottom-right-radius: 120px 10px;
+    height: 275px;
+    
+    align-self: center;
+    @include typography($marker, "marker");
+    color: var(--markerpen-color);
+    line-height: 1.1;
+    
+    border-top: 60px solid var(--post-it--top);
+    background: var(--post-it--body); // Fallback
+    background: linear-gradient(130deg,
+        var(--post-it--body) 75%,
+        var(--post-it--body) 76%,
+        var(--post-it--body) 76%,
+        var(--post-it--corner) 100%
+    );
+    outline: 1px solid var(--post-it--body);
+    box-shadow: 100px 100px 50px -110px rgba(25, 25, 25, 0.4);
+
+    @include tablet {
+        height: 300px;
+        padding: $container-padding * 1.5 !important;
+        border-top: 72px solid var(--post-it--top);
+        box-shadow: 130px 115px 50px -140px rgba(25, 25, 25, 0.7);
+    }
+    @include desktop {
+        height: 425px;
+        padding: $container-padding * 2 !important;
+        border-top: 102px solid var(--post-it--top);
+        box-shadow: 180px 170px 50px -195px rgba(25, 25, 25, 0.7);
+    }
+    
+}
+
+.note-post header.note-title {
+    margin: $container-padding * 4 auto;
+    @include tablet-up {
+        margin: $container-padding * 6 auto;
+    }
+}

@@ -1,0 +1,40 @@
+body[id$='post'] {
+
+    section.post-body ul > li::before {
+        position: absolute;
+        content: "\2014";
+
+        left: 15px;
+        @include tablet {
+            left: -11px;
+        }
+        @include desktop {
+            left: -15px;
+        }
+    }
+    
+    header.post-title.note,
+    header.post-title.list,
+    header.post-title.photo,
+    header.post-title.music {
+        margin: $container-padding * 4 auto;
+        @include tablet-up {
+            margin: $container-padding * 6 auto;
+        }
+    }
+
+    iframe {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+article#post-content.share,
+article#post-content.reply {
+    margin: $container-padding * 4 auto 0;
+    @include tablet-up {
+        margin: $container-padding * 6 auto 0;
+    }
+}

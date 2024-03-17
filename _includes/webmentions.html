@@ -1,28 +1,32 @@
-{% if include.type == "replies" %}
-<footer class="webmentions stream--item--interactions">
+{% if include.type == "interactions" %}
+<footer class="interactions counts">
+	{% webmention_count page.url replies %}
+	{% webmention_count page.url reposts %}
+	{% webmention_count page.url likes %}
+</footer>
+{% elsif include.type == "replies" %}
+<footer class="interactions replies">
 	{% webmention_replies page.url %}
 </footer>
 {% elsif include.type == "count" %}
-<footer class="webmentions stream--item--interactions">
-	<aside class="stream--item--interactions--count webmention webmention--count">
+<footer class="interactions counts">
+	<aside class="interactions">
 		{% webmention_count page.url replies %}
 		{% webmention_count page.url reposts %}
 		{% webmention_count page.url likes %}
-		{% webmention_count page.url bookmarks %}
 	</aside>
 </footer>
 {% elsif include.type == "count-and-replies" %}
-<footer class="webmentions stream--item--interactions">
-	<aside class="stream--item--interactions--count webmention webmention--count">
+<footer class="interactions counts replies">
+	<aside class="interactions">
 		{% webmention_count page.url replies %}
 		{% webmention_count page.url reposts %}
 		{% webmention_count page.url likes %}
-		{% webmention_count page.url bookmarks %}
 	</aside>
 	{% webmention_replies page.url %}
 </footer>
 {% else %}
- <footer class="webmentions">
+ <footer class="interactions actions replies">
 	 {% webmentions page.url posts replies likes reposts %}
  </footer>
  {% endif %}

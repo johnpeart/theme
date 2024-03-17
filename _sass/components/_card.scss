@@ -1,0 +1,39 @@
+.card .content {
+    max-width: 450px;
+    @include tablet() {
+        max-width: 500px;
+    }
+    @include desktop {
+        max-width: 650px;
+    }
+    border-radius: $border-radius;
+    clear: both;
+    @include glass(20px, 2);
+    
+    h1.post-title {
+        @include typography($h2, "default");
+        padding: $container-padding !important;
+    }
+    p {
+        padding: 0 $container-padding $container-padding;
+    }
+    
+}
+
+.card .content img {
+    border-radius: $border-radius $border-radius 0 0;
+}
+
+.from-me .content {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.from-them .content {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.card.from-them + .speech-bubble.from-me {
+    padding-top: $container-padding * 2;
+}

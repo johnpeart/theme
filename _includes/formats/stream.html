@@ -1,59 +1,60 @@
-{% if include.format == "blogpost" or include.format == "manuals" %}
-<header class="post-title">
+{%- if collection == "blogpost" -%}
+	{% assign verb = "wrote a blogpost" %}
+{%- elsif collection == "manual" -%}
+	{% assign verb = "wrote a manual" %}
+{% elsif collection == "photo" -%}
+	{% assign verb = "posted a photo" %}
+{% elsif collection == "note" -%}
+	{% assign verb = "wrote a note" %}
+{% elsif collection == "list" -%}
+	{% assign verb = "wrote a list" %}
+{% elsif collection == "music" -%}
+	{% assign verb = "shared some music" %}
+{% else -%}
+	{% assign verb = "posted" %}
+{%- endif -%}
 
-	<aside class="published-date">
-		<time datetime="{{page.date | date: '%Y-%m-%d'}}" class="published-datetime dt-published">
-			<a href="{{ page.url }}" class="u-url post-published-date">
-				{{ page.date | date: "%-d %B %Y" }}
-			</a>
-		</time>
-	</aside>
-	<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
-
-	{% if page.emoji %}
-		{% include emoji-hero-image.html %}
-	{% endif %}
-
-</header>
-{% elsif include.format == "note" %}
-<header class="{{ page.collection }}-title">
-	<div class="note {{ page.colour | default: 'yellow' | prepend: 'post-it--' }}">
-		<h1 class="note--title">{{ page.title }}</h1>
-	</div>
-</header>
-{% elsif include.format == "photo" %}
-<header class="{{ page.collection }}-title">
-	<div class="photo">
-		<img src="{{ site.url | append: site.baseurl | append: '/assets/images' | append: page.image }}" class="u-photo" loading="lazy">
-		<h1 class="photo--title p-name"><a href="{{ page.url }}">{{ page.title }}</a></h1>
-	</div>
-</header>
-{% elsif include.format == "list" %}
-<div class="{{ page.collection }}-post--content">
-	<header class="paper-list">
-		<section class="paper-list--header">
-			<h1 class="p-name paper-list--title">{{ page.title }}</h1>
-		</section>
-		<ul class="paper-list--body">
+<aside class="author">
+	{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
+	<span class="h-card p-author">
+		<img class="u-photo hidden memoji" alt="A Memoji avatar of John Peart" src="{{ site.url | append: '/assets/images/me/memoji.png' }}">
+		<span class="p-name author--name"><a rel="author" class="p-author u-url u-uid" href="{{ site.url }}">John Peart</a></span>
+		<a href="{{ page.url }}" class="u-url">{{ verb }}</a>
+	</span>
+</aside>
+<section class="content e-content">
+	{% if include.format == "blogpost" or include.format == "manuals" %}
+		{% if page.image %}<img class="post-image" loading="lazy" src="{{ page.image | prepend: '/assets/images' }}">{% else %}<img class="post-image" loading="lazy" src="/assets/images/site/social-media-blogpost.png">{% endif %}
+		<h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+	{{ page.excerpt | markdownify }}
+	{% elsif include.format == "note" %}
+		<h1 class="post-it {{ page.colour | default: 'yellow' }}">{{ page.title }}</h1>
+	{% elsif include.format == "photo" %}
+		<div class="photo">
+			<img src="{{ site.url | append: site.baseurl | append: '/assets/images' | append: page.image }}" class="u-photo hidden" loading="lazy">
+			<h1 class="photo--title p-name"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+		</div>
+	{% elsif include.format == "list" %}
+		<header class="list-header">
+			<h1 class="p-name list-title">{{ page.title }}</h1>
+		</header>
+		<ul class="list-body">
 			{% for item in page.list %}
-				<li class="paper-list--item paper-list--item--{{ item.status }}">{{ item.todo }}</li>
+				<li class="list-item list-item--{{ item.status }}">{{ item.todo }}</li>
 			{% endfor %}
 		</ul>
-	</header>
-</div>
-{% elsif include.format == "music" %}
-<header class="{{ page.collection }}-title">
-	<a class="music--nano-link" href="{{ page.url }}" alt="Read more about {{ page.title }} by {{ page.artist }}">
-		<div class="music--nano">
-			<img class="music--artwork" src="{{ page.artwork }}" />
-		</div>
-	</a>
-	<section class="music--metadata sr-only p-name">
-		<h1 class="music--metadata--title">{{ page.title }}</h1>
-		<p class="music--metadata--artist">{{ page.artist }}</p>
-		<p class="star-rating" style="--rating: {{ page.rating }};" aria-label="I rated this music {{ page.rating }} out of 5 stars."></p>
-	</section>
-</header>
-{% elsif include.format == "game" %}
-GAME
-{% endif %}
+	{% elsif include.format == "music" %}
+		<a class="music-link" href="{{ page.url }}" alt="Read more about {{ page.title }} by {{ page.artist }}">
+			<div class="ipod-nano">
+				<img class="music-artwork" src="{{ page.artwork }}" />
+			</div>
+		</a>
+		<section class="music-metadata sr-only p-name">
+			<h1 class="music-metadata-title">{{ page.title }}</h1>
+			<p class="music-metadata-artist">{{ page.artist }}</p>
+			<p class="star-rating" style="--rating: {{ page.rating }};" aria-label="I rated this music {{ page.rating }} out of 5 stars."></p>
+		</section>
+	{% elsif include.format == "game" %}
+		GAME
+	{% endif %}
+</section>

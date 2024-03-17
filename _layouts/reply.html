@@ -4,11 +4,11 @@ layout: default
 
 <main id="content" class="container">
 
-	<article id="post-content" class="h-entry conversation-item stream--item stream--item--reply">
+	<article id="post-content" class="h-entry reply">
 
 		{% include cite.html %}
 		{% include reply.html %}
-		{% include webmentions.html type="count-and-replies" %}
+		{% include webmentions.html type="replies" %}
 		{% include footer.html type="post" %}
 
 	</article>
