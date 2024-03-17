@@ -91,7 +91,8 @@ header.post-title aside {
     }
 }
 
-time.published-datetime {
+time.published-datetime,
+p.secondary-title {
     @include typography($post-date);
     display: block;
     line-height: 1;
