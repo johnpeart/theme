@@ -1,6 +1,9 @@
 .speech-bubble {	
 	width: 100%;
-	padding: $container-padding $container-padding * 0.5;
+	padding: $container-padding 0;
+    @include tablet-up {
+        padding: $container-padding $container-padding * 0.5;
+    }
 	@include typography($p);
 } 
 
@@ -45,7 +48,13 @@ aside.author {
 	position: relative;
 	display: inline-block;
 	
-	max-width: 600px;
+    width: 100%;
+    @include tablet {
+        max-width: 500px;
+    }
+    @include desktop {
+	    max-width: 600px;
+    }
     padding: $container-padding * 0.5 $container-padding;
     border-radius: $border-radius;
     clear: both;
