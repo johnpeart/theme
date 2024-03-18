@@ -203,6 +203,21 @@ loginButton.addEventListener('click', function () {
 
 // FILE MENU
 
+// goHome()
+// Redirects to the home page.
+function goHome() {
+	var pageURL = window.location.href;
+	if (pageURL.includes("localhost")) {
+		window.location.href = "//localhost:4000";	
+	} else {
+		window.location.href = "//www.johnpe.art";
+	}
+	
+}
+homeButton.addEventListener('click', function () {
+	goHome();
+});
+
 // githubNewFile()
 // Erases the contents of the 'textEditor' textarea, so you can start from scratch.
 // If a folder is selected, creates a relevant template.
@@ -347,6 +362,36 @@ deleteButton.addEventListener('click', function () {
 });
 
 
+// Function to download a file using content of the active session
+function downloadFile() {
+	// Form fields
+	var fileName = document.getElementById('fileName').value.trim();
+	var fileContent = document.getElementById('textEditor').value.trim();
+	
+	// create a new Blob object with the text data and the appropriate mime-type
+	const blob = new Blob([fileContent], { type: 'plain/text' });
+	
+	// create a DOMString containing a URL representing the Blob object
+	const url = URL.createObjectURL(blob);
+	
+	// create a temporary anchor element
+	const anchor = document.createElement('a');
+	anchor.setAttribute('href', url);
+	anchor.setAttribute('download', fileName); // set the file name
+	anchor.style.display = 'none';
+	
+	// add the new anchor to the DOM and trigger a click event
+	document.body.appendChild(anchor);
+	anchor.click();
+	
+	// finally remove the anchor from the DOM
+	document.body.removeChild(anchor);
+
+}
+
+downloadButton.addEventListener('click', function () {
+	downloadFile();
+});
 
 // FOLDER MENU
 

@@ -94,6 +94,7 @@ button {
 
     &:focus {
         color: var(--dropdownButton-focusColor);
+        text-decoration: underline;
     }
 
     &:hover:focus {
