@@ -48,7 +48,7 @@ aside.author {
 	position: relative;
 	display: inline-block;
 	
-    width: 100%;
+    width: auto;
     @include tablet {
         max-width: 500px;
     }
