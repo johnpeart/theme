@@ -8,8 +8,10 @@
 			</time>
 		</aside>
 		<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
-		{% if page.emoji %}
-			{% include formats/emoji-hero-image.html %}
+		{% if page.composite %}
+			{% include images/composite.html %}
+		{% elsif page.emoji %}
+			{% include images/emoji-hero-image.html %}
 		{% endif %}
 	{% elsif include.format == "now" %}
 		<aside class="published-date">
@@ -73,8 +75,5 @@
 			</time>
 		</aside>
 		<h1 class="post-title p-name">{{ page.title | smartify }}</h1>
-		{% if page.emoji %}
-			{% include formats/emoji-hero-image.html %}
-		{% endif %}
 	{% endif %}
 </header>

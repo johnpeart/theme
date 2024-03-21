@@ -1,0 +1,14 @@
+<div class="composite-image">
+	<div class="overlay">
+		<img class="overlay" src="{{ page.composite.overlay.image }}" alt="{{ page.composite.overlay.alt }}">
+	</div>
+	
+	<picture>
+		{% if page.composite.background.source %}
+		<source srcset="{{ page.composite.background.source }}" type="image/webp">
+		{% endif %}
+	  <img class="background" src="{{ page.composite.background.image }}.gif" alt="{{ page.composite.background.alt }}">
+	</picture>
+</div>
+
+
