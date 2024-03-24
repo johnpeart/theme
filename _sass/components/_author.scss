@@ -5,3 +5,72 @@
 aside.author .hidden {
     display: none; 
 }
+
+#author-card {
+    grid-area: author;
+
+    display: grid;
+    position: relative;
+    margin-bottom: $container-padding;
+    padding: $container-padding;
+    height: 100%;
+
+    @include glass(20px, 2);
+    text-align: center;
+
+    grid-gap: $container-padding;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr 1fr;
+
+    grid-template-areas:
+        "photo name"
+        "photo website"
+        "icons icons";
+
+    @include desktop {
+        grid-column-gap: $container-padding;
+        grid-row-gap: 0;
+
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+            "photo name"
+            "photo website"
+            "photo icons";
+    }
+}
+
+a.author--photo {
+    grid-area: photo;
+    display: grid;
+}
+
+img.memoji {
+    display: block;
+    position: relative;
+
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+    justify-self: center;
+    align-self: center;
+
+    width: 70px;
+    height: 70px;
+    @include desktop {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+p.author--name {
+    grid-area: name;
+}
+p.author--site-link {
+    grid-area: website;
+}
+
+p.author--name,
+p.author--site-link {
+    padding: 0;
+}

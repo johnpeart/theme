@@ -49,7 +49,7 @@ a {
             outline: 2px solid var(--link-outlineColor);
         }
     }
-
+    
     &.no-underline {
         &:link {
             text-decoration: none !important;
@@ -59,6 +59,23 @@ a {
         }
         &:hover {
             text-decoration: underline !important;
+        }
+        &:focus {
+            color: var(--link-focusColor);
+            background: var(--link-focusBackground);
+            outline: 2px solid var(--link-outlineColor);
+        }
+    }
+    
+    &.bold {
+        &:link {
+            font-weight: 900;
+        }
+        &:visited {
+            font-weight: 900;
+        }
+        &:hover {
+            font-weight: 900;
         }
         &:focus {
             color: var(--link-focusColor);
