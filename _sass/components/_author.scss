@@ -6,6 +6,42 @@ aside.author .hidden {
     display: none; 
 }
 
+aside.author {
+	@include typography($small, "default");
+	color: var(--secondary-color);
+	line-height: 1.2;
+	text-align: left;
+	padding: 0 $container-padding $container-padding * 0.5 $container-padding;
+	
+	a {
+		&:link {
+			color: var(--secondary-color);
+			text-decoration: none;
+		}
+		&:visited {
+			color: var(--secondary-color);
+			text-decoration: none;
+		}
+		&:hover {
+			color: var(--link-hoverColor);
+			text-decoration: underline;
+		}
+		&:focus:hover {
+			color: var(--link-hoverColor);
+			text-decoration: underline;
+		}
+		&:focus {
+			color: var(--link-focusColor);
+			background: var(--link-focusBackground);
+			outline: 2px solid var(--link-outlineColor);
+			text-decoration: none;
+		}
+		&:active {
+			text-decoration: underline;
+		}
+	}
+}
+
 #author-card {
     grid-area: author;
 
