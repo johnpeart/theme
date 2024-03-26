@@ -1,5 +1,5 @@
 <div class="composite-image">
-	<div class="overlay">
+	<div class="overlay {{ page.composite.overlay.blur | prepend: 'overlay-' }}">
 		<img class="overlay" src="{{ page.composite.overlay.image }}" alt="{{ page.composite.overlay.alt }}">
 	</div>
 	
