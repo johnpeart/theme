@@ -56,14 +56,6 @@
     			{{ entry.lyric | markdownify | replace: "<p>", "<p><q>" | replace: "</p>", "</q></p>" }}
 			</blockquote>
 			{% endif %}
-			
-			{% if entry.score %}
-			<footer class="esc-score">
-				<p class="score">
-					{{ entry.score }} points
-				</p>
-			</footer>
-			{% endif %}
 		</section>
 	</section>
 	<section class="speech-bubble from-me">
@@ -71,6 +63,13 @@
 			{{ entry.commentary | markdownify }}
 		</section>
 	</section>
+	{% if entry.score %}
+	<section class="eurovision-points speech-bubble from-me">
+		<section class="content">
+			{{ entry.score }} points
+		</section>
+	</section>
+	{% endif %}
 </article>
 {% endfor %}
 </div>

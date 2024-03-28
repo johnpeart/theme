@@ -45,9 +45,16 @@ article.eurovision {
 	}
 	
 	
-	&:last-of-type:after {
-		display: none;
+	&:first-of-type:before {
+		content: "";
+		display: block;
+		position: relative;
+    	height: 10px;
+    	border-radius: 3px;
+    	@include plastic(inset, 2px);
+		margin: $container-padding * 4 0 $container-padding * 4;
 	}
+	
 }
 
 header.esc-country {
@@ -95,4 +102,8 @@ header.esc-country {
 	.song-by {
 		font-weight: 400;
 	}
+}
+
+.eurovision-points.speech-bubble {
+	padding-top: 0;
 }
