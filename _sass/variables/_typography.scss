@@ -133,6 +133,22 @@ $h2: (
     )
 );
 
+
+
+// <h2>
+$card-title: (
+    "font-size": (
+        "mobile": 27px,
+        "tablet": 32px,
+        "desktop": 40px
+    ),
+    "padding": (
+        "mobile": 15px,
+        "tablet": 15px,
+        "desktop": 15px
+    )
+);
+
 // <h2 class="loop-header">
 $loop-header: (
     "font-size": (

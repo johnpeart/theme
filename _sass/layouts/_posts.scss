@@ -5,12 +5,6 @@ body[id$='post'] {
         content: "\2014";
 
         left: 15px;
-        @include tablet {
-            left: -11px;
-        }
-        @include desktop {
-            left: -15px;
-        }
     }
     
     header.post-title.note,

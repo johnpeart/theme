@@ -1,4 +1,5 @@
 .card .content {
+	display: block;
     max-width: 450px;
     @include tablet() {
         max-width: 500px;
@@ -10,14 +11,15 @@
     clear: both;
     @include glass(20px, 2);
     
-    h1.post-title {
-        @include typography($h2, "default");
+    .post-title {
+        @include typography($card-title);
+		text-decoration: none;
+		font-style: normal;
         padding: $container-padding !important;
     }
     p {
         padding: 0 $container-padding $container-padding;
     }
-    
 }
 
 .card .content img {

@@ -1,7 +1,7 @@
 {% if page.eurovision-entries %}
 <h2>The entries</h2>
 
-<fieldset id="toggle-esc-entries" class="radios">
+<fieldset id="toggle-esc-entries" class="radios glass">
 
     <legend>Toggle entries</legend>
 
@@ -30,24 +30,48 @@
 <div id="esc-entries" data-show="all">
 {% assign entries = page.eurovision-entries | sort: "country" %}
 {% for entry in entries %}
-<details data-semifinal="{{ entry.semifinal }}" data-final="{{ entry.final }}">
-<summary>
-<h3>
-    <span class="entry">
-        <!-- <span class="emoji">{{ entry.emoji }}</span> -->
-        <span class="summary-title">{{ entry.country | smartify }}</span>
-        <span class="summary-sub-title">{{ entry.song | smartify }} by {{ entry.artist | smartify }}</span>
-    </span>
-</h3>
-</summary>
-{% if entry.lyric %}
-<blockquote class="lyric">
-    {{ entry.lyric | markdownify }}
-</blockquote>
-{% endif %}
-
-{{ entry.commentary | markdownify }}
-</details>
+<article class="h-entry eurovision" data-semifinal="{{ entry.semifinal }}" data-final="{{ entry.final }}">
+	<section class="card from-them">
+		<section class="quote content">
+			{% if entry.youtube %}
+			<a class="post-image" href="{{ entry.youtube | prepend: 'https://www.youtube.com/watch?v=' }}" class="u-url">
+				<img loading="lazy" class="post-image" src="{{ entry.youtube | prepend: 'https://i.ytimg.com/vi/' | append: '/maxresdefault.jpg' }}" alt="Youtube cover photo for {{ entry.country }}'s entry to the Eurovision Song Contest – {{ entry.song | smartify }} by {{ entry.artist | smartify }}">
+			</a>
+			{% endif %}
+			<header class="esc-country">
+				<svg class="heart" width="100%" height="100%" viewBox="0 0 126 132" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+    				<path id="heart" d="M95.36,0c-13.42,0 -29.29,9.91 -38.89,26.38c-2.59,-5.95 -11.83,-12.43 -22.8,-12.43c-8.84,0 -33.67,11.05 -33.67,46.73c0,46.05 46.59,55.51 56.01,69.82c0.65,0.99 2.73,1.73 3.53,-0.62c7.51,-22.18 65.79,-47.24 65.79,-92.37c-0,-25.31 -16.53,-37.51 -29.95,-37.51l-0.02,0Zm14.33,37.36c-1.22,35.68 -47.19,64.15 -53.24,82.14c-5.39,-10.89 -44.12,-26.63 -43.74,-60.94c0.32,-28.51 15.16,-37.43 23.23,-37.43c11.28,-0 15.94,8.61 16.71,12.43c0.76,3.81 5.03,6.86 6.4,0.61c1.37,-6.25 14.65,-25.31 30.96,-25.31c14.94,0 20.12,15.41 19.67,28.52l0.01,-0.02Z" fill="currentColor"/>
+				</svg>
+				<img class="flag" src="/assets/images/eurovision/{{ entry.country | downcase | replace: " ", "-" }}.svg">
+				<h3 class="country">
+					<span class="country-name">{{ entry.country | smartify }}</span>
+					<span class="song-title">{{ entry.song | smartify }}</span> 
+					<span class="song-by"> by </span>
+					<span class="artist">{{ entry.artist | smartify }}</span>
+				</h3>
+			</header>
+				
+			{% if entry.lyric %}
+			<blockquote class="lyric quote h-cite">
+    			{{ entry.lyric | markdownify | replace: "<p>", "<p><q>" | replace: "</p>", "</q></p>" }}
+			</blockquote>
+			{% endif %}
+			
+			{% if entry.score %}
+			<footer class="esc-score">
+				<p class="score">
+					{{ entry.score }} points
+				</p>
+			</footer>
+			{% endif %}
+		</section>
+	</section>
+	<section class="speech-bubble from-me">
+		<section class="content e-content">
+			{{ entry.commentary | markdownify }}
+		</section>
+	</section>
+</article>
 {% endfor %}
 </div>
 

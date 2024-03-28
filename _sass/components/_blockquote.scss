@@ -1,6 +1,6 @@
 .e-content blockquote {
     background: var(--glass-background);
-    padding: 20px;
+    padding: $container-padding;
     border-radius: $border-radius;
     box-shadow: shadow(2);
     
@@ -46,13 +46,17 @@
 
 }
 
-blockquote.lyric {
-    text-align: center;
-    border-radius: $border-radius;
-    margin: $container-padding 0;
-    * {
-        font-style: italic;
-    }
+blockquote.quote {
+	all: unset;
+	display: block;
+	position: relative;
+	
+    padding: 0 0 $container-padding 0;
+    text-align: left;
+	
+    p:last-child {
+			padding-bottom: 0;
+	}
 }
 
 blockquote.twitter-tweet {
@@ -83,12 +87,6 @@ blockquote.twitter-tweet {
         border: 1px solid var(--glass-border);
         box-shadow: shadow(2);  
     }
-}
-
-.stream-post--reply--quote blockquote {
-    background: unset;
-    padding: 0;
-    width: unset;
 }
 
 q::before {

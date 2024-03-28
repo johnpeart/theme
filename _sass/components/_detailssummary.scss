@@ -5,7 +5,7 @@ details {
 
     > .container {
         width: calc(100% - (#{$container-padding} * 2));
-        margin: 0 0 0 ($container-padding * 2);
+        margin: 0 $container-padding;
         padding: 0;
     }
 }
@@ -30,6 +30,17 @@ details[open] {
     }
 
     margin-bottom: $container-padding;
+	
+	&.plastic {
+        @include plastic(inset, 0px);
+		padding: $container-padding $container-padding 0;
+		> summary {
+			padding: 0;
+        	box-shadow: none;
+			border: 0;
+			outline-offset: $container-padding;
+		}
+	}
 }
 
 summary {
@@ -70,18 +81,19 @@ summary {
     text-align: left;
 
     padding: $container-padding;
-    @include plastic(raised, 6px);
+    @include plastic(raised, 3px);
     transition: box-shadow 0.25s;
 
     @include typography($p, "default");
 
     &:hover {
         color: var(--details--hoverColor);
-        @include plastic(raised, 2px);
+        @include plastic(raised, 0px);
+		border-color: transparent;
         transition: box-shadow 0.25s;
     }
     &:focus {
-        outline: form("border-width") solid var(--details--outlineColor);
+        outline: none;
     }
 
     h1, h2, h3, h4, h5, h6, p {
@@ -97,78 +109,9 @@ summary {
         color: unset;
     }
 
-    .summary-title,
-    .summary-sub-title {
-        @include typography($p, "default");
-        max-width: calc(100% - 30px);
-        width: 100%;
-        float: left;
-        display: inline-block;
-        text-align: left;
-        padding: 0;
-        font-style: normal;
-        text-align: left;
-        color: unset;
-    }
-
-    .summary-sub-title {
-        font-weight: normal;
-    }
-
     @include clearfix;
 
 }
-
-
-
-div.faux-details {
-    display: block;
-    position: relative;
-
-    font-style: normal;
-    text-align: left;
-
-    padding: $container-padding;
-    @include plastic(raised, 2px);
-    transition: box-shadow 0.25s;
-
-    @include typography($p, "default");
-
-    h1, h2, h3, h4, h5, h6, p {
-        @include typography($p, "default");
-        max-width: calc(100% - 30px);
-        width: 100%;
-        float: left;
-        display: inline-block;
-        text-align: left;
-        padding: 0;
-        font-style: normal;
-        text-align: left;
-        color: unset;
-    }
-
-    .summary-title,
-    .summary-sub-title {
-        @include typography($p, "default");
-        max-width: calc(100% - 30px);
-        width: 100%;
-        float: left;
-        display: inline-block;
-        text-align: left;
-        padding: 0;
-        font-style: normal;
-        text-align: left;
-        color: unset;
-    }
-
-    .summary-sub-title {
-        font-weight: normal;
-    }
-
-    @include clearfix;
-}
-
-
 
 // Drop down menu
 details.dropdown-menu {

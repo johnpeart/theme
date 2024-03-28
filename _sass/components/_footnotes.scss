@@ -28,9 +28,6 @@ div.footnotes {
 
     ul, ol {
         padding-left: $container-padding * 2;
-        @include tablet-up {
-            padding-left: 0;
-        }
     }
     li, p {
         @include typography($small);

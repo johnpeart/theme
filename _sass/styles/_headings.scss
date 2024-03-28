@@ -99,3 +99,21 @@ p.secondary-title {
     color: var(--secondary-color);
     font-weight: bold;
 }
+
+.summary-title,
+.summary-sub-title {
+    @include typography($p, "default");
+    max-width: calc(100% - 30px);
+    width: 100%;
+    float: left;
+    display: inline-block;
+    text-align: left;
+    padding: 0;
+    font-style: normal;
+    text-align: left;
+    color: unset;
+}
+
+.summary-sub-title {
+    font-weight: normal;
+}

@@ -1,33 +1,98 @@
 div#esc-entries {
 
 	&[data-show="all"] {
-		details {
+		article.eurovision {
 			display: block;
 		}
 	}
 	&[data-show="sf1"] {
-		details {
+		article.eurovision {
 			display: none;
 		}
-		details[data-semifinal="1"] {
+		article.eurovision[data-semifinal="1"] {
 			display: block;
 		}
 	}
 	&[data-show="sf2"] {
-		details {
+		article.eurovision {
 			display: none;
 		}
-		details[data-semifinal="2"] {
+		article.eurovision[data-semifinal="2"] {
 			display: block;
 		}
 	}
 	&[data-show="final"] {
-		details[data-final="true"] {
+		article.eurovision[data-final="true"] {
 			display: block;
 		}
-		details[data-final="false"] {
+		article.eurovision[data-final="false"] {
 			display: none;
 		}
 	}
 
+}
+
+article.eurovision {
+	
+	&:after {
+		content: "";
+		display: block;
+		position: relative;
+    	height: 10px;
+    	border-radius: 3px;
+    	@include plastic(inset, 2px);
+		margin: $container-padding * 3 0 $container-padding * 4;
+	}
+	
+	
+	&:last-of-type:after {
+		display: none;
+	}
+}
+
+header.esc-country {
+	display: flex;
+	align-items: center;
+	padding: $container-padding;
+    margin-left: 0;
+    margin-right: auto;
+	
+	max-width: 450px;
+    @include tablet() {
+        max-width: 500px;
+    }
+    @include desktop {
+        max-width: 650px;
+    }
+    clear: both;
+	
+	.heart {
+		all: unset;
+		width: 50px;
+		margin-right: $container-padding;
+		z-index: 500;
+	}
+	.flag {
+		all: unset;
+		position: absolute;
+		width: 50px;
+		margin-right: $container-padding;
+		z-index: 400;
+	}
+	.country {
+		width: 100%;
+		padding: 0;
+	}
+	.country-name {
+		display: block;
+		width: 100%;
+	}
+	.song-title,
+	.artist,
+	.song-by {
+		color: var(--secondary-color);
+	}
+	.song-by {
+		font-weight: 400;
+	}
 }

@@ -1,7 +1,7 @@
 @mixin plastic($shape, $depth: 5px) {
 
     // corner radius
-    border-radius: $border-radius;
+    border-radius: $border-radius !important;
     // depth
     @if $shape == raised {
             // border

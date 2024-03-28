@@ -83,4 +83,15 @@ a {
             outline: 2px solid var(--link-outlineColor);
         }
     }
+	
+	&.post-image {
+		display: flex;
+		position: relative;
+		
+        &:focus,
+		&:hover:focus {
+            outline: 3px solid var(--link-outlineColor);
+			outline-offset: 3px;
+        }
+	}
 }
