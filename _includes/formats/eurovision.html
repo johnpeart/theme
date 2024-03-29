@@ -75,7 +75,7 @@
 		{% endif %}
 		{% if entry.language %}
 		<section class="language content">
-			{{ entry.language | prepend: "Lyrics in " | append: "." | markdownify }}
+			{{ entry.language | prepend: "Lyrics in " | markdownify }}
 		</section>
 		{% endif %}
 	</section>
