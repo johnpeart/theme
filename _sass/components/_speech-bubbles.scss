@@ -7,6 +7,10 @@
 	@include typography($p);
 } 
 
+.speech-bubble .content + .content {
+	margin-top: $container-padding;	
+}
+
 .speech-bubble.from-them .content,
 .speech-bubble.from-me .content {	
 	position: relative;

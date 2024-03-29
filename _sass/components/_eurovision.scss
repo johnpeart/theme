@@ -34,7 +34,7 @@ div#esc-entries {
 
 article.eurovision {
 	
-	&:after {
+	&:before {
 		content: "";
 		display: block;
 		position: relative;
@@ -44,23 +44,17 @@ article.eurovision {
 		margin: $container-padding * 3 0 $container-padding * 4;
 	}
 	
-	
-	&:first-of-type:before {
-		content: "";
-		display: block;
-		position: relative;
-    	height: 10px;
-    	border-radius: 3px;
-    	@include plastic(inset, 2px);
-		margin: $container-padding * 4 0 $container-padding * 4;
-	}
-	
+}
+
+.speech-bubble.eurovision.from-them .country {
+	padding: 0;
+	width: 100%;
 }
 
 header.esc-country {
 	display: flex;
 	align-items: center;
-	padding: $container-padding;
+	padding: $container-padding * 0.5 $container-padding;
     margin-left: 0;
     margin-right: auto;
 	
@@ -73,18 +67,10 @@ header.esc-country {
     }
     clear: both;
 	
-	.heart {
-		all: unset;
-		width: 50px;
-		margin-right: $container-padding;
-		z-index: 500;
-	}
 	.flag {
 		all: unset;
-		position: absolute;
 		width: 50px;
 		margin-right: $container-padding;
-		z-index: 400;
 	}
 	.country {
 		width: 100%;
@@ -93,15 +79,37 @@ header.esc-country {
 	.country-name {
 		display: block;
 		width: 100%;
+		color: var(--webmention-fromThemColor);
 	}
 	.song-title,
 	.artist,
 	.song-by {
-		color: var(--secondary-color);
+		color: var(--gray-600);
 	}
 	.song-by {
 		font-weight: 400;
 	}
+}
+
+.post-image.eurovision {
+	display: block;
+	position: relative;
+	background: var(--glass-background);
+	-webkit-backdrop-filter: blur(20px); 
+	backdrop-filter: blur(20px);
+	width: 100%;
+	padding: $container-padding * 3;
+}
+
+.post-image.eurovision-heart {
+    border-radius: 0;
+	height: 150px;
+	width: 150px;
+	@include desktop() {
+		height: 200px;
+		width: 200px;
+	}
+	margin: 0 auto;
 }
 
 .eurovision-points.speech-bubble {

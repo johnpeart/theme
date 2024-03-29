@@ -3,8 +3,6 @@ figure,
     display: block;
     position: relative;
     box-sizing: content-box;
-    margin-top: 0;
-    margin-bottom: 22px;
     width: 100%;
     max-width: 100%;
     margin-right: 0;
@@ -77,6 +75,43 @@ figure,
 
 }
 
+.composite-image--eurovision {
+    display: block;
+    position: relative;
+    box-sizing: content-box;
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    background: var(--glass-background);	
+    img {
+        display: block;
+        position: relative;
+        box-sizing: content-box;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: $border-radius $border-radius 0 0;
+        
+        &.padding {
+            padding: $container-padding;
+            box-sizing: border-box;
+        }
+
+        + figcaption {
+            overflow-y: clip;
+            transition: 1s;
+        }
+        &:hover {
+            + figcaption {
+                transition: 1s;
+            }
+        }
+
+    }
+}
+
 p > img {
     display: block;
     position: relative;
@@ -105,14 +140,25 @@ p > img {
     }
 }
 
+.post-image {
+    border-radius: $border-radius $border-radius 0 0;
+}
+
 p.featured img  {
     border-radius: $border-radius;
     box-shadow: shadow(2);
 }
 
-img.background {
+.background {
     z-index: 1;
     aspect-ratio: 2/1;
+	
+	&.cover {
+		object-fit: cover;
+	}
+	&.fill {
+		object-fit: fill;
+	}
 }
 
 div.overlay {
@@ -127,6 +173,12 @@ div.overlay {
     height: 100%;
     border-radius: 15px;
     box-shadow: shadow(2);
+}
+
+div.overlay.overlay--eurovision {
+	padding: $container-padding;
+    border-radius: 15px 15px 0 0;
+    box-shadow: none;
 }
 
 div.overlay-5 {
@@ -153,7 +205,7 @@ img.overlay {
     all: unset;
     position: relative;
     display: block;
-    max-width: clamp(200px, 60%, 600px);
+    width: clamp(200px, 60%, 600px);
 }
 
 svg.hero-image {

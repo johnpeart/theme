@@ -59,6 +59,10 @@ blockquote.quote {
 	}
 }
 
+blockquote.lyric {
+	padding: 0;
+}
+
 blockquote.twitter-tweet {
     &:before {
         display: block;
