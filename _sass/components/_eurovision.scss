@@ -32,9 +32,7 @@ div#esc-entries {
 
 }
 
-article.eurovision {
-	
-	&:before {
+article.eurovision:before {
 		content: "";
 		display: block;
 		position: relative;
@@ -44,8 +42,6 @@ article.eurovision {
 		margin: $container-padding * 3 0 $container-padding * 4;
 	}
 	
-}
-
 .speech-bubble.eurovision.from-them .country {
 	padding: 0;
 	width: 100%;
