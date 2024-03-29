@@ -5,11 +5,10 @@
 	height: 30px;
 }
 
-.h-entry.reply .interactions.counts,
-.h-entry.share .interactions.counts,
-.h-entry.music .interactions.counts {
-	padding: $container-padding * 0.3 $container-padding 0;
-	height: 30px;
+.h-entry.list .interactions.counts,
+.h-entry.note .interactions.counts,
+.h-entry.photo .interactions.counts {
+	padding: $container-padding $container-padding 0;
 }
 
 .interaction-count {

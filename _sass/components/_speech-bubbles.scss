@@ -141,6 +141,7 @@
 }
 
 .speech-bubble.from-me .content a {
+	background: none;
     &:link,
 	&:visited {
         color: var(--speechBubble-fromMeLinkColor);
@@ -156,13 +157,13 @@
 .speech-bubble.from-me .content a, {
 	&:link, 
 	&:visited {
-		text-decoration: none;
-	}
-	&:hover {
 		text-decoration: underline;
 	}
-	&:active {
+	&:hover {
 		text-decoration: none;
+	}
+	&:active {
+		text-decoration: underline;
 	}
 }
 
