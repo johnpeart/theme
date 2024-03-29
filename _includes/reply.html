@@ -2,7 +2,7 @@
 	<aside class="author">
 		{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif -%}
 		<span class="h-card p-author"><img class="u-photo hidden" alt="A Memoji avatar of John Peart" src="{{ site.url | append: '/assets/images/me/memoji.png' }}"><span class="p-name author--name"><a rel="author" class="p-author u-url u-uid" href="{{ site.url }}">John Peart</a></span></span>
-		<a href="{{ page.url }}" class="u-url">{% if page.collection == "reply" %}replied{% elsif page.collection == "share" %}shared and commented{% endif %}</a>
+		<a href="{{ page.url }}" class="u-url">{% if page.collection == "reply" %}replied{% elsif page.collection == "share" %}shared and commented{% elsif page.collection == "music" %}shared<br>{{ page.title }} by {{ page.artist }}{% endif %}</a>
 	</aside>
 	<section class="content e-content">
 		<div class="text">

@@ -34,4 +34,14 @@
 		</blockquote>
 	</section>
 </section>
+{% elsif page.collection == "music" %}
+<section class="from-them u-in-reply-to h-cite">
+	<section class="quote content">
+		<a class="music-link" href="{{ page.url }}" alt="Read more about {{ page.title }} by {{ page.artist }}">
+			<div class="ipod-nano">
+				<img class="music-artwork" src="{{ page.artwork }}" />
+			</div>
+		</a>
+	</section>
+</section>
 {% endif %}

@@ -14,7 +14,7 @@ layout: default
 
 		{% for page in paginator.posts %}
 			{% assign collection = page.collection %}
-			{% if collection == "reply" or collection == "share"%}
+			{% if collection == "reply" or collection == "share" or collection == "music" %}
 			<article class="h-entry {{ collection }}">
 				{% include cite.html %}
 				{% include reply.html %}
