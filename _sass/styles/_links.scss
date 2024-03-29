@@ -28,7 +28,7 @@ a {
 		outline-offset: 3px;
 	}
     &:active {
-        text-decoration: underline;
+        text-decoration: none !important;
     }
 
     &.link-secondary,
