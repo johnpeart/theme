@@ -22,7 +22,7 @@ layout: default
 			</article>
 			{% else %}
 			<article class="h-entry {{ collection }}">
-				<section class="{% if collection == 'blogpost' or collection == 'manual' %}card {% endif %}from-me {{ collection }}">
+				<section class="{% if collection == 'blogpost' or collection == 'manual' %}speech-bubble {% endif %}from-me {{ collection }}">
 					{% include /formats/stream.html format=collection %}
 					{% include webmentions.html type="count" %}
 				</section>

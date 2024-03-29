@@ -17,14 +17,15 @@
 	display: inline-block;
 	
     width: auto;
-    @include tablet {
+	&.full-width {
+		width: 100%;
+	}
+    @include tablet() {
         max-width: 500px;
     }
     @include desktop {
-	    max-width: 600px;
+        max-width: 600px;
     }
-    padding: $container-padding * 0.5 $container-padding;
-    border-radius: $border-radius;
     clear: both;
 	
 	text-align: left;
@@ -54,11 +55,24 @@
         	padding-bottom:  0;
     	}
 	}
+	
+	*:first-child {
+    	border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+	}
+	
+	*:last-child {
+    	border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+	}
+	
+	img {
+		background: none !important;
+	}
 }
 
 .speech-bubble.from-them .content {
-    background: var(--webmention-fromThemBackground);
-    color: var(--webmention-fromThemColor);
+    color: var(--speechBubble-fromThemColor);
 
     &:before {
         content: "";
@@ -67,7 +81,7 @@
         bottom: -2px;
         left: -7px;
         height: 15px;
-        border-left: 20px solid var(--webmention-fromThemBackground);
+        border-left: 20px solid var(--speechBubble-fromThemBackground);
         border-bottom-right-radius: 16px 14px;
         -webkit-transform: translate(0, -2px);
     }
@@ -79,37 +93,22 @@
         border-bottom-right-radius: 10px;
     }
 	
-    p {
-        color: var(--webmention-fromThemColor);
-    }
-
-    a {
-        &:link {
-            color: var(--webmention-fromThemColor);
-        }
-        &:visited {
-            color: var(--webmention-fromThemColor);
-        }
-        &:focus {
-            color: var(--webmention-fromThemLinkColor);
-            background: var(--webmention-fromThemLinkBackground);
-            outline: 2px solid var(--webmention-fromThemLinkBackground);
-        }
+    * {
+        color: var(--speechBubble-fromThemColor);
+	    background: var(--speechBubble-fromThemBackground);
     }
 }
 
 .speech-bubble.from-me .content {
 	margin-left: auto;
 	margin-right: 0;
-	background: var(--webmention-fromMeBackground);
-	color: var(--webmention-fromMeColor);
 
     &:before {
         z-index: -1;
         bottom: -2px;
         right: -7px;
         height: 15px;
-        border-right: 20px solid var(--webmention-fromMeBackground);
+        border-right: 20px solid var(--speechBubble-fromMeBackground);
         border-bottom-left-radius: $border-radius $border-radius - 3px;
         -webkit-transform: translate(0, -2px);
     }
@@ -121,24 +120,61 @@
         width: 10px;
         height: 20px;
         border-bottom-left-radius: $border-radius;
-    }
+    }  
 	
 	* {
-        color: var(--webmention-fromMeColor);
-    }
+		color: var(--speechBubble-fromMeColor);	
+		background: var(--speechBubble-fromMeBackground);
+	}
+}
 
-    a {
-        &:link {
-            color: var(--webmention-fromMeColor);
-        }
-        &:visited {
-            color: var(--webmention-fromMeColor);
-        }
-        &:focus {
-            color: var(--webmention-fromMeLinkColor);
-            background: var(--webmention-fromMeLinkBackground);
-            outline: 2px solid var(--webmention-fromMeLinkBackground);
-        }
+.speech-bubble.from-them .content a {
+    &:link,
+	&:visited {
+        color: var(--speechBubble-fromThemLinkColor);
+    }
+    &:focus {
+        color: var(--speechBubble-fromThemLinkColor);
+        background: var(--speechBubble-fromThemLinkBackground);
+        outline: 3px solid var(--speechBubble-fromThemLinkBackground);
     }
 }
 
+.speech-bubble.from-me .content a {
+    &:link,
+	&:visited {
+        color: var(--speechBubble-fromMeLinkColor);
+    }
+    &:focus {
+        color: var(--speechBubble-fromMeLinkFocusColor);
+        background: var(--speechBubble-fromMeLinkBackground);
+        outline: 3px solid var(--speechBubble-fromMeLinkBackground);
+    }
+}
+
+.speech-bubble.from-them .content a,
+.speech-bubble.from-me .content a, {
+	&:link, 
+	&:visited {
+		text-decoration: none;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+	&:active {
+		text-decoration: none;
+	}
+}
+
+.speech-bubble .content .text {
+    padding: $container-padding * 0.5 $container-padding;
+}
+
+.speech-bubble .post-title {
+    @include typography($card-title);
+	padding: $container-padding * 0.5 $container-padding !important;
+}
+
+.speech-bubble .post-title + .text {
+	padding-top: 0;
+}

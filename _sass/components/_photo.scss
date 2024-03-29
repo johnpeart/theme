@@ -39,19 +39,19 @@
     }
 
     a {
-        &:link {
+        &:link,
+		&:visited {
+			color: var(--black);
             text-decoration: none !important;
-            color: var(--markerpen-color);
         }
         &:visited {
             text-decoration: none;
         }
         &:hover {
             text-decoration: underline !important;
-            color: var(--markerpen-color);
         }
         &:active {
-            text-decoration: underline !important;
+            text-decoration: none !important;
         }
     }
 

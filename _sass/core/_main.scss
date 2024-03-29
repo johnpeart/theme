@@ -31,3 +31,13 @@ body#editor main {
     min-height: calc(100vh - 113px);
     height: 100%;
 }
+
+.from-me .content {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.from-them .content {
+    margin-left: 0;
+    margin-right: auto;
+}

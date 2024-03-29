@@ -32,7 +32,7 @@
 {% for entry in entries %}
 <article class="h-entry eurovision" data-semifinal="{{ entry.semifinal }}" data-final="{{ entry.final }}">
 	<section class="speech-bubble eurovision from-them">
-		<section class="country content">
+		<section class="full-width content">
 			{% if entry.youtube %}
 			<a class="post-image" href="{{ entry.youtube | prepend: 'https://www.youtube.com/watch?v=' }}" class="u-url">
 				<img loading="lazy" class="post-image" src="{{ entry.youtube | prepend: 'https://i.ytimg.com/vi/' | append: '/maxresdefault.jpg' }}" alt="Youtube cover photo for {{ entry.country }}'s entry to the Eurovision Song Contest – {{ entry.song | smartify }} by {{ entry.artist | smartify }}">
@@ -68,26 +68,32 @@
 		</section>
 		{% if entry.lyric %}
 		<section class="quote content">
-			<blockquote class="lyric quote h-cite">
+			<blockquote class="text lyric quote h-cite">
     			{{ entry.lyric | markdownify | replace: "<p>", "<p><q>" | replace: "</p>", "</q></p>" }}
 			</blockquote>
 		</section>
 		{% endif %}
 		{% if entry.language %}
 		<section class="language content">
-			{{ entry.language | prepend: "Lyrics in " | markdownify }}
+			<div class="text">
+				{{ entry.language | prepend: "Lyrics in " | markdownify }}
+			</div>
 		</section>
 		{% endif %}
 	</section>
 	<section class="speech-bubble from-me">
 		<section class="content e-content">
-			{{ entry.commentary | markdownify }}
+			<div class="text">
+				{{ entry.commentary | markdownify }}
+			</div>
 		</section>
 	</section>
 	{% if entry.score %}
 	<section class="eurovision-points speech-bubble from-me">
 		<section class="content">
-			{{ entry.score }} points
+			<div class="text">
+				{{ entry.score }} points
+			</div>
 		</section>
 	</section>
 	{% endif %}

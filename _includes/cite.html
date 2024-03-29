@@ -9,12 +9,14 @@
 			<a href="{{ page.reply_to.post.url }}" class="u-url">{% unless page.reply_to.override %}wrote{% else %}{{ page.reply_to.override }}{% endunless %}</a>
 		{% endif %}
 	</aside>
-	<blockquote cite="{{ page.reply_to.post.url }}"  class="content h-cite">
-		{{ page.reply_to.post.content | markdownify }}
-	</blockquote>
+	<section class="quote content">
+		<blockquote cite="{{ page.reply_to.post.url }}"  class="text h-cite">
+			{{ page.reply_to.post.content | markdownify }}
+		</blockquote>
+	</section>
 </section>
 {% elsif page.collection == "share" %}
-<section class="card from-them u-in-reply-to h-cite">
+<section class="speech-bubble from-them u-in-reply-to h-cite">
 	<aside class="author">
 		{% if page.reply_to.post.date %}On <time class="dt-published" datetime="{{ page.reply_to.post.date | date: '%FT%T%:z' }}">{{ page.reply_to.post.date | date: '%d %B %Y' }}</time>, {% endif %}
 		<a href="{{ page.reply_to.author.url }}">{{ page.reply_to.author.name }}</a>
@@ -23,7 +25,7 @@
 	<section class="quote content">
 		{% if page.reply_to.post.image %}<img loading="lazy" class="post-image" src="{{ page.reply_to.post.image }}">{% endif %}
 		{% if page.reply_to.post.title %}<h1 class="post-title"><a href="{{ page.reply_to.post.url }}" class="u-url">{{ page.reply_to.post.title }}</a></h1>{% endif %}
-		<blockquote cite="{{ page.reply_to.post.url }}"  class="quote h-cite">
+		<blockquote cite="{{ page.reply_to.post.url }}"  class="text h-cite">
 			{% if page.reply_to.post.content %}
 				{{ page.reply_to.post.content | remove: '"' | strip | prepend: '<q>' | append: '</q>' | markdownify  }}
 			{% elsif page.reply_to.post.description %}

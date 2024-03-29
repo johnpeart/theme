@@ -33,17 +33,16 @@ div#esc-entries {
 }
 
 article.eurovision:before {
-		content: "";
-		display: block;
-		position: relative;
-    	height: 10px;
-    	border-radius: 3px;
-    	@include plastic(inset, 2px);
-		margin: $container-padding * 3 0 $container-padding * 4;
-	}
+	content: "";
+	display: block;
+	position: relative;
+	height: 10px;
+	border-radius: 3px;
+	@include plastic(inset, 2px);
+	margin: $container-padding * 3 0 $container-padding * 4;
+}
 	
-.speech-bubble.eurovision.from-them .country {
-	padding: 0;
+h3.country {
 	width: 100%;
 }
 
@@ -75,7 +74,6 @@ header.esc-country {
 	.country-name {
 		display: block;
 		width: 100%;
-		color: var(--webmention-fromThemColor);
 	}
 	.song-title,
 	.artist,

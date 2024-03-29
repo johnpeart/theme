@@ -5,7 +5,9 @@
 		<a href="{{ page.url }}" class="u-url">{% if page.collection == "reply" %}replied{% elsif page.collection == "share" %}shared and commented{% endif %}</a>
 	</aside>
 	<section class="content e-content">
-		{{ page.content }}
+		<div class="text">
+			{{ page.content }}
+		</div>
 	</section>
 	{% include webmentions.html type="interactions" %}
 </section>

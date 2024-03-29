@@ -1,26 +1,27 @@
 .interactions.counts {
 	text-align: right;
 	line-height: 1;
-	height: 35px;
-	padding: $container-padding $container-padding 0;
+	padding: $container-padding * 0.3 $container-padding 0;
+	height: 30px;
 }
 
 .h-entry.reply .interactions.counts,
 .h-entry.share .interactions.counts,
 .h-entry.music .interactions.counts {
 	padding: $container-padding * 0.3 $container-padding 0;
+	height: 30px;
 }
 
 .interaction-count {
 	margin: $container-padding * 0.5 0 $container-padding * 2;
 	padding-left: $container-padding * 2;
 	@include typography($small, "default");
-	color: var(--webmention-authorColor);
+	color: var(--speechBubble-authorColor);
 }
 
 .action p {
 	@include typography($small, "default");
-	color: var(--webmention-authorColor);
+	color: var(--speechBubble-authorColor);
 	text-align: center;
 	padding: 0;
 }
@@ -31,25 +32,25 @@ article.interaction {
 
 .action p a {
 	&:link {
-		color: var(--webmention-authorColor);
+		color: var(--speechBubble-authorColor);
 		text-decoration: none;
 	}
 	&:visited {
-		color: var(--webmention-authorColor);
+		color: var(--speechBubble-authorColor);
 		text-decoration: none;
 	}
 	&:hover {
-		color: var(--webmention-fromMeLinkColor);
+		color: var(--speechBubble-fromMeLinkColor);
 		text-decoration: underline;
 	}
 	&:focus:hover {
-		color: var(--webmention-fromThemLinkColor);
+		color: var(--speechBubble-fromThemLinkColor);
 		text-decoration: underline;
 	}
 	&:focus {
-		color: var(--webmention-fromThemLinkColor);
-		background: var(--webmention-fromThemLinkBackground);
-		outline: 2px solid var(--webmention-fromThemLinkBackground);
+		color: var(--speechBubble-fromThemLinkColor);
+		background: var(--speechBubble-fromThemLinkBackground);
+		outline: 2px solid var(--speechBubble-fromThemLinkBackground);
 		text-decoration: none;
 	}
 	&:active {
