@@ -1,6 +1,7 @@
 {% if include.type == "interactions" %}
 <footer class="interactions counts">
 	{% webmention_count page.url replies %}
+	{% webmention_count page.url links %}
 	{% webmention_count page.url reposts %}
 	{% webmention_count page.url likes %}
 </footer>
@@ -12,6 +13,7 @@
 <footer class="interactions counts">
 	<aside class="interactions">
 		{% webmention_count page.url replies %}
+		{% webmention_count page.url links %}
 		{% webmention_count page.url reposts %}
 		{% webmention_count page.url likes %}
 	</aside>
@@ -20,6 +22,7 @@
 <footer class="interactions counts replies">
 	<aside class="interactions">
 		{% webmention_count page.url replies %}
+		{% webmention_count page.url links %}
 		{% webmention_count page.url reposts %}
 		{% webmention_count page.url likes %}
 	</aside>
@@ -27,6 +30,6 @@
 </footer>
 {% else %}
  <footer class="interactions actions replies">
-	 {% webmentions page.url posts replies likes reposts %}
+	 {% webmentions page.url posts replies links likes reposts %}
  </footer>
  {% endif %}
