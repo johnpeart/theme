@@ -39,7 +39,7 @@ article.interaction {
 		text-decoration: none;
 	}
 	&:hover {
-		color: var(--speechBubble-fromMeLinkColor);
+		color: var(--speechBubble-authorColor);
 		text-decoration: underline;
 	}
 	&:focus:hover {
