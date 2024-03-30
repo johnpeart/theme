@@ -2,25 +2,31 @@
 layout: default
 ---
 
+
 <main id="content" class="container">
 
-	<article id="post-content" class="{{ page.collection }} h-entry">
+    {% assign collection = page.categories.first %}
+	<article id="post-content" class="{{ collection }} h-entry">
 
-		{% assign collection = page.collection %}
+		{% if collection == 'reply' or collection == 'share' %}
+			{% include cite.html %}
+			{% include reply.html %}
+			{% include webmentions.html type="replies" %}
+		{% else %}
 		{% include formats/headers.html format=collection %}
+			<section class="post-body e-content">
+				{{ content }}
+				{% include formats/eurovision.html %}
+				{% include formats/photo-metadata.html %}
+				{% include formats/about-details.html %}
+				
+				{% for posse in page.posse %}
+				<a rel="syndication" class="u-syndication" href="{{ posse }}"></a>
+				{% endfor %}
+			</section>
+			{% include webmentions.html type="post" %}
+		{% endif %}
 
-		<section class="post-body e-content">
-			{{ content }}
-			{% include formats/eurovision.html %}
-			{% include formats/photo-metadata.html %}
-			{% include formats/about-details.html %}
-			
-			{% for posse in page.posse %}
-			<a rel="syndication" class="u-syndication" href="{{ posse }}"></a>
-			{% endfor %}
-		</section>
-
-		{% include webmentions.html type="post" %}
 		{% include footer.html type="post" %}
 
 	</article>
