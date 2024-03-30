@@ -10,6 +10,10 @@
 	{% assign verb = "wrote a list" %}
 {% elsif collection == "music" -%}
 	{% assign verb = "shared some music" %}
+{% elsif collection == "reply" -%}
+	{% assign verb = "replied" %}
+{% elsif collection == "share" -%}
+	{% assign verb = "shared and commented" %}
 {% else -%}
 	{% assign verb = "posted" %}
 {%- endif -%}
@@ -23,7 +27,7 @@
 	</span>
 </aside>
 <section class="content e-content">
-	{% if include.format == "blogpost" or include.format == "manuals" %}
+	{% if include.format == "blogpost" or include.format == "now" or include.format == "manuals" %}
 		{% if page.image %}<img class="post-image" loading="lazy" src="{{ page.image | prepend: '/assets/images' }}">{% else %}<img class="post-image" loading="lazy" src="/assets/images/site/social-media-blogpost.png">{% endif %}
 		<h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 		<div class="text">
@@ -56,7 +60,5 @@
 			<p class="music-metadata-artist">{{ page.artist }}</p>
 			<p class="star-rating" style="--rating: {{ page.rating }};" aria-label="I rated this music {{ page.rating }} out of 5 stars."></p>
 		</section>
-	{% elsif include.format == "game" %}
-		GAME
 	{% endif %}
 </section>
