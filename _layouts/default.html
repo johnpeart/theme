@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  {% include head.html %}
+    {% include head.html %}
 
-  {% if site.collections contains page.collection %}
-  {% assign pageid = page.collection %}
-  {% else %}
-  {% assign pageid = page.layout %}
-  {% endif %}
+    {% if site.collections contains page.collection %}
+    {% assign pageid = page.collection %}
+    {% else %}
+    {% assign pageid = page.layout %}
+    {% endif %}
 
-  <body id="{{ pageid }}" class="{% for category in page.categories %}theme-{{ category | downcase }} {% endfor %}{% if jekyll.environment == 'development' %} debug{% endif %}">
-
-  	{% include skiplink.html %}
-    {% include header.html %}
-  	{{ content }}
-    {%- unless page.collection and page.layout != "collection" -%}
-    {% include footer.html %}
-    {% endunless %}
-    {% include analytics.html %}
-
-  </body>
+    <body id="{{ pageid }}" class="{% if jekyll.environment == 'development' %} debug{% endif %}">
+  
+    	{% include skiplink.html %}
+        {% include header.html %}
+    	{{ content }}
+        {%- unless page.collection and page.layout != "collection" -%}
+        {% include footer.html %}
+        {% endunless %}
+        {% include analytics.html %}
+  
+    </body>
 
 </html>
 
