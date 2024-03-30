@@ -29,34 +29,6 @@ article.interaction {
 	padding: $container-padding 0;
 }
 
-.action p a {
-	&:link {
-		color: var(--speechBubble-authorColor);
-		text-decoration: none;
-	}
-	&:visited {
-		color: var(--speechBubble-authorColor);
-		text-decoration: none;
-	}
-	&:hover {
-		color: var(--speechBubble-authorColor);
-		text-decoration: underline;
-	}
-	&:focus:hover {
-		color: var(--speechBubble-fromThemLinkColor);
-		text-decoration: underline;
-	}
-	&:focus {
-		color: var(--speechBubble-fromThemLinkColor);
-		background: var(--speechBubble-fromThemLinkBackground);
-		outline: 2px solid var(--speechBubble-fromThemLinkBackground);
-		text-decoration: none;
-	}
-	&:active {
-		text-decoration: underline;
-	}
-}
-
 span.interaction-icon {
 	display: inline-block;
 	position: relative;
