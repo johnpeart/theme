@@ -3,32 +3,33 @@
 	{% assign author = "John Peart" %}
 	{% assign pageurl = site.url | append: site.baseurl | append: page.url | replace: 'index.html','' %}
 
-	{%- if page.collection == "blogpost" %}
+    {% assign collection = page.collection %}
+	{%- if collection == "blogpost" %}
 		{% assign title = page.title | strip_html | truncate: 200 %}
 		{% assign description = page.excerpt | strip_html | strip_newlines | truncate: 200 %}
 		{% assign type = "article" %}
-	{%- elsif page.collection == "reply" %}
+	{%- elsif collection == "reply" %}
 		{% assign title = page.reply_to.author.name | prepend: "↩️ In reply to " | strip_html | truncate: 200 %}
 		{% assign description = page.content | strip_html | truncate: 200 %}
 		{% assign type = "reply" %}
 		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: site.reply-image %}
-	{%- elsif page.collection == "note" %}
+	{%- elsif collection == "note" %}
 		{% assign title = page.title | prepend: "🗒️ " | strip_html | truncate: 200 %}
 		{% assign description = page.content | strip_html | truncate: 200 %}
 		{% assign type = "note" %}
-	{%- elsif page.collection == "share" %}
+	{%- elsif collection == "share" %}
 		{% assign title = page.reply_to.post.title | prepend: "🔁 Commented on “" | append: "”" | strip_html | truncate: 200 %}
 		{% assign description = page.content | strip_html | truncate: 200 %}
 		{% assign type = "share" %}
-	{%- elsif page.collection == "music" %}
+	{%- elsif collection == "music" %}
 		{% assign title = page.title | prepend: "🎧 Shared “" | append: "” by " | append: page.artist | strip_html %}
 		{% assign description = page.content | append: "by " | append: page.artist | strip_html | truncate: 200 %}
 		{% assign type = "music" %}
-	{%- elsif page.collection == "photo" %}
+	{%- elsif collection == "photo" %}
 		{% assign title = page.title | prepend: "📷 " | strip_html | truncate: 200 %}
 		{% assign description = page.content | strip_html | truncate: 200 %}
 		{% assign type = "photo" %}
-	{%- elsif page.collection == "game" %}
+	{%- elsif collection == "game" %}
 		{% assign title = page.title | prepend: "🎮 Shared ”" | append: "“" | strip_html | truncate: 200 %}
 		{% assign description = page.content | strip_html | truncate: 200 %}
 		{% assign type = "game" %}
@@ -47,7 +48,7 @@
 	{% elsif page.image %}
 		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: page.image %}
 	{% elsif page.collection %}
-		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: '/site/social-media-' | append: page.collection | append: ".png" %}
+		{% assign image = site.url | append: site.baseurl | append: site.image-path | append: '/site/social-media-' | append: collection | append: ".png" %}
 	{% else %}
 		{% assign image = site.url | append: site.baseurl | append: site.social-media-image %}
 	{% endif %}
@@ -78,6 +79,7 @@
 	{% if site.linkedin %}<link rel="me" href="{{ site.linkedin.url }}" type="text/html">{% endif %}
 	{% if site.github %}<link rel="me" href="{{ site.github.url }}" type="text/html">{% endif %}
 	{% if site.mastodon %}<link rel="me" href="{{ site.mastodon.url }}" type="text/html">{% endif %}
+	{% if site.bluesky %}<link rel="me" href="{{ site.bluesky.url }}" type="text/html">{% endif %}
 	{% if site.webmention-io.email %}<link href="mailto:{{ site.webmention-io.email }}" rel="me">{% endif %}
 	{% if site.gravatar %}<link href="{{ site.gravatar.url }}" rel="me">{% endif %}
 
