@@ -13,12 +13,12 @@ layout: default
 			{% include reply.html %}
 			{% include webmentions.html type="replies" %}
 		{% else %}
-		{% include formats/headers.html format=collection %}
+		{% include post-headers.html format=collection %}
 			<section class="post-body e-content">
 				{{ content }}
-				{% include formats/eurovision.html %}
-				{% include formats/photo-metadata.html %}
-				{% include formats/about-details.html %}
+				{% include eurovision.html %}
+				{% include photo-metadata.html %}
+				{% include about-details.html %}
 				
 				{% for posse in page.posse %}
 				<a rel="syndication" class="u-syndication" href="{{ posse }}"></a>

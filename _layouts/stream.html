@@ -23,7 +23,7 @@ layout: default
 			{% else %}
 			<article class="h-entry {{ collection }}">
 				<section class="{% if collection == 'blogpost' or collection == 'now' %}speech-bubble {% endif %}from-me {{ collection }}">
-					{% include /formats/stream.html format=collection %}
+					{% include stream.html format=collection %}
 					{% include webmentions.html type="count" %}
 				</section>
 				{% include webmentions.html type="replies" %}
