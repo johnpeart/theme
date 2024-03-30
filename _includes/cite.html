@@ -3,11 +3,11 @@
 <section class="speech-bubble from-them u-in-reply-to h-cite">
 	<aside class="author">
 		{% if page.reply_to.post.date -%}On <time class="dt-published" datetime="{{ page.reply_to.post.date | date: '%FT%T%:z' }}">{{ page.reply_to.post.date | date: '%d %B %Y' }}</time>, {% endif -%}
-		<a href="{{ page.reply_to.author.url }}">{{ page.reply_to.author.name }}</a>
+		<a href="{{ page.reply_to.author.url }}" class="link-secondary">{{ page.reply_to.author.name }}</a>
 		{% if page.reply_to.original.url -%}
-			<a href="{{ page.reply_to.post.url }}" class="u-url">replied</a> to <a href="{{ page.reply_to.original.url }}" class="u-url">{% if page.reply_to.original.title %}<br>“{{ page.reply_to.original.title }}”{% else %}this post{% endif %}</a>
+			<a href="{{ page.reply_to.post.url }}" class="u-url link-secondary">replied</a> to <a href="{{ page.reply_to.original.url }}" class="u-url link-secondary">{% if page.reply_to.original.title %}<br>“{{ page.reply_to.original.title }}”{% else %}this post{% endif %}</a>
 		{% else -%}
-			<a href="{{ page.reply_to.post.url }}" class="u-url">{% unless page.reply_to.override %}wrote{% else %}{{ page.reply_to.override }}{% endunless %}</a>
+			<a href="{{ page.reply_to.post.url }}" class="u-url link-secondary">{% unless page.reply_to.override %}wrote{% else %}{{ page.reply_to.override }}{% endunless %}</a>
 		{% endif %}
 	</aside>
 	<section class="quote content">
@@ -20,12 +20,12 @@
 <section class="speech-bubble from-them u-in-reply-to h-cite">
 	<aside class="author">
 		{% if page.reply_to.post.date %}On <time class="dt-published" datetime="{{ page.reply_to.post.date | date: '%FT%T%:z' }}">{{ page.reply_to.post.date | date: '%d %B %Y' }}</time>, {% endif %}
-		<a href="{{ page.reply_to.author.url }}">{{ page.reply_to.author.name }}</a>
-		{% if page.reply_to.publication %}at <a href="{{ page.reply_to.publication.url }}" class="u-url">{{ page.reply_to.publication.name }}</a>{% endif %} {% unless page.reply_to.override %}wrote{% else %}{{ page.reply_to.override }}{% endunless %}
+		<a href="{{ page.reply_to.author.url }}" class="link-secondary">{{ page.reply_to.author.name }}</a>
+		{% if page.reply_to.publication %}at <a href="{{ page.reply_to.publication.url }}" class="u-url link-secondary">{{ page.reply_to.publication.name }}</a>{% endif %} {% unless page.reply_to.override %}wrote{% else %}{{ page.reply_to.override }}{% endunless %}
 	</aside>
 	<section class="quote content">
 		{% if page.reply_to.post.image %}<img loading="lazy" class="post-image" src="{{ page.reply_to.post.image }}">{% endif %}
-		{% if page.reply_to.post.title %}<h1 class="post-title"><a href="{{ page.reply_to.post.url }}" class="u-url">{{ page.reply_to.post.title }}</a></h1>{% endif %}
+		{% if page.reply_to.post.title %}<h1 class="post-title"><a href="{{ page.reply_to.post.url }}" class="u-url link-secondary">{{ page.reply_to.post.title }}</a></h1>{% endif %}
 		<blockquote cite="{{ page.reply_to.post.url }}"  class="text h-cite">
 			{% if page.reply_to.post.content %}
 				{{ page.reply_to.post.content | remove: '"' | strip | prepend: '<q>' | append: '</q>' | markdownify  }}
