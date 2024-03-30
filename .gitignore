@@ -36,6 +36,7 @@ Gemfile.lock
 *_feed
 /pages
 /_includes/templates
+/_includes/webmentions
 /assets/images/guides
 /assets/images/social
 /assets/images/posts
