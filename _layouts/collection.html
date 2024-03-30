@@ -55,10 +55,8 @@ layout: page
 		{% if item.link %}
 			{% assign link = item.link %}
 			{% assign alt = item.alt %}
-		{% elsif site.collection.output == true %}
+		{% else %}
 			{% assign link = item.url %}
-		{% elsif site.collection.output == false %}
-			{% assign link = null %}
 		{% endif %}
 		<h2 class="collection--list--item-title"><a href="{{ link }}" {% if alt %}title="{{ alt }}"{% endif %}>{{ item.title | smartify }}</a></h2>
 		{% if item.excerpt %}
