@@ -5,7 +5,7 @@ layout: default
 
 <main id="content" class="container">
 
-    {% assign collection = page.categories.first %}
+    {% assign collection = page.collection %}
 	<article id="post-content" class="{{ collection }} h-entry">
 
 		{% if collection == 'reply' or collection == 'share' %}
