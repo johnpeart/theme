@@ -1,4 +1,5 @@
-{% if page.collection == "reply" %}
+{% assign collection = page.collection %}
+{% if collection == "reply" %}
 <section class="speech-bubble from-them u-in-reply-to h-cite">
 	<aside class="author">
 		{% if page.reply_to.post.date -%}On <time class="dt-published" datetime="{{ page.reply_to.post.date | date: '%FT%T%:z' }}">{{ page.reply_to.post.date | date: '%d %B %Y' }}</time>, {% endif -%}
@@ -15,7 +16,7 @@
 		</blockquote>
 	</section>
 </section>
-{% elsif page.collection == "share" %}
+{% elsif collection == "share" %}
 <section class="speech-bubble from-them u-in-reply-to h-cite">
 	<aside class="author">
 		{% if page.reply_to.post.date %}On <time class="dt-published" datetime="{{ page.reply_to.post.date | date: '%FT%T%:z' }}">{{ page.reply_to.post.date | date: '%d %B %Y' }}</time>, {% endif %}
@@ -34,7 +35,7 @@
 		</blockquote>
 	</section>
 </section>
-{% elsif page.collection == "music" %}
+{% elsif collection == "music" %}
 <section class="from-them u-in-reply-to h-cite">
 	<section class="quote content">
 		<a class="music-link" href="{{ page.url }}" alt="Read more about {{ page.title }} by {{ page.artist }}">
