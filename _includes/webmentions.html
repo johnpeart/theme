@@ -4,6 +4,7 @@
 	{% webmention_count page.url links %}
 	{% webmention_count page.url reposts %}
 	{% webmention_count page.url likes %}
+	{% webmention_count page.url bookmarks %}
 </footer>
 {% elsif include.type == "replies" %}
 <footer class="interactions replies">
@@ -16,6 +17,7 @@
 		{% webmention_count page.url links %}
 		{% webmention_count page.url reposts %}
 		{% webmention_count page.url likes %}
+		{% webmention_count page.url bookmarks %}
 	</aside>
 </footer>
 {% elsif include.type == "count-and-replies" %}
@@ -25,11 +27,12 @@
 		{% webmention_count page.url links %}
 		{% webmention_count page.url reposts %}
 		{% webmention_count page.url likes %}
+		{% webmention_count page.url bookmarks %}
 	</aside>
 	{% webmention_replies page.url %}
 </footer>
 {% else %}
  <footer class="interactions actions replies">
-	 {% webmentions page.url posts replies links likes reposts %}
+	 {% webmentions page.url posts replies links bookmarks likes reposts %}
  </footer>
  {% endif %}
