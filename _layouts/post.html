@@ -9,8 +9,8 @@ layout: default
 	<article id="post-content" class="{{ collection }} h-entry">
 
 		{% if collection == 'reply' or collection == 'share' %}
-			{% include cite.html %}
-			{% include reply.html %}
+			{% include from-them.html %}
+			{% include from-me.html %}
 			{% include webmentions.html type="replies" %}
 		{% else %}
 		{% include post-headers.html format=collection %}

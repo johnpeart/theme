@@ -16,8 +16,8 @@ layout: default
 			{% assign collection = page.collection %}
 			<article class="h-entry {{ collection }}">
 			{% if collection == "reply" or collection == "share" or collection == "music" %}
-				{% include cite.html %}
-				{% include reply.html %}
+				{% include from-them.html %}
+				{% include from-me.html %}
 				{% include webmentions.html type="replies" %}
 			{% else %}
 				{% include stream.html format=collection %}
