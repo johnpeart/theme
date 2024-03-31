@@ -14,21 +14,16 @@ layout: default
 
 		{% for page in paginator.posts %}
 			{% assign collection = page.collection %}
-			{% if collection == "reply" or collection == "share" or collection == "music" %}
 			<article class="h-entry {{ collection }}">
+			{% if collection == "reply" or collection == "share" or collection == "music" %}
 				{% include cite.html %}
 				{% include reply.html %}
 				{% include webmentions.html type="replies" %}
-			</article>
 			{% else %}
-			<article class="h-entry {{ collection }}">
-				<section class="{% if collection == 'blogpost' or collection == 'now' %}speech-bubble {% endif %}from-me {{ collection }}">
-					{% include stream.html format=collection %}
-					{% include webmentions.html type="count" %}
-				</section>
-				{% include webmentions.html type="replies" %}
-			</article>
+				{% include stream.html format=collection %}
+				{% include webmentions.html type="count" %}
 			{% endif %}
+			</article>
 			<hr>
 		{% endfor %}
 
