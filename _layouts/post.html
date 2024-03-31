@@ -29,7 +29,7 @@ layout: default
 			</section>
 			{% include webmentions.html type="replies" %}
 		{% else %}
-		{% include post-headers.html format=collection %}
+			{% include post-headers.html format=collection %}
 			<section class="post-body e-content">
 				{{ content }}
 				{% include eurovision.html %}
