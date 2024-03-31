@@ -1,8 +1,11 @@
 ---
 layout: page
 ---
-
-{% assign posts = site.blogpost | reverse %}
+{% if page.collection %}
+	{% assign posts = site[page.collection] %}
+{% else %}
+	{% assign posts = site.blogpost | reverse %}
+{% endif %}
 {% for post in posts %}
 
 	{% assign currentdate = post.date | date: "%Y" %}
