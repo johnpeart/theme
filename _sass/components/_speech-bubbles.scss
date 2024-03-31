@@ -93,8 +93,10 @@
         border-bottom-right-radius: 10px;
     }
 	
+    * {
+		color: var(--speechBubble-fromThemColor);
+	}
     blockquote, header, .post-title, .text {
-        color: var(--speechBubble-fromThemColor);
 	    background: var(--speechBubble-fromThemBackground);
     }
 }
@@ -123,9 +125,11 @@
     }  
 	
 	* {
-		color: var(--speechBubble-fromMeColor);	
-		background: var(--speechBubble-fromMeBackground);
+		color: var(--speechBubble-fromMeColor);
 	}
+    blockquote, header, .post-title, .text {
+	    background: var(--speechBubble-fromMeBackground);
+    }
 }
 
 .speech-bubble.from-them .content a {

@@ -47,7 +47,6 @@
 }
 
 blockquote.quote {
-	all: unset;
 	display: block;
 	position: relative;
 	
@@ -93,9 +92,11 @@ blockquote.twitter-tweet {
     }
 }
 
-q::before {
-    content: open-quote;
-}
-q::after {
-    content: close-quote;
+q {
+	::before {
+    	content: open-quote;
+	}
+	::after {
+    	content: close-quote;
+	}
 }
