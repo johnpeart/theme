@@ -36,8 +36,16 @@ body#editor main {
     margin-left: auto;
     margin-right: 0;
 }
-
 .from-them .content {
     margin-left: 0;
     margin-right: auto;
+}
+.from-me .content,
+.from-them .content {
+	&.mobile-center {
+		@include mobile() {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
 }

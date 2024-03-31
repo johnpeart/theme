@@ -1,8 +1,8 @@
 .interactions.counts {
+	display: block;
 	text-align: right;
 	line-height: 1;
 	padding: $container-padding * 0.3 $container-padding 0;
-	height: 30px;
 }
 
 .h-entry.list .interactions.counts,

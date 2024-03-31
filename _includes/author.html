@@ -1,0 +1,30 @@
+<aside class="author">
+{% if include.from == "me" %}
+	{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif %}
+{%- elsif include.from == "them" %}
+	{% if page.reply_to.post.date -%}On <time class="dt-published" datetime="{{ page.reply_to.post.date | date: '%FT%T%:z' }}">{{ page.reply_to.post.date | date: '%d %B %Y' }}</time>, {% endif -%}
+{%- endif %}
+	
+{%- if include.from == "me" %}
+	<span class="h-card p-author">
+		<img class="u-photo hidden memoji" alt="A Memoji avatar of John Peart" src="{{ site.url | append: '/assets/images/me/memoji.png' }}">
+		<span class="p-name author--name"><a rel="author" class="link-secondary p-author u-url u-uid" href="{{ site.url }}">John Peart</a></span>
+	</span>
+{%- elsif include.from == "them" %}
+	<a href="{{ page.reply_to.author.url }}" class="h-card p-author link-secondary">{{ page.reply_to.author.name }}</a>
+{%- endif %}
+
+{%- if include.from == "me" %}
+	<a href="{{ page.url }}" class="link-secondary u-url">{{ verb }}</a>
+{%- elsif include.from == "them" %}
+	{% if page.reply_to.original.url -%}
+		<a href="{{ page.reply_to.post.url }}" class="u-url link-secondary">replied</a> to <a href="{{ page.reply_to.original.url }}" class="u-url link-secondary">{% if page.reply_to.original.title %}<br>“{{ page.reply_to.original.title }}”{% else %}this post{% endif %}</a>
+	{% else -%}
+		{% if page.reply_to.publication -%}
+		at <a href="{{ page.reply_to.publication.url }}" class="u-url link-secondary">{{ page.reply_to.publication.name }}</a>
+		{% endif %}
+		<a href="{{ page.reply_to.post.url }}" class="u-url link-secondary">{% unless page.reply_to.override %}wrote{% else %}{{ page.reply_to.override }}{% endunless %}</a>
+	{% endif %}
+{%- endif –%}
+
+</aside>

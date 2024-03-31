@@ -1,14 +1,66 @@
-{% assign collection = page.collection %}
-<section class="speech-bubble from-me">
-	<aside class="author">
-		{% if page.date %}On <time class="dt-published" datetime="{{ page.date | date: '%FT%T%:z' }}">{{ page.date | date: '%d %B %Y' }}</time>, {% endif -%}
-		<span class="h-card p-author"><img class="u-photo hidden" alt="A Memoji avatar of John Peart" src="{{ site.url | append: '/assets/images/me/memoji.png' }}"><span class="p-name author--name"><a rel="author" class="link-secondary p-author u-url u-uid" href="{{ site.url }}">John Peart</a></span></span>
-		<a href="{{ page.url }}" class="link-secondary u-url">{% if collection == "reply" %}replied{% elsif collection == "share" %}shared and commented{% elsif collection == "music" %}shared<br>{{ page.title }} by {{ page.artist }}{% else %}shared{% endif %}</a>
-	</aside>
+{%- if collection == "blogpost" -%}
+	{% assign verb = "wrote a blogpost" %}
+	{% assign class = "speech-bubble" %}
+{%- elsif collection == "now" %}
+	{% assign verb = "wrote an update" %}
+	{% assign class = "speech-bubble" %}
+{%- elsif collection == "manual" -%}
+	{% assign verb = "wrote a manual" %}
+	{% assign class = "" %}
+{% elsif collection == "photo" -%}
+	{% assign verb = "posted a photo" %}
+	{% assign class = "" %}
+{% elsif collection == "note" -%}
+	{% assign verb = "wrote a note" %}
+	{% assign class = "" %}
+{% elsif collection == "list" -%}
+	{% assign verb = "wrote a list" %}
+	{% assign class = "" %}
+{% elsif collection == "music" -%}
+	{% assign verb = "shared<br>" | append: page.title | append: " by " | append: page.artist %}
+	{% assign class = "speech-bubble" %}
+{% elsif collection == "reply" -%}
+	{% assign verb = "replied" %}
+	{% assign class = "speech-bubble" %}
+{% elsif collection == "share" -%}
+	{% assign verb = "shared and commented" %}
+	{% assign class = "speech-bubble" %}
+{% else -%}
+	{% assign verb = "posted" %}
+	{% assign class = "" %}
+{%- endif -%}
+
+<section class="{{ class }} from-me {{ collection }}">		
+	
+	{% include author.html from="me" %}
 	<section class="content e-content">
-		<div class="text">
-			{{ page.content }}
-		</div>
+		{% if include.format == "blogpost" or include.format == "now" or include.format == "manuals" %}
+			{% if page.image %}<img class="post-image" loading="lazy" src="{{ page.image | prepend: '/assets/images' }}">{% else %}<img class="post-image" loading="lazy" src="/assets/images/site/social-media-blogpost.png">{% endif %}
+			<h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+			<div class="text">
+				{{ page.excerpt | markdownify }}
+			</div>
+		{% elsif include.format == "note" %}
+			<h1 class="post-it {{ page.colour | default: 'yellow' }}">{{ page.title }}</h1>
+		{% elsif include.format == "photo" %}
+			<div class="photo">
+				<img src="{{ site.url | append: site.baseurl | append: '/assets/images' | append: page.image }}" class="u-photo" loading="lazy">
+				<h1 class="photo--title p-name"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+			</div>
+		{% elsif include.format == "list" %}
+			<header class="list-header">
+				<h1 class="p-name list-title">{{ page.title }}</h1>
+			</header>
+			<ul class="list-body">
+				{% for item in page.list %}
+					<li class="list-item list-item--{{ item.status }}">{{ item.todo }}</li>
+				{% endfor %}
+			</ul>		
+		{% elsif include.format == "reply" or include.format == "share" or include.format == "music" %}
+			<div class="text">
+				{{ page.content }}
+			</div>
+		{% endif %}
 	</section>
-	{% include webmentions.html type="interactions" %}
+	{% include webmentions.html type="count" %}
 </section>

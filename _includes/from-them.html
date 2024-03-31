@@ -1,48 +1,37 @@
-{% assign collection = page.collection %}
-{% if collection == "reply" %}
+{% if collection == "reply" or collection == "share" %}
 <section class="speech-bubble from-them u-in-reply-to h-cite">
-	<aside class="author">
-		{% if page.reply_to.post.date -%}On <time class="dt-published" datetime="{{ page.reply_to.post.date | date: '%FT%T%:z' }}">{{ page.reply_to.post.date | date: '%d %B %Y' }}</time>, {% endif -%}
-		<a href="{{ page.reply_to.author.url }}" class="link-secondary">{{ page.reply_to.author.name }}</a>
-		{% if page.reply_to.original.url -%}
-			<a href="{{ page.reply_to.post.url }}" class="u-url link-secondary">replied</a> to <a href="{{ page.reply_to.original.url }}" class="u-url link-secondary">{% if page.reply_to.original.title %}<br>“{{ page.reply_to.original.title }}”{% else %}this post{% endif %}</a>
-		{% else -%}
-			<a href="{{ page.reply_to.post.url }}" class="u-url link-secondary">{% unless page.reply_to.override %}wrote{% else %}{{ page.reply_to.override }}{% endunless %}</a>
-		{% endif %}
-	</aside>
+	{% include author.html from="them" %}
 	<section class="quote content">
-		<blockquote cite="{{ page.reply_to.post.url }}"  class="text h-cite">
-			{{ page.reply_to.post.content | markdownify }}
-		</blockquote>
-	</section>
-</section>
-{% elsif collection == "share" %}
-<section class="speech-bubble from-them u-in-reply-to h-cite">
-	<aside class="author">
-		{% if page.reply_to.post.date %}On <time class="dt-published" datetime="{{ page.reply_to.post.date | date: '%FT%T%:z' }}">{{ page.reply_to.post.date | date: '%d %B %Y' }}</time>, {% endif %}
-		<a href="{{ page.reply_to.author.url }}" class="link-secondary">{{ page.reply_to.author.name }}</a>
-		{% if page.reply_to.publication %}at <a href="{{ page.reply_to.publication.url }}" class="u-url link-secondary">{{ page.reply_to.publication.name }}</a>{% endif %} {% unless page.reply_to.override %}wrote{% else %}{{ page.reply_to.override }}{% endunless %}
-	</aside>
-	<section class="quote content">
-		{% if page.reply_to.post.image %}<img loading="lazy" class="post-image" src="{{ page.reply_to.post.image }}">{% endif %}
+		{%- if page.reply_to.post.image -%}
+		<img loading="lazy" class="post-image" src="{{ page.reply_to.post.image }}">
+		{%- endif -%}
 		{% if page.reply_to.post.title %}<h1 class="post-title"><a href="{{ page.reply_to.post.url }}" class="u-url link-secondary">{{ page.reply_to.post.title }}</a></h1>{% endif %}
 		<blockquote cite="{{ page.reply_to.post.url }}"  class="text h-cite">
-			{% if page.reply_to.post.content %}
-				{{ page.reply_to.post.content | remove: '"' | strip | prepend: '<q>' | append: '</q>' | markdownify  }}
-			{% elsif page.reply_to.post.description %}
-				{{ page.reply_to.post.description | remove: '"' | strip | prepend: '<q>' | append: '</q>' | markdownify  }}
+			{% if collection == "reply" %}
+				{{ page.reply_to.post.content | markdownify }}
+			{% elsif collection == "share" %}
+				{% if page.reply_to.post.content %}
+					{{ page.reply_to.post.content | remove: '"' | strip | prepend: '<q>' | append: '</q>' | markdownify  }}
+				{% elsif page.reply_to.post.description %}
+					{{ page.reply_to.post.description | remove: '"' | strip | prepend: '<q>' | append: '</q>' | markdownify  }}
+				{% endif %}
 			{% endif %}
 		</blockquote>
 	</section>
 </section>
 {% elsif collection == "music" %}
 <section class="from-them u-in-reply-to h-cite">
-	<section class="quote content">
+	<section class="quote content mobile-center">
 		<a class="music-link" href="{{ page.url }}" alt="Read more about {{ page.title }} by {{ page.artist }}">
 			<div class="ipod-nano">
 				<img class="music-artwork" src="{{ page.artwork }}" />
 			</div>
 		</a>
+		<section class="music-metadata sr-only p-name">
+			<h1 class="music-metadata-title">{{ page.title }}</h1>
+			<p class="music-metadata-artist">{{ page.artist }}</p>
+			<p class="star-rating" style="--rating: {{ page.rating }};" aria-label="I rated this music {{ page.rating }} out of 5 stars."></p>
+		</section>
 	</section>
 </section>
 {% endif %}

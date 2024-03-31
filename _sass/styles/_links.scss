@@ -15,7 +15,7 @@ a {
     }
     &:hover {
         color: var(--link-hoverColor);
-        text-decoration: none;
+        text-decoration: underline;
         cursor: pointer;
     }
     &:focus {

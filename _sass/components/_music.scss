@@ -9,18 +9,17 @@ a.music-link {
     }
 }
 
-.music-post .music-title {
-    padding: $container-padding * 2 0;
-}
 
 .ipod-nano {
     display: grid;
     
-    margin: 0 auto;
-    
+	margin: 0 auto;
+	
     width: 100%;
-    max-width: 400px;
-    
+	max-width: 300px;
+	@include desktop() {
+    	max-width: 400px;
+	}
     align-content: center;
     aspect-ratio: 806/763;
     background-image: url('/assets/images/site/nano-bg.svg');
@@ -30,7 +29,10 @@ a.music-link {
         display: block;
         
         width: 100%;
-        max-width: 400px;
+		max-width: 300px;
+		@include desktop() {
+    		max-width: 400px;
+		}
         
         aspect-ratio: 806/763;
         content: "";
@@ -41,12 +43,13 @@ a.music-link {
 
 .music-artwork {
     justify-self: center;
-    max-width: 63%;
+    max-width: 62%;
     border-radius: 2px;
 }
 
 h1.music-metadata-title {
     @include typography($large, "default");
+	margin-top: $container-padding * 2 !important;
 }
 
 h1.music-metadata-title,

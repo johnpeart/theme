@@ -6,18 +6,34 @@ layout: default
 <main id="content" class="container">
 
     {% assign collection = page.collection %}
+	{% if collection == "reply" -%}
+		{% assign verb = "replied" %}
+		{% assign class = "speech-bubble" %}
+	{% elsif collection == "share" -%}
+		{% assign verb = "shared and commented" %}
+		{% assign class = "speech-bubble" %}
+	{% else -%}
+		{% assign verb = "posted" %}
+		{% assign class = "" %}
+	{%- endif -%}
 	<article id="post-content" class="{{ collection }} h-entry">
 
 		{% if collection == 'reply' or collection == 'share' %}
 			{% include from-them.html %}
-			{% include from-me.html %}
+			<section class="{{ class }} from-me {{ collection }}">
+				{% include author.html from="me" %}
+				<section class="content e-content">
+					{% include from-me.html %}
+				</section>
+				{% include webmentions.html type="count" %}
+			</section>
 			{% include webmentions.html type="replies" %}
 		{% else %}
 		{% include post-headers.html format=collection %}
 			<section class="post-body e-content">
 				{{ content }}
 				{% include eurovision.html %}
-				{% include photo-metadata.html %}
+				{% include exif.html %}
 				{% include about-details.html %}
 				
 				{% for posse in page.posse %}
