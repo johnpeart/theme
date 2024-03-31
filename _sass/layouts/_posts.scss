@@ -10,7 +10,8 @@ body[id$='post'] {
     header.post-title.note,
     header.post-title.list,
     header.post-title.photo,
-    header.post-title.music {
+    header.post-title.music,
+    header.post-title.weeknotes {
         margin: $container-padding * 4 auto;
         @include tablet-up {
             margin: $container-padding * 6 auto;

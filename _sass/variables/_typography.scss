@@ -105,6 +105,25 @@ $hello: (
     )
 );
 
+// <h1 class="display">
+$calendar: (
+    "font-size": (
+        "mobile": 120px,
+        "tablet": 150px,
+        "desktop": 170px
+    ),
+    "padding": (
+        "mobile": 0,
+        "tablet": 0,
+        "desktop": 0
+    ),
+    "line-height": (
+        "mobile": 1,
+        "tablet": 1,
+        "desktop": 1
+    )
+);
+
 // <h1 class="page-title">
 $page-title: (
     "font-size": (

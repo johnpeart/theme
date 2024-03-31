@@ -20,6 +20,14 @@
 			</time>
 		</aside>
 		<h1 class="post-title p-name">{{ page.date | date: '%B %Y' }}</h1>
+	{% elsif include.format == "weeknotes" %}
+		<a href="{{ page.url }}" title="Read the week note for {{ page.date | date: '%d %B %Y' }}" class="calendar-link">
+			<h1 class="calendar-sheet">
+				<span class="calendar-month">{{- page.date | date: "%B" | truncate: 3, "" -}}</span>
+				<span class="calendar-date">{{- page.date | date: "%d" -}}</span>
+				<span class="calendar-collection">Week note</span>
+			</h1>
+		</a>
 	{% elsif include.format == "note" %}
 		<h1 class="post-it {{ page.colour | default: 'yellow' }}">{{ page.title }}</h1>
 	{% elsif include.format == "photo" %}

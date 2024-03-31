@@ -1,0 +1,86 @@
+.weeknotes .content,
+.weeknotes .post-title {
+    display: block;
+    position: relative;
+    
+	width: 250px;		
+	@include tablet {
+		width: 300px;
+	}
+	@include desktop {
+		width: 350px;
+	}
+	
+	@include clearfix();
+}
+
+.calendar-sheet {
+	
+	display: grid;
+	position: relative;
+	
+	align-self: center;
+	aspect-ratio: 1;
+	
+	padding: 0;
+	margin-bottom: $container-padding * 0.5;
+	text-align: center;
+	line-height: 1;
+	
+	background: var(--background);
+	border-radius: $border-radius * 2;
+	box-shadow: shadow(3);
+	
+	.calendar-month {
+		align-self: flex-start;
+		border-radius: $border-radius * 2 $border-radius * 2 0 0;
+		padding: $container-padding;
+		text-transform: uppercase;
+		background: var(--red);
+		color: var(--white);
+	}
+	.calendar-date {
+		@include typography($calendar);
+		align-self: center;
+		padding: 0 !important;	
+		line-height: 1 !important;
+	}
+	.calendar-collection {
+    	@include typography($marker, "marker");
+		align-self: flex-end;
+		color: var(--red);
+		border-radius: 0 0 $border-radius * 2 $border-radius * 2;
+		padding: $container-padding !important;	
+		text-transform: uppercase;
+	}
+	
+}
+
+a.calendar-link {
+	&:link,
+	&:visited {
+		text-decoration: none;
+	}
+	&:hover {
+		color: var(--white);
+		text-decoration: underline;
+		.calendar-month {
+			background: var(--cyan);
+		}
+		.calendar-date,
+		.calendar-collection {
+			text-decoration: none;
+		}
+	}
+	
+	&:focus {
+		.calendar-sheet {
+			outline: 3px solid var(--cyan);
+			outline-offset: 3px;
+		}
+	}
+	
+	&:active {
+		
+	}
+}
