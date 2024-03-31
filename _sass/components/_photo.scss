@@ -70,19 +70,6 @@
     padding: $container-padding 0 0 0 !important;
 }
 
-.photo-post header.photo-title {
-    @include tablet-up {
-        margin: $container-padding * 4 auto;
-    }
-}
-
-
-
-
-
-
-
-
 dl.exif {
 
     @include glass(20px, 2);
