@@ -34,10 +34,9 @@ layout: default
 			{%  if collection == "reply" 
 			    or collection == "share"
 				or collection == "music" %}
-				{% include from-them.html %}
+				{% include from-them.html format=collection %}
 			{% endif %}
 				{% include from-me.html format=collection %}
-				{% include webmentions.html type="replies" %}
 			</article>
 			<hr>
 		{% endfor %}

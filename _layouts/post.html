@@ -19,15 +19,8 @@ layout: default
 	<article id="post-content" class="{{ collection }} h-entry">
 
 		{% if collection == 'reply' or collection == 'share' %}
-			{% include from-them.html %}
-			<section class="{{ class }} from-me {{ collection }}">
-				{% include author.html from="me" %}
-				<section class="content e-content">
-					{% include from-me.html %}
-				</section>
-				{% include webmentions.html type="count" %}
-			</section>
-			{% include webmentions.html type="replies" %}
+			{% include from-them.html format=collection %}
+			{% include from-me.html format=collection %}
 		{% else %}
 			{% include post-headers.html format=collection %}
 			<section class="post-body e-content">
