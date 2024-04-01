@@ -39,14 +39,22 @@
 	text-align: center;
 	line-height: 1;
 	
-	background: var(--background);
+	background: var(--gray-300);
 	border-radius: $border-radius * 4;
-	box-shadow: shadow(3);
+	box-shadow: 
+		0 0 var(--white),
+		0 0 var(--gray-300),
+		0 2px var(--gray-200),
+		0 4px var(--gray-400),
+		0 6px var(--gray-300),
+		0 8px var(--gray-400),
+		0 10px 3px rgba(0,0,0,0.12), 0 10px 2px rgba(0,0,0,0.24);
+	border: 2px solid var(--gray-300);
 	
 	.calendar-month {
 		@include typography($h1);
 		align-self: flex-start;
-		border-radius: $border-radius * 4 $border-radius * 4 0 0;
+		border-radius: $border-radius * 4 - 2px $border-radius * 4 - 2px 0 0;
 		font-weight: bold;
 		padding: $container-padding !important;
 		text-transform: uppercase;
@@ -55,6 +63,7 @@
 	}
 	.calendar-date {
 		@include typography($calendar);
+		background: var(--white);
 		font-weight: bold;
 		align-self: center;
 		padding: 0 !important;	
@@ -62,6 +71,7 @@
 	}
 	.calendar-collection {
     	@include typography($marker, "marker");
+		background: var(--white);
 		align-self: flex-end;
 		color: var(--red);
 		border-radius: 0 0 $border-radius * 4 $border-radius * 4;
