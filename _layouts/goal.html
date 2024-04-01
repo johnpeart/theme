@@ -67,7 +67,7 @@ layout: default
 			{% assign goalno = goalno | times: 1.0 | at_least: 1 %}
 			{% assign totalgoalpercentage = totalgoalpercentage | times: 1.0 | at_least: 0 %}
 			{% assign averagegoalpercentage = totalgoalpercentage | divided_by: goalno | at_least: 0 | round %}
-			<li class="totaliser">
+			<li class="totaliser card">
 				<h2 class="goal-title">Overall progress</h2>
 				<p class="goal-description">Goal completion</p>
 				<progress class="goal-progress standard" max="100" value="{{ averagegoalpercentage }}">
@@ -91,3 +91,5 @@ layout: default
 	</section>
 
 </main>
+
+{% include footer.html %}
