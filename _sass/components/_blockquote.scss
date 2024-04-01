@@ -12,9 +12,6 @@
 	right: auto;
 	
 	width: auto;
-	@include tablet-up() {
-		max-width: 80%;
-	}
 	
 	text-align: left;
     overflow-wrap: break-word;
