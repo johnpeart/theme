@@ -4,3 +4,27 @@
        margin: $container-padding * 4 0;
    }
 }
+
+.nav-categories {
+	padding: 0;
+	margin: 0 0 $container-padding * 2 0;
+	
+	display: grid;
+	
+	grid-template-columns: 1fr 1fr;
+	@include tablet() {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	@include desktop() {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	grid-template-rows: 1fr;
+	grid-gap: $container-padding;
+	justify-items: center;
+}
+
+.nav-categories--item {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}

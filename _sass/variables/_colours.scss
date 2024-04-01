@@ -76,10 +76,7 @@
 
     --button-color: var(--black);
     --button-background: var(--white);
-    --button-hoverBackground: var(--absolute-white);
-    --button-focusBackground: var(--gray-100);
-    --button-hoverFocusBackground: var(--gray-200);
-    --button-activeBackground: var(--white);
+	--button-border: var(--gray-400);
 
     --dropdownButton-hoverBackground: var(--cyan);
     --dropdownButton-hoverColor: var(--white);
@@ -154,13 +151,10 @@
         --link-focusColor: var(--black);
         --link-secondary-color: var(--gray-500);
 
-        --button-color: var(--white);
-        --button-background: var(--black);
-        --button-hoverBackground: var(--gray-900);
-        --button-focusBackground: var(--gray-900);
-        --button-hoverFocusBackground: var(--gray-800);
-        --button-activeBackground: var(--black);
-
+    	--button-color: var(--white);
+    	--button-background: var(--gray-700);
+		--button-border: var(--gray-800);
+		
         --dropdownButton-hoverColor: var(--black);
         --dropdownButton-disabledColor: var(--gray-500);
         --dropdownButton-disabledBackground: var(--gray-800);

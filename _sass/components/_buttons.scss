@@ -1,121 +1,86 @@
-button {
-    cursor: pointer;
-    @include typography($p, "default");
-
-    width: 100%;
-    border: 1px solid;
-    padding: $container-padding;
-    margin: 0 0 $container-padding 0;
-    outline-offset: form("outline-focus-offset");
-    line-height: 1 !important;
-
-    @include tablet-up {
-        width: auto;
-    }
-
-    &:hover {
-        background: var(--button-hoverBackground);
-        color: var(--button-color);
-        cursor: pointer;
-    }
-
-    &:focus {
-        outline: form("border-width") solid var(--button-outlineColor);
-    }
-
-
-    &:hover:focus {
-        background: var(--button-hoverFocusBackground);
-    }
-
-    &:active {
-        outline: form("border-width") solid var(--button-outlineColor);
-        outline-offset: form("outline-active-offset");
-    }
-}
-
+button,
 .button {
-    color: var(--button-color);
-    background: var(--button-background);
-
-    @include plastic(raised, 6px);
-    transition: background 0.25s;
-    transition: box-shadow 0.25s;
-    font-weight: bold;
-    text-decoration: none;
-
+	all: unset;
+	
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+	
+	cursor: pointer;
+	
+    padding: $container-padding;
+    margin: 0;
+	
+    @include typography($p, "default");
+	color: var(--button-color);
+    line-height: 1 !important;
+	text-align: center;
+	
+	
+    width: 100%;
+	&.width-auto {
+		width: auto;	
+	}
+	
+	background: var(--button-background);
+	border: 1px solid var(--button-border);
+    box-shadow: 
+		0 0 var(--button-border),
+		0 0 var(--button-border),
+		0 1px var(--button-border),
+		0 2px var(--button-border),
+		0 3px var(--button-border),
+		0 4px var(--button-border),
+		0 5px var(--button-border);
+	border-radius: $border-radius * 0.5;
+	
+	&:link,
+	&:visited {
+		text-decoration: none;
+	}
     &:hover {
-        color: var(--button-hoverColor);
-        background: var(--button-hoverBackground);
-        @include plastic(raised, 2px);
-        transition: background 0.25s;
-        transition: box-shadow 0.25s;
+		box-shadow: 
+			0 0 var(--button-border),
+			0 0 var(--button-border),
+			0 1px var(--button-border),
+			0 2px var(--button-border),
+			0 3px var(--button-border);
+			transform: translate3d(0,2px,5px);
     }
-
-    &:focus {
-        background: var(--button-focusBackground);
-        @include plastic(raised, 2px);
-        transition: background 0.25s;
-        transition: box-shadow 0.25s;
+	&:focus,
+    &:focus-visible {
+		outline: 3px solid var(--link-outlineColor);
+	    outline-offset: form("outline-focus-offset");
     }
-
     &:hover:focus {
-        background: var(--button-hoverFocusBackground);
-        @include plastic(raised, 2px);
-        transition: background 0.25s;
-        transition: box-shadow 0.25s;
+	    outline-offset: form("outline-active-offset");
+    }
+    &:active {
+		box-shadow: 0 0 1px 1px var(--secondary-background);
+		transform: translate3d(0,5px,0);
+		text-decoration: none !important;
+	    outline-offset: form("outline-active-offset");
     }
 
-    &:active {
-        background: var(--button-activeBackground);
-        @include plastic(inset, 4px);
-        transition: background 0.25s;
-        transition: box-shadow 0.25s;
+    &:disabled,
+    &:disabled:focus, &:disabled:hover, &:disabled:active {
+		box-shadow: none;
+		transform: translate3d(0,5px,0);
+		text-decoration: none !important;
+        background: var(--secondary-background);
+        color: var(--secondary-color);
+        text-align: center;
+        cursor: unset;
         outline: none;
     }
 }
 
 .button--dropdown-menu-item {
+	top: -2px;
     text-align: left;
-    border: none;
     padding: $container-padding !important;
     outline-offset: form("outline-offset");
     margin: 0 !important;
-
-    display: block;
-    width: 100%;
-    border-radius: 10px;
-    text-decoration: none;
-
-    &:hover {
-        background: var(--dropdownButton-hoverBackground);
-        color: var(--dropdownButton-hoverColor);
-    }
-
-    &:focus {
-        color: var(--dropdownButton-focusColor);
-        text-decoration: underline;
-    }
-
-    &:hover:focus {
-        background: var(--dropdownButton-hoverBackground);
-        color: var(--dropdownButton-hoverColor);
-    }
-
-    &:active {
-        background: var(--dropdownButton-hoverBackground);
-        color: var(--dropdownButton-hoverColor);
-    }
-
-    &:disabled,
-    &:disabled:focus, &:disabled:hover, &:disabled:active {
-        background: var(--dropdownButton-disabledBackground);
-        color: var(--dropdownButton-disabledColor);
-        text-align: center;
-        cursor: unset;
-        outline: none;
-    }
-
 }
 
 // The .button--dropdown-menu-item button sits inside a list element.

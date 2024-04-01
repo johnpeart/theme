@@ -25,22 +25,9 @@ details[open] {
 
     > summary {
         margin-bottom: $container-padding;
-        @include plastic(inset, 4px);
-        transition: box-shadow 0.25s;
     }
 
     margin-bottom: $container-padding;
-	
-	&.plastic {
-        @include plastic(inset, 0px);
-		padding: $container-padding $container-padding 0;
-		> summary {
-			padding: 0;
-        	box-shadow: none;
-			border: 0;
-			outline-offset: $container-padding;
-		}
-	}
 }
 
 summary {
@@ -75,25 +62,51 @@ summary {
 
     display: block;
     position: relative;
+	box-sizing: border-box;
 
     cursor: pointer;
+	
     font-style: normal;
     text-align: left;
 
     padding: $container-padding;
-    @include plastic(raised, 3px);
-    transition: box-shadow 0.25s;
 
     @include typography($p, "default");
-
+	color: var(--button-color);
+	text-align: center;
+	
+	background: var(--button-background);
+	border: 1px solid var(--button-border);
+	box-shadow: 
+		0 0 var(--button-border),
+		0 0 var(--button-border),
+		0 1px var(--button-border),
+		0 2px var(--button-border),
+		0 3px var(--button-border),
+		0 4px var(--button-border),
+		0 5px var(--button-border);
+	border-radius: $border-radius * 0.5;
+	
     &:hover {
-        color: var(--details--hoverColor);
-        @include plastic(raised, 0px);
-		border-color: transparent;
-        transition: box-shadow 0.25s;
+		box-shadow: 
+			0 0 var(--button-border),
+			0 0 var(--button-border),
+			0 1px var(--button-border),
+			0 2px var(--button-border),
+			0 3px var(--button-border);
+			transform: translate3d(0,2px,5px);
     }
-    &:focus {
-        outline: none;
+    &:focus-visible {
+		outline: 3px solid var(--link-outlineColor);
+	    outline-offset: form("outline-focus-offset");
+    }
+    &:hover:focus {
+	    outline-offset: form("outline-active-offset");
+    }
+    &:active {
+		box-shadow: 0 0 1px 1px var(--secondary-background);
+		transform: translate3d(0,5px,0);
+		outline: none;
     }
 
     h1, h2, h3, h4, h5, h6, p {
@@ -175,10 +188,13 @@ ul.dropdown-menu {
     section {
         position: relative;
         z-index: 100;
-        @include glass(20px, 2, true);
         margin: $container-padding 0;
-
+		padding-bottom: 7px;
         max-width: 100%;
+		
+		background: var(--button-background);
+		border: 1px solid var(--button-border);
+		border-radius: $border-radius * 0.5;
      }
 
 }
