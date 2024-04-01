@@ -91,6 +91,10 @@ header.post-title aside {
     }
 }
 
+header.post-title aside.calendar {
+	padding: 0;
+}
+
 time.published-datetime,
 p.secondary-title {
     @include typography($post-date);

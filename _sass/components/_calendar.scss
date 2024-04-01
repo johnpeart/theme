@@ -1,17 +1,21 @@
 .weeknotes .content,
-.weeknotes .post-title {
+.weeknotes .weeknotes {
     display: block;
     position: relative;
-    
-	width: 250px;		
-	@include tablet {
-		width: 300px;
-	}
-	@include desktop {
-		width: 350px;
-	}
 	
 	@include clearfix();
+}
+
+.weeknotes .content {
+	text-align: right;
+}
+
+.weeknotes .weeknotes {
+	text-align: center;
+}
+
+.weeknotes h1 {
+	padding: 0;
 }
 
 .calendar-sheet {
@@ -21,9 +25,17 @@
 	
 	align-self: center;
 	aspect-ratio: 1;
-	
+    
+	width: 250px;		
+	@include tablet {
+		width: 300px;
+	}
+	@include desktop {
+		width: 350px;
+	}
 	padding: 0;
-	margin-bottom: $container-padding * 0.5;
+	margin: 0 0 $container-padding * 0.5 0;
+	
 	text-align: center;
 	line-height: 1;
 	
@@ -32,15 +44,18 @@
 	box-shadow: shadow(3);
 	
 	.calendar-month {
+		@include typography($h1);
 		align-self: flex-start;
 		border-radius: $border-radius * 4 $border-radius * 4 0 0;
-		padding: $container-padding;
+		font-weight: bold;
+		padding: $container-padding !important;
 		text-transform: uppercase;
 		background: var(--red);
 		color: var(--white);
 	}
 	.calendar-date {
 		@include typography($calendar);
+		font-weight: bold;
 		align-self: center;
 		padding: 0 !important;	
 		line-height: 1 !important;
@@ -56,7 +71,15 @@
 	
 }
 
+.calendar-title {
+	display: block;
+	margin-top: $container-padding * 4;
+}
+
 a.calendar-link {
+	display: inline-block;
+	position: relative;
+	
 	&:link,
 	&:visited {
 		text-decoration: none;

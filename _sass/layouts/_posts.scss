@@ -14,7 +14,7 @@ body[id$='post'] {
     header.post-title.weeknotes {
         margin: $container-padding * 4 auto;
         @include tablet-up {
-            margin: $container-padding * 6 auto;
+            margin: $container-padding * 6 auto $container-padding * 4;
         }
     }
 
