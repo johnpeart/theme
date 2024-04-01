@@ -14,7 +14,7 @@
 
 	<div class="footer">
 
-		<div id="author-card" class="h-card vcard author u-author p-author">
+		<div id="author-card" class="card author h-card vcard u-author p-author">
 			{% include memoji.html %}
 			<p class="p-name author--name"><a rel="author" class="bold no-underline p-author u-uid" href="{{ site.url }}"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a></p>
 			<p class="author--site-link"><a href="//www.johnpe.art" rel="me" class="u-url no-underline">www.johnpe.art</a></p>
@@ -31,7 +31,7 @@
 
 		<dl class="meta-data">
 			{% if page.date %}
-			<aside id="meta-data--published" class="meta-data meta-data-details">
+			<aside id="meta-data--published" class="card meta-data meta-data-details">
 				<dt class="post-date">Published</dt>
 				<dd>
 					<a href="{{ page.url }}" class="no-underline u-url u-uid">
@@ -44,7 +44,7 @@
 			{% endif %}
 
 			{% if page.categories %}
-			<aside id="meta-data--categories" class="meta-data meta-data-details">
+			<aside id="meta-data--categories" class="card meta-data meta-data-details">
 				<dt class="post-categories">Categories</dt>
 				<dd>{% for categories in page.categories %}<span class="p-category">{{ categories }}</span>{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
 			</aside>
@@ -59,7 +59,7 @@
 
 	<div class="footer">
 
-		<aside id="author-card" class="h-card vcard p-author">
+		<aside id="author-card" class="card h-card vcard p-author">
 			{% include memoji.html %}
 			<p class="p-name author--name"><a rel="author" class="bold no-underline p-author u-uid" href="{{ site.url }}"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a></p>
 			<p class="author--site-link"><a href="//www.johnpe.art" rel="me" class="u-url no-underline">www.johnpe.art</a></p>
