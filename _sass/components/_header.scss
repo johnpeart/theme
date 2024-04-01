@@ -196,7 +196,7 @@ header#site-header nav#header--site-nav {
 
             display: block;
             width: 100%;
-            border-radius: $border-radius;
+            border-radius: $border-radius * 0.75;
             text-decoration: none;
         }
 
