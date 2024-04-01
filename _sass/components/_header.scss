@@ -125,6 +125,7 @@ header#site-header nav#header--site-nav {
         }
         margin: 0 !important;
         border-radius: $border-radius;
+		transform: none !important;
         @include clearfix;
 
     }
