@@ -10,9 +10,6 @@ ul,
 ol {
     padding: 0 0 22px 30px;
     @include tablet-up {
-        padding: 0 0 $container-padding * 1 $container-padding * 3;
-    }
-    @include desktop {
-        padding: 0 0 $container-padding * 1 $container-padding * 4;
+        padding: 0 0 $container-padding * 1 $container-padding * 2.3;
     }
 }

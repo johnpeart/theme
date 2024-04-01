@@ -28,12 +28,12 @@
 	line-height: 1;
 	
 	background: var(--background);
-	border-radius: $border-radius * 2;
+	border-radius: $border-radius * 4;
 	box-shadow: shadow(3);
 	
 	.calendar-month {
 		align-self: flex-start;
-		border-radius: $border-radius * 2 $border-radius * 2 0 0;
+		border-radius: $border-radius * 4 $border-radius * 4 0 0;
 		padding: $container-padding;
 		text-transform: uppercase;
 		background: var(--red);
@@ -49,7 +49,7 @@
     	@include typography($marker, "marker");
 		align-self: flex-end;
 		color: var(--red);
-		border-radius: 0 0 $border-radius * 2 $border-radius * 2;
+		border-radius: 0 0 $border-radius * 4 $border-radius * 4;
 		padding: $container-padding !important;	
 		text-transform: uppercase;
 	}

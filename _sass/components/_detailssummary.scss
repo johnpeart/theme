@@ -85,7 +85,7 @@ summary {
 		0 3px var(--button-border),
 		0 4px var(--button-border),
 		0 5px var(--button-border);
-	border-radius: $border-radius * 0.5;
+	border-radius: $border-radius;
 	
     &:hover {
 		box-shadow: 
@@ -194,7 +194,7 @@ ul.dropdown-menu {
 		
 		background: var(--button-background);
 		border: 1px solid var(--button-border);
-		border-radius: $border-radius * 0.5;
+		border-radius: $border-radius;
      }
 
 }

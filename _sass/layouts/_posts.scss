@@ -4,7 +4,7 @@ body[id$='post'] {
         position: absolute;
         content: "\2014";
 
-        left: 15px;
+        left: $container-padding;
     }
     
     header.post-title.note,

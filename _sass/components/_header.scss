@@ -141,7 +141,23 @@ header#site-header nav#header--site-nav {
         text-align: center;
         max-height: calc(100vh - 100px);
         overflow-y: scroll;
-        @include glass(20px, 2, true, --glass-background);
+        
+		border-radius: $border-radius;
+		background: var(--glass-background);
+		box-shadow: 
+			0 0 var(--card-border),
+			0 0 var(--card-border),
+			0 1px var(--card-border),
+			0 2px var(--card-border),
+			0 3px var(--card-border),
+			0 4px var(--card-border),
+			0 5px var(--card-border),
+			0 3px 3px rgba(0,0,0,0.12), 
+			0 5px 2px rgba(0,0,0,0.24);
+		border: 1px solid var(--card-border);
+        -webkit-backdrop-filter: blur(20px);
+                backdrop-filter: blur(20px);
+				
         margin: $container-padding * 2 $container-padding;
 
         min-width: 30vw;

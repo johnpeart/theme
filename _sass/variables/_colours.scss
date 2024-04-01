@@ -138,7 +138,7 @@
     @include darkMode() {
         // Dark mode overrides
         // Colour palette
-        --glass-background: linear-gradient(135deg, rgba(33, 37, 41, 0.2), rgba(15, 15, 15, 0.2));
+        --glass-background: linear-gradient(135deg, rgba(33, 37, 41, 0.8), rgba(15, 15, 15, 0.6));
         --glass-border: rgba(100, 100, 100, 0.3);
         --plastic-shadow-1: var(--absolute-black);
         --plastic-shadow-2: var(--gray-900);
@@ -156,12 +156,12 @@
         --link-secondary-color: var(--gray-500);
 
     	--button-color: var(--white);
-    	--button-background: var(--gray-700);
-		--button-border: var(--gray-800);
+    	--button-background: var(--gray-800);
+		--button-border: var(--gray-900);
 	
     	--card-color: var(--white);
-    	--card-background: var(--gray-700);
-		--card-border: var(--gray-800);
+    	--card-background: var(--background);
+		--card-border: var(--gray-900);
 		
         --dropdownButton-hoverColor: var(--black);
         --dropdownButton-disabledColor: var(--gray-500);

@@ -127,10 +127,10 @@ figure.apps-list {
             background: var(--dl--hoverBackground);
         }
         &:first-child {
-            border-radius: 10px 10px 0 0;
+            border-radius:  $border-radius $border-radius 0 0;
         }
         &:last-child {
-            border-radius: 0 0 10px 10px;
+            border-radius: 0 0 $border-radius $border-radius;
             margin-bottom: $container-padding * 2;
         }
     }

@@ -92,7 +92,6 @@ body#wishlist {
         margin: $container-padding * 3 0 0 0;
         padding: $container-padding;
 
-        @include glass(20px, 2);
         text-align: center;
         @include tablet-up {
             text-align: right;

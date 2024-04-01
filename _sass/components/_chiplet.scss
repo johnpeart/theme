@@ -6,7 +6,7 @@
     text-transform: uppercase;
     font-variant: small-caps;
     vertical-align: middle;
-    border-radius: 8px;
+    border-radius: $border-radius;
 
     background: var(--cyan);
     color: var(--white);
