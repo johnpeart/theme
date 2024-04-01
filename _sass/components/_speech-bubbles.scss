@@ -74,10 +74,8 @@
 .speech-bubble.from-them .content {
     color: var(--speechBubble-fromThemColor);
 
-    &:before {
-        content: "";
-        position: absolute;
-        z-index: 2;
+    &:before {        
+		z-index: 2;
         bottom: -2px;
         left: -7px;
         height: 15px;

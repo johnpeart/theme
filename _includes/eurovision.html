@@ -68,9 +68,9 @@
 		</section>
 		{% if entry.lyric %}
 		<section class="quote content">
-			<blockquote class="text lyric quote h-cite">
+			<div class="text lyric quote h-cite">
     			{{ entry.lyric | markdownify | replace: "<p>", "<p><q>" | replace: "</p>", "</q></p>" }}
-			</blockquote>
+			</div>
 		</section>
 		{% endif %}
 		{% if entry.language %}
