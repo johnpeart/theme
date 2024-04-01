@@ -36,13 +36,13 @@
 <section class="{{ class }} from-me {{ collection }}">		
 	{% include author.html from="me" %}
 	<section class="content e-content">
-		{% if collection == "blogpost" or collection == "now" or collection == "manuals" %}
+		{% if include.format == "blogpost" or include.format == "now" or include.format == "manuals" %}
 			{% if page.image %}<img class="post-image" loading="lazy" src="{{ page.image | prepend: '/assets/images' }}">{% else %}<img class="post-image" loading="lazy" src="/assets/images/site/social-media-blogpost.png">{% endif %}
 			<h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 			<div class="text">
 				{{ page.excerpt | markdownify }}
 			</div>
-		{% elsif collection == "weeknotes" %}
+		{% elsif include.format == "weeknotes" %}
 			<a href="{{ page.url }}" title="Read the week note for {{ page.date | date: '%d %B %Y' }}" class="calendar-link">
 				<h1 class="calendar-sheet">
 					<span class="calendar-month">{{- page.date | date: "%B" | truncate: 3, "" -}}</span>
@@ -50,14 +50,14 @@
 					<span class="calendar-collection">Week note</span>
 				</h1>
 			</a>
-		{% elsif collection == "note" %}
+		{% elsif include.format == "note" %}
 			<h1 class="post-it {{ page.colour | default: 'yellow' }}">{{ page.title }}</h1>
-		{% elsif collection == "photo" %}
+		{% elsif include.format == "photo" %}
 			<div class="photo">
 				<img src="{{ site.url | append: site.baseurl | append: '/assets/images' | append: page.image }}" class="u-photo" loading="lazy">
 				<h1 class="photo--title p-name"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 			</div>
-		{% elsif collection == "list" %}
+		{% elsif include.format == "list" %}
 			<header class="list-header">
 				<h1 class="p-name list-title">{{ page.title }}</h1>
 			</header>
@@ -66,13 +66,13 @@
 					<li class="list-item list-item--{{ item.status }}">{{ item.todo }}</li>
 				{% endfor %}
 			</ul>		
-		{% elsif collection == "reply" or collection == "share" or collection == "music" %}
+		{% elsif include.format == "reply" or include.format == "share" or include.format == "music" %}
 			<div class="text">
 				{{ page.content }}
 			</div>
 		{% endif %}
 	</section>
-	{% unless collection == "reply" or collection == "share" %}
+	{% unless include.format == "reply" or include.format == "share" %}
 	{% include webmentions.html type="count" %}
 	{% endunless %}
 				
