@@ -36,9 +36,8 @@ article.eurovision:before {
 	content: "";
 	display: block;
 	position: relative;
-	height: 10px;
-	border-radius: 3px;
-	@include plastic(inset, 2px);
+	height: 5px;
+	background: var(--secondary-background);
 	margin: $container-padding * 3 0 $container-padding * 4;
 }
 	
