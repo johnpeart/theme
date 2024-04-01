@@ -36,6 +36,7 @@ figure.app-sheet {
     margin: 0 auto;
     max-width: 570px;
     margin-bottom: $container-padding;
+	background: none;
 
     .dl--app {
         box-shadow: shadow(2);
