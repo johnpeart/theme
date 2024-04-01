@@ -1,0 +1,13 @@
+.card {
+	background: var(--card-background);
+	color: var(--card-color);
+	box-shadow: 
+		0 0 var(--card-border),
+		0 0 var(--card-border),
+		0 1px var(--card-border),
+		0 2px var(--card-border),
+		0 3px var(--card-border),
+		0 4px var(--card-border),
+		0 5px var(--card-border);
+	border: 1px solid var(--card-border);
+}

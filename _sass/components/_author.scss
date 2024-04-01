@@ -22,13 +22,13 @@ aside.author {
     margin-bottom: $container-padding;
     padding: $container-padding;
     height: 100%;
-
-    @include glass(20px, 2);
+	
+	border-radius: $border-radius;
     text-align: center;
 
     grid-gap: $container-padding;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 
     grid-template-areas:
         "photo name"
@@ -73,9 +73,11 @@ img.memoji {
 
 p.author--name {
     grid-area: name;
+	align-content: flex-end;
 }
 p.author--site-link {
     grid-area: website;
+	align-content: flex-start;
 }
 
 p.author--name,

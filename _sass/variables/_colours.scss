@@ -75,8 +75,12 @@
     --link-secondary-color: var(--gray-600);
 
     --button-color: var(--black);
-    --button-background: var(--white);
+    --button-background: var(--gray-100);
 	--button-border: var(--gray-400);
+	
+    --card-color: var(--black);
+    --card-background: var(--gray-100);
+	--card-border: var(--gray-400);
 
     --dropdownButton-hoverBackground: var(--cyan);
     --dropdownButton-hoverColor: var(--white);
@@ -154,6 +158,10 @@
     	--button-color: var(--white);
     	--button-background: var(--gray-700);
 		--button-border: var(--gray-800);
+	
+    	--card-color: var(--white);
+    	--card-background: var(--gray-700);
+		--card-border: var(--gray-800);
 		
         --dropdownButton-hoverColor: var(--black);
         --dropdownButton-disabledColor: var(--gray-500);

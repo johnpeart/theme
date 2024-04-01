@@ -37,6 +37,8 @@ button,
 	&:link,
 	&:visited {
 		text-decoration: none;
+		color: var(--button-color);
+		background: var(--button-background);
 	}
     &:hover {
 		box-shadow: 
@@ -45,7 +47,7 @@ button,
 			0 1px var(--button-border),
 			0 2px var(--button-border),
 			0 3px var(--button-border);
-			transform: translate3d(0,2px,5px);
+		transform: translate3d(0,2px,5px);
     }
 	&:focus,
     &:focus-visible {
@@ -56,7 +58,7 @@ button,
 	    outline-offset: form("outline-active-offset");
     }
     &:active {
-		box-shadow: 0 0 1px 1px var(--secondary-background);
+		box-shadow: none;
 		transform: translate3d(0,5px,0);
 		text-decoration: none !important;
 	    outline-offset: form("outline-active-offset");
