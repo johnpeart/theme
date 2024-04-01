@@ -101,7 +101,7 @@ header#site-header nav#header--site-nav {
         margin: 0;
         right: 0;
         border: none;
-        border-radius: 10px;
+        border-radius: $border-radius;
         border: 0;
         background: none;
         box-shadow: none;
@@ -196,7 +196,7 @@ header#site-header nav#header--site-nav {
 
             display: block;
             width: 100%;
-            border-radius: 10px;
+            border-radius: $border-radius;
             text-decoration: none;
         }
 

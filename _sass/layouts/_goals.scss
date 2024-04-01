@@ -40,7 +40,6 @@ body#goal {
 
             &.totaliser {
 
-                @include glass(20px, 2);
                 padding: $container-padding;
                 margin-top: $container-padding * 8;
 
