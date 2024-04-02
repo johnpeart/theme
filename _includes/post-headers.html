@@ -58,11 +58,9 @@
 </header>
 {% elsif include.format == "music" %}
 <header class="post-title {{ collection }}">
-	<a class="music-link" href="{{ page.url }}" alt="Read more about {{ page.title }} by {{ page.artist }}">
-		<div class="ipod-nano">
-			<img class="music-artwork" src="{{ page.artwork }}" />
-		</div>
-	</a>
+	<div class="ipod-nano">
+		<img class="music-artwork" src="{{ page.artwork }}" />
+	</div>
 	<section class="music-metadata p-name">
 		<h1 class="music-metadata-title">{{ page.title }}</h1>
 		<p class="music-metadata-artist">{{ page.artist }}</p>
