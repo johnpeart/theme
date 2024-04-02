@@ -64,6 +64,7 @@
 	.calendar-date {
 		@include typography($calendar);
 		background: var(--white);
+		color: var(--black);
 		font-weight: bold;
 		align-self: center;
 		padding: 0 !important;	
