@@ -45,11 +45,9 @@
         border-bottom-right-radius: 10px;
     }
 	
-	
-	
-	
-	
-	
+	* {
+		color: var(--speechBubble-fromThemColor);
+	}
     p {
         &:first-child {
             padding-top: 0;
