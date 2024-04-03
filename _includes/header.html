@@ -1,14 +1,14 @@
 <header id="site-header">
 
-	<nav id="header--site-nav" class="container" aria-label="Menu">
+	<nav id="site-header" class="container" aria-label="Menu">
 
 		<p id="header--wordmark">
 			{% if jekyll.environment == "development" %}
-				<a href="//localhost:4000" class="header--wordmark-link">{{ site.title }}</a>
+				<a href="//localhost:4000" class="no-underline bold">{{ site.title }}</a>
 			{% elsif site.header-url %}
-				<a href="{{ site.header-url }}" class="header--wordmark-link">{{ site.title }}</a>
+				<a href="{{ site.header-url }}" class="no-underline bold">{{ site.title }}</a>
 			{% else %}
-				<a href="//johnpe.art" class="header--wordmark-link">{{ site.title }}</a>
+				<a href="//johnpe.art" class="no-underline bold">{{ site.title }}</a>
 			{% endif %}
 		</p>
 
