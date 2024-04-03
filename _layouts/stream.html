@@ -12,22 +12,8 @@ layout: default
 		
 		{{ page.content | markdownify }}
 		
-		<nav>
-			<ul class="nav-categories">
-				<li class="nav-categories--item"><a href="/blogposts" class="button">Blogposts</a></li>	
-				<li class="nav-categories--item"><a href="/weeknotes" class="button">Week notes</a></li>	
-				<li class="nav-categories--item"><a href="/notes" class="button">Notes</a></li>	
-				<li class="nav-categories--item"><a href="/lists" class="button">Lists</a></li>	
-				<li class="nav-categories--item"><a href="/photos" class="button">Photos</a></li>
-				<li class="nav-categories--item"><a href="/music" class="button">Music</a></li>
-				<li class="nav-categories--item"><a href="/replies" class="button">Replies</a></li>
-				<li class="nav-categories--item"><a href="/shares" class="button">Reposts</a></li>
-			</ul>
-		</nav>
+		{% include post-types.html %}
 		
-		
-		<hr>
-
 		{% for page in paginator.posts %}
 			{% assign collection = page.collection %}
 			<article class="h-entry {{ collection }}">
