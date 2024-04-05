@@ -12,9 +12,9 @@
 {% elsif include.type == "post" %}
 <footer id="site-footer">
 
-	<div class="footer">
+	<div class="site-footer">
 
-		<div id="author-card" class="card author h-card vcard u-author p-author">
+		<aside id="author-card" class="card author h-card vcard u-author p-author">
 			{% include memoji.html %}
 			<p class="p-name author--name"><a rel="author" class="bold no-underline p-author u-uid" href="{{ site.url }}"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a></p>
 			<p class="author--site-link"><a href="//www.johnpe.art" rel="me" class="u-url no-underline">www.johnpe.art</a></p>
@@ -27,7 +27,7 @@
 				<span class="footer--icons--separator"></span>
 				{% include social-icons/buymeacoffee.html %}
 			</div>
-		</div>
+		</aside>
 
 		<dl class="meta-data">
 			{% if page.date %}
@@ -57,7 +57,7 @@
 {% else %}
 <footer id="site-footer" class="container">
 
-	<div class="footer">
+	<div class="site-footer">
 
 		<aside id="author-card" class="card h-card vcard p-author">
 			{% include memoji.html %}
