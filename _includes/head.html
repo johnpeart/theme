@@ -5,7 +5,11 @@
 
     {% assign collection = page.collection %}
 	{%- if collection == "blogpost" %}
-		{% assign title = page.title | strip_html | truncate: 200 %}
+		{% assign title = page.title | prepend: "📝 " | strip_html | truncate: 200 %}
+		{% assign description = page.excerpt | strip_html | strip_newlines | truncate: 200 %}
+		{% assign type = "article" %}
+	{%- if collection == "now" %}
+		{% assign title = page.title | prepend: "🕒 " | strip_html | truncate: 200 %}
 		{% assign description = page.excerpt | strip_html | strip_newlines | truncate: 200 %}
 		{% assign type = "article" %}
 	{%- elsif collection == "weeknotes" %}
