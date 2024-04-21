@@ -80,7 +80,7 @@ layout: page
 				    {% elsif site.collection.output == true %}
 					    {% assign link = item.url %}
 				    {% endif %}
-				    <h3 class="collection--list--item-title"><a href="{{ link }}" {% if alt %}title="{{ alt }}"{% endif %}>{{ item.title | smartify }}</a></h3>
+				    <h3 class="collection--list--item-title">{% if item.link %}<a href="{{ link }}" {% if alt %}title="{{ alt }}"{% endif %}>{% endif %}{{ item.title | smartify }}{% if item.link %}</a>{% endif %}</h3>
 				    {% if item.excerpt %}
 				    {{ item.excerpt | markdownify }}
 				    {% elsif item.content %}
@@ -110,7 +110,7 @@ layout: page
 		    {% else %}
 			    {% assign link = item.url %}
 		    {% endif %}
-		    <h2 class="collection--list--item-title"><a href="{{ link }}" {% if alt %}title="{{ alt }}"{% endif %}>{{ item.title | smartify }}</a></h2>
+		    <h2 class="collection--list--item-title">{% if item.link %}<a href="{{ link }}" {% if alt %}title="{{ alt }}"{% endif %}>{% endif %}{{ item.title | smartify }}{% if item.link %}</a>{% endif %}</h2>
 		    {% if item.excerpt %}
 		    {{ item.excerpt | markdownify }}
 		    {% elsif item.content %}
