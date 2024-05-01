@@ -45,9 +45,8 @@ button,
 			0 0 var(--button-border),
 			0 0 var(--button-border),
 			0 1px var(--button-border),
-			0 2px var(--button-border),
-			0 3px var(--button-border);
-		transform: translate3d(0,2px,5px);
+			0 2px var(--button-border);
+		transform: translate3d(0,3px,5px);
     }
 	&:focus,
     &:focus-visible {
