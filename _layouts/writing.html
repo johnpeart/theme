@@ -2,7 +2,7 @@
 layout: page
 ---
 {% if page.collection %}
-	{% assign posts = site[page.collection] %}
+	{% assign posts = site[page.collection] | reverse %}
 {% else %}
 	{% assign posts = site.blogpost | reverse %}
 {% endif %}
