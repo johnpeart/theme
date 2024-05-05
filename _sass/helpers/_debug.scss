@@ -13,18 +13,8 @@ body.debug:after {
     margin: auto $container-padding;
     bottom: $container-padding;
     @include typography($p, "default");
-	background: var(--card-background);
-	color: var(--card-color);
-	border-radius: $border-radius;
-	box-shadow: 
-		0 0 var(--card-border),
-		0 0 var(--card-border),
-		0 1px var(--card-border),
-		0 2px var(--card-border),
-		0 3px var(--card-border),
-		0 4px var(--card-border),
-		0 5px var(--card-border);
-	border: 1px solid var(--card-border);
+	@include glass(20px, 2, true);
+    color: var(--color);
     text-align: center;
     line-height: 1 !important;
     padding: $container-padding !important;

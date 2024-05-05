@@ -1,5 +1,11 @@
 hr {
     border: unset;
-    height: 5px;
-    background: var(--secondary-background);
+    height: 10px;
+    border-radius: 3px;
+    @include plastic(inset, 2px);
+	
+	&.short {
+		margin: $container-padding * 2 auto;
+		max-width: 50px;
+	}
 }

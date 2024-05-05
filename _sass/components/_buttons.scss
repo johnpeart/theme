@@ -13,25 +13,17 @@ button,
 	
     @include typography($p, "default");
 	color: var(--button-color);
-    line-height: 1 !important;
+    // line-height: 1 !important;
 	text-align: center;
 	
-	
+	height: auto;
     width: 100%;
 	&.width-auto {
 		width: auto;	
 	}
 	
 	background: var(--button-background);
-	border: 1px solid var(--button-border);
-    box-shadow: 
-		0 0 var(--button-border),
-		0 0 var(--button-border),
-		0 1px var(--button-border),
-		0 2px var(--button-border),
-		0 3px var(--button-border),
-		0 4px var(--button-border),
-		0 5px var(--button-border);
+	border: 3px solid var(--button-border);
 	border-radius: $border-radius;
 	
 	&:link,
@@ -41,24 +33,21 @@ button,
 		background: var(--button-background);
 	}
     &:hover {
-		box-shadow: 
-			0 0 var(--button-border),
-			0 0 var(--button-border),
-			0 1px var(--button-border),
-			0 2px var(--button-border);
-		transform: translate3d(0,3px,5px);
+		color: 		var(--background);
+		background: var(--cyan);
     }
 	&:focus,
     &:focus-visible {
 		outline: 3px solid var(--link-outlineColor);
-	    outline-offset: form("outline-focus-offset");
+	    outline-offset: form("outline-active-offset");
     }
     &:hover:focus {
 	    outline-offset: form("outline-active-offset");
     }
     &:active {
+		color: var(--button-color);
+		background: var(--button-background);
 		box-shadow: none;
-		transform: translate3d(0,5px,0);
 		text-decoration: none !important;
 	    outline-offset: form("outline-active-offset");
     }
@@ -66,7 +55,6 @@ button,
     &:disabled,
     &:disabled:focus, &:disabled:hover, &:disabled:active {
 		box-shadow: none;
-		transform: translate3d(0,5px,0);
 		text-decoration: none !important;
         background: var(--secondary-background);
         color: var(--secondary-color);

@@ -1,0 +1,22 @@
+<footer class="submit-webmention card">	
+	<form action="https://www.johnpe.art/webmention" method="post">
+		<label class="label" for="source">
+			Send me a Webmention
+		</label>
+		<input type="url" name="source" id="source" placeholder="Enter the URL of your post">
+		<label class="hidden" for="target">This page</label>
+		<input class="hidden" type="url" name="target" id="target" placeholder="https://www.johnpe.art/" value="{{ 'https://www.johnpe.art' | append: base.url | append: page.url }}">
+		<button type="submit" class="button">
+			<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+			<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+			<svg xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="0 0 20 20" width="30" height="30" aria-hidden="true">
+  			<defs/>
+  			<g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke-dasharray="none" stroke="none" fill="none">
+    			<path d="M 9.997448 19.5 C 9.554912 19.5 9.197484 19.362752 8.925155 19.08825 C 8.652826 18.813749 8.516663 18.453265 8.516663 18.00679 L 8.516663 6.9986944 L 8.674954 3.273107 L 9.522575 3.8237597 L 6.555899 7.1475196 L 4.263236 9.369973 C 4.127071 9.502264 3.9721864 9.609748 3.798576 9.692428 C 3.624966 9.775109 3.42753 9.81645 3.2062622 9.81645 C 2.8079803 9.81645 2.4743815 9.687469 2.205456 9.429504 C 1.9365306 9.171539 1.8020697 8.839167 1.8020697 8.432377 C 1.8020697 8.045429 1.955253 7.701482 2.2616239 7.400523 L 8.90473 .9315927 C 9.044299 .7959958 9.211098 .6901657 9.405133 .6140992 C 9.599169 .5380327 9.796605 .5 9.997448 .5 C 10.19829 .5 10.396578 .5380327 10.592314 .6140992 C 10.788051 .6901657 10.954 .7959958 11.090165 .9315927 L 17.738377 7.400523 C 18.044748 7.701482 18.19793 8.045429 18.19793 8.432377 C 18.19793 8.839167 18.06347 9.171539 17.794545 9.429504 C 17.52562 9.687469 17.19202 9.81645 16.79374 9.81645 C 16.57247 9.81645 16.374183 9.775109 16.198872 9.692428 C 16.023559 9.609748 15.869525 9.502264 15.736765 9.369973 L 13.43389 7.1475196 L 10.467214 3.8237597 L 11.314835 3.273107 L 11.473125 6.9986944 L 11.473125 18.00679 C 11.473125 18.453265 11.336964 18.813749 11.064633 19.08825 C 10.792304 19.362752 10.436578 19.5 9.997448 19.5 Z" fill="currentColor"/>
+  			</g>
+			</svg>
+	
+			<span class="sr-only">Send Webmention</span>
+		</button>
+</form>
+</footer>

@@ -31,8 +31,13 @@
 	</aside>
 	{% webmention_replies page.url %}
 </footer>
+{% elsif include.type == "post" %}
+<footer class="interactions actions replies">
+	{% webmentions page.url posts replies links bookmarks likes reposts %}
+</footer>
+{% include webmentions-form.html %}
 {% else %}
- <footer class="interactions actions replies">
-	 {% webmentions page.url posts replies links bookmarks likes reposts %}
- </footer>
- {% endif %}
+<footer class="interactions actions replies">
+	{% webmentions page.url posts replies links bookmarks likes reposts %}
+</footer>
+{% endif %}

@@ -1,10 +1,10 @@
 input[type="text"],
+input[type="url"],
 input[type="password"],
 input[type="email"] {
     @extend p;
     box-sizing: border-box;
     width: 100%;
-    min-height: 40px;
 
     margin-bottom: $container-padding * 2;
     padding: form("input-padding");

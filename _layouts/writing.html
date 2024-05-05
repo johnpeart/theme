@@ -7,8 +7,6 @@ layout: page
 	{% assign posts = site.blogpost | reverse %}
 {% endif %}
 
-{% include post-types.html %}
-
 {% for post in posts %}
 
 	{% assign currentdate = post.date | date: "%Y" %}

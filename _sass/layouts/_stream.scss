@@ -1,15 +1,39 @@
 #stream article.h-entry {
-   margin: $container-padding * 2 0;
-   @include tablet-up {
-       margin: $container-padding * 4 0;
-   }
+	
+	&:after {
+		display: block;
+		position: relative;
+		content: "";
+		border: unset;
+		height: 10px;
+		width: 100%;
+		border-radius: 3px;
+		
+		margin: $container-padding * 2 0;
+		@include tablet-up {
+			margin: $container-padding * 4 0;
+		}
+		
+		@include plastic(inset, 2px);
+	}
+	
+	&:last-of-type:after {
+		display: none;	
+	}
+	
 }
 
 .nav-categories {
-	padding: 0;
-	margin: 0 0 $container-padding * 2 0;
-	
+	margin: $container-padding 0 $container-padding * 2 0;
+	@include tablet-up {
+		margin: $container-padding 0 $container-padding * 4 0;
+	}
+}
+
+.nav-categories--list {
 	display: grid;
+	
+	padding: $container-padding;
 	
 	grid-template-columns: 1fr 1fr;
 	@include tablet() {
@@ -27,4 +51,16 @@
 	padding: 0;
 	margin: 0;
 	width: 100%;
+}
+
+.nav-categories--item a {
+	padding: $container-padding * 0.5;
+	
+	&:link,
+	&:visited {
+		border: none;
+	}
+	&:hover {
+		background: var(--cyan);
+	}
 }
