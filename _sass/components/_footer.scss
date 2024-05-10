@@ -18,18 +18,33 @@ footer#site-footer {
 
 footer#site-footer div.site-footer {
     display: grid;
-
+    
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas: "post-meta" "author";
+    grid-template-rows: auto;
+    grid-template-areas: "author";
     grid-gap: $container-padding;
-	
-	padding-bottom: 5px;
-	
+    
+    padding-bottom: 5px;
+    
     @include tablet-up {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
-        grid-template-areas: "author post-meta";
+        grid-template-areas: "author .";
+    }
+    
+    &.with-metadata {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "post-meta" "author";
+        grid-gap: $container-padding;
+	    
+	    padding-bottom: 5px;
+	    
+        @include tablet-up {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: "author post-meta";
+        }
     }
 }
 

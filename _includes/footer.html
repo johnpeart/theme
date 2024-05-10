@@ -12,7 +12,7 @@
 {% elsif include.type == "post" %}
 <footer id="site-footer">
 
-	<div class="site-footer">
+	<div class="site-footer with-metadata">
 
 		<aside id="author-card" class="card author h-card vcard u-author p-author">
 			{% include memoji.html %}
@@ -56,6 +56,8 @@
 </footer>
 {% else %}
 <footer id="site-footer" class="container">
+
+	{% include pagination.html %}
 
 	<div class="site-footer">
 

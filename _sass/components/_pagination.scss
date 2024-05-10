@@ -4,11 +4,12 @@ nav.pagination {
     display: grid;
 
     width:  100%;
-
-    margin: $container-padding * 2 0 0;
+	
 	padding: $container-padding;
+	margin-bottom: $container-padding;
 	
 	grid-template-columns: 1fr 1fr !important;
+	grid-template-rows: 1fr;
 	grid-gap: $container-padding;
 	
 	grid-template: 'prev next';
@@ -18,6 +19,12 @@ nav.pagination {
 	}
 	span.pagination--next {
 		grid-area: next;
+	}
+	
+	span.pagination--prev a,
+	span.pagination--next a {
+		align-content: center;
+		height: 100%;
 	}
 
 }
