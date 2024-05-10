@@ -22,7 +22,10 @@
 	}
 	
 	&:last-of-type {
-		margin-bottom: $container-padding * 4;
+		margin-bottom: $container-padding * 2;
+		@include tablet-up {
+			margin-bottom: $container-padding * 4;
+		}
 	}
 	
 }
