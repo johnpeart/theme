@@ -1,43 +1,40 @@
 {% if include.type == "interactions" %}
 <footer class="interactions counts">
-	{% webmention_count page.url replies %}
-	{% webmention_count page.url links %}
+	{% webmention_count page.url replies links %}
 	{% webmention_count page.url reposts %}
 	{% webmention_count page.url likes %}
 	{% webmention_count page.url bookmarks %}
 </footer>
 {% elsif include.type == "replies" %}
-<footer class="interactions replies">
-	{% webmention_replies page.url %}
+<footer class="interactions {% if page.collection %}interactions--post{% endif %} replies">
+	{% webmentions page.url posts replies links %}
 </footer>
 {% elsif include.type == "count" %}
 <footer class="interactions counts">
 	<aside class="interactions">
-		{% webmention_count page.url replies %}
-		{% webmention_count page.url links %}
+		{% webmention_count page.url replies links %}
 		{% webmention_count page.url reposts %}
 		{% webmention_count page.url likes %}
 		{% webmention_count page.url bookmarks %}
 	</aside>
 </footer>
 {% elsif include.type == "count-and-replies" %}
-<footer class="interactions counts replies">
+<footer class="interactions {% if page.collection %}interactions--post{% endif %} counts replies">
 	<aside class="interactions">
-		{% webmention_count page.url replies %}
-		{% webmention_count page.url links %}
+		{% webmention_count page.url replies links %}
 		{% webmention_count page.url reposts %}
 		{% webmention_count page.url likes %}
 		{% webmention_count page.url bookmarks %}
 	</aside>
-	{% webmention_replies page.url %}
+	{% webmentions page.url posts replies links %}
 </footer>
 {% elsif include.type == "post" %}
-<footer class="interactions actions replies">
+<footer class="interactions interactions--post actions replies">
 	{% webmentions page.url posts replies links bookmarks likes reposts %}
 </footer>
 {% include webmentions-form.html %}
 {% else %}
-<footer class="interactions actions replies">
+<footer class="interactions {% if page.collection %}interactions--post{% endif %} replies">
 	{% webmentions page.url posts replies links bookmarks likes reposts %}
 </footer>
 {% endif %}

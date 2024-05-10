@@ -2,16 +2,11 @@ footer#site-footer {
     display: block;
     position: relative;
 
-    padding-top: $container-padding * 4;
-    padding-bottom: $container-padding;
+    margin-top: $container-padding;
+    margin-bottom: $container-padding;
 
-    @include tablet {
-        padding-top: $container-padding * 6;
-        padding-bottom: 60px;
-    }
-    @include desktop {
-        padding-top: $container-padding * 12;
-        padding-bottom: 60px;
+    @include tablet-up {
+        margin-bottom: $container-padding * 4;
     }
 
     .footer {

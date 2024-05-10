@@ -1,5 +1,38 @@
+footer.interactions--post {
+	
+	margin-top: $container-padding * 2;
+	
+	&::before  {
+		display: block;
+		content: "";
+		height: 10px;
+		width: 100%;
+		margin: $container-padding * 2 0;
+		border: unset;
+    	border-radius: 3px;
+    	@include plastic(inset, 2px);
+	}	
+	
+	.interactions::before  {
+		display: block;
+		content: "Webmentions";
+		@include typography($h2);
+		padding: $container-padding 0 $container-padding * 2 !important;
+    	line-height: 1.15;
+    	font-weight: bold;
+    	font-style: normal;
+    	text-align: center;
+    	text-decoration: none;
+    	text-transform: none;
+	}
+}
+
+.interactions.interactions--post {
+	margin-bottom: $container-padding * 4;
+}
+
 .interactions + .submit-webmention {
-	margin-top: $container-padding * 2; 
+	margin-top: $container-padding; 
 }
 	
 .interactions.counts {
@@ -47,6 +80,10 @@ span.interaction-icon {
 	padding: 0;
 }
 
+.submit-webmention {
+	margin: 0 0 $container-padding 0;
+}
+
 .submit-webmention form {
 	display: grid;
 	padding: $container-padding;
@@ -74,8 +111,4 @@ span.interaction-icon {
 	aspect-ratio: 1 / 1;
 	padding: 12px;
 	height: 100%;
-}
-
-.submit-webmention + #site-footer {
-	padding-top: $container-padding;
 }

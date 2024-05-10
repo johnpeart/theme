@@ -16,26 +16,26 @@
 
 }
 
-span.like,
-span.likes {
+span.interaction-icon.like,
+span.interaction-icon.likes {
     background-image: var(--heart-icon);
 }
-span.repost,
-span.reposts {
+span.interaction-icon.repost,
+span.interaction-icon.reposts {
     background-image: var(--share-icon);
 }
-span.link,
-span.links {
+span.interaction-icon.link,
+span.interaction-icon.links {
     background-image: var(--link-icon);
 }
-span.bookmark,
-span.bookmarks {
+span.interaction-icon.bookmark,
+span.interaction-icon.bookmarks {
     background-image: var(--bookmark-icon);
 }
-span.reply,
-span.replies {
+span.interaction-icon.reply,
+span.interaction-icon.replies {
     background-image: var(--reply-icon);
 }
-span.arrow-up {
+span.interaction-icon.arrow-up {
     background-image: var(--arrow-up-icon);
 }
