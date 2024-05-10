@@ -15,14 +15,14 @@ body {
 
 main {
     // Height = 100vh - header (height) - footer (padding-top)
-    min-height: calc(100vh - 56px - 60px);
+    min-height: calc(100vh - 62px - 15px);
 
     @include tablet {
-        min-height: calc(100vh - 70px - 90px);
+        min-height: calc(100vh - 66px - 15px);
     }
 
     @include desktop {
-        min-height: calc(100vh - 70px - 120px);
+        min-height: calc(100vh - 67px - 15px);
     }
 
     z-index: 0;
