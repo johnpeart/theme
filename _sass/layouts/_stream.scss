@@ -21,6 +21,10 @@
 		display: none;	
 	}
 	
+	&:last-of-type {
+		margin-bottom: $container-padding * 4;
+	}
+	
 }
 
 .nav-categories {
@@ -51,16 +55,4 @@
 	padding: 0;
 	margin: 0;
 	width: 100%;
-}
-
-.nav-categories--item a {
-	padding: $container-padding * 0.5;
-	
-	&:link,
-	&:visited {
-		border: none;
-	}
-	&:hover {
-		background: var(--cyan);
-	}
 }

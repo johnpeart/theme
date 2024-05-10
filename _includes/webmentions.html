@@ -6,7 +6,7 @@
 	{% webmention_count page.url bookmarks %}
 </footer>
 {% elsif include.type == "replies" %}
-<footer class="interactions {% if page.collection %}interactions--post{% endif %} replies">
+<footer class="interactions replies">
 	{% webmentions page.url posts replies links %}
 </footer>
 {% elsif include.type == "count" %}
@@ -29,7 +29,7 @@
 	{% webmentions page.url posts replies links %}
 </footer>
 {% elsif include.type == "post" %}
-<footer class="interactions interactions--post actions replies">
+<footer class="interactions {% if page.collection %}interactions--post{% endif %} actions replies">
 	{% webmentions page.url posts replies links bookmarks likes reposts %}
 </footer>
 {% include webmentions-form.html %}

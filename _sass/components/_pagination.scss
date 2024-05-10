@@ -6,30 +6,18 @@ nav.pagination {
     width:  100%;
 
     margin: $container-padding * 2 0 0;
+	padding: $container-padding;
 	
 	grid-template-columns: 1fr 1fr !important;
 	grid-gap: $container-padding;
 	
-	grid-template: 'hr hr' 'prev next';
+	grid-template: 'prev next';
 	
 	span.pagination--prev {
 		grid-area: prev;
 	}
 	span.pagination--next {
 		grid-area: next;
-	}
-	
-	&:before {
-		display: block;
-		position: relative;
-		grid-area: hr;
-		content: "";
-		border: unset;
-		height: 10px;
-		width: 100%;
-		border-radius: 3px;
-		margin: $container-padding * 2 0 $container-padding;
-		@include plastic(inset, 2px);
 	}
 
 }
