@@ -36,7 +36,7 @@
 </header>
 {% elsif include.format == "note" %}
 <header class="post-title {{ collection }}">
-	<h1 class="post-it {{ page.colour | default: 'yellow' }}">{{ page.title }}</h1>
+	<h1 class="p-name post-it {{ page.colour | default: 'yellow' }}">{{ page.title }}</h1>
 </header>
 {% elsif include.format == "photo" %}
 <header class="post-title {{ collection }}">
