@@ -19,7 +19,7 @@
 	</aside>
 </footer>
 {% elsif include.type == "count-and-replies" %}
-<footer class="interactions {% if page.collection %}interactions--post{% endif %} counts replies">
+<footer class="interactions counts replies">
 	<aside class="interactions">
 		{% webmention_count page.url replies links %}
 		{% webmention_count page.url reposts %}
@@ -29,12 +29,11 @@
 	{% webmentions page.url posts replies links %}
 </footer>
 {% elsif include.type == "post" %}
-<footer class="interactions {% if page.collection %}interactions--post{% endif %} actions replies">
+<footer class="interactions replies">
 	{% webmentions page.url posts replies links bookmarks likes reposts %}
 </footer>
-{% include webmentions-form.html %}
 {% else %}
-<footer class="interactions {% if page.collection %}interactions--post{% endif %} replies">
+<footer class="interactions replies">
 	{% webmentions page.url posts replies links bookmarks likes reposts %}
 </footer>
 {% endif %}
