@@ -12,8 +12,6 @@ layout: default
 		
 		{{ page.content | markdownify }}
 		
-		{% include post-types.html %}
-		
 		{% for page in paginator.posts %}
 			{% assign collection = page.collection %}
 			<article class="h-entry {{ collection }}">

@@ -1,4 +1,4 @@
-header#site-header {
+header#global-header {
     display: block;
     z-index: 999999;
     @include supports-sticky() {
@@ -9,7 +9,7 @@ header#site-header {
             content: '';
             width: 100%;
             height: 100%;
-            @include glass(20px, false, true, --translucent-background, false);
+            @include glass(50px, false, true, --translucent-background, false);
         }
         border-bottom: 1px solid var(--background);
     }
@@ -17,21 +17,20 @@ header#site-header {
 }
 
 nav#site-header {
+    
+    display: grid;
+    grid-template-areas: "wordmark button";
+    grid-template-columns: 1fr auto;
 
-    @include typography($p, "default");
-    text-align: center;
-    line-height: 1 !important;
-    padding: $container-padding !important;
-    font-weight: 900 !important;
-    @include clearfix();
+    line-height: 1;
+    padding: $container-padding;
 
     p#header--wordmark {
         position: relative;
         display: inline-block;
         z-index: 10000;
-
-        float: left;
-
+        @include typography($p, "default");
+        font-weight: 900 !important;
         font-size: 26px;
         @include tablet {
             font-size: 28px;
@@ -104,34 +103,59 @@ nav#site-header {
 
     }
 
-    ul#header-menu-items {
-        display: block;
+    ul#header-menu--items {
+        display: grid;
         position: absolute;
+        grid-gap: $container-padding;
         z-index: 100;
-        right: -($container-padding);
+        left: auto;
+        right: 0;
+        width: 100%;
         box-sizing: border-box;
-        padding: $container-padding $container-padding $container-padding + 5px;
         list-style: none;
         text-align: center;
-		// height: calc(100vh - 100px);
-        max-height: calc(100vh - 100px);
         overflow-y: scroll;
         
-		@include glass(20px, 2, true);
-				
-        margin: $container-padding * 2 $container-padding;
-
-        min-width: 30vw;
-        width: 100%;
-        max-width: 100%;
-        min-width: calc(100vw - (#{$container-padding} * 2));
-        @include tablet-up {
-            min-width: 400px;
-            max-width: breakpoints("tablet");
+        max-height: calc(100vh - 100px);
+        width: calc(100vw - (#{$container-padding} * 2));
+    
+        h2.grid-span {
+            padding: $container-padding * 2 0 $container-padding;
         }
+        
+        hr.grid-span {
+            width: 100%;
+            @include plastic(inset, 2px, --plastic-shadow-1, --translucent-background);
+        }
+         
+        .grid-span {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        
+        @include tablet {
+            width: containers("tablet") - ($container-padding * 2);
+            grid-template-columns: 1fr 1fr;
+            .grid-span {
+                grid-column-end: 3;
+            }
+        }
+        
+        @include desktop {
+            width: containers("desktop") - ($container-padding * 2);
+            grid-template-columns: 1fr 1fr 1fr;
+            .grid-span {
+                grid-column-end: 4;
+            }
+        }
+        
+        padding: $container-padding;
+        margin: $container-padding * 2 0;
+        
+		@include glass(20px, 2, true);
     }
 
-    li.header-link {
+    li.header-menu--item {
         display: block;
         position: relative;
 
@@ -139,70 +163,10 @@ nav#site-header {
         height: auto;
 
         box-sizing: border-box;
-        margin-bottom: $container-padding;
 
         &:last-child {
             margin: 0;
         }
-    }
-
-    li.header-link a {
-		display: inline-block;
-		position: relative;
-		box-sizing: border-box;
-		
-		cursor: pointer;
-		
-    	padding: $container-padding;
-    	margin: 0;
-		
-    	@include typography($p, "default");
-		color: var(--button-color);
-    	line-height: 1 !important;
-		text-align: center;
-		
-		
-    	width: 100%;
-		
-		background: transparent;
-        border-radius: $border-radius;
-		
-        &:link,
-		&:visited {
-            text-decoration: none;
-			color: var(--button-color);
-			background: var(--translucent-background);
-        }
-
-        &:hover {
-		    color: 		var(--background);
-		    background: var(--cyan);
-        }
-		&:focus,
-    	&:focus-visible {
-			outline: 3px solid var(--link-outlineColor);
-	    	outline-offset: form("outline-focus-offset");
-    	}
-    	&:hover:focus {
-	    	outline-offset: form("outline-active-offset");
-    	}
-    	&:active {
-			box-shadow: none;
-			text-decoration: none !important;
-			outline: 3px solid var(--link-outlineColor);
-	    	outline-offset: form("outline-active-offset");
-    	}
-
-    	&:disabled,
-    	&:disabled:focus, &:disabled:hover, &:disabled:active {
-			box-shadow: none;
-			text-decoration: none !important;
-        	background: var(--secondary-background);
-        	color: var(--secondary-color);
-        	text-align: center;
-        	cursor: unset;
-        	outline: none;
-    	}
     }
 
     svg {

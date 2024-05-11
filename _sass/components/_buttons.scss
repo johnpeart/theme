@@ -22,9 +22,7 @@ button,
 		width: auto;	
 	}
 	
-	&.border {
-		border: 3px solid var(--button-border);
-	}
+	border: 3px solid var(--button-border);
 	background: var(--button-background);
 	border-radius: $border-radius;
 	
@@ -35,8 +33,8 @@ button,
 		background: var(--button-background);
 	}
     &:hover {
-		color: 		var(--background);
-		background: var(--cyan);
+		color: 		var(--cyan);
+		background: var(--translucent-background);
     }
 	&:focus,
     &:focus-visible {

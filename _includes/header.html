@@ -1,4 +1,4 @@
-<header id="site-header">
+<header id="global-header">
 
 	<nav id="site-header" class="container" aria-label="Menu">
 
@@ -12,8 +12,7 @@
 			{% endif %}
 		</p>
 
-		{% if site.header-menu %}
-		<details id="header-menu-button--details" class="details-menu">
+		<details id="header-menu-button--details" class="details-menu" open>
 			<summary id="header-menu-button--summary">
 				<svg id="header-menu-toggle-image" version="1.1" viewBox="0 0 20 20">
 					<defs></defs>
@@ -23,13 +22,79 @@
 				<span class="sr-only">Menu</span>
 			</summary>
 
-			<ul id="header-menu-items" class="nav">
-				{% for menuitem in site.header-menu %}
-				<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
-				{% endfor %}
+			<ul id="header-menu--items" class="nav">
+				
+				<li class="header-menu--item">
+					<a href="/about" class="button">About</a>
+				</li>
+				
+				<li class="header-menu--item">
+					<a href="/ideas" class="button">Ideas</a>
+				</li>
+				
+				<li class="header-menu--item">
+					<a href="/now" class="button">Now</a>
+				</li>
+				
+				<hr class="grid-span">
+				
+				<!-- <h2 class="grid-span">Blogging</h2> -->
+				
+				<li class="header-menu--item">
+					<a href="/stream" class="button">All posts</a>
+				</li>
+				
+				<li class="nav-categories--item">
+					<a href="/blogposts" class="button">Writing</a>
+				</li>
+				
+				<li class="nav-categories--item">
+					<a href="/weeknotes" class="button">Week notes</a>
+				</li>
+				
+				<li class="nav-categories--item">
+					<a href="/notes" class="button">Notes</a>
+				</li>
+				
+				<li class="nav-categories--item">
+					<a href="/lists" class="button">Lists</a>
+				</li>
+				
+				<li class="nav-categories--item">
+					<a href="/photos" class="button">Photos</a>
+				</li>
+				
+				<li class="nav-categories--item">
+					<a href="/music" class="button">Music</a>
+				</li>
+				
+				<li class="nav-categories--item">
+					<a href="/replies" class="button">Replies</a>
+				</li>
+				
+				<li class="nav-categories--item">
+					<a href="/shares" class="button">Reposts</a>
+				</li>
+				
+				<li class="header-menu--item">
+					<a href="/feeds" class="button">RSS feeds</a>
+				</li>
+				
+				<hr class="grid-span">
+				
+				<!-- <h2 class="grid-span">Garden</h2> -->
+				
+				<li class="header-menu--item">
+					<a href="/goals" class="button">Goals</a>
+				</li>
+				
+				<li class="header-menu--item">
+					<a href="/wishlist" class="button">Wishlist</a>
+				</li>
+				
 			</ul>
+			
 		</details>
-		{% endif %}
 
 	</nav>
 

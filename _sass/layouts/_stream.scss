@@ -29,33 +29,3 @@
 	}
 	
 }
-
-.nav-categories {
-	margin: $container-padding 0 $container-padding * 2 0;
-	@include tablet-up {
-		margin: $container-padding 0 $container-padding * 4 0;
-	}
-}
-
-.nav-categories--list {
-	display: grid;
-	
-	padding: $container-padding;
-	
-	grid-template-columns: 1fr 1fr;
-	@include tablet() {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-	@include desktop() {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
-	grid-template-rows: 1fr;
-	grid-gap: $container-padding;
-	justify-items: center;
-}
-
-.nav-categories--item {
-	padding: 0;
-	margin: 0;
-	width: 100%;
-}
