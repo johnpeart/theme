@@ -72,10 +72,15 @@
 			</div>
 		{% endif %}
 	</section>
-	{% include webmentions.html type="count" %}
-				
+
+	{% if page.reply_to.original.url %}
+	<a class="u-in-reply-to" href="{{ page.reply_to.original.url }}"></a>
+	{% endif %}
+	
 	{% for posse in page.posse %}
 	<a rel="syndication" class="u-syndication" href="{{ posse }}"></a>
 	{% endfor %}
+	
+	{% include webmentions.html type="count" %}
 </section>
 {% include webmentions.html type="replies" %}
