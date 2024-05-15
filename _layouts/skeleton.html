@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% include head.html %}
+
+    {% if site.collections contains page.collection %}
+    {% assign pageid = page.collection %}
+    {% else %}
+    {% assign pageid = page.layout %}
+    {% endif %}
+
+    <body id="{{ pageid }}" class="{% if jekyll.environment == 'development' %} debug{% endif %}">
+  
+    	{{ content }}
+		
+    </body>
+
+</html>
+
