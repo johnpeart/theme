@@ -92,7 +92,7 @@
 	{% if site.gravatar %}<link href="{{ site.gravatar.url }}" rel="me">{% endif %}
 
 	<!-- Web mentions -->
-	{% webmentions_head %}
+	{% site.webmentions %}{% webmentions_head %}{% endif %}
 
 	<!-- Facebook Open Graph settings -->
 	<meta property="og:url" 			content="{{ pageurl }}">
