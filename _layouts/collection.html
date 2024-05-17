@@ -59,7 +59,7 @@ layout: page
     {% if page.group_by %}
     
 	    {% if page.sort_by %}
-		    {% assign collection = site[page.collection] | group_by: page.group_by | sort: page.sort_by %}
+		    {% assign collection = site[page.collection] | sort: page.sort_by | group_by: page.group_by %}
 	    {% else %}
 		    {% assign collection = site[page.collection] | group_by: page.group_by %}
 	    {% endif %}
