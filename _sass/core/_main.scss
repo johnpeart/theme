@@ -14,22 +14,18 @@ body {
 }
 
 main {
-    // Height = 100vh - header (height) - footer (padding-top)
-    min-height: calc(100vh - 62px - 15px);
+    // Height = 100vh - header (height) - footer (margin-top)
+    min-height: calc(100vh - 62px - 60px);
 
     @include tablet {
-        min-height: calc(100vh - 66px - 15px);
+        min-height: calc(100vh - 66px - 90px);
     }
 
     @include desktop {
-        min-height: calc(100vh - 67px - 15px);
+        min-height: calc(100vh - 67px - 90px);
     }
 
     z-index: 0;
-}
-body#editor main {
-    min-height: calc(100vh - 113px);
-    height: 100%;
 }
 
 .from-me .content {

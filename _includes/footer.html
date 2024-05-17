@@ -59,7 +59,7 @@
 
 	{% include pagination.html %}
 
-	<div class="site-footer">
+	<div class="site-footer {% if paginator.page %}with-pagination{% else %}without-pagination{% endif %}">
 
 		<aside id="author-card" class="card h-card vcard p-author">
 			{% include memoji.html %}

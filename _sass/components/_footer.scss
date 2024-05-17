@@ -46,6 +46,14 @@ footer#site-footer div.site-footer {
             grid-template-areas: "author post-meta";
         }
     }
+    
+    &.without-pagination {
+        margin-top: $container-padding * 4;
+	    
+        @include tablet-up {
+        	margin-top: $container-padding * 6;
+        }
+    }
 }
 
 div.author--icons {
