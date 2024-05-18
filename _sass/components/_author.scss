@@ -44,7 +44,14 @@ aside.author {
 
 }
 footer #author-card {
-	@include tablet-up() {
+	@include tablet() {
+		grid-template-columns: auto repeat(6, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-areas:
+			"photo name name name mastodon bluesky linkedin"
+			"photo github url url url url bmac";
+	}
+	@include desktop() {
 		grid-template-columns: auto repeat(8, 1fr);
 		grid-template-rows: repeat(2, 1fr);
 		grid-template-areas:
