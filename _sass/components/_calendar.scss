@@ -2,7 +2,7 @@
 .weeknotes .weeknotes {
     display: block;
     position: relative;
-	
+
 	@include clearfix();
 }
 
@@ -19,14 +19,14 @@
 }
 
 .calendar-sheet {
-	
+
 	display: grid;
 	position: relative;
-	
+
 	align-self: center;
 	aspect-ratio: 1;
-    
-	width: 250px;		
+
+	width: 250px;
 	@include tablet {
 		width: 300px;
 	}
@@ -34,14 +34,14 @@
 		width: 350px;
 	}
 	padding: 0;
-	margin: 0 0 $container-padding * 0.5 0;
-	
+	margin: 0 0 $container-padding 0;
+
 	text-align: center;
 	line-height: 1;
-	
+
 	background: var(--gray-300);
 	border-radius: $border-radius * 4;
-	box-shadow: 
+	box-shadow:
 		0 0 var(--white),
 		0 0 var(--gray-300),
 		0 2px var(--gray-200),
@@ -50,7 +50,7 @@
 		0 8px var(--gray-400),
 		0 10px 3px rgba(0,0,0,0.12), 0 10px 2px rgba(0,0,0,0.24);
 	border: 2px solid var(--gray-300);
-	
+
 	.calendar-month {
 		@include typography($h1);
 		align-self: flex-start;
@@ -67,7 +67,7 @@
 		color: var(--black);
 		font-weight: bold;
 		align-self: center;
-		padding: 0 !important;	
+		padding: 0 !important;
 		line-height: 1 !important;
 	}
 	.calendar-collection {
@@ -76,10 +76,10 @@
 		align-self: flex-end;
 		color: var(--red);
 		border-radius: 0 0 $border-radius * 4 $border-radius * 4;
-		padding: $container-padding !important;	
+		padding: $container-padding !important;
 		text-transform: uppercase;
 	}
-	
+
 }
 
 .calendar-title {
@@ -90,7 +90,7 @@
 a.calendar-link {
 	display: inline-block;
 	position: relative;
-	
+
 	&:link,
 	&:visited {
 		text-decoration: none;
@@ -106,15 +106,15 @@ a.calendar-link {
 			text-decoration: none;
 		}
 	}
-	
+
 	&:focus {
 		.calendar-sheet {
 			outline: 3px solid var(--cyan);
 			outline-offset: 3px;
 		}
 	}
-	
+
 	&:active {
-		
+
 	}
 }
