@@ -3,10 +3,7 @@
     display: block;
     position: relative;
 
-    padding-left: $container-padding;
-    padding-right: $container-padding;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 $container-padding;
 
     width: 100%;
 
@@ -14,25 +11,11 @@
     margin-right: auto;
 
     max-width: 100%;
-
     @include tablet {
         max-width: containers("tablet");
     }
-
     @include desktop {
         max-width: containers("desktop");
-    }
-
-    &.container--flex {
-        display: flex;
-
-        // @include mobile {
-        //     flex-direction: column;
-        // }
-    }
-
-    &.container--full-width {
-        max-width: 100%;
     }
 }
 
@@ -42,3 +25,21 @@
     display: flex;
     flex-direction: column;
 }
+.from-me .content {
+	margin-left: auto;
+	margin-right: 0;
+}
+.from-them .content {
+	margin-left: 0;
+	margin-right: auto;
+}
+.from-me .content,
+.from-them .content {
+	&.mobile-center {
+		@include mobile() {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}
+

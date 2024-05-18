@@ -10,73 +10,42 @@
 
 </footer>
 {% elsif include.type == "post" %}
-<footer id="site-footer">
+<footer id="post-footer">
 
-	<div class="site-footer with-metadata">
+	{% unless collection == "reply" or collection == "share" %}
+	{% include webmentions.html type="post" %}
+	{% endunless %}
+	{% include webmentions-form.html %}
+	{% include me.html %}
 
-		<aside id="author-card" class="card author h-card vcard u-author p-author">
-			{% include memoji.html %}
-			<p class="p-name author--name"><a rel="author" class="bold no-underline p-author u-uid" href="{{ site.url }}"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a></p>
-			<p class="author--site-link"><a href="//www.johnpe.art" rel="me" class="u-url no-underline">www.johnpe.art</a></p>
-
-			<div class="author--icons">
-				{% include social-icons/mastodon.html %}
-				{% include social-icons/bluesky.html %}
-				{% include social-icons/linkedin.html %}
-				{% include social-icons/github.html %}
-				<span class="footer--icons--separator"></span>
-				{% include social-icons/buymeacoffee.html %}
-			</div>
+	<dl class="meta-data">
+		{% if page.date %}
+		<aside id="meta-data--published" class="card meta-data meta-data-details">
+			<dt class="post-date">Published</dt>
+			<dd>
+				<a href="{{ page.url }}" class="no-underline u-url u-uid">
+					<time datetime="{{ page.date | date: '%Y-%m-%d %H:%M'}}" class="dt-published">
+						{{ page.date | date: '%-d %B %Y' }}
+					</time>
+				</a>
+			</dd>
 		</aside>
+		{% endif %}
 
-		<dl class="meta-data">
-			{% if page.date %}
-			<aside id="meta-data--published" class="card meta-data meta-data-details">
-				<dt class="post-date">Published</dt>
-				<dd>
-					<a href="{{ page.url }}" class="no-underline u-url u-uid">
-						<time datetime="{{ page.date | date: '%Y-%m-%d %H:%M'}}" class="dt-published">
-							{{ page.date | date: '%-d %B %Y' }}
-						</time>
-					</a>
-				</dd>
-			</aside>
-			{% endif %}
-
-			{% if page.categories %}
-			<aside id="meta-data--categories" class="card meta-data meta-data-details">
-				<dt class="post-categories">Categories</dt>
-				<dd>{% for categories in page.categories %}<span class="p-category">{{ categories }}</span>{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
-			</aside>
-			{% endif %}
-		</dl>
-
-	</div>
+		{% if page.categories %}
+		<aside id="meta-data--categories" class="card meta-data meta-data-details">
+			<dt class="post-categories">Categories</dt>
+			<dd>{% for categories in page.categories %}<span class="p-category">{{ categories }}</span>{% if forloop.last==false %}, {% endif %}{% endfor %}</dd>
+		</aside>
+		{% endif %}
+	</dl>
 
 </footer>
 {% else %}
-<footer id="site-footer" class="container">
+<footer id="site-footer" class="container {% unless paginator.page %}without-pagination{% else %}with-pagination{% endunless %}">
 
 	{% include pagination.html %}
-
-	<div class="site-footer {% if paginator.page %}with-pagination{% else %}without-pagination{% endif %}">
-
-		<aside id="author-card" class="card h-card vcard p-author">
-			{% include memoji.html %}
-			<p class="p-name author--name"><a rel="author" class="bold no-underline p-author u-uid" href="{{ site.url }}"><span class="p-given-name">John</span> <span class="p-family-name">Peart</span></a></p>
-			<p class="author--site-link"><a href="//www.johnpe.art" rel="me" class="u-url no-underline">www.johnpe.art</a></p>
-
-			<div class="author--icons">
-				{% include social-icons/mastodon.html %}
-				{% include social-icons/bluesky.html %}
-				{% include social-icons/linkedin.html %}
-				{% include social-icons/github.html %}
-				<span class="footer--icons--separator"></span>
-				{% include social-icons/buymeacoffee.html %}
-			</div>
-		</aside>
-
-	</div>
+	{% include me.html %}
 
 </footer>
 {% endif %}

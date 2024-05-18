@@ -1,0 +1,14 @@
+body {
+	position: relative;
+	display: grid;
+
+	grid-template-areas: "header" "main" "footer";
+	grid-template-columns: 1fr;
+	grid-template-rows: auto minmax(calc(100vh - 90px), 1fr) auto;
+}
+
+section#page-content,
+section#post-content,
+section.post-body {
+	margin-block-end: $container-padding * 4;
+}

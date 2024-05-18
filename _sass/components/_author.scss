@@ -1,9 +1,9 @@
 .from-me aside.author {
-    text-align: right; 
+    text-align: right;
 }
 
 aside.author .hidden {
-    display: none; 
+    display: none;
 }
 
 aside.author {
@@ -19,37 +19,65 @@ aside.author {
 
     display: grid;
     position: relative;
-    margin-bottom: $container-padding;
-    padding: $container-padding;
     height: 100%;
-	
+
 	border-radius: $border-radius;
     text-align: center;
 
     grid-gap: $container-padding;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr;
 
-    grid-template-areas:
-        "photo name"
-        "photo website"
-        "icons icons";
+	* {
+		align-content: center;
+		justify-content: center;
+	}
+	p {
+		height: 100%;
+		padding: $container-padding;
+	}
 
-    @include desktop {
-        grid-column-gap: $container-padding;
-        grid-row-gap: 0;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas:
+		"photo photo name name name"
+		"photo photo url url url"
+		"mastodon bluesky linkedin github bmac";
 
-        grid-template-columns: auto 1fr;
-        grid-template-areas:
-            "photo name"
-            "photo website"
-            "photo icons";
-    }
+}
+footer #author-card {
+	@include tablet-up() {
+		grid-template-columns: auto repeat(8, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-areas:
+			"photo name name name name name mastodon bluesky linkedin"
+			"photo github url url url url url url bmac";
+	}
 }
 
-a.author--photo {
-    grid-area: photo;
-    display: grid;
+.author--photo {
+	grid-area: photo;
+}
+
+.author--name {
+	grid-area: name;
+}
+.author--url {
+	grid-area: url;
+}
+
+.mastodon {
+	grid-area: mastodon;
+}
+.bluesky {
+	grid-area: bluesky;
+}
+.linkedin {
+	grid-area: linkedin;
+}
+.github {
+	grid-area: github;
+}
+.bmac {
+	grid-area: bmac;
 }
 
 img.memoji {
@@ -58,29 +86,70 @@ img.memoji {
 
     box-sizing: border-box;
 
-    margin: 0;
-    padding: 0;
-    justify-self: center;
-    align-self: center;
+    margin: 0 auto;
+    padding: $container-padding;
 
-    width: 70px;
-    height: 70px;
-    @include desktop {
-        width: 140px;
-        height: 140px;
-    }
+	width: 130px;
+	height: 130px;
+	aspect-ratio: 1;
+	@include tablet-up {
+		width: 160px;
+		height: 160px;
+	}
 }
 
-p.author--name {
-    grid-area: name;
-	align-content: flex-end;
-}
-p.author--site-link {
-    grid-area: website;
-	align-content: flex-start;
+.author-icon.card {
+	padding: $container-padding * 0.5;
 }
 
-p.author--name,
-p.author--site-link {
-    padding: 0;
+a.author--photo--link {
+	display: block;
+}
+
+a.footer--site-link {
+
+	display: grid;
+	position: relative;
+	margin: 0;
+
+	svg.footer--icons--social {
+		display: block;
+		position: relative;
+
+		max-height: 50px;
+		max-width: 50px;
+		height: 100%;
+		width: 100%;
+
+		margin: 0;
+		padding: 5px;
+
+		path {
+			fill: var(--color);
+		}
+	}
+
+
+	&:link svg path,
+	&:visited svg path {
+		fill: var(--icon-background);
+	}
+	&:hover svg path {
+		background: var(--background);
+		fill: var(--icon-hoverBackground);
+		text-decoration: none;
+	}
+	&:focus {
+		outline-offset: 0;
+		outline: 5px solid var(--link-outlineColor);
+	}
+	&:focus svg path {
+		background: var(--link-outlineColor);
+		fill: var(--white);
+		outline: none;
+	}
+	&:active svg path {
+		text-decoration: none;
+	}
+
 }

@@ -1,12 +1,23 @@
-.interactions + .submit-webmention {
-	margin-top: $container-padding; 
-}
-	
 .interactions.counts {
 	display: block;
 	text-align: right;
 	line-height: 1;
 	padding: $container-padding * 0.3 $container-padding 0;
+}
+
+footer#post-footer aside.interactions {
+	margin-block-end: $container-padding * 3;
+}
+
+footer#post-footer aside.interactions::before  {
+	display: block;
+	content: "";
+	height: 10px;
+	width: 100%;
+	margin: $container-padding * 2 0;
+	border: unset;
+	border-radius: 3px;
+	@include plastic(inset, 2px);
 }
 
 .h-entry.list .interactions.counts,
@@ -48,13 +59,10 @@ span.interaction-icon {
 }
 
 .submit-webmention {
-	margin: 0 0 $container-padding 0;
-}
-
-.submit-webmention form {
 	display: grid;
+	grid-area: wmForm;
 	padding: $container-padding;
-	
+
 	grid-template-columns: 1fr auto;
 	grid-template-rows: auto auto;
 	grid-template-areas: "label label" "input button";

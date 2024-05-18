@@ -17,7 +17,7 @@ header#global-header {
 }
 
 nav#site-header {
-    
+
     display: grid;
     grid-template-areas: "wordmark button";
     grid-template-columns: 1fr auto;
@@ -31,7 +31,7 @@ nav#site-header {
         z-index: 10000;
         @include typography($p, "default");
         font-weight: 900 !important;
-        font-size: 26px;
+        font-size: 30px;
         @include tablet {
             font-size: 28px;
         }
@@ -115,24 +115,24 @@ nav#site-header {
         list-style: none;
         text-align: center;
         overflow-y: scroll;
-        
+
         max-height: calc(100vh - 100px);
         width: calc(100vw - (#{$container-padding} * 2));
-    
+
         h2.grid-span {
             padding: $container-padding * 2 0 $container-padding;
         }
-        
+
         hr.grid-span {
             width: 100%;
             @include plastic(inset, 2px, --plastic-shadow-1, --translucent-background);
         }
-         
+
         .grid-span {
             grid-column-start: 1;
             grid-column-end: 2;
         }
-        
+
         @include tablet {
             width: containers("tablet") - ($container-padding * 2);
             grid-template-columns: 1fr 1fr;
@@ -140,7 +140,7 @@ nav#site-header {
                 grid-column-end: 3;
             }
         }
-        
+
         @include desktop {
             width: containers("desktop") - ($container-padding * 2);
             grid-template-columns: 1fr 1fr 1fr;
@@ -148,10 +148,10 @@ nav#site-header {
                 grid-column-end: 4;
             }
         }
-        
+
         padding: $container-padding;
         margin: $container-padding * 2 0;
-        
+
 		@include glass(20px, 2, true);
     }
 

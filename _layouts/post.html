@@ -27,15 +27,13 @@ layout: default
 				{{ content }}
 				{% include exif.html %}
 				{% include about-details.html %}
-				
+
 				{% for posse in page.posse %}
 				<a rel="syndication" class="u-syndication" href="{{ posse }}"></a>
 				{% endfor %}
 			</section>
-			{% include webmentions.html type="post" %}
 		{% endif %}
 
-		{% include webmentions-form.html %}
 		{% include footer.html type="post" %}
 
 	</article>

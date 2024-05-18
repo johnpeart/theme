@@ -18,22 +18,8 @@
 		{% webmention_count page.url bookmarks %}
 	</aside>
 </footer>
-{% elsif include.type == "count-and-replies" %}
-<footer class="interactions counts replies">
-	<aside class="interactions">
-		{% webmention_count page.url replies links %}
-		{% webmention_count page.url reposts %}
-		{% webmention_count page.url likes %}
-		{% webmention_count page.url bookmarks %}
-	</aside>
-	{% webmentions page.url posts replies links %}
-</footer>
 {% elsif include.type == "post" %}
-<footer class="interactions replies">
 	{% webmentions page.url posts replies links bookmarks likes reposts %}
-</footer>
 {% else %}
-<footer class="interactions replies">
 	{% webmentions page.url posts replies links bookmarks likes reposts %}
-</footer>
 {% endif %}

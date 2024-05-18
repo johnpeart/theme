@@ -1,143 +1,36 @@
-footer#site-footer {
-    display: block;
-    position: relative;
-
-    margin-top: $container-padding;
-    margin-bottom: $container-padding;
-
-    @include tablet-up {
-        margin-bottom: $container-padding * 4;
-    }
-
-    .footer {
-        display: block;
-        position: relative;
-        @include clearfix();
-    }
+footer#site-footer,
+footer#post-footer {
+	display: grid;
+	grid-gap: $container-padding;
+}
+footer#site-footer.without-pagination {
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: "author";
 }
 
-footer#site-footer div.site-footer {
-    display: grid;
-    
+footer#site-footer.with-pagination {
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
+	grid-template-areas: "pagination" "author";
+}
+
+footer#post-footer {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "author";
-    grid-gap: $container-padding;
-    
-    padding-bottom: 5px;
-    
-    @include tablet-up {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        grid-template-areas: "author .";
-    }
-    
-    &.with-metadata {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas: "post-meta" "author";
-        grid-gap: $container-padding;
-	    
-	    padding-bottom: 5px;
-	    
-        @include tablet-up {
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto;
-            grid-template-areas: "author post-meta";
-        }
-    }
-    
-    &.without-pagination {
-        margin-top: $container-padding * 4;
-	    
-        @include tablet-up {
-        	margin-top: $container-padding * 6;
-        }
-    }
-}
-
-div.author--icons {
-    grid-area: icons;
-
-    display: grid;
-    position: relative;
-
-    grid-template-columns: 2fr 2fr 2fr 2fr 1fr 2fr;
-    align-items: center;
-    justify-items: center;
-
-    padding: 0;
-    margin: 0;
-
-    * {
-        line-height: 30px !important;
-        text-decoration: none;
-    }
-
-    span.footer--icons--separator {
-        display: inline-block;
-        height: 30px;
-        width: 2px;
-        margin: 0 5px;
-        border-right: 2px solid;
-        border-color: var(--icon-background);
-        content: "";
-    }
-
-    a {
-
-        display: inline-block;
-        position: relative;
-
-        margin: 0;
-        padding: 0;
-
-        svg.footer--icons--social {
-            display: block;
-            position: relative;
-
-            height: 30px;
-            width: 30px;
-            margin: 0;
-            padding: 0;
-
-            path {
-                fill: var(--color);
-            }
-        }
-
-
-        &:link svg path,
-        &:visited svg path {
-            fill: var(--icon-background);
-        }
-        &:hover svg path {
-            background: var(--background);
-            fill: var(--icon-hoverBackground);
-            text-decoration: none;
-        }
-        &:focus {
-            outline-offset: 0;
-            outline: 5px solid var(--link-outlineColor);
-        }
-        &:focus svg path {
-            background: var(--link-outlineColor);
-            fill: var(--white);
-            outline: none;
-        }
-        &:active svg path {
-            text-decoration: none;
-        }
-
-    }
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "webmentions" "wmForm" "post-meta" "author";
 }
 
 dl.meta-data {
     grid-area: post-meta;
 
     display: grid;
-    grid-template-rows: auto auto;
     grid-gap: $container-padding;
+    grid-template-rows: auto auto;
+	@include tablet-up() {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+	}
     height: 100%;
 
     aside {

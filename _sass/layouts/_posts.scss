@@ -6,7 +6,7 @@ body[id$='post'] {
 
         left: $container-padding;
     }
-    
+
     header.post-title.note,
     header.post-title.list,
     header.post-title.photo,
@@ -24,35 +24,6 @@ body[id$='post'] {
         margin-right: auto;
     }
 
-}
-
-section.post-body + footer.interactions {
-    margin-top: $container-padding * 2;
-    margin-bottom: $container-padding * 4;
-    
-    &::before  {
-		display: block;
-		content: "";
-		height: 10px;
-		width: 100%;
-		margin: $container-padding * 2 0;
-		border: unset;
-    	border-radius: 3px;
-    	@include plastic(inset, 2px);
-	}	
-	
-    .interactions::before  {
-		display: block;
-		content: "Webmentions";
-		@include typography($h2);
-		padding: $container-padding 0 $container-padding * 2 !important;
-    	line-height: 1.15;
-    	font-weight: bold;
-    	font-style: normal;
-    	text-align: center;
-    	text-decoration: none;
-    	text-transform: none;
-	}
 }
 
 section.from-me + footer.interactions,
