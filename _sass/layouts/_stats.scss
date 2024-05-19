@@ -1,0 +1,30 @@
+section.stats {
+	display: grid;
+	grid-template-columns: 1fr;
+	@include tablet {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@include desktop() {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	grid-gap: $container-padding $container-padding * 2;
+}
+
+dl.stats--stat {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-gap: $container-padding;
+	@include glass(20px, 2, false);
+}
+
+.stats--stat--type,
+.stats--stat--count {
+	padding: $container-padding;
+}
+
+.stats--stat--type {
+	text-transform: capitalize;
+}
+.stats--stat--count {
+	text-align: right;
+}
