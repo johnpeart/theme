@@ -9,11 +9,14 @@ body.debug:after {
     }
 
     display: inline-block;
-    position: fixed;
-    margin: auto $container-padding;
-    bottom: $container-padding;
+	position: fixed;
+    position: sticky;
+	position: --webkit-sticky;
+    bottom: 0;
     @include typography($p, "default");
-	@include glass(20px, 2, true);
+	background: var(--glass-background);
+        -webkit-backdrop-filter: blur(20px);
+                backdrop-filter: blur(20px);
     color: var(--color);
     text-align: center;
     line-height: 1 !important;

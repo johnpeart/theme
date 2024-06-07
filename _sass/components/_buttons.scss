@@ -24,7 +24,7 @@ button,
 	
 	border: 3px solid var(--button-border);
 	background: var(--button-background);
-	border-radius: $border-radius * 0.5;
+	border-radius: $border-radius * 0.7;
 	
 	&:link,
 	&:visited {
@@ -33,8 +33,8 @@ button,
 		background: var(--button-background);
 	}
     &:hover {
-		color: 		var(--cyan);
-		background: var(--translucent-background);
+		color: 		var(--button-hoverColor);
+		background: var(--button-hoverBackground);
     }
 	&:focus,
     &:focus-visible {

@@ -1,18 +1,7 @@
 header#global-header {
     display: block;
+	position: relative;
     z-index: 999999;
-    @include supports-sticky() {
-        top: 0;
-        &::before {
-            position: absolute;
-            display: block;
-            content: '';
-            width: 100%;
-            height: 100%;
-            @include glass(50px, false, true, --translucent-background, false);
-        }
-        border-bottom: 1px solid var(--background);
-    }
 }
 
 nav#site-navigation {
@@ -31,7 +20,6 @@ nav#site-navigation {
 			grid-template-rows: auto auto 1fr;
 		}
 		grid-gap: $container-padding 0;
-		height: 100vh;
 	}
 	&.closed {
 		grid-template-areas: "wordmark button";
@@ -108,7 +96,7 @@ ul#header-menu--items {
     left: auto;
     right: 0;
     width: 100%;
-	padding: $container-padding 0;
+	padding: $container-padding;
     list-style: none;
     text-align: center;
 	overflow-y: scroll;
