@@ -1,6 +1,5 @@
 // Header menu
 const header = document.getElementById("site-navigation");
-const menu = document.getElementById("header-menu--items");
 const menuButton = document.getElementById("header-menu--toggle");
 
 menuButton.addEventListener("click", function() {
