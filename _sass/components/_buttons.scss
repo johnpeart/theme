@@ -13,7 +13,7 @@ button,
 	
     @include typography($p, "default");
 	color: var(--button-color);
-    // line-height: 1 !important;
+    line-height: 1 !important;
 	text-align: center;
 	
 	height: auto;
@@ -24,7 +24,7 @@ button,
 	
 	border: 3px solid var(--button-border);
 	background: var(--button-background);
-	border-radius: $border-radius;
+	border-radius: $border-radius * 0.5;
 	
 	&:link,
 	&:visited {
