@@ -7,6 +7,10 @@ body {
 	grid-template-rows: auto minmax(calc(100vh - 90px), 1fr) auto;
 }
 
+body:has(.skip-link:focus) {
+	grid-template-rows: auto auto minmax(calc(100vh - 90px), 1fr) auto;
+}
+
 section#page-content,
 section#post-content,
 section.post-body {

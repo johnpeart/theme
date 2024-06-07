@@ -12,10 +12,3 @@ body {
     background: var(--background);
     color: var(--color);
 }
-
-body {
-	padding-block-end: $container-padding;
-	@include tablet-up() {
-		padding-block-end: $container-padding * 4;
-	}
-}

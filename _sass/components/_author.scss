@@ -49,14 +49,14 @@ footer #author-card {
 		grid-template-rows: repeat(2, 1fr);
 		grid-template-areas:
 			"photo name name name mastodon bluesky linkedin"
-			"photo github url url url url bmac";
+			"photo github bmac url url url url";
 	}
 	@include desktop() {
 		grid-template-columns: auto repeat(8, 1fr);
 		grid-template-rows: repeat(2, 1fr);
 		grid-template-areas:
 			"photo name name name name name mastodon bluesky linkedin"
-			"photo github url url url url url url bmac";
+			"photo github bmac url url url url url url";
 	}
 }
 

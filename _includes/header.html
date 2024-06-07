@@ -1,101 +1,99 @@
 <header id="global-header">
 
-	<nav id="site-header" class="container" aria-label="Menu">
+	<nav id="site-navigation" class="container closed" aria-label="Menu">
 
 		<p id="header--wordmark">
 			{% if jekyll.environment == "development" %}
-				<a href="//localhost:4000" class="no-underline bold">{{ site.title }}</a>
+				{% assign siteurl = '//localhost:4000' %}
 			{% elsif site.header-url %}
-				<a href="{{ site.header-url }}" class="no-underline bold">{{ site.title }}</a>
+				{% assign siteurl = site.header-url %}
 			{% else %}
-				<a href="//johnpe.art" class="no-underline bold">{{ site.title }}</a>
+				{% assign siteurl = '//johnpe.art' %}
 			{% endif %}
+				<a href="{{ siteurl }}" class="no-underline bold">{{ site.title }}</a>
 		</p>
 
-		<details id="header-menu-button--details" class="details-menu">
-			<summary id="header-menu-button--summary">
-				<svg id="header-menu-toggle-image" version="1.1" viewBox="0 0 20 20">
-					<defs></defs>
-					<title>Menu icon</title>
-					<path id="menuicon" d="M 8 0 L 8 8 L 0 8 L 0 12 L 8 12 L 8 20 L 12 20 L 12 12 L 20 12 L 20 8 L 12 8 L 12 0 Z" fill="#adb5bd"></path>
-				</svg>
-				<span class="sr-only">Menu</span>
-			</summary>
+		<button id="header-menu--toggle">
+			<svg id="header-menu--toggle-image" version="1.1" viewBox="0 0 20 20">
+				<defs></defs>
+				<title>Menu icon</title>
+				<path id="menuicon" d="M 8 0 L 8 8 L 0 8 L 0 12 L 8 12 L 8 20 L 12 20 L 12 12 L 20 12 L 20 8 L 12 8 L 12 0 Z" fill="#adb5bd"></path>
+			</svg>
+			<span class="sr-only">Menu</span>
+		</button>
 
-			<ul id="header-menu--items" class="nav">
-				
-				<li class="header-menu--item">
-					<a href="/about" class="button">About</a>
-				</li>
-				
-				<li class="header-menu--item">
-					<a href="/ideas" class="button">Ideas</a>
-				</li>
-				
-				<li class="header-menu--item">
-					<a href="/now" class="button">Now</a>
-				</li>
-				
-				<hr class="grid-span">
-				
-				<!-- <h2 class="grid-span">Blogging</h2> -->
-				
-				<li class="header-menu--item">
-					<a href="/stream" class="button">All posts</a>
-				</li>
-				
-				<li class="nav-categories--item">
-					<a href="/blogposts" class="button">Writing</a>
-				</li>
-				
-				<li class="nav-categories--item">
-					<a href="/weeknotes" class="button">Week notes</a>
-				</li>
-				
-				<li class="nav-categories--item">
-					<a href="/notes" class="button">Notes</a>
-				</li>
-				
-				<li class="nav-categories--item">
-					<a href="/lists" class="button">Lists</a>
-				</li>
-				
-				<li class="nav-categories--item">
-					<a href="/photos" class="button">Photos</a>
-				</li>
-				
-				<li class="nav-categories--item">
-					<a href="/music" class="button">Music</a>
-				</li>
-				
-				<li class="nav-categories--item">
-					<a href="/replies" class="button">Replies</a>
-				</li>
-				
-				<li class="nav-categories--item">
-					<a href="/shares" class="button">Reposts</a>
-				</li>
-				
-				<li class="header-menu--item">
-					<a href="/feeds" class="button">RSS feeds</a>
-				</li>
-				
-				<hr class="grid-span">
-				
-				<!-- <h2 class="grid-span">Garden</h2> -->
-				
-				<li class="header-menu--item">
-					<a href="/goals" class="button">Goals</a>
-				</li>
-				
-				<li class="header-menu--item">
-					<a href="/wishlist" class="button">Wishlist</a>
-				</li>
-				
-			</ul>
+		<ul id="header-menu--items" class="nav">
 			
-		</details>
-
+			<li class="header-menu--item">
+				<a href="/about" class="button">About</a>
+			</li>
+			
+			<li class="header-menu--item">
+				<a href="/ideas" class="button">Ideas</a>
+			</li>
+			
+			<li class="header-menu--item">
+				<a href="/now" class="button">Now</a>
+			</li>
+			
+			<hr class="grid-span">
+			
+			<!-- <h2 class="grid-span">Blogging</h2> -->
+			
+			<li class="header-menu--item">
+				<a href="/stream" class="button">All posts</a>
+			</li>
+			
+			<li class="nav-categories--item">
+				<a href="/blogposts" class="button">Writing</a>
+			</li>
+			
+			<li class="nav-categories--item">
+				<a href="/weeknotes" class="button">Week notes</a>
+			</li>
+			
+			<li class="nav-categories--item">
+				<a href="/notes" class="button">Notes</a>
+			</li>
+			
+			<li class="nav-categories--item">
+				<a href="/lists" class="button">Lists</a>
+			</li>
+			
+			<li class="nav-categories--item">
+				<a href="/photos" class="button">Photos</a>
+			</li>
+			
+			<li class="nav-categories--item">
+				<a href="/music" class="button">Music</a>
+			</li>
+			
+			<li class="nav-categories--item">
+				<a href="/replies" class="button">Replies</a>
+			</li>
+			
+			<li class="nav-categories--item">
+				<a href="/shares" class="button">Reposts</a>
+			</li>
+			
+			<li class="header-menu--item">
+				<a href="/feeds" class="button">RSS feeds</a>
+			</li>
+			
+			<hr class="grid-span">
+			
+			<!-- <h2 class="grid-span">Garden</h2> -->
+			
+			<li class="header-menu--item">
+				<a href="/goals" class="button">Goals</a>
+			</li>
+			
+			<li class="header-menu--item">
+				<a href="/wishlist" class="button">Wishlist</a>
+			</li>
+			
+		</ul>
+		
 	</nav>
 
 </header>

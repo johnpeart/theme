@@ -13,204 +13,190 @@ header#global-header {
         }
         border-bottom: 1px solid var(--background);
     }
+}
+
+nav#site-navigation {
+    display: grid;
+    grid-template-columns: 1fr auto;
+	grid-template-rows: 1fr;
+	padding: $container-padding;
+	grid-template-areas: "wordmark button";
+	&.open {
+		grid-template-areas: "wordmark button" "menu menu";
+		grid-template-rows: auto 1fr;
+		@include mobile {
+			padding: $container-padding $container-padding 0;
+		}
+		@include tablet-up {
+			grid-template-rows: auto auto 1fr;
+		}
+		grid-gap: $container-padding 0;
+		height: 100vh;
+	}
+	&.closed {
+		grid-template-areas: "wordmark button";
+	}
+}
+
+button#header-menu--toggle {
+	all: unset;
+	display: grid;
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	height: 32px;
+	align-content: center;
+	justify-content: center;
+	aspect-ratio: 1;
+	
+	svg {
+		transform-origin: center;
+		transition: 0.2s all;
+	}
+	
+	svg path#menuicon {
+    	fill: var(--color);
+	}
+	
+	&:hover svg path#menuicon,
+	&:focus svg path#menuicon,
+	&:active svg path#menuicon {
+    	fill: var(--cyan);
+    	color: var(--cyan);
+	}
+}
+
+nav#site-navigation.open button#header-menu--toggle svg {
+	transform: rotate(45deg);
+}
+
+nav#site-navigation.closed button#header-menu--toggle svg {
+	transform: rotate(0deg);
+}
+
+p#header--wordmark {
+    position: relative;
+    display: block;
+    z-index: 10000;
+    @include typography($p, "default");
+    font-weight: 900 !important;
+    font-size: 30px;
+	line-height: 30px;
+    @include tablet {
+        font-size: 28px;
+		line-height: 28px;
+    }
+    @include desktop {
+        font-size: 30px;
+		line-height: 30px;
+    }
+    padding: 0;
+}
+
+nav#site-navigation.open ul#header-menu--items {
+	display: grid;
+}
+
+nav#site-navigation.closed ul#header-menu--items {
+	display: none;
+}
+
+ul#header-menu--items {
+    position: relative;
+	grid-area: menu;
+    grid-gap: $container-padding;
+    z-index: 100;
+    left: auto;
+    right: 0;
+    width: 100%;
+	padding: 0 0 $container-padding 0;
+    list-style: none;
+    text-align: center;
+	overflow-y: scroll;
+
+    h2.grid-span {
+        padding: $container-padding * 2 0 $container-padding;
+    }
+
+    hr.grid-span {
+        width: 100%;
+        @include plastic(inset, 2px, --plastic-shadow-1, --translucent-background);
+		margin: 0;
+    }
+
+    .grid-span {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    @include tablet {
+        width: containers("tablet") - ($container-padding * 2);
+        grid-template-columns: 1fr 1fr;
+        .grid-span {
+            grid-column-end: 3;
+        }
+    }
+
+    @include desktop {
+        width: containers("desktop") - ($container-padding * 2);
+        grid-template-columns: 1fr 1fr 1fr;
+        .grid-span {
+            grid-column-end: 4;
+        }
+    }
 
 }
 
-nav#site-header {
+li.header-menu--item {
+    display: block;
+    position: relative;
 
-    display: grid;
-    grid-template-areas: "wordmark button";
-    grid-template-columns: 1fr auto;
+    width: 100%;
+    height: auto;
 
-    line-height: 1;
-    padding: $container-padding;
+    box-sizing: border-box;
 
-    p#header--wordmark {
-        position: relative;
-        display: inline-block;
-        z-index: 10000;
-        @include typography($p, "default");
-        font-weight: 900 !important;
-        font-size: 30px;
-        @include tablet {
-            font-size: 28px;
-        }
-        @include desktop {
-            font-size: 30px;
-        }
-        padding: 0;
-    }
-
-    details#header-menu-button--details {
-
-        display: inline;
-        position: relative;
-        width: auto;
+    &:last-child {
         margin: 0;
-        padding: 0;
-        float: right;
-
-        @include clearfix();
-
-        &[open] > summary::-webkit-details-marker,
-        &[open] > summary::marker {
-            display: none;
-            list-style-image: none;
-            content: '';
-        }
-
-        &[open] > summary:before {
-            content: '';
-        }
-
     }
+}
 
-    summary#header-menu-button--summary {
-
-        display: block;
-        position: relative;
-        text-align: left;
-        box-sizing: border-box;
-        margin: 0;
-        right: 0;
-        border: none;
-        border-radius: $border-radius;
-        border: 0;
-        background: none;
-        box-shadow: none;
-        padding: 4px;
-        width: 27px;
-        height: 27px;
-        @include tablet {
-            padding: 4px;
-            width: 30px;
-            height: 30px;
-        }
-        @include desktop {
-            padding: 0 7px;
-            width: 36px;
-            height: 36px;
-        }
-
-        @include clearfix();
-        &:before {
-            display: none;
-        }
-        margin: 0 !important;
-        border-radius: $border-radius;
-		transform: none !important;
-        @include clearfix;
-
+svg#header-menu--toggle-image {
+    position: relative;
+    display: inline-block;
+    width: 19px;
+    @include tablet {
+        width: 20px;
     }
-
-    ul#header-menu--items {
-        display: grid;
-        position: absolute;
-        grid-gap: $container-padding;
-        z-index: 100;
-        left: auto;
-        right: 0;
-        width: 100%;
-        box-sizing: border-box;
-        list-style: none;
-        text-align: center;
-        overflow-y: scroll;
-
-        max-height: calc(100vh - 100px);
-        width: calc(100vw - (#{$container-padding} * 2));
-
-        h2.grid-span {
-            padding: $container-padding * 2 0 $container-padding;
-        }
-
-        hr.grid-span {
-            width: 100%;
-            @include plastic(inset, 2px, --plastic-shadow-1, --translucent-background);
-        }
-
-        .grid-span {
-            grid-column-start: 1;
-            grid-column-end: 2;
-        }
-
-        @include tablet {
-            width: containers("tablet") - ($container-padding * 2);
-            grid-template-columns: 1fr 1fr;
-            .grid-span {
-                grid-column-end: 3;
-            }
-        }
-
-        @include desktop {
-            width: containers("desktop") - ($container-padding * 2);
-            grid-template-columns: 1fr 1fr 1fr;
-            .grid-span {
-                grid-column-end: 4;
-            }
-        }
-
-        padding: $container-padding;
-        margin: $container-padding * 2 0;
-
-		@include glass(20px, 2, true);
+    @include desktop {
+        width: 22px;
     }
+    transform: rotate(0deg);
+    transform-origin: center;
+    transition: 0.2s all;
+}
 
-    li.header-menu--item {
-        display: block;
-        position: relative;
+details[open] summary svg {
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: 0.2s all;
+}
 
-        width: 100%;
-        height: auto;
+details:active svg path#menuicon {
+    color: var(--cyan);
+}
 
-        box-sizing: border-box;
+summary svg path#menuicon {
+    fill: var(--color);
+}
 
-        &:last-child {
-            margin: 0;
-        }
-    }
+summary:hover svg path#menuicon {
+    fill: var(--cyan);
+}
 
-    svg {
-        position: relative;
-        display: inline-block;
-        width: 19px;
-        @include tablet {
-            width: 20px;
-        }
-        @include desktop {
-            width: 22px;
-        }
-    }
+summary:focus {
+    outline: none;
+}
 
-    details summary svg {
-        transform: rotate(0deg);
-        transform-origin: center;
-        transition: 0.2s all;
-    }
-
-    details[open] summary svg {
-        transform: rotate(45deg);
-        transform-origin: center;
-        transition: 0.2s all;
-    }
-
-    details:active svg path#menuicon {
-        color: var(--cyan);
-    }
-
-    summary svg path#menuicon {
-        fill: var(--color);
-    }
-
-    summary:hover svg path#menuicon {
-        fill: var(--cyan);
-    }
-
-    summary:focus {
-        outline: none;
-    }
-
-    summary:focus svg path#menuicon {
-        fill: var(--cyan);
-    }
-
+summary:focus svg path#menuicon {
+    fill: var(--cyan);
 }

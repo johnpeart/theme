@@ -2,6 +2,10 @@ footer#site-footer,
 footer#post-footer {
 	display: grid;
 	grid-gap: $container-padding;
+	padding-block-end: $container-padding;
+	@include tablet-up() {
+		padding-block-end: $container-padding * 4;
+	}
 }
 footer#site-footer.without-pagination {
 	grid-template-columns: 1fr;
