@@ -20,55 +20,71 @@ aside.author {
     display: grid;
     position: relative;
     height: 100%;
-
-	border-radius: $border-radius;
     text-align: center;
+	
+	grid-gap: $container-padding;
 
-    grid-gap: $container-padding;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
 
-	* {
-		align-content: center;
-		justify-content: center;
+	@include tablet-up() {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
 	}
-	p {
-		height: 100%;
-		padding: $container-padding;
-	}
-
-	grid-template-columns: repeat(5, 1fr);
-	grid-template-rows: repeat(3, 1fr);
-	grid-template-areas:
-		"photo photo name name name"
-		"photo photo url url url"
-		"mastodon bluesky linkedin github bmac";
-
 }
-footer #author-card {
-	@include tablet() {
-		grid-template-columns: auto repeat(6, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-		grid-template-areas:
-			"photo name name name mastodon bluesky linkedin"
-			"photo github bmac url url url url";
-	}
-	@include desktop() {
-		grid-template-columns: auto repeat(8, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-		grid-template-areas:
-			"photo name name name name name mastodon bluesky linkedin"
-			"photo github bmac url url url url url url";
-	}
+
+.author--bio {
+	display: grid;
+	
+	padding: $container-padding;
+	border-radius: $border-radius;
+	
+	grid-gap: $container-padding;
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-columns: auto 1fr;
+	grid-template-areas: 
+		"photo name"
+		"photo url";
 }
 
 .author--photo {
 	grid-area: photo;
+	align-self: center;
+	justify-self: center;
 }
 
 .author--name {
 	grid-area: name;
+	padding: 0;
+	align-self: flex-end;
 }
 .author--url {
 	grid-area: url;
+	padding: 0;
+	align-self: flex-start;
+}
+
+.author--icons {
+	display: grid;
+	grid-gap: $container-padding;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr;
+	grid-template-areas: 
+			"mastodon bluesky linkedin github";
+			
+	@include tablet-up {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas: 
+				"mastodon bluesky"
+				"linkedin github";
+	}
+}
+
+.author-icon {
+	display: grid;
+	align-items: center;
+	justify-items: center;
 }
 
 .mastodon {
@@ -83,9 +99,6 @@ footer #author-card {
 .github {
 	grid-area: github;
 }
-.bmac {
-	grid-area: bmac;
-}
 
 img.memoji {
     display: block;
@@ -94,15 +107,10 @@ img.memoji {
     box-sizing: border-box;
 
     margin: 0 auto;
-    padding: $container-padding;
 
-	width: 130px;
-	height: 130px;
+	width: 100px;
+	height: 100px;
 	aspect-ratio: 1;
-	@include tablet-up {
-		width: 160px;
-		height: 160px;
-	}
 }
 
 .author-icon.card {
@@ -147,8 +155,7 @@ a.footer--site-link {
 		text-decoration: none;
 	}
 	&:focus {
-		outline-offset: 0;
-		outline: 5px solid var(--link-outlineColor);
+		outline: 0;
 	}
 	&:focus svg path {
 		background: var(--link-outlineColor);
