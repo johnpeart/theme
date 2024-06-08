@@ -8,7 +8,7 @@ figure,
     margin-right: 0;
     margin-left: 0;
     margin-bottom: $container-padding * 2;
-    background: var(--glass-background);
+    // background: var(--glass-background);
     @include tablet {
         width: containers("tablet") + 100px;
         max-width: unset;
@@ -50,50 +50,6 @@ figure,
         max-width: 100%;
         height: auto;
         margin: 0 0 15px;
-        border-radius: $border-radius;
-        box-shadow: shadow(2);
-        
-        &.padding {
-            padding: $container-padding;
-            box-sizing: border-box;
-        }
-
-        + figcaption {
-            overflow-y: clip;
-            transition: 1s;
-        }
-        &:hover {
-            + figcaption {
-                transition: 1s;
-            }
-        }
-
-        border-radius: $border-radius;
-        box-shadow: shadow(2);
-
-    }
-
-}
-
-.composite-image--eurovision {
-    display: block;
-    position: relative;
-    box-sizing: content-box;
-    margin-top: 0;
-    width: 100%;
-    max-width: 100%;
-    margin-right: 0;
-    margin-left: 0;
-    background: var(--glass-background);	
-    img {
-        display: block;
-        position: relative;
-        box-sizing: content-box;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        border-radius: $border-radius $border-radius 0 0;
-        
         &.padding {
             padding: $container-padding;
             box-sizing: border-box;
@@ -110,6 +66,14 @@ figure,
         }
 
     }
+	
+	img,
+	picture source,
+	picture img {
+        border-radius: $border-radius;
+        box-shadow: shadow(2);
+	}
+
 }
 
 p > img {
@@ -171,13 +135,13 @@ div.overlay {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: $border-radius * 2;
+    border-radius: $border-radius;
     box-shadow: shadow(2);
 }
 
 div.overlay.overlay--eurovision {
 	padding: $container-padding;
-    border-radius: $border-radius * 2 $border-radius * 2 0 0;
+    border-radius: $border-radius $border-radius 0 0;
     box-shadow: none;
 }
 
