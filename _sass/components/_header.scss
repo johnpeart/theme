@@ -117,7 +117,6 @@ ul#header-menu--items {
     }
 
     @include tablet {
-        width: containers("tablet") - ($container-padding * 2);
         grid-template-columns: 1fr 1fr;
         .grid-span {
             grid-column-end: 3;
@@ -125,7 +124,6 @@ ul#header-menu--items {
     }
 
     @include desktop {
-        width: containers("desktop") - ($container-padding * 2);
         grid-template-columns: 1fr 1fr 1fr;
         .grid-span {
             grid-column-end: 4;
