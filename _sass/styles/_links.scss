@@ -5,11 +5,8 @@ a {
     text-decoration-thickness: 2px;
     text-decoration-skip-ink: auto;
 
-    &:link {
-        color: var(--link-color);
-		text-decoration: underline;
-    }
-    &:visited {
+    &:link,
+	&:visited {
         color: var(--link-color);
 		text-decoration: underline;
     }
@@ -101,5 +98,26 @@ a {
             outline: 3px solid var(--link-outlineColor);
 			outline-offset: 3px;
         }
+	}
+	
+	&.dark-link {
+		&:link,
+		&:visited {
+        	color: var(--black);
+    	}
+    	&:hover {
+        	color: var(--black);
+        	text-decoration: underline;
+        	cursor: pointer;
+    	}
+	}
+	
+	&.block-link:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
 	}
 }
