@@ -8,7 +8,7 @@ button,
 	
 	cursor: pointer;
 	
-	padding: $container-padding * 0.5;
+	padding: $container-padding * 0.5 $container-padding;
     margin: 0;
 	
     @include typography($p, "default");
@@ -22,7 +22,7 @@ button,
 		width: auto;	
 	}
 	
-	border: 3px solid var(--button-border);
+	border: 3px solid transparent;
 	background: var(--button-background);
 	border-radius: $border-radius * 0.7;
 	
@@ -33,6 +33,7 @@ button,
 		background: var(--button-background);
 	}
     &:hover {
+		border: 3px solid var(--button-border);
 		color: 		var(--button-hoverColor);
 		background: var(--button-hoverBackground);
     }
@@ -62,22 +63,5 @@ button,
         text-align: center;
         cursor: unset;
         outline: none;
-    }
-}
-
-.button--dropdown-menu-item {
-	top: -2px;
-    text-align: left;
-    padding: $container-padding !important;
-    outline-offset: form("outline-offset");
-    margin: 0 !important;
-}
-
-// The .button--dropdown-menu-item button sits inside a list element.
-// This sets the padding around the button.
-li.dropdown-item {
-    padding: $container-padding $container-padding 0;
-    &:last-child {
-        padding: $container-padding;
     }
 }
