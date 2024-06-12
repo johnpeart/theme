@@ -15,8 +15,12 @@ footer#site-footer.without-pagination {
 
 footer#site-footer.with-pagination {
 	grid-template-columns: 1fr;
-	grid-template-rows: auto auto;
-	grid-template-areas: "pagination" "author";
+	grid-template-rows: auto;
+	grid-template-areas: "author";
+	padding-block-start: $container-padding;
+	@include tablet-up() {
+		padding-block-start: $container-padding * 3;
+	}
 }
 
 footer#post-footer {
