@@ -17,6 +17,18 @@
     --gray-700: rgb(73, 80, 87);
     --gray-800: rgb(52, 58, 64);
     --gray-900: rgb(33, 37, 41);
+	
+	--shadow-1: 	rgb(230,230,230);
+	--shadow-2:		rgb(190,190,190);
+	--shadow-2B: 	rgb(225,225,225);
+	--shadow-3:		rgb(195,195,195);
+	--shadow-3B: 	rgb(215,215,215);
+	--shadow-4:		rgb(195,195,195);
+	--shadow-4B:	rgb(205,205,205);
+	--shadow-5:		rgb(200,200,200);
+	--shadow-5B:	rgb(190,190,190);
+	--shadow-6:		rgb(200,200,200);
+	--shadow-6B:	rgb(180,180,180);
 
     --blue: rgb(0, 122, 255);
     --desaturated-blue: rgb(59, 89, 152);
@@ -121,8 +133,6 @@
     --speechBubble-fromThemLinkColor: var(--black);
     --speechBubble-fromThemLinkBackground: var(--cyan);
     
-    --speechBubble-authorColor: var(--gray-600);
-
     --caret-color: var(--cyan);
 
     --skiplink-color: var(--white);
@@ -134,6 +144,19 @@
     @include darkMode() {
         // Dark mode overrides
         // Colour palette
+	
+		--shadow-1: 	rgb(25,25,25);
+		--shadow-2:		rgb(35,35,35);
+		--shadow-2B: 	rgb(30,30,30);
+		--shadow-3:		rgb(60,60,60);
+		--shadow-3B: 	rgb(40,40,40);
+		--shadow-4:		rgb(60,60,60);
+		--shadow-4B:	rgb(50,50,50);
+		--shadow-5:		rgb(55,55,55);
+		--shadow-5B:	rgb(65,65,65);
+		--shadow-6:		rgb(55,55,55);
+		--shadow-6B:	rgb(75,75,75);
+		
         --glass-background: linear-gradient(135deg, rgba(33, 37, 41, 0.8), rgba(15, 15, 15, 0.6));
         --glass-border: rgba(100, 100, 100, 0.3);
         --plastic-shadow-1: var(--absolute-black);
