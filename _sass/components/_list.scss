@@ -22,6 +22,9 @@
         background: #fff linear-gradient(rgba(0,0,0,0.1) 1px, transparent 0) 0 44px / 100% 44px;
     }
 
+	.list-header {
+		width: 100%;
+	}
     .list-title {
         @include typography($marker, "marker");
         color: var(--red);
