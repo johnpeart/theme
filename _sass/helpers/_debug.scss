@@ -12,12 +12,11 @@ body.debug:after {
 	position: fixed;
     position: sticky;
 	position: --webkit-sticky;
-    bottom: 0;
+    bottom: $container-padding;
+	margin: 0 auto $container-padding $container-padding;
+	@include glass(20px, 2, true);
     @include typography($p, "default");
-	background: var(--glass-background);
-        -webkit-backdrop-filter: blur(20px);
-                backdrop-filter: blur(20px);
-    color: var(--color);
+	color: var(--color);
     text-align: center;
     line-height: 1 !important;
     padding: $container-padding !important;
