@@ -10,7 +10,7 @@
     @if $shadow != false {
         box-shadow: shadow($shadow);
         @include darkMode() {
-            box-shadow: shadow(3);    
+            box-shadow: shadow($shadow);    
         }
     }
 
