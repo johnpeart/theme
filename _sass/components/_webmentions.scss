@@ -30,12 +30,12 @@ footer#post-footer aside.interactions::before  {
 	margin: $container-padding * 0.5 0 $container-padding * 2;
 	padding-left: $container-padding * 2;
 	@include typography($small, "default");
-	color: var(--speechBubble-authorColor);
+	color: var(--secondary-color);
 }
 
 .action p {
 	@include typography($small, "default");
-	color: var(--speechBubble-authorColor);
+	color: var(--secondary-color);
 	text-align: center;
 	padding: 0;
 }
@@ -54,7 +54,7 @@ span.interaction-icon {
 		height: 15px;
 		width: 15px;
 	}
-	margin-right: 10px;
+	margin-right: 7px;
 	padding: 0;
 }
 
