@@ -9,5 +9,23 @@ layout: default
 		{{ content }}
 
 	</div>
-
+	
+	{% if page.collection %}
+	{% assign posts = site[page.collection] | reverse %}
+	{% else %}
+		{% assign combined_collections = 
+						site.blogpost 
+			| concat: 	site.weeknotes 
+			| concat: 	site.note  
+			| concat: 	site.list
+			| concat: 	site.music  
+			| concat: 	site.share 
+		%}
+		{% assign posts = combined_collections | sort: 'date' | reverse %}
+	{% endif %}
+	
+	<section id="page-content">
+	{% include loop.html %}
+	</section>
+	
 </main>

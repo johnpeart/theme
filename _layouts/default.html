@@ -14,9 +14,15 @@
     	{% include skiplink.html %}
         {% include header.html %}
     	{{ content }}
-        {%- unless page.collection and page.layout != "collection" -%}
+        {%- if 
+			page.layout == "home" or 
+			page.layout == "collection" or 
+			page.layout == "loop" or
+			page.layout == "goals" or
+			page.layout == "wishlist"
+		-%}
         {% include footer.html %}
-        {% endunless %}
+        {% endif %}
         {% include analytics.html %}
   
     </body>

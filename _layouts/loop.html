@@ -1,0 +1,13 @@
+---
+layout: page
+---
+
+{{ content }}
+
+{% if page.collection %}
+	{% assign posts = site[page.collection] | reverse %}
+{% else %}
+	{% assign posts = site.blogpost | reverse %}
+{% endif %}
+
+{% include loop.html %}
