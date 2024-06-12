@@ -3,7 +3,15 @@ body#home {
     .colophon {
 
         max-width: 750px;
-
+		min-height: 60vh;
+		
+		@include tablet() {
+			min-height: 50vh;
+		}
+		@include desktop {
+			min-height: 70vh;
+		}
+		
         h1.display {
             margin-left: -3px;
             @include tablet {
