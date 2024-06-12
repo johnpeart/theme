@@ -25,7 +25,7 @@ layout: default
 				</h2>
 			</header>
 
-			<ul>
+			<ul class="wishlist">
 			{% assign items = list.items | sort: 'price' %}
 			{% for item in items %}
 				{% if item.purchased == false %}
