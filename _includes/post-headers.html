@@ -41,7 +41,7 @@
 {% elsif include.format == "photo" %}
 <header class="post-title {{ collection }}">
 	<div class="photo">
-		<img src="{{ site.url | append: site.baseurl | append: '/assets/images' | append: page.image }}" class="u-photo hidden" loading="lazy">
+		<img src="{{ site.url | append: site.baseurl | append: '/assets/images' | append: page.image }}" loading="lazy">
 		<h1 class="photo--title p-name"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 	</div>
 </header>
