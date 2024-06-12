@@ -6,7 +6,7 @@
 
 table {
     @include typography($p);
-    @include plastic(raised, 2px);
+    @include glass(20px, 2, false);
     border-collapse: collapse;
     width: 100%;
     @include tablet {
@@ -60,7 +60,6 @@ table {
         caption-side: bottom;
 
         @include typography($p, "default");
-        @include plastic(inset, 2px);
         text-align: left;
 
         margin: $container-padding 0;
