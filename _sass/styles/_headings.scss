@@ -29,15 +29,14 @@ h2 {
         @include typography($loop-header);
         line-height: 0.8;
         text-align: left;
-        float: none;
         width: 100%;
         position: relative;
         @include tablet-up {
             @include supports-sticky() {
+				align-self: start;
+				display: block;
                 top: 50px;
             }
-            float: left;
-            width: 25%;
         }
     }
 }
