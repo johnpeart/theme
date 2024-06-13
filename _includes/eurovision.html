@@ -1,5 +1,6 @@
-{% if page.eurovision-entries %}
-<h2>The entries</h2>
+<div class="container">
+	<h2>The entries</h2>
+
 
 <fieldset id="toggle-esc-entries" class="radios card">
 
@@ -27,84 +28,36 @@
 
 </fieldset>
 
+</div>
+
 <div id="esc-entries" data-show="all">
 {% assign entries = page.eurovision-entries | sort: "country" %}
 {% for entry in entries %}
 <article class="h-entry eurovision" data-semifinal="{{ entry.semifinal }}" data-final="{{ entry.final }}">
-	<section class="speech-bubble eurovision from-them">
-		<section class="full-width content">
-			{% if entry.youtube %}
-			<a class="post-image" href="{{ entry.youtube | prepend: 'https://www.youtube.com/watch?v=' }}" class="u-url">
-				<img loading="lazy" class="post-image" src="{{ entry.youtube | prepend: 'https://i.ytimg.com/vi/' | append: '/maxresdefault.jpg' }}" alt="Youtube cover photo for {{ entry.country }}'s entry to the Eurovision Song Contest – {{ entry.song | smartify }} by {{ entry.artist | smartify }}">
-			</a>
-			{% else %}
-				<div class="post-image composite-image--eurovision">
-					<div class="overlay overlay--eurovision overlay-10">
-						<img loading="lazy" class="post-image eurovision-heart" src="/assets/images/eurovision/{{ entry.country | downcase | replace: " ", "-" }}.svg" alt="The flag of {{ entry.country }} inside a Eurovision heart">
-					</div>
-					<picture>
-						{% if page.composite.background.source %}
-						<source loading="lazy" class="background {{ page.composite.background.fit: '' | default: 'cover' }}" srcset="{{ page.composite.background.source }}" type="image/webp">
-						{% endif %}
-						{% if page.composite.background.image %}
-						<img loading="lazy" class="background {{ page.composite.background.fit: '' | default: 'cover' }}" src="{{ page.composite.background.image }}" alt="{{ page.composite.background.alt }}">
-						{% else %}
-						<img loading="lazy" class="background {{ page.composite.background.fit: '' | default: 'cover' }}" src="/assets/images/eurovision/default-background.png" alt="">
-						{% endif %}
-					</picture>
-				</div>
-			{% endif %}
-			<header class="esc-country">
-				{% if entry.youtube %}
-				<img class="flag" src="/assets/images/eurovision/{{ entry.country | downcase | replace: " ", "-" }}.svg">
-				{% endif %}
-				<h3 class="country">
-					<span class="country-name">{{ entry.country | smartify }}</span>
-					<span class="song-title">{{ entry.song | smartify }}</span> 
-					<span class="song-by"> by </span>
-					<span class="artist">{{ entry.artist | smartify }}</span>
-				</h3>
-			</header>
-		</section>
-		{% if entry.lyric %}
-		<section class="quote content">
-			<div class="text lyric quote h-cite">
-    			{{ entry.lyric | markdownify | replace: "<p>", "<p><q>" | replace: "</p>", "</q></p>" }}
-			</div>
-		</section>
-		{% endif %}
-		{% if entry.language %}
-		<section class="language content">
-			<div class="text">
-				{{ entry.language | prepend: "Lyrics in " | markdownify }}
-			</div>
-		</section>
-		{% endif %}
-	</section>
-	<section class="speech-bubble from-me">
+	<header class="esc-header">
+		<div class="container">
+			{% include eurovision/{{ entry.country | downcase | replace: " ", "-" }}.svg %}
+			
+			<h3 class="country">
+				{% if entry.youtube %}<a class="no-underline" href="{{ entry.youtube | prepend: 'https://www.youtube.com/watch?v=' }}" title="Watch {{ entry.country }}'s entry to the Eurovision Song Contest – {{ entry.song | smartify }} by {{ entry.artist | smartify }} on YouTube">{% endif %}
+				<span class="country-name">{{ entry.country | smartify }}</span>
+				<span class="song-title">“{{ entry.song | smartify }}”</span> <span class="song-by"> by </span><span class="artist">{{ entry.artist | smartify }}</span>
+				{% if entry.youtube %}</a>{% endif %}
+			</h3>
+		</div>
+	</header>
+	<section class="esc-body container">
 		<section class="content e-content">
-			<div class="text">
-				{{ entry.commentary | markdownify }}
-			</div>
+			{{ entry.commentary | markdownify }}
 		</section>
 	</section>
-	{% if entry.score %}
-	<section class="eurovision-points speech-bubble from-me">
-		<section class="content">
-			<div class="text">
-				{{ entry.score }} points
-			</div>
-		</section>
-	</section>
-	{% endif %}
 </article>
 {% endfor %}
 </div>
 
 {% if page.summing-up %}
+<div class="container">
 <h2>Summing up</h2>
 {{ page.summing-up | markdownify }}
-{% endif %}
-
-<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/blog/eurovision.js' }}" async></script>
+</div>
 {% endif %}
