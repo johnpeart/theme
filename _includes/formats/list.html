@@ -1,0 +1,8 @@
+<header class="list-header">
+	<h1 class="list-title p-name">{{ post.title | smartify }}</h1>
+</header>
+<ul class="list-body">
+	{% for item in post.list %}
+		<li class="list-item list-item--{{ item.status }}">{{ item.todo }}</li>
+	{% endfor %}
+</ul>

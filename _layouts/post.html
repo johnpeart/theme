@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+{% assign post = page %}
 
 <main id="content" class="container">
 
@@ -22,7 +22,16 @@ layout: default
 			{% include from-them.html format=collection %}
 			{% include from-me.html format=collection %}
 		{% else %}
-			{% include post-headers.html format=collection %}
+			<header class="post-title {{ collection }}">
+			{% include formats/{{ collection }}.html %}
+			</header>
+			
+			{% if page.composite %}
+				{% include images/composite.html %}
+			{% elsif page.emoji %}
+				{% include images/emoji-hero-image.html %}
+			{% endif %}
+			
 			<section class="post-body e-content">
 				{{ content }}
 				{% include exif.html %}

@@ -1,0 +1,9 @@
+<aside class="about">
+	{% if page.dates.end == "present" %}
+	<p class="secondary-title"><time datetime="{{ page.dates.start | date: '%Y-%m-%d' }}">{{ page.dates.start | date: '%B %Y' }}</time> to <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ page.dates.end }}</time></p>
+	{% else %}
+	<p class="secondary-title"><time datetime="{{ page.dates.start | date: '%Y-%m-%d' }}">{{ page.dates.start | date: '%B %Y' }}</time> to <time datetime="{{ page.dates.end | date: '%Y-%m-%d' }}">{{ page.dates.end | date: '%B %Y' }}</time></p>
+	{% endif %}
+	<p class="secondary-title">{{ page.organisation }}</p>
+</aside>
+<h1 class="post-title p-name">{{ page.title | smartify }}</h1>

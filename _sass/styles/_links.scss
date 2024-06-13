@@ -70,6 +70,9 @@ a {
             background: var(--link-focusBackground);
             outline: 2px solid var(--link-outlineColor);
         }
+		&:active {
+			text-decoration: none !important;
+		}
     }
     
     &.bold {
@@ -107,6 +110,18 @@ a {
     	}
     	&:hover {
         	color: var(--black);
+        	text-decoration: underline;
+        	cursor: pointer;
+    	}
+	}
+	
+	&.list-link {
+		&:link,
+		&:visited {
+        	color: var(--red);
+    	}
+    	&:hover {
+        	color: var(--red);
         	text-decoration: underline;
         	cursor: pointer;
     	}

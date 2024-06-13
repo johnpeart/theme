@@ -1,5 +1,5 @@
-.list .content,
-.list .post-title {
+.list.content,
+.list.post-title {
 
     display: grid;
     position: relative;
@@ -49,9 +49,18 @@
         text-decoration-thickness: 5px;
         text-decoration-color: var(--strikethrough-color);
     }
+
+    .list-item--align-right {
+        text-align: right;
+		transform: rotate(-5deg);
+    }
+
+    .list-item--secondary {
+        color: var(--red);
+    }
 }
 
-.list-title .list {
+.list-title.list {
     @include tablet-up {
         margin: $container-padding * 4 auto;
     }

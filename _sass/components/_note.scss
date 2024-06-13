@@ -23,10 +23,11 @@
     --post-it--corner:    var(--post-it--magenta--corner);
 }
 
-.note .content,
-.note .post-title {
+.note.content,
+.note.post-title {
     display: block;
     position: relative;
+	justify-self: center;
     
     width: 275px;
     @include tablet {
@@ -80,7 +81,7 @@
     
 }
 
-.note-post header.note-title {
+.note-post .note-title {
     margin: $container-padding * 4 auto;
     @include tablet-up {
         margin: $container-padding * 6 auto;

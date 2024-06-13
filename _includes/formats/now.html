@@ -1,0 +1,10 @@
+{% if page.layout == "home" %}
+	<h1 class="article-title p-name"><a href="{{ post.url }}" title="Read this “Now” post from {{ post.date | date: '%B %Y' }}">{{ post.date | date: '%B %Y' }}</a></h1>
+{% else %}
+	<aside class="published-date">
+		<time datetime="{{ page.date | date: '%Y-%m-%d' }}" class="published-datetime dt-published">
+			<a href="{{ page.url }}" class="u-url post-published-date">Now</a>
+		</time>
+	</aside>
+	<h1 class="post-title p-name">{{ page.date | date: '%B %Y' }}</h1>
+{% endif %}

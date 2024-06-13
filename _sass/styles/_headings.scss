@@ -31,6 +31,14 @@ h2 {
         text-align: left;
         width: 100%;
         position: relative;
+		@include mobile() {
+            @include supports-sticky() {
+				top: 0px;
+				margin: 0 0 0 -15px;
+				background: var(--translucent-background);
+				-webkit-backdrop-filter: blur(20px);
+			}
+		}
         @include tablet-up {
             @include supports-sticky() {
 				align-self: start;

@@ -109,13 +109,24 @@ a.calendar-link {
 	}
 
 	&:focus {
+		background: none;
+		outline: none;
 		.calendar-sheet {
 			outline: 3px solid var(--cyan);
 			outline-offset: 3px;
 		}
 	}
+	
+	&:hover:focus {
+		.calendar-sheet {
+			outline-offset: 0px;
+		}
+	}
 
 	&:active {
-
+		.calendar-sheet {
+			outline: 3px solid var(--cyan);
+			outline-offset: 3px;
+		}
 	}
 }

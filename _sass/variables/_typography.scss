@@ -171,14 +171,14 @@ $card-title: (
 // <h2 class="loop-header">
 $loop-header: (
     "font-size": (
-        "mobile": 35px,
+        "mobile": 30px,
         "tablet": 40px,
         "desktop": 50px
     ),
     "padding": (
-        "mobile": 47px 0 0,
-        "tablet": 47px 0 28px 0,
-        "desktop": 47px 0 38px 0
+        "mobile": 15px,
+        "tablet": 47px 0 58px 0,
+        "desktop": 47px 0 68px 0
     )
 );
 

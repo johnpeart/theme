@@ -1,5 +1,5 @@
-.photo .content,
-.photo .post-title {
+.photo.content,
+.photo.post-title {
     display: block;
     position: relative;
     z-index: 0;
@@ -38,23 +38,6 @@
         max-width: 100%;
     }
 
-    a {
-        &:link,
-		&:visited {
-			color: var(--black);
-            text-decoration: none !important;
-        }
-        &:visited {
-            text-decoration: none;
-        }
-        &:hover {
-            text-decoration: underline !important;
-        }
-        &:active {
-            text-decoration: none !important;
-        }
-    }
-
 }
 
 .stream-post .photo {
@@ -67,7 +50,10 @@
     color: var(--markerpen-color) !important;
     @include typography($marker-small, "marker");
     line-height: 1.2;
-    padding: $container-padding 0 0 0 !important;
+	padding: 0;
+	@include tablet-up() {
+    	padding: $container-padding 0 0 0 !important;
+	}
 }
 
 dl.exif {

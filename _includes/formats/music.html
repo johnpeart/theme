@@ -1,0 +1,10 @@
+<div class="ipod-nano">
+	<img class="music-artwork" src="{{ post.artwork }}" loading="lazy"/>
+</div>
+<section class="music-metadata p-name">
+	<h1 class="music-metadata-title">{{ page.title }}</h1>
+	<p class="music-metadata-artist">{{ page.artist }}</p>
+	{% if page.rating %}
+	<p class="star-rating" style="--rating: {{ page.rating }};" aria-label="I rated this music {{ page.rating }} out of 5 stars."></p>
+	{% endif %}
+</section>
