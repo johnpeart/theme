@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% assign post = page %}
+
+<main id="content">
+
+	<article id="post-content" class="{{ collection }} h-entry">
+
+		<header class="post-title container {{ collection }}">
+		{% include formats/blogpost.html %}
+		</header>
+		
+		<div class="container">
+		{% if page.composite %}
+			{% include images/composite.html %}
+		{% endif %}
+		</div>
+		
+		<section class="post-body e-content">
+			
+			<div class="container">
+				{{ content }}
+			</div>
+			
+			{% include eurovision.html %}
+
+			{% for posse in page.posse %}
+			<a rel="syndication" class="u-syndication" href="{{ posse }}"></a>
+			{% endfor %}
+		</section>
+		
+		{% include footer.html type="post" %}
+
+	</article>
+
+</main>
+
+<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/blog/eurovision.js' }}" async></script>
