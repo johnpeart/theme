@@ -1,3 +1,13 @@
+body#eurovision header#global-header {
+	@include supports-sticky() {
+        &::before {
+			background: rgba(131, 58, 180, 0.2); /* fallback for old browsers */
+  			background: -webkit-linear-gradient(to left, rgba(131, 58, 180, 0.2), rgba(253, 29, 29, 0.2), rgba(252, 176, 69, 0.2)); /* Chrome 10-25, Safari 5.1-6 */
+  			background: linear-gradient(to left, rgba(131, 58, 180, 0.2), rgba(253, 29, 29, 0.2), rgba(252, 176, 69, 0.2)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+    }
+}
+
 div#esc-entries {
 
 	&[data-show="all"] {
@@ -32,43 +42,38 @@ div#esc-entries {
 
 }
 
-article.eurovision:before {
-	content: "";
-	display: block;
-	position: relative;
-	height: 5px;
-	background: var(--secondary-background);
-	margin: $container-padding * 3 0 $container-padding * 4;
-}
-	
-h3.country {
-	width: 100%;
-}
-
-header.esc-country {
-	display: flex;
-	align-items: center;
-	padding: $container-padding * 0.5 $container-padding;
-    margin-left: 0;
-    margin-right: auto;
-	
-	max-width: 450px;
-    @include tablet() {
-        max-width: 500px;
-    }
-    @include desktop {
-        max-width: 650px;
-    }
-    clear: both;
-	
-	.flag {
-		all: unset;
-		width: 50px;
-		margin-right: $container-padding;
+header.esc-header {
+		
+	padding: $container-padding 0;
+		
+	@include supports-sticky() {
+		top: 62px;
+		z-index: 100;
+		-webkit-backdrop-filter: blur(20px);
+				backdrop-filter: blur(20px);
+		border-bottom: 1px solid var(--background);
 	}
+	
+	.container {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-gap: $container-padding * 2;
+		align-items: center;
+	}
+
+	svg {
+		all: unset;
+		width: 50px !important;
+	}
+	
 	.country {
 		width: 100%;
 		padding: 0;
+	
+		@include supports-sticky() {
+			top: 0px;
+			z-index: 100;
+		}
 	}
 	.country-name {
 		display: block;
@@ -77,34 +82,11 @@ header.esc-country {
 	.song-title,
 	.artist,
 	.song-by {
-		color: var(--gray-600);
-	}
-	.song-by {
+		
 		font-weight: 400;
 	}
 }
 
-.post-image.eurovision {
-	display: block;
-	position: relative;
-	background: var(--glass-background);
-	-webkit-backdrop-filter: blur(20px); 
-	backdrop-filter: blur(20px);
-	width: 100%;
-	padding: $container-padding * 3;
-}
-
-.post-image.eurovision-heart {
-    border-radius: 0;
-	height: 150px;
-	width: 150px;
-	@include desktop() {
-		height: 200px;
-		width: 200px;
-	}
-	margin: 0 auto;
-}
-
-.eurovision-points.speech-bubble {
-	padding-top: 0;
+.esc-body {
+	padding-block-end: $container-padding * 2;
 }
