@@ -31,41 +31,10 @@ body#loop {
         }
 
         p.loop-item-date {
-
-            @include typography($p, "default");
             padding-bottom: 0;
-
             time {
                 font-weight: bold;
             }
-        }
-
-        p.loop-item-title {
-
-            @include typography($large, "default");
-
-            a {
-                &:link {
-                    color: var(--cyan);
-                    text-decoration: none;
-                }
-                &:visited {
-                    color: var(--cyan);
-                    text-decoration: none;
-                }
-                &:hover {
-                    color: var(--link-hoverColor);
-                    text-decoration: underline;
-                }
-                &:focus {
-                    color: var(--link-focusColor);
-                }
-                &:active {
-                    color: var(--link-hoverColor);
-                    text-decoration: underline;
-                }
-            }
-
         }
 
     }

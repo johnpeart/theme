@@ -4,11 +4,13 @@ a {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-decoration-skip-ink: auto;
+    
+    --text-decoration: underline;
 
     &:link,
 	&:visited {
         color: var(--link-color);
-		text-decoration: underline;
+		text-decoration: var(--text-decoration, underline);
     }
     &:hover {
         color: var(--link-hoverColor);
@@ -90,6 +92,30 @@ a {
             background: var(--link-focusBackground);
             outline: 2px solid var(--link-outlineColor);
         }
+    }
+    
+    &.emphasised-link {
+        @include typography($large, "default");
+        &:link {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+        &:visited {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+        &:hover {
+            color: var(--link-hoverColor);
+            text-decoration: underline;
+        }
+        &:focus {
+            color: var(--link-focusColor);
+        }
+        &:active {
+            color: var(--link-hoverColor);
+            text-decoration: underline;
+        }
+        
     }
 	
 	&.post-image {

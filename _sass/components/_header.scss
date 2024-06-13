@@ -2,6 +2,23 @@ header#global-header {
     display: block;
 	position: relative;
     z-index: 999999;
+    @include supports-sticky() {
+        top: 0;
+        &::before {
+            position: absolute;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 100%;
+			-webkit-backdrop-filter: blur(50px);
+            		backdrop-filter: blur(50px);
+			background: var(--translucent-background);
+        }
+        border-bottom: 1px solid var(--background);
+    }
+    ul {
+        padding: 0;
+    }
 }
 
 nav#site-navigation {
@@ -14,12 +31,14 @@ nav#site-navigation {
 		grid-template-areas: "wordmark button" "menu menu";
 		grid-template-rows: auto 1fr;
 		@include mobile {
-			padding: $container-padding $container-padding 0;
+			padding: $container-padding;
 		}
 		@include tablet-up {
 			grid-template-rows: auto auto 1fr;
 		}
 		grid-gap: $container-padding 0;
+	    align-items: flex-start;
+		height: 100vh;
 	}
 	&.closed {
 		grid-template-areas: "wordmark button";
@@ -80,56 +99,39 @@ p#header--wordmark {
     padding: 0;
 }
 
-nav#site-navigation.open ul#header-menu--items {
-	display: grid;
+nav#site-navigation.open section#header-menu--menu {
+    display: grid;
 }
 
-nav#site-navigation.closed ul#header-menu--items {
-	display: none;
+nav#site-navigation.closed section#header-menu--menu {
+    display: none;
 }
 
-ul#header-menu--items {
-    position: relative;
-	grid-area: menu;
+section#header-menu--menu {
+    display: grid;
+    grid-area: menu;
+    grid-template-rows: repeat(3, auto);
     grid-gap: $container-padding;
-    z-index: 100;
-    left: auto;
-    right: 0;
-    width: 100%;
-	padding: $container-padding;
-    list-style: none;
-    text-align: center;
-	overflow-y: scroll;
+}
 
-    h2.grid-span {
-        padding: $container-padding * 2 0 $container-padding;
+section.header-menu--section {
+    display: grid;
+    grid-template-rows: auto auto;
+    @include tablet-up {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 2fr; 
     }
-
-    hr.grid-span {
-        width: 100%;
-        @include plastic(inset, 2px, --plastic-shadow-1, --translucent-background);
-		margin: 0;
+    padding: $container-padding 0;
+    border-top: 1px solid var(--secondary-borderColor);
+    &:first-of-type {
+        border-color: transparent;
     }
+}
 
-    .grid-span {
-        grid-column-start: 1;
-        grid-column-end: 2;
-    }
-
-    @include tablet {
-        grid-template-columns: 1fr 1fr;
-        .grid-span {
-            grid-column-end: 3;
-        }
-    }
-
-    @include desktop {
-        grid-template-columns: 1fr 1fr 1fr;
-        .grid-span {
-            grid-column-end: 4;
-        }
-    }
-
+ul.nav--group {
+    display: grid;
+    grid-gap: $container-padding;
+    grid-template-columns: 1fr 1fr;
 }
 
 li.header-menu--item {
@@ -140,10 +142,6 @@ li.header-menu--item {
     height: auto;
 
     box-sizing: border-box;
-
-    &:last-child {
-        margin: 0;
-    }
 }
 
 svg#header-menu--toggle-image {

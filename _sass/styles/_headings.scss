@@ -33,10 +33,12 @@ h2 {
         position: relative;
 		@include mobile() {
             @include supports-sticky() {
-				top: 0px;
-				margin: 0 0 0 -15px;
+                width: calc(100% + #{$container-padding * 2});
+				top: 62px;
+				margin: 0 0 0 -#{$container-padding};
 				background: var(--translucent-background);
 				-webkit-backdrop-filter: blur(20px);
+						backdrop-filter: blur(20px);
 			}
 		}
         @include tablet-up {
@@ -46,6 +48,12 @@ h2 {
                 top: 50px;
             }
         }
+    }
+    
+    &.header-menu--section--header {
+        @include typography($large, "default");
+        padding: 0 0 $container-padding;
+        text-align: left;
     }
 }
 
