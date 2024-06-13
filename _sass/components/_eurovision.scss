@@ -69,7 +69,8 @@ header.esc-header {
 	.country {
 		width: 100%;
 		padding: 0;
-	
+		text-wrap: unset;
+		
 		@include supports-sticky() {
 			top: 0px;
 			z-index: 100;

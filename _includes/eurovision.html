@@ -41,7 +41,7 @@
 			<h3 class="country">
 				{% if entry.youtube %}<a class="no-underline" href="{{ entry.youtube | prepend: 'https://www.youtube.com/watch?v=' }}" title="Watch {{ entry.country }}'s entry to the Eurovision Song Contest – {{ entry.song | smartify }} by {{ entry.artist | smartify }} on YouTube">{% endif %}
 				<span class="country-name">{{ entry.country | smartify }}</span>
-				<span class="song-title">“{{ entry.song | smartify }}”</span> <span class="song-by"> by </span><span class="artist">{{ entry.artist | smartify }}</span>
+				<span class="song-title"><strong>{{ entry.song | smartify }}</strong> by <strong>{{ entry.artist | smartify }}</strong></span>
 				{% if entry.youtube %}</a>{% endif %}
 			</h3>
 		</div>
