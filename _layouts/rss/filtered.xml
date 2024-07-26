@@ -1,7 +1,7 @@
 ---
 layout: rss/skeleton
 ---
-{% assign filter = page.permalink | remove: '.xml' | remove: "/feed/" %}
+{% assign filter = page.link | remove: '.xml' | remove: "/feed/" %}
 {%- assign allposts = site.documents | where_exp: "item", "item.collection == filter" | sort: date | reverse -%}
 
 {% for page in allposts %}
@@ -36,78 +36,78 @@ layout: rss/skeleton
 		{% assign type = "website" %}
 	{%- endif -%}
 
-<item>
-	<title>{{ title | xml_escape }}</title>
-	<pubDate>{{ page.date | date_to_rfc822 }}</pubDate>
-	<link>{{ page.url | prepend: site.baseurl | prepend: site.url }}</link>
-	<guid isPermaLink="true">{{ page.url | prepend: site.baseurl | prepend: site.url }}</guid>
-	{%- for tag in page.tags %}
-	<category>{{ tag | xml_escape }}</category>
-	{% endfor -%}
-	{%- for cat in page.categories %}
-	<category>{{ cat | xml_escape }}</category>
-	{% endfor -%}
-	<description>
-		{% if page.image and page.image contains "://" %}
-			{% assign image = page.image %}
-		{% elsif page.image %}
-			{% assign image = site.url | append: site.baseurl | append: site.image-path | append: page.image %}
-		{% elsif page.collection %}
-			{% assign image = site.url | append: site.baseurl | append: site.image-path | append: '/site/social-media-' | append: page.collection | append: ".png" %}
-		{% else %}
-			{% assign image = site.url | append: site.baseurl | append: site.social-media-image %}
-		{% endif %}
-
-		&lt;img src=&quot;{{ image }}&quot; alt=&quot;{{ page.image-alt }}&quot; /&gt;
-		
-		{% if page.collection == "list" %}
-			&lt;h2&gt;{{ title }}&lt;/h2&gt;
-			&lt;ul&gt;
-			{% for item in page.list %}
-				{% if item.status == "done" %}
-				&lt;li&gt;&lt;s&gt;{{ item.todo }}&lt;/s&gt;&lt;/li&gt;
-				{% else %}
-				&lt;li&gt;{{ item.todo }}&lt;/li&gt;
-				{% endif %}
-			{% endfor %}
-			&lt;/ul&gt;
-		{% endif %}
-
-		{% if page.collection == "reply" and page.reply_to %}
-			&lt;p&gt;
-			{%- if page.reply_to.post.date -%}On {{ page.reply_to.post.date | date: '%d %B %Y, ' | xml_escape }}{%- endif -%}{%- if page.reply_to.author.name -%} {{ page.reply_to.author.name | append: " wrote:" | smaritfy | xml_escape }}{%- else -%}{{ "Someone wrote:" | smartify | xml_escape }}{% endif -%}
-			&lt;/p&gt;
-			&lt;blockquote&gt;
-				{{ page.reply_to.post.content | markdownify | xml_escape }}
-			&lt;/blockquote&gt;
-			&lt;p&gt;On {{ page.date | date: '%d %B %Y' }}, John Peart replied &lt;/p&gt;
-		{% elsif page.collection == "share" and page.reply_to %}
-			&lt;p&gt;
-			{%- if page.reply_to.post.date -%}On {{ page.reply_to.post.date | date: '%d %B %Y, ' | xml_escape }}{%- endif -%}{%- if page.reply_to.publication %}{{ page.reply_to.author.name | append: " at " | append: page.reply_to.publication.name | append: " wrote:" | smartify | xml_escape -}}
-			{% elsif page.reply_to.original %}{{ page.reply_to.author.name | append: " wrote:" | smartify | xml_escape }}{% endif -%}
-			&lt;/p&gt;
-			&lt;blockquote&gt;
-				{% if page.reply_to.post.image %}
-				&lt;img src=&quot;{{ page.reply_to.post.image }}&quot; alt=&quot;{{ page.image-alt }}&quot; /&gt;
-				{% endif %}
-				{% if page.reply_to.post.title %}&lt;h2&gt;&lt;a href=&quot;{{ page.reply_to.post.url }}&quot;&gt;{{ page.reply_to.post.title }}&lt;/a&gt;&lt;/h2&gt;{% endif %}
-				{% if page.reply_to.post.content %}
-				{{ page.reply_to.post.content | markdownify | xml_escape }}
-				{% elsif page.reply_to.post.description %}
-				{{ page.reply_to.post.description | markdownify | xml_escape }}
-				{% endif %}
-			&lt;/blockquote&gt;
-			&lt;p&gt;On {{ page.date | date: '%d %B %Y' }}, John Peart shared and commented &lt;/p&gt;
-		{% endif %}
-
-		{% if page.collection == "reply" or page.collection == "share" %}
-		&lt;blockquote&gt;
-		{% endif %}
-		{{ page.content | markdownify | xml_escape -}}
-		{% if page.collection == "reply" or page.collection == "share" %}
-		&lt;/blockquote&gt;
-		{% endif %}
-
-	</description>
-</item>
+    <item>
+	    <title>{{ title | xml_escape }}</title>
+	    <pubDate>{{ page.date | date_to_rfc822 }}</pubDate>
+	    <link>{{ page.url | prepend: site.baseurl | prepend: site.url }}</link>
+	    <guid isPermaLink="true">{{ page.url | prepend: site.baseurl | prepend: site.url }}</guid>
+	    {%- for tag in page.tags %}
+	    <category>{{ tag | xml_escape }}</category>
+	    {% endfor -%}
+	    {%- for cat in page.categories %}
+	    <category>{{ cat | xml_escape }}</category>
+	    {% endfor -%}
+	    <description>
+		    {% if page.image and page.image contains "://" %}
+			    {% assign image = page.image %}
+		    {% elsif page.image %}
+			    {% assign image = site.url | append: site.baseurl | append: site.image-path | append: page.image %}
+		    {% elsif page.collection %}
+			    {% assign image = site.url | append: site.baseurl | append: site.image-path | append: '/site/social-media-' | append: page.collection | append: ".png" %}
+		    {% else %}
+			    {% assign image = site.url | append: site.baseurl | append: site.social-media-image %}
+		    {% endif %}
+    
+		    &lt;img src=&quot;{{ image }}&quot; alt=&quot;{{ page.image-alt }}&quot; /&gt;
+		    
+		    {% if page.collection == "list" %}
+			    &lt;h2&gt;{{ title }}&lt;/h2&gt;
+			    &lt;ul&gt;
+			    {% for item in page.list %}
+				    {% if item.status == "done" %}
+				    &lt;li&gt;&lt;s&gt;{{ item.todo }}&lt;/s&gt;&lt;/li&gt;
+				    {% else %}
+				    &lt;li&gt;{{ item.todo }}&lt;/li&gt;
+				    {% endif %}
+			    {% endfor %}
+			    &lt;/ul&gt;
+		    {% endif %}
+    
+		    {% if page.collection == "reply" and page.reply_to %}
+			    &lt;p&gt;
+			    {%- if page.reply_to.post.date -%}On {{ page.reply_to.post.date | date: '%d %B %Y, ' | xml_escape }}{%- endif -%}{%- if page.reply_to.author.name -%} {{ page.reply_to.author.name | append: " wrote:" | smaritfy | xml_escape }}{%- else -%}{{ "Someone wrote:" | smartify | xml_escape }}{% endif -%}
+			    &lt;/p&gt;
+			    &lt;blockquote&gt;
+				    {{ page.reply_to.post.content | markdownify | xml_escape }}
+			    &lt;/blockquote&gt;
+			    &lt;p&gt;On {{ page.date | date: '%d %B %Y' }}, John Peart replied &lt;/p&gt;
+		    {% elsif page.collection == "share" and page.reply_to %}
+			    &lt;p&gt;
+			    {%- if page.reply_to.post.date -%}On {{ page.reply_to.post.date | date: '%d %B %Y, ' | xml_escape }}{%- endif -%}{%- if page.reply_to.publication %}{{ page.reply_to.author.name | append: " at " | append: page.reply_to.publication.name | append: " wrote:" | smartify | xml_escape -}}
+			    {% elsif page.reply_to.original %}{{ page.reply_to.author.name | append: " wrote:" | smartify | xml_escape }}{% endif -%}
+			    &lt;/p&gt;
+			    &lt;blockquote&gt;
+				    {% if page.reply_to.post.image %}
+				    &lt;img src=&quot;{{ page.reply_to.post.image }}&quot; alt=&quot;{{ page.image-alt }}&quot; /&gt;
+				    {% endif %}
+				    {% if page.reply_to.post.title %}&lt;h2&gt;&lt;a href=&quot;{{ page.reply_to.post.url }}&quot;&gt;{{ page.reply_to.post.title }}&lt;/a&gt;&lt;/h2&gt;{% endif %}
+				    {% if page.reply_to.post.content %}
+				    {{ page.reply_to.post.content | markdownify | xml_escape }}
+				    {% elsif page.reply_to.post.description %}
+				    {{ page.reply_to.post.description | markdownify | xml_escape }}
+				    {% endif %}
+			    &lt;/blockquote&gt;
+			    &lt;p&gt;On {{ page.date | date: '%d %B %Y' }}, John Peart shared and commented &lt;/p&gt;
+		    {% endif %}
+    
+		    {% if page.collection == "reply" or page.collection == "share" %}
+		    &lt;blockquote&gt;
+		    {% endif %}
+		    {{ page.content | markdownify | xml_escape -}}
+		    {% if page.collection == "reply" or page.collection == "share" %}
+		    &lt;/blockquote&gt;
+		    {% endif %}
+    
+	    </description>
+    </item>
 {% endfor %}
