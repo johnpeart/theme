@@ -23,4 +23,10 @@
         background: var(--yellow);
         color: var(--black);
     }
+
+    &.chiplet-grey {
+        background: var(--secondary-background);
+        color: var(--secondary-color);
+        text-align: right;
+    }
 }
