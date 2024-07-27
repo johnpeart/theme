@@ -1,3 +1,7 @@
+figure { 
+    background: var(--glass-background);
+}
+
 figure,
 .composite-image {
     display: block;
@@ -8,7 +12,10 @@ figure,
     margin-right: 0;
     margin-left: 0;
     margin-bottom: $container-padding * 2;
-    // background: var(--glass-background);
+    @include mobile() {
+        border-radius: $border-radius;
+        box-shadow: shadow(2);
+    }
     @include tablet {
         width: containers("tablet") + 100px;
         max-width: unset;
@@ -25,13 +32,15 @@ figure,
     }
     figcaption {
         padding: $container-padding;
-        max-width: 600px;
         width: auto;
-        @include glass(20px, 2, true, --translucent-background);
-
+        max-width: 450px;
+        
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
         @include typography($smaller, "default");
 
         @include tablet-up {
+            @include glass(20px, 2, true, --translucent-background);
             position: absolute;
             bottom: -$container-padding;
             left: -$container-padding;
@@ -49,29 +58,25 @@ figure,
         width: 100%;
         max-width: 100%;
         height: auto;
-        margin: 0 0 15px;
+        @include tablet-up() {
+            margin: 0 0 15px;
+        }
         &.padding {
             padding: $container-padding;
             box-sizing: border-box;
         }
-
-        + figcaption {
-            overflow-y: clip;
-            transition: 1s;
-        }
-        &:hover {
-            + figcaption {
-                transition: 1s;
-            }
-        }
-
     }
 	
 	img,
 	picture source,
 	picture img {
-        border-radius: $border-radius;
-        box-shadow: shadow(2);
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;   
+        
+        @include tablet-up() {
+            border-radius: $border-radius;
+            box-shadow: shadow(2);
+        }
 	}
 
 }
