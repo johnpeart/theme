@@ -2,11 +2,11 @@
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	{% if page.permalink contains "/feed/" %}
-	{% assign filter = page.permalink | remove: '.xml' | remove: "/feed/" %}
+	{% if page.layout == "rss/filtered" %}
+	{% assign filter = page.link | remove: '.xml' | remove: "/feed/" %}
 	{% endif -%}
 	<channel>
-		<title>{{ site.title | xml_escape }}{% if filter %} • {{ filter | capitalize }} posts {% else %} • All posts{% endif -%}</title>
+		<title>{{ site.title | xml_escape }}{% if filter %} • {{ filter | capitalize | append: " " | remove: "post " }}posts {% else %} • All posts{% endif -%}</title>
 		<description>{{ site.description | xml_escape }}</description>
 		<image>
 			<url>{{ site.url | append: site.baseurl | append: site.social-media-image }}</url>
